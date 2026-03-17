@@ -1,0 +1,21 @@
+{
+  "name": "cfb-mb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbangia630/CFO-MB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mbangia630/CFO-MB/issues"
+  },
+  "homepage": "https://github.com/mbangia630/CFO-MB#readme"
+}
