@@ -555,13 +555,13 @@ function simAll(){
 }
 
 const C={bg:"#0a0a12",brd:"#1a1a2e",red:"#ff4060",blue:"#4cc9f0",grn:"#2dd4a0",amb:"#f4a261",purp:"#a78bfa",gold:"#fbbf24",dim:"#444",cyan:"#22d3ee",pink:"#f472b6",wh:"#e8e6e1"};
-const rC=[C.dim,C.blue,C.purp,C.red,C.amb,C.gold];
+const rC=[C.grn,C.blue,C.purp,C.red,C.amb,C.gold];
 
 function MetricBar({label,valA,valB,unit,better}){
   const a=parseFloat(valA)||0,b=parseFloat(valB)||0;
   const diff=better==="higher"?a-b:b-a;
   const col=diff>1?C.grn:diff<-1?C.red:C.dim;
-  return(<div style={{display:"flex",alignItems:"center",gap:4,fontSize:9,marginBottom:1}}>
+  return(<div style={{display:"flex",alignItems:"center",gap:4,fontSize:12,marginBottom:1}}>
     <span style={{width:50,color:C.dim,textAlign:"right",flexShrink:0}}>{label}</span>
     <span style={{width:42,textAlign:"right",color:col,fontWeight:diff>1||diff<-1?700:400}}>{typeof valA==="number"?valA.toFixed(1):valA}{unit||""}</span>
     <div style={{flex:1,height:2,background:C.brd,borderRadius:1,position:"relative"}}>
@@ -662,45 +662,48 @@ export default function V7Final(){
     <div style={{maxWidth:1000,margin:"0 auto",padding:"20px 14px"}}>
       {/* Header */}
       <div style={{textAlign:"center",marginBottom:14,borderBottom:`1px solid ${C.brd}`,paddingBottom:10}}>
-        <div style={{fontSize:8,letterSpacing:5,color:C.gold,marginBottom:4}}>v8.0 FINAL · MARCH 16 2026 9:50PM CST · {totalG} GAMES · 23 UPGRADES</div>
-        <h1 style={{fontSize:"clamp(18px,3.5vw,28px)",fontWeight:700,color:"#fff",margin:"4px 0",fontFamily:"Georgia,serif"}}>2026 NCAA Tournament Bracket</h1>
-        <div style={{fontSize:8,color:C.dim,lineHeight:1.6}}>
-          Real Vegas lines (FanDuel/DraftKings 3/15) · KenPom through 3/14 · Injury-adjusted · Click any game for full metric breakdown
+        <div style={{fontSize:11,letterSpacing:5,color:C.gold,marginBottom:4}}>v8.0 FINAL · {totalG} GAMES · 23 UPGRADES</div>
+        <h1 style={{fontSize:"clamp(22px,4vw,34px)",fontWeight:700,color:"#fff",margin:"4px 0",fontFamily:"Georgia,serif"}}>2026 NCAA Tournament Bracket</h1>
+        <div style={{fontSize:12,color:C.dim,lineHeight:1.6}}>
+          Real Vegas lines (FanDuel/DraftKings) · KenPom · Injury-adjusted · Click any game for full breakdown
+        </div>
+        <div style={{fontSize:13,color:C.cyan,marginTop:6,padding:"4px 12px",background:`${C.cyan}08`,borderRadius:4,display:"inline-block"}}>
+          📡 Last data update: {new Date().toLocaleString('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true})} CST
         </div>
       </div>
 
       {/* Champion */}
       {ch&&<div style={{background:`linear-gradient(135deg,${C.gold}0a,${C.bg},${C.gold}0a)`,border:`2px solid ${C.gold}33`,borderRadius:12,padding:"20px 16px",marginBottom:12,textAlign:"center"}}>
-        <div style={{fontSize:9,letterSpacing:4,color:C.gold}}>🏆 PREDICTED NATIONAL CHAMPION 🏆</div>
-        <div style={{fontSize:"clamp(24px,5vw,38px)",fontWeight:700,color:C.gold}}>{ch.w}</div>
-        <div style={{fontSize:16,color:"#fff",marginTop:2}}>{ch.sW} – {ch.sL}</div>
-        <div style={{fontSize:10,color:"#888",marginTop:2}}>vs {ch.l} · {ch.wp}% · @ Indianapolis</div>
-        <div style={{fontSize:9,color:C.dim,marginTop:2}}>Coach: {buildT(ch.w)?.coach} · KenPom #{buildT(ch.w)?.kp} · {buildT(ch.w)?.rec}</div>
+        <div style={{fontSize:12,letterSpacing:4,color:C.gold}}>🏆 PREDICTED NATIONAL CHAMPION 🏆</div>
+        <div style={{fontSize:"clamp(28px,5.5vw,44px)",fontWeight:700,color:C.gold}}>{ch.w}</div>
+        <div style={{fontSize:19,color:"#fff",marginTop:2}}>{ch.sW} – {ch.sL}</div>
+        <div style={{fontSize:13,color:"#888",marginTop:2}}>vs {ch.l} · {ch.wp}% · @ Indianapolis</div>
+        <div style={{fontSize:12,color:C.dim,marginTop:2}}>Coach: {buildT(ch.w)?.coach} · KenPom #{buildT(ch.w)?.kp} · {buildT(ch.w)?.rec}</div>
       </div>}
 
       {/* F4 */}
       {R.length>=5&&<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6,marginBottom:10}}>
         {R[4].g.map((g,i)=>(<div key={i} style={{padding:"8px 10px",background:`${C.amb}06`,border:`1px solid ${C.amb}22`,borderRadius:6,textAlign:"center"}}>
-          <div style={{fontSize:7,color:C.amb,letterSpacing:2}}>SEMIFINAL {i+1}</div>
-          <div style={{fontSize:14,fontWeight:700,color:"#fff"}}>({g.sW2}) {g.w} {g.sW}</div>
-          <div style={{fontSize:10,color:"#555"}}>({g.sL2}) {g.l} {g.sL}</div>
+          <div style={{fontSize:10,color:C.amb,letterSpacing:2}}>SEMIFINAL {i+1}</div>
+          <div style={{fontSize:17,fontWeight:700,color:"#fff"}}>({g.sW2}) {g.w} {g.sW}</div>
+          <div style={{fontSize:13,color:"#555"}}>({g.sL2}) {g.l} {g.sL}</div>
         </div>))}
       </div>}
 
       {/* Round tabs + Bets tab */}
       <div style={{display:"flex",gap:2,marginBottom:8,flexWrap:"wrap"}}>
-        {R.map((r,i)=>(<button key={i} onClick={()=>{setAr(i);setDet(null);setShowBets(false);}} style={{flex:1,minWidth:70,padding:"5px 2px",fontSize:8,border:ar===i&&!showBets?`1px solid ${rC[i]||C.gold}`:`1px solid ${C.brd}`,borderRadius:3,cursor:"pointer",background:ar===i&&!showBets?`${rC[i]||C.gold}12`:"transparent",color:ar===i&&!showBets?rC[i]||C.gold:C.dim,fontFamily:"inherit",textAlign:"center"}}>{r.n}<br/><span style={{fontSize:7}}>{r.g.length}g</span></button>))}
-        <button onClick={()=>setShowBets(true)} style={{minWidth:90,padding:"5px 6px",fontSize:8,border:showBets?`1px solid ${C.gold}`:`1px solid ${C.brd}`,borderRadius:3,cursor:"pointer",background:showBets?`${C.gold}15`:"transparent",color:showBets?C.gold:C.dim,fontFamily:"inherit",textAlign:"center",fontWeight:700}}>💰 BETS<br/><span style={{fontSize:7}}>{bets.filter(b=>b.absEdge>=1.5).length} edges</span></button>
+        {R.map((r,i)=>(<button key={i} onClick={()=>{setAr(i);setDet(null);setShowBets(false);}} style={{flex:1,minWidth:70,padding:"5px 2px",fontSize:11,border:ar===i&&!showBets?`1px solid #fff`:`1px solid ${C.brd}`,borderRadius:3,cursor:"pointer",background:ar===i&&!showBets?`#ffffff12`:"transparent",color:ar===i&&!showBets?"#fff":C.dim,fontFamily:"inherit",textAlign:"center"}}>{r.n}<br/><span style={{fontSize:7}}>{r.g.length}g</span></button>))}
+        <button onClick={()=>setShowBets(true)} style={{minWidth:90,padding:"5px 6px",fontSize:11,border:showBets?`1px solid #22ff44`:`1px solid ${C.brd}`,borderRadius:3,cursor:"pointer",background:showBets?`#22ff4415`:"transparent",color:showBets?"#22ff44":C.dim,fontFamily:"inherit",textAlign:"center",fontWeight:700}}>💰 BETS<br/><span style={{fontSize:7}}>{bets.filter(b=>b.absEdge>=1.5).length} edges</span></button>
       </div>
 
       {/* ═══ POSSIBLE BETS VIEW ═══ */}
       {showBets&&<div style={{marginBottom:16}}>
         <div style={{padding:"14px 16px",marginBottom:10,background:`${C.gold}08`,border:`1px solid ${C.gold}22`,borderRadius:8}}>
-          <div style={{fontSize:10,fontWeight:700,color:C.gold,marginBottom:6}}>💰 HOW TO READ THIS</div>
-          <div style={{fontSize:12,color:"#ccc",lineHeight:1.8}}>
+          <div style={{fontSize:13,fontWeight:700,color:C.gold,marginBottom:6}}>💰 HOW TO READ THIS</div>
+          <div style={{fontSize:15,color:"#ccc",lineHeight:1.8}}>
             Every game where our model disagrees with Vegas is a potential bet. The <strong style={{color:"#fff"}}>"Edge"</strong> is the gap in points between what the model predicts and what Vegas says. A bigger edge = more potential value.
             <br/>An edge of <strong style={{color:C.gold}}>3+ points</strong> is considered a good bet. <strong style={{color:C.red}}>5+ points</strong> is a strong bet. Negative edges mean bet the underdog (they'll cover the spread or win outright). Positive edges mean bet the favorite (they'll win by more than Vegas thinks).
-            <br/><span style={{fontSize:10,color:C.dim}}>⚠️ This is not financial advice. The model estimates 54-56% ATS accuracy. Even the best models lose ~45% of bets.</span>
+            <br/><span style={{fontSize:13,color:C.dim}}>⚠️ This is not financial advice. The model estimates 54-56% ATS accuracy. Even the best models lose ~45% of bets.</span>
           </div>
         </div>
 
@@ -713,8 +716,8 @@ export default function V7Final(){
             {n:bets.filter(b=>b.bestEV<0).length,l:"⚪ Negative EV (skip)",c:C.dim},
           ].map((s,i)=>(
             <div key={i} style={{textAlign:"center",padding:"10px 6px",background:`${s.c}08`,borderRadius:6,border:`1px solid ${s.c}22`}}>
-              <div style={{fontSize:22,fontWeight:700,color:s.c}}>{s.n}</div>
-              <div style={{fontSize:8,color:s.c}}>{s.l}</div>
+              <div style={{fontSize:24,fontWeight:700,color:s.c}}>{s.n}</div>
+              <div style={{fontSize:11,color:s.c}}>{s.l}</div>
             </div>
           ))}
         </div>
@@ -728,22 +731,22 @@ export default function V7Final(){
               {/* Header: teams + best EV */}
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
                 <div>
-                  <div style={{fontSize:14,fontWeight:700,color:"#fff"}}>({b.seedA}) {b.teamA} vs ({b.seedB}) {b.teamB}</div>
-                  <div style={{fontSize:9,color:C.dim}}>{b.ven} · Model: {b.w} {b.wp}% · Predicted: {b.w} {b.sW}-{b.l} {b.sL}</div>
+                  <div style={{fontSize:17,fontWeight:700,color:"#fff"}}>({b.seedA}) {b.teamA} vs ({b.seedB}) {b.teamB}</div>
+                  <div style={{fontSize:12,color:C.dim}}>{b.ven} · Model: {b.w} {b.wp}% · Predicted: {b.w} {b.sW}-{b.l} {b.sL}</div>
                 </div>
                 <div style={{textAlign:"right",flexShrink:0}}>
-                  <div style={{fontSize:8,color:evCol}}>{best.ev>=10?"🔥 BEST BET":best.ev>=3?"✅ GOOD VALUE":best.ev>=0?"📊 SLIGHT EDGE":"⚪ NO EDGE"}</div>
-                  <div style={{fontSize:24,fontWeight:700,color:evCol,lineHeight:1}}>{best.ev>=0?"+":""}${best.ev}</div>
-                  <div style={{fontSize:8,color:C.dim}}>EV per $100</div>
+                  <div style={{fontSize:11,color:evCol}}>{best.ev>=10?"🔥 BEST BET":best.ev>=3?"✅ GOOD VALUE":best.ev>=0?"📊 SLIGHT EDGE":"⚪ NO EDGE"}</div>
+                  <div style={{fontSize:27,fontWeight:700,color:evCol,lineHeight:1}}>{best.ev>=0?"+":""}${best.ev}</div>
+                  <div style={{fontSize:11,color:C.dim}}>EV per $100</div>
                 </div>
               </div>
 
               {/* Best bet callout */}
               {best.ev>0&&<div style={{padding:"10px 14px",background:`${evCol}0c`,borderRadius:6,marginBottom:8,border:`1px solid ${evCol}33`}}>
-                <div style={{fontSize:11,fontWeight:700,color:"#fff",marginBottom:4}}>
+                <div style={{fontSize:14,fontWeight:700,color:"#fff",marginBottom:4}}>
                   💰 BEST BET: {best.side} ({best.odds})
                 </div>
-                <div style={{fontSize:13,color:"#ccc",lineHeight:1.6}}>
+                <div style={{fontSize:16,color:"#ccc",lineHeight:1.6}}>
                   Bet $100 → win <span style={{color:C.grn,fontWeight:700}}>${best.payout}</span> if it hits.
                   {" "}Model gives this a <span style={{color:evCol,fontWeight:700}}>{best.prob}%</span> chance.
                   {" "}Expected profit: <span style={{color:evCol,fontWeight:700}}>${best.ev}</span> per $100 wagered.
@@ -757,12 +760,12 @@ export default function V7Final(){
                 <table style={{width:"100%",borderCollapse:"collapse",fontSize:11}}>
                   <thead>
                     <tr style={{borderBottom:`1px solid ${C.brd}`}}>
-                      <th style={{padding:"6px 8px",textAlign:"left",fontSize:8,color:C.dim}}>BET</th>
-                      <th style={{padding:"6px 8px",textAlign:"center",fontSize:8,color:C.dim}}>ODDS</th>
-                      <th style={{padding:"6px 8px",textAlign:"center",fontSize:8,color:C.dim}}>WIN $100→</th>
-                      <th style={{padding:"6px 8px",textAlign:"center",fontSize:8,color:C.dim}}>MODEL %</th>
-                      <th style={{padding:"6px 8px",textAlign:"center",fontSize:8,color:C.dim}}>LOSE $100→</th>
-                      <th style={{padding:"6px 8px",textAlign:"right",fontSize:8,color:C.dim}}>EV / $100</th>
+                      <th style={{padding:"6px 8px",textAlign:"left",fontSize:11,color:C.dim}}>BET</th>
+                      <th style={{padding:"6px 8px",textAlign:"center",fontSize:11,color:C.dim}}>ODDS</th>
+                      <th style={{padding:"6px 8px",textAlign:"center",fontSize:11,color:C.dim}}>WIN $100→</th>
+                      <th style={{padding:"6px 8px",textAlign:"center",fontSize:11,color:C.dim}}>MODEL %</th>
+                      <th style={{padding:"6px 8px",textAlign:"center",fontSize:11,color:C.dim}}>LOSE $100→</th>
+                      <th style={{padding:"6px 8px",textAlign:"right",fontSize:11,color:C.dim}}>EV / $100</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -796,7 +799,7 @@ export default function V7Final(){
               </div>
 
               {/* Context line */}
-              <div style={{marginTop:6,fontSize:9,color:"#666",lineHeight:1.5}}>
+              <div style={{marginTop:6,fontSize:12,color:"#666",lineHeight:1.5}}>
                 Model spread: <span style={{color:"#ccc"}}>{b.modelFav} -{Math.abs(b.modelSp).toFixed(1)}</span>
                 {" "}· Vegas: <span style={{color:"#ccc"}}>{b.vegasFav} -{Math.abs(b.vegasSp)}</span>
                 {" "}· ML: <span style={{color:C.red}}>{b.vegasFav} {b.favML}</span> / <span style={{color:C.grn}}>{b.vegasDog} +{b.dogML}</span>
@@ -809,8 +812,8 @@ export default function V7Final(){
 
         {/* Disclaimer */}
         <div style={{marginTop:10,padding:"10px 14px",background:`${C.red}06`,border:`1px solid ${C.red}22`,borderRadius:6}}>
-          <div style={{fontSize:9,color:C.red,fontWeight:700,marginBottom:4}}>⚠️ IMPORTANT DISCLAIMERS</div>
-          <div style={{fontSize:10,color:"#888",lineHeight:1.6}}>
+          <div style={{fontSize:12,color:C.red,fontWeight:700,marginBottom:4}}>⚠️ IMPORTANT DISCLAIMERS</div>
+          <div style={{fontSize:13,color:"#888",lineHeight:1.6}}>
             1. <strong style={{color:"#ccc"}}>This is a model, not a crystal ball.</strong> Even at 54-56% ATS, you'll lose ~45% of these bets. Never bet more than you can afford to lose.
             <br/>2. <strong style={{color:"#ccc"}}>Lines will move.</strong> These edges are calculated vs lines as of 3/16 evening. By game time, the lines may have shifted — re-check before betting.
             <br/>3. <strong style={{color:"#ccc"}}>The biggest edges often exist for a reason.</strong> If the model sees a 7-point edge, ask yourself: does Vegas know something I don't? (Injury news, suspensions, travel issues.)
@@ -829,24 +832,24 @@ export default function V7Final(){
               {/* Game row */}
               <div onClick={()=>setDet(isOpen?null:`${ar}-${i}`)} style={{display:"grid",gridTemplateColumns:"1fr 100px 1fr",alignItems:"center",gap:4,padding:"8px 10px",cursor:"pointer"}}>
                 <div style={{textAlign:"right"}}>
-                  <span style={{fontSize:11,fontWeight:700,color:rc}}>({g.sW2}) {g.w}</span>
-                  <span style={{fontSize:10,color:"#999",marginLeft:4}}>{g.sW}</span>
-                  {g.ha===g.w&&<span style={{fontSize:7,marginLeft:2,color:C.grn}}>🏠</span>}
+                  <span style={{fontSize:14,fontWeight:700,color:rc}}>({g.sW2}) {g.w}</span>
+                  <span style={{fontSize:13,color:"#999",marginLeft:4}}>{g.sW}</span>
+                  {g.ha===g.w&&<span style={{fontSize:10,marginLeft:2,color:C.grn}}>🏠</span>}
                 </div>
                 <div style={{textAlign:"center"}}>
-                  <div style={{fontSize:10,fontWeight:700,color:rc}}>{g.wp}%</div>
-                  <div style={{fontSize:7,color:C.dim}}>+{g.sp}pts · {g.ven}</div>
+                  <div style={{fontSize:13,fontWeight:700,color:C.purp}}>{g.wp}%</div>
+                  <div style={{fontSize:10,color:C.purp}}>+{g.sp}pts · {g.ven}</div>
                   <div style={{display:"flex",justifyContent:"center",gap:3,marginTop:1}}>
-                    {g.mu?.det?.length>0&&<span style={{fontSize:7,color:C.cyan}}>⚔️MU</span>}
-                    {g.cDiff!==0&&<span style={{fontSize:7,color:C.amb}}>🎓{g.cDiff>0?"+":""}{g.cDiff}</span>}
-                    {g.hb!==0&&<span style={{fontSize:7,color:C.grn}}>🏠{g.hb>0?"+":""}{g.hb}</span>}
-                    {g.L5!==0&&<span style={{fontSize:7,color:C.pink}}>🔋{g.L5>0?"+":""}{g.L5}</span>}
+                    {g.mu?.det?.length>0&&<span style={{fontSize:10,color:C.cyan}}>⚔️MU</span>}
+                    {g.cDiff!==0&&<span style={{fontSize:10,color:C.amb}}>🎓{g.cDiff>0?"+":""}{g.cDiff}</span>}
+                    {g.hb!==0&&<span style={{fontSize:10,color:C.grn}}>🏠{g.hb>0?"+":""}{g.hb}</span>}
+                    {g.L5!==0&&<span style={{fontSize:10,color:C.pink}}>🔋{g.L5>0?"+":""}{g.L5}</span>}
                   </div>
                 </div>
                 <div style={{textAlign:"left"}}>
-                  <span style={{fontSize:10,color:"#666",marginRight:3}}>{g.sL}</span>
-                  <span style={{fontSize:10,color:"#555",textDecoration:"line-through",opacity:.6}}>({g.sL2}) {g.l}</span>
-                  {up&&<span style={{fontSize:7,padding:"1px 4px",borderRadius:3,background:`${C.red}18`,color:C.red,marginLeft:3,fontWeight:700}}>UPSET</span>}
+                  <span style={{fontSize:13,color:"#666",marginRight:3}}>{g.sL}</span>
+                  <span style={{fontSize:13,color:"#555",textDecoration:"line-through",opacity:.6}}>({g.sL2}) {g.l}</span>
+                  {up&&<span style={{fontSize:10,padding:"1px 4px",borderRadius:3,background:`${C.red}18`,color:C.red,marginLeft:3,fontWeight:700}}>UPSET</span>}
                 </div>
               </div>
 
@@ -868,12 +871,12 @@ export default function V7Final(){
 
                   {/* Algorithm layers */}
                   <div style={{marginBottom:8,padding:"6px 8px",background:`${C.blue}06`,borderRadius:4}}>
-                    <div style={{fontSize:8,color:C.blue,letterSpacing:1,marginBottom:4}}>ALGORITHM LAYERS (model: {g.modelSp>0?"+":""}{g.modelSp} {g.vegasSp!==null?`· Vegas: ${g.vegasSp>0?"+":""}${g.vegasSp} · Blend: ${g.rawSp>0?"+":""}${g.rawSp}`:``})</div>
+                    <div style={{fontSize:11,color:C.blue,letterSpacing:1,marginBottom:4}}>ALGORITHM LAYERS (model: {g.modelSp>0?"+":""}{g.modelSp} {g.vegasSp!==null?`· Vegas: ${g.vegasSp>0?"+":""}${g.vegasSp} · Blend: ${g.rawSp>0?"+":""}${g.rawSp}`:``})</div>
                     <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:4}}>
                       {[{n:"L1: Efficiency",v:g.L1,c:C.blue,w:42},{n:"L2: 4 Factors + MU",v:g.L2,c:C.purp,w:28},{n:"L3: Context",v:g.L3,c:C.grn,w:18},{n:"L4: Coach/Tempo",v:g.L4,c:C.amb,w:8},{n:"L5: Fatigue",v:g.L5,c:C.pink,w:"var"}].map(l=>(
                         <div key={l.n} style={{textAlign:"center",padding:"4px",background:`${l.c}08`,borderRadius:3}}>
-                          <div style={{fontSize:7,color:l.c}}>{l.n} ({l.w}%)</div>
-                          <div style={{fontSize:12,fontWeight:700,color:l.v>0?C.grn:l.v<0?C.red:C.dim}}>{l.v>0?"+":""}{l.v}</div>
+                          <div style={{fontSize:10,color:l.c}}>{l.n} ({l.w}%)</div>
+                          <div style={{fontSize:15,fontWeight:700,color:l.v>0?C.grn:l.v<0?C.red:C.dim}}>{l.v>0?"+":""}{l.v}</div>
                         </div>
                       ))}
                     </div>
@@ -881,7 +884,7 @@ export default function V7Final(){
 
                   {/* Key metrics — show RAW and MATCHUP-ADJUSTED for Four Factors */}
                   <div style={{marginBottom:8}}>
-                    <div style={{fontSize:8,color:C.dim,letterSpacing:1,marginBottom:3}}>KEY METRICS {g.mu?.det?.length>0?"(⚔️ = matchup-adjusted)":""}</div>
+                    <div style={{fontSize:11,color:C.dim,letterSpacing:1,marginBottom:3}}>KEY METRICS {g.mu?.det?.length>0?"(⚔️ = matchup-adjusted)":""}</div>
                     <MetricBar label="AdjEM" valA={g.a.em} valB={g.b.em} better="higher"/>
                     {g.adjStats?<>
                       <MetricBar label={g.adjStats.aEfg!==Math.round(g.a.efg*10)/10||g.adjStats.bEfg!==Math.round(g.b.efg*10)/10?"⚔️ eFG%":"eFG%"} valA={g.adjStats.aEfg} valB={g.adjStats.bEfg} unit="%" better="higher"/>
@@ -903,15 +906,15 @@ export default function V7Final(){
 
                   {/* Injuries */}
                   {(g.a.ij!==0||g.b.ij!==0)&&<div style={{marginBottom:6,padding:"4px 6px",background:`${C.red}08`,borderRadius:3}}>
-                    <div style={{fontSize:8,color:C.red,letterSpacing:1}}>🏥 INJURY IMPACT</div>
-                    {g.a.ij!==0&&<div style={{fontSize:9,color:"#999"}}>{g.a.name}: {g.a.ij} pts adjustment</div>}
-                    {g.b.ij!==0&&<div style={{fontSize:9,color:"#999"}}>{g.b.name}: {g.b.ij} pts adjustment</div>}
+                    <div style={{fontSize:11,color:C.red,letterSpacing:1}}>🏥 INJURY IMPACT</div>
+                    {g.a.ij!==0&&<div style={{fontSize:12,color:"#999"}}>{g.a.name}: {g.a.ij} pts adjustment</div>}
+                    {g.b.ij!==0&&<div style={{fontSize:12,color:"#999"}}>{g.b.name}: {g.b.ij} pts adjustment</div>}
                   </div>}
 
                   {/* Style matchups → these adjust the Four Factors directly */}
                   {g.mu?.det?.length>0&&<div style={{marginBottom:6,padding:"4px 6px",background:`${C.cyan}06`,borderRadius:3}}>
-                    <div style={{fontSize:8,color:C.cyan,letterSpacing:1,marginBottom:2}}>⚔️ MATCHUP ADJUSTMENTS (modify Four Factors inputs in L2)</div>
-                    {g.mu.det.map((d,j)=>(<div key={j} style={{fontSize:9,color:"#888",marginBottom:2,paddingLeft:6,borderLeft:`2px solid ${C.cyan}44`}}>
+                    <div style={{fontSize:11,color:C.cyan,letterSpacing:1,marginBottom:2}}>⚔️ MATCHUP ADJUSTMENTS (modify Four Factors inputs in L2)</div>
+                    {g.mu.det.map((d,j)=>(<div key={j} style={{fontSize:12,color:"#888",marginBottom:2,paddingLeft:6,borderLeft:`2px solid ${C.cyan}44`}}>
                       <span style={{color:C.cyan,fontWeight:700,marginRight:4}}>{d.stat}</span>
                       <span style={{color:d.i>0?C.grn:C.red,fontWeight:700}}>{d.i>0?"+":""}{d.i.toFixed(1)}</span>
                       <span style={{color:C.dim,marginLeft:2}}>({d.team})</span>
@@ -923,8 +926,8 @@ export default function V7Final(){
                   <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>
                     {[g.a,g.b].map((tm)=>tm?(
                       <div key={tm.name} style={{padding:"4px 6px",background:`${C.amb}06`,borderRadius:3}}>
-                        <div style={{fontSize:9,fontWeight:700,color:C.amb}}>🎓 {tm.coach}</div>
-                        <div style={{fontSize:8,color:C.dim}}>
+                        <div style={{fontSize:12,fontWeight:700,color:C.amb}}>🎓 {tm.coach}</div>
+                        <div style={{fontSize:11,color:C.dim}}>
                           Adj: {(tm.cAdj||0)>0?"+":""}{tm.cAdj||0} pts
                           {tm.cNote&&<span> · {tm.cNote}</span>}
                         </div>
@@ -934,25 +937,25 @@ export default function V7Final(){
 
                   {/* Fatigue (Upgrade 15) */}
                   {(g.L5!==0||(g.fatA?.detail)||(g.fatB?.detail))&&<div style={{marginBottom:6,padding:"4px 6px",background:`${C.pink}06`,borderRadius:3}}>
-                    <div style={{fontSize:8,color:C.pink,letterSpacing:1,marginBottom:2}}>🔋 FATIGUE (Round {g.rd||1} — {g.L5!==0?`${g.L5>0?"+":""}${g.L5} pts net`:"no impact yet"})</div>
+                    <div style={{fontSize:11,color:C.pink,letterSpacing:1,marginBottom:2}}>🔋 FATIGUE (Round {g.rd||1} — {g.L5!==0?`${g.L5>0?"+":""}${g.L5} pts net`:"no impact yet"})</div>
                     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>
                       {[{nm:g.a?.name,f:g.fatA},{nm:g.b?.name,f:g.fatB}].map(({nm,f})=>f?.detail?(
-                        <div key={nm} style={{fontSize:8,color:"#888"}}>
+                        <div key={nm} style={{fontSize:11,color:"#888"}}>
                           <span style={{color:C.pink,fontWeight:700}}>{nm}: {f.pts.toFixed(2)}pts</span>
-                          <div style={{color:C.dim,fontSize:7,marginTop:1}}>
+                          <div style={{color:C.dim,fontSize:10,marginTop:1}}>
                             Bench: {f.detail.benchPct}% · Stars: {f.detail.starMin}mpg · Rot: {f.detail.rot} · ConfT: {f.detail.confTG}g · Season: {f.detail.gp}g
                             <br/>Vulnerability: {f.detail.vuln}% · Round×: {f.detail.roundMult}
                           </div>
                         </div>
                       ):(
-                        <div key={nm} style={{fontSize:8,color:C.dim}}>{nm}: minimal fatigue</div>
+                        <div key={nm} style={{fontSize:11,color:C.dim}}>{nm}: minimal fatigue</div>
                       ))}
                     </div>
                   </div>}
 
                   {/* V8 Tier 1+2 Adjustments */}
                   {g.v8&&(Math.abs(g.v8.total)>0.05||!g.v8.ens.agree)&&<div style={{marginBottom:6,padding:"4px 6px",background:"rgba(255,200,50,0.04)",borderRadius:3,border:`1px solid ${C.gold}15`}}>
-                    <div style={{fontSize:8,color:C.gold,letterSpacing:1,marginBottom:3}}>🔬 V8 ADVANCED ADJUSTMENTS ({g.v8.total>0?"+":""}{g.v8.total} pts total)</div>
+                    <div style={{fontSize:11,color:C.gold,letterSpacing:1,marginBottom:3}}>🔬 V8 ADVANCED ADJUSTMENTS ({g.v8.total>0?"+":""}{g.v8.total} pts total)</div>
                     <div style={{display:"flex",flexWrap:"wrap",gap:4,fontSize:8}}>
                       {g.v8.gs!==0&&<span style={{padding:"1px 4px",background:`${C.purp}10`,borderRadius:3}}>
                         <span style={{color:C.purp}}>GameState</span> <span style={{color:g.v8.gs>0?C.grn:C.red}}>{g.v8.gs>0?"+":""}{g.v8.gs}</span>
@@ -974,7 +977,7 @@ export default function V7Final(){
                       </span>}
                     </div>
                     {/* Ensemble agreement */}
-                    <div style={{marginTop:4,fontSize:8,color:g.v8.ens.agree?C.grn:C.red}}>
+                    <div style={{marginTop:4,fontSize:11,color:g.v8.ens.agree?C.grn:C.red}}>
                       Ensemble: {g.v8.ens.agree?"✓ All 3 sub-models agree":"⚠️ Sub-models disagree"} 
                       <span style={{color:C.dim,marginLeft:4}}>EM:{g.v8.ens.m1} · Elo:{g.v8.ens.m2} · 4F:{g.v8.ens.m3}</span>
                     </div>
@@ -982,8 +985,8 @@ export default function V7Final(){
 
                   {/* Vegas comparison */}
                   {g.vegasSp!==null&&<div style={{marginTop:6,padding:"4px 6px",background:`${C.gold}06`,borderRadius:3}}>
-                    <div style={{fontSize:8,color:C.gold,letterSpacing:1}}>📊 MODEL vs VEGAS</div>
-                    <div style={{fontSize:9,color:"#999",display:"flex",gap:12}}>
+                    <div style={{fontSize:11,color:C.gold,letterSpacing:1}}>📊 MODEL vs VEGAS</div>
+                    <div style={{fontSize:12,color:"#999",display:"flex",gap:12}}>
                       <span>Model: <b style={{color:C.wh}}>{g.modelSp>0?"+":""}{g.modelSp}</b></span>
                       <span>Vegas: <b style={{color:C.wh}}>{g.vegasSp>0?"+":""}{g.vegasSp}</b></span>
                       <span>Blend (55/45): <b style={{color:C.gold}}>{g.rawSp>0?"+":""}{g.rawSp}</b></span>
@@ -999,7 +1002,7 @@ export default function V7Final(){
 
       {/* Champion's path */}
       {ch&&<div style={{marginTop:12,padding:"8px 10px",background:`${C.gold}05`,border:`1px solid ${C.gold}22`,borderRadius:6}}>
-        <div style={{fontSize:8,letterSpacing:2,color:C.gold,marginBottom:3}}>🏆 CHAMPION'S PATH</div>
+        <div style={{fontSize:11,letterSpacing:2,color:C.gold,marginBottom:3}}>🏆 CHAMPION'S PATH</div>
         {R.map((r,ri)=>{const cg=r.g.find(g=>g.w===ch.w);if(!cg)return null;return(
           <div key={ri} style={{display:"flex",alignItems:"center",gap:6,marginBottom:1,fontSize:9}}>
             <span style={{width:90,color:rC[ri]||C.gold,fontWeight:700}}>{r.n}</span>
@@ -1012,7 +1015,7 @@ export default function V7Final(){
 
       {/* Upsets */}
       {ups.length>0&&<div style={{marginTop:6,padding:"6px 8px",background:`${C.red}05`,border:`1px solid ${C.red}22`,borderRadius:6}}>
-        <div style={{fontSize:8,letterSpacing:2,color:C.red,marginBottom:2}}>PREDICTED UPSETS ({ups.length})</div>
+        <div style={{fontSize:11,letterSpacing:2,color:C.red,marginBottom:2}}>PREDICTED UPSETS ({ups.length})</div>
         <div style={{display:"flex",flexWrap:"wrap",gap:2}}>{ups.map((g,i)=>(
           <span key={i} style={{padding:"1px 5px",background:`${C.red}08`,borderRadius:6,fontSize:8}}>
             <span style={{color:C.red,fontWeight:700}}>({g.sW2}){g.w}</span>
@@ -1022,7 +1025,7 @@ export default function V7Final(){
         ))}</div>
       </div>}
 
-      <div style={{marginTop:10,fontSize:7,color:"#222",textAlign:"center",lineHeight:1.5}}>
+      <div style={{marginTop:10,fontSize:10,color:"#222",textAlign:"center",lineHeight:1.5}}>
         v8.0 Final · 23 upgrades · {totalG} games · Ensemble blend (80/20) · Vegas blend (55/45) · Recency weights · Matchups · Coaching · Fatigue
         <br/>V8 additions: Ref sensitivity · Game-state splits · Sharp money · Roster continuity · Timezone travel · Foul trouble · 3-model ensemble
         <br/>Data: KenPom 3/15 (includes 3/14 games), FanDuel/DraftKings lines 3/15, SI/ESPN injuries 3/16
