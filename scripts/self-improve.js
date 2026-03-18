@@ -1,0 +1,43 @@
+name: Update NCAA Predictions
+
+# Run daily at 7am CST
+on:
+  schedule:
+    - cron: '0 13 * * *'  # UTC times (13=7am CST)
+  workflow_dispatch:  # Manual trigger from GitHub Actions tab
+  repository_dispatch:  # API trigger from your app or phone
+    types: [manual-refresh]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Fetch updated data
+        run: node scripts/fetch-all-data.js
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+
+      - name: Self-improve from yesterday's results
+        run: node scripts/self-improve.js
+
+      - name: Run predictions with updated weights
+        run: node scripts/run-predictions.js
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name "mbangia630"
+          git config user.email "62906980+mbangia630@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet || git commit -m "Auto-update predictions $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
