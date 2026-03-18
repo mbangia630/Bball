@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-18T20:15:56.898Z",
+  "timestamp": "2026-03-18T22:12:26.423Z",
   "weightsVersion": 1,
   "completed": [
     {
@@ -393,12 +393,12 @@
       "teamB": "Texas",
       "round": "R64",
       "region": "West",
-      "modelSpread": 3.1,
+      "modelSpread": 3,
       "vegasLine": -2.5,
       "blendedSpread": 0,
-      "edge": 5.6,
-      "winner": "BYU",
-      "loser": "Texas",
+      "edge": 5.5,
+      "winner": "Texas",
+      "loser": "BYU",
       "winProb": 50.1,
       "scoreW": 71,
       "scoreL": 71,
