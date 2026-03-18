@@ -46,7 +46,7 @@ export default function ReportsPage() {
   const [report, setReport] = useState(null);
   const [delta, setDelta] = useState(null);
 
-  useEffect(() => {
+useEffect(() => {
     fetch('/data/reports/latest.json')
       .then(r => r.ok ? r.json() : null)
       .then(data => setReport(data || useSampleReport()))
@@ -54,7 +54,7 @@ export default function ReportsPage() {
 
     fetch('/data/reports/delta-latest.json')
       .then(r => r.ok ? r.json() : null)
-      .then(data => setDelta(data))
+      .then(data => setDelta(data || null))
       .catch(() => setDelta(null));
   }, []);
 
