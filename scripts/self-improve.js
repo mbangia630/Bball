@@ -329,7 +329,8 @@ function main() {
 
   const weights = loadWeights();
   const history = loadHistory();
-  const predictions = loadPredictions();
+  const predictionsRaw = loadPredictions();
+  const predictions = Array.isArray(predictionsRaw) ? predictionsRaw : (predictionsRaw?.predictions || []);
   const results = loadResults();
 
   console.log(`📊 Found ${predictions.length} predictions, ${results.length} results\n`);
