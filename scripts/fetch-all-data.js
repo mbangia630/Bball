@@ -6,7 +6,7 @@ const fs = require('fs');
 // Pulls from: ESPN, Odds API, injury news
 // ═══════════════════════════════════════════════════════
 
-const ODDS_KEY = process.env.ODDS_API_KEY || 'YOUR_FREE_KEY_HERE';
+const ODDS_KEY = process.env.ODDS_API_KEY || '';
 
 async function fetchJSON(url) {
   const res = await fetch(url);
@@ -39,9 +39,13 @@ async function fetchGames() {
 // ═══ 2. VEGAS LINES (Odds API — free, 500 req/month) ═══
 async function fetchOdds() {
   console.log('💰 Fetching Vegas lines...');
+  if (!ODDS_KEY) {
+    console.log('   ⚠️ No ODDS_API_KEY set — skipping');
+    return {};
+  }
   try {
     const data = await fetchJSON(
-      `https://api.the-odds-api.com/v4/sports/basketball_ncaab/odds/?apiKey=${b028dcbb6c7225951eb374e2d4e7a93a}&regions=us&markets=spreads,h2h&oddsFormat=american`
+      `https://api.the-odds-api.com/v4/sports/basketball_ncaab/odds/?apiKey=${ODDS_KEY}&regions=us&markets=spreads,h2h&oddsFormat=american`
     );
     const odds = {};
     for (const game of data) {
@@ -50,10 +54,8 @@ async function fetchOdds() {
         || game.bookmakers.find(b => b.key === 'fanduel')
         || game.bookmakers[0];
       if (!dk) continue;
-
       const spread = dk.markets.find(m => m.key === 'spreads');
       const ml = dk.markets.find(m => m.key === 'h2h');
-
       odds[key] = {
         spread: spread?.outcomes?.[0]?.point || null,
         spreadOdds: spread?.outcomes?.[0]?.price || -110,
@@ -113,7 +115,7 @@ async function fetchYesterdayResults() {
   return results;
 }
 
-// ═══ MAIN: Run all fetchers and save ═══
+// ═══ MAIN ═══
 async function main() {
   console.log('\n🏀 NCAA Prediction Engine — Data Update');
   console.log('Time:', new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }), 'CST');
@@ -126,7 +128,6 @@ async function main() {
     fetchYesterdayResults(),
   ]);
 
-  // Save everything to data/ folder
   const timestamp = new Date().toISOString();
   const dataBundle = { timestamp, games, odds, injuries, yesterdayResults: results };
 

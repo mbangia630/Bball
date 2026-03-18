@@ -1,11 +1,10 @@
 name: Update NCAA Predictions
 
-# Run daily at 7am CST
 on:
   schedule:
-    - cron: '0 13 * * *'  # UTC times (13=7am CST)
-  workflow_dispatch:  # Manual trigger from GitHub Actions tab
-  repository_dispatch:  # API trigger from your app or phone
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+  repository_dispatch:
     types: [manual-refresh]
 
 jobs:
@@ -28,25 +27,25 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
 
-      - name: Self-improve from yesterday's results
+      - name: Self-improve from yesterday results
         run: node scripts/self-improve.js
 
       - name: Run predictions with updated weights
         run: node scripts/run-predictions.js
 
-      - name: Generate delta report (what changed since 7am baseline)
+      - name: Generate delta report
         run: node scripts/delta-report.js
         env:
           IS_SCHEDULED: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
 
-      - name: Copy reports to public folder for Next.js
+      - name: Copy reports to public folder
         run: |
           mkdir -p public/data/reports
           cp -f data/reports/latest.json public/data/reports/latest.json 2>/dev/null || true
           cp -f data/reports/delta-latest.json public/data/reports/delta-latest.json 2>/dev/null || true
           cp -f data/predictions.json public/data/predictions.json 2>/dev/null || true
 
-      - name: Commit and push updated data
+      - name: Commit and push
         run: |
           git config user.name "mbangia630"
           git config user.email "62906980+mbangia630@users.noreply.github.com"

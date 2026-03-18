@@ -979,7 +979,7 @@ export default function V7Final(){
                     </div>
                     {/* Ensemble agreement */}
                     <div style={{marginTop:4,fontSize:11,color:g.v8.ens.agree?C.grn:C.red}}>
-                      Ensemble: {g.v8.ens.agree?"✓ All 3 sub-models agree":"⚠️ Sub-models disagree"}
+                      Ensemble: {g.v8.ens.agree?"✓ All 3 sub-models agree":"⚠️ Sub-models disagree"} 
                       <span style={{color:C.dim,marginLeft:4}}>EM:{g.v8.ens.m1} · Elo:{g.v8.ens.m2} · 4F:{g.v8.ens.m3}</span>
                     </div>
                   </div>}

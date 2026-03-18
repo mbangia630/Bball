@@ -2,7 +2,6 @@ export const metadata = {
   title: 'NCAA Tournament Predictions v8',
   description: '2026 March Madness bracket predictions',
 }
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
