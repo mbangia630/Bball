@@ -44,12 +44,18 @@ function StatBox({ label, value, sub, color }) {
 
 export default function ReportsPage() {
   const [report, setReport] = useState(null);
+  const [delta, setDelta] = useState(null);
 
   useEffect(() => {
     fetch('/data/reports/latest.json')
       .then(r => r.ok ? r.json() : null)
       .then(data => setReport(data || useSampleReport()))
       .catch(() => setReport(useSampleReport()));
+
+    fetch('/data/reports/delta-latest.json')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => setDelta(data))
+      .catch(() => setDelta(null));
   }, []);
 
   if (!report) return <div style={{ background: C.bg, color: C.wh, minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "monospace" }}>Loading report...</div>;
@@ -57,6 +63,8 @@ export default function ReportsPage() {
   const t = report.today;
   const cum = report.cumulative;
   const adj = report.adjustments;
+  const dd = delta?.deltas || [];
+  const ds = delta?.summary || {};
 
   return (
     <div style={{ fontFamily: "'JetBrains Mono',Consolas,monospace", background: C.bg, color: C.wh, minHeight: "100vh" }}>
@@ -71,8 +79,9 @@ export default function ReportsPage() {
           <div style={{ fontSize: 13, color: C.cyan, marginTop: 6, padding: "4px 14px", background: `${C.cyan}08`, borderRadius: 4, display: "inline-block" }}>
             📅 {report.date} · Model v{report.modelVersion} · Generated {report.generatedAtCST}
           </div>
-          <div style={{ marginTop: 8 }}>
+          <div style={{ marginTop: 8, display: "flex", justifyContent: "center", gap: 16 }}>
             <a href="/" style={{ fontSize: 12, color: C.blue, textDecoration: "none" }}>← Back to Bracket</a>
+            <a href="/changes" style={{ fontSize: 12, color: C.cyan, textDecoration: "none" }}>🔄 Full Changes Log</a>
           </div>
         </div>
 
@@ -198,9 +207,96 @@ export default function ReportsPage() {
           ⚡ Elo updated for <span style={{ color: "#fff", fontWeight: 700 }}>{report.eloUpdates}</span> games
         </div>
 
+        {/* ═══ PREDICTION DRIFT SINCE 7AM ═══ */}
+        {delta && (
+          <div style={{ marginBottom: 20 }}>
+            <div style={{ fontSize: 13, letterSpacing: 3, color: C.cyan, marginBottom: 10, fontWeight: 700 }}>
+              🔄 PREDICTION DRIFT SINCE 7AM BASELINE
+            </div>
+
+            {delta.type === 'BASELINE_SET' ? (
+              <div style={{ padding: "14px 16px", background: `${C.gold}08`, border: `1px solid ${C.gold}22`, borderRadius: 8, fontSize: 13, color: C.gold }}>
+                ⏰ {delta.message || "This is the 7am baseline. Manual refreshes will show drift from here."}
+              </div>
+            ) : dd.length === 0 ? (
+              <div style={{ padding: "14px 16px", background: `${C.grn}08`, border: `1px solid ${C.grn}22`, borderRadius: 8, fontSize: 13, color: C.grn }}>
+                ✅ No meaningful changes since the 7am baseline — predictions are stable.
+              </div>
+            ) : (
+              <>
+                {/* Drift summary */}
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, marginBottom: 10 }}>
+                  <StatBox label="Games Shifted" value={ds.gamesChanged || 0} sub={`of ${ds.totalGamesCompared || 0} total`} color={ds.gamesChanged > 0 ? C.cyan : C.dim} />
+                  <StatBox label="Winners Flipped" value={ds.winnersFlipped || 0} sub="since 7am" color={ds.winnersFlipped > 0 ? C.red : C.dim} />
+                  <StatBox label="New Matchups" value={ds.newMatchups || 0} sub="from results" color={ds.newMatchups > 0 ? C.grn : C.dim} />
+                  <StatBox label="Avg Spread Move" value={ds.avgSpreadChange ? ds.avgSpreadChange + " pts" : "0"} sub="since 7am" color={C.purp} />
+                </div>
+
+                {/* Baseline timestamp */}
+                {delta.baselineTime && (
+                  <div style={{ fontSize: 11, color: C.dim, marginBottom: 8, textAlign: "center" }}>
+                    Comparing to 7am baseline from: <span style={{ color: C.cyan }}>{delta.baselineTime}</span>
+                  </div>
+                )}
+
+                {/* Drift cards - top 8 movers */}
+                {dd.slice(0, 8).map((d, i) => {
+                  const isFlip = d.type === 'FLIP';
+                  const isNew = d.type === 'NEW';
+                  const bCol = isFlip ? C.red : isNew ? C.grn : C.cyan;
+                  return (
+                    <div key={i} style={{ marginBottom: 4, padding: "10px 14px", background: `${bCol}04`, border: `1px solid ${bCol}22`, borderRadius: 6, borderLeft: `4px solid ${bCol}` }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                        <div>
+                          <span style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>{d.matchup}</span>
+                          <span style={{ fontSize: 11, color: C.dim, marginLeft: 8 }}>{d.round}</span>
+                        </div>
+                        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                          {isFlip && <span style={{ fontSize: 10, padding: "2px 6px", background: `${C.red}20`, color: C.red, borderRadius: 3, fontWeight: 700 }}>FLIPPED</span>}
+                          {isNew && <span style={{ fontSize: 10, padding: "2px 6px", background: `${C.grn}20`, color: C.grn, borderRadius: 3, fontWeight: 700 }}>NEW</span>}
+                          {d.spreadChange !== undefined && !isNew && (
+                            <span style={{ fontSize: 13, fontWeight: 700, color: Math.abs(d.spreadChange) >= 2 ? C.red : C.purp }}>
+                              {d.spreadChange > 0 ? '↑' : '↓'} {Math.abs(d.spreadChange)} pts
+                            </span>
+                          )}
+                          {d.probChange !== undefined && !isNew && (
+                            <span style={{ fontSize: 12, color: C.blue }}>
+                              {d.probChange > 0 ? '+' : ''}{d.probChange}%
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {!isNew && (
+                        <div style={{ fontSize: 11, color: C.dim, marginTop: 4 }}>
+                          7am: <span style={{ color: "#aaa" }}>{d.baselineWinner} {d.baselineWinProb}% (spread {d.baselineSpread > 0 ? '+' : ''}{d.baselineSpread})</span>
+                          <span style={{ color: C.cyan, margin: "0 6px" }}>→</span>
+                          Now: <span style={{ color: "#fff" }}>{d.winner} {d.winProb}% (spread {d.spread > 0 ? '+' : ''}{d.spread})</span>
+                        </div>
+                      )}
+
+                      {d.factors && d.factors.length > 0 && (
+                        <div style={{ marginTop: 4, fontSize: 10, color: "#888" }}>
+                          {d.factors.map((f, fi) => <span key={fi}>{fi > 0 ? ' · ' : ''}{f}</span>)}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+
+                {dd.length > 8 && (
+                  <div style={{ textAlign: "center", marginTop: 8 }}>
+                    <a href="/changes" style={{ fontSize: 12, color: C.cyan, textDecoration: "none" }}>View all {dd.length} changes →</a>
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        )}
+
         {/* Footer */}
         <div style={{ fontSize: 11, color: C.dim, textAlign: "center", paddingTop: 14, borderTop: `1px solid ${C.brd}` }}>
-          NCAA Prediction Engine v8.0 · Self-Improvement Report · Auto-generated daily at 7am CST
+          NCAA Prediction Engine v8.0 · Performance + Drift Report · Auto-generated daily at 7am CST
         </div>
       </div>
     </div>
