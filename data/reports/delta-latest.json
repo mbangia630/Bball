@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-03-18T20:01:30.767Z",
+  "timestampCST": "Mar 18, 2026, 3:01 PM CST",
+  "type": "BASELINE_SET",
+  "message": "No 7am baseline found — using this run as the baseline. Next manual refresh will show changes.",
+  "baselineTime": "Mar 18, 2026, 3:01 PM CST (manual — no 7am run found)",
+  "totalPredictions": 29,
+  "deltas": [],
+  "summary": {
+    "totalGamesCompared": 29,
+    "gamesChanged": 0,
+    "winnersFlipped": 0,
+    "newMatchups": 0,
+    "avgSpreadChange": 0,
+    "biggestMover": "None"
+  }
+}
