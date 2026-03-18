@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-18T20:07:25.679Z",
+  "timestamp": "2026-03-18T20:15:56.746Z",
   "games": [
     {
       "id": "401856437",
@@ -31,15 +31,15 @@
       "mlHome": -166,
       "mlAway": 140,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Wake Forest Demon Deacons vs Navy Midshipmen": {
       "spread": 9.5,
       "spreadOdds": -108,
-      "mlHome": 455,
-      "mlAway": -625,
+      "mlHome": 440,
+      "mlAway": -600,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Utah Valley Wolverines vs GW Revolutionaries": {
       "spread": 1.5,
@@ -47,7 +47,7 @@
       "mlHome": 100,
       "mlAway": -120,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Illinois St Redbirds vs Kent State Golden Flashes": {
       "spread": -4.5,
@@ -55,7 +55,7 @@
       "mlHome": -225,
       "mlAway": 185,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Bradley Braves vs Dayton Flyers": {
       "spread": 1.5,
@@ -63,7 +63,7 @@
       "mlHome": 124,
       "mlAway": -148,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "New Mexico Lobos vs Sam Houston St Bearkats": {
       "spread": -12.5,
@@ -71,7 +71,7 @@
       "mlHome": -850,
       "mlAway": 575,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "SMU Mustangs vs Miami (OH) RedHawks": {
       "spread": 7.5,
@@ -79,7 +79,7 @@
       "mlHome": 260,
       "mlAway": -325,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Nevada Wolf Pack vs Murray St Racers": {
       "spread": 7.5,
@@ -87,7 +87,7 @@
       "mlHome": 295,
       "mlAway": -375,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "California Golden Bears vs UIC Flames": {
       "spread": -6.5,
@@ -95,7 +95,7 @@
       "mlHome": -250,
       "mlAway": 205,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Colorado St Rams vs Saint Joseph's Hawks": {
       "spread": -5.5,
@@ -103,7 +103,7 @@
       "mlHome": -270,
       "mlAway": 220,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Ohio State Buckeyes vs TCU Horned Frogs": {
       "spread": -2.5,
@@ -111,7 +111,7 @@
       "mlHome": -142,
       "mlAway": 120,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Nebraska Cornhuskers vs Troy Trojans": {
       "spread": -12.5,
@@ -119,7 +119,7 @@
       "mlHome": -1000,
       "mlAway": 650,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Louisville Cardinals vs South Florida Bulls": {
       "spread": -4.5,
@@ -127,7 +127,7 @@
       "mlHome": -198,
       "mlAway": 164,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Wisconsin Badgers vs High Point Panthers": {
       "spread": 10.5,
@@ -135,7 +135,7 @@
       "mlHome": 380,
       "mlAway": -500,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Duke Blue Devils vs Siena Saints": {
       "spread": -27.5,
@@ -143,7 +143,7 @@
       "mlHome": -20000,
       "mlAway": 3500,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Vanderbilt Commodores vs McNeese Cowboys": {
       "spread": 11.5,
@@ -151,7 +151,7 @@
       "mlHome": 500,
       "mlAway": -700,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Michigan St Spartans vs North Dakota St Bison": {
       "spread": -16.5,
@@ -159,7 +159,7 @@
       "mlHome": -1800,
       "mlAway": 1000,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Arkansas Razorbacks vs Hawai'i Rainbow Warriors": {
       "spread": -15.5,
@@ -167,7 +167,7 @@
       "mlHome": -1450,
       "mlAway": 850,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "North Carolina Tar Heels vs VCU Rams": {
       "spread": -2.5,
@@ -175,7 +175,7 @@
       "mlHome": -155,
       "mlAway": 130,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Michigan Wolverines vs Howard Bison": {
       "spread": 30.5,
@@ -183,7 +183,7 @@
       "mlHome": 3500,
       "mlAway": -20000,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "BYU Cougars vs Texas Longhorns": {
       "spread": -2.5,
@@ -191,7 +191,7 @@
       "mlHome": -135,
       "mlAway": 114,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Saint Mary's Gaels vs Texas A&M Aggies": {
       "spread": -3.5,
@@ -199,7 +199,7 @@
       "mlHome": -162,
       "mlAway": 136,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Illinois Fighting Illini vs Pennsylvania Quakers": {
       "spread": -25.5,
@@ -207,7 +207,7 @@
       "mlHome": -6500,
       "mlAway": 2000,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Georgia Bulldogs vs Saint Louis Billikens": {
       "spread": -2.5,
@@ -215,7 +215,7 @@
       "mlHome": -148,
       "mlAway": 124,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Gonzaga Bulldogs vs Kennesaw St Owls": {
       "spread": -21.5,
@@ -223,7 +223,7 @@
       "mlHome": -4000,
       "mlAway": 1600,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Houston Cougars vs Idaho Vandals": {
       "spread": -23.5,
@@ -231,7 +231,7 @@
       "mlHome": -8000,
       "mlAway": 2200,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Kentucky Wildcats vs Santa Clara Broncos": {
       "spread": -2.5,
@@ -239,7 +239,7 @@
       "mlHome": -162,
       "mlAway": 136,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Texas Tech Red Raiders vs Akron Zips": {
       "spread": 7.5,
@@ -247,7 +247,7 @@
       "mlHome": 270,
       "mlAway": -340,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Arizona Wildcats vs LIU Sharks": {
       "spread": -30.5,
@@ -255,7 +255,7 @@
       "mlHome": -100000,
       "mlAway": 5000,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Virginia Cavaliers vs Wright St Raiders": {
       "spread": -18.5,
@@ -263,7 +263,7 @@
       "mlHome": -2800,
       "mlAway": 1300,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Iowa State Cyclones vs Tennessee St Tigers": {
       "spread": -24.5,
@@ -271,7 +271,7 @@
       "mlHome": -8000,
       "mlAway": 2200,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Alabama Crimson Tide vs Hofstra Pride": {
       "spread": -11.5,
@@ -279,7 +279,7 @@
       "mlHome": -800,
       "mlAway": 550,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Villanova Wildcats vs Utah State Aggies": {
       "spread": -1.5,
@@ -287,7 +287,7 @@
       "mlHome": -125,
       "mlAway": 105,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Clemson Tigers vs Iowa Hawkeyes": {
       "spread": 2.5,
@@ -295,7 +295,7 @@
       "mlHome": 114,
       "mlAway": -135,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "St. John's Red Storm vs Northern Iowa Panthers": {
       "spread": 9.5,
@@ -303,7 +303,7 @@
       "mlHome": 400,
       "mlAway": -535,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "UCLA Bruins vs UCF Knights": {
       "spread": 5.5,
@@ -311,7 +311,7 @@
       "mlHome": 205,
       "mlAway": -250,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Purdue Boilermakers vs Queens University Royals": {
       "spread": -25.5,
@@ -319,7 +319,7 @@
       "mlHome": -8000,
       "mlAway": 2200,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Kansas Jayhawks vs Cal Baptist Lancers": {
       "spread": 14.5,
@@ -327,7 +327,7 @@
       "mlHome": 750,
       "mlAway": -1200,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "UConn Huskies vs Furman Paladins": {
       "spread": 20.5,
@@ -335,7 +335,7 @@
       "mlHome": 1700,
       "mlAway": -4500,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     },
     "Miami Hurricanes vs Missouri Tigers": {
       "spread": -1.5,
@@ -343,7 +343,7 @@
       "mlHome": -130,
       "mlAway": 110,
       "book": "draftkings",
-      "updated": "2026-03-18T20:07:00Z"
+      "updated": "2026-03-18T20:14:08Z"
     }
   },
   "injuries": [
