@@ -130,9 +130,9 @@ function gradeGames(predictions, results) {
 
 // ═══ TUNE: Adjust weights based on graded games ═══
 function tuneWeights(weights, graded, history) {
-  if (graded.length === 0) {
+   if (graded.length === 0) {
     console.log('   No games to learn from today');
-    return weights;
+    return { weights, changes: [] };
   }
 
   const lr = 0.02; // learning rate — small steps to avoid overcorrection
