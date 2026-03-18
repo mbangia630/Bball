@@ -1,8 +1,8 @@
 {
   "date": "2026-03-18",
-  "generatedAt": "2026-03-18T22:12:26.372Z",
-  "generatedAtCST": "2026-03-18 5:12 PM CST",
-  "modelVersion": 1,
+  "generatedAt": "2026-03-18T22:42:28.389Z",
+  "generatedAtCST": "2026-03-18 5:42 PM CST",
+  "modelVersion": 2,
   "today": {
     "gamesGraded": 0,
     "straightUp": {
@@ -32,35 +32,95 @@
   },
   "adjustments": {
     "changes": [
-      "No adjustments needed — model is performing within expectations."
+      "No adjustments needed."
     ],
     "before": {
       "vegasBlend": 0.55,
       "sigma": 11,
-      "recency": {
-        "em": 0.6,
-        "mg": 0.62,
-        "efg": 0.55,
-        "ast": 0.52,
-        "ftr": 0.47,
-        "orb": 0.47,
-        "tor": 0.42,
-        "tpt": 0.37
+      "layers": {
+        "L1": 0.42,
+        "L2": 0.28,
+        "L3": 0.18,
+        "L4": 0.08,
+        "L5": 0.04
+      },
+      "ensemble": {
+        "main": 0.8,
+        "subs": 0.2
       }
     },
     "after": {
       "vegasBlend": 0.55,
       "sigma": 11,
-      "recency": {
-        "em": 0.6,
-        "mg": 0.62,
-        "efg": 0.55,
-        "ast": 0.52,
-        "ftr": 0.47,
-        "orb": 0.47,
-        "tor": 0.42,
-        "tpt": 0.37
+      "layers": {
+        "L1": 0.42,
+        "L2": 0.28,
+        "L3": 0.18,
+        "L4": 0.08,
+        "L5": 0.04
+      },
+      "ensemble": {
+        "main": 0.8,
+        "subs": 0.2
       }
+    }
+  },
+  "insights": {
+    "layerDirectionalAccuracy": {},
+    "situational": {
+      "bySpreadBucket": {},
+      "bySeedMatchup": {},
+      "byRound": {},
+      "favVsDog": {
+        "fav": {
+          "correct": 0,
+          "total": 0
+        },
+        "dog": {
+          "correct": 0,
+          "total": 0
+        }
+      }
+    },
+    "calibration": {},
+    "edgeProfitability": {
+      "0-2": {
+        "profit": 0,
+        "games": 0
+      },
+      "2-5": {
+        "profit": 0,
+        "games": 0
+      },
+      "5+": {
+        "profit": 0,
+        "games": 0
+      }
+    },
+    "pace": {
+      "totalTempoError": 0,
+      "games": 0,
+      "overPredictions": 0,
+      "underPredictions": 0
+    },
+    "upsetPatterns": {
+      "byRound": {},
+      "bySeedDiff": {},
+      "bySpreadSize": {}
+    },
+    "confidenceAccuracy": {},
+    "volatileTeams": [],
+    "stableTeams": [],
+    "vegasMomentum": {
+      "modelStreak": 0,
+      "vegasStreak": 0,
+      "last10": []
+    },
+    "hca": {
+      "totalPredictedHCA": 0,
+      "totalActualMarginBias": 0,
+      "gamesWithHCA": 0,
+      "gamesNeutral": 0
     }
   },
   "eloUpdates": 1

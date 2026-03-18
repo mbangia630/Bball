@@ -1,0 +1,173 @@
+{
+  "layerAccuracy": {
+    "L1": {
+      "totalSigned": 0,
+      "correctDir": 0,
+      "totalAbsError": 0,
+      "games": 0
+    },
+    "L2": {
+      "totalSigned": 0,
+      "correctDir": 0,
+      "totalAbsError": 0,
+      "games": 0
+    },
+    "L3": {
+      "totalSigned": 0,
+      "correctDir": 0,
+      "totalAbsError": 0,
+      "games": 0
+    },
+    "L4": {
+      "totalSigned": 0,
+      "correctDir": 0,
+      "totalAbsError": 0,
+      "games": 0
+    },
+    "L5": {
+      "totalSigned": 0,
+      "correctDir": 0,
+      "totalAbsError": 0,
+      "games": 0
+    },
+    "v8": {
+      "totalSigned": 0,
+      "correctDir": 0,
+      "totalAbsError": 0,
+      "games": 0
+    },
+    "ens": {
+      "totalSigned": 0,
+      "correctDir": 0,
+      "totalAbsError": 0,
+      "games": 0
+    }
+  },
+  "teamK": {},
+  "situations": {
+    "bySpreadBucket": {},
+    "bySeedMatchup": {},
+    "byRound": {},
+    "favVsDog": {
+      "fav": {
+        "correct": 0,
+        "total": 0
+      },
+      "dog": {
+        "correct": 0,
+        "total": 0
+      }
+    }
+  },
+  "injuryImpact": {},
+  "lineMovement": {
+    "sharpCorrect": 0,
+    "sharpTotal": 0,
+    "reverseLineCorrect": 0,
+    "reverseLineTotal": 0,
+    "edgeBuckets": {
+      "0-2": {
+        "profit": 0,
+        "games": 0
+      },
+      "2-5": {
+        "profit": 0,
+        "games": 0
+      },
+      "5+": {
+        "profit": 0,
+        "games": 0
+      }
+    }
+  },
+  "ensembleAccuracy": {
+    "main": {
+      "totalError": 0,
+      "games": 0
+    },
+    "ens": {
+      "totalError": 0,
+      "games": 0
+    }
+  },
+  "calibration": {},
+  "pace": {
+    "totalTempoError": 0,
+    "games": 0,
+    "overPredictions": 0,
+    "underPredictions": 0
+  },
+  "statRecency": {},
+  "homeCourt": {
+    "totalPredictedHCA": 0,
+    "totalActualMarginBias": 0,
+    "gamesWithHCA": 0,
+    "gamesNeutral": 0
+  },
+  "v8Accuracy": {
+    "ref": {
+      "totalAbs": 0,
+      "correctDir": 0,
+      "games": 0
+    },
+    "gs": {
+      "totalAbs": 0,
+      "correctDir": 0,
+      "games": 0
+    },
+    "sharp": {
+      "totalAbs": 0,
+      "correctDir": 0,
+      "games": 0
+    },
+    "cont": {
+      "totalAbs": 0,
+      "correctDir": 0,
+      "games": 0
+    },
+    "tz": {
+      "totalAbs": 0,
+      "correctDir": 0,
+      "games": 0
+    },
+    "foul": {
+      "totalAbs": 0,
+      "correctDir": 0,
+      "games": 0
+    }
+  },
+  "matchupAccuracy": {
+    "withMatchup": {
+      "totalError": 0,
+      "games": 0
+    },
+    "withoutMatchup": {
+      "totalError": 0,
+      "games": 0
+    }
+  },
+  "vegasMomentum": {
+    "modelStreak": 0,
+    "vegasStreak": 0,
+    "last10": []
+  },
+  "upsetPatterns": {
+    "byRound": {},
+    "bySeedDiff": {},
+    "bySpreadSize": {}
+  },
+  "confidenceTracking": {
+    "highConf": {
+      "correct": 0,
+      "total": 0
+    },
+    "medConf": {
+      "correct": 0,
+      "total": 0
+    },
+    "lowConf": {
+      "correct": 0,
+      "total": 0
+    }
+  }
+}
