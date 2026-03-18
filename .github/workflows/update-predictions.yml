@@ -34,6 +34,9 @@ jobs:
       - name: Run predictions with updated weights
         run: node scripts/run-predictions.js
 
+      - name: Generate delta report (what changed since last run)
+        run: node scripts/delta-report.js
+
       - name: Commit and push updated data
         run: |
           git config user.name "mbangia630"
