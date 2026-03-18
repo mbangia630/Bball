@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { resolve } = require('./team-names');
 
 // ═══════════════════════════════════════════════════════
 // PREDICTION RUNNER — uses fresh data to re-run model
@@ -8,7 +9,6 @@ const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('data/latest.json', 'utf8'));
 
 // Load the team database (your algorithm's team stats)
-// This is the DB object from v8-final.jsx, exported as JSON
 let teamDB = JSON.parse(fs.readFileSync('data/teams.json', 'utf8'));
 
 console.log('\n🧠 Running predictions with data from', data.timestamp);
@@ -25,8 +25,10 @@ console.log(`📊 Loaded ${Object.keys(vegasLines).length} Vegas lines`);
 // ═══ 2. UPDATE ELO FROM YESTERDAY'S RESULTS ═══
 let eloUpdates = 0;
 for (const game of data.yesterdayResults) {
-  const a = teamDB[game.teamA];
-  const b = teamDB[game.teamB];
+  const aName = resolve(game.teamA, teamDB);
+  const bName = resolve(game.teamB, teamDB);
+  const a = aName ? teamDB[aName] : null;
+  const b = bName ? teamDB[bName] : null;
   if (!a || !b) continue;
 
   const K = 20;
@@ -45,8 +47,7 @@ console.log(`⚡ Updated Elo for ${eloUpdates} games`);
 // ═══ 3. FLAG INJURY CHANGES ═══
 const injuryKeywords = {};
 for (const article of data.injuries) {
-  const text = (article.headline + ' ' + article.description).toLowerCase();
-  // Simple keyword extraction — in production, use Claude API for better parsing
+  const text = (article.headline + ' ' + (article.description || '')).toLowerCase();
   for (const team of Object.keys(teamDB)) {
     if (text.includes(team.toLowerCase())) {
       if (!injuryKeywords[team]) injuryKeywords[team] = [];
@@ -63,23 +64,40 @@ if (teamsWithInjuryNews.length > 0) {
 // ═══ 4. RUN PREDICTIONS FOR TODAY'S GAMES ═══
 const predictions = [];
 for (const game of data.games) {
-  const a = teamDB[game.teamA];
-  const b = teamDB[game.teamB];
+  const aName = resolve(game.teamA, teamDB);
+  const bName = resolve(game.teamB, teamDB);
+  const a = aName ? teamDB[aName] : null;
+  const b = bName ? teamDB[bName] : null;
+
   if (!a || !b) {
-    console.log(`   ⚠️ Unknown team: ${game.teamA} or ${game.teamB}`);
+    const missing = [];
+    if (!a) missing.push(game.teamA);
+    if (!b) missing.push(game.teamB);
+    console.log(`   ⚠️ Unknown team: ${missing.join(' or ')} (not in tournament database)`);
     continue;
   }
 
   // Simplified sim — in production, use the full v8 sim() function
   const emDiff = (a.em || 0) - (b.em || 0);
-  const modelSpread = emDiff * 0.75; // simplified
-  const vegasLine = vegasLines[game.teamA + ' vs ' + game.teamB]
-    || vegasLines[game.teamB + ' vs ' + game.teamA]
-    || null;
+  const modelSpread = emDiff * 0.75;
+
+  // Try multiple Vegas line key formats
+  const vegasKey1 = game.teamA + ' vs ' + game.teamB;
+  const vegasKey2 = game.teamB + ' vs ' + game.teamA;
+  const vegasKey3 = (aName || '') + ' vs ' + (bName || '');
+  const vegasKey4 = (bName || '') + ' vs ' + (aName || '');
+  const vegasLine = vegasLines[vegasKey1] || vegasLines[vegasKey2]
+    || vegasLines[vegasKey3] || vegasLines[vegasKey4] || null;
+
   const blended = vegasLine !== null ? modelSpread * 0.45 + vegasLine * 0.55 : modelSpread;
 
   predictions.push({
-    ...game,
+    teamA: aName || game.teamA,
+    teamB: bName || game.teamB,
+    espnNameA: game.teamA,
+    espnNameB: game.teamB,
+    time: game.time,
+    venue: game.venue,
     modelSpread: Math.round(modelSpread * 10) / 10,
     vegasLine,
     blendedSpread: Math.round(blended * 10) / 10,

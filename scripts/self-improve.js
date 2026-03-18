@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { resolve } = require('./team-names');
 
 // ═══════════════════════════════════════════════════════
 // SELF-IMPROVEMENT ENGINE
@@ -207,8 +208,10 @@ function tuneWeights(weights, graded, history) {
 function updateElo(teams, results) {
   let updates = 0;
   for (const game of results) {
-    const a = teams[game.teamA];
-    const b = teams[game.teamB];
+    const aName = resolve(game.teamA, teams);
+    const bName = resolve(game.teamB, teams);
+    const a = aName ? teams[aName] : null;
+    const b = bName ? teams[bName] : null;
     if (!a || !b) continue;
 
     const K = 20;
