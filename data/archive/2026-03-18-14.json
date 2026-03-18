@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-18T18:30:05.844Z",
+  "timestamp": "2026-03-18T14:19:47.019Z",
   "games": [
     {
       "id": "401856437",
@@ -31,79 +31,79 @@
       "mlHome": -166,
       "mlAway": 140,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Wake Forest Demon Deacons vs Navy Midshipmen": {
-      "spread": 10.5,
-      "spreadOdds": -115,
-      "mlHome": 455,
-      "mlAway": -625,
+      "spread": 12.5,
+      "spreadOdds": -118,
+      "mlHome": 550,
+      "mlAway": -800,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Utah Valley Wolverines vs GW Revolutionaries": {
-      "spread": 1.5,
+      "spread": 2.5,
       "spreadOdds": -112,
-      "mlHome": 100,
-      "mlAway": -120,
+      "mlHome": 110,
+      "mlAway": -130,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Illinois St Redbirds vs Kent State Golden Flashes": {
       "spread": -5.5,
-      "spreadOdds": -105,
-      "mlHome": -225,
-      "mlAway": 185,
+      "spreadOdds": -115,
+      "mlHome": -258,
+      "mlAway": 210,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Bradley Braves vs Dayton Flyers": {
-      "spread": 2.5,
-      "spreadOdds": -110,
-      "mlHome": 124,
-      "mlAway": -148,
+      "spread": 1.5,
+      "spreadOdds": -108,
+      "mlHome": 110,
+      "mlAway": -130,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "New Mexico Lobos vs Sam Houston St Bearkats": {
-      "spread": -12.5,
+      "spread": -11.5,
       "spreadOdds": -115,
-      "mlHome": -850,
-      "mlAway": 575,
+      "mlHome": -800,
+      "mlAway": 550,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "SMU Mustangs vs Miami (OH) RedHawks": {
-      "spread": 7.5,
-      "spreadOdds": -110,
-      "mlHome": 260,
-      "mlAway": -325,
+      "spread": 6.5,
+      "spreadOdds": -105,
+      "mlHome": 250,
+      "mlAway": -310,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Nevada Wolf Pack vs Murray St Racers": {
-      "spread": 7.5,
-      "spreadOdds": -108,
-      "mlHome": 295,
-      "mlAway": -375,
+      "spread": 8.5,
+      "spreadOdds": -110,
+      "mlHome": 310,
+      "mlAway": -395,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "California Golden Bears vs UIC Flames": {
-      "spread": -6.5,
+      "spread": -5.5,
       "spreadOdds": -105,
-      "mlHome": -250,
-      "mlAway": 205,
+      "mlHome": -218,
+      "mlAway": 180,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Colorado St Rams vs Saint Joseph's Hawks": {
-      "spread": -5.5,
-      "spreadOdds": -110,
+      "spread": -6.5,
+      "spreadOdds": -112,
       "mlHome": -270,
       "mlAway": 220,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Ohio State Buckeyes vs TCU Horned Frogs": {
       "spread": -2.5,
@@ -111,39 +111,39 @@
       "mlHome": -142,
       "mlAway": 120,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Nebraska Cornhuskers vs Troy Trojans": {
-      "spread": -12.5,
-      "spreadOdds": -118,
+      "spread": -13.5,
+      "spreadOdds": -102,
       "mlHome": -1000,
       "mlAway": 650,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Louisville Cardinals vs South Florida Bulls": {
-      "spread": -4.5,
-      "spreadOdds": -108,
-      "mlHome": -205,
-      "mlAway": 170,
+      "spread": -5.5,
+      "spreadOdds": -110,
+      "mlHome": -238,
+      "mlAway": 195,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Wisconsin Badgers vs High Point Panthers": {
-      "spread": 10.5,
-      "spreadOdds": -118,
+      "spread": 9.5,
+      "spreadOdds": -102,
       "mlHome": 380,
       "mlAway": -500,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Duke Blue Devils vs Siena Saints": {
-      "spread": -27.5,
-      "spreadOdds": -118,
+      "spread": -28.5,
+      "spreadOdds": -102,
       "mlHome": -20000,
       "mlAway": 3500,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Vanderbilt Commodores vs McNeese Cowboys": {
       "spread": 11.5,
@@ -151,7 +151,7 @@
       "mlHome": 500,
       "mlAway": -700,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Michigan St Spartans vs North Dakota St Bison": {
       "spread": -16.5,
@@ -159,39 +159,39 @@
       "mlHome": -1800,
       "mlAway": 1000,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Arkansas Razorbacks vs Hawai'i Rainbow Warriors": {
       "spread": -15.5,
-      "spreadOdds": -112,
+      "spreadOdds": -115,
       "mlHome": -1450,
       "mlAway": 850,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "North Carolina Tar Heels vs VCU Rams": {
       "spread": -2.5,
       "spreadOdds": -112,
-      "mlHome": -155,
-      "mlAway": 130,
+      "mlHome": -142,
+      "mlAway": 120,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Michigan Wolverines vs Howard Bison": {
-      "spread": 30.5,
-      "spreadOdds": -102,
+      "spread": 31.5,
+      "spreadOdds": -115,
       "mlHome": 3500,
       "mlAway": -20000,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "BYU Cougars vs Texas Longhorns": {
-      "spread": -2.5,
-      "spreadOdds": -105,
-      "mlHome": -135,
-      "mlAway": 114,
+      "spread": -1.5,
+      "spreadOdds": -120,
+      "mlHome": -148,
+      "mlAway": 124,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Saint Mary's Gaels vs Texas A&M Aggies": {
       "spread": -3.5,
@@ -199,7 +199,7 @@
       "mlHome": -162,
       "mlAway": 136,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Illinois Fighting Illini vs Pennsylvania Quakers": {
       "spread": -24.5,
@@ -207,15 +207,15 @@
       "mlHome": -6500,
       "mlAway": 2000,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Georgia Bulldogs vs Saint Louis Billikens": {
-      "spread": -2.5,
-      "spreadOdds": -102,
+      "spread": -1.5,
+      "spreadOdds": -118,
       "mlHome": -148,
       "mlAway": 124,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Gonzaga Bulldogs vs Kennesaw St Owls": {
       "spread": -21.5,
@@ -223,7 +223,7 @@
       "mlHome": -4000,
       "mlAway": 1600,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Houston Cougars vs Idaho Vandals": {
       "spread": -23.5,
@@ -231,15 +231,15 @@
       "mlHome": -8000,
       "mlAway": 2200,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Kentucky Wildcats vs Santa Clara Broncos": {
-      "spread": -2.5,
-      "spreadOdds": -118,
+      "spread": -3.5,
+      "spreadOdds": -105,
       "mlHome": -162,
       "mlAway": 136,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Texas Tech Red Raiders vs Akron Zips": {
       "spread": 7.5,
@@ -247,7 +247,7 @@
       "mlHome": 270,
       "mlAway": -340,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Arizona Wildcats vs LIU Sharks": {
       "spread": -30.5,
@@ -255,7 +255,7 @@
       "mlHome": -100000,
       "mlAway": 5000,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Virginia Cavaliers vs Wright St Raiders": {
       "spread": -18.5,
@@ -263,7 +263,7 @@
       "mlHome": -2800,
       "mlAway": 1300,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Iowa State Cyclones vs Tennessee St Tigers": {
       "spread": -24.5,
@@ -271,7 +271,7 @@
       "mlHome": -8000,
       "mlAway": 2200,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Alabama Crimson Tide vs Hofstra Pride": {
       "spread": -11.5,
@@ -279,7 +279,7 @@
       "mlHome": -800,
       "mlAway": 550,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Villanova Wildcats vs Utah State Aggies": {
       "spread": -1.5,
@@ -287,7 +287,7 @@
       "mlHome": -125,
       "mlAway": 105,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Clemson Tigers vs Iowa Hawkeyes": {
       "spread": 2.5,
@@ -295,7 +295,7 @@
       "mlHome": 114,
       "mlAway": -135,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "St. John's Red Storm vs Northern Iowa Panthers": {
       "spread": 9.5,
@@ -303,7 +303,7 @@
       "mlHome": 400,
       "mlAway": -535,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "UCLA Bruins vs UCF Knights": {
       "spread": 5.5,
@@ -311,7 +311,7 @@
       "mlHome": 205,
       "mlAway": -250,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Purdue Boilermakers vs Queens University Royals": {
       "spread": -25.5,
@@ -319,7 +319,7 @@
       "mlHome": -8000,
       "mlAway": 2200,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:01Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Kansas Jayhawks vs Cal Baptist Lancers": {
       "spread": 14.5,
@@ -327,7 +327,7 @@
       "mlHome": 750,
       "mlAway": -1200,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:02Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "UConn Huskies vs Furman Paladins": {
       "spread": 20.5,
@@ -335,7 +335,7 @@
       "mlHome": 1700,
       "mlAway": -4500,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:02Z"
+      "updated": "2026-03-18T14:19:06Z"
     },
     "Miami Hurricanes vs Missouri Tigers": {
       "spread": -1.5,
@@ -343,44 +343,84 @@
       "mlHome": -130,
       "mlAway": 110,
       "book": "draftkings",
-      "updated": "2026-03-18T18:29:02Z"
+      "updated": "2026-03-18T14:19:06Z"
     }
   },
   "injuries": [
     {
-      "headline": "No. 11 Texas vs. No. 6 BYU game preview",
-      "description": "Check out some stats on BYU's matchup with Texas in the NCAA men's tournament.",
-      "published": "2026-03-18T18:10:47Z"
-    },
-    {
-      "headline": "Duke likely without Patrick Ngongba for NCAA tournament opener",
-      "description": "Duke will open the NCAA tournament Thursday without big man Patrick Ngongba, who continues to recover from a foot injury, putting some added pressure on star freshman Cameron Boozer.",
-      "published": "2026-03-18T17:56:08Z"
-    },
-    {
-      "headline": "No. 12 Akron vs. No. 5 Texas Tech game preview",
-      "description": "Check out some stats on Akron's matchup vs. Texas Tech in the NCAA men's tournament.",
-      "published": "2026-03-18T17:35:12Z"
-    },
-    {
-      "headline": "Louisville to be without star freshman Mikel Brown against USF",
-      "description": "Louisville star freshman Mikel Brown Jr. is out for the Cardinals' first-round game against South Florida, the school announced Wednesday.",
-      "published": "2026-03-18T17:00:29Z"
-    },
-    {
-      "headline": "No. 11 VCU vs. No. 6 North Carolina game preview",
-      "description": "Check out some stats on the matchup between North Carolina and VCU in the NCAA men's tournament.",
-      "published": "2026-03-18T15:37:29Z"
-    },
-    {
-      "headline": "No. 14 Penn vs. No. 3 Illinois game preview",
-      "description": "Check out some stats on the matchup between Penn and Illinois in the NCAA men's tournament.",
-      "published": "2026-03-18T15:31:20Z"
-    },
-    {
       "headline": "No. 1 Michigan vs. No. 16 Howard game preview",
       "description": "Check out some stats on Michigan's opening round game vs. Howard in the NCAA men's tournament.",
       "published": "2026-03-18T01:59:41Z"
+    },
+    {
+      "headline": "No. 9 Iowa vs. No. 8 Clemson game preview",
+      "description": "Check out some stats on No. 9 Iowa's Round of 64 matchup with No. 8 Clemson in the NCAA men's tournament.",
+      "published": "2026-03-18T14:08:21Z"
+    },
+    {
+      "headline": "No 12. McNeese vs. No. 5 Vanderbilt game preview",
+      "description": "Check out some stats on McNeese's matchup vs. Vanderbilt in the NCAA men's tournament.",
+      "published": "2026-03-17T22:08:51Z"
+    },
+    {
+      "headline": "No. 13 Troy vs. No. 4 Nebraska game preview",
+      "description": "Check out some stats on Troy's matchup vs. Nebraska in the NCAA men's tournament.",
+      "published": "2026-03-17T22:08:34Z"
+    },
+    {
+      "headline": "No. 8 Georgia vs. No. 9 Saint Louis game preview",
+      "description": "Check out some stats on Georgia's matchup vs. Saint Louis in the NCAA men's tournament.",
+      "published": "2026-03-17T22:01:45Z"
+    },
+    {
+      "headline": "No. 5 Wisconsin vs. No. 12 High Point game preview",
+      "description": "Check out some stats on Wisconsin's opening-round matchup vs. High Point in the NCAA men's tournament.",
+      "published": "2026-03-17T22:01:28Z"
+    },
+    {
+      "headline": "No. 10 Missouri vs. No. 7 Miami Game Preview",
+      "description": "Check out some stats on No. 10 Missouri's Round of 64 matchup with No. 7 Miami in the NCAA men's tournament.",
+      "published": "2026-03-18T14:13:03Z"
+    },
+    {
+      "headline": "No. 4 Alabama vs. No. 13 Hofstra game preview",
+      "description": "Check out some stats on Alabama's matchup with Hofstra in the NCAA men's tournament.",
+      "published": "2026-03-18T14:04:50Z"
+    },
+    {
+      "headline": "No. 15 Idaho vs. No. 2 Houston game preview",
+      "description": "Check out some stats on Houston's matchup with Idaho in the NCAA men's tournament.",
+      "published": "2026-03-18T13:34:15Z"
+    },
+    {
+      "headline": "No. 10 Texas A&M vs. No. 7 Saint Mary's game preview",
+      "description": "Check out some stats on Texas A&M's matchup with Saint Mary's in the NCAA men's tournament.",
+      "published": "2026-03-18T13:32:38Z"
+    },
+    {
+      "headline": "No. 10 Santa Clara vs. No. 7 Kentucky Game Preview",
+      "description": "Check out some stats on No. 10 Santa Clara's Round of 64 matchup with No. 7 Kentucky in the NCAA men's tournament.",
+      "published": "2026-03-18T14:11:44Z"
+    },
+    {
+      "headline": "No. 9 TCU vs. No. 8 Ohio State game preview",
+      "description": "Check out some stats on Ohio State's matchup with TCU in the NCAA men's tournament.",
+      "published": "2026-03-17T21:07:06Z"
+    },
+    {
+      "headline": "No. 16 Siena vs. No. 1 Duke game preview",
+      "description": "Check out some stats on Duke's matchup with Siena in the NCAA men's tournament.",
+      "published": "2026-03-17T20:07:24Z"
+    },
+    {
+      "headline": "No. 15 Queens University vs. No. 2 Purdue game preview",
+      "description": "Check out some stats on Queens University's matchup vs. Purdue in the NCAA men's tournament..",
+      "published": "2026-03-17T18:49:12Z"
+    },
+    {
+      "headline": "No. 15 Tennessee State vs. No. 2 Iowa State game preview",
+      "description": "Check out some stats on Tennessee State's matchup vs. Iowa State in the NCAA tournament.",
+      "published": "2026-03-17T17:42:09Z"
     }
   ],
   "yesterdayResults": [

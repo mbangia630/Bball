@@ -670,7 +670,6 @@ export default function V7Final(){
         <div style={{fontSize:13,color:C.cyan,marginTop:6,padding:"4px 12px",background:`${C.cyan}08`,borderRadius:4,display:"inline-block"}}>
           📡 Last data update: {new Date().toLocaleString('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true})} CST
         </div>
-        <div style={{marginTop:6}}><a href="/report" style={{fontSize:12,color:C.purp,textDecoration:"none"}}>📋 View Daily Performance Report →</a></div>
       </div>
 
       {/* Champion */}
@@ -979,7 +978,7 @@ export default function V7Final(){
                     </div>
                     {/* Ensemble agreement */}
                     <div style={{marginTop:4,fontSize:11,color:g.v8.ens.agree?C.grn:C.red}}>
-                      Ensemble: {g.v8.ens.agree?"✓ All 3 sub-models agree":"⚠️ Sub-models disagree"}
+                      Ensemble: {g.v8.ens.agree?"✓ All 3 sub-models agree":"⚠️ Sub-models disagree"} 
                       <span style={{color:C.dim,marginLeft:4}}>EM:{g.v8.ens.m1} · Elo:{g.v8.ens.m2} · 4F:{g.v8.ens.m3}</span>
                     </div>
                   </div>}
