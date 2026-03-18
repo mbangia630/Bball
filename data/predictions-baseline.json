@@ -582,5 +582,7 @@
     "gamesPlayed": 2,
     "gamesRemaining": 65,
     "currentRound": "R64"
-  }
+  },
+  "baselineSetAt": "2026-03-18T20:01:30.742Z",
+  "baselineSetAtCST": "Mar 18, 2026, 3:01 PM CST (manual — no 7am run found)"
 }
