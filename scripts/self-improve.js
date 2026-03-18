@@ -59,7 +59,8 @@ function loadHistory() {
 // Load yesterday's predictions
 function loadPredictions() {
   try {
-    return JSON.parse(fs.readFileSync('data/predictions.json', 'utf8'));
+    const raw = JSON.parse(fs.readFileSync('data/predictions.json', 'utf8'));
+    return raw.predictions || raw || [];
   } catch {
     console.log('⚠️ No predictions file found');
     return [];
