@@ -1,10 +1,3 @@
-const fetch = (...args) => import('node-fetch').then(({default: f}) => f(...args));
-```
-
-Actually, simpler fix — just install node-fetch. In PyCharm's Terminal:
-```
-npm install node-fetch
-
 const fetch = require('node-fetch');
 
 const fs = require('fs');
