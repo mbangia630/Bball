@@ -85,16 +85,47 @@ export default function ReportsPage() {
           </div>
         </div>
 
-        {/* Today's Performance */}
+        {/* Yesterday vs Cumulative - side by side */}
         <div style={{ marginBottom: 20 }}>
-          <div style={{ fontSize: 13, letterSpacing: 3, color: C.gold, marginBottom: 10, fontWeight: 700 }}>
-            📊 TODAY'S RESULTS ({t.gamesGraded} games graded)
+          {/* YESTERDAY */}
+          <div style={{ padding: "14px 16px", background: `${C.gold}06`, border: `1px solid ${C.gold}22`, borderRadius: "8px 8px 0 0" }}>
+            <div style={{ fontSize: 13, letterSpacing: 3, color: C.gold, fontWeight: 700, marginBottom: 10 }}>
+              📊 YESTERDAY ({t.gamesGraded} games)
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
+              <StatBox label="Straight-Up" value={t.straightUp.pct !== null ? t.straightUp.pct + "%" : "—"} sub={t.straightUp.total > 0 ? `${t.straightUp.correct}/${t.straightUp.total} correct` : "No games yet"} color={t.straightUp.pct >= 70 ? C.grn : t.straightUp.pct >= 50 ? C.gold : t.straightUp.pct !== null ? C.red : C.dim} />
+              <StatBox label="vs Spread (ATS)" value={t.ats.pct !== null ? t.ats.pct + "%" : "—"} sub={t.ats.total > 0 ? `${t.ats.correct}/${t.ats.total} covered` : "No games yet"} color={t.ats.pct >= 55 ? C.grn : t.ats.pct >= 50 ? C.gold : t.ats.pct !== null ? C.red : C.dim} />
+              <StatBox label="Beat Vegas" value={t.beatVegas.pct !== null ? t.beatVegas.pct + "%" : "—"} sub={t.beatVegas.total > 0 ? `${t.beatVegas.correct}/${t.beatVegas.total} closer` : "No Vegas lines"} color={t.beatVegas.pct >= 50 ? C.grn : t.beatVegas.pct !== null ? C.red : C.dim} />
+              <StatBox label="Avg Error" value={t.avgError !== null ? t.avgError + "pts" : "—"} sub={t.avgVegasError !== null ? `Vegas: ${t.avgVegasError}pts` : ""} color={t.avgError !== null && t.avgError < 10 ? C.grn : t.avgError !== null && t.avgError < 14 ? C.gold : C.dim} />
+            </div>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
-            <StatBox label="Straight-Up" value={t.straightUp.pct !== null ? t.straightUp.pct + "%" : "—"} sub={t.straightUp.total > 0 ? `${t.straightUp.correct}/${t.straightUp.total} correct` : "No games yet"} color={t.straightUp.pct >= 70 ? C.grn : t.straightUp.pct >= 50 ? C.gold : t.straightUp.pct !== null ? C.red : C.dim} />
-            <StatBox label="vs Spread (ATS)" value={t.ats.pct !== null ? t.ats.pct + "%" : "—"} sub={t.ats.total > 0 ? `${t.ats.correct}/${t.ats.total} covered` : "No games yet"} color={t.ats.pct >= 55 ? C.grn : t.ats.pct >= 50 ? C.gold : t.ats.pct !== null ? C.red : C.dim} />
-            <StatBox label="Beat Vegas" value={t.beatVegas.pct !== null ? t.beatVegas.pct + "%" : "—"} sub={t.beatVegas.total > 0 ? `${t.beatVegas.correct}/${t.beatVegas.total} closer` : "No Vegas lines"} color={t.beatVegas.pct >= 50 ? C.grn : t.beatVegas.pct !== null ? C.red : C.dim} />
-            <StatBox label="Avg Error" value={t.avgError !== null ? t.avgError + "pts" : "—"} sub={t.avgVegasError !== null ? `Vegas: ${t.avgVegasError}pts` : ""} color={t.avgError !== null && t.avgError < 10 ? C.grn : t.avgError !== null && t.avgError < 14 ? C.gold : C.dim} />
+
+          {/* CUMULATIVE */}
+          <div style={{ padding: "14px 16px", background: `${C.blue}06`, border: `1px solid ${C.blue}22`, borderTop: "none", borderRadius: "0 0 8px 8px" }}>
+            <div style={{ fontSize: 13, letterSpacing: 3, color: C.blue, fontWeight: 700, marginBottom: 10 }}>
+              📈 ALL TOURNAMENT ({cum.totalGames} games)
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
+              <StatBox label="Straight-Up" value={cum.straightUpPct !== null ? cum.straightUpPct + "%" : "—"} sub={`${cum.totalGames} total games`} color={cum.straightUpPct >= 70 ? C.grn : cum.straightUpPct >= 60 ? C.gold : C.dim} />
+              <StatBox label="vs Spread (ATS)" value={cum.atsPct !== null ? cum.atsPct + "%" : "—"} sub={`${cum.totalGames} total games`} color={cum.atsPct >= 55 ? C.grn : cum.atsPct >= 52 ? C.gold : C.dim} />
+              <StatBox label="Trend" value={cum.trend.length > 0 ? cum.trend[cum.trend.length - 1].su : "—"} sub={cum.trend.length > 1 ? `prev: ${cum.trend[cum.trend.length - 2]?.su || "—"}` : "1 day so far"} color={C.blue} />
+              <StatBox label="Avg Error" value={cum.trend.length > 0 ? cum.trend[cum.trend.length - 1].avgErr + "pts" : "—"} sub="latest day" color={C.blue} />
+            </div>
+
+            {/* Mini trend bar chart */}
+            {cum.trend.length > 1 && (
+              <div style={{ display: "flex", gap: 4, marginTop: 10 }}>
+                {cum.trend.map((d, i) => (
+                  <div key={i} style={{ flex: 1, textAlign: "center" }}>
+                    <div style={{ height: 30, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
+                      <div style={{ width: "70%", height: `${Math.max(8, parseInt(d.su))}%`, background: parseInt(d.su) >= 65 ? C.grn : parseInt(d.su) >= 50 ? C.gold : C.red, borderRadius: "3px 3px 0 0" }} />
+                    </div>
+                    <div style={{ fontSize: 10, fontWeight: 700, color: parseInt(d.su) >= 65 ? C.grn : C.gold, marginTop: 2 }}>{d.su}</div>
+                    <div style={{ fontSize: 8, color: C.dim }}>{d.date.slice(5)}</div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
@@ -132,36 +163,6 @@ export default function ReportsPage() {
             </div>
           </div>
         )}
-
-        {/* Cumulative Performance */}
-        <div style={{ marginBottom: 20 }}>
-          <div style={{ fontSize: 13, letterSpacing: 3, color: C.gold, marginBottom: 10, fontWeight: 700 }}>
-            📈 CUMULATIVE PERFORMANCE ({cum.totalGames} total games)
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 12 }}>
-            <StatBox label="All-Time Straight-Up" value={cum.straightUpPct !== null ? cum.straightUpPct + "%" : "—"} sub={`${cum.totalGames} games`} color={cum.straightUpPct >= 70 ? C.grn : cum.straightUpPct >= 60 ? C.gold : C.dim} />
-            <StatBox label="All-Time ATS" value={cum.atsPct !== null ? cum.atsPct + "%" : "—"} sub={`${cum.totalGames} games`} color={cum.atsPct >= 55 ? C.grn : cum.atsPct >= 52 ? C.gold : C.dim} />
-          </div>
-
-          {/* Trend chart */}
-          {cum.trend.length > 0 && (
-            <div style={{ padding: "12px 14px", background: C.card, border: `1px solid ${C.brd}`, borderRadius: 8 }}>
-              <div style={{ fontSize: 11, color: C.dim, marginBottom: 8 }}>7-DAY TREND</div>
-              <div style={{ display: "flex", gap: 6 }}>
-                {cum.trend.map((d, i) => (
-                  <div key={i} style={{ flex: 1, textAlign: "center" }}>
-                    <div style={{ fontSize: 10, color: C.dim }}>{d.date.slice(5)}</div>
-                    <div style={{ height: 40, display: "flex", alignItems: "flex-end", justifyContent: "center", marginTop: 4 }}>
-                      <div style={{ width: "60%", height: `${Math.max(5, parseInt(d.su))}%`, background: parseInt(d.su) >= 65 ? C.grn : parseInt(d.su) >= 50 ? C.gold : C.red, borderRadius: "3px 3px 0 0" }} />
-                    </div>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: parseInt(d.su) >= 65 ? C.grn : C.gold, marginTop: 2 }}>{d.su}</div>
-                    <div style={{ fontSize: 9, color: C.dim }}>SU</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
 
         {/* Weight Adjustments */}
         <div style={{ marginBottom: 20 }}>
