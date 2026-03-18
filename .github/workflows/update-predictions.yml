@@ -39,10 +39,17 @@ jobs:
         env:
           IS_SCHEDULED: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
 
+      - name: Copy reports to public folder for Next.js
+        run: |
+          mkdir -p public/data/reports
+          cp -f data/reports/latest.json public/data/reports/latest.json 2>/dev/null || true
+          cp -f data/reports/delta-latest.json public/data/reports/delta-latest.json 2>/dev/null || true
+          cp -f data/predictions.json public/data/predictions.json 2>/dev/null || true
+
       - name: Commit and push updated data
         run: |
           git config user.name "mbangia630"
           git config user.email "62906980+mbangia630@users.noreply.github.com"
-          git add data/
+          git add data/ public/
           git diff --staged --quiet || git commit -m "Auto-update predictions $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push

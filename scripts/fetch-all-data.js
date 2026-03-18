@@ -2,7 +2,7 @@ const fs = require('fs');
 
 // ═══════════════════════════════════════════════════════
 // MASTER DATA FETCHER — runs daily at 7am CST
-// Pulls from: ESPN, Odds API, Torvik, RotoWire
+// Pulls from: ESPN, Odds API, injury news
 // ═══════════════════════════════════════════════════════
 
 const ODDS_KEY = process.env.ODDS_API_KEY || 'YOUR_FREE_KEY_HERE';
@@ -13,15 +13,10 @@ async function fetchJSON(url) {
   return res.json();
 }
 
-async function fetchHTML(url) {
-  const res = await fetch(url);
-  return res.text();
-}
-
 // ═══ 1. TODAY'S GAMES (ESPN — free, no key) ═══
 async function fetchGames() {
-  console.log('📅 Fetching today\'s games...');
-  const today = new Date().toISOString().slice(0,10).replace(/-/g,'');
+  console.log("📅 Fetching today's games...");
+  const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
   const data = await fetchJSON(
     `https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=${today}&limit=100`
   );
@@ -45,7 +40,7 @@ async function fetchOdds() {
   console.log('💰 Fetching Vegas lines...');
   try {
     const data = await fetchJSON(
-      `https://api.the-odds-api.com/v4/sports/basketball_ncaab/odds/?apiKey=${ODDS_KEY}&regions=us&markets=spreads,h2h&oddsFormat=american`
+      `https://api.the-odds-api.com/v4/sports/basketball_ncaab/odds/?apiKey=${b028dcbb6c7225951eb374e2d4e7a93a}&regions=us&markets=spreads,h2h&oddsFormat=american`
     );
     const odds = {};
     for (const game of data) {
@@ -78,14 +73,12 @@ async function fetchOdds() {
 // ═══ 3. INJURY REPORTS (ESPN — free) ═══
 async function fetchInjuries() {
   console.log('🏥 Fetching injury reports...');
-  // ESPN doesn't have a clean injuries endpoint for NCAAB
-  // We'll check the news feed for injury keywords
   try {
     const data = await fetchJSON(
       'https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/news?limit=50'
     );
     const injuryNews = data.articles
-      .filter(a => /injur|out |questionable|doubtful|day-to-day|ACL|fracture|surgery|concussion/i.test(a.headline + ' ' + (a.description||'')))
+      .filter(a => /injur|out |questionable|doubtful|day-to-day|ACL|fracture|surgery|concussion/i.test(a.headline + ' ' + (a.description || '')))
       .map(a => ({
         headline: a.headline,
         description: a.description,
@@ -101,8 +94,8 @@ async function fetchInjuries() {
 
 // ═══ 4. YESTERDAY'S RESULTS (for Elo updates) ═══
 async function fetchYesterdayResults() {
-  console.log('📊 Fetching yesterday\'s results...');
-  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0,10).replace(/-/g,'');
+  console.log("📊 Fetching yesterday's results...");
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10).replace(/-/g, '');
   const data = await fetchJSON(
     `https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=${yesterday}&limit=200`
   );
@@ -122,7 +115,7 @@ async function fetchYesterdayResults() {
 // ═══ MAIN: Run all fetchers and save ═══
 async function main() {
   console.log('\n🏀 NCAA Prediction Engine — Data Update');
-  console.log('Time:', new Date().toLocaleString('en-US', {timeZone:'America/Chicago'}), 'CST');
+  console.log('Time:', new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }), 'CST');
   console.log('════════════════════════════════════════\n');
 
   const [games, odds, injuries, results] = await Promise.all([
@@ -137,8 +130,9 @@ async function main() {
   const dataBundle = { timestamp, games, odds, injuries, yesterdayResults: results };
 
   fs.mkdirSync('data', { recursive: true });
+  fs.mkdirSync('data/archive', { recursive: true });
   fs.writeFileSync('data/latest.json', JSON.stringify(dataBundle, null, 2));
-  fs.writeFileSync(`data/archive/${timestamp.slice(0,10)}-${timestamp.slice(11,13)}.json`,
+  fs.writeFileSync(`data/archive/${timestamp.slice(0, 10)}-${timestamp.slice(11, 13)}.json`,
     JSON.stringify(dataBundle, null, 2));
 
   console.log('\n✅ All data saved to data/latest.json');
