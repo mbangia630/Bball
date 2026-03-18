@@ -11,7 +11,7 @@ function useSampleDelta() {
   return {
     timestampCST: "Mar 18, 2026, 2:45 PM CST",
     type: "BASELINE",
-    message: "First run — predictions are being generated. Run the update again to see changes.",
+    message: "First run — predictions are being generated. The 7am scheduled run will set the baseline, then manual refreshes will show changes.",
     summary: { totalGamesCompared: 0, gamesChanged: 0, winnersFlipped: 0, newMatchups: 0, avgSpreadChange: 0, biggestMover: "None" },
     deltas: [],
   };
@@ -39,7 +39,7 @@ export default function DeltaPage() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 20, borderBottom: `1px solid ${C.brd}`, paddingBottom: 14 }}>
           <div style={{ fontSize: 11, letterSpacing: 4, color: C.cyan, marginBottom: 4 }}>PREDICTION DELTA REPORT</div>
-          <h1 style={{ fontSize: 28, fontWeight: 700, color: "#fff", margin: "4px 0", fontFamily: "Georgia,serif" }}>What Changed Since Last Run</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 700, color: "#fff", margin: "4px 0", fontFamily: "Georgia,serif" }}>What Changed Since 7am</h1>
           <div style={{ fontSize: 13, color: C.cyan, marginTop: 6, padding: "4px 14px", background: `${C.cyan}08`, borderRadius: 4, display: "inline-block" }}>
             📅 {report.timestampCST}
           </div>
@@ -51,7 +51,7 @@ export default function DeltaPage() {
 
         {report.type === "BASELINE" && (
           <div style={{ padding: "20px 24px", background: `${C.gold}08`, border: `1px solid ${C.gold}33`, borderRadius: 8, textAlign: "center", fontSize: 14, color: C.gold, marginBottom: 20 }}>
-            {report.message || "First run — no previous data to compare. Run the update again to see changes."}
+            {report.message || "First run — no 7am baseline yet — run the scheduled update first. The 7am scheduled run will set the baseline, then manual refreshes will show changes."}
           </div>
         )}
 
@@ -71,16 +71,16 @@ export default function DeltaPage() {
         </div>
 
         {/* Run comparison */}
-        {report.previousRun && (
+        {report.baselineTime && (
           <div style={{ display: "grid", gridTemplateColumns: "1fr 40px 1fr", gap: 8, marginBottom: 20, alignItems: "center" }}>
             <div style={{ padding: "10px 14px", background: `${C.dim}08`, borderRadius: 6, border: `1px solid ${C.brd}`, textAlign: "center" }}>
-              <div style={{ fontSize: 10, color: C.dim }}>PREVIOUS RUN</div>
-              <div style={{ fontSize: 12, color: C.wh, marginTop: 4 }}>{new Date(report.previousRun).toLocaleString('en-US', { timeZone: 'America/Chicago', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}</div>
+              <div style={{ fontSize: 10, color: C.dim }}>7AM BASELINE</div>
+              <div style={{ fontSize: 12, color: C.wh, marginTop: 4 }}>{new Date(report.baselineTime).toLocaleString('en-US', { timeZone: 'America/Chicago', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}</div>
             </div>
             <div style={{ textAlign: "center", fontSize: 18, color: C.cyan }}>→</div>
             <div style={{ padding: "10px 14px", background: `${C.cyan}08`, borderRadius: 6, border: `1px solid ${C.cyan}22`, textAlign: "center" }}>
-              <div style={{ fontSize: 10, color: C.cyan }}>CURRENT RUN</div>
-              <div style={{ fontSize: 12, color: C.wh, marginTop: 4 }}>{new Date(report.currentRun).toLocaleString('en-US', { timeZone: 'America/Chicago', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}</div>
+              <div style={{ fontSize: 10, color: C.cyan }}>CURRENT</div>
+              <div style={{ fontSize: 12, color: C.wh, marginTop: 4 }}>{new Date(report.currentTime).toLocaleString('en-US', { timeZone: 'America/Chicago', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}</div>
             </div>
           </div>
         )}
@@ -88,7 +88,7 @@ export default function DeltaPage() {
         {/* Delta cards */}
         {d.length === 0 && report.type !== "BASELINE" && (
           <div style={{ padding: "20px", background: `${C.grn}08`, border: `1px solid ${C.grn}22`, borderRadius: 8, textAlign: "center", fontSize: 14, color: C.grn }}>
-            ✅ No meaningful changes — predictions are stable since last run.
+            ✅ No meaningful changes since the 7am baseline — predictions are stable.
           </div>
         )}
 
@@ -121,14 +121,14 @@ export default function DeltaPage() {
                     <div style={{ padding: "8px 12px", background: `${C.red}06`, borderRadius: 6 }}>
                       <div style={{ fontSize: 10, color: C.red, fontWeight: 700, marginBottom: 4 }}>BEFORE</div>
                       <div style={{ fontSize: 13, color: C.wh }}>
-                        <span style={{ fontWeight: 700 }}>{delta.prevWinner}</span> wins
+                        <span style={{ fontWeight: 700 }}>{delta.baselineWinner}</span> wins
                       </div>
                       <div style={{ fontSize: 12, color: C.dim }}>
-                        {delta.prevWinProb}% · spread {delta.prevSpread > 0 ? '+' : ''}{delta.prevSpread}
+                        {delta.baselineWinProb}% · spread {delta.baselineSpread > 0 ? '+' : ''}{delta.baselineSpread}
                       </div>
                       <div style={{ fontSize: 11, color: C.dim }}>
-                        {delta.prevScoreW}-{delta.prevScoreL}
-                        {delta.prevVegas !== null && ` · Vegas: ${delta.prevVegas > 0 ? '+' : ''}${delta.prevVegas}`}
+                        {delta.baselineScoreW}-{delta.baselineScoreL}
+                        {delta.baselineVegas !== null && ` · Vegas: ${delta.baselineVegas > 0 ? '+' : ''}${delta.baselineVegas}`}
                       </div>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, color: C.cyan }}>→</div>
@@ -185,7 +185,7 @@ export default function DeltaPage() {
 
         {/* Footer */}
         <div style={{ fontSize: 11, color: C.dim, textAlign: "center", paddingTop: 14, marginTop: 20, borderTop: `1px solid ${C.brd}` }}>
-          NCAA Prediction Engine v8.0 · Delta Report · Compares consecutive prediction runs
+          NCAA Prediction Engine v8.0 · Delta Report · Always compared to 7am daily baseline
         </div>
       </div>
     </div>

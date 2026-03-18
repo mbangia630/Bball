@@ -34,8 +34,10 @@ jobs:
       - name: Run predictions with updated weights
         run: node scripts/run-predictions.js
 
-      - name: Generate delta report (what changed since last run)
+      - name: Generate delta report (what changed since 7am baseline)
         run: node scripts/delta-report.js
+        env:
+          IS_SCHEDULED: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
 
       - name: Commit and push updated data
         run: |
