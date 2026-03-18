@@ -1,0 +1,67 @@
+{
+  "date": "2026-03-18",
+  "generatedAt": "2026-03-18T18:49:55.002Z",
+  "generatedAtCST": "2026-03-18 1:49 PM CST",
+  "modelVersion": 1,
+  "today": {
+    "gamesGraded": 0,
+    "straightUp": {
+      "correct": 0,
+      "total": 0,
+      "pct": null
+    },
+    "ats": {
+      "correct": 0,
+      "total": 0,
+      "pct": null
+    },
+    "beatVegas": {
+      "correct": 0,
+      "total": 0,
+      "pct": null
+    },
+    "avgError": null,
+    "avgVegasError": null
+  },
+  "games": [],
+  "cumulative": {
+    "totalGames": 0,
+    "straightUpPct": null,
+    "atsPct": null,
+    "trend": []
+  },
+  "adjustments": {
+    "changes": [
+      "No adjustments needed — model is performing within expectations."
+    ],
+    "before": {
+      "vegasBlend": 0.55,
+      "sigma": 11,
+      "recency": {
+        "em": 0.6,
+        "mg": 0.62,
+        "efg": 0.55,
+        "ast": 0.52,
+        "ftr": 0.47,
+        "orb": 0.47,
+        "tor": 0.42,
+        "tpt": 0.37
+      }
+    },
+    "after": {
+      "vegasBlend": 0.55,
+      "sigma": 11,
+      "recency": {
+        "em": 0.6,
+        "mg": 0.62,
+        "efg": 0.55,
+        "ast": 0.52,
+        "ftr": 0.47,
+        "orb": 0.47,
+        "tor": 0.42,
+        "tpt": 0.37
+      }
+    }
+  },
+  "eloUpdates": 1
+}
