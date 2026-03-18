@@ -1,0 +1,27 @@
+{
+  "layers": {
+    "L1": 0.42,
+    "L2": 0.28,
+    "L3": 0.18,
+    "L4": 0.08,
+    "L5": 0.04
+  },
+  "recency": {
+    "em": 0.6,
+    "mg": 0.62,
+    "efg": 0.55,
+    "ast": 0.52,
+    "ftr": 0.47,
+    "orb": 0.47,
+    "tor": 0.42,
+    "tpt": 0.37
+  },
+  "vegasBlend": 0.55,
+  "ensemble": {
+    "main": 0.8,
+    "subs": 0.2
+  },
+  "sigma": 11,
+  "version": 1,
+  "lastUpdated": null
+}
