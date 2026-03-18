@@ -1,0 +1,26 @@
+{
+  "results": {
+    "FF2": {
+      "winner": "Texas",
+      "loser": "NC State",
+      "scoreW": 68,
+      "scoreL": 66,
+      "date": "2026-03-18"
+    },
+    "FF1": {
+      "winner": "Howard",
+      "loser": "UMBC",
+      "scoreW": 86,
+      "scoreL": 83,
+      "date": "2026-03-18"
+    }
+  },
+  "advancedTo": {
+    "W5": {
+      "b": "Texas"
+    },
+    "MW1": {
+      "a": "Howard"
+    }
+  }
+}
