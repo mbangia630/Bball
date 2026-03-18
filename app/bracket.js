@@ -670,6 +670,7 @@ export default function V7Final(){
         <div style={{fontSize:13,color:C.cyan,marginTop:6,padding:"4px 12px",background:`${C.cyan}08`,borderRadius:4,display:"inline-block"}}>
           📡 Last data update: {new Date().toLocaleString('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true})} CST
         </div>
+        <div style={{marginTop:6}}><a href="/report" style={{fontSize:12,color:C.purp,textDecoration:"none"}}>📋 View Daily Performance Report →</a></div>
       </div>
 
       {/* Champion */}
