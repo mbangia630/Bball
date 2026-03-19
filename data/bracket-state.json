@@ -13,6 +13,13 @@
       "scoreW": 86,
       "scoreL": 83,
       "date": "2026-03-18"
+    },
+    "FF3": {
+      "winner": "Prairie View",
+      "loser": "Lehigh",
+      "scoreW": 67,
+      "scoreL": 55,
+      "date": "2026-03-19"
     }
   },
   "advancedTo": {
@@ -21,6 +28,9 @@
     },
     "MW1": {
       "a": "Howard"
+    },
+    "S1": {
+      "b": "Prairie View"
     }
   }
 }
