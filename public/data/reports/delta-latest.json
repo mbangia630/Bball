@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-03-19T22:44:03.035Z",
-  "timestampCST": "Mar 19, 2026, 5:44 PM CST",
+  "timestamp": "2026-03-19T22:46:11.341Z",
+  "timestampCST": "Mar 19, 2026, 5:46 PM CST",
   "type": "DELTA",
   "baselineTime": "Mar 19, 2026, 9:05 AM CST",
-  "currentTime": "Mar 19, 2026, 5:44 PM CST",
+  "currentTime": "Mar 19, 2026, 5:46 PM CST",
   "summary": {
     "totalGamesCompared": 27,
     "gamesChanged": 10,
@@ -19,9 +19,9 @@
       "region": "R64",
       "type": "NEW",
       "winner": "Prairie View",
-      "winProb": 60,
-      "spread": -3.5,
-      "message": "New matchup since 7am — Prairie View predicted to win (60%)",
+      "winProb": 60.4,
+      "spread": -3.6,
+      "message": "New matchup since 7am — Prairie View predicted to win (60.4%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -33,9 +33,9 @@
       "region": "R64",
       "type": "NEW",
       "winner": "Tennessee",
-      "winProb": 82.3,
-      "spread": 10.9,
-      "message": "New matchup since 7am — Tennessee predicted to win (82.3%)",
+      "winProb": 82,
+      "spread": 10.7,
+      "message": "New matchup since 7am — Tennessee predicted to win (82%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
