@@ -1,18 +1,46 @@
 {
-  "timestamp": "2026-03-19T22:29:28.296Z",
-  "timestampCST": "Mar 19, 2026, 5:29 PM CST",
+  "timestamp": "2026-03-19T22:44:03.035Z",
+  "timestampCST": "Mar 19, 2026, 5:44 PM CST",
   "type": "DELTA",
   "baselineTime": "Mar 19, 2026, 9:05 AM CST",
-  "currentTime": "Mar 19, 2026, 5:29 PM CST",
+  "currentTime": "Mar 19, 2026, 5:44 PM CST",
   "summary": {
-    "totalGamesCompared": 25,
-    "gamesChanged": 7,
+    "totalGamesCompared": 27,
+    "gamesChanged": 10,
     "winnersFlipped": 2,
-    "newMatchups": 3,
+    "newMatchups": 6,
     "avgSpreadChange": 0.5,
-    "biggestMover": "Duke vs TCU"
+    "biggestMover": "Florida vs Prairie View"
   },
   "deltas": [
+    {
+      "matchup": "Florida vs Prairie View",
+      "round": 1,
+      "region": "R64",
+      "type": "NEW",
+      "winner": "Prairie View",
+      "winProb": 60,
+      "spread": -3.5,
+      "message": "New matchup since 7am — Prairie View predicted to win (60%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Tennessee vs Miami OH",
+      "round": 1,
+      "region": "R64",
+      "type": "NEW",
+      "winner": "Tennessee",
+      "winProb": 82.3,
+      "spread": 10.9,
+      "message": "New matchup since 7am — Tennessee predicted to win (82.3%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
     {
       "matchup": "Duke vs TCU",
       "round": 2,
@@ -22,6 +50,20 @@
       "winProb": 58.8,
       "spread": 3.1,
       "message": "New matchup since 7am — Duke predicted to win (58.8%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Louisville vs Michigan St.",
+      "round": 2,
+      "region": "R32",
+      "type": "NEW",
+      "winner": "Michigan St.",
+      "winProb": 80.4,
+      "spread": -9.6,
+      "message": "New matchup since 7am — Michigan St. predicted to win (80.4%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -46,10 +88,10 @@
       "round": 2,
       "region": "R32",
       "type": "NEW",
-      "winner": "Arkansas",
-      "winProb": 88,
-      "spread": -13.6,
-      "message": "New matchup since 7am — Arkansas predicted to win (88%)",
+      "winner": "High Point",
+      "winProb": 52,
+      "spread": 0.6,
+      "message": "New matchup since 7am — High Point predicted to win (52%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
