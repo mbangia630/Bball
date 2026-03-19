@@ -218,6 +218,10 @@ const VENUE_MAP={
   MW1:"Buffalo",MW2:"Buffalo",MW3:"OKC",MW4:"OKC",MW5:"St. Louis",MW6:"Philadelphia",MW7:"St. Louis",MW8:"St. Louis",
   FF1:"Dayton",FF2:"Dayton",FF3:"Dayton",FF4:"Dayton",
   // R32 inherits R64 venues, S16/E8 are regional
+  E_R32_1:"Greenville",E_R32_2:"Buffalo",E_R32_3:"Tampa",E_R32_4:"Philadelphia",
+  S_R32_1:"Tampa",S_R32_2:"OKC",S_R32_3:"Greenville",S_R32_4:"St. Louis",
+  W_R32_1:"OKC",W_R32_2:"Portland",W_R32_3:"Portland",W_R32_4:"San Diego",
+  MW_R32_1:"Buffalo",MW_R32_2:"OKC",MW_R32_3:"St. Louis",MW_R32_4:"St. Louis",
   E_S16_1:"Washington DC",E_S16_2:"Washington DC",S_S16_1:"Houston",S_S16_2:"Houston",W_S16_1:"San Jose",W_S16_2:"San Jose",MW_S16_1:"Chicago",MW_S16_2:"Chicago",
   E_E8:"Washington DC",S_E8:"Houston",W_E8:"San Jose",MW_E8:"Chicago",
   F4_1:"Indianapolis",F4_2:"Indianapolis",CHAMP:"Indianapolis",
