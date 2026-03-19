@@ -41,6 +41,34 @@
       "scoreW": 66,
       "scoreL": 64,
       "date": "2026-03-19"
+    },
+    "E1": {
+      "winner": "Duke",
+      "loser": "Siena",
+      "scoreW": 71,
+      "scoreL": 65,
+      "date": "2026-03-19"
+    },
+    "W3": {
+      "winner": "High Point",
+      "loser": "Wisconsin",
+      "scoreW": 83,
+      "scoreL": 82,
+      "date": "2026-03-19"
+    },
+    "S3": {
+      "winner": "Vanderbilt",
+      "loser": "McNeese",
+      "scoreW": 78,
+      "scoreL": 68,
+      "date": "2026-03-19"
+    },
+    "E5": {
+      "winner": "Louisville",
+      "loser": "S. Florida",
+      "scoreW": 83,
+      "scoreL": 79,
+      "date": "2026-03-19"
     }
   },
   "advancedTo": {
@@ -57,10 +85,18 @@
       "b": "Miami OH"
     },
     "S_R32_2": {
-      "b": "Nebraska"
+      "b": "Nebraska",
+      "a": "Vanderbilt"
     },
     "E_R32_1": {
-      "b": "TCU"
+      "b": "TCU",
+      "a": "Duke"
+    },
+    "W_R32_2": {
+      "a": "High Point"
+    },
+    "E_R32_3": {
+      "a": "Louisville"
     }
   }
 }
