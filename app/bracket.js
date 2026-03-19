@@ -1,4 +1,5 @@
 "use client";
+import { useState, useMemo, useEffect } from "react";
 
 // ═══════════════════════════════════════════════════════════════════════
 // v8.0 FINAL — MARCH 16, 2026
