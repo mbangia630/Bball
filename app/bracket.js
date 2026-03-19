@@ -1,8 +1,7 @@
 "use client";
-import { useState, useMemo } from "react";
 
 // ═══════════════════════════════════════════════════════════════════════
-// v8.0 FINAL — MARCH 16, 2026 
+// v8.0 FINAL — MARCH 16, 2026
 // All v7.1 upgrades PLUS Tier 1 & Tier 2 improvements:
 // T1: Ref crew sensitivity, Player-level matchups, Game-state splits, Sharp money
 // T2: Ensemble sub-models, Roster continuity, Timezone fatigue, Foul trouble
@@ -572,7 +571,9 @@ function MetricBar({label,valA,valB,unit,better}){
 }
 
 export default function V7Final(){
-  const R=useMemo(()=>simAll(),[]);
+  const [R,setR]=useState([]);
+  const [dataLoading,setDataLoading]=useState(true);
+  useEffect(()=>{fetch("/data/bracket-display.json").then(r=>r.ok?r.json():null).then(d=>{if(d&&d.rounds)setR(d.rounds);setDataLoading(false);}).catch(()=>setDataLoading(false));},[]);
   const[ar,setAr]=useState(0);
   const[det,setDet]=useState(null);
   const[showBets,setShowBets]=useState(false);
@@ -657,6 +658,8 @@ export default function V7Final(){
     }).sort((a,b)=>b.bestBet.prob-a.bestBet.prob||(b.bestBet.payout-a.bestBet.payout)); // SORT: best model chance first, then biggest payout
   },[R]);
 
+  if(dataLoading)return(<div style={{fontFamily:"monospace",background:"#0a0a12",color:"#fbbf24",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",fontSize:16}}>Loading predictions...</div>);
+  if(R.length===0)return(<div style={{fontFamily:"monospace",background:"#0a0a12",color:"#444",minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:12}}><div style={{fontSize:18,color:"#fbbf24"}}>No Predictions Yet</div><div style={{fontSize:13}}>Run the pipeline from GitHub Actions to generate predictions.</div></div>);
   return(
     <div style={{fontFamily:"'JetBrains Mono',Consolas,monospace",background:C.bg,color:C.wh,minHeight:"100vh"}}>
     <div style={{maxWidth:1000,margin:"0 auto",padding:"20px 14px"}}>

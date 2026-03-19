@@ -311,6 +311,108 @@ fs.writeFileSync('data/predictions.json',JSON.stringify(fullOutput,null,2));
 fs.writeFileSync('data/teams.json',JSON.stringify(teamDB,null,2));
 fs.writeFileSync(BRACKET_FILE,JSON.stringify(bracketState,null,2));
 
+// ═══════════════════════════════════════════════════════
+// PROJECT FULL BRACKET FOR DISPLAY
+// Simulate every game through the championship using
+// predicted winners for future rounds. This is the single
+// source of truth for the bracket page.
+// ═══════════════════════════════════════════════════════
+console.log('\n🏆 Projecting full bracket for display...');
+
+// Reset bracket slots for projection (don't modify bracketState)
+const projSlots = JSON.parse(JSON.stringify(BRACKET));
+const projMap = {};
+projSlots.forEach(s => projMap[s.id] = s);
+
+// Apply actual results
+for (const [id, res] of Object.entries(bracketState.results)) {
+  if (projMap[id]) projMap[id].actualResult = res;
+}
+// Apply known advances
+for (const [id, teams] of Object.entries(bracketState.advancedTo)) {
+  if (projMap[id]) {
+    if (teams.a) projMap[id].a = teams.a;
+    if (teams.b) projMap[id].b = teams.b;
+  }
+}
+
+// Process bracket in order: FF → R64 → R32 → S16 → E8 → F4 → CHAMP
+const roundOrder = [0, 1, 2, 3, 4, 5, 6]; // rd values
+const roundNames = ['FIRST FOUR', 'ROUND OF 64', 'ROUND OF 32', 'SWEET SIXTEEN', 'ELITE EIGHT', 'FINAL FOUR', 'CHAMPIONSHIP'];
+const displayRounds = [];
+
+for (const rd of roundOrder) {
+  const roundSlots = projSlots.filter(s => s.rd === rd);
+  const games = [];
+
+  for (const slot of roundSlots) {
+    // If actual result exists, use it
+    if (slot.actualResult) {
+      const res = slot.actualResult;
+      const aTeam = teamDB[res.winner] || {};
+      const bTeam = teamDB[res.loser] || {};
+      games.push({
+        w: res.winner, l: res.loser, sW: res.scoreW, sL: res.scoreL,
+        wp: 100, sp: res.scoreW - res.scoreL, ven: VENUE_MAP[slot.id] || 'TBD',
+        sW2: aTeam.s || 0, sL2: bTeam.s || 0,
+        status: 'FINAL', id: slot.id,
+        mu: { det: [] }, cDiff: 0, L1: 0, L2: 0, L3: 0, L4: 0, L5: 0,
+        fatA: { pts: 0 }, fatB: { pts: 0 }, rd: slot.rd,
+        v8: { ref: 0, gs: 0, sharp: 0, cont: 0, tz: 0, foul: 0, ens: { avg: 0, agree: true }, total: 0 },
+        adjStats: { aEfg: 0, bEfg: 0, aTor: 0, bTor: 0, aOrb: 0, bOrb: 0, aFtr: 0, bFtr: 0 },
+        modelSp: 0, vegasSp: null, a: buildT(res.winner), b: buildT(res.loser), rawSp: 0, ha: null, hb: 0,
+      });
+      // Advance winner
+      if (slot.feedsInto && projMap[slot.feedsInto]) {
+        if (slot.feedsAs === 'a') projMap[slot.feedsInto].a = res.winner;
+        else projMap[slot.feedsInto].b = res.winner;
+      }
+      continue;
+    }
+
+    // Both teams known? Sim it
+    if (!slot.a || !slot.b) continue;
+    const venue = VENUE_MAP[slot.id] || 'Indianapolis';
+    const result = sim(slot.a, slot.b, venue, slot.rd);
+    if (!result) continue;
+
+    // Add team stat objects for display
+    const aT = buildT(slot.a), bT = buildT(slot.b);
+    games.push({
+      ...result,
+      id: slot.id,
+      a: aT, b: bT,
+      status: 'PROJECTED',
+    });
+
+    // Advance projected winner to next round
+    if (slot.feedsInto && projMap[slot.feedsInto]) {
+      if (slot.feedsAs === 'a') projMap[slot.feedsInto].a = result.w;
+      else projMap[slot.feedsInto].b = result.w;
+    }
+  }
+
+  if (games.length > 0) {
+    displayRounds.push({ n: roundNames[rd] || `Round ${rd}`, g: games });
+  }
+}
+
+// Save display file
+const bracketDisplay = {
+  timestamp: new Date().toISOString(),
+  timestampCST: new Date().toLocaleString('en-US', { timeZone: 'America/Chicago', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true }) + ' CST',
+  engineVersion: 'v4-full-v8-port',
+  weightsVersion: weights.version || 1,
+  rounds: displayRounds,
+  teamDB: teamDB, // include for stat display in UI
+};
+
+fs.mkdirSync('public/data', { recursive: true });
+fs.writeFileSync('public/data/bracket-display.json', JSON.stringify(bracketDisplay));
+fs.writeFileSync('data/bracket-display.json', JSON.stringify(bracketDisplay));
+console.log(`   Projected ${displayRounds.reduce((s, r) => s + r.g.length, 0)} games across ${displayRounds.length} rounds`);
+console.log(`   Champion: ${displayRounds[displayRounds.length - 1]?.g[0]?.w || 'TBD'}`);
+
 // ═══ SUMMARY ═══
 console.log(`📊 FULL V8 ENGINE RESULTS:`);
 console.log(`   Completed: ${completed.length} | Upcoming: ${predictions.length} | Waiting: ${BRACKET.length-completed.length-predictions.length}`);
