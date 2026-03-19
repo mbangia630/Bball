@@ -417,9 +417,8 @@ console.log(`   Champion: ${displayRounds[displayRounds.length - 1]?.g[0]?.w || 
 console.log(`📊 FULL V8 ENGINE RESULTS:`);
 console.log(`   Completed: ${completed.length} | Upcoming: ${predictions.length} | Waiting: ${BRACKET.length-completed.length-predictions.length}`);
 
-const roundOrder=['First Four','R64','R32','S16','E8','F4','Championship'];
-const byRound={};predictions.forEach(p=>{const r=p.round==='First Four'?'First Four':['','R64','R32','S16','E8','F4','Championship'][p.round]||p.round;if(!byRound[r])byRound[r]=[];byRound[r].push(p);});
-for(const round of roundOrder){const games=byRound[round];if(!games)continue;console.log(`\n📋 ${round} (${games.length} games):`);games.forEach(p=>{const edgeStr=p.edge!==null?` | edge:${Math.abs(p.edge)}`:'';const layers=` [L1:${p.L1} L2:${p.L2} L3:${p.L3} L4:${p.L4} L5:${p.L5} v8:${p.v8adj}]`;console.log(`   ${p.winner} ${p.scoreW}-${p.scoreL} ${p.loser} (${p.winProb}%)${edgeStr}${layers}`);});}
+const printRounds=['First Four','R64','R32','S16','E8','F4','Championship'];const byRound={};predictions.forEach(p=>{const r=p.round==='First Four'?'First Four':['','R64','R32','S16','E8','F4','Championship'][p.round]||p.round;if(!byRound[r])byRound[r]=[];byRound[r].push(p);});
+for(const round of printRounds){const games=byRound[round];if(!games)continue;console.log(`\n📋 ${round} (${games.length} games):`);games.forEach(p=>{const edgeStr=p.edge!==null?` | edge:${Math.abs(p.edge)}`:'';const layers=` [L1:${p.L1} L2:${p.L2} L3:${p.L3} L4:${p.L4} L5:${p.L5} v8:${p.v8adj}]`;console.log(`   ${p.winner} ${p.scoreW}-${p.scoreL} ${p.loser} (${p.winProb}%)${edgeStr}${layers}`);});}
 
 const edges=predictions.filter(p=>p.edge!==null).sort((a,b)=>Math.abs(b.edge)-Math.abs(a.edge));
 if(edges.length>0){console.log('\n🔥 TOP 5 BETTING EDGES:');edges.slice(0,5).forEach(p=>{console.log(`   ${p.teamA} vs ${p.teamB}: model ${p.modelSpread>0?'+':''}${p.modelSpread} / vegas ${p.vegasLine>0?'+':''}${p.vegasLine} → edge ${Math.abs(p.edge)}`);});}
