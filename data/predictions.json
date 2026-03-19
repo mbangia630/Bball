@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-03-19T01:08:56.446Z",
-  "weightsVersion": 5,
+  "timestamp": "2026-03-19T14:05:06.314Z",
+  "weightsVersion": 6,
   "engineVersion": "v4-full-v8-port",
   "completed": [
     {
@@ -32,6 +32,16 @@
       "scoreL": 55,
       "date": "2026-03-19",
       "status": "FINAL"
+    },
+    {
+      "id": "FF4",
+      "round": "First Four",
+      "winner": "Miami OH",
+      "loser": "SMU",
+      "scoreW": 89,
+      "scoreL": 79,
+      "date": "2026-03-19",
+      "status": "FINAL"
     }
   ],
   "predictions": [
@@ -58,7 +68,7 @@
       "v8adj": 0.6,
       "ensAvg": 20.3,
       "ensAgree": true,
-      "injuryFlagA": "1 articles",
+      "injuryFlagA": null,
       "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "E1",
@@ -116,7 +126,7 @@
       "v8adj": 0.15,
       "ensAvg": 5.7,
       "ensAgree": true,
-      "injuryFlagA": "1 articles",
+      "injuryFlagA": null,
       "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "E3",
@@ -145,7 +155,7 @@
       "v8adj": -0.66,
       "ensAvg": 6.6,
       "ensAgree": true,
-      "injuryFlagA": "1 articles",
+      "injuryFlagA": null,
       "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "E4",
@@ -174,7 +184,7 @@
       "v8adj": -0.71,
       "ensAvg": 0.5,
       "ensAgree": false,
-      "injuryFlagA": "1 articles",
+      "injuryFlagA": null,
       "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "E5",
@@ -232,8 +242,8 @@
       "v8adj": 0.03,
       "ensAvg": 1.7,
       "ensAgree": true,
-      "injuryFlagA": "1 articles",
-      "injuryFlagB": "1 articles",
+      "injuryFlagA": null,
+      "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "E7",
       "region": "R64"
@@ -291,7 +301,7 @@
       "ensAvg": -0.1,
       "ensAgree": false,
       "injuryFlagA": null,
-      "injuryFlagB": "1 articles",
+      "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "S2",
       "region": "R64"
@@ -305,11 +315,11 @@
       "loser": "McNeese",
       "scoreW": 78,
       "scoreL": 68,
-      "winProb": 81.1,
+      "winProb": 81.9,
       "modelSpread": 8.3,
-      "vegasLine": 11.5,
-      "blendedSpread": 10.1,
-      "edge": -3.2,
+      "vegasLine": 12.5,
+      "blendedSpread": 10.6,
+      "edge": -4.2,
       "hca": 0,
       "L1": 8.3,
       "L2": 0.8,
@@ -332,13 +342,13 @@
       "venue": "OKC",
       "winner": "Troy",
       "loser": "Nebraska",
-      "scoreW": 69,
+      "scoreW": 70,
       "scoreL": 68,
-      "winProb": 53.2,
+      "winProb": 54.8,
       "modelSpread": 13,
-      "vegasLine": -12.5,
-      "blendedSpread": -1,
-      "edge": 25.5,
+      "vegasLine": -13.5,
+      "blendedSpread": -1.6,
+      "edge": 26.5,
       "hca": 0,
       "L1": 11.1,
       "L2": 1.6,
@@ -378,7 +388,7 @@
       "ensAvg": -1.3,
       "ensAgree": false,
       "injuryFlagA": null,
-      "injuryFlagB": "1 articles",
+      "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "S5",
       "region": "R64"
@@ -406,8 +416,8 @@
       "v8adj": -0.44,
       "ensAvg": 13.5,
       "ensAgree": true,
-      "injuryFlagA": "1 articles",
-      "injuryFlagB": "1 articles",
+      "injuryFlagA": null,
+      "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "S6",
       "region": "R64"
@@ -464,7 +474,7 @@
       "v8adj": 0.63,
       "ensAvg": 17,
       "ensAgree": true,
-      "injuryFlagA": null,
+      "injuryFlagA": "1 articles",
       "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "S8",
@@ -609,8 +619,8 @@
       "v8adj": 0.05,
       "ensAvg": 1.9,
       "ensAgree": true,
-      "injuryFlagA": "1 articles",
-      "injuryFlagB": "2 articles",
+      "injuryFlagA": null,
+      "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "W5",
       "region": "R64"
@@ -754,8 +764,8 @@
       "v8adj": -1.09,
       "ensAvg": 2.1,
       "ensAgree": false,
-      "injuryFlagA": "1 articles",
-      "injuryFlagB": "1 articles",
+      "injuryFlagA": null,
+      "injuryFlagB": null,
       "status": "UPCOMING",
       "id": "MW3",
       "region": "R64"
@@ -878,8 +888,8 @@
     }
   ],
   "bracketProgress": {
-    "gamesPlayed": 3,
-    "gamesRemaining": 64,
+    "gamesPlayed": 4,
+    "gamesRemaining": 63,
     "currentRound": 1
   }
 }
