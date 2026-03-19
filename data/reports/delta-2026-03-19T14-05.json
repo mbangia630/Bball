@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-03-19T14:05:06.373Z",
+  "timestampCST": "Mar 19, 2026, 9:05 AM CST",
+  "type": "BASELINE_SET",
+  "message": "7am daily update complete. This is the new baseline. Any manual refreshes today will show changes relative to this snapshot.",
+  "baselineTime": "Mar 19, 2026, 9:05 AM CST",
+  "totalPredictions": 29,
+  "deltas": [],
+  "summary": {
+    "totalGamesCompared": 29,
+    "gamesChanged": 0,
+    "winnersFlipped": 0,
+    "newMatchups": 0,
+    "avgSpreadChange": 0,
+    "biggestMover": "None — this is the baseline"
+  }
+}

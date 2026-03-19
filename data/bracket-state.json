@@ -20,6 +20,27 @@
       "scoreW": 67,
       "scoreL": 55,
       "date": "2026-03-19"
+    },
+    "FF4": {
+      "winner": "Miami OH",
+      "loser": "SMU",
+      "scoreW": 89,
+      "scoreL": 79,
+      "date": "2026-03-19"
+    },
+    "S4": {
+      "winner": "Nebraska",
+      "loser": "Troy",
+      "scoreW": 76,
+      "scoreL": 47,
+      "date": "2026-03-19"
+    },
+    "E2": {
+      "winner": "TCU",
+      "loser": "Ohio State",
+      "scoreW": 66,
+      "scoreL": 64,
+      "date": "2026-03-19"
     }
   },
   "advancedTo": {
@@ -31,6 +52,15 @@
     },
     "S1": {
       "b": "Prairie View"
+    },
+    "MW5": {
+      "b": "Miami OH"
+    },
+    "S_R32_2": {
+      "b": "Nebraska"
+    },
+    "E_R32_1": {
+      "b": "TCU"
     }
   }
 }
