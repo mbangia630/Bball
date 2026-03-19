@@ -137,7 +137,7 @@ const ODDS={
   "Miami FL vs Missouri":[-190,158,-110],"Iowa State vs Tennessee St.":[-8000,2200,-110],
 };
 
-function buildT(n){const t=DB[n];if(!t||!t.d||t.d.length<20)return null;try{const r=t.d;return{em:rw(r[0],r[1],RW.em),efg:rw(r[2],r[3],RW.efg),tor:rw(r[4],r[5],RW.tor),orb:rw(r[6],r[7],RW.orb),ftr:rw(r[8],r[9],RW.ftr),tpt:rw(r[10],r[11],RW.tpt),ast:rw(r[12],r[13],RW.ast),mg:rw(r[14],r[15],RW.mg),o:rw(r[16],r[17],RW.em),d:rw(r[18],r[19],RW.em),t:r[20],elo:r[21],lk:r[22],st:r[23],ci:r[24],ij:r[25],s:t.s,hb:t.hb,kp:t.kp,rec:t.rec,coach:t.coach,cAdj:t.cAdj,cNote:t.cNote,sty:t.style,name:n,em_s:r[0],em_r:r[1],efg_s:r[2],efg_r:r[3]};}catch(e){return null;}}
+function buildT(n){const t=DB[n];if(!t)return null;const r=t.d;return{em:rw(r[0],r[1],RW.em),efg:rw(r[2],r[3],RW.efg),tor:rw(r[4],r[5],RW.tor),orb:rw(r[6],r[7],RW.orb),ftr:rw(r[8],r[9],RW.ftr),tpt:rw(r[10],r[11],RW.tpt),ast:rw(r[12],r[13],RW.ast),mg:rw(r[14],r[15],RW.mg),o:rw(r[16],r[17],RW.em),d:rw(r[18],r[19],RW.em),t:r[20],elo:r[21],lk:r[22],st:r[23],ci:r[24],ij:r[25],s:t.s,hb:t.hb,kp:t.kp,rec:t.rec,coach:t.coach,cAdj:t.cAdj,cNote:t.cNote,sty:t.style,name:n,em_s:r[0],em_r:r[1],efg_s:r[2],efg_r:r[3]};}
 
 // ═══ MATCHUP-ADJUSTED FOUR FACTORS ═══
 // Instead of a single point adjustment, matchups now modify each team's
@@ -446,6 +446,7 @@ function ensemble(a,b,tf){
 function sim(nA,nB,ven,vegasKey,round){
   const a=buildT(nA),b=buildT(nB);
   if(!a||!b)return{w:nA,l:nB,sW:75,sL:60,wp:75,sp:15,sW2:DB[nA]?.s||16,sL2:DB[nB]?.s||16,ven,mu:{det:[]},cDiff:0,L1:0,L2:0,L3:0,L4:0,L5:0,fatA:{pts:0},fatB:{pts:0},rd:1,v8:{ref:0,gs:0,sharp:0,cont:0,tz:0,foul:0,ens:{avg:0,agree:true},total:0},adjStats:{aEfg:50,bEfg:50,aTor:15,bTor:15,aOrb:30,bOrb:30,aFtr:35,bFtr:35},modelSp:0,vegasSp:null,a:null,b:null,rawSp:0,ha:null,hb:0};
+  const pA=hca(nA,ven,a.hb),pB=hca(nB,ven,b.hb);
   let hcav=0;
   if(pA.tag==="HOME"&&!pB.tag)hcav=pA.b;else if(pB.tag==="HOME"&&!pA.tag)hcav=-pB.b;
   else if(pA.tag==="NEAR"&&!pB.tag)hcav=pA.b;else if(pB.tag==="NEAR"&&!pA.tag)hcav=-pB.b;
