@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-03-19T22:15:12.585Z",
-  "weightsVersion": 9,
+  "timestamp": "2026-03-19T22:29:28.231Z",
+  "weightsVersion": 10,
   "engineVersion": "v4-full-v8-port",
   "completed": [
     {
@@ -100,6 +100,16 @@
       "loser": "Wisconsin",
       "scoreW": 83,
       "scoreL": 82,
+      "date": "2026-03-19",
+      "status": "FINAL"
+    },
+    {
+      "id": "W4",
+      "round": "R64",
+      "winner": "Arkansas",
+      "loser": "Hawaii",
+      "scoreW": 97,
+      "scoreL": 78,
       "date": "2026-03-19",
       "status": "FINAL"
     }
@@ -454,35 +464,6 @@
       "region": "R64"
     },
     {
-      "teamA": "Arkansas",
-      "teamB": "Hawaii",
-      "round": 1,
-      "venue": "Portland",
-      "winner": "Hawaii",
-      "loser": "Arkansas",
-      "scoreW": 74,
-      "scoreL": 70,
-      "winProb": 59.8,
-      "modelSpread": 17.4,
-      "vegasLine": -20.5,
-      "blendedSpread": -3.4,
-      "edge": 37.9,
-      "hca": 0,
-      "L1": 15.5,
-      "L2": 1.9,
-      "L3": 1.5,
-      "L4": 0.4,
-      "L5": 0,
-      "v8adj": 0.24,
-      "ensAvg": 8.8,
-      "ensAgree": true,
-      "injuryFlagA": null,
-      "injuryFlagB": null,
-      "status": "UPCOMING",
-      "id": "W4",
-      "region": "R64"
-    },
-    {
       "teamA": "BYU",
       "teamB": "Texas",
       "round": 1,
@@ -829,11 +810,40 @@
       "status": "UPCOMING",
       "id": "S_R32_2",
       "region": "R32"
+    },
+    {
+      "teamA": "High Point",
+      "teamB": "Arkansas",
+      "round": 2,
+      "venue": "Indianapolis",
+      "winner": "Arkansas",
+      "loser": "High Point",
+      "scoreW": 80,
+      "scoreL": 67,
+      "winProb": 88,
+      "modelSpread": -13.6,
+      "vegasLine": null,
+      "blendedSpread": -13.6,
+      "edge": null,
+      "hca": 0,
+      "L1": -12.9,
+      "L2": -1.4,
+      "L3": -1.2,
+      "L4": -0.3,
+      "L5": 0,
+      "v8adj": 0.51,
+      "ensAvg": -7.2,
+      "ensAgree": true,
+      "injuryFlagA": null,
+      "injuryFlagB": null,
+      "status": "UPCOMING",
+      "id": "W_R32_2",
+      "region": "R32"
     }
   ],
   "bracketProgress": {
-    "gamesPlayed": 10,
-    "gamesRemaining": 57,
+    "gamesPlayed": 11,
+    "gamesRemaining": 56,
     "currentRound": 1
   }
 }
