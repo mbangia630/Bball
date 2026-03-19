@@ -89,18 +89,14 @@ function matchupAdjust(nA,nB) {
   const adjA={efg:0,tor:0,orb:0,ftr:0}, adjB={efg:0,tor:0,orb:0,ftr:0};
   let tempoAdj=0;
   if(!a||!b) return {adjA,adjB,tempoAdj};
-  // 3PT offense vs 3PT defense
   if(a.p3>=0.42&&b.d3r<=25){adjA.efg+=-(a.p3-0.35)*5.0;}
   if(b.p3>=0.42&&a.d3r<=25){adjB.efg+=-(b.p3-0.35)*5.0;}
   if(a.p3>=0.42&&b.d3r>=100){adjA.efg+=(a.p3-0.38)*3.5;}
   if(b.p3>=0.42&&a.d3r>=100){adjB.efg+=(b.p3-0.38)*3.5;}
-  // Size mismatch
   const htDiff=a.ht-b.ht;
   if(Math.abs(htDiff)>=2){adjA.orb+=htDiff*0.4;adjB.orb-=htDiff*0.4;adjA.ftr+=htDiff*0.25;adjB.ftr-=htDiff*0.25;}
-  // TO pressure
   if(a.toF>=11.0){adjB.tor+=(a.toF-10.0)*0.5;}
   if(b.toF>=11.0){adjA.tor+=(b.toF-10.0)*0.5;}
-  // Tempo clash
   const td=Math.abs(a.t-b.t);
   if(td>=5){tempoAdj=a.t<b.t?0.3:-0.3;}
   return {adjA,adjB,tempoAdj};
@@ -129,7 +125,6 @@ function sim(nA, nB, venue, round) {
   if(pA.tag==="HOME"&&!pB.tag)hcav=pA.b;else if(pB.tag==="HOME"&&!pA.tag)hcav=-pB.b;
   else if(pA.tag==="NEAR"&&!pB.tag)hcav=pA.b;else if(pB.tag==="NEAR"&&!pA.tag)hcav=-pB.b;
 
-  // Matchup adjustments → feed into L2
   const mu=matchupAdjust(nA,nB);
   const aEfg=a.efg+mu.adjA.efg, bEfg=b.efg+mu.adjB.efg;
   const aTor=a.tor+mu.adjA.tor, bTor=b.tor+mu.adjB.tor;
@@ -140,28 +135,25 @@ function sim(nA, nB, venue, round) {
   const tf=(a.t+b.t)/200;
   const rd=round||1;
 
-  // 5 LAYERS
   const L1=1.1*(a.em-b.em)*tf;
   const L2=((aEfg-bEfg)*1.8*.4+(bTor-aTor)*1.2*.25+(aOrb-bOrb)*.7*.18+(aFtr-bFtr)*.6*.17)*tf*.65;
   const L3=((a.ast-b.ast)*.06+(a.elo-b.elo)/25*.3-((a.lk||0)-(b.lk||0))*4+((a.st||0)-(b.st||0))*1.2-(b.ci||0)*.5+(a.ij||0)-(b.ij||0)+hcav)*.65;
   const L4=(mu.tempoAdj+cDiff)*.65;
   const L5=fatigue(nA,rd)-fatigue(nB,rd);
 
-  // V8 adjustments
   const rawSp0=L1+L2+L3+L4+L5;
   const v8total=refAdj(nA,nB)+gameStateAdj(nA,nB,rawSp0)+sharpAdj(nA,nB)+continuityAdj(nA,nB)+tzAdj(nA,nB,venue)+foulAdj(nA,nB);
   const ens=ensemble(a,b,tf);
 
-  // Ensemble blend
   const modelSp=(rawSp0+v8total)*0.80+ens.avg*0.20;
 
   // Vegas blend
-  const vKey=`${nA} vs ${nB}`;
-  const vegasLine=vegasLines[vKey]??null;
+  const vKey1=`${nA} vs ${nB}`;
+  const vKey2=`${nB} vs ${nA}`;
+  const vegasLine=vegasLines[vKey1]??(vegasLines[vKey2]!=null?-vegasLines[vKey2]:null);
   const blend=weights.vegasBlend||0.55;
   const finalSp=vegasLine!==null?modelSp*(1-blend)+vegasLine*blend:modelSp;
 
-  // Win probability with isotonic calibration
   const sigma=weights.sigma||11;
   const rawP=Phi(finalSp/sigma);
   const wp=iso(Math.max(rawP,1-rawP));
@@ -175,9 +167,12 @@ function sim(nA, nB, venue, round) {
 
   return{
     teamA:nA,teamB:nB,round:rd,venue,
-    winner:w,loser:l,
+    winner:w,loser:l,w:w,l:l,
     scoreW:Math.max(sW,sL+1),scoreL:Math.min(sL,sW-1),
+    sW:Math.max(sW,sL+1),sL:Math.min(sL,sW-1),
     winProb:Math.round(wp*1000)/10,
+    wp:Math.round(wp*1000)/10,
+    sp:Math.round(Math.abs(finalSp)*10)/10,
     modelSpread:Math.round(modelSp*10)/10,
     vegasLine:vegasLine!==null?Math.round(vegasLine*10)/10:null,
     blendedSpread:Math.round(finalSp*10)/10,
@@ -189,14 +184,39 @@ function sim(nA, nB, venue, round) {
     injuryFlagA:injuredTeams[nA]?injuredTeams[nA].length+' articles':null,
     injuryFlagB:injuredTeams[nB]?injuredTeams[nB].length+' articles':null,
     status:'UPCOMING',
+    sW2:(buildT(w)||{}).s||0,sL2:(buildT(l)||{}).s||0,
+    ven:venue,
+    modelSp:Math.round(modelSp*10)/10,
+    vegasSp:vegasLine!==null?Math.round(vegasLine*10)/10:null,
+    rawSp:Math.round(finalSp*10)/10,
+    mu:{det:[]},cDiff:Math.round(cDiff*10)/10,
+    fatA:{pts:fatigue(nA,rd)},fatB:{pts:fatigue(nB,rd)},
+    rd:rd,
+    v8:{ref:Math.round(refAdj(nA,nB)*100)/100,gs:Math.round(gameStateAdj(nA,nB,rawSp0)*100)/100,sharp:Math.round(sharpAdj(nA,nB)*100)/100,cont:Math.round(continuityAdj(nA,nB)*100)/100,tz:Math.round(tzAdj(nA,nB,venue)*100)/100,foul:Math.round(foulAdj(nA,nB)*100)/100,ens:ens,total:Math.round(v8total*100)/100},
+    adjStats:{aEfg:Math.round(aEfg*10)/10,bEfg:Math.round(bEfg*10)/10,aTor:Math.round(aTor*10)/10,bTor:Math.round(bTor*10)/10,aOrb:Math.round(aOrb*10)/10,bOrb:Math.round(bOrb*10)/10,aFtr:Math.round(aFtr*10)/10,bFtr:Math.round(bFtr*10)/10},
+    ha:pA.tag==="HOME"?nA:pB.tag==="HOME"?nB:null,hb:Math.round(hcav*10)/10,
+    a:a,b:b,
   };
 }
 
 // ═══════════════════════════════════════════════════════
-// VEGAS LINES + ELO + INJURIES (same as before)
+// VEGAS LINES + ELO + INJURIES
 // ═══════════════════════════════════════════════════════
 const vegasLines={};
-for(const[key,val]of Object.entries(data.odds)){if(val.spread!==null){const parts=key.split(' vs ');if(parts.length===2){const a=resolve(parts[0].trim(),teamDB)||parts[0].trim(),b=resolve(parts[1].trim(),teamDB)||parts[1].trim();vegasLines[`${a} vs ${b}`]=val.spread;vegasLines[`${b} vs ${a}`]=-val.spread;}vegasLines[key]=val.spread;}}
+for(const[key,val]of Object.entries(data.odds)){
+  if(val.spread!==null){
+    const parts=key.split(' vs ');
+    if(parts.length===2){
+      const a=resolve(parts[0].trim(),teamDB)||parts[0].trim();
+      const b=resolve(parts[1].trim(),teamDB)||parts[1].trim();
+      // FIX: Odds API returns spread relative to home team (negative = favored)
+      // Our model uses positive = teamA favored, so we negate
+      vegasLines[`${a} vs ${b}`]=-val.spread;
+      vegasLines[`${b} vs ${a}`]=val.spread;
+    }
+    vegasLines[key]=val.spread;
+  }
+}
 console.log(`📊 Loaded ${Object.keys(data.odds).length} Vegas lines`);
 
 let eloUpdates=0;
@@ -208,16 +228,14 @@ for(const article of data.injuries||[]){const text=(article.headline+' '+(articl
 if(Object.keys(injuredTeams).length>0)console.log(`🏥 Injury news for: ${Object.keys(injuredTeams).join(', ')}`);
 
 // ═══════════════════════════════════════════════════════
-// AUTO-ADVANCING BRACKET (same structure as before)
+// AUTO-ADVANCING BRACKET
 // ═══════════════════════════════════════════════════════
 const VENUE_MAP={
-  // R64 venues
   E1:"Greenville",E2:"Greenville",E3:"Buffalo",E4:"Buffalo",E5:"Tampa",E6:"Buffalo",E7:"Philadelphia",E8:"Philadelphia",
   S1:"Tampa",S2:"Tampa",S3:"OKC",S4:"OKC",S5:"Greenville",S6:"Greenville",S7:"St. Louis",S8:"St. Louis",
   W1:"OKC",W2:"Philadelphia",W3:"OKC",W4:"Portland",W5:"Portland",W6:"Portland",W7:"San Diego",W8:"OKC",
   MW1:"Buffalo",MW2:"Buffalo",MW3:"OKC",MW4:"OKC",MW5:"St. Louis",MW6:"Philadelphia",MW7:"St. Louis",MW8:"St. Louis",
   FF1:"Dayton",FF2:"Dayton",FF3:"Dayton",FF4:"Dayton",
-  // R32 inherits R64 venues, S16/E8 are regional
   E_R32_1:"Greenville",E_R32_2:"Buffalo",E_R32_3:"Tampa",E_R32_4:"Philadelphia",
   S_R32_1:"Tampa",S_R32_2:"OKC",S_R32_3:"Greenville",S_R32_4:"St. Louis",
   W_R32_1:"OKC",W_R32_2:"Portland",W_R32_3:"Portland",W_R32_4:"San Diego",
@@ -232,27 +250,22 @@ const BRACKET=[
   {id:"FF2",a:"Texas",b:"NC State",round:"First Four",feedsInto:"W5",feedsAs:"b",rd:0},
   {id:"FF3",a:"Lehigh",b:"Prairie View",round:"First Four",feedsInto:"S1",feedsAs:"b",rd:0},
   {id:"FF4",a:"SMU",b:"Miami OH",round:"First Four",feedsInto:"MW5",feedsAs:"b",rd:0},
-  // EAST R64
   {id:"E1",a:"Duke",b:"Siena",round:"R64",feedsInto:"E_R32_1",feedsAs:"a",rd:1},{id:"E2",a:"Ohio State",b:"TCU",round:"R64",feedsInto:"E_R32_1",feedsAs:"b",rd:1},
   {id:"E3",a:"St. John's",b:"N. Iowa",round:"R64",feedsInto:"E_R32_2",feedsAs:"a",rd:1},{id:"E4",a:"Kansas",b:"Cal Baptist",round:"R64",feedsInto:"E_R32_2",feedsAs:"b",rd:1},
   {id:"E5",a:"Louisville",b:"S. Florida",round:"R64",feedsInto:"E_R32_3",feedsAs:"a",rd:1},{id:"E6",a:"Michigan St.",b:"N. Dakota St.",round:"R64",feedsInto:"E_R32_3",feedsAs:"b",rd:1},
   {id:"E7",a:"UCLA",b:"UCF",round:"R64",feedsInto:"E_R32_4",feedsAs:"a",rd:1},{id:"E8",a:"UConn",b:"Furman",round:"R64",feedsInto:"E_R32_4",feedsAs:"b",rd:1},
-  // SOUTH R64
   {id:"S1",a:"Florida",b:null,round:"R64",feedsInto:"S_R32_1",feedsAs:"a",rd:1},{id:"S2",a:"Clemson",b:"Iowa",round:"R64",feedsInto:"S_R32_1",feedsAs:"b",rd:1},
   {id:"S3",a:"Vanderbilt",b:"McNeese",round:"R64",feedsInto:"S_R32_2",feedsAs:"a",rd:1},{id:"S4",a:"Nebraska",b:"Troy",round:"R64",feedsInto:"S_R32_2",feedsAs:"b",rd:1},
   {id:"S5",a:"N. Carolina",b:"VCU",round:"R64",feedsInto:"S_R32_3",feedsAs:"a",rd:1},{id:"S6",a:"Illinois",b:"Penn",round:"R64",feedsInto:"S_R32_3",feedsAs:"b",rd:1},
   {id:"S7",a:"St. Mary's",b:"Texas A&M",round:"R64",feedsInto:"S_R32_4",feedsAs:"a",rd:1},{id:"S8",a:"Houston",b:"Idaho",round:"R64",feedsInto:"S_R32_4",feedsAs:"b",rd:1},
-  // WEST R64
   {id:"W1",a:"Arizona",b:"LIU",round:"R64",feedsInto:"W_R32_1",feedsAs:"a",rd:1},{id:"W2",a:"Villanova",b:"Utah State",round:"R64",feedsInto:"W_R32_1",feedsAs:"b",rd:1},
   {id:"W3",a:"Wisconsin",b:"High Point",round:"R64",feedsInto:"W_R32_2",feedsAs:"a",rd:1},{id:"W4",a:"Arkansas",b:"Hawaii",round:"R64",feedsInto:"W_R32_2",feedsAs:"b",rd:1},
   {id:"W5",a:"BYU",b:null,round:"R64",feedsInto:"W_R32_3",feedsAs:"a",rd:1},{id:"W6",a:"Gonzaga",b:"Kennesaw St.",round:"R64",feedsInto:"W_R32_3",feedsAs:"b",rd:1},
   {id:"W7",a:"Miami FL",b:"Missouri",round:"R64",feedsInto:"W_R32_4",feedsAs:"a",rd:1},{id:"W8",a:"Purdue",b:"Queens",round:"R64",feedsInto:"W_R32_4",feedsAs:"b",rd:1},
-  // MIDWEST R64
   {id:"MW1",a:"Michigan",b:null,round:"R64",feedsInto:"MW_R32_1",feedsAs:"a",rd:1},{id:"MW2",a:"Georgia",b:"Saint Louis",round:"R64",feedsInto:"MW_R32_1",feedsAs:"b",rd:1},
   {id:"MW3",a:"Texas Tech",b:"Akron",round:"R64",feedsInto:"MW_R32_2",feedsAs:"a",rd:1},{id:"MW4",a:"Alabama",b:"Hofstra",round:"R64",feedsInto:"MW_R32_2",feedsAs:"b",rd:1},
   {id:"MW5",a:"Tennessee",b:null,round:"R64",feedsInto:"MW_R32_3",feedsAs:"a",rd:1},{id:"MW6",a:"Virginia",b:"Wright St.",round:"R64",feedsInto:"MW_R32_3",feedsAs:"b",rd:1},
   {id:"MW7",a:"Kentucky",b:"Santa Clara",round:"R64",feedsInto:"MW_R32_4",feedsAs:"a",rd:1},{id:"MW8",a:"Iowa State",b:"Tennessee St.",round:"R64",feedsInto:"MW_R32_4",feedsAs:"b",rd:1},
-  // R32
   {id:"E_R32_1",a:null,b:null,round:"R32",feedsInto:"E_S16_1",feedsAs:"a",rd:2},{id:"E_R32_2",a:null,b:null,round:"R32",feedsInto:"E_S16_1",feedsAs:"b",rd:2},
   {id:"E_R32_3",a:null,b:null,round:"R32",feedsInto:"E_S16_2",feedsAs:"a",rd:2},{id:"E_R32_4",a:null,b:null,round:"R32",feedsInto:"E_S16_2",feedsAs:"b",rd:2},
   {id:"S_R32_1",a:null,b:null,round:"R32",feedsInto:"S_S16_1",feedsAs:"a",rd:2},{id:"S_R32_2",a:null,b:null,round:"R32",feedsInto:"S_S16_1",feedsAs:"b",rd:2},
@@ -261,17 +274,13 @@ const BRACKET=[
   {id:"W_R32_3",a:null,b:null,round:"R32",feedsInto:"W_S16_2",feedsAs:"a",rd:2},{id:"W_R32_4",a:null,b:null,round:"R32",feedsInto:"W_S16_2",feedsAs:"b",rd:2},
   {id:"MW_R32_1",a:null,b:null,round:"R32",feedsInto:"MW_S16_1",feedsAs:"a",rd:2},{id:"MW_R32_2",a:null,b:null,round:"R32",feedsInto:"MW_S16_1",feedsAs:"b",rd:2},
   {id:"MW_R32_3",a:null,b:null,round:"R32",feedsInto:"MW_S16_2",feedsAs:"a",rd:2},{id:"MW_R32_4",a:null,b:null,round:"R32",feedsInto:"MW_S16_2",feedsAs:"b",rd:2},
-  // S16
   {id:"E_S16_1",a:null,b:null,round:"S16",feedsInto:"E_E8",feedsAs:"a",rd:3},{id:"E_S16_2",a:null,b:null,round:"S16",feedsInto:"E_E8",feedsAs:"b",rd:3},
   {id:"S_S16_1",a:null,b:null,round:"S16",feedsInto:"S_E8",feedsAs:"a",rd:3},{id:"S_S16_2",a:null,b:null,round:"S16",feedsInto:"S_E8",feedsAs:"b",rd:3},
   {id:"W_S16_1",a:null,b:null,round:"S16",feedsInto:"W_E8",feedsAs:"a",rd:3},{id:"W_S16_2",a:null,b:null,round:"S16",feedsInto:"W_E8",feedsAs:"b",rd:3},
   {id:"MW_S16_1",a:null,b:null,round:"S16",feedsInto:"MW_E8",feedsAs:"a",rd:3},{id:"MW_S16_2",a:null,b:null,round:"S16",feedsInto:"MW_E8",feedsAs:"b",rd:3},
-  // E8
   {id:"E_E8",a:null,b:null,round:"E8",feedsInto:"F4_1",feedsAs:"a",rd:4},{id:"S_E8",a:null,b:null,round:"E8",feedsInto:"F4_1",feedsAs:"b",rd:4},
   {id:"W_E8",a:null,b:null,round:"E8",feedsInto:"F4_2",feedsAs:"a",rd:4},{id:"MW_E8",a:null,b:null,round:"E8",feedsInto:"F4_2",feedsAs:"b",rd:4},
-  // F4
   {id:"F4_1",a:null,b:null,round:"F4",feedsInto:"CHAMP",feedsAs:"a",rd:5},{id:"F4_2",a:null,b:null,round:"F4",feedsInto:"CHAMP",feedsAs:"b",rd:5},
-  // Championship
   {id:"CHAMP",a:null,b:null,round:"Championship",feedsInto:null,feedsAs:null,rd:6},
 ];
 
@@ -317,22 +326,16 @@ fs.writeFileSync(BRACKET_FILE,JSON.stringify(bracketState,null,2));
 
 // ═══════════════════════════════════════════════════════
 // PROJECT FULL BRACKET FOR DISPLAY
-// Simulate every game through the championship using
-// predicted winners for future rounds. This is the single
-// source of truth for the bracket page.
 // ═══════════════════════════════════════════════════════
 console.log('\n🏆 Projecting full bracket for display...');
 
-// Reset bracket slots for projection (don't modify bracketState)
 const projSlots = JSON.parse(JSON.stringify(BRACKET));
 const projMap = {};
 projSlots.forEach(s => projMap[s.id] = s);
 
-// Apply actual results
 for (const [id, res] of Object.entries(bracketState.results)) {
   if (projMap[id]) projMap[id].actualResult = res;
 }
-// Apply known advances
 for (const [id, teams] of Object.entries(bracketState.advancedTo)) {
   if (projMap[id]) {
     if (teams.a) projMap[id].a = teams.a;
@@ -340,8 +343,7 @@ for (const [id, teams] of Object.entries(bracketState.advancedTo)) {
   }
 }
 
-// Process bracket in order: FF → R64 → R32 → S16 → E8 → F4 → CHAMP
-const roundOrder = [0, 1, 2, 3, 4, 5, 6]; // rd values
+const roundOrder = [0, 1, 2, 3, 4, 5, 6];
 const roundNames = ['FIRST FOUR', 'ROUND OF 64', 'ROUND OF 32', 'SWEET SIXTEEN', 'ELITE EIGHT', 'FINAL FOUR', 'CHAMPIONSHIP'];
 const displayRounds = [];
 
@@ -350,7 +352,6 @@ for (const rd of roundOrder) {
   const games = [];
 
   for (const slot of roundSlots) {
-    // If actual result exists, use it
     if (slot.actualResult) {
       const res = slot.actualResult;
       const aTeam = teamDB[res.winner] || {};
@@ -366,7 +367,6 @@ for (const rd of roundOrder) {
         adjStats: { aEfg: 0, bEfg: 0, aTor: 0, bTor: 0, aOrb: 0, bOrb: 0, aFtr: 0, bFtr: 0 },
         modelSp: 0, vegasSp: null, a: buildT(res.winner), b: buildT(res.loser), rawSp: 0, ha: null, hb: 0,
       });
-      // Advance winner
       if (slot.feedsInto && projMap[slot.feedsInto]) {
         if (slot.feedsAs === 'a') projMap[slot.feedsInto].a = res.winner;
         else projMap[slot.feedsInto].b = res.winner;
@@ -374,25 +374,21 @@ for (const rd of roundOrder) {
       continue;
     }
 
-    // Both teams known? Sim it
     if (!slot.a || !slot.b) continue;
     const venue = VENUE_MAP[slot.id] || 'Indianapolis';
     const result = sim(slot.a, slot.b, venue, slot.rd);
     if (!result) continue;
 
-    // Add team stat objects for display
-    const aT = buildT(slot.a), bT = buildT(slot.b);
     games.push({
       ...result,
       id: slot.id,
-      a: aT, b: bT,
       status: 'PROJECTED',
     });
 
-    // Advance projected winner to next round
+    // FIX: Use result.winner (not result.w) to advance projected winners
     if (slot.feedsInto && projMap[slot.feedsInto]) {
-      if (slot.feedsAs === 'a') projMap[slot.feedsInto].a = result.w;
-      else projMap[slot.feedsInto].b = result.w;
+      if (slot.feedsAs === 'a') projMap[slot.feedsInto].a = result.winner;
+      else projMap[slot.feedsInto].b = result.winner;
     }
   }
 
@@ -401,14 +397,13 @@ for (const rd of roundOrder) {
   }
 }
 
-// Save display file
 const bracketDisplay = {
   timestamp: new Date().toISOString(),
   timestampCST: new Date().toLocaleString('en-US', { timeZone: 'America/Chicago', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true }) + ' CST',
   engineVersion: 'v4-full-v8-port',
   weightsVersion: weights.version || 1,
   rounds: displayRounds,
-  teamDB: teamDB, // include for stat display in UI
+  teamDB: teamDB,
 };
 
 fs.mkdirSync('public/data', { recursive: true });
@@ -418,10 +413,11 @@ console.log(`   Projected ${displayRounds.reduce((s, r) => s + r.g.length, 0)} g
 console.log(`   Champion: ${displayRounds[displayRounds.length - 1]?.g[0]?.w || 'TBD'}`);
 
 // ═══ SUMMARY ═══
-console.log(`📊 FULL V8 ENGINE RESULTS:`);
+console.log(`\n📊 FULL V8 ENGINE RESULTS:`);
 console.log(`   Completed: ${completed.length} | Upcoming: ${predictions.length} | Waiting: ${BRACKET.length-completed.length-predictions.length}`);
 
-const printRounds=['First Four','R64','R32','S16','E8','F4','Championship'];const byRound={};predictions.forEach(p=>{const r=p.round==='First Four'?'First Four':['','R64','R32','S16','E8','F4','Championship'][p.round]||p.round;if(!byRound[r])byRound[r]=[];byRound[r].push(p);});
+const printRounds=['First Four','R64','R32','S16','E8','F4','Championship'];
+const byRound={};predictions.forEach(p=>{const r=p.round==='First Four'?'First Four':['','R64','R32','S16','E8','F4','Championship'][p.round]||p.round;if(!byRound[r])byRound[r]=[];byRound[r].push(p);});
 for(const round of printRounds){const games=byRound[round];if(!games)continue;console.log(`\n📋 ${round} (${games.length} games):`);games.forEach(p=>{const edgeStr=p.edge!==null?` | edge:${Math.abs(p.edge)}`:'';const layers=` [L1:${p.L1} L2:${p.L2} L3:${p.L3} L4:${p.L4} L5:${p.L5} v8:${p.v8adj}]`;console.log(`   ${p.winner} ${p.scoreW}-${p.scoreL} ${p.loser} (${p.winProb}%)${edgeStr}${layers}`);});}
 
 const edges=predictions.filter(p=>p.edge!==null).sort((a,b)=>Math.abs(b.edge)-Math.abs(a.edge));
