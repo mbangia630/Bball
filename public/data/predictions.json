@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-03-19T00:13:44.905Z",
-  "weightsVersion": 4,
+  "timestamp": "2026-03-19T01:08:56.446Z",
+  "weightsVersion": 5,
   "engineVersion": "v4-full-v8-port",
   "completed": [
     {
@@ -21,6 +21,16 @@
       "scoreW": 68,
       "scoreL": 66,
       "date": "2026-03-18",
+      "status": "FINAL"
+    },
+    {
+      "id": "FF3",
+      "round": "First Four",
+      "winner": "Prairie View",
+      "loser": "Lehigh",
+      "scoreW": 67,
+      "scoreL": 55,
+      "date": "2026-03-19",
       "status": "FINAL"
     }
   ],
@@ -868,8 +878,8 @@
     }
   ],
   "bracketProgress": {
-    "gamesPlayed": 2,
-    "gamesRemaining": 65,
+    "gamesPlayed": 3,
+    "gamesRemaining": 64,
     "currentRound": 1
   }
 }
