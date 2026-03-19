@@ -69,6 +69,13 @@
       "scoreW": 83,
       "scoreL": 79,
       "date": "2026-03-19"
+    },
+    "W4": {
+      "winner": "Arkansas",
+      "loser": "Hawaii",
+      "scoreW": 97,
+      "scoreL": 78,
+      "date": "2026-03-19"
     }
   },
   "advancedTo": {
@@ -93,7 +100,8 @@
       "a": "Duke"
     },
     "W_R32_2": {
-      "a": "High Point"
+      "a": "High Point",
+      "b": "Arkansas"
     },
     "E_R32_3": {
       "a": "Louisville"
