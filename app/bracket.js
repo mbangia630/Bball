@@ -445,7 +445,7 @@ function ensemble(a,b,tf){
 
 function sim(nA,nB,ven,vegasKey,round){
   const a=buildT(nA),b=buildT(nB);
-  if(!a||!b)return{w:nA,l:nB,sW:75,sL:60,wp:75,sp:15,sW2:DB[nA]?.s||16,sL2:DB[nB]?.s||16,ven,mu:{det:[]},cDiff:0,L1:0,L2:0,L3:0,L4:0,L5:0,fatA:{pts:0},fatB:{pts:0},rd:1,v8:{ref:0,gs:0,sharp:0,cont:0,tz:0,foul:0,ens:{avg:0,agree:true},total:0},adjStats:{aEfg:50,bEfg:50,aTor:15,bTor:15,aOrb:30,bOrb:30,aFtr:35,bFtr:35},modelSp:0,vegasSp:null,a:null,b:null,rawSp:0,ha:null,hb:0};
+  if(!a||!b)return{w:nA,l:nB,sW:75,sL:60,wp:75,sp:15,sW2:1,sL2:16,ven};
   const pA=hca(nA,ven,a.hb),pB=hca(nB,ven,b.hb);
   let hcav=0;
   if(pA.tag==="HOME"&&!pB.tag)hcav=pA.b;else if(pB.tag==="HOME"&&!pA.tag)hcav=-pB.b;
