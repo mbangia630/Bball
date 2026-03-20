@@ -588,9 +588,9 @@ export default function V7Final(){
     return games.filter(g=>g.vegasLine!==null).map(g=>{
       const vk=`${g.a?.name} vs ${g.b?.name}`;
       const odds=ODDS[vk]||[-200,170,-110];
-      const modelFav=g.modelSpreadread>=0?g.a?.name:g.b?.name;
-      const modelDog=g.modelSpreadread>=0?g.b?.name:g.a?.name;
-      const modelSpreadAbs=Math.abs(g.modelSpreadread);
+      const modelFav=g.modelSpread>=0?g.a?.name:g.b?.name;
+      const modelDog=g.modelSpread>=0?g.b?.name:g.a?.name;
+      const modelSpreadAbs=Math.abs(g.modelSpread);
       const vegasLineAbs=Math.abs(g.vegasLine);
       const vegasFav=g.vegasLine>=0?g.a?.name:g.b?.name;
       const vegasDog=g.vegasLine>=0?g.b?.name:g.a?.name;
@@ -609,8 +609,8 @@ export default function V7Final(){
       // ═══ SCENARIO 1: Bet FAVORITE on the spread ═══
       // Model says fav covers if model spread > vegas spread
       const favCoversEdge=sameFav?(modelSpreadAbs-vegasLineAbs):(modelSpreadAbs+vegasLineAbs);
-      // Probability fav covers ≈ normalCDF((modelSpreadread - vegasLineread) / σ) with σ~11
-      const favCoversProb=Φ((g.modelSpreadread-(g.vegasLine))/11);
+      // Probability fav covers ≈ normalCDF((modelSpread - vegasLineread) / σ) with σ~11
+      const favCoversProb=Φ((g.modelSpread-(g.vegasLine))/11);
       const spreadFavProfit=spreadPayout; // win $91 on $100
       const spreadFavEV=Math.round((favCoversProb*spreadFavProfit-(1-favCoversProb)*100));
 
@@ -649,7 +649,7 @@ export default function V7Final(){
 
       return{
         teamA:g.a?.name,teamB:g.b?.name,seedA:g.a?.s,seedB:g.b?.s,
-        modelSpread:g.modelSpreadread,vegasLine:g.vegasLine,
+        modelSpread:g.modelSpread,vegasLine:g.vegasLine,
         modelFav,vegasFav,vegasDog,
         w:g.w,l:g.l,sW:g.sW,sL:g.sL,wp:g.wp,ven:g.ven,ensAgree,
         scenarios,bestBet,allNeg,
@@ -876,7 +876,7 @@ export default function V7Final(){
 
                   {/* Algorithm layers */}
                   <div style={{marginBottom:8,padding:"6px 8px",background:`${C.blue}06`,borderRadius:4}}>
-                    <div style={{fontSize:11,color:C.blue,letterSpacing:1,marginBottom:4}}>ALGORITHM LAYERS (model: {g.modelSpreadread>0?"+":""}{g.modelSpreadread} {g.vegasLine!==null?`· Vegas: ${g.vegasLine>0?"+":""}${g.vegasLine} · Blend: ${g.rawSp>0?"+":""}${g.rawSp}`:``})</div>
+                    <div style={{fontSize:11,color:C.blue,letterSpacing:1,marginBottom:4}}>ALGORITHM LAYERS (model: {g.modelSpread>0?"+":""}{g.modelSpread} {g.vegasLine!==null?`· Vegas: ${g.vegasLine>0?"+":""}${g.vegasLine} · Blend: ${g.rawSp>0?"+":""}${g.rawSp}`:``})</div>
                     <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:4}}>
                       {[{n:"L1: Efficiency",v:g.L1,c:C.blue,w:42},{n:"L2: 4 Factors + MU",v:g.L2,c:C.purp,w:28},{n:"L3: Context",v:g.L3,c:C.grn,w:18},{n:"L4: Coach/Tempo",v:g.L4,c:C.amb,w:8},{n:"L5: Fatigue",v:g.L5,c:C.pink,w:"var"}].map(l=>(
                         <div key={l.n} style={{textAlign:"center",padding:"4px",background:`${l.c}08`,borderRadius:3}}>
@@ -992,10 +992,10 @@ export default function V7Final(){
                   {g.vegasLine!==null&&<div style={{marginTop:6,padding:"4px 6px",background:`${C.gold}06`,borderRadius:3}}>
                     <div style={{fontSize:11,color:C.gold,letterSpacing:1}}>📊 MODEL vs VEGAS</div>
                     <div style={{fontSize:12,color:"#999",display:"flex",gap:12}}>
-                      <span>Model: <b style={{color:C.wh}}>{g.modelSpreadread>0?"+":""}{g.modelSpreadread}</b></span>
+                      <span>Model: <b style={{color:C.wh}}>{g.modelSpread>0?"+":""}{g.modelSpread}</b></span>
                       <span>Vegas: <b style={{color:C.wh}}>{g.vegasLine>0?"+":""}{g.vegasLine}</b></span>
                       <span>Blend (55/45): <b style={{color:C.gold}}>{g.rawSp>0?"+":""}{g.rawSp}</b></span>
-                      {Math.abs(g.modelSpreadread-g.vegasLine)>=3&&<span style={{color:C.pink,fontWeight:700}}>⚠️ {Math.abs(g.modelSpreadread-g.vegasLine).toFixed(1)}pt divergence</span>}
+                      {Math.abs(g.modelSpread-g.vegasLine)>=3&&<span style={{color:C.pink,fontWeight:700}}>⚠️ {Math.abs(g.modelSpread-g.vegasLine).toFixed(1)}pt divergence</span>}
                     </div>
                   </div>}
                 </div>
