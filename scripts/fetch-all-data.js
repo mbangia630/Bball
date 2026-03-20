@@ -1,5 +1,5 @@
-const fetch = require(‘node-fetch’);
-const fs = require(‘fs’);
+const fetch = require('node-fetch');
+const fs = require('fs');
 
 // ═══════════════════════════════════════════════════════
 // MASTER DATA FETCHER — runs daily at 7am CST
