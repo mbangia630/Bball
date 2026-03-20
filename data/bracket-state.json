@@ -83,6 +83,27 @@
       "scoreW": 92,
       "scoreL": 67,
       "date": "2026-03-19"
+    },
+    "S5": {
+      "winner": "VCU",
+      "loser": "N. Carolina",
+      "scoreW": 82,
+      "scoreL": 78,
+      "date": "2026-03-20"
+    },
+    "W5": {
+      "winner": "Texas",
+      "loser": "BYU",
+      "scoreW": 79,
+      "scoreL": 71,
+      "date": "2026-03-20"
+    },
+    "S7": {
+      "winner": "Texas A&M",
+      "loser": "St. Mary's",
+      "scoreW": 63,
+      "scoreL": 50,
+      "date": "2026-03-20"
     }
   },
   "advancedTo": {
@@ -113,6 +134,15 @@
     "E_R32_3": {
       "a": "Louisville",
       "b": "Michigan St."
+    },
+    "S_R32_3": {
+      "a": "VCU"
+    },
+    "W_R32_3": {
+      "a": "Texas"
+    },
+    "S_R32_4": {
+      "a": "Texas A&M"
     }
   }
 }

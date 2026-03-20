@@ -1,7 +1,40 @@
 {
-  "games": [],
-  "daily": [],
-  "totalGames": 0,
-  "correctSU": 0,
-  "correctATS": 0
+  "games": [
+    {
+      "teamA": "N. Carolina",
+      "teamB": "VCU",
+      "modelCorrectSU": false,
+      "modelCorrectATS": false,
+      "modelError": 8.1,
+      "date": "2026-03-20"
+    },
+    {
+      "teamA": "BYU",
+      "teamB": "Texas",
+      "modelCorrectSU": false,
+      "modelCorrectATS": false,
+      "modelError": 8.4,
+      "date": "2026-03-20"
+    },
+    {
+      "teamA": "St. Mary's",
+      "teamB": "Texas A&M",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 11.4,
+      "date": "2026-03-20"
+    }
+  ],
+  "daily": [
+    {
+      "date": "2026-03-20",
+      "games": 3,
+      "suPct": 33,
+      "atsPct": 33,
+      "avgError": 9.3
+    }
+  ],
+  "totalGames": 3,
+  "correctSU": 1,
+  "correctATS": 1
 }

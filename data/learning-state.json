@@ -1,70 +1,195 @@
 {
   "layerAccuracy": {
     "L1": {
-      "totalSigned": 0,
-      "correctDir": 0,
-      "totalAbsError": 0,
-      "games": 0
+      "totalSigned": 2.7,
+      "correctDir": 1,
+      "totalAbsError": 27.7,
+      "games": 3
     },
     "L2": {
-      "totalSigned": 0,
-      "correctDir": 0,
-      "totalAbsError": 0,
-      "games": 0
+      "totalSigned": 0.7000000000000001,
+      "correctDir": 1,
+      "totalAbsError": 25.700000000000003,
+      "games": 3
     },
     "L3": {
-      "totalSigned": 0,
-      "correctDir": 0,
-      "totalAbsError": 0,
-      "games": 0
+      "totalSigned": -2.0000000000000004,
+      "correctDir": 1,
+      "totalAbsError": 23,
+      "games": 3
     },
     "L4": {
-      "totalSigned": 0,
-      "correctDir": 0,
-      "totalAbsError": 0,
-      "games": 0
+      "totalSigned": 0.2,
+      "correctDir": 2,
+      "totalAbsError": 25.200000000000003,
+      "games": 3
     },
     "L5": {
       "totalSigned": 0,
-      "correctDir": 0,
-      "totalAbsError": 0,
-      "games": 0
+      "correctDir": 3,
+      "totalAbsError": 25,
+      "games": 3
     },
     "v8": {
-      "totalSigned": 0,
-      "correctDir": 0,
-      "totalAbsError": 0,
-      "games": 0
+      "totalSigned": -0.7999999999999999,
+      "correctDir": 2,
+      "totalAbsError": 24.200000000000003,
+      "games": 3
     },
     "ens": {
-      "totalSigned": 0,
-      "correctDir": 0,
-      "totalAbsError": 0,
-      "games": 0
+      "totalSigned": 1.9,
+      "correctDir": 1,
+      "totalAbsError": 26.900000000000002,
+      "games": 3
     }
   },
-  "teamK": {},
+  "teamK": {
+    "N. Carolina": {
+      "k": 20,
+      "recentErrors": [
+        8.1
+      ]
+    },
+    "VCU": {
+      "k": 20,
+      "recentErrors": [
+        8.1
+      ]
+    },
+    "BYU": {
+      "k": 20,
+      "recentErrors": [
+        8.4
+      ]
+    },
+    "Texas": {
+      "k": 20,
+      "recentErrors": [
+        8.4
+      ]
+    },
+    "St. Mary's": {
+      "k": 20,
+      "recentErrors": [
+        11.4
+      ]
+    },
+    "Texas A&M": {
+      "k": 20,
+      "recentErrors": [
+        11.4
+      ]
+    }
+  },
   "situations": {
-    "bySpreadBucket": {},
-    "bySeedMatchup": {},
-    "byRound": {},
+    "bySpreadBucket": {
+      "3-7": {
+        "correct": 0,
+        "total": 1,
+        "avgError": 0,
+        "totalError": 8.1
+      },
+      "0-3": {
+        "correct": 1,
+        "total": 2,
+        "avgError": 0,
+        "totalError": 19.8
+      }
+    },
+    "bySeedMatchup": {
+      "6v11": {
+        "correct": 0,
+        "total": 2
+      },
+      "7v10": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "byRound": {
+      "1": {
+        "correct": 1,
+        "total": 3
+      }
+    },
     "favVsDog": {
       "fav": {
         "correct": 0,
-        "total": 0
+        "total": 1
       },
       "dog": {
-        "correct": 0,
-        "total": 0
+        "correct": 1,
+        "total": 2
       }
     }
   },
-  "injuryImpact": {},
+  "injuryImpact": {
+    "N. Carolina": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 8.1
+      }
+    },
+    "VCU": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 8.1
+      }
+    },
+    "BYU": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 8.4
+      }
+    },
+    "Texas": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 8.4
+      }
+    },
+    "St. Mary's": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 11.4
+      }
+    },
+    "Texas A&M": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 11.4
+      }
+    }
+  },
   "lineMovement": {
-    "sharpCorrect": 0,
-    "sharpTotal": 0,
-    "reverseLineCorrect": 0,
-    "reverseLineTotal": 0,
+    "sharpCorrect": 1,
+    "sharpTotal": 3,
+    "reverseLineCorrect": 1,
+    "reverseLineTotal": 3,
     "edgeBuckets": {
       "0-2": {
         "profit": 0,
@@ -75,34 +200,45 @@
         "games": 0
       },
       "5+": {
-        "profit": 0,
-        "games": 0
+        "profit": -109,
+        "games": 3
       }
     }
   },
   "ensembleAccuracy": {
     "main": {
-      "totalError": 0,
-      "games": 0
+      "totalError": 27.9,
+      "games": 3
     },
     "ens": {
-      "totalError": 0,
-      "games": 0
+      "totalError": 26.900000000000002,
+      "games": 3
     }
   },
-  "calibration": {},
+  "calibration": {
+    "60-65": {
+      "predicted": 62.2,
+      "actual": 0,
+      "games": 1
+    },
+    "50-55": {
+      "predicted": 105.9,
+      "actual": 100,
+      "games": 2
+    }
+  },
   "pace": {
-    "totalTempoError": 0,
-    "games": 0,
-    "overPredictions": 0,
-    "underPredictions": 0
+    "totalTempoError": -8,
+    "games": 3,
+    "overPredictions": 1,
+    "underPredictions": 2
   },
   "statRecency": {},
   "homeCourt": {
     "totalPredictedHCA": 0,
     "totalActualMarginBias": 0,
     "gamesWithHCA": 0,
-    "gamesNeutral": 0
+    "gamesNeutral": 3
   },
   "v8Accuracy": {
     "ref": {
@@ -134,6 +270,11 @@
       "totalAbs": 0,
       "correctDir": 0,
       "games": 0
+    },
+    "total": {
+      "totalAbs": 0.9,
+      "correctDir": 2,
+      "games": 3
     }
   },
   "matchupAccuracy": {
@@ -147,14 +288,31 @@
     }
   },
   "vegasMomentum": {
-    "modelStreak": 0,
+    "modelStreak": 1,
     "vegasStreak": 0,
-    "last10": []
+    "last10": [
+      "model"
+    ]
   },
   "upsetPatterns": {
-    "byRound": {},
-    "bySeedDiff": {},
-    "bySpreadSize": {}
+    "byRound": {
+      "1": {
+        "upsets": 2,
+        "total": 3
+      }
+    },
+    "bySeedDiff": {
+      "3-5": {
+        "upsets": 2,
+        "total": 3
+      }
+    },
+    "bySpreadSize": {
+      "0-5": {
+        "upsets": 2,
+        "total": 3
+      }
+    }
   },
   "confidenceTracking": {
     "highConf": {
@@ -163,11 +321,11 @@
     },
     "medConf": {
       "correct": 0,
-      "total": 0
+      "total": 1
     },
     "lowConf": {
-      "correct": 0,
-      "total": 0
+      "correct": 1,
+      "total": 2
     }
   }
 }

@@ -16,12 +16,12 @@
     "tor": 0.42,
     "tpt": 0.37
   },
-  "vegasBlend": 0.55,
+  "vegasBlend": 0.525,
   "ensemble": {
     "main": 0.8,
     "subs": 0.2
   },
   "sigma": 11,
-  "version": 16,
-  "lastUpdated": "2026-03-20T00:21:19.837Z"
+  "version": 17,
+  "lastUpdated": "2026-03-20T02:21:58.771Z"
 }
