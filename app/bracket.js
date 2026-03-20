@@ -584,7 +584,7 @@ export default function V7Final(){
 
   // ═══ BETTING EDGE CALCULATOR WITH REAL ODDS ═══
   const bets=useMemo(()=>{
-    const games=R[0]?.g||[];
+    const games=R.flatMap(r=>r.g).filter(g=>g.status!=='FINAL');
     return games.filter(g=>g.vegasLine!==null).map(g=>{
       const vk=`${g.a?.name} vs ${g.b?.name}`;
       const odds=ODDS[vk]||[-200,170,-110];
