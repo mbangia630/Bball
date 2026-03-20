@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-19T23:22:13.386Z",
-  "timestampCST": "Mar 19, 2026, 6:22 PM CST",
+  "timestamp": "2026-03-19T23:28:58.746Z",
+  "timestampCST": "Mar 19, 2026, 6:28 PM CST",
   "type": "DELTA",
   "baselineTime": "Mar 19, 2026, 9:05 AM CST",
-  "currentTime": "Mar 19, 2026, 6:22 PM CST",
+  "currentTime": "Mar 19, 2026, 6:28 PM CST",
   "summary": {
     "totalGamesCompared": 27,
     "gamesChanged": 23,
-    "winnersFlipped": 11,
+    "winnersFlipped": 12,
     "newMatchups": 6,
-    "avgSpreadChange": 10.9,
+    "avgSpreadChange": 11,
     "biggestMover": "Florida vs Prairie View"
   },
   "deltas": [
@@ -20,7 +20,7 @@
       "type": "NEW",
       "winner": "Florida",
       "winProb": 99.9,
-      "spread": 35.3,
+      "spread": 35.2,
       "message": "New matchup since 7am — Florida predicted to win (99.9%)",
       "factors": [
         "New round matchup generated from bracket advancement"
@@ -33,9 +33,9 @@
       "region": "R64",
       "type": "NEW",
       "winner": "Miami OH",
-      "winProb": 55.9,
-      "spread": -2.1,
-      "message": "New matchup since 7am — Miami OH predicted to win (55.9%)",
+      "winProb": 56.2,
+      "spread": -2.2,
+      "message": "New matchup since 7am — Miami OH predicted to win (56.2%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -358,6 +358,35 @@
       "absDelta": 6.89
     },
     {
+      "matchup": "N. Carolina vs VCU",
+      "round": 1,
+      "region": "R64",
+      "type": "FLIP",
+      "baselineWinner": "VCU",
+      "baselineWinProb": 62.1,
+      "baselineSpread": -4.1,
+      "baselineVegas": -2.5,
+      "baselineModelSpread": -6.1,
+      "baselineScoreW": 72,
+      "baselineScoreL": 68,
+      "winner": "N. Carolina",
+      "winProb": 52.6,
+      "spread": 0.8,
+      "vegasLine": 6.5,
+      "modelSpread": -6.1,
+      "scoreW": 70,
+      "scoreL": 69,
+      "spreadChange": 4.9,
+      "probChange": -9.5,
+      "modelSpreadChange": 0,
+      "vegasChange": 9,
+      "factors": [
+        "Vegas line moved 9 pts toward N. Carolina (was -2.5, now 6.5)",
+        "⚠️ WINNER FLIPPED: was VCU at 7am, now N. Carolina"
+      ],
+      "absDelta": 5.8500000000000005
+    },
+    {
       "matchup": "Kentucky vs Santa Clara",
       "round": 1,
       "region": "R64",
@@ -386,34 +415,6 @@
         "⚠️ WINNER FLIPPED: was Santa Clara at 7am, now Kentucky"
       ],
       "absDelta": 4.77
-    },
-    {
-      "matchup": "N. Carolina vs VCU",
-      "round": 1,
-      "region": "R64",
-      "type": "SHIFT",
-      "baselineWinner": "VCU",
-      "baselineWinProb": 62.1,
-      "baselineSpread": -4.1,
-      "baselineVegas": -2.5,
-      "baselineModelSpread": -6.1,
-      "baselineScoreW": 72,
-      "baselineScoreL": 68,
-      "winner": "VCU",
-      "winProb": 52.5,
-      "spread": -0.8,
-      "vegasLine": 3.5,
-      "modelSpread": -6.1,
-      "scoreW": 71,
-      "scoreL": 69,
-      "spreadChange": 3.3,
-      "probChange": -9.6,
-      "modelSpreadChange": 0,
-      "vegasChange": 6,
-      "factors": [
-        "Vegas line moved 6 pts toward N. Carolina (was -2.5, now 3.5)"
-      ],
-      "absDelta": 4.26
     },
     {
       "matchup": "St. Mary's vs Texas A&M",
