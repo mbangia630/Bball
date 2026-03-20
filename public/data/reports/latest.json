@@ -1,8 +1,8 @@
 {
-  "date": "2026-03-19",
-  "generatedAt": "2026-03-19T23:28:58.624Z",
-  "generatedAtCST": "2026-03-19 6:28 PM CST",
-  "modelVersion": 14,
+  "date": "2026-03-20",
+  "generatedAt": "2026-03-20T00:12:49.869Z",
+  "generatedAtCST": "2026-03-20 7:12 PM CST",
+  "modelVersion": 15,
   "today": {
     "gamesGraded": 0,
     "straightUp": {
@@ -123,5 +123,5 @@
       "gamesNeutral": 0
     }
   },
-  "eloUpdates": 2
+  "eloUpdates": 8
 }
