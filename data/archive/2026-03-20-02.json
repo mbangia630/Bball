@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-20T02:21:58.727Z",
+  "timestamp": "2026-03-20T02:52:21.895Z",
   "games": [
     {
       "id": "401856525",
@@ -180,44 +180,44 @@
   ],
   "odds": {
     "Illinois Fighting Illini vs Pennsylvania Quakers": {
-      "spread": -19.5,
+      "spread": -21.5,
       "spreadOdds": -120,
-      "mlHome": -6500,
-      "mlAway": 1800,
+      "mlHome": -100000,
+      "mlAway": 4000,
       "homeTeam": "Illinois Fighting Illini",
       "awayTeam": "Pennsylvania Quakers",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Georgia Bulldogs vs Saint Louis Billikens": {
-      "spread": 1.5,
+      "spread": 9.5,
       "spreadOdds": -110,
-      "mlHome": 114,
-      "mlAway": -145,
+      "mlHome": 380,
+      "mlAway": -580,
       "homeTeam": "Georgia Bulldogs",
       "awayTeam": "Saint Louis Billikens",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Houston Cougars vs Idaho Vandals": {
-      "spread": -18.5,
-      "spreadOdds": -120,
-      "mlHome": -4000,
-      "mlAway": 1500,
+      "spread": -28.5,
+      "spreadOdds": -115,
+      "mlHome": null,
+      "mlAway": null,
       "homeTeam": "Houston Cougars",
       "awayTeam": "Idaho Vandals",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Gonzaga Bulldogs vs Kennesaw St Owls": {
-      "spread": -20.5,
-      "spreadOdds": -110,
-      "mlHome": -3200,
-      "mlAway": 1400,
+      "spread": -12.5,
+      "spreadOdds": -115,
+      "mlHome": -1150,
+      "mlAway": 650,
       "homeTeam": "Gonzaga Bulldogs",
       "awayTeam": "Kennesaw St Owls",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Kentucky Wildcats vs Santa Clara Broncos": {
       "spread": -3.5,
@@ -227,7 +227,7 @@
       "homeTeam": "Kentucky Wildcats",
       "awayTeam": "Santa Clara Broncos",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Texas Tech Red Raiders vs Akron Zips": {
       "spread": -7.5,
@@ -237,7 +237,7 @@
       "homeTeam": "Texas Tech Red Raiders",
       "awayTeam": "Akron Zips",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Arizona Wildcats vs LIU Sharks": {
       "spread": -30.5,
@@ -247,7 +247,7 @@
       "homeTeam": "Arizona Wildcats",
       "awayTeam": "LIU Sharks",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Virginia Cavaliers vs Wright St Raiders": {
       "spread": -18.5,
@@ -257,7 +257,7 @@
       "homeTeam": "Virginia Cavaliers",
       "awayTeam": "Wright St Raiders",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Iowa State Cyclones vs Tennessee St Tigers": {
       "spread": -24.5,
@@ -267,7 +267,7 @@
       "homeTeam": "Iowa State Cyclones",
       "awayTeam": "Tennessee St Tigers",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Alabama Crimson Tide vs Hofstra Pride": {
       "spread": -11.5,
@@ -277,7 +277,7 @@
       "homeTeam": "Alabama Crimson Tide",
       "awayTeam": "Hofstra Pride",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Villanova Wildcats vs Utah State Aggies": {
       "spread": 1.5,
@@ -287,7 +287,7 @@
       "homeTeam": "Villanova Wildcats",
       "awayTeam": "Utah State Aggies",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Tennessee Volunteers vs Miami (OH) RedHawks": {
       "spread": -11.5,
@@ -297,7 +297,7 @@
       "homeTeam": "Tennessee Volunteers",
       "awayTeam": "Miami (OH) RedHawks",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Clemson Tigers vs Iowa Hawkeyes": {
       "spread": 2.5,
@@ -307,7 +307,7 @@
       "homeTeam": "Clemson Tigers",
       "awayTeam": "Iowa Hawkeyes",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "St. John's Red Storm vs Northern Iowa Panthers": {
       "spread": -9.5,
@@ -317,7 +317,7 @@
       "homeTeam": "St. John's Red Storm",
       "awayTeam": "Northern Iowa Panthers",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "UCLA Bruins vs UCF Knights": {
       "spread": -5.5,
@@ -327,7 +327,7 @@
       "homeTeam": "UCLA Bruins",
       "awayTeam": "UCF Knights",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Purdue Boilermakers vs Queens University Royals": {
       "spread": -25.5,
@@ -337,7 +337,7 @@
       "homeTeam": "Purdue Boilermakers",
       "awayTeam": "Queens University Royals",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Florida Gators vs Prairie View Panthers": {
       "spread": -35.5,
@@ -347,7 +347,7 @@
       "homeTeam": "Florida Gators",
       "awayTeam": "Prairie View Panthers",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Kansas Jayhawks vs Cal Baptist Lancers": {
       "spread": -13.5,
@@ -357,7 +357,7 @@
       "homeTeam": "Kansas Jayhawks",
       "awayTeam": "Cal Baptist Lancers",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "UConn Huskies vs Furman Paladins": {
       "spread": -20.5,
@@ -367,7 +367,7 @@
       "homeTeam": "UConn Huskies",
       "awayTeam": "Furman Paladins",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Miami Hurricanes vs Missouri Tigers": {
       "spread": -1.5,
@@ -377,7 +377,7 @@
       "homeTeam": "Miami Hurricanes",
       "awayTeam": "Missouri Tigers",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Arkansas Razorbacks vs High Point Panthers": {
       "spread": -10.5,
@@ -387,7 +387,7 @@
       "homeTeam": "Arkansas Razorbacks",
       "awayTeam": "High Point Panthers",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Michigan St Spartans vs Louisville Cardinals": {
       "spread": -4.5,
@@ -397,7 +397,7 @@
       "homeTeam": "Michigan St Spartans",
       "awayTeam": "Louisville Cardinals",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Nebraska Cornhuskers vs Vanderbilt Commodores": {
       "spread": 2.5,
@@ -407,7 +407,7 @@
       "homeTeam": "Nebraska Cornhuskers",
       "awayTeam": "Vanderbilt Commodores",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "Duke Blue Devils vs TCU Horned Frogs": {
       "spread": -10.5,
@@ -417,7 +417,7 @@
       "homeTeam": "Duke Blue Devils",
       "awayTeam": "TCU Horned Frogs",
       "book": "draftkings",
-      "updated": "2026-03-20T02:21:56Z"
+      "updated": "2026-03-20T02:52:01Z"
     },
     "UNC Wilmington Seahawks vs Dayton Flyers": {
       "spread": 2.5,
@@ -427,7 +427,7 @@
       "homeTeam": "UNC Wilmington Seahawks",
       "awayTeam": "Dayton Flyers",
       "book": "betonlineag",
-      "updated": "2026-03-20T02:21:57Z"
+      "updated": "2026-03-20T02:52:18Z"
     },
     "Nevada Wolf Pack vs Liberty Flames": {
       "spread": -7.5,
@@ -437,7 +437,7 @@
       "homeTeam": "Nevada Wolf Pack",
       "awayTeam": "Liberty Flames",
       "book": "betonlineag",
-      "updated": "2026-03-20T02:21:57Z"
+      "updated": "2026-03-20T02:52:18Z"
     },
     "Wake Forest Demon Deacons vs Illinois St Redbirds": {
       "spread": -7.5,
@@ -447,7 +447,7 @@
       "homeTeam": "Wake Forest Demon Deacons",
       "awayTeam": "Illinois St Redbirds",
       "book": "betonlineag",
-      "updated": "2026-03-20T02:21:57Z"
+      "updated": "2026-03-20T02:52:18Z"
     },
     "Auburn Tigers vs Seattle Redhawks": {
       "spread": -13,
@@ -457,7 +457,7 @@
       "homeTeam": "Auburn Tigers",
       "awayTeam": "Seattle Redhawks",
       "book": "betonlineag",
-      "updated": "2026-03-20T02:21:57Z"
+      "updated": "2026-03-20T02:52:18Z"
     },
     "Tulsa Golden Hurricane vs UNLV Rebels": {
       "spread": -4,
@@ -467,7 +467,7 @@
       "homeTeam": "Tulsa Golden Hurricane",
       "awayTeam": "UNLV Rebels",
       "book": "betonlineag",
-      "updated": "2026-03-20T02:21:57Z"
+      "updated": "2026-03-20T02:52:18Z"
     },
     "New Mexico Lobos vs GW Revolutionaries": {
       "spread": -7.5,
@@ -477,7 +477,7 @@
       "homeTeam": "New Mexico Lobos",
       "awayTeam": "GW Revolutionaries",
       "book": "betonlineag",
-      "updated": "2026-03-20T02:21:57Z"
+      "updated": "2026-03-20T02:52:18Z"
     },
     "Oklahoma St Cowboys vs Wichita St Shockers": {
       "spread": -3.5,
@@ -487,7 +487,7 @@
       "homeTeam": "Oklahoma St Cowboys",
       "awayTeam": "Wichita St Shockers",
       "book": "betonlineag",
-      "updated": "2026-03-20T02:21:57Z"
+      "updated": "2026-03-20T02:52:18Z"
     },
     "California Golden Bears vs Saint Joseph's Hawks": {
       "spread": -6,
@@ -497,7 +497,7 @@
       "homeTeam": "California Golden Bears",
       "awayTeam": "Saint Joseph's Hawks",
       "book": "betonlineag",
-      "updated": "2026-03-20T02:21:57Z"
+      "updated": "2026-03-20T02:52:18Z"
     }
   },
   "injuries": [
@@ -535,16 +535,6 @@
       "headline": "What are the biggest upsets in men's March Madness history?",
       "description": "Cinderella stories make magical March Madness memories! Check out the biggest upsets by seeding in men's NCAA tournament history now.",
       "published": "2026-03-19T15:36:24Z"
-    },
-    {
-      "headline": "NCAA men's basketball championship: All-time winners list",
-      "description": "Florida defeated Houston in the 2025 NCAA men's basketball championship. Check out the all-time winners list now.",
-      "published": "2026-03-19T15:38:37Z"
-    },
-    {
-      "headline": "No. 16 Prairie View vs. No. 1 Florida game preview",
-      "description": "Check out some stats on the matchup between Prairie View and Florida in the NCAA men's tournament.",
-      "published": "2026-03-19T13:12:40Z"
     }
   ],
   "yesterdayResults": [

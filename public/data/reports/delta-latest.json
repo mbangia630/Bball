@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-20T02:21:58.891Z",
-  "timestampCST": "Mar 19, 2026, 9:21 PM CST",
+  "timestamp": "2026-03-20T02:52:22.079Z",
+  "timestampCST": "Mar 19, 2026, 9:52 PM CST",
   "type": "DELTA",
   "baselineTime": "Mar 19, 2026, 9:05 AM CST",
-  "currentTime": "Mar 19, 2026, 9:21 PM CST",
+  "currentTime": "Mar 19, 2026, 9:52 PM CST",
   "summary": {
     "totalGamesCompared": 24,
     "gamesChanged": 16,
     "winnersFlipped": 4,
     "newMatchups": 6,
-    "avgSpreadChange": 10.7,
+    "avgSpreadChange": 11.6,
     "biggestMover": "Florida vs Prairie View"
   },
   "deltas": [
@@ -61,9 +61,9 @@
       "region": "R32",
       "type": "NEW",
       "winner": "Michigan St.",
-      "winProb": 80.1,
+      "winProb": 80,
       "spread": -9.4,
-      "message": "New matchup since 7am — Michigan St. predicted to win (80.1%)",
+      "message": "New matchup since 7am — Michigan St. predicted to win (80%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -89,9 +89,9 @@
       "region": "R32",
       "type": "NEW",
       "winner": "Arkansas",
-      "winProb": 84.9,
+      "winProb": 85,
       "spread": -12.2,
-      "message": "New matchup since 7am — Arkansas predicted to win (84.9%)",
+      "message": "New matchup since 7am — Arkansas predicted to win (85%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -126,6 +126,35 @@
       "absDelta": 38.23
     },
     {
+      "matchup": "Houston vs Idaho",
+      "round": 1,
+      "region": "R64",
+      "type": "SHIFT",
+      "baselineWinner": "Houston",
+      "baselineWinProb": 52,
+      "baselineSpread": 0.6,
+      "baselineVegas": -23.5,
+      "baselineModelSpread": 30.1,
+      "baselineScoreW": 67,
+      "baselineScoreL": 65,
+      "winner": "Houston",
+      "winProb": 99.6,
+      "spread": 29.3,
+      "vegasLine": 28.5,
+      "modelSpread": 30.1,
+      "scoreW": 80,
+      "scoreL": 51,
+      "spreadChange": 28.7,
+      "probChange": 47.6,
+      "modelSpreadChange": 0,
+      "vegasChange": 52,
+      "factors": [
+        "Vegas line moved 52 pts toward Houston (was -23.5, now 28.5)",
+        "Injury cleared for Houston"
+      ],
+      "absDelta": 33.46
+    },
+    {
       "matchup": "Purdue vs Queens",
       "round": 1,
       "region": "R64",
@@ -156,34 +185,6 @@
       "absDelta": 32.84
     },
     {
-      "matchup": "Houston vs Idaho",
-      "round": 1,
-      "region": "R64",
-      "type": "SHIFT",
-      "baselineWinner": "Houston",
-      "baselineWinProb": 52,
-      "baselineSpread": 0.6,
-      "baselineVegas": -23.5,
-      "baselineModelSpread": 30.1,
-      "baselineScoreW": 67,
-      "baselineScoreL": 65,
-      "winner": "Houston",
-      "winProb": 98.7,
-      "spread": 24,
-      "vegasLine": 18.5,
-      "modelSpread": 30.1,
-      "scoreW": 78,
-      "scoreL": 54,
-      "spreadChange": 23.4,
-      "probChange": 46.7,
-      "modelSpreadChange": 0,
-      "vegasChange": 42,
-      "factors": [
-        "Vegas line moved 42 pts toward Houston (was -23.5, now 18.5)"
-      ],
-      "absDelta": 28.07
-    },
-    {
       "matchup": "Alabama vs Hofstra",
       "round": 1,
       "region": "R64",
@@ -211,6 +212,34 @@
         "⚠️ WINNER FLIPPED: was Hofstra at 7am, now Alabama"
       ],
       "absDelta": 14.27
+    },
+    {
+      "matchup": "Georgia vs Saint Louis",
+      "round": 1,
+      "region": "R64",
+      "type": "SHIFT",
+      "baselineWinner": "Saint Louis",
+      "baselineWinProb": 59.7,
+      "baselineSpread": -3.4,
+      "baselineVegas": -2.5,
+      "baselineModelSpread": -4.5,
+      "baselineScoreW": 71,
+      "baselineScoreL": 68,
+      "winner": "Saint Louis",
+      "winProb": 73.1,
+      "spread": -7.1,
+      "vegasLine": -9.5,
+      "modelSpread": -4.5,
+      "scoreW": 73,
+      "scoreL": 66,
+      "spreadChange": -3.7,
+      "probChange": 13.4,
+      "modelSpreadChange": 0,
+      "vegasChange": -7,
+      "factors": [
+        "Vegas line moved 7 pts toward Saint Louis (was -2.5, now -9.5)"
+      ],
+      "absDelta": 5.04
     },
     {
       "matchup": "Kentucky vs Santa Clara",
@@ -328,34 +357,6 @@
       "absDelta": 0.74
     },
     {
-      "matchup": "Georgia vs Saint Louis",
-      "round": 1,
-      "region": "R64",
-      "type": "SHIFT",
-      "baselineWinner": "Saint Louis",
-      "baselineWinProb": 59.7,
-      "baselineSpread": -3.4,
-      "baselineVegas": -2.5,
-      "baselineModelSpread": -4.5,
-      "baselineScoreW": 71,
-      "baselineScoreL": 68,
-      "winner": "Saint Louis",
-      "winProb": 58.1,
-      "spread": -2.9,
-      "vegasLine": -1.5,
-      "modelSpread": -4.5,
-      "scoreW": 71,
-      "scoreL": 68,
-      "spreadChange": 0.5,
-      "probChange": -1.6,
-      "modelSpreadChange": 0,
-      "vegasChange": 1,
-      "factors": [
-        "Vegas line moved 1 pts toward Georgia (was -2.5, now -1.5)"
-      ],
-      "absDelta": 0.66
-    },
-    {
       "matchup": "Texas Tech vs Akron",
       "round": 1,
       "region": "R64",
@@ -379,7 +380,7 @@
       "modelSpreadChange": 0,
       "vegasChange": 0,
       "factors": [
-        "Weight tuning (model v17)"
+        "Weight tuning (model v18)"
       ],
       "absDelta": 0.27
     }
