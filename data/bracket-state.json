@@ -104,6 +104,27 @@
       "scoreW": 63,
       "scoreL": 50,
       "date": "2026-03-20"
+    },
+    "S8": {
+      "winner": "Houston",
+      "loser": "Idaho",
+      "scoreW": 78,
+      "scoreL": 47,
+      "date": "2026-03-20"
+    },
+    "W6": {
+      "winner": "Gonzaga",
+      "loser": "Kennesaw St.",
+      "scoreW": 73,
+      "scoreL": 64,
+      "date": "2026-03-20"
+    },
+    "MW2": {
+      "winner": "Saint Louis",
+      "loser": "Georgia",
+      "scoreW": 102,
+      "scoreL": 77,
+      "date": "2026-03-20"
     }
   },
   "advancedTo": {
@@ -139,10 +160,15 @@
       "a": "VCU"
     },
     "W_R32_3": {
-      "a": "Texas"
+      "a": "Texas",
+      "b": "Gonzaga"
     },
     "S_R32_4": {
-      "a": "Texas A&M"
+      "a": "Texas A&M",
+      "b": "Houston"
+    },
+    "MW_R32_1": {
+      "b": "Saint Louis"
     }
   }
 }
