@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-20T00:12:50.003Z",
-  "timestampCST": "Mar 19, 2026, 7:12 PM CST",
+  "timestamp": "2026-03-20T00:21:19.989Z",
+  "timestampCST": "Mar 19, 2026, 7:21 PM CST",
   "type": "DELTA",
   "baselineTime": "Mar 19, 2026, 9:05 AM CST",
-  "currentTime": "Mar 19, 2026, 7:12 PM CST",
+  "currentTime": "Mar 19, 2026, 7:21 PM CST",
   "summary": {
     "totalGamesCompared": 27,
-    "gamesChanged": 18,
-    "winnersFlipped": 5,
+    "gamesChanged": 17,
+    "winnersFlipped": 4,
     "newMatchups": 6,
-    "avgSpreadChange": 10.4,
+    "avgSpreadChange": 11,
     "biggestMover": "Florida vs Prairie View"
   },
   "deltas": [
@@ -61,9 +61,9 @@
       "region": "R32",
       "type": "NEW",
       "winner": "Michigan St.",
-      "winProb": 80.3,
+      "winProb": 80.2,
       "spread": -9.5,
-      "message": "New matchup since 7am — Michigan St. predicted to win (80.3%)",
+      "message": "New matchup since 7am — Michigan St. predicted to win (80.2%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -89,9 +89,9 @@
       "region": "R32",
       "type": "NEW",
       "winner": "Arkansas",
-      "winProb": 85.8,
+      "winProb": 85.9,
       "spread": -12.6,
-      "message": "New matchup since 7am — Arkansas predicted to win (85.8%)",
+      "message": "New matchup since 7am — Arkansas predicted to win (85.9%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -225,21 +225,21 @@
       "baselineScoreW": 72,
       "baselineScoreL": 68,
       "winner": "N. Carolina",
-      "winProb": 68.9,
-      "spread": 5.8,
-      "vegasLine": 15.5,
+      "winProb": 62.2,
+      "spread": 4.1,
+      "vegasLine": 12.5,
       "modelSpread": -6.1,
-      "scoreW": 73,
-      "scoreL": 67,
-      "spreadChange": 9.9,
-      "probChange": 6.8,
+      "scoreW": 72,
+      "scoreL": 68,
+      "spreadChange": 8.2,
+      "probChange": 0.1,
       "modelSpreadChange": 0,
-      "vegasChange": 18,
+      "vegasChange": 15,
       "factors": [
-        "Vegas line moved 18 pts toward N. Carolina (was -2.5, now 15.5)",
+        "Vegas line moved 15 pts toward N. Carolina (was -2.5, now 12.5)",
         "⚠️ WINNER FLIPPED: was VCU at 7am, now N. Carolina"
       ],
-      "absDelta": 10.58
+      "absDelta": 8.209999999999999
     },
     {
       "matchup": "Kentucky vs Santa Clara",
@@ -298,34 +298,6 @@
         "⚠️ WINNER FLIPPED: was Clemson at 7am, now Iowa"
       ],
       "absDelta": 3.1700000000000004
-    },
-    {
-      "matchup": "BYU vs Texas",
-      "round": 1,
-      "region": "R64",
-      "type": "SHIFT",
-      "baselineWinner": "BYU",
-      "baselineWinProb": 51.1,
-      "baselineSpread": 0.4,
-      "baselineVegas": -2.5,
-      "baselineModelSpread": 3.8,
-      "baselineScoreW": 72,
-      "baselineScoreL": 70,
-      "winner": "BYU",
-      "winProb": 57.1,
-      "spread": 2.6,
-      "vegasLine": 1.5,
-      "modelSpread": 3.8,
-      "scoreW": 72,
-      "scoreL": 70,
-      "spreadChange": 2.2,
-      "probChange": 6,
-      "modelSpreadChange": 0,
-      "vegasChange": 4,
-      "factors": [
-        "Vegas line moved 4 pts toward BYU (was -2.5, now 1.5)"
-      ],
-      "absDelta": 2.8000000000000003
     },
     {
       "matchup": "Miami FL vs Missouri",
@@ -387,7 +359,7 @@
       "matchup": "St. Mary's vs Texas A&M",
       "round": 1,
       "region": "R64",
-      "type": "FLIP",
+      "type": "SHIFT",
       "baselineWinner": "Texas A&M",
       "baselineWinProb": 51.6,
       "baselineSpread": -0.5,
@@ -395,22 +367,21 @@
       "baselineModelSpread": 3.2,
       "baselineScoreW": 67,
       "baselineScoreL": 66,
-      "winner": "St. Mary's",
-      "winProb": 51.9,
-      "spread": 0.6,
-      "vegasLine": -1.5,
+      "winner": "Texas A&M",
+      "winProb": 54.8,
+      "spread": -1.6,
+      "vegasLine": -5.5,
       "modelSpread": 3.2,
       "scoreW": 67,
       "scoreL": 66,
-      "spreadChange": 1.1,
-      "probChange": 0.3,
+      "spreadChange": -1.1,
+      "probChange": 3.2,
       "modelSpreadChange": 0,
-      "vegasChange": 2,
+      "vegasChange": -2,
       "factors": [
-        "Vegas line moved 2 pts toward St. Mary's (was -3.5, now -1.5)",
-        "⚠️ WINNER FLIPPED: was Texas A&M at 7am, now St. Mary's"
+        "Vegas line moved 2 pts toward Texas A&M (was -3.5, now -5.5)"
       ],
-      "absDelta": 1.1300000000000001
+      "absDelta": 1.4200000000000002
     },
     {
       "matchup": "Kansas vs Cal Baptist",
