@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-03-19T22:46:11.341Z",
+  "timestampCST": "Mar 19, 2026, 5:46 PM CST",
+  "type": "DELTA",
+  "baselineTime": "Mar 19, 2026, 9:05 AM CST",
+  "currentTime": "Mar 19, 2026, 5:46 PM CST",
+  "summary": {
+    "totalGamesCompared": 27,
+    "gamesChanged": 10,
+    "winnersFlipped": 2,
+    "newMatchups": 6,
+    "avgSpreadChange": 0.5,
+    "biggestMover": "Florida vs Prairie View"
+  },
+  "deltas": [
+    {
+      "matchup": "Florida vs Prairie View",
+      "round": 1,
+      "region": "R64",
+      "type": "NEW",
+      "winner": "Prairie View",
+      "winProb": 60.4,
+      "spread": -3.6,
+      "message": "New matchup since 7am — Prairie View predicted to win (60.4%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Tennessee vs Miami OH",
+      "round": 1,
+      "region": "R64",
+      "type": "NEW",
+      "winner": "Tennessee",
+      "winProb": 82,
+      "spread": 10.7,
+      "message": "New matchup since 7am — Tennessee predicted to win (82%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Duke vs TCU",
+      "round": 2,
+      "region": "R32",
+      "type": "NEW",
+      "winner": "Duke",
+      "winProb": 58.8,
+      "spread": 3.1,
+      "message": "New matchup since 7am — Duke predicted to win (58.8%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Louisville vs Michigan St.",
+      "round": 2,
+      "region": "R32",
+      "type": "NEW",
+      "winner": "Michigan St.",
+      "winProb": 80.4,
+      "spread": -9.6,
+      "message": "New matchup since 7am — Michigan St. predicted to win (80.4%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Vanderbilt vs Nebraska",
+      "round": 2,
+      "region": "R32",
+      "type": "NEW",
+      "winner": "Nebraska",
+      "winProb": 51.5,
+      "spread": -0.5,
+      "message": "New matchup since 7am — Nebraska predicted to win (51.5%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "High Point vs Arkansas",
+      "round": 2,
+      "region": "R32",
+      "type": "NEW",
+      "winner": "High Point",
+      "winProb": 52,
+      "spread": 0.6,
+      "message": "New matchup since 7am — High Point predicted to win (52%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Houston vs Idaho",
+      "round": 1,
+      "region": "R64",
+      "type": "SHIFT",
+      "baselineWinner": "Houston",
+      "baselineWinProb": 52,
+      "baselineSpread": 0.6,
+      "baselineVegas": -23.5,
+      "baselineModelSpread": 30.1,
+      "baselineScoreW": 67,
+      "baselineScoreL": 65,
+      "winner": "Houston",
+      "winProb": 50.2,
+      "spread": 0.1,
+      "vegasLine": -24.5,
+      "modelSpread": 30.1,
+      "scoreW": 67,
+      "scoreL": 65,
+      "spreadChange": -0.5,
+      "probChange": -1.8,
+      "modelSpreadChange": 0,
+      "vegasChange": -1,
+      "factors": [
+        "Vegas line moved 1 pts toward Idaho (was -23.5, now -24.5)"
+      ],
+      "absDelta": 0.6799999999999999
+    },
+    {
+      "matchup": "St. Mary's vs Texas A&M",
+      "round": 1,
+      "region": "R64",
+      "type": "FLIP",
+      "baselineWinner": "Texas A&M",
+      "baselineWinProb": 51.6,
+      "baselineSpread": -0.5,
+      "baselineVegas": -3.5,
+      "baselineModelSpread": 3.2,
+      "baselineScoreW": 67,
+      "baselineScoreL": 66,
+      "winner": "St. Mary's",
+      "winProb": 50.1,
+      "spread": 0,
+      "vegasLine": -2.5,
+      "modelSpread": 3.2,
+      "scoreW": 67,
+      "scoreL": 65,
+      "spreadChange": 0.5,
+      "probChange": -1.5,
+      "modelSpreadChange": 0,
+      "vegasChange": 1,
+      "factors": [
+        "Vegas line moved 1 pts toward St. Mary's (was -3.5, now -2.5)",
+        "⚠️ WINNER FLIPPED: was Texas A&M at 7am, now St. Mary's"
+      ],
+      "absDelta": 0.65
+    },
+    {
+      "matchup": "Kansas vs Cal Baptist",
+      "round": 1,
+      "region": "R64",
+      "type": "SHIFT",
+      "baselineWinner": "Kansas",
+      "baselineWinProb": 86.6,
+      "baselineSpread": 12.9,
+      "baselineVegas": 14.5,
+      "baselineModelSpread": 11,
+      "baselineScoreW": 74,
+      "baselineScoreL": 61,
+      "winner": "Kansas",
+      "winProb": 85.4,
+      "spread": 12.4,
+      "vegasLine": 13.5,
+      "modelSpread": 11,
+      "scoreW": 74,
+      "scoreL": 61,
+      "spreadChange": -0.5,
+      "probChange": -1.2,
+      "modelSpreadChange": 0,
+      "vegasChange": -1,
+      "factors": [
+        "Vegas line moved 1 pts toward Cal Baptist (was 14.5, now 13.5)"
+      ],
+      "absDelta": 0.62
+    },
+    {
+      "matchup": "Miami FL vs Missouri",
+      "round": 1,
+      "region": "R64",
+      "type": "FLIP",
+      "baselineWinner": "Miami FL",
+      "baselineWinProb": 50.9,
+      "baselineSpread": 0.3,
+      "baselineVegas": -1.5,
+      "baselineModelSpread": 2.5,
+      "baselineScoreW": 72,
+      "baselineScoreL": 70,
+      "winner": "Missouri",
+      "winProb": 50.8,
+      "spread": -0.3,
+      "vegasLine": -2.5,
+      "modelSpread": 2.5,
+      "scoreW": 72,
+      "scoreL": 70,
+      "spreadChange": -0.6,
+      "probChange": -0.1,
+      "modelSpreadChange": 0,
+      "vegasChange": -1,
+      "factors": [
+        "Vegas line moved 1 pts toward Missouri (was -1.5, now -2.5)",
+        "⚠️ WINNER FLIPPED: was Miami FL at 7am, now Missouri"
+      ],
+      "absDelta": 0.61
+    }
+  ]
+}
