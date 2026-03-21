@@ -258,6 +258,13 @@
       "scoreW": 102,
       "scoreL": 77,
       "date": "2026-03-19"
+    },
+    "MW_R32_1": {
+      "winner": "Michigan",
+      "loser": "Saint Louis",
+      "scoreW": 95,
+      "scoreL": 72,
+      "date": "2026-03-21"
     }
   },
   "advancedTo": {
@@ -339,6 +346,9 @@
     "MW_R32_1": {
       "a": "Michigan",
       "b": "Saint Louis"
+    },
+    "MW_S16_1": {
+      "a": "Michigan"
     }
   }
 }
