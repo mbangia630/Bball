@@ -1,46 +1,46 @@
 {
   "layerAccuracy": {
     "L1": {
-      "totalSigned": 193.50000000000003,
-      "correctDir": 18,
-      "totalAbsError": 221.29999999999995,
-      "games": 21
+      "totalSigned": 301.7000000000001,
+      "correctDir": 31,
+      "totalAbsError": 330.90000000000003,
+      "games": 34
     },
     "L2": {
-      "totalSigned": 23.099999999999994,
-      "correctDir": 16,
-      "totalAbsError": 346.09999999999997,
-      "games": 21
+      "totalSigned": 34.6,
+      "correctDir": 27,
+      "totalAbsError": 532.0000000000001,
+      "games": 34
     },
     "L3": {
-      "totalSigned": 17.6,
-      "correctDir": 15,
-      "totalAbsError": 350.2,
-      "games": 21
+      "totalSigned": 27.500000000000004,
+      "correctDir": 25,
+      "totalAbsError": 540.6999999999999,
+      "games": 34
     },
     "L4": {
-      "totalSigned": 2.5,
-      "correctDir": 16,
-      "totalAbsError": 368.7,
-      "games": 21
+      "totalSigned": 3.7,
+      "correctDir": 27,
+      "totalAbsError": 566.6999999999998,
+      "games": 34
     },
     "L5": {
       "totalSigned": 0,
-      "correctDir": 21,
-      "totalAbsError": 371,
-      "games": 21
+      "correctDir": 34,
+      "totalAbsError": 571,
+      "games": 34
     },
     "v8": {
-      "totalSigned": -0.2500000000000004,
-      "correctDir": 15,
-      "totalAbsError": 368.45000000000016,
-      "games": 21
+      "totalSigned": -0.6500000000000005,
+      "correctDir": 25,
+      "totalAbsError": 566.6700000000002,
+      "games": 34
     },
     "ens": {
-      "totalSigned": 119.3,
-      "correctDir": 18,
-      "totalAbsError": 260.3,
-      "games": 21
+      "totalSigned": 186.39999999999998,
+      "correctDir": 31,
+      "totalAbsError": 388.99999999999994,
+      "games": 34
     }
   },
   "teamK": {
@@ -131,97 +131,113 @@
     "Iowa State": {
       "k": 20,
       "recentErrors": [
-        8.100000000000001
+        8.100000000000001,
+        8.899999999999999
       ]
     },
     "Tennessee St.": {
       "k": 20,
       "recentErrors": [
-        8.100000000000001
+        8.100000000000001,
+        8.899999999999999
       ]
     },
     "Purdue": {
       "k": 20,
       "recentErrors": [
-        5.5
+        5.5,
+        6.100000000000001
       ]
     },
     "Queens": {
       "k": 20,
       "recentErrors": [
-        5.5
+        5.5,
+        6.100000000000001
       ]
     },
     "UConn": {
       "k": 20,
       "recentErrors": [
+        9.600000000000001,
         9.600000000000001
       ]
     },
     "Furman": {
       "k": 20,
       "recentErrors": [
+        9.600000000000001,
         9.600000000000001
       ]
     },
     "Virginia": {
       "k": 20,
       "recentErrors": [
-        4.800000000000001
+        4.800000000000001,
+        6.800000000000001
       ]
     },
     "Wright St.": {
       "k": 20,
       "recentErrors": [
-        4.800000000000001
+        4.800000000000001,
+        6.800000000000001
       ]
     },
     "Alabama": {
       "k": 20,
       "recentErrors": [
-        11.2
+        11.2,
+        10.5
       ]
     },
     "Hofstra": {
       "k": 20,
       "recentErrors": [
-        11.2
+        11.2,
+        10.5
       ]
     },
     "Kansas": {
       "k": 20,
       "recentErrors": [
-        4.9
+        4.9,
+        4.4
       ]
     },
     "Cal Baptist": {
       "k": 20,
       "recentErrors": [
-        4.9
+        4.9,
+        4.4
       ]
     },
     "Texas Tech": {
       "k": 20,
       "recentErrors": [
-        16.3
+        16.3,
+        16.1
       ]
     },
     "Akron": {
       "k": 20,
       "recentErrors": [
-        16.3
+        16.3,
+        16.1
       ]
     },
     "St. John's": {
       "k": 20,
       "recentErrors": [
-        15.7
+        15.7,
+        14.7
       ]
     },
     "N. Iowa": {
       "k": 20,
       "recentErrors": [
-        15.7
+        15.7,
+        14.7
       ]
     },
     "Tennessee": {
@@ -239,89 +255,99 @@
     "Kentucky": {
       "k": 20,
       "recentErrors": [
-        4.9
+        4.9,
+        8.5
       ]
     },
     "Santa Clara": {
       "k": 20,
       "recentErrors": [
-        4.9
+        4.9,
+        8.5
       ]
     },
     "UCLA": {
       "k": 20,
       "recentErrors": [
-        0.40000000000000036
+        0.40000000000000036,
+        0.5
       ]
     },
     "UCF": {
       "k": 20,
       "recentErrors": [
-        0.40000000000000036
+        0.40000000000000036,
+        0.5
       ]
     },
     "Miami FL": {
       "k": 20,
       "recentErrors": [
-        12
+        12,
+        10.7
       ]
     },
     "Missouri": {
       "k": 20,
       "recentErrors": [
-        12
+        12,
+        10.7
       ]
     },
     "Villanova": {
       "k": 20,
       "recentErrors": [
-        9.2
+        9.2,
+        10.9
       ]
     },
     "Utah State": {
       "k": 20,
       "recentErrors": [
-        9.2
+        9.2,
+        10.9
       ]
     },
     "Clemson": {
       "k": 20,
       "recentErrors": [
-        3.8
+        3.8,
+        6.5
       ]
     },
     "Iowa": {
       "k": 20,
       "recentErrors": [
-        3.8
+        3.8,
+        6.5
       ]
     }
   },
   "situations": {
     "bySpreadBucket": {
       "3-7": {
-        "correct": 2,
-        "total": 3,
+        "correct": 5,
+        "total": 7,
         "avgError": 0,
-        "totalError": 24.799999999999997
+        "totalError": 60.599999999999994
       },
       "0-3": {
         "correct": 5,
-        "total": 6,
+        "total": 8,
         "avgError": 0,
-        "totalError": 49.7
+        "totalError": 67.1
       },
       "14+": {
-        "correct": 6,
-        "total": 6,
+        "correct": 10,
+        "total": 10,
         "avgError": 0,
-        "totalError": 64.3
+        "totalError": 95.69999999999997
       },
       "7-14": {
-        "correct": 6,
-        "total": 6,
+        "correct": 9,
+        "total": 9,
         "avgError": 0,
-        "totalError": 66.1
+        "totalError": 95.7
       }
     },
     "bySeedMatchup": {
@@ -330,48 +356,48 @@
         "total": 3
       },
       "7v10": {
-        "correct": 4,
-        "total": 4
+        "correct": 6,
+        "total": 7
       },
       "2v15": {
-        "correct": 4,
-        "total": 4
+        "correct": 7,
+        "total": 7
       },
       "3v14": {
-        "correct": 2,
-        "total": 2
+        "correct": 3,
+        "total": 3
       },
       "8v9": {
         "correct": 3,
-        "total": 3
+        "total": 5
       },
       "1v16": {
         "correct": 1,
         "total": 1
       },
       "4v13": {
-        "correct": 2,
-        "total": 2
+        "correct": 4,
+        "total": 4
       },
       "5v12": {
-        "correct": 2,
-        "total": 2
+        "correct": 4,
+        "total": 4
       }
     },
     "byRound": {
       "1": {
-        "correct": 19,
-        "total": 21
+        "correct": 29,
+        "total": 34
       }
     },
     "favVsDog": {
       "fav": {
-        "correct": 15,
-        "total": 16
+        "correct": 25,
+        "total": 27
       },
       "dog": {
         "correct": 4,
-        "total": 5
+        "total": 7
       }
     }
   },
@@ -522,8 +548,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 8.100000000000001
+        "games": 2,
+        "totalError": 17
       }
     },
     "Tennessee St.": {
@@ -532,8 +558,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 8.100000000000001
+        "games": 2,
+        "totalError": 17
       }
     },
     "Purdue": {
@@ -542,8 +568,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 5.5
+        "games": 2,
+        "totalError": 11.600000000000001
       }
     },
     "Queens": {
@@ -552,8 +578,8 @@
         "totalError": 5.5
       },
       "without": {
-        "games": 0,
-        "totalError": 0
+        "games": 1,
+        "totalError": 6.100000000000001
       }
     },
     "UConn": {
@@ -562,8 +588,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 9.600000000000001
+        "games": 2,
+        "totalError": 19.200000000000003
       }
     },
     "Furman": {
@@ -572,8 +598,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 9.600000000000001
+        "games": 2,
+        "totalError": 19.200000000000003
       }
     },
     "Virginia": {
@@ -582,8 +608,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 4.800000000000001
+        "games": 2,
+        "totalError": 11.600000000000001
       }
     },
     "Wright St.": {
@@ -592,8 +618,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 4.800000000000001
+        "games": 2,
+        "totalError": 11.600000000000001
       }
     },
     "Alabama": {
@@ -602,8 +628,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 11.2
+        "games": 2,
+        "totalError": 21.7
       }
     },
     "Hofstra": {
@@ -612,8 +638,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 11.2
+        "games": 2,
+        "totalError": 21.7
       }
     },
     "Kansas": {
@@ -622,8 +648,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 4.9
+        "games": 2,
+        "totalError": 9.3
       }
     },
     "Cal Baptist": {
@@ -632,8 +658,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 4.9
+        "games": 2,
+        "totalError": 9.3
       }
     },
     "Texas Tech": {
@@ -642,8 +668,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 16.3
+        "games": 2,
+        "totalError": 32.400000000000006
       }
     },
     "Akron": {
@@ -652,8 +678,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 16.3
+        "games": 2,
+        "totalError": 32.400000000000006
       }
     },
     "St. John's": {
@@ -662,8 +688,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 15.7
+        "games": 2,
+        "totalError": 30.4
       }
     },
     "N. Iowa": {
@@ -672,8 +698,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 15.7
+        "games": 2,
+        "totalError": 30.4
       }
     },
     "Tennessee": {
@@ -702,8 +728,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 4.9
+        "games": 2,
+        "totalError": 13.4
       }
     },
     "Santa Clara": {
@@ -712,8 +738,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 4.9
+        "games": 2,
+        "totalError": 13.4
       }
     },
     "UCLA": {
@@ -722,8 +748,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 0.40000000000000036
+        "games": 2,
+        "totalError": 0.9000000000000004
       }
     },
     "UCF": {
@@ -732,8 +758,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 0.40000000000000036
+        "games": 2,
+        "totalError": 0.9000000000000004
       }
     },
     "Miami FL": {
@@ -742,8 +768,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 12
+        "games": 2,
+        "totalError": 22.7
       }
     },
     "Missouri": {
@@ -752,8 +778,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 12
+        "games": 2,
+        "totalError": 22.7
       }
     },
     "Villanova": {
@@ -762,8 +788,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 9.2
+        "games": 2,
+        "totalError": 20.1
       }
     },
     "Utah State": {
@@ -772,8 +798,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 9.2
+        "games": 2,
+        "totalError": 20.1
       }
     },
     "Clemson": {
@@ -782,8 +808,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 3.8
+        "games": 2,
+        "totalError": 10.3
       }
     },
     "Iowa": {
@@ -792,8 +818,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 3.8
+        "games": 2,
+        "totalError": 10.3
       }
     }
   },
@@ -819,29 +845,29 @@
   },
   "ensembleAccuracy": {
     "main": {
-      "totalError": 204.9,
-      "games": 21
+      "totalError": 319.09999999999997,
+      "games": 34
     },
     "ens": {
-      "totalError": 260.3,
-      "games": 21
+      "totalError": 388.99999999999994,
+      "games": 34
     }
   },
   "calibration": {
     "60-65": {
-      "predicted": 186.3,
-      "actual": 200,
-      "games": 3
+      "predicted": 371.50000000000006,
+      "actual": 400,
+      "games": 6
     },
     "50-55": {
-      "predicted": 208.50000000000003,
+      "predicted": 312.80000000000007,
       "actual": 300,
-      "games": 4
+      "games": 6
     },
     "90+": {
-      "predicted": 594.3,
-      "actual": 600,
-      "games": 6
+      "predicted": 982.0999999999999,
+      "actual": 1000,
+      "games": 10
     },
     "70-80": {
       "predicted": 151.5,
@@ -849,28 +875,28 @@
       "games": 2
     },
     "80-90": {
-      "predicted": 337.70000000000005,
-      "actual": 400,
-      "games": 4
+      "predicted": 586.2,
+      "actual": 700,
+      "games": 7
     },
     "55-60": {
-      "predicted": 112,
-      "actual": 200,
-      "games": 2
+      "predicted": 171.4,
+      "actual": 300,
+      "games": 3
     }
   },
   "pace": {
-    "totalTempoError": -283,
-    "games": 21,
-    "overPredictions": 7,
-    "underPredictions": 14
+    "totalTempoError": -503,
+    "games": 34,
+    "overPredictions": 10,
+    "underPredictions": 24
   },
   "statRecency": {},
   "homeCourt": {
-    "totalPredictedHCA": 6.4,
-    "totalActualMarginBias": 49,
-    "gamesWithHCA": 2,
-    "gamesNeutral": 19
+    "totalPredictedHCA": 10.9,
+    "totalActualMarginBias": 39,
+    "gamesWithHCA": 3,
+    "gamesNeutral": 31
   },
   "v8Accuracy": {
     "ref": {
@@ -904,9 +930,9 @@
       "games": 0
     },
     "total": {
-      "totalAbs": 10.43,
-      "correctDir": 15,
-      "games": 21
+      "totalAbs": 16.69,
+      "correctDir": 25,
+      "games": 34
     }
   },
   "matchupAccuracy": {
@@ -921,64 +947,65 @@
   },
   "vegasMomentum": {
     "modelStreak": 0,
-    "vegasStreak": 1,
+    "vegasStreak": 2,
     "last10": [
       "model",
+      "vegas",
       "vegas"
     ]
   },
   "upsetPatterns": {
     "byRound": {
       "1": {
-        "upsets": 2,
-        "total": 21
+        "upsets": 5,
+        "total": 34
       }
     },
     "bySeedDiff": {
       "3-5": {
-        "upsets": 2,
-        "total": 7
+        "upsets": 3,
+        "total": 10
       },
       "9+": {
         "upsets": 0,
-        "total": 9
+        "total": 15
       },
       "0-2": {
-        "upsets": 0,
-        "total": 3
+        "upsets": 2,
+        "total": 5
       },
       "6-8": {
         "upsets": 0,
-        "total": 2
+        "total": 4
       }
     },
     "bySpreadSize": {
       "0-5": {
-        "upsets": 2,
-        "total": 9
+        "upsets": 5,
+        "total": 15
       },
       "10+": {
         "upsets": 0,
-        "total": 10
+        "total": 16
       },
       "5-10": {
         "upsets": 0,
-        "total": 2
+        "total": 3
       }
     }
   },
   "confidenceTracking": {
     "highConf": {
-      "correct": 11,
-      "total": 11
+      "correct": 18,
+      "total": 18
     },
     "medConf": {
-      "correct": 3,
-      "total": 4
+      "correct": 5,
+      "total": 7
     },
     "lowConf": {
-      "correct": 5,
-      "total": 6
+      "correct": 6,
+      "total": 9
     }
   }
 }
