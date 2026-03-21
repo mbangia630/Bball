@@ -195,6 +195,69 @@
       "scoreW": 77,
       "scoreL": 69,
       "date": "2026-03-21"
+    },
+    "S5": {
+      "winner": "VCU",
+      "loser": "N. Carolina",
+      "scoreW": 82,
+      "scoreL": 78,
+      "date": "2026-03-19"
+    },
+    "S6": {
+      "winner": "Illinois",
+      "loser": "Penn",
+      "scoreW": 105,
+      "scoreL": 70,
+      "date": "2026-03-19"
+    },
+    "S7": {
+      "winner": "Texas A&M",
+      "loser": "St. Mary's",
+      "scoreW": 63,
+      "scoreL": 50,
+      "date": "2026-03-19"
+    },
+    "S8": {
+      "winner": "Houston",
+      "loser": "Idaho",
+      "scoreW": 78,
+      "scoreL": 47,
+      "date": "2026-03-19"
+    },
+    "W1": {
+      "winner": "Arizona",
+      "loser": "LIU",
+      "scoreW": 92,
+      "scoreL": 58,
+      "date": "2026-03-20"
+    },
+    "W5": {
+      "winner": "Texas",
+      "loser": "BYU",
+      "scoreW": 79,
+      "scoreL": 71,
+      "date": "2026-03-20"
+    },
+    "W6": {
+      "winner": "Gonzaga",
+      "loser": "Kennesaw St.",
+      "scoreW": 73,
+      "scoreL": 64,
+      "date": "2026-03-19"
+    },
+    "MW1": {
+      "winner": "Michigan",
+      "loser": "Howard",
+      "scoreW": 101,
+      "scoreL": 80,
+      "date": "2026-03-19"
+    },
+    "MW2": {
+      "winner": "Saint Louis",
+      "loser": "Georgia",
+      "scoreW": 102,
+      "scoreL": 77,
+      "date": "2026-03-19"
     }
   },
   "advancedTo": {
@@ -255,10 +318,27 @@
       "a": "St. John's"
     },
     "W_R32_1": {
-      "b": "Utah State"
+      "b": "Utah State",
+      "a": "Arizona"
     },
     "E_S16_2": {
       "a": "Michigan St."
+    },
+    "S_R32_3": {
+      "a": "VCU",
+      "b": "Illinois"
+    },
+    "S_R32_4": {
+      "a": "Texas A&M",
+      "b": "Houston"
+    },
+    "W_R32_3": {
+      "a": "Texas",
+      "b": "Gonzaga"
+    },
+    "MW_R32_1": {
+      "a": "Michigan",
+      "b": "Saint Louis"
     }
   }
 }

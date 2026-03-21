@@ -111,6 +111,9 @@ const NAME_MAP = {
   "UMBC Retrievers": "UMBC",
   "Howard Bison": "Howard",
   "LIU Sharks": "LIU",
+  "Long Island University Sharks": "LIU",
+  "Long Island University": "LIU",
+  "Queens University Royals": "Queens",
   "Lehigh Mountain Hawks": "Lehigh",
   "Prairie View A&M Panthers": "Prairie View",
 };
