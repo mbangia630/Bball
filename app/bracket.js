@@ -584,10 +584,8 @@ export default function V7Final(){
 
   // ═══ BETTING EDGE CALCULATOR WITH REAL ODDS ═══
   const bets=useMemo(()=>{
-    const games=R.flatMap(r=>r.g).filter(g=>g.status!=='FINAL');
-    return games.filter(g=>g.vegasLine!==null).map(g=>{
-      const vk=`${g.a?.name} vs ${g.b?.name}`;
-      const odds=ODDS[vk]||[-200,170,-110];
+const games=R.flatMap(r=>r.g).filter(g=>g.status!=='FINAL'&&(g.moneyline||g.vegasLine!==null));    return games.filter(g=>g.vegasLine!==null).map(g=>{
+      const odds=g.moneyline?[g.moneyline[0],g.moneyline[1],-110]:(ODDS[`${g.a?.name} vs ${g.b?.name}`]||[-200,170,-110]);
       const modelFav=g.modelSpread>=0?g.a?.name:g.b?.name;
       const modelDog=g.modelSpread>=0?g.b?.name:g.a?.name;
       const modelSpreadAbs=Math.abs(g.modelSpread);

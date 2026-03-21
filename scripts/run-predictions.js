@@ -177,6 +177,7 @@ function sim(nA, nB, venue, round) {
     vegasLine:vegasLine!==null?Math.round(vegasLine*10)/10:null,
     blendedSpread:Math.round(finalSp*10)/10,
     edge,
+    moneyline:moneyLines[`${nA} vs ${nB}`]||null,
     hca:Math.round(hcav*10)/10,
     L1:Math.round(L1*10)/10,L2:Math.round(L2*10)/10,L3:Math.round(L3*10)/10,L4:Math.round(L4*10)/10,L5:Math.round(L5*10)/10,
     v8adj:Math.round(v8total*100)/100,
@@ -213,6 +214,18 @@ for(const[key,val]of Object.entries(data.odds)){
       // Our model uses positive = teamA favored, so we negate
       vegasLines[`${a} vs ${b}`]=-val.spread;
       vegasLines[`${b} vs ${a}`]=val.spread;
+    }
+  }
+}
+const moneyLines={};
+for(const[key,val]of Object.entries(data.odds)){
+  if(val.mlHome!==null||val.mlAway!==null){
+    const parts=key.split(' vs ');
+    if(parts.length===2){
+      const a=resolve(parts[0].trim(),teamDB)||parts[0].trim();
+      const b=resolve(parts[1].trim(),teamDB)||parts[1].trim();
+      moneyLines[`${a} vs ${b}`]=[val.mlHome||0,val.mlAway||0];
+      moneyLines[`${b} vs ${a}`]=[val.mlAway||0,val.mlHome||0];
     }
   }
 }
