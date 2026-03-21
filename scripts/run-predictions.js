@@ -324,6 +324,7 @@ for(const slot of BRACKET){
 // ═══ SAVE ═══
 const fullOutput={timestamp:new Date().toISOString(),weightsVersion:weights.version||1,engineVersion:"v4-full-v8-port",completed,predictions,bracketProgress:{gamesPlayed:completed.length,gamesRemaining:BRACKET.length-completed.length,currentRound:predictions.length>0?predictions[0].round:'Complete'}};
 fs.writeFileSync('data/predictions.json',JSON.stringify(fullOutput,null,2));
+fs.writeFileSync('data/predictions-snapshot.json',JSON.stringify(predictions,null,2));
 fs.writeFileSync('data/teams.json',JSON.stringify(teamDB,null,2));
 fs.writeFileSync(BRACKET_FILE,JSON.stringify(bracketState,null,2));
 

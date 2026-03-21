@@ -101,8 +101,8 @@ function loadJSON(path, fallback) { try { return JSON.parse(fs.readFileSync(path
 function loadWeights() { return loadJSON(WEIGHTS_FILE, DEFAULT_WEIGHTS); }
 function loadHistory() { return loadJSON(HISTORY_FILE, { games: [], daily: [], totalGames: 0, correctSU: 0, correctATS: 0 }); }
 function loadLearning() { return loadJSON(LEARNING_FILE, () => JSON.parse(JSON.stringify(DEFAULT_LEARNING))); }
-function loadPredictions() {
   // Try snapshot first (preserved from before games were moved to completed)
+function loadPredictions() {
   const snap = loadJSON('data/predictions-snapshot.json', null);
   if (snap && Array.isArray(snap) && snap.length > 0) return snap;
   const raw = loadJSON('data/predictions.json', []);
