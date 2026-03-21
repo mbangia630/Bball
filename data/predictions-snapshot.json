@@ -9,19 +9,19 @@
     "w": "Duke",
     "l": "TCU",
     "scoreW": 77,
-    "scoreL": 63,
+    "scoreL": 64,
     "sW": 77,
-    "sL": 63,
-    "winProb": 92.5,
-    "wp": 92.5,
-    "sp": 14.7,
+    "sL": 64,
+    "winProb": 89.4,
+    "wp": 89.4,
+    "sp": 13,
     "modelSpread": 20.5,
-    "vegasLine": 10.5,
-    "blendedSpread": 14.7,
-    "edge": 10,
+    "vegasLine": 7.5,
+    "blendedSpread": 13,
+    "edge": 13,
     "moneyline": [
-      -920,
-      550
+      -560,
+      370
     ],
     "hca": 0,
     "L1": 20,
@@ -39,10 +39,31 @@
     "sL2": 9,
     "ven": "Greenville",
     "modelSp": 20.5,
-    "vegasSp": 10.5,
-    "rawSp": 14.7,
+    "vegasSp": 7.5,
+    "rawSp": 13,
     "mu": {
-      "det": []
+      "det": [
+        {
+          "t": "Disruptive defense",
+          "stat": "TO Rate",
+          "team": "TCU",
+          "i": 0.5999999999999996,
+          "d": "Duke forces 11.2 TOs/g → TCU's TO rate +0.6%"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0.5999999999999996,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0
     },
     "cDiff": 0.1,
     "fatA": {
@@ -157,13 +178,13 @@
     "scoreL": 67,
     "sW": 72,
     "sL": 67,
-    "winProb": 66,
-    "wp": 66,
+    "winProb": 66.3,
+    "wp": 66.3,
     "sp": 4.7,
-    "modelSpread": 6.2,
+    "modelSpread": 6.3,
     "vegasLine": 3.5,
     "blendedSpread": 4.7,
-    "edge": 2.7,
+    "edge": 2.8,
     "moneyline": [
       -166,
       140
@@ -183,11 +204,24 @@
     "sW2": 5,
     "sL2": 4,
     "ven": "Buffalo",
-    "modelSp": 6.2,
+    "modelSp": 6.3,
     "vegasSp": 3.5,
     "rawSp": 4.7,
     "mu": {
-      "det": []
+      "det": [],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0
     },
     "cDiff": 0.4,
     "fatA": {
@@ -234,7 +268,7 @@
       "o": 117.2656,
       "d": 91.58160000000001,
       "t": 68,
-      "elo": 1946,
+      "elo": 1957,
       "lk": 0.035,
       "st": 0.56,
       "ci": 0,
@@ -266,7 +300,7 @@
       "o": 111.22399999999999,
       "d": 90.50640000000001,
       "t": 67,
-      "elo": 1897,
+      "elo": 1905,
       "lk": 0.015,
       "st": 0.18,
       "ci": 0,
@@ -302,13 +336,13 @@
     "scoreL": 67,
     "sW": 74,
     "sL": 67,
-    "winProb": 75.3,
-    "wp": 75.3,
+    "winProb": 75.7,
+    "wp": 75.7,
     "sp": 7.2,
-    "modelSpread": -10.9,
+    "modelSpread": -10.8,
     "vegasLine": -4.5,
     "blendedSpread": -7.2,
-    "edge": -6.4,
+    "edge": -6.3,
     "moneyline": [
       164,
       -198
@@ -328,11 +362,32 @@
     "sW2": 2,
     "sL2": 7,
     "ven": "Philadelphia",
-    "modelSp": -10.9,
+    "modelSp": -10.8,
     "vegasSp": -4.5,
     "rawSp": -7.2,
     "mu": {
-      "det": []
+      "det": [
+        {
+          "t": "Disruptive defense",
+          "stat": "TO Rate",
+          "team": "UCLA",
+          "i": 0.5999999999999996,
+          "d": "UConn forces 11.2 TOs/g → UCLA's TO rate +0.6%"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0.5999999999999996,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0
     },
     "cDiff": -0.8,
     "fatA": {
@@ -379,7 +434,7 @@
       "o": 112.388,
       "d": 93,
       "t": 68,
-      "elo": 1887,
+      "elo": 1898,
       "lk": 0.01,
       "st": 0.42,
       "ci": 0.15,
@@ -411,7 +466,7 @@
       "o": 121.26559999999999,
       "d": 89.8672,
       "t": 67.2,
-      "elo": 1936,
+      "elo": 1945,
       "lk": -0.018,
       "st": 0.63,
       "ci": 0,
@@ -447,8 +502,8 @@
     "scoreL": 60,
     "sW": 72,
     "sL": 60,
-    "winProb": 86,
-    "wp": 86,
+    "winProb": 86.4,
+    "wp": 86.4,
     "sp": 11.6,
     "modelSpread": 13.2,
     "vegasLine": 10.5,
@@ -477,7 +532,28 @@
     "vegasSp": 10.5,
     "rawSp": 11.6,
     "mu": {
-      "det": []
+      "det": [
+        {
+          "t": "Tempo clash",
+          "stat": "Pace",
+          "team": "Iowa",
+          "i": -0.3,
+          "d": "7-possession gap — Iowa's pace controls"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": -0.3
     },
     "cDiff": 0.7,
     "fatA": {
@@ -524,7 +600,7 @@
       "o": 118.684,
       "d": 86.5304,
       "t": 68.5,
-      "elo": 1909,
+      "elo": 1917,
       "lk": 0.005,
       "st": 0.59,
       "ci": 0,
@@ -556,7 +632,7 @@
       "o": 108.59199999999998,
       "d": 92.3776,
       "t": 62,
-      "elo": 1896,
+      "elo": 1908,
       "lk": 0.01,
       "st": 0.38,
       "ci": 0,
@@ -622,7 +698,20 @@
     "vegasSp": 1.5,
     "rawSp": 1.6,
     "mu": {
-      "det": []
+      "det": [],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0
     },
     "cDiff": 0.2,
     "fatA": {
@@ -737,8 +826,8 @@
     "scoreL": 68,
     "sW": 76,
     "sL": 68,
-    "winProb": 78.1,
-    "wp": 78.1,
+    "winProb": 78.5,
+    "wp": 78.5,
     "sp": 8,
     "modelSpread": -3.1,
     "vegasLine": -11.5,
@@ -767,7 +856,28 @@
     "vegasSp": -11.5,
     "rawSp": -8,
     "mu": {
-      "det": []
+      "det": [
+        {
+          "t": "Disruptive defense",
+          "stat": "TO Rate",
+          "team": "Illinois",
+          "i": 0.5,
+          "d": "VCU forces 11 TOs/g → Illinois's TO rate +0.5%"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0.5,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0
     },
     "cDiff": 0.2,
     "fatA": {
@@ -882,16 +992,16 @@
     "scoreL": 63,
     "sW": 72,
     "sL": 63,
-    "winProb": 81.6,
-    "wp": 81.6,
+    "winProb": 81.8,
+    "wp": 81.8,
     "sp": 9.5,
     "modelSpread": -6.8,
     "vegasLine": -11.5,
     "blendedSpread": -9.5,
     "edge": 4.7,
     "moneyline": [
-      520,
-      -850
+      550,
+      -920
     ],
     "hca": 0,
     "L1": -7.1,
@@ -912,7 +1022,28 @@
     "vegasSp": -11.5,
     "rawSp": -9.5,
     "mu": {
-      "det": []
+      "det": [
+        {
+          "t": "Disruptive defense",
+          "stat": "TO Rate",
+          "team": "Texas A&M",
+          "i": 0.75,
+          "d": "Houston forces 11.5 TOs/g → Texas A&M's TO rate +0.8%"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0.75,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0
     },
     "cDiff": -0.7,
     "fatA": {
@@ -1027,8 +1158,8 @@
     "scoreL": 65,
     "sW": 77,
     "sL": 65,
-    "winProb": 87.5,
-    "wp": 87.5,
+    "winProb": 87.9,
+    "wp": 87.9,
     "sp": 12.3,
     "modelSpread": 13.4,
     "vegasLine": 11.5,
@@ -1045,7 +1176,7 @@
     "L4": 0.1,
     "L5": 0,
     "v8adj": -0.04,
-    "ensAvg": 4.7,
+    "ensAvg": 4.6,
     "ensAgree": false,
     "injuryFlagA": "1 articles",
     "injuryFlagB": "1 articles",
@@ -1057,7 +1188,20 @@
     "vegasSp": 11.5,
     "rawSp": 12.3,
     "mu": {
-      "det": []
+      "det": [],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0
     },
     "cDiff": 0.1,
     "fatA": {
@@ -1075,7 +1219,7 @@
       "tz": 0,
       "foul": -0.02,
       "ens": {
-        "avg": 4.7,
+        "avg": 4.6,
         "agree": false
       },
       "total": -0.04
@@ -1104,7 +1248,7 @@
       "o": 121.38799999999999,
       "d": 82.7856,
       "t": 71.5,
-      "elo": 1878,
+      "elo": 1884,
       "lk": -0.01,
       "st": 0.63,
       "ci": 0,
@@ -1136,7 +1280,7 @@
       "o": 112.888,
       "d": 92.91839999999999,
       "t": 67,
-      "elo": 1924,
+      "elo": 1936,
       "lk": -0.005,
       "st": 0.42,
       "ci": 0,
@@ -1172,8 +1316,8 @@
     "scoreL": 67,
     "sW": 80,
     "sL": 67,
-    "winProb": 89.4,
-    "wp": 89.4,
+    "winProb": 89.9,
+    "wp": 89.9,
     "sp": 13.2,
     "modelSpread": -14.1,
     "vegasLine": -12.5,
@@ -1202,7 +1346,20 @@
     "vegasSp": -12.5,
     "rawSp": -13.2,
     "mu": {
-      "det": []
+      "det": [],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0
     },
     "cDiff": -0.5,
     "fatA": {
@@ -1317,8 +1474,8 @@
     "scoreL": 69,
     "sW": 76,
     "sL": 69,
-    "winProb": 76,
-    "wp": 76,
+    "winProb": 76.4,
+    "wp": 76.4,
     "sp": 7.4,
     "modelSpread": -8.6,
     "vegasLine": -6.5,
@@ -1347,7 +1504,20 @@
     "vegasSp": -6.5,
     "rawSp": -7.4,
     "mu": {
-      "det": []
+      "det": [],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0
     },
     "cDiff": -0.5,
     "fatA": {
@@ -1462,13 +1632,13 @@
     "scoreL": 68,
     "sW": 76,
     "sL": 68,
-    "winProb": 77.1,
-    "wp": 77.1,
+    "winProb": 77.4,
+    "wp": 77.4,
     "sp": 7.7,
-    "modelSpread": -8,
+    "modelSpread": -7.9,
     "vegasLine": -7.5,
     "blendedSpread": -7.7,
-    "edge": -0.5,
+    "edge": -0.4,
     "moneyline": [
       270,
       -340
@@ -1476,11 +1646,11 @@
     "hca": 0,
     "L1": -8.1,
     "L2": -1.4,
-    "L3": 0.1,
+    "L3": 0.2,
     "L4": 0.3,
     "L5": 0.1,
     "v8adj": -0.3,
-    "ensAvg": -2.6,
+    "ensAvg": -2.5,
     "ensAgree": false,
     "injuryFlagA": null,
     "injuryFlagB": "1 articles",
@@ -1488,11 +1658,32 @@
     "sW2": 2,
     "sL2": 7,
     "ven": "San Diego",
-    "modelSp": -8,
+    "modelSp": -7.9,
     "vegasSp": -7.5,
     "rawSp": -7.7,
     "mu": {
-      "det": []
+      "det": [
+        {
+          "t": "Size mismatch",
+          "stat": "ORB% & FTR",
+          "team": "Purdue",
+          "i": 1.6,
+          "d": "Purdue has 4\" height edge"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": -1.6,
+        "ftr": -1
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 1.6,
+        "ftr": 1
+      },
+      "tempoAdj": 0
     },
     "cDiff": 0.4,
     "fatA": {
@@ -1510,7 +1701,7 @@
       "tz": 0,
       "foul": 0.05,
       "ens": {
-        "avg": -2.6,
+        "avg": -2.5,
         "agree": false
       },
       "total": -0.3
@@ -1539,7 +1730,7 @@
       "o": 113.184,
       "d": 95,
       "t": 68,
-      "elo": 1925,
+      "elo": 1937,
       "lk": 0.01,
       "st": 0.39,
       "ci": 0,
@@ -1571,7 +1762,7 @@
       "o": 121.47999999999999,
       "d": 92.5,
       "t": 68,
-      "elo": 1881,
+      "elo": 1887,
       "lk": 0.01,
       "st": 0.56,
       "ci": 0,
@@ -1637,7 +1828,28 @@
     "vegasSp": 1.5,
     "rawSp": -0.5,
     "mu": {
-      "det": []
+      "det": [
+        {
+          "t": "Tempo clash",
+          "stat": "Pace",
+          "team": "Texas Tech",
+          "i": 0.3,
+          "d": "5-possession gap — Texas Tech's pace controls"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0.3
     },
     "cDiff": -0.3,
     "fatA": {
@@ -1684,7 +1896,7 @@
       "o": 110.8464,
       "d": 91.77600000000001,
       "t": 66,
-      "elo": 1935,
+      "elo": 1947,
       "lk": 0.02,
       "st": 0.2,
       "ci": 0,
@@ -1716,7 +1928,7 @@
       "o": 114.112,
       "d": 93,
       "t": 71,
-      "elo": 1930,
+      "elo": 1941,
       "lk": 0.01,
       "st": 0.33,
       "ci": -2.5,
@@ -1752,8 +1964,8 @@
     "scoreL": 63,
     "sW": 64,
     "sL": 63,
-    "winProb": 53.5,
-    "wp": 53.5,
+    "winProb": 53.6,
+    "wp": 53.6,
     "sp": 1,
     "modelSpread": 0.4,
     "vegasLine": 1.5,
@@ -1770,7 +1982,7 @@
     "L4": -0.1,
     "L5": 0,
     "v8adj": -0.36,
-    "ensAvg": 1.1,
+    "ensAvg": 1.2,
     "ensAgree": false,
     "injuryFlagA": "1 articles",
     "injuryFlagB": "1 articles",
@@ -1782,7 +1994,35 @@
     "vegasSp": 1.5,
     "rawSp": 1,
     "mu": {
-      "det": []
+      "det": [
+        {
+          "t": "Disruptive defense",
+          "stat": "TO Rate",
+          "team": "Virginia",
+          "i": 0.5,
+          "d": "Tennessee forces 11 TOs/g → Virginia's TO rate +0.5%"
+        },
+        {
+          "t": "Tempo clash",
+          "stat": "Pace",
+          "team": "Virginia",
+          "i": -0.3,
+          "d": "8-possession gap — Virginia's pace controls"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0.5,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": -0.3
     },
     "cDiff": 0.1,
     "fatA": {
@@ -1800,7 +2040,7 @@
       "tz": 0,
       "foul": -0.02,
       "ens": {
-        "avg": 1.1,
+        "avg": 1.2,
         "agree": false
       },
       "total": -0.36
@@ -1829,7 +2069,7 @@
       "o": 114.184,
       "d": 91.79599999999999,
       "t": 67,
-      "elo": 1960,
+      "elo": 1973,
       "lk": 0.005,
       "st": 0.45,
       "ci": 0,
@@ -1861,7 +2101,7 @@
       "o": 109.184,
       "d": 86.29599999999999,
       "t": 59,
-      "elo": 1893,
+      "elo": 1902,
       "lk": 0.005,
       "st": 0.4,
       "ci": 0,
@@ -1897,13 +2137,13 @@
     "scoreL": 65,
     "sW": 72,
     "sL": 65,
-    "winProb": 75.1,
-    "wp": 75.1,
+    "winProb": 75.4,
+    "wp": 75.4,
     "sp": 7.1,
-    "modelSpread": -10.8,
+    "modelSpread": -10.7,
     "vegasLine": -4.5,
     "blendedSpread": -7.1,
-    "edge": -6.3,
+    "edge": -6.2,
     "moneyline": [
       180,
       -218
@@ -1915,7 +2155,7 @@
     "L4": -0.2,
     "L5": 0,
     "v8adj": -1.31,
-    "ensAvg": -3.7,
+    "ensAvg": -3.6,
     "ensAgree": false,
     "injuryFlagA": "1 articles",
     "injuryFlagB": "1 articles",
@@ -1923,11 +2163,32 @@
     "sW2": 2,
     "sL2": 7,
     "ven": "St. Louis",
-    "modelSp": -10.8,
+    "modelSp": -10.7,
     "vegasSp": -4.5,
     "rawSp": -7.1,
     "mu": {
-      "det": []
+      "det": [
+        {
+          "t": "Size mismatch",
+          "stat": "ORB% & FTR",
+          "team": "Kentucky",
+          "i": 0.8,
+          "d": "Kentucky has 2\" height edge"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0.8,
+        "ftr": 0.5
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": -0.8,
+        "ftr": -0.5
+      },
+      "tempoAdj": 0
     },
     "cDiff": -0.3,
     "fatA": {
@@ -1945,7 +2206,7 @@
       "tz": -0.15,
       "foul": -0.04,
       "ens": {
-        "avg": -3.7,
+        "avg": -3.6,
         "agree": false
       },
       "total": -1.31
@@ -1974,7 +2235,7 @@
       "o": 110.112,
       "d": 94.29599999999999,
       "t": 69,
-      "elo": 1892,
+      "elo": 1904,
       "lk": 0.015,
       "st": -0.05,
       "ci": 0,
@@ -2006,7 +2267,7 @@
       "o": 115.888,
       "d": 87.6224,
       "t": 66,
-      "elo": 1887,
+      "elo": 1893,
       "lk": 0.005,
       "st": 0.48,
       "ci": 0,
