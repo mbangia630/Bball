@@ -618,8 +618,7 @@ const games=R.flatMap(r=>r.g).filter(g=>g.status!=='FINAL'&&(g.moneyline||g.vega
       const spreadDogEV=Math.round((dogCoversProb*spreadDogProfit-(1-dogCoversProb)*100));
 
       // ═══ SCENARIO 3: Bet FAVORITE moneyline ═══
-      const favML=odds[0]; const dogML=odds[1];
-      const favMLprofit=mlPayout(favML);
+const favML=Math.min(odds[0],odds[1]); const dogML=Math.max(odds[0],odds[1]);      const favMLprofit=mlPayout(favML);
       const favMLprob=modelWPA>=modelWPB?Math.max(modelWPA,modelWPB):Math.min(modelWPA,modelWPB);
       // If our model's favorite matches vegas favorite
       const mfIsVF=modelFav===vegasFav;
