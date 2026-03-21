@@ -1,46 +1,46 @@
 {
   "layerAccuracy": {
     "L1": {
-      "totalSigned": 301.7000000000001,
-      "correctDir": 31,
-      "totalAbsError": 330.90000000000003,
-      "games": 34
+      "totalSigned": 338.0000000000001,
+      "correctDir": 32,
+      "totalAbsError": 333.20000000000005,
+      "games": 35
     },
     "L2": {
-      "totalSigned": 34.6,
-      "correctDir": 27,
-      "totalAbsError": 532.0000000000001,
-      "games": 34
+      "totalSigned": 39.7,
+      "correctDir": 28,
+      "totalAbsError": 560.9000000000001,
+      "games": 35
     },
     "L3": {
-      "totalSigned": 27.500000000000004,
-      "correctDir": 25,
-      "totalAbsError": 540.6999999999999,
-      "games": 34
+      "totalSigned": 32.1,
+      "correctDir": 26,
+      "totalAbsError": 570.0999999999999,
+      "games": 35
     },
     "L4": {
-      "totalSigned": 3.7,
+      "totalSigned": 3.6,
       "correctDir": 27,
-      "totalAbsError": 566.6999999999998,
-      "games": 34
+      "totalAbsError": 600.7999999999998,
+      "games": 35
     },
     "L5": {
       "totalSigned": 0,
-      "correctDir": 34,
-      "totalAbsError": 571,
-      "games": 34
+      "correctDir": 35,
+      "totalAbsError": 605,
+      "games": 35
     },
     "v8": {
-      "totalSigned": -0.6500000000000005,
-      "correctDir": 25,
-      "totalAbsError": 566.6700000000002,
-      "games": 34
+      "totalSigned": -0.08000000000000052,
+      "correctDir": 26,
+      "totalAbsError": 600.1000000000001,
+      "games": 35
     },
     "ens": {
-      "totalSigned": 186.39999999999998,
-      "correctDir": 31,
-      "totalAbsError": 388.99999999999994,
-      "games": 34
+      "totalSigned": 208.59999999999997,
+      "correctDir": 32,
+      "totalAbsError": 400.79999999999995,
+      "games": 35
     }
   },
   "teamK": {
@@ -321,6 +321,18 @@
         3.8,
         6.5
       ]
+    },
+    "Arizona": {
+      "k": 20,
+      "recentErrors": [
+        7.5
+      ]
+    },
+    "LIU": {
+      "k": 20,
+      "recentErrors": [
+        7.5
+      ]
     }
   },
   "situations": {
@@ -338,10 +350,10 @@
         "totalError": 67.1
       },
       "14+": {
-        "correct": 10,
-        "total": 10,
+        "correct": 11,
+        "total": 11,
         "avgError": 0,
-        "totalError": 95.69999999999997
+        "totalError": 103.19999999999997
       },
       "7-14": {
         "correct": 9,
@@ -372,8 +384,8 @@
         "total": 5
       },
       "1v16": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
       },
       "4v13": {
         "correct": 4,
@@ -386,14 +398,14 @@
     },
     "byRound": {
       "1": {
-        "correct": 29,
-        "total": 34
+        "correct": 30,
+        "total": 35
       }
     },
     "favVsDog": {
       "fav": {
-        "correct": 25,
-        "total": 27
+        "correct": 26,
+        "total": 28
       },
       "dog": {
         "correct": 4,
@@ -821,6 +833,26 @@
         "games": 2,
         "totalError": 10.3
       }
+    },
+    "Arizona": {
+      "withInjury": {
+        "games": 1,
+        "totalError": 7.5
+      },
+      "without": {
+        "games": 0,
+        "totalError": 0
+      }
+    },
+    "LIU": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 7.5
+      }
     }
   },
   "lineMovement": {
@@ -845,12 +877,12 @@
   },
   "ensembleAccuracy": {
     "main": {
-      "totalError": 319.09999999999997,
-      "games": 34
+      "totalError": 326.59999999999997,
+      "games": 35
     },
     "ens": {
-      "totalError": 388.99999999999994,
-      "games": 34
+      "totalError": 400.79999999999995,
+      "games": 35
     }
   },
   "calibration": {
@@ -865,9 +897,9 @@
       "games": 6
     },
     "90+": {
-      "predicted": 982.0999999999999,
-      "actual": 1000,
-      "games": 10
+      "predicted": 1082.1,
+      "actual": 1100,
+      "games": 11
     },
     "70-80": {
       "predicted": 151.5,
@@ -886,17 +918,17 @@
     }
   },
   "pace": {
-    "totalTempoError": -503,
-    "games": 34,
+    "totalTempoError": -514,
+    "games": 35,
     "overPredictions": 10,
-    "underPredictions": 24
+    "underPredictions": 25
   },
   "statRecency": {},
   "homeCourt": {
     "totalPredictedHCA": 10.9,
     "totalActualMarginBias": 39,
     "gamesWithHCA": 3,
-    "gamesNeutral": 31
+    "gamesNeutral": 32
   },
   "v8Accuracy": {
     "ref": {
@@ -930,9 +962,9 @@
       "games": 0
     },
     "total": {
-      "totalAbs": 16.69,
-      "correctDir": 25,
-      "games": 34
+      "totalAbs": 17.26,
+      "correctDir": 26,
+      "games": 35
     }
   },
   "matchupAccuracy": {
@@ -958,7 +990,7 @@
     "byRound": {
       "1": {
         "upsets": 5,
-        "total": 34
+        "total": 35
       }
     },
     "bySeedDiff": {
@@ -968,7 +1000,7 @@
       },
       "9+": {
         "upsets": 0,
-        "total": 15
+        "total": 16
       },
       "0-2": {
         "upsets": 2,
@@ -986,7 +1018,7 @@
       },
       "10+": {
         "upsets": 0,
-        "total": 16
+        "total": 17
       },
       "5-10": {
         "upsets": 0,
@@ -996,8 +1028,8 @@
   },
   "confidenceTracking": {
     "highConf": {
-      "correct": 18,
-      "total": 18
+      "correct": 19,
+      "total": 19
     },
     "medConf": {
       "correct": 5,

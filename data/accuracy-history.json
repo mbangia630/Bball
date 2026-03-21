@@ -271,6 +271,14 @@
       "modelCorrectATS": false,
       "modelError": 6.5,
       "date": "2026-03-21"
+    },
+    {
+      "teamA": "Arizona",
+      "teamB": "LIU",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 7.5,
+      "date": "2026-03-21"
     }
   ],
   "daily": [
@@ -301,9 +309,16 @@
       "suPct": 77,
       "atsPct": 46,
       "avgError": 8.8
+    },
+    {
+      "date": "2026-03-21",
+      "games": 1,
+      "suPct": 100,
+      "atsPct": 100,
+      "avgError": 7.5
     }
   ],
-  "totalGames": 34,
-  "correctSU": 29,
-  "correctATS": 22
+  "totalGames": 35,
+  "correctSU": 30,
+  "correctATS": 23
 }
