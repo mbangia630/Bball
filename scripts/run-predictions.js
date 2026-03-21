@@ -302,10 +302,7 @@ for(const result of allResults){
     if(bracketState.results[slot.id])continue;if(!slot.a||!slot.b)continue;
     if((slot.a===aName||slot.a===bName)&&(slot.b===aName||slot.b===bName)){
             // Find the original prediction for this game before marking complete
-      const origPred=predictions.find(p=>(p.teamA===slot.a&&p.teamB===slot.b)||(p.teamA===slot.b&&p.teamB===slot.a))||
-                      fullOutput?.predictions?.find(p=>(p.teamA===slot.a&&p.teamB===slot.b)||(p.teamA===slot.b&&p.teamB===slot.a));
-      bracketState.results[slot.id]={winner:actualWinner,loser:actualLoser,scoreW:Math.max(scoreA,scoreB),scoreL:Math.min(scoreA,scoreB),date:new Date().toISOString().slice(0,10),
-        originalPrediction:origPred?{teamA:origPred.teamA,teamB:origPred.teamB,winner:origPred.winner,winProb:origPred.winProb,modelSpread:origPred.modelSpread,vegasLine:origPred.vegasLine,blendedSpread:origPred.blendedSpread,L1:origPred.L1,L2:origPred.L2,L3:origPred.L3,L4:origPred.L4,L5:origPred.L5,v8adj:origPred.v8adj,ensAvg:origPred.ensAvg,hca:origPred.hca,edge:origPred.edge}:null};
+      bracketState.results[slot.id]={winner:actualWinner,loser:actualLoser,scoreW:Math.max(scoreA,scoreB),scoreL:Math.min(scoreA,scoreB),date:new Date().toISOString().slice(0,10)};
       if(slot.feedsInto&&slotMap[slot.feedsInto]){const ns=slotMap[slot.feedsInto];if(slot.feedsAs==='a')ns.a=actualWinner;else ns.b=actualWinner;bracketState.advancedTo[slot.feedsInto]=bracketState.advancedTo[slot.feedsInto]||{};bracketState.advancedTo[slot.feedsInto][slot.feedsAs]=actualWinner;}
       console.log(`   ✅ ${slot.id}: ${actualWinner} beat ${actualLoser} → advances to ${slot.feedsInto||'CHAMPION'}`);newAdvances++;break;
     }
