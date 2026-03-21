@@ -1,17 +1,157 @@
 {
-  "timestamp": "2026-03-21T13:37:55.728Z",
-  "timestampCST": "Mar 21, 2026, 8:37 AM CST",
-  "type": "BASELINE_SET",
-  "message": "7am daily update complete. This is the new baseline. Any manual refreshes today will show changes relative to this snapshot.",
+  "timestamp": "2026-03-21T21:27:27.626Z",
+  "timestampCST": "Mar 21, 2026, 4:27 PM CST",
+  "type": "DELTA",
   "baselineTime": "Mar 21, 2026, 8:37 AM CST",
-  "totalPredictions": 15,
-  "deltas": [],
+  "currentTime": "Mar 21, 2026, 4:27 PM CST",
   "summary": {
-    "totalGamesCompared": 15,
-    "gamesChanged": 0,
+    "totalGamesCompared": 18,
+    "gamesChanged": 8,
     "winnersFlipped": 0,
-    "newMatchups": 0,
-    "avgSpreadChange": 0,
-    "biggestMover": "None — this is the baseline"
-  }
+    "newMatchups": 6,
+    "avgSpreadChange": 1.1,
+    "biggestMover": "N. Carolina vs VCU"
+  },
+  "deltas": [
+    {
+      "matchup": "N. Carolina vs VCU",
+      "round": 1,
+      "region": "R64",
+      "type": "NEW",
+      "winner": "VCU",
+      "winProb": 74.1,
+      "spread": -7.3,
+      "message": "New matchup since 7am — VCU predicted to win (74.1%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "St. Mary's vs Texas A&M",
+      "round": 1,
+      "region": "R64",
+      "type": "NEW",
+      "winner": "St. Mary's",
+      "winProb": 54.1,
+      "spread": 1.3,
+      "message": "New matchup since 7am — St. Mary's predicted to win (54.1%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Houston vs Idaho",
+      "round": 1,
+      "region": "R64",
+      "type": "NEW",
+      "winner": "Houston",
+      "winProb": 99.8,
+      "spread": 30.3,
+      "message": "New matchup since 7am — Houston predicted to win (99.8%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "BYU vs Texas",
+      "round": 1,
+      "region": "R64",
+      "type": "NEW",
+      "winner": "BYU",
+      "winProb": 56.3,
+      "spread": 2.2,
+      "message": "New matchup since 7am — BYU predicted to win (56.3%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Gonzaga vs Kennesaw St.",
+      "round": 1,
+      "region": "R64",
+      "type": "NEW",
+      "winner": "Gonzaga",
+      "winProb": 99.1,
+      "spread": 24.8,
+      "message": "New matchup since 7am — Gonzaga predicted to win (99.1%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Georgia vs Saint Louis",
+      "round": 1,
+      "region": "R64",
+      "type": "NEW",
+      "winner": "Saint Louis",
+      "winProb": 67.8,
+      "spread": -5.4,
+      "message": "New matchup since 7am — Saint Louis predicted to win (67.8%)",
+      "factors": [
+        "New round matchup generated from bracket advancement"
+      ],
+      "absDelta": 999
+    },
+    {
+      "matchup": "Texas Tech vs Alabama",
+      "round": 2,
+      "region": "R32",
+      "type": "SHIFT",
+      "baselineWinner": "Alabama",
+      "baselineWinProb": 56.6,
+      "baselineSpread": -2.3,
+      "baselineVegas": -1.5,
+      "baselineModelSpread": -3.3,
+      "baselineScoreW": 71,
+      "baselineScoreL": 69,
+      "winner": "Alabama",
+      "winProb": 52.1,
+      "spread": -0.7,
+      "vegasLine": 1.5,
+      "modelSpread": -3.3,
+      "scoreW": 71,
+      "scoreL": 69,
+      "spreadChange": 1.6,
+      "probChange": -4.5,
+      "modelSpreadChange": 0,
+      "vegasChange": 3,
+      "factors": [
+        "Vegas line moved 3 pts toward Texas Tech (was -1.5, now 1.5)"
+      ],
+      "absDelta": 2.0500000000000003
+    },
+    {
+      "matchup": "High Point vs Arkansas",
+      "round": 2,
+      "region": "R32",
+      "type": "SHIFT",
+      "baselineWinner": "Arkansas",
+      "baselineWinProb": 86.4,
+      "baselineSpread": -12.7,
+      "baselineVegas": -11.5,
+      "baselineModelSpread": -14.1,
+      "baselineScoreW": 80,
+      "baselineScoreL": 67,
+      "winner": "Arkansas",
+      "winProb": 87.9,
+      "spread": -13.2,
+      "vegasLine": -12.5,
+      "modelSpread": -14.1,
+      "scoreW": 80,
+      "scoreL": 67,
+      "spreadChange": -0.5,
+      "probChange": 1.5,
+      "modelSpreadChange": 0,
+      "vegasChange": -1,
+      "factors": [
+        "Vegas line moved 1 pts toward Arkansas (was -11.5, now -12.5)"
+      ],
+      "absDelta": 0.65
+    }
+  ]
 }

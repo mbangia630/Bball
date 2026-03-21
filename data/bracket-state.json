@@ -83,6 +83,118 @@
       "scoreW": 92,
       "scoreL": 67,
       "date": "2026-03-19"
+    },
+    "S1": {
+      "winner": "Florida",
+      "loser": "Prairie View",
+      "scoreW": 114,
+      "scoreL": 55,
+      "date": "2026-03-21"
+    },
+    "MW8": {
+      "winner": "Iowa State",
+      "loser": "Tennessee St.",
+      "scoreW": 108,
+      "scoreL": 74,
+      "date": "2026-03-21"
+    },
+    "W8": {
+      "winner": "Purdue",
+      "loser": "Queens",
+      "scoreW": 104,
+      "scoreL": 71,
+      "date": "2026-03-21"
+    },
+    "E8": {
+      "winner": "UConn",
+      "loser": "Furman",
+      "scoreW": 82,
+      "scoreL": 71,
+      "date": "2026-03-21"
+    },
+    "MW6": {
+      "winner": "Virginia",
+      "loser": "Wright St.",
+      "scoreW": 82,
+      "scoreL": 73,
+      "date": "2026-03-21"
+    },
+    "MW4": {
+      "winner": "Alabama",
+      "loser": "Hofstra",
+      "scoreW": 90,
+      "scoreL": 70,
+      "date": "2026-03-21"
+    },
+    "E4": {
+      "winner": "Kansas",
+      "loser": "Cal Baptist",
+      "scoreW": 68,
+      "scoreL": 60,
+      "date": "2026-03-21"
+    },
+    "MW3": {
+      "winner": "Texas Tech",
+      "loser": "Akron",
+      "scoreW": 91,
+      "scoreL": 71,
+      "date": "2026-03-21"
+    },
+    "E3": {
+      "winner": "St. John's",
+      "loser": "N. Iowa",
+      "scoreW": 79,
+      "scoreL": 53,
+      "date": "2026-03-21"
+    },
+    "MW5": {
+      "winner": "Tennessee",
+      "loser": "Miami OH",
+      "scoreW": 78,
+      "scoreL": 56,
+      "date": "2026-03-21"
+    },
+    "MW7": {
+      "winner": "Kentucky",
+      "loser": "Santa Clara",
+      "scoreW": 89,
+      "scoreL": 84,
+      "date": "2026-03-21"
+    },
+    "E7": {
+      "winner": "UCLA",
+      "loser": "UCF",
+      "scoreW": 75,
+      "scoreL": 71,
+      "date": "2026-03-21"
+    },
+    "W7": {
+      "winner": "Miami FL",
+      "loser": "Missouri",
+      "scoreW": 80,
+      "scoreL": 66,
+      "date": "2026-03-21"
+    },
+    "W2": {
+      "winner": "Utah State",
+      "loser": "Villanova",
+      "scoreW": 86,
+      "scoreL": 76,
+      "date": "2026-03-21"
+    },
+    "S2": {
+      "winner": "Iowa",
+      "loser": "Clemson",
+      "scoreW": 67,
+      "scoreL": 61,
+      "date": "2026-03-21"
+    },
+    "E_R32_3": {
+      "winner": "Michigan St.",
+      "loser": "Louisville",
+      "scoreW": 77,
+      "scoreL": 69,
+      "date": "2026-03-21"
     }
   },
   "advancedTo": {
@@ -113,6 +225,40 @@
     "E_R32_3": {
       "a": "Louisville",
       "b": "Michigan St."
+    },
+    "S_R32_1": {
+      "a": "Florida",
+      "b": "Iowa"
+    },
+    "MW_R32_4": {
+      "b": "Iowa State",
+      "a": "Kentucky"
+    },
+    "W_R32_4": {
+      "b": "Purdue",
+      "a": "Miami FL"
+    },
+    "E_R32_4": {
+      "b": "UConn",
+      "a": "UCLA"
+    },
+    "MW_R32_3": {
+      "b": "Virginia",
+      "a": "Tennessee"
+    },
+    "MW_R32_2": {
+      "b": "Alabama",
+      "a": "Texas Tech"
+    },
+    "E_R32_2": {
+      "b": "Kansas",
+      "a": "St. John's"
+    },
+    "W_R32_1": {
+      "b": "Utah State"
+    },
+    "E_S16_2": {
+      "a": "Michigan St."
     }
   }
 }
