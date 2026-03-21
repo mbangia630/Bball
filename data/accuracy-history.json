@@ -167,6 +167,110 @@
       "modelCorrectATS": true,
       "modelError": 3.8,
       "date": "2026-03-21"
+    },
+    {
+      "teamA": "Iowa State",
+      "teamB": "Tennessee St.",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 8.899999999999999,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "Purdue",
+      "teamB": "Queens",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 6.100000000000001,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "UConn",
+      "teamB": "Furman",
+      "modelCorrectSU": true,
+      "modelCorrectATS": false,
+      "modelError": 9.600000000000001,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "Virginia",
+      "teamB": "Wright St.",
+      "modelCorrectSU": true,
+      "modelCorrectATS": false,
+      "modelError": 6.800000000000001,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "Alabama",
+      "teamB": "Hofstra",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 10.5,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "Kansas",
+      "teamB": "Cal Baptist",
+      "modelCorrectSU": true,
+      "modelCorrectATS": false,
+      "modelError": 4.4,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "Texas Tech",
+      "teamB": "Akron",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 16.1,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "St. John's",
+      "teamB": "N. Iowa",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 14.7,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "Santa Clara",
+      "teamB": "Kentucky",
+      "modelCorrectSU": false,
+      "modelCorrectATS": false,
+      "modelError": 8.5,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "UCLA",
+      "teamB": "UCF",
+      "modelCorrectSU": true,
+      "modelCorrectATS": false,
+      "modelError": 0.5,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "Miami FL",
+      "teamB": "Missouri",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 10.7,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "Villanova",
+      "teamB": "Utah State",
+      "modelCorrectSU": false,
+      "modelCorrectATS": false,
+      "modelError": 10.9,
+      "date": "2026-03-21"
+    },
+    {
+      "teamA": "Clemson",
+      "teamB": "Iowa",
+      "modelCorrectSU": false,
+      "modelCorrectATS": false,
+      "modelError": 6.5,
+      "date": "2026-03-21"
     }
   ],
   "daily": [
@@ -190,9 +294,16 @@
       "suPct": 100,
       "atsPct": 80,
       "avgError": 9.5
+    },
+    {
+      "date": "2026-03-21",
+      "games": 13,
+      "suPct": 77,
+      "atsPct": 46,
+      "avgError": 8.8
     }
   ],
-  "totalGames": 21,
-  "correctSU": 19,
-  "correctATS": 16
+  "totalGames": 34,
+  "correctSU": 29,
+  "correctATS": 22
 }
