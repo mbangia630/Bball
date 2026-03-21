@@ -301,7 +301,11 @@ for(const result of allResults){
   for(const slot of BRACKET){
     if(bracketState.results[slot.id])continue;if(!slot.a||!slot.b)continue;
     if((slot.a===aName||slot.a===bName)&&(slot.b===aName||slot.b===bName)){
-      bracketState.results[slot.id]={winner:actualWinner,loser:actualLoser,scoreW:Math.max(scoreA,scoreB),scoreL:Math.min(scoreA,scoreB),date:new Date().toISOString().slice(0,10)};
+            // Find the original prediction for this game before marking complete
+      const origPred=predictions.find(p=>(p.teamA===slot.a&&p.teamB===slot.b)||(p.teamA===slot.b&&p.teamB===slot.a))||
+                      fullOutput?.predictions?.find(p=>(p.teamA===slot.a&&p.teamB===slot.b)||(p.teamA===slot.b&&p.teamB===slot.a));
+      bracketState.results[slot.id]={winner:actualWinner,loser:actualLoser,scoreW:Math.max(scoreA,scoreB),scoreL:Math.min(scoreA,scoreB),date:new Date().toISOString().slice(0,10),
+        originalPrediction:origPred?{teamA:origPred.teamA,teamB:origPred.teamB,winner:origPred.winner,winProb:origPred.winProb,modelSpread:origPred.modelSpread,vegasLine:origPred.vegasLine,blendedSpread:origPred.blendedSpread,L1:origPred.L1,L2:origPred.L2,L3:origPred.L3,L4:origPred.L4,L5:origPred.L5,v8adj:origPred.v8adj,ensAvg:origPred.ensAvg,hca:origPred.hca,edge:origPred.edge}:null};
       if(slot.feedsInto&&slotMap[slot.feedsInto]){const ns=slotMap[slot.feedsInto];if(slot.feedsAs==='a')ns.a=actualWinner;else ns.b=actualWinner;bracketState.advancedTo[slot.feedsInto]=bracketState.advancedTo[slot.feedsInto]||{};bracketState.advancedTo[slot.feedsInto][slot.feedsAs]=actualWinner;}
       console.log(`   ✅ ${slot.id}: ${actualWinner} beat ${actualLoser} → advances to ${slot.feedsInto||'CHAMPION'}`);newAdvances++;break;
     }
@@ -424,5 +428,8 @@ for(const round of printRounds){const games=byRound[round];if(!games)continue;co
 
 const edges=predictions.filter(p=>p.edge!==null).sort((a,b)=>Math.abs(b.edge)-Math.abs(a.edge));
 if(edges.length>0){console.log('\n🔥 TOP 5 BETTING EDGES:');edges.slice(0,5).forEach(p=>{console.log(`   ${p.teamA} vs ${p.teamB}: model ${p.modelSpread>0?'+':''}${p.modelSpread} / vegas ${p.vegasLine>0?'+':''}${p.vegasLine} → edge ${Math.abs(p.edge)}`);});}
+
+// Save prediction snapshot for self-improve to grade tomorrow
+fs.writeFileSync('data/predictions-snapshot.json', JSON.stringify(predictions, null, 2));
 
 console.log('\n✅ Full v8 engine complete.\n');
