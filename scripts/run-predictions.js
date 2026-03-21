@@ -2,20 +2,15 @@ const fs = require('fs');
 const { resolve } = require('./team-names');
 
 // ═══════════════════════════════════════════════════════
-// PREDICTION RUNNER v4 — FULL V8 ENGINE PORT
+// PREDICTION RUNNER v5 — FULL V8 ENGINE + LIVE STATS
 //
-// Complete port of the v8 Claude model with ALL features:
-// - L1: Efficiency (recency-weighted AdjEM × tempo)
-// - L2: Four Factors (matchup-adjusted eFG%, TO%, ORB%, FTR)
-// - L3: Context (Elo, HCA/venue proximity, sentiment, luck, injuries)
-// - L4: Coaching + tempo clash
-// - L5: Fatigue (bench depth, star load, compounds per round)
-// - V8 Tier 1: Ref sensitivity, game-state, sharp money
-// - V8 Tier 2: Continuity, timezone, foul trouble
-// - Ensemble: 80% main + 20% (eff + Elo + FF sub-models)
-// - Isotonic calibration
-// - Haversine GPS venue proximity
-// - Auto-advancing bracket
+// Complete v8 engine with ALL features:
+// - L1-L5 algorithm layers
+// - V8 Tier 1+2 advanced adjustments
+// - Matchup details passthrough (3PT, size, TO, tempo)
+// - Live ESPN stats via fetch-all-data
+// - Moneyline passthrough for betting tab
+// - Auto-advancing bracket with snapshot for grading
 // ═══════════════════════════════════════════════════════
 
 const data = JSON.parse(fs.readFileSync('data/latest.json', 'utf8'));
@@ -30,7 +25,7 @@ let bracketState;
 try { bracketState = JSON.parse(fs.readFileSync(BRACKET_FILE, 'utf8')); }
 catch { bracketState = { results: {}, advancedTo: {} }; }
 
-console.log('\n🧠 Prediction Runner v4 — FULL V8 ENGINE');
+console.log('\n🧠 Prediction Runner v5 — FULL V8 ENGINE');
 console.log(`   Data: ${data.timestamp}`);
 console.log(`   Weights v${weights.version || 1}, Vegas blend: ${(weights.vegasBlend * 100).toFixed(1)}%\n`);
 
@@ -82,24 +77,69 @@ function buildT(n) {
 }
 
 // ═══════════════════════════════════════════════════════
-// MATCHUP-ADJUSTED FOUR FACTORS
+// MATCHUP-ADJUSTED FOUR FACTORS (with detail passthrough)
 // ═══════════════════════════════════════════════════════
 function matchupAdjust(nA,nB) {
   const a=teamDB[nA]?.style, b=teamDB[nB]?.style;
   const adjA={efg:0,tor:0,orb:0,ftr:0}, adjB={efg:0,tor:0,orb:0,ftr:0};
+  const det=[];
   let tempoAdj=0;
-  if(!a||!b) return {adjA,adjB,tempoAdj};
-  if(a.p3>=0.42&&b.d3r<=25){adjA.efg+=-(a.p3-0.35)*5.0;}
-  if(b.p3>=0.42&&a.d3r<=25){adjB.efg+=-(b.p3-0.35)*5.0;}
-  if(a.p3>=0.42&&b.d3r>=100){adjA.efg+=(a.p3-0.38)*3.5;}
-  if(b.p3>=0.42&&a.d3r>=100){adjB.efg+=(b.p3-0.38)*3.5;}
+  if(!a||!b) return {adjA,adjB,det,tempoAdj};
+
+  // 1. 3PT OFFENSE vs 3PT DEFENSE
+  if(a.p3>=0.42&&b.d3r<=25){
+    const pen=-(a.p3-0.35)*5.0;
+    adjA.efg+=pen;
+    det.push({t:"3PT vs Elite 3PT-D",stat:"eFG%",team:nA,i:pen,d:`${nA}'s 3PT-heavy (${(a.p3*100).toFixed(0)}%) faces ${nB}'s #${b.d3r} 3PT D`});
+  }
+  if(b.p3>=0.42&&a.d3r<=25){
+    const pen=-(b.p3-0.35)*5.0;
+    adjB.efg+=pen;
+    det.push({t:"3PT vs Elite 3PT-D",stat:"eFG%",team:nB,i:pen,d:`${nB}'s 3PT-heavy (${(b.p3*100).toFixed(0)}%) faces ${nA}'s #${a.d3r} 3PT D`});
+  }
+  if(a.p3>=0.42&&b.d3r>=100){
+    const bst=(a.p3-0.38)*3.5;
+    adjA.efg+=bst;
+    det.push({t:"3PT feast",stat:"eFG%",team:nA,i:bst,d:`${nA}'s 3PT attack vs ${nB}'s weak 3PT D (#${b.d3r})`});
+  }
+  if(b.p3>=0.42&&a.d3r>=100){
+    const bst=(b.p3-0.38)*3.5;
+    adjB.efg+=bst;
+    det.push({t:"3PT feast",stat:"eFG%",team:nB,i:bst,d:`${nB}'s 3PT attack vs ${nA}'s weak 3PT D (#${a.d3r})`});
+  }
+
+  // 2. SIZE MISMATCH
   const htDiff=a.ht-b.ht;
-  if(Math.abs(htDiff)>=2){adjA.orb+=htDiff*0.4;adjB.orb-=htDiff*0.4;adjA.ftr+=htDiff*0.25;adjB.ftr-=htDiff*0.25;}
-  if(a.toF>=11.0){adjB.tor+=(a.toF-10.0)*0.5;}
-  if(b.toF>=11.0){adjA.tor+=(b.toF-10.0)*0.5;}
+  if(Math.abs(htDiff)>=2){
+    adjA.orb+=htDiff*0.4;adjB.orb-=htDiff*0.4;
+    adjA.ftr+=htDiff*0.25;adjB.ftr-=htDiff*0.25;
+    det.push({t:"Size mismatch",stat:"ORB% & FTR",team:htDiff>0?nA:nB,i:Math.abs(htDiff*0.4),
+      d:`${htDiff>0?nA:nB} has ${Math.abs(htDiff)}" height edge`});
+  }
+
+  // 3. TURNOVER-FORCING DEFENSE
+  if(a.toF>=11.0){
+    const toAdj=(a.toF-10.0)*0.5;
+    adjB.tor+=toAdj;
+    det.push({t:"Disruptive defense",stat:"TO Rate",team:nB,i:toAdj,
+      d:`${nA} forces ${a.toF} TOs/g → ${nB}'s TO rate +${toAdj.toFixed(1)}%`});
+  }
+  if(b.toF>=11.0){
+    const toAdj=(b.toF-10.0)*0.5;
+    adjA.tor+=toAdj;
+    det.push({t:"Disruptive defense",stat:"TO Rate",team:nA,i:toAdj,
+      d:`${nB} forces ${b.toF} TOs/g → ${nA}'s TO rate +${toAdj.toFixed(1)}%`});
+  }
+
+  // 4. TEMPO CLASH
   const td=Math.abs(a.t-b.t);
-  if(td>=5){tempoAdj=a.t<b.t?0.3:-0.3;}
-  return {adjA,adjB,tempoAdj};
+  if(td>=5){
+    tempoAdj=a.t<b.t?0.3:-0.3;
+    det.push({t:"Tempo clash",stat:"Pace",team:a.t<b.t?nA:nB,i:tempoAdj,
+      d:`${Math.round(td)}-possession gap — ${a.t<b.t?nA:nB}'s pace controls`});
+  }
+
+  return {adjA,adjB,det,tempoAdj};
 }
 
 // ═══════════════════════════════════════════════════════
@@ -114,7 +154,7 @@ function foulAdj(nA,nB){const a=v8get(nA),b=v8get(nB);return Math.round(((b.foul
 function ensemble(a,b,tf){const m1=1.1*(a.em-b.em)*tf;const m2=(a.elo-b.elo)/25*1.2;const m3=((a.efg-b.efg)*1.8*.4+(b.tor-a.tor)*1.2*.25+(a.orb-b.orb)*.7*.18+(a.ftr-b.ftr)*.6*.17)*tf;return{avg:Math.round((m1+m2+m3)/3*10)/10,agree:Math.sign(m1)===Math.sign(m2)&&Math.sign(m2)===Math.sign(m3)};}
 
 // ═══════════════════════════════════════════════════════
-// FULL SIM FUNCTION — exact port of v8 Claude
+// FULL SIM FUNCTION — v8 engine with matchup details
 // ═══════════════════════════════════════════════════════
 function sim(nA, nB, venue, round) {
   const a=buildT(nA), b=buildT(nB);
@@ -190,7 +230,8 @@ function sim(nA, nB, venue, round) {
     modelSp:Math.round(modelSp*10)/10,
     vegasSp:vegasLine!==null?Math.round(vegasLine*10)/10:null,
     rawSp:Math.round(finalSp*10)/10,
-    mu:{det:[]},cDiff:Math.round(cDiff*10)/10,
+    mu:{det:mu.det||[],adjA:mu.adjA,adjB:mu.adjB,tempoAdj:mu.tempoAdj},
+    cDiff:Math.round(cDiff*10)/10,
     fatA:{pts:fatigue(nA,rd)},fatB:{pts:fatigue(nB,rd)},
     rd:rd,
     v8:{ref:Math.round(refAdj(nA,nB)*100)/100,gs:Math.round(gameStateAdj(nA,nB,rawSp0)*100)/100,sharp:Math.round(sharpAdj(nA,nB)*100)/100,cont:Math.round(continuityAdj(nA,nB)*100)/100,tz:Math.round(tzAdj(nA,nB,venue)*100)/100,foul:Math.round(foulAdj(nA,nB)*100)/100,ens:ens,total:Math.round(v8total*100)/100},
@@ -201,7 +242,7 @@ function sim(nA, nB, venue, round) {
 }
 
 // ═══════════════════════════════════════════════════════
-// VEGAS LINES + ELO + INJURIES
+// VEGAS LINES + MONEYLINES + ELO + INJURIES
 // ═══════════════════════════════════════════════════════
 const vegasLines={};
 for(const[key,val]of Object.entries(data.odds)){
@@ -210,8 +251,6 @@ for(const[key,val]of Object.entries(data.odds)){
     if(parts.length===2){
       const a=resolve(parts[0].trim(),teamDB)||parts[0].trim();
       const b=resolve(parts[1].trim(),teamDB)||parts[1].trim();
-      // FIX: Odds API returns spread relative to home team (negative = favored)
-      // Our model uses positive = teamA favored, so we negate
       vegasLines[`${a} vs ${b}`]=-val.spread;
       vegasLines[`${b} vs ${a}`]=val.spread;
     }
@@ -230,7 +269,6 @@ for(const[key,val]of Object.entries(data.odds)){
   }
 }
 console.log(`📊 Loaded ${Object.keys(data.odds).length} Vegas lines`);
-// Debug: show first 5 resolved lines to verify sign convention
 const vKeys = Object.keys(vegasLines).slice(0, 10);
 vKeys.forEach(k => console.log(`   📈 ${k}: ${vegasLines[k] > 0 ? '+' : ''}${vegasLines[k]}`));
 
@@ -314,7 +352,6 @@ for(const result of allResults){
   for(const slot of BRACKET){
     if(bracketState.results[slot.id])continue;if(!slot.a||!slot.b)continue;
     if((slot.a===aName||slot.a===bName)&&(slot.b===aName||slot.b===bName)){
-            // Find the original prediction for this game before marking complete
       bracketState.results[slot.id]={winner:actualWinner,loser:actualLoser,scoreW:Math.max(scoreA,scoreB),scoreL:Math.min(scoreA,scoreB),date:new Date().toISOString().slice(0,10)};
       if(slot.feedsInto&&slotMap[slot.feedsInto]){const ns=slotMap[slot.feedsInto];if(slot.feedsAs==='a')ns.a=actualWinner;else ns.b=actualWinner;bracketState.advancedTo[slot.feedsInto]=bracketState.advancedTo[slot.feedsInto]||{};bracketState.advancedTo[slot.feedsInto][slot.feedsAs]=actualWinner;}
       console.log(`   ✅ ${slot.id}: ${actualWinner} beat ${actualLoser} → advances to ${slot.feedsInto||'CHAMPION'}`);newAdvances++;break;
@@ -335,7 +372,7 @@ for(const slot of BRACKET){
 }
 
 // ═══ SAVE ═══
-const fullOutput={timestamp:new Date().toISOString(),weightsVersion:weights.version||1,engineVersion:"v4-full-v8-port",completed,predictions,bracketProgress:{gamesPlayed:completed.length,gamesRemaining:BRACKET.length-completed.length,currentRound:predictions.length>0?predictions[0].round:'Complete'}};
+const fullOutput={timestamp:new Date().toISOString(),weightsVersion:weights.version||1,engineVersion:"v5-full-v8-live-stats",completed,predictions,bracketProgress:{gamesPlayed:completed.length,gamesRemaining:BRACKET.length-completed.length,currentRound:predictions.length>0?predictions[0].round:'Complete'}};
 fs.writeFileSync('data/predictions.json',JSON.stringify(fullOutput,null,2));
 fs.writeFileSync('data/predictions-snapshot.json',JSON.stringify(predictions,null,2));
 fs.writeFileSync('data/teams.json',JSON.stringify(teamDB,null,2));
@@ -402,7 +439,6 @@ for (const rd of roundOrder) {
       status: 'PROJECTED',
     });
 
-    // FIX: Use result.winner (not result.w) to advance projected winners
     if (slot.feedsInto && projMap[slot.feedsInto]) {
       if (slot.feedsAs === 'a') projMap[slot.feedsInto].a = result.winner;
       else projMap[slot.feedsInto].b = result.winner;
@@ -417,7 +453,7 @@ for (const rd of roundOrder) {
 const bracketDisplay = {
   timestamp: new Date().toISOString(),
   timestampCST: new Date().toLocaleString('en-US', { timeZone: 'America/Chicago', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true }) + ' CST',
-  engineVersion: 'v4-full-v8-port',
+  engineVersion: 'v5-full-v8-live-stats',
   weightsVersion: weights.version || 1,
   rounds: displayRounds,
   teamDB: teamDB,
@@ -439,8 +475,5 @@ for(const round of printRounds){const games=byRound[round];if(!games)continue;co
 
 const edges=predictions.filter(p=>p.edge!==null).sort((a,b)=>Math.abs(b.edge)-Math.abs(a.edge));
 if(edges.length>0){console.log('\n🔥 TOP 5 BETTING EDGES:');edges.slice(0,5).forEach(p=>{console.log(`   ${p.teamA} vs ${p.teamB}: model ${p.modelSpread>0?'+':''}${p.modelSpread} / vegas ${p.vegasLine>0?'+':''}${p.vegasLine} → edge ${Math.abs(p.edge)}`);});}
-
-// Save prediction snapshot for self-improve to grade tomorrow
-fs.writeFileSync('data/predictions-snapshot.json', JSON.stringify(predictions, null, 2));
 
 console.log('\n✅ Full v8 engine complete.\n');
