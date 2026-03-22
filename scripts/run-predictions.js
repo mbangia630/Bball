@@ -374,7 +374,13 @@ for(const slot of BRACKET){
 // ═══ SAVE ═══
 const fullOutput={timestamp:new Date().toISOString(),weightsVersion:weights.version||1,engineVersion:"v5-full-v8-live-stats",completed,predictions,bracketProgress:{gamesPlayed:completed.length,gamesRemaining:BRACKET.length-completed.length,currentRound:predictions.length>0?predictions[0].round:'Complete'}};
 fs.writeFileSync('data/predictions.json',JSON.stringify(fullOutput,null,2));
-fs.writeFileSync('data/predictions-snapshot.json',JSON.stringify(predictions,null,2));
+// Merge new predictions into snapshot (preserve old predictions for grading)
+let existingSnap = [];
+try { existingSnap = JSON.parse(fs.readFileSync('data/predictions-snapshot.json', 'utf8')); } catch {}
+const snapMap = {};
+for (const p of existingSnap) { if (p.teamA && p.teamB) snapMap[`${p.teamA}|${p.teamB}`] = p; }
+for (const p of predictions) { if (p.teamA && p.teamB) snapMap[`${p.teamA}|${p.teamB}`] = p; }
+fs.writeFileSync('data/predictions-snapshot.json', JSON.stringify(Object.values(snapMap), null, 2));
 fs.writeFileSync('data/teams.json',JSON.stringify(teamDB,null,2));
 fs.writeFileSync(BRACKET_FILE,JSON.stringify(bracketState,null,2));
 
