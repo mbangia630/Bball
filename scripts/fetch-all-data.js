@@ -160,27 +160,36 @@ async function fetchTeamStats() {
         `https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/${id}/statistics`
       );
 
-      const stats = {};
-      // Parse the ESPN stats response
-      // ESPN returns stats in categories with displayName and stats array
+ const stats = {};
       const allStats = [];
-      if (data.results?.stats) {
-        for (const cat of data.results.stats) {
-          if (cat.stats) allStats.push(...cat.stats);
+
+      // ESPN returns deeply nested structure — walk the whole tree
+      function extractStats(obj) {
+        if (!obj || typeof obj !== 'object') return;
+        if (Array.isArray(obj)) {
+          for (const item of obj) {
+            if (item && item.name && item.displayValue !== undefined) {
+              allStats.push({ name: item.name, value: parseFloat(item.displayValue) || 0, abbreviation: item.abbreviation });
+            }
+            extractStats(item);
+          }
+          return;
+        }
+        for (const key of Object.keys(obj)) {
+          if (key === 'stats' && Array.isArray(obj[key])) {
+            for (const s of obj[key]) {
+              if (s && s.name && s.displayValue !== undefined) {
+                allStats.push({ name: s.name, value: parseFloat(s.displayValue) || 0, abbreviation: s.abbreviation });
+              } else if (s && s.stats) {
+                extractStats(s);
+              }
+            }
+          } else {
+            extractStats(obj[key]);
+          }
         }
       }
-      // Also check splits format
-      if (data.splits?.categories) {
-        for (const cat of data.splits.categories) {
-          if (cat.stats) allStats.push(...cat.stats);
-        }
-      }
-      // Also try direct stats array
-      if (data.statistics?.splits?.categories) {
-        for (const cat of data.statistics.splits.categories) {
-          if (cat.stats) allStats.push(...cat.stats);
-        }
-      }
+      extractStats(data);
 
       // Build a name→value map
       for (const s of allStats) {
