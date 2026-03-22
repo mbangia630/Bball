@@ -279,6 +279,22 @@
       "modelCorrectATS": true,
       "modelError": 7.5,
       "date": "2026-03-21"
+    },
+    {
+      "teamA": "Duke",
+      "teamB": "TCU",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 10,
+      "date": "2026-03-22"
+    },
+    {
+      "teamA": "Texas A&M",
+      "teamB": "Houston",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 21.5,
+      "date": "2026-03-22"
     }
   ],
   "daily": [
@@ -316,9 +332,16 @@
       "suPct": 100,
       "atsPct": 100,
       "avgError": 7.5
+    },
+    {
+      "date": "2026-03-22",
+      "games": 2,
+      "suPct": 100,
+      "atsPct": 100,
+      "avgError": 15.8
     }
   ],
-  "totalGames": 35,
-  "correctSU": 30,
-  "correctATS": 23
+  "totalGames": 37,
+  "correctSU": 32,
+  "correctATS": 25
 }

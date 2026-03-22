@@ -265,6 +265,20 @@
       "scoreW": 95,
       "scoreL": 72,
       "date": "2026-03-21"
+    },
+    "E_R32_1": {
+      "winner": "Duke",
+      "loser": "TCU",
+      "scoreW": 81,
+      "scoreL": 58,
+      "date": "2026-03-22"
+    },
+    "S_R32_4": {
+      "winner": "Houston",
+      "loser": "Texas A&M",
+      "scoreW": 88,
+      "scoreL": 57,
+      "date": "2026-03-22"
     }
   },
   "advancedTo": {
@@ -349,6 +363,12 @@
     },
     "MW_S16_1": {
       "a": "Michigan"
+    },
+    "E_S16_1": {
+      "a": "Duke"
+    },
+    "S_S16_2": {
+      "b": "Houston"
     }
   }
 }

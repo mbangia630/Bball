@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-21T22:52:24.676Z",
-  "timestampCST": "Mar 21, 2026, 5:52 PM CST",
+  "timestamp": "2026-03-22T00:50:03.906Z",
+  "timestampCST": "Mar 21, 2026, 7:50 PM CST",
   "type": "DELTA",
   "baselineTime": "Mar 21, 2026, 8:37 AM CST",
-  "currentTime": "Mar 21, 2026, 5:52 PM CST",
+  "currentTime": "Mar 21, 2026, 7:50 PM CST",
   "summary": {
-    "totalGamesCompared": 14,
-    "gamesChanged": 13,
+    "totalGamesCompared": 12,
+    "gamesChanged": 11,
     "winnersFlipped": 0,
     "newMatchups": 2,
-    "avgSpreadChange": 0.6,
+    "avgSpreadChange": 0.7,
     "biggestMover": "VCU vs Illinois"
   },
   "deltas": [
@@ -19,9 +19,9 @@
       "region": "R32",
       "type": "NEW",
       "winner": "Illinois",
-      "winProb": 78.5,
-      "spread": -8,
-      "message": "New matchup since 7am — Illinois predicted to win (78.5%)",
+      "winProb": 74.8,
+      "spread": -6.8,
+      "message": "New matchup since 7am — Illinois predicted to win (74.8%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -33,41 +33,41 @@
       "region": "R32",
       "type": "NEW",
       "winner": "Arizona",
-      "winProb": 87.9,
+      "winProb": 88.3,
       "spread": 12.3,
-      "message": "New matchup since 7am — Arizona predicted to win (87.9%)",
+      "message": "New matchup since 7am — Arizona predicted to win (88.3%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
       "absDelta": 999
     },
     {
-      "matchup": "Duke vs TCU",
+      "matchup": "Texas vs Gonzaga",
       "round": 2,
       "region": "R32",
       "type": "SHIFT",
-      "baselineWinner": "Duke",
-      "baselineWinProb": 92.1,
-      "baselineSpread": 15.6,
-      "baselineVegas": 11.5,
-      "baselineModelSpread": 20.5,
-      "baselineScoreW": 78,
-      "baselineScoreL": 62,
-      "winner": "Duke",
-      "winProb": 89.4,
-      "spread": 13,
-      "vegasLine": 7.5,
-      "modelSpread": 20.5,
-      "scoreW": 77,
-      "scoreL": 64,
-      "spreadChange": -2.6,
-      "probChange": -2.7,
+      "baselineWinner": "Gonzaga",
+      "baselineWinProb": 74.4,
+      "baselineSpread": -7.4,
+      "baselineVegas": -6.5,
+      "baselineModelSpread": -8.6,
+      "baselineScoreW": 76,
+      "baselineScoreL": 69,
+      "winner": "Gonzaga",
+      "winProb": 65.8,
+      "spread": -4.5,
+      "vegasLine": -1.5,
+      "modelSpread": -8.6,
+      "scoreW": 75,
+      "scoreL": 70,
+      "spreadChange": 2.9,
+      "probChange": -8.6,
       "modelSpreadChange": 0,
-      "vegasChange": -4,
+      "vegasChange": 5,
       "factors": [
-        "Vegas line moved 4 pts toward TCU (was 11.5, now 7.5)"
+        "Vegas line moved 5 pts toward Texas (was -6.5, now -1.5)"
       ],
-      "absDelta": 2.87
+      "absDelta": 3.76
     },
     {
       "matchup": "Texas Tech vs Alabama",
@@ -98,34 +98,6 @@
       "absDelta": 2.2800000000000002
     },
     {
-      "matchup": "Texas A&M vs Houston",
-      "round": 2,
-      "region": "R32",
-      "type": "SHIFT",
-      "baselineWinner": "Houston",
-      "baselineWinProb": 79,
-      "baselineSpread": -8.9,
-      "baselineVegas": -10.5,
-      "baselineModelSpread": -6.8,
-      "baselineScoreW": 72,
-      "baselineScoreL": 63,
-      "winner": "Houston",
-      "winProb": 81.8,
-      "spread": -9.5,
-      "vegasLine": -11.5,
-      "modelSpread": -6.8,
-      "scoreW": 72,
-      "scoreL": 63,
-      "spreadChange": -0.6,
-      "probChange": 2.8,
-      "modelSpreadChange": 0,
-      "vegasChange": -1,
-      "factors": [
-        "Vegas line moved 1 pts toward Houston (was -10.5, now -11.5)"
-      ],
-      "absDelta": 0.8799999999999999
-    },
-    {
       "matchup": "High Point vs Arkansas",
       "round": 2,
       "region": "R32",
@@ -138,48 +110,20 @@
       "baselineScoreW": 80,
       "baselineScoreL": 67,
       "winner": "Arkansas",
-      "winProb": 89.9,
+      "winProb": 90.3,
       "spread": -13.2,
       "vegasLine": -12.5,
       "modelSpread": -14.1,
       "scoreW": 80,
       "scoreL": 67,
       "spreadChange": -0.5,
-      "probChange": 3.5,
+      "probChange": 3.9,
       "modelSpreadChange": 0,
       "vegasChange": -1,
       "factors": [
         "Vegas line moved 1 pts toward Arkansas (was -11.5, now -12.5)"
       ],
-      "absDelta": 0.85
-    },
-    {
-      "matchup": "Kentucky vs Iowa State",
-      "round": 2,
-      "region": "R32",
-      "type": "SHIFT",
-      "baselineWinner": "Iowa State",
-      "baselineWinProb": 74.6,
-      "baselineSpread": -7.5,
-      "baselineVegas": -4.5,
-      "baselineModelSpread": -11.2,
-      "baselineScoreW": 73,
-      "baselineScoreL": 65,
-      "winner": "Iowa State",
-      "winProb": 75.4,
-      "spread": -7.1,
-      "vegasLine": -4.5,
-      "modelSpread": -10.7,
-      "scoreW": 72,
-      "scoreL": 65,
-      "spreadChange": 0.4,
-      "probChange": 0.8,
-      "modelSpreadChange": 0.5,
-      "vegasChange": 0,
-      "factors": [
-        "Model spread shifted +0.5 pts (was -11.2, now -10.7)"
-      ],
-      "absDelta": 0.48000000000000004
+      "absDelta": 0.89
     },
     {
       "matchup": "Florida vs Iowa",
@@ -194,20 +138,48 @@
       "baselineScoreW": 72,
       "baselineScoreL": 60,
       "winner": "Florida",
-      "winProb": 86.4,
+      "winProb": 86.8,
       "spread": 11.6,
       "vegasLine": 10.5,
       "modelSpread": 13.2,
       "scoreW": 72,
       "scoreL": 60,
       "spreadChange": -0.3,
-      "probChange": 1.8,
+      "probChange": 2.2,
       "modelSpreadChange": -0.4,
       "vegasChange": 0,
       "factors": [
         "Model spread shifted -0.4 pts (was 13.6, now 13.2)"
       ],
-      "absDelta": 0.48
+      "absDelta": 0.52
+    },
+    {
+      "matchup": "Kentucky vs Iowa State",
+      "round": 2,
+      "region": "R32",
+      "type": "SHIFT",
+      "baselineWinner": "Iowa State",
+      "baselineWinProb": 74.6,
+      "baselineSpread": -7.5,
+      "baselineVegas": -4.5,
+      "baselineModelSpread": -11.2,
+      "baselineScoreW": 73,
+      "baselineScoreL": 65,
+      "winner": "Iowa State",
+      "winProb": 75.8,
+      "spread": -7.1,
+      "vegasLine": -4.5,
+      "modelSpread": -10.7,
+      "scoreW": 72,
+      "scoreL": 65,
+      "spreadChange": 0.4,
+      "probChange": 1.2,
+      "modelSpreadChange": 0.5,
+      "vegasChange": 0,
+      "factors": [
+        "Model spread shifted +0.5 pts (was -11.2, now -10.7)"
+      ],
+      "absDelta": 0.52
     },
     {
       "matchup": "Miami FL vs Purdue",
@@ -222,20 +194,20 @@
       "baselineScoreW": 76,
       "baselineScoreL": 68,
       "winner": "Purdue",
-      "winProb": 77.4,
+      "winProb": 77.8,
       "spread": -7.7,
       "vegasLine": -7.5,
       "modelSpread": -7.9,
       "scoreW": 76,
       "scoreL": 68,
       "spreadChange": 0.3,
-      "probChange": 1.1,
+      "probChange": 1.5,
       "modelSpreadChange": 0.7,
       "vegasChange": 0,
       "factors": [
         "Model spread shifted +0.7 pts (was -8.6, now -7.9)"
       ],
-      "absDelta": 0.41000000000000003
+      "absDelta": 0.44999999999999996
     },
     {
       "matchup": "UCLA vs UConn",
@@ -250,21 +222,51 @@
       "baselineScoreW": 74,
       "baselineScoreL": 67,
       "winner": "UConn",
-      "winProb": 75.7,
+      "winProb": 76,
       "spread": -7.2,
       "vegasLine": -4.5,
       "modelSpread": -10.8,
       "scoreW": 74,
       "scoreL": 67,
       "spreadChange": 0.2,
-      "probChange": 1.4,
+      "probChange": 1.7,
       "modelSpreadChange": 0.2,
       "vegasChange": 0,
       "factors": [
         "New injury news for UCLA (1 articles)",
         "New injury news for UConn (1 articles)"
       ],
-      "absDelta": 0.33999999999999997
+      "absDelta": 0.37
+    },
+    {
+      "matchup": "St. John's vs Kansas",
+      "round": 2,
+      "region": "R32",
+      "type": "SHIFT",
+      "baselineWinner": "St. John's",
+      "baselineWinProb": 64.3,
+      "baselineSpread": 4.6,
+      "baselineVegas": 3.5,
+      "baselineModelSpread": 6,
+      "baselineScoreW": 72,
+      "baselineScoreL": 67,
+      "winner": "St. John's",
+      "winProb": 66.6,
+      "spread": 4.7,
+      "vegasLine": 3.5,
+      "modelSpread": 6.3,
+      "scoreW": 72,
+      "scoreL": 67,
+      "spreadChange": 0.1,
+      "probChange": 2.3,
+      "modelSpreadChange": 0.3,
+      "vegasChange": 0,
+      "factors": [
+        "Model spread shifted +0.3 pts (was 6, now 6.3)",
+        "New injury news for St. John's (1 articles)",
+        "New injury news for Kansas (1 articles)"
+      ],
+      "absDelta": 0.32999999999999996
     },
     {
       "matchup": "Tennessee vs Virginia",
@@ -295,64 +297,6 @@
         "New injury news for Virginia (1 articles)"
       ],
       "absDelta": 0.32
-    },
-    {
-      "matchup": "St. John's vs Kansas",
-      "round": 2,
-      "region": "R32",
-      "type": "SHIFT",
-      "baselineWinner": "St. John's",
-      "baselineWinProb": 64.3,
-      "baselineSpread": 4.6,
-      "baselineVegas": 3.5,
-      "baselineModelSpread": 6,
-      "baselineScoreW": 72,
-      "baselineScoreL": 67,
-      "winner": "St. John's",
-      "winProb": 66.3,
-      "spread": 4.7,
-      "vegasLine": 3.5,
-      "modelSpread": 6.3,
-      "scoreW": 72,
-      "scoreL": 67,
-      "spreadChange": 0.1,
-      "probChange": 2,
-      "modelSpreadChange": 0.3,
-      "vegasChange": 0,
-      "factors": [
-        "Model spread shifted +0.3 pts (was 6, now 6.3)",
-        "New injury news for St. John's (1 articles)",
-        "New injury news for Kansas (1 articles)"
-      ],
-      "absDelta": 0.30000000000000004
-    },
-    {
-      "matchup": "Texas vs Gonzaga",
-      "round": 2,
-      "region": "R32",
-      "type": "SHIFT",
-      "baselineWinner": "Gonzaga",
-      "baselineWinProb": 74.4,
-      "baselineSpread": -7.4,
-      "baselineVegas": -6.5,
-      "baselineModelSpread": -8.6,
-      "baselineScoreW": 76,
-      "baselineScoreL": 69,
-      "winner": "Gonzaga",
-      "winProb": 76.4,
-      "spread": -7.4,
-      "vegasLine": -6.5,
-      "modelSpread": -8.6,
-      "scoreW": 76,
-      "scoreL": 69,
-      "spreadChange": 0,
-      "probChange": 2,
-      "modelSpreadChange": 0,
-      "vegasChange": 0,
-      "factors": [
-        "Weight tuning (model v26)"
-      ],
-      "absDelta": 0.2
     }
   ]
 }
