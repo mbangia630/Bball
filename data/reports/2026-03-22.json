@@ -1,74 +1,29 @@
 {
   "date": "2026-03-22",
-  "generatedAt": "2026-03-22T00:50:03.779Z",
-  "generatedAtCST": "2026-03-22 7:50 PM CST",
-  "modelVersion": 27,
+  "generatedAt": "2026-03-22T01:33:44.309Z",
+  "generatedAtCST": "2026-03-22 8:33 PM CST",
+  "modelVersion": 28,
   "today": {
-    "gamesGraded": 2,
+    "gamesGraded": 0,
     "straightUp": {
-      "correct": 2,
-      "total": 2,
-      "pct": 100
+      "correct": 0,
+      "total": 0,
+      "pct": null
     },
     "ats": {
-      "correct": 2,
-      "total": 2,
-      "pct": 100
+      "correct": 0,
+      "total": 0,
+      "pct": null
     },
     "beatVegas": {
-      "correct": 1,
-      "total": 2,
-      "pct": 50
+      "correct": 0,
+      "total": 0,
+      "pct": null
     },
-    "avgError": 15.8,
-    "avgVegasError": 17.5
+    "avgError": null,
+    "avgVegasError": null
   },
-  "games": [
-    {
-      "matchup": "Duke vs TCU",
-      "score": "Duke 77-64",
-      "actualMargin": 23,
-      "modelSpread": 13,
-      "vegasLine": 7.5,
-      "modelError": 10,
-      "vegasError": 15.5,
-      "layers": {
-        "L1": 20,
-        "L2": 2.4,
-        "L3": 0.4,
-        "L4": 0.1,
-        "L5": 0,
-        "v8": 0.53,
-        "ens": 9.2
-      },
-      "pickedWinnerCorrectly": true,
-      "coveredSpread": true,
-      "closerThanVegas": true,
-      "verdict": "✅ Nailed it"
-    },
-    {
-      "matchup": "Texas A&M vs Houston",
-      "score": "Houston 72-63",
-      "actualMargin": -31,
-      "modelSpread": -9.5,
-      "vegasLine": -11.5,
-      "modelError": 21.5,
-      "vegasError": 19.5,
-      "layers": {
-        "L1": -7.1,
-        "L2": -0.8,
-        "L3": 0.2,
-        "L4": -0.4,
-        "L5": 0.1,
-        "v8": -0.02,
-        "ens": -2.1
-      },
-      "pickedWinnerCorrectly": true,
-      "coveredSpread": true,
-      "closerThanVegas": false,
-      "verdict": "✅ Nailed it"
-    }
-  ],
+  "games": [],
   "cumulative": {
     "totalGames": 37,
     "straightUpPct": 86.5,
@@ -120,9 +75,9 @@
   },
   "adjustments": {
     "changes": [
-      "#1 Layer weights tuned by directional accuracy: L1=0.394(92%dir) L2=0.27(81%dir) L3=0.18(73%dir) L4=0.092(78%dir) L5=0.064(97%dir)",
+      "#1 Layer weights tuned by directional accuracy: L1=0.391(92%dir) L2=0.269(81%dir) L3=0.18(73%dir) L4=0.093(78%dir) L5=0.067(97%dir)",
       "#6 Ensemble: main model better (9.7 vs 12.0) — main 90% → 90%",
-      "#7 Calibration: underconfident in 2 buckets — sigma 9.9 → 9.8",
+      "#7 Calibration: underconfident in 2 buckets — sigma 9.8 → 9.6",
       "#5 Sharp plays: 82% on 11 games",
       "#5 Edge 0-2pt bets: +$446 on 7 games (profitable)",
       "#5 Edge 2-5pt bets: +$73 on 5 games (profitable)",
@@ -135,13 +90,13 @@
     ],
     "before": {
       "vegasBlend": 0.5800000000000001,
-      "sigma": 9.949999999999998,
+      "sigma": 9.799999999999997,
       "layers": {
-        "L1": 0.397,
-        "L2": 0.271,
+        "L1": 0.394,
+        "L2": 0.27,
         "L3": 0.18,
-        "L4": 0.091,
-        "L5": 0.061
+        "L4": 0.092,
+        "L5": 0.064
       },
       "ensemble": {
         "main": 0.9,
@@ -150,13 +105,13 @@
     },
     "after": {
       "vegasBlend": 0.5800000000000001,
-      "sigma": 9.799999999999997,
+      "sigma": 9.649999999999997,
       "layers": {
-        "L1": 0.394,
-        "L2": 0.27,
+        "L1": 0.391,
+        "L2": 0.269,
         "L3": 0.18,
-        "L4": 0.092,
-        "L5": 0.064
+        "L4": 0.093,
+        "L5": 0.067
       },
       "ensemble": {
         "main": 0.9,
@@ -404,5 +359,5 @@
       "gamesNeutral": 34
     }
   },
-  "eloUpdates": 4
+  "eloUpdates": 5
 }

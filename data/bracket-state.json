@@ -279,6 +279,13 @@
       "scoreW": 88,
       "scoreL": 57,
       "date": "2026-03-22"
+    },
+    "W_R32_3": {
+      "winner": "Texas",
+      "loser": "Gonzaga",
+      "scoreW": 74,
+      "scoreL": 68,
+      "date": "2026-03-22"
     }
   },
   "advancedTo": {
@@ -369,6 +376,9 @@
     },
     "S_S16_2": {
       "b": "Houston"
+    },
+    "W_S16_2": {
+      "a": "Texas"
     }
   }
 }
