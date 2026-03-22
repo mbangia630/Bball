@@ -1,33 +1,100 @@
 {
   "date": "2026-03-22",
-  "generatedAt": "2026-03-22T01:33:44.309Z",
-  "generatedAtCST": "2026-03-22 8:33 PM CST",
-  "modelVersion": 28,
+  "generatedAt": "2026-03-22T13:39:37.993Z",
+  "generatedAtCST": "2026-03-22 8:39 AM CST",
+  "modelVersion": 29,
   "today": {
-    "gamesGraded": 0,
+    "gamesGraded": 3,
     "straightUp": {
-      "correct": 0,
-      "total": 0,
-      "pct": null
+      "correct": 3,
+      "total": 3,
+      "pct": 100
     },
     "ats": {
-      "correct": 0,
-      "total": 0,
-      "pct": null
+      "correct": 2,
+      "total": 3,
+      "pct": 67
     },
     "beatVegas": {
       "correct": 0,
-      "total": 0,
-      "pct": null
+      "total": 3,
+      "pct": 0
     },
-    "avgError": null,
-    "avgVegasError": null
+    "avgError": 6.4,
+    "avgVegasError": 3.8
   },
-  "games": [],
+  "games": [
+    {
+      "matchup": "VCU vs Illinois",
+      "score": "Illinois 77-67",
+      "actualMargin": -21,
+      "modelSpread": -10.9,
+      "vegasLine": -16.5,
+      "modelError": 10.1,
+      "vegasError": 4.5,
+      "layers": {
+        "L1": -4.6,
+        "L2": -0.6,
+        "L3": 0.2,
+        "L4": 0.1,
+        "L5": 0,
+        "v8": 1.29,
+        "ens": -1.7
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": false,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Vanderbilt vs Nebraska",
+      "score": "Nebraska 72-70",
+      "actualMargin": -2,
+      "modelSpread": -0.1,
+      "vegasLine": -1.5,
+      "modelError": 1.9,
+      "vegasError": 0.5,
+      "layers": {
+        "L1": 1.5,
+        "L2": 0.5,
+        "L3": 0.1,
+        "L4": 0.1,
+        "L5": 0,
+        "v8": -0.09,
+        "ens": 0.7
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": false,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "High Point vs Arkansas",
+      "score": "Arkansas 80-67",
+      "actualMargin": -6,
+      "modelSpread": -13.2,
+      "vegasLine": -12.5,
+      "modelError": 7.2,
+      "vegasError": 6.5,
+      "layers": {
+        "L1": -12.9,
+        "L2": -1.4,
+        "L3": -1.4,
+        "L4": -0.3,
+        "L5": 0,
+        "v8": 0.21,
+        "ens": -7.6
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    }
+  ],
   "cumulative": {
-    "totalGames": 37,
-    "straightUpPct": 86.5,
-    "atsPct": 67.6,
+    "totalGames": 40,
+    "straightUpPct": 87.5,
+    "atsPct": 67.5,
     "trend": [
       {
         "date": "2026-03-20",
@@ -70,40 +137,33 @@
         "suPct": 100,
         "atsPct": 100,
         "avgError": 15.8
+      },
+      {
+        "date": "2026-03-22",
+        "games": 3,
+        "suPct": 100,
+        "atsPct": 67,
+        "avgError": 6.4
       }
     ]
   },
   "adjustments": {
     "changes": [
-      "#1 Layer weights tuned by directional accuracy: L1=0.391(92%dir) L2=0.269(81%dir) L3=0.18(73%dir) L4=0.093(78%dir) L5=0.067(97%dir)",
-      "#6 Ensemble: main model better (9.7 vs 12.0) — main 90% → 90%",
-      "#7 Calibration: underconfident in 2 buckets — sigma 9.8 → 9.6",
-      "#5 Sharp plays: 82% on 11 games",
-      "#5 Edge 0-2pt bets: +$446 on 7 games (profitable)",
-      "#5 Edge 2-5pt bets: +$73 on 5 games (profitable)",
-      "#5 Edge 5+pt bets: +$346 on 8 games (profitable)",
-      "#8 Pace: under-predicting totals by 14.1pts (37 games)",
-      "#15 High-conf picks (75%+): 100% actual (21/21)",
-      "#15 Low-conf picks (<60%): 67% actual (6/9)",
-      "#11 V8 adjustments: 76% directionally correct over 37 games",
+      "#1 Layer weights tuned by directional accuracy: L1=0.388(90%dir) L2=0.268(80%dir) L3=0.18(70%dir) L4=0.094(75%dir) L5=0.07(98%dir)",
+      "#6 Ensemble: main model better (9.4 vs 11.7) — main 90% → 90%",
+      "#7 Calibration: underconfident in 3 buckets — sigma 9.6 → 9.5",
+      "#13 Vegas blend: 58.0% → 61.5% (Vegas was 2.6pts better, streak: 3)",
+      "#5 Sharp plays: 85% on 13 games",
+      "#5 Edge 0-2pt bets: +$346 on 8 games (profitable)",
+      "#5 Edge 2-5pt bets: +$164 on 6 games (profitable)",
+      "#5 Edge 5+pt bets: +$437 on 9 games (profitable)",
+      "#8 Pace: under-predicting totals by 13.7pts (40 games)",
+      "#15 High-conf picks (75%+): 100% actual (23/23)",
+      "#15 Low-conf picks (<60%): 70% actual (7/10)",
+      "#11 V8 adjustments: 73% directionally correct over 40 games",
       "#10 HCA: predicted avg 3.6pts, actual margin avg 13.0pts (3 games)"
     ],
     "before": {
-      "vegasBlend": 0.5800000000000001,
-      "sigma": 9.799999999999997,
-      "layers": {
-        "L1": 0.394,
-        "L2": 0.27,
-        "L3": 0.18,
-        "L4": 0.092,
-        "L5": 0.064
-      },
-      "ensemble": {
-        "main": 0.9,
-        "subs": 0.09999999999999998
-      }
-    },
-    "after": {
       "vegasBlend": 0.5800000000000001,
       "sigma": 9.649999999999997,
       "layers": {
@@ -117,37 +177,52 @@
         "main": 0.9,
         "subs": 0.09999999999999998
       }
+    },
+    "after": {
+      "vegasBlend": 0.6150000000000001,
+      "sigma": 9.499999999999996,
+      "layers": {
+        "L1": 0.388,
+        "L2": 0.268,
+        "L3": 0.18,
+        "L4": 0.094,
+        "L5": 0.07
+      },
+      "ensemble": {
+        "main": 0.9,
+        "subs": 0.09999999999999998
+      }
     }
   },
   "insights": {
     "layerDirectionalAccuracy": {
       "L1": {
-        "pct": 92,
-        "games": 37
+        "pct": 90,
+        "games": 40
       },
       "L2": {
-        "pct": 81,
-        "games": 37
+        "pct": 80,
+        "games": 40
       },
       "L3": {
-        "pct": 73,
-        "games": 37
+        "pct": 70,
+        "games": 40
       },
       "L4": {
-        "pct": 78,
-        "games": 37
+        "pct": 75,
+        "games": 40
       },
       "L5": {
-        "pct": 97,
-        "games": 37
+        "pct": 98,
+        "games": 40
       },
       "v8": {
-        "pct": 76,
-        "games": 37
+        "pct": 73,
+        "games": 40
       },
       "ens": {
-        "pct": 92,
-        "games": 37
+        "pct": 90,
+        "games": 40
       }
     },
     "situational": {
@@ -159,10 +234,10 @@
           "totalError": 60.599999999999994
         },
         "0-3": {
-          "correct": 5,
-          "total": 8,
+          "correct": 6,
+          "total": 9,
           "avgError": 0,
-          "totalError": 67.1
+          "totalError": 69
         },
         "14+": {
           "correct": 11,
@@ -171,10 +246,10 @@
           "totalError": 103.19999999999997
         },
         "7-14": {
-          "correct": 11,
-          "total": 11,
+          "correct": 13,
+          "total": 13,
           "avgError": 0,
-          "totalError": 127.2
+          "totalError": 144.5
         }
       },
       "bySeedMatchup": {
@@ -217,6 +292,18 @@
         "2v10": {
           "correct": 1,
           "total": 1
+        },
+        "3v11": {
+          "correct": 1,
+          "total": 1
+        },
+        "4v5": {
+          "correct": 1,
+          "total": 1
+        },
+        "4v12": {
+          "correct": 1,
+          "total": 1
         }
       },
       "byRound": {
@@ -225,18 +312,18 @@
           "total": 35
         },
         "2": {
-          "correct": 2,
-          "total": 2
+          "correct": 5,
+          "total": 5
         }
       },
       "favVsDog": {
         "fav": {
-          "correct": 28,
-          "total": 30
+          "correct": 30,
+          "total": 32
         },
         "dog": {
-          "correct": 4,
-          "total": 7
+          "correct": 5,
+          "total": 8
         }
       }
     },
@@ -247,14 +334,14 @@
         "games": 6
       },
       "50-55": {
-        "predicted": 312.80000000000007,
-        "actual": 300,
-        "games": 6
+        "predicted": 363.1000000000001,
+        "actual": 400,
+        "games": 7
       },
       "90+": {
-        "predicted": 1082.1,
-        "actual": 1100,
-        "games": 11
+        "predicted": 1172.8,
+        "actual": 1200,
+        "games": 12
       },
       "70-80": {
         "predicted": 151.5,
@@ -262,9 +349,9 @@
         "games": 2
       },
       "80-90": {
-        "predicted": 757.4,
-        "actual": 900,
-        "games": 9
+        "predicted": 842.8,
+        "actual": 1000,
+        "games": 10
       },
       "55-60": {
         "predicted": 171.4,
@@ -274,23 +361,23 @@
     },
     "edgeProfitability": {
       "0-2": {
-        "profit": 446,
-        "games": 7
-      },
-      "2-5": {
-        "profit": 73,
-        "games": 5
-      },
-      "5+": {
         "profit": 346,
         "games": 8
+      },
+      "2-5": {
+        "profit": 164,
+        "games": 6
+      },
+      "5+": {
+        "profit": 437,
+        "games": 9
       }
     },
     "pace": {
-      "totalTempoError": -522,
-      "games": 37,
-      "overPredictions": 11,
-      "underPredictions": 26
+      "totalTempoError": -548,
+      "games": 40,
+      "overPredictions": 12,
+      "underPredictions": 28
     },
     "upsetPatterns": {
       "byRound": {
@@ -300,7 +387,7 @@
         },
         "2": {
           "upsets": 0,
-          "total": 2
+          "total": 5
         }
       },
       "bySeedDiff": {
@@ -314,21 +401,21 @@
         },
         "0-2": {
           "upsets": 2,
-          "total": 5
+          "total": 6
         },
         "6-8": {
           "upsets": 0,
-          "total": 6
+          "total": 8
         }
       },
       "bySpreadSize": {
         "0-5": {
           "upsets": 5,
-          "total": 15
+          "total": 16
         },
         "10+": {
           "upsets": 0,
-          "total": 18
+          "total": 20
         },
         "5-10": {
           "upsets": 0,
@@ -339,15 +426,16 @@
     "confidenceAccuracy": {
       "highConf": "100%",
       "medConf": "71%",
-      "lowConf": "67%"
+      "lowConf": "70%"
     },
     "volatileTeams": [],
     "stableTeams": [],
     "vegasMomentum": {
       "modelStreak": 0,
-      "vegasStreak": 2,
+      "vegasStreak": 3,
       "last10": [
         "model",
+        "vegas",
         "vegas",
         "vegas"
       ]
@@ -356,8 +444,8 @@
       "totalPredictedHCA": 10.9,
       "totalActualMarginBias": 39,
       "gamesWithHCA": 3,
-      "gamesNeutral": 34
+      "gamesNeutral": 37
     }
   },
-  "eloUpdates": 5
+  "eloUpdates": 8
 }

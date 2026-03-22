@@ -286,6 +286,27 @@
       "scoreW": 74,
       "scoreL": 68,
       "date": "2026-03-22"
+    },
+    "S_R32_3": {
+      "winner": "Illinois",
+      "loser": "VCU",
+      "scoreW": 76,
+      "scoreL": 55,
+      "date": "2026-03-22"
+    },
+    "S_R32_2": {
+      "winner": "Nebraska",
+      "loser": "Vanderbilt",
+      "scoreW": 74,
+      "scoreL": 72,
+      "date": "2026-03-22"
+    },
+    "W_R32_2": {
+      "winner": "Arkansas",
+      "loser": "High Point",
+      "scoreW": 94,
+      "scoreL": 88,
+      "date": "2026-03-22"
     }
   },
   "advancedTo": {
@@ -375,10 +396,17 @@
       "a": "Duke"
     },
     "S_S16_2": {
-      "b": "Houston"
+      "b": "Houston",
+      "a": "Illinois"
     },
     "W_S16_2": {
       "a": "Texas"
+    },
+    "S_S16_1": {
+      "b": "Nebraska"
+    },
+    "W_S16_1": {
+      "b": "Arkansas"
     }
   }
 }
