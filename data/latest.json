@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-22T17:26:59.702Z",
+  "timestamp": "2026-03-22T17:34:50.006Z",
   "games": [
     {
       "id": "401856564",
@@ -11,8 +11,8 @@
       "venue": "Enterprise Center",
       "city": "St. Louis",
       "status": "In Progress",
-      "scoreA": "47",
-      "scoreB": "42"
+      "scoreA": "50",
+      "scoreB": "45"
     },
     {
       "id": "401856561",
@@ -108,14 +108,14 @@
   ],
   "odds": {
     "Purdue Boilermakers vs Miami Hurricanes": {
-      "spread": -7.5,
-      "spreadOdds": -115,
-      "mlHome": -410,
-      "mlAway": 290,
+      "spread": -8.5,
+      "spreadOdds": -110,
+      "mlHome": -560,
+      "mlAway": 370,
       "homeTeam": "Purdue Boilermakers",
       "awayTeam": "Miami Hurricanes",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Iowa State Cyclones vs Kentucky Wildcats": {
       "spread": -5.5,
@@ -125,7 +125,7 @@
       "homeTeam": "Iowa State Cyclones",
       "awayTeam": "Kentucky Wildcats",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Wake Forest Demon Deacons vs Illinois St Redbirds": {
       "spread": -8.5,
@@ -135,7 +135,7 @@
       "homeTeam": "Wake Forest Demon Deacons",
       "awayTeam": "Illinois St Redbirds",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Kansas Jayhawks vs St. John's Red Storm": {
       "spread": 3.5,
@@ -145,7 +145,7 @@
       "homeTeam": "Kansas Jayhawks",
       "awayTeam": "St. John's Red Storm",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Virginia Cavaliers vs Tennessee Volunteers": {
       "spread": 1.5,
@@ -155,7 +155,7 @@
       "homeTeam": "Virginia Cavaliers",
       "awayTeam": "Tennessee Volunteers",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Auburn Tigers vs Seattle Redhawks": {
       "spread": -14.5,
@@ -165,7 +165,7 @@
       "homeTeam": "Auburn Tigers",
       "awayTeam": "Seattle Redhawks",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Tulsa Golden Hurricane vs UNLV Rebels": {
       "spread": -5.5,
@@ -175,7 +175,7 @@
       "homeTeam": "Tulsa Golden Hurricane",
       "awayTeam": "UNLV Rebels",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Florida Gators vs Iowa Hawkeyes": {
       "spread": -9.5,
@@ -185,17 +185,17 @@
       "homeTeam": "Florida Gators",
       "awayTeam": "Iowa Hawkeyes",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Arizona Wildcats vs Utah State Aggies": {
       "spread": -11.5,
-      "spreadOdds": -115,
+      "spreadOdds": -112,
       "mlHome": -800,
       "mlAway": 550,
       "homeTeam": "Arizona Wildcats",
       "awayTeam": "Utah State Aggies",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "New Mexico Lobos vs GW Revolutionaries": {
       "spread": -6.5,
@@ -205,7 +205,7 @@
       "homeTeam": "New Mexico Lobos",
       "awayTeam": "GW Revolutionaries",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Oklahoma St Cowboys vs Wichita St Shockers": {
       "spread": -2.5,
@@ -215,7 +215,7 @@
       "homeTeam": "Oklahoma St Cowboys",
       "awayTeam": "Wichita St Shockers",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "UConn Huskies vs UCLA Bruins": {
       "spread": -4.5,
@@ -225,7 +225,7 @@
       "homeTeam": "UConn Huskies",
       "awayTeam": "UCLA Bruins",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "California Golden Bears vs Saint Joseph's Hawks": {
       "spread": -5.5,
@@ -235,7 +235,7 @@
       "homeTeam": "California Golden Bears",
       "awayTeam": "Saint Joseph's Hawks",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Alabama Crimson Tide vs Texas Tech Red Raiders": {
       "spread": 1.5,
@@ -245,7 +245,7 @@
       "homeTeam": "Alabama Crimson Tide",
       "awayTeam": "Texas Tech Red Raiders",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     },
     "Houston Cougars vs Illinois Fighting Illini": {
       "spread": -2.5,
@@ -255,7 +255,7 @@
       "homeTeam": "Houston Cougars",
       "awayTeam": "Illinois Fighting Illini",
       "book": "draftkings",
-      "updated": "2026-03-22T17:26:29Z"
+      "updated": "2026-03-22T17:34:25Z"
     }
   },
   "injuries": [
