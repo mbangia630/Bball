@@ -716,16 +716,16 @@
     "scoreL": 67,
     "sW": 72,
     "sL": 67,
-    "winProb": 66.9,
-    "wp": 66.9,
-    "sp": 4.6,
+    "winProb": 66.7,
+    "wp": 66.7,
+    "sp": 4.5,
     "modelSpread": 6.3,
     "vegasLine": 3.5,
-    "blendedSpread": 4.6,
+    "blendedSpread": 4.5,
     "edge": 2.8,
     "moneyline": [
-      -166,
-      140
+      -175,
+      145
     ],
     "hca": 0,
     "L1": 3.7,
@@ -744,7 +744,7 @@
     "ven": "Buffalo",
     "modelSp": 6.3,
     "vegasSp": 3.5,
-    "rawSp": 4.6,
+    "rawSp": 4.5,
     "mu": {
       "det": [],
       "adjA": {
@@ -874,12 +874,12 @@
     "scoreL": 67,
     "sW": 74,
     "sL": 67,
-    "winProb": 76,
-    "wp": 76,
-    "sp": 6.9,
+    "winProb": 75.5,
+    "wp": 75.5,
+    "sp": 6.7,
     "modelSpread": -10.8,
     "vegasLine": -4.5,
-    "blendedSpread": -6.9,
+    "blendedSpread": -6.7,
     "edge": -6.3,
     "moneyline": [
       164,
@@ -902,7 +902,7 @@
     "ven": "Philadelphia",
     "modelSp": -10.8,
     "vegasSp": -4.5,
-    "rawSp": -6.9,
+    "rawSp": -6.7,
     "mu": {
       "det": [
         {
@@ -1037,19 +1037,19 @@
     "w": "Florida",
     "l": "Iowa",
     "scoreW": 72,
-    "scoreL": 60,
+    "scoreL": 61,
     "sW": 72,
-    "sL": 60,
-    "winProb": 87.4,
-    "wp": 87.4,
-    "sp": 11.5,
+    "sL": 61,
+    "winProb": 86,
+    "wp": 86,
+    "sp": 10.8,
     "modelSpread": 13.2,
-    "vegasLine": 10.5,
-    "blendedSpread": 11.5,
-    "edge": 2.7,
+    "vegasLine": 9.5,
+    "blendedSpread": 10.8,
+    "edge": 3.7,
     "moneyline": [
-      -600,
-      440
+      -575,
+      425
     ],
     "hca": 1.9,
     "L1": 11.4,
@@ -1067,8 +1067,8 @@
     "sL2": 9,
     "ven": "Tampa",
     "modelSp": 13.2,
-    "vegasSp": 10.5,
-    "rawSp": 11.5,
+    "vegasSp": 9.5,
+    "rawSp": 10.8,
     "mu": {
       "det": [
         {
@@ -1530,12 +1530,12 @@
     "scoreL": 65,
     "sW": 77,
     "sL": 65,
-    "winProb": 89,
-    "wp": 89,
-    "sp": 12.2,
+    "winProb": 89.3,
+    "wp": 89.3,
+    "sp": 12.1,
     "modelSpread": 13.4,
     "vegasLine": 11.5,
-    "blendedSpread": 12.2,
+    "blendedSpread": 12.1,
     "edge": 1.9,
     "moneyline": [
       -800,
@@ -1558,7 +1558,7 @@
     "ven": "OKC",
     "modelSp": 13.4,
     "vegasSp": 11.5,
-    "rawSp": 12.2,
+    "rawSp": 12.1,
     "mu": {
       "det": [],
       "adjA": {
@@ -1846,16 +1846,16 @@
     "scoreL": 68,
     "sW": 76,
     "sL": 68,
-    "winProb": 78.6,
-    "wp": 78.6,
-    "sp": 7.7,
+    "winProb": 79,
+    "wp": 79,
+    "sp": 7.6,
     "modelSpread": -7.9,
     "vegasLine": -7.5,
-    "blendedSpread": -7.7,
+    "blendedSpread": -7.6,
     "edge": -0.4,
     "moneyline": [
-      270,
-      -340
+      290,
+      -410
     ],
     "hca": 0,
     "L1": -8.1,
@@ -1874,7 +1874,7 @@
     "ven": "San Diego",
     "modelSp": -7.9,
     "vegasSp": -7.5,
-    "rawSp": -7.7,
+    "rawSp": -7.6,
     "mu": {
       "det": [
         {
@@ -2012,16 +2012,16 @@
     "scoreL": 69,
     "sW": 71,
     "sL": 69,
-    "winProb": 51.2,
-    "wp": 51.2,
-    "sp": 0.3,
+    "winProb": 50.6,
+    "wp": 50.6,
+    "sp": 0.2,
     "modelSpread": -3.3,
     "vegasLine": 1.5,
-    "blendedSpread": -0.3,
+    "blendedSpread": -0.2,
     "edge": -4.8,
     "moneyline": [
-      -118,
-      -102
+      -112,
+      -108
     ],
     "hca": 0,
     "L1": -1.5,
@@ -2040,7 +2040,7 @@
     "ven": "OKC",
     "modelSp": -3.3,
     "vegasSp": 1.5,
-    "rawSp": -0.3,
+    "rawSp": -0.2,
     "mu": {
       "det": [
         {
@@ -2178,16 +2178,16 @@
     "scoreL": 63,
     "sW": 64,
     "sL": 63,
-    "winProb": 53.9,
-    "wp": 53.9,
+    "winProb": 54.1,
+    "wp": 54.1,
     "sp": 1.1,
     "modelSpread": 0.4,
     "vegasLine": 1.5,
     "blendedSpread": 1.1,
     "edge": -1.1,
     "moneyline": [
-      -118,
-      -102
+      -115,
+      -105
     ],
     "hca": 0,
     "L1": -0.3,
@@ -2351,16 +2351,16 @@
     "scoreL": 65,
     "sW": 72,
     "sL": 65,
-    "winProb": 75.8,
-    "wp": 75.8,
-    "sp": 6.9,
+    "winProb": 77.7,
+    "wp": 77.7,
+    "sp": 7.3,
     "modelSpread": -10.7,
-    "vegasLine": -4.5,
-    "blendedSpread": -6.9,
-    "edge": -6.2,
+    "vegasLine": -5.5,
+    "blendedSpread": -7.3,
+    "edge": -5.2,
     "moneyline": [
-      190,
-      -230
+      195,
+      -238
     ],
     "hca": 0,
     "L1": -9.2,
@@ -2378,8 +2378,8 @@
     "sL2": 7,
     "ven": "St. Louis",
     "modelSp": -10.7,
-    "vegasSp": -4.5,
-    "rawSp": -6.9,
+    "vegasSp": -5.5,
+    "rawSp": -7.3,
     "mu": {
       "det": [
         {
@@ -2517,25 +2517,25 @@
     "scoreL": 69,
     "sW": 72,
     "sL": 69,
-    "winProb": 62,
-    "wp": 62,
-    "sp": 3.5,
-    "modelSpread": -5.2,
+    "winProb": 61.6,
+    "wp": 61.6,
+    "sp": 3.4,
+    "modelSpread": -5,
     "vegasLine": -2.5,
-    "blendedSpread": -3.5,
-    "edge": -2.7,
+    "blendedSpread": -3.4,
+    "edge": -2.5,
     "moneyline": [
-      124,
-      -148
+      130,
+      -155
     ],
     "hca": -7.2,
     "L1": -0.1,
     "L2": 0.3,
-    "L3": -5.2,
+    "L3": -5.1,
     "L4": -0.4,
     "L5": 0.1,
     "v8adj": -0.82,
-    "ensAvg": -1.1,
+    "ensAvg": -0.9,
     "ensAgree": false,
     "injuryFlagA": "1 articles",
     "injuryFlagB": "2 articles",
@@ -2543,9 +2543,9 @@
     "sW2": 2,
     "sL2": 3,
     "ven": "Houston",
-    "modelSp": -5.2,
+    "modelSp": -5,
     "vegasSp": -2.5,
-    "rawSp": -3.5,
+    "rawSp": -3.4,
     "mu": {
       "det": [
         {
@@ -2593,7 +2593,7 @@
       "tz": 0,
       "foul": -0.05,
       "ens": {
-        "avg": -1.1,
+        "avg": -0.9,
         "agree": false
       },
       "total": -0.82
@@ -2622,7 +2622,7 @@
       "o": 121.816,
       "d": 94.91839999999999,
       "t": 70,
-      "elo": 1887,
+      "elo": 1922,
       "lk": 0.005,
       "st": 0.38,
       "ci": 0,
@@ -2654,7 +2654,7 @@
       "o": 113.1936,
       "d": 86.1736,
       "t": 65.5,
-      "elo": 1968,
+      "elo": 1991,
       "lk": -0.015,
       "st": 0.47,
       "ci": 0,
