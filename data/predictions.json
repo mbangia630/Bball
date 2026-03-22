@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-03-22T17:34:50.128Z",
-  "weightsVersion": 31,
+  "timestamp": "2026-03-22T23:31:05.967Z",
+  "weightsVersion": 32,
   "engineVersion": "v5-full-v8-live-stats",
   "completed": [
     {
@@ -434,6 +434,16 @@
       "status": "FINAL"
     },
     {
+      "id": "W_R32_4",
+      "round": "R32",
+      "winner": "Purdue",
+      "loser": "Miami FL",
+      "scoreW": 79,
+      "scoreL": 69,
+      "date": "2026-03-22",
+      "status": "FINAL"
+    },
+    {
       "id": "MW_R32_1",
       "round": "R32",
       "winner": "Michigan",
@@ -441,6 +451,16 @@
       "scoreW": 95,
       "scoreL": 72,
       "date": "2026-03-21",
+      "status": "FINAL"
+    },
+    {
+      "id": "MW_R32_4",
+      "round": "R32",
+      "winner": "Iowa State",
+      "loser": "Kentucky",
+      "scoreW": 82,
+      "scoreL": 63,
+      "date": "2026-03-22",
       "status": "FINAL"
     }
   ],
@@ -455,19 +475,19 @@
       "w": "St. John's",
       "l": "Kansas",
       "scoreW": 71,
-      "scoreL": 67,
+      "scoreL": 68,
       "sW": 71,
-      "sL": 67,
-      "winProb": 66.5,
-      "wp": 66.5,
-      "sp": 4.3,
+      "sL": 68,
+      "winProb": 60.3,
+      "wp": 60.3,
+      "sp": 3,
       "modelSpread": 6.3,
-      "vegasLine": 3.5,
-      "blendedSpread": 4.3,
-      "edge": 2.8,
+      "vegasLine": 1.5,
+      "blendedSpread": 3,
+      "edge": 4.8,
       "moneyline": [
-        -175,
-        145
+        -220,
+        170
       ],
       "hca": 0,
       "L1": 3.7,
@@ -478,15 +498,15 @@
       "v8adj": 1.45,
       "ensAvg": 2.5,
       "ensAgree": true,
-      "injuryFlagA": "1 articles",
-      "injuryFlagB": "1 articles",
+      "injuryFlagA": null,
+      "injuryFlagB": null,
       "status": "UPCOMING",
       "sW2": 5,
       "sL2": 4,
       "ven": "Buffalo",
       "modelSp": 6.3,
-      "vegasSp": 3.5,
-      "rawSp": 4.3,
+      "vegasSp": 1.5,
+      "rawSp": 3,
       "mu": {
         "det": [],
         "adjA": {
@@ -616,16 +636,16 @@
       "scoreL": 67,
       "sW": 74,
       "sL": 67,
-      "winProb": 74.9,
-      "wp": 74.9,
+      "winProb": 75.3,
+      "wp": 75.3,
       "sp": 6.4,
       "modelSpread": -10.8,
       "vegasLine": -4.5,
       "blendedSpread": -6.4,
       "edge": -6.3,
       "moneyline": [
-        164,
-        -198
+        154,
+        -185
       ],
       "hca": 0,
       "L1": -8.9,
@@ -778,20 +798,20 @@
       "loser": "Iowa",
       "w": "Florida",
       "l": "Iowa",
-      "scoreW": 72,
-      "scoreL": 61,
-      "sW": 72,
-      "sL": 61,
-      "winProb": 86.1,
-      "wp": 86.1,
-      "sp": 10.6,
+      "scoreW": 71,
+      "scoreL": 62,
+      "sW": 71,
+      "sL": 62,
+      "winProb": 81.6,
+      "wp": 81.6,
+      "sp": 8.5,
       "modelSpread": 13.2,
-      "vegasLine": 9.5,
-      "blendedSpread": 10.6,
-      "edge": 3.7,
+      "vegasLine": 6.5,
+      "blendedSpread": 8.5,
+      "edge": 6.7,
       "moneyline": [
-        -575,
-        425
+        -315,
+        230
       ],
       "hca": 1.9,
       "L1": 11.4,
@@ -802,15 +822,15 @@
       "v8adj": 0.43,
       "ensAvg": 4.8,
       "ensAgree": true,
-      "injuryFlagA": "1 articles",
+      "injuryFlagA": null,
       "injuryFlagB": "1 articles",
       "status": "UPCOMING",
       "sW2": 1,
       "sL2": 9,
       "ven": "Tampa",
       "modelSp": 13.2,
-      "vegasSp": 9.5,
-      "rawSp": 10.6,
+      "vegasSp": 6.5,
+      "rawSp": 8.5,
       "mu": {
         "det": [
           {
@@ -948,8 +968,8 @@
       "scoreL": 65,
       "sW": 77,
       "sL": 65,
-      "winProb": 89.6,
-      "wp": 89.6,
+      "winProb": 90.1,
+      "wp": 90.1,
       "sp": 12.1,
       "modelSpread": 13.4,
       "vegasLine": 11.5,
@@ -1094,172 +1114,6 @@
       "region": "R32"
     },
     {
-      "teamA": "Miami FL",
-      "teamB": "Purdue",
-      "round": 2,
-      "venue": "San Diego",
-      "winner": "Purdue",
-      "loser": "Miami FL",
-      "w": "Purdue",
-      "l": "Miami FL",
-      "scoreW": 76,
-      "scoreL": 68,
-      "sW": 76,
-      "sL": 68,
-      "winProb": 80.9,
-      "wp": 80.9,
-      "sp": 8.3,
-      "modelSpread": -7.9,
-      "vegasLine": -8.5,
-      "blendedSpread": -8.3,
-      "edge": 0.6,
-      "moneyline": [
-        370,
-        -560
-      ],
-      "hca": 0,
-      "L1": -8.1,
-      "L2": -1.4,
-      "L3": 0.2,
-      "L4": 0.3,
-      "L5": 0.1,
-      "v8adj": -0.3,
-      "ensAvg": -2.5,
-      "ensAgree": false,
-      "injuryFlagA": null,
-      "injuryFlagB": null,
-      "status": "UPCOMING",
-      "sW2": 2,
-      "sL2": 7,
-      "ven": "San Diego",
-      "modelSp": -7.9,
-      "vegasSp": -8.5,
-      "rawSp": -8.3,
-      "mu": {
-        "det": [
-          {
-            "t": "Size mismatch",
-            "stat": "ORB% & FTR",
-            "team": "Purdue",
-            "i": 1.6,
-            "d": "Purdue has 4\" height edge"
-          }
-        ],
-        "adjA": {
-          "efg": 0,
-          "tor": 0,
-          "orb": -1.6,
-          "ftr": -1
-        },
-        "adjB": {
-          "efg": 0,
-          "tor": 0,
-          "orb": 1.6,
-          "ftr": 1
-        },
-        "tempoAdj": 0
-      },
-      "cDiff": 0.4,
-      "fatA": {
-        "pts": -0.04
-      },
-      "fatB": {
-        "pts": -0.13
-      },
-      "rd": 2,
-      "v8": {
-        "ref": 0.03,
-        "gs": 0.05,
-        "sharp": -0.2,
-        "cont": -0.23,
-        "tz": 0,
-        "foul": 0.05,
-        "ens": {
-          "avg": -2.5,
-          "agree": false
-        },
-        "total": -0.3
-      },
-      "adjStats": {
-        "aEfg": 53.8,
-        "bEfg": 56.3,
-        "aTor": 15.6,
-        "bTor": 14.6,
-        "aOrb": 28.9,
-        "bOrb": 34.1,
-        "aFtr": 35.5,
-        "bFtr": 39.7
-      },
-      "ha": null,
-      "hb": 0,
-      "a": {
-        "em": 18.184,
-        "efg": 53.8154,
-        "tor": 15.5856,
-        "orb": 30.466,
-        "ftr": 36.465999999999994,
-        "tpt": 36.050200000000004,
-        "ast": 53.0304,
-        "mg": 9.1448,
-        "o": 113.184,
-        "d": 95,
-        "t": 68,
-        "elo": 1937,
-        "lk": 0.01,
-        "st": 0.39,
-        "ci": 0,
-        "ij": 0,
-        "s": 7,
-        "hb": 4,
-        "kp": 27,
-        "rec": "22-10",
-        "coach": "Jim Larrañaga",
-        "cAdj": 0.5,
-        "sty": {
-          "p3": 0.39,
-          "d3r": 40,
-          "ht": 77,
-          "toF": 10,
-          "t": 68
-        },
-        "name": "Miami FL"
-      },
-      "b": {
-        "em": 28.979999999999997,
-        "efg": 56.3154,
-        "tor": 14.5856,
-        "orb": 32.466,
-        "ftr": 38.699,
-        "tpt": 37.050200000000004,
-        "ast": 55.0304,
-        "mg": 11.9832,
-        "o": 121.47999999999999,
-        "d": 92.5,
-        "t": 68,
-        "elo": 1887,
-        "lk": 0.01,
-        "st": 0.56,
-        "ci": 0,
-        "ij": 0,
-        "s": 2,
-        "hb": 5,
-        "kp": 8,
-        "rec": "27-8",
-        "coach": "Matt Painter",
-        "cAdj": -0.2,
-        "sty": {
-          "p3": 0.38,
-          "d3r": 39,
-          "ht": 81,
-          "toF": 9.5,
-          "t": 68
-        },
-        "name": "Purdue"
-      },
-      "id": "W_R32_4",
-      "region": "R32"
-    },
-    {
       "teamA": "Texas Tech",
       "teamB": "Alabama",
       "round": 2,
@@ -1280,8 +1134,8 @@
       "blendedSpread": 0,
       "edge": -4.8,
       "moneyline": [
-        -112,
-        -108
+        -115,
+        -105
       ],
       "hca": 0,
       "L1": -1.5,
@@ -1435,19 +1289,19 @@
       "w": "Tennessee",
       "l": "Virginia",
       "scoreW": 64,
-      "scoreL": 63,
+      "scoreL": 62,
       "sW": 64,
-      "sL": 63,
-      "winProb": 54.3,
-      "wp": 54.3,
-      "sp": 1.2,
+      "sL": 62,
+      "winProb": 56.4,
+      "wp": 56.4,
+      "sp": 1.9,
       "modelSpread": 0.4,
-      "vegasLine": 1.5,
-      "blendedSpread": 1.2,
-      "edge": -1.1,
+      "vegasLine": 2.5,
+      "blendedSpread": 1.9,
+      "edge": -2.1,
       "moneyline": [
-        -115,
-        -105
+        -220,
+        170
       ],
       "hca": 0,
       "L1": -0.3,
@@ -1458,15 +1312,15 @@
       "v8adj": -0.36,
       "ensAvg": 1.2,
       "ensAgree": false,
-      "injuryFlagA": "1 articles",
-      "injuryFlagB": "1 articles",
+      "injuryFlagA": null,
+      "injuryFlagB": null,
       "status": "UPCOMING",
       "sW2": 6,
       "sL2": 3,
       "ven": "St. Louis",
       "modelSp": 0.4,
-      "vegasSp": 1.5,
-      "rawSp": 1.2,
+      "vegasSp": 2.5,
+      "rawSp": 1.9,
       "mu": {
         "det": [
           {
@@ -1599,172 +1453,6 @@
       "region": "R32"
     },
     {
-      "teamA": "Kentucky",
-      "teamB": "Iowa State",
-      "round": 2,
-      "venue": "St. Louis",
-      "winner": "Iowa State",
-      "loser": "Kentucky",
-      "w": "Iowa State",
-      "l": "Kentucky",
-      "scoreW": 72,
-      "scoreL": 65,
-      "sW": 72,
-      "sL": 65,
-      "winProb": 77.4,
-      "wp": 77.4,
-      "sp": 7.1,
-      "modelSpread": -10.7,
-      "vegasLine": -5.5,
-      "blendedSpread": -7.1,
-      "edge": -5.2,
-      "moneyline": [
-        195,
-        -238
-      ],
-      "hca": 0,
-      "L1": -9.2,
-      "L2": -1.1,
-      "L3": -0.6,
-      "L4": -0.2,
-      "L5": 0,
-      "v8adj": -1.31,
-      "ensAvg": -3.6,
-      "ensAgree": false,
-      "injuryFlagA": "1 articles",
-      "injuryFlagB": null,
-      "status": "UPCOMING",
-      "sW2": 2,
-      "sL2": 7,
-      "ven": "St. Louis",
-      "modelSp": -10.7,
-      "vegasSp": -5.5,
-      "rawSp": -7.1,
-      "mu": {
-        "det": [
-          {
-            "t": "Size mismatch",
-            "stat": "ORB% & FTR",
-            "team": "Kentucky",
-            "i": 0.8,
-            "d": "Kentucky has 2\" height edge"
-          }
-        ],
-        "adjA": {
-          "efg": 0,
-          "tor": 0,
-          "orb": 0.8,
-          "ftr": 0.5
-        },
-        "adjB": {
-          "efg": 0,
-          "tor": 0,
-          "orb": -0.8,
-          "ftr": -0.5
-        },
-        "tempoAdj": 0
-      },
-      "cDiff": -0.3,
-      "fatA": {
-        "pts": -0.02
-      },
-      "fatB": {
-        "pts": -0.03
-      },
-      "rd": 2,
-      "v8": {
-        "ref": -0.06,
-        "gs": -0.23,
-        "sharp": -0.2,
-        "cont": -0.63,
-        "tz": -0.15,
-        "foul": -0.04,
-        "ens": {
-          "avg": -3.6,
-          "agree": false
-        },
-        "total": -1.31
-      },
-      "adjStats": {
-        "aEfg": 52,
-        "bEfg": 54.8,
-        "aTor": 16.9,
-        "bTor": 14.2,
-        "aOrb": 30.6,
-        "bOrb": 29.4,
-        "aFtr": 38,
-        "bFtr": 36.7
-      },
-      "ha": null,
-      "hb": 0,
-      "a": {
-        "em": 15.815999999999999,
-        "efg": 51.9564,
-        "tor": 16.9144,
-        "orb": 29.767,
-        "ftr": 37.534,
-        "tpt": 33.949799999999996,
-        "ast": 47.9696,
-        "mg": 1.468,
-        "o": 110.112,
-        "d": 94.29599999999999,
-        "t": 69,
-        "elo": 1904,
-        "lk": 0.015,
-        "st": -0.05,
-        "ci": 0,
-        "ij": 0,
-        "s": 7,
-        "hb": 5.5,
-        "kp": 28,
-        "rec": "21-11",
-        "coach": "Mark Pope",
-        "cAdj": -0.3,
-        "sty": {
-          "p3": 0.38,
-          "d3r": 55,
-          "ht": 79,
-          "toF": 9.8,
-          "t": 69
-        },
-        "name": "Kentucky"
-      },
-      "b": {
-        "em": 28.2656,
-        "efg": 54.8154,
-        "tor": 14.20992,
-        "orb": 30.232999999999997,
-        "ftr": 37.233000000000004,
-        "tpt": 36.3668,
-        "ast": 54.0304,
-        "mg": 14.032,
-        "o": 115.888,
-        "d": 87.6224,
-        "t": 66,
-        "elo": 1893,
-        "lk": 0.005,
-        "st": 0.48,
-        "ci": 0,
-        "ij": 0,
-        "s": 2,
-        "hb": 4.5,
-        "kp": 9,
-        "rec": "27-7",
-        "coach": "T.J. Otzelberger",
-        "cAdj": 0.2,
-        "sty": {
-          "p3": 0.38,
-          "d3r": 12,
-          "ht": 77,
-          "toF": 10.8,
-          "t": 66
-        },
-        "name": "Iowa State"
-      },
-      "id": "MW_R32_4",
-      "region": "R32"
-    },
-    {
       "teamA": "Illinois",
       "teamB": "Houston",
       "round": 3,
@@ -1777,8 +1465,8 @@
       "scoreL": 69,
       "sW": 72,
       "sL": 69,
-      "winProb": 61.3,
-      "wp": 61.3,
+      "winProb": 61.5,
+      "wp": 61.5,
       "sp": 3.2,
       "modelSpread": -4.9,
       "vegasLine": -2.5,
@@ -1791,11 +1479,11 @@
       "hca": -7.2,
       "L1": -0.1,
       "L2": 0.3,
-      "L3": -5.1,
+      "L3": -5,
       "L4": -0.4,
       "L5": 0.1,
       "v8adj": -0.82,
-      "ensAvg": -0.7,
+      "ensAvg": -0.6,
       "ensAgree": false,
       "injuryFlagA": "1 articles",
       "injuryFlagB": "2 articles",
@@ -1853,7 +1541,7 @@
         "tz": 0,
         "foul": -0.05,
         "ens": {
-          "avg": -0.7,
+          "avg": -0.6,
           "agree": false
         },
         "total": -0.82
@@ -1882,7 +1570,7 @@
         "o": 121.816,
         "d": 94.91839999999999,
         "t": 70,
-        "elo": 1950,
+        "elo": 1972,
         "lk": 0.005,
         "st": 0.38,
         "ci": 0,
@@ -1914,7 +1602,7 @@
         "o": 113.1936,
         "d": 86.1736,
         "t": 65.5,
-        "elo": 2010,
+        "elo": 2026,
         "lk": -0.015,
         "st": 0.47,
         "ci": 0,
@@ -1936,11 +1624,177 @@
       },
       "id": "S_S16_2",
       "region": "S16"
+    },
+    {
+      "teamA": "Texas",
+      "teamB": "Purdue",
+      "round": 3,
+      "venue": "San Jose",
+      "winner": "Purdue",
+      "loser": "Texas",
+      "w": "Purdue",
+      "l": "Texas",
+      "scoreW": 77,
+      "scoreL": 68,
+      "sW": 77,
+      "sL": 68,
+      "winProb": 82.8,
+      "wp": 82.8,
+      "sp": 9.2,
+      "modelSpread": -10.9,
+      "vegasLine": -8.5,
+      "blendedSpread": -9.2,
+      "edge": -2.4,
+      "moneyline": [
+        285,
+        -360
+      ],
+      "hca": 0,
+      "L1": -10.8,
+      "L2": -1.8,
+      "L3": 0.2,
+      "L4": 0.1,
+      "L5": 0.1,
+      "v8adj": -0.58,
+      "ensAvg": -3.3,
+      "ensAgree": false,
+      "injuryFlagA": "1 articles",
+      "injuryFlagB": null,
+      "status": "UPCOMING",
+      "sW2": 2,
+      "sL2": 11,
+      "ven": "San Jose",
+      "modelSp": -10.9,
+      "vegasSp": -8.5,
+      "rawSp": -9.2,
+      "mu": {
+        "det": [
+          {
+            "t": "Size mismatch",
+            "stat": "ORB% & FTR",
+            "team": "Purdue",
+            "i": 1.2000000000000002,
+            "d": "Purdue has 3\" height edge"
+          }
+        ],
+        "adjA": {
+          "efg": 0,
+          "tor": 0,
+          "orb": -1.2000000000000002,
+          "ftr": -0.75
+        },
+        "adjB": {
+          "efg": 0,
+          "tor": 0,
+          "orb": 1.2000000000000002,
+          "ftr": 0.75
+        },
+        "tempoAdj": 0
+      },
+      "cDiff": 0.1,
+      "fatA": {
+        "pts": -0.16
+      },
+      "fatB": {
+        "pts": -0.3
+      },
+      "rd": 3,
+      "v8": {
+        "ref": 0.03,
+        "gs": -0.09,
+        "sharp": -0.35,
+        "cont": -0.37,
+        "tz": 0.15,
+        "foul": 0.05,
+        "ens": {
+          "avg": -3.3,
+          "agree": false
+        },
+        "total": -0.58
+      },
+      "adjStats": {
+        "aEfg": 52.9,
+        "bEfg": 56.3,
+        "aTor": 16.8,
+        "bTor": 14.6,
+        "aOrb": 29,
+        "bOrb": 33.7,
+        "aFtr": 35.5,
+        "bFtr": 39.4
+      },
+      "ha": null,
+      "hb": 0,
+      "a": {
+        "em": 14.6736,
+        "efg": 52.90872,
+        "tor": 16.7928,
+        "orb": 30.232999999999997,
+        "ftr": 36.233000000000004,
+        "tpt": 34.6834,
+        "ast": 50.5152,
+        "mg": 4.9192,
+        "o": 111.59200000000001,
+        "d": 96.91839999999999,
+        "t": 69,
+        "elo": 1955,
+        "lk": 0.01,
+        "st": 0.3,
+        "ci": 0,
+        "ij": 0,
+        "s": 11,
+        "hb": 4,
+        "kp": 45,
+        "rec": "18-14",
+        "coach": "Rodney Terry",
+        "cAdj": 0,
+        "sty": {
+          "p3": 0.37,
+          "d3r": 42,
+          "ht": 78,
+          "toF": 10,
+          "t": 69
+        },
+        "name": "Texas"
+      },
+      "b": {
+        "em": 28.979999999999997,
+        "efg": 56.3154,
+        "tor": 14.5856,
+        "orb": 32.466,
+        "ftr": 38.699,
+        "tpt": 37.050200000000004,
+        "ast": 55.0304,
+        "mg": 11.9832,
+        "o": 121.47999999999999,
+        "d": 92.5,
+        "t": 68,
+        "elo": 1887,
+        "lk": 0.01,
+        "st": 0.56,
+        "ci": 0,
+        "ij": 0,
+        "s": 2,
+        "hb": 5,
+        "kp": 8,
+        "rec": "27-8",
+        "coach": "Matt Painter",
+        "cAdj": -0.2,
+        "sty": {
+          "p3": 0.38,
+          "d3r": 39,
+          "ht": 81,
+          "toF": 9.5,
+          "t": 68
+        },
+        "name": "Purdue"
+      },
+      "id": "W_S16_2",
+      "region": "S16"
     }
   ],
   "bracketProgress": {
-    "gamesPlayed": 44,
-    "gamesRemaining": 23,
+    "gamesPlayed": 46,
+    "gamesRemaining": 21,
     "currentRound": 2
   }
 }

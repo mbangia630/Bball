@@ -307,6 +307,20 @@
       "scoreW": 94,
       "scoreL": 88,
       "date": "2026-03-22"
+    },
+    "W_R32_4": {
+      "winner": "Purdue",
+      "loser": "Miami FL",
+      "scoreW": 79,
+      "scoreL": 69,
+      "date": "2026-03-22"
+    },
+    "MW_R32_4": {
+      "winner": "Iowa State",
+      "loser": "Kentucky",
+      "scoreW": 82,
+      "scoreL": 63,
+      "date": "2026-03-22"
     }
   },
   "advancedTo": {
@@ -400,13 +414,17 @@
       "a": "Illinois"
     },
     "W_S16_2": {
-      "a": "Texas"
+      "a": "Texas",
+      "b": "Purdue"
     },
     "S_S16_1": {
       "b": "Nebraska"
     },
     "W_S16_1": {
       "b": "Arkansas"
+    },
+    "MW_S16_2": {
+      "b": "Iowa State"
     }
   }
 }
