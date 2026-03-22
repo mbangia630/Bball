@@ -1,8 +1,8 @@
 {
   "date": "2026-03-22",
-  "generatedAt": "2026-03-22T23:31:05.914Z",
-  "generatedAtCST": "2026-03-22 6:31 PM CST",
-  "modelVersion": 32,
+  "generatedAt": "2026-03-22T23:35:32.120Z",
+  "generatedAtCST": "2026-03-22 6:35 PM CST",
+  "modelVersion": 33,
   "today": {
     "gamesGraded": 0,
     "straightUp": {
@@ -82,9 +82,9 @@
   },
   "adjustments": {
     "changes": [
-      "#1 Layer weights tuned by directional accuracy: L1=0.38(87%dir) L2=0.264(78%dir) L3=0.18(65%dir) L4=0.097(70%dir) L5=0.079(98%dir)",
+      "#1 Layer weights tuned by directional accuracy: L1=0.378(87%dir) L2=0.263(78%dir) L3=0.18(65%dir) L4=0.098(70%dir) L5=0.082(98%dir)",
       "#6 Ensemble: main model better (9.0 vs 11.2) — main 90% → 90%",
-      "#7 Calibration: underconfident in 3 buckets — sigma 9.2 → 9.0",
+      "#7 Calibration: underconfident in 3 buckets — sigma 9.0 → 8.9",
       "#5 Sharp plays: 88% on 17 games",
       "#5 Edge 0-2pt bets: +$146 on 10 games (profitable)",
       "#5 Edge 2-5pt bets: +$346 on 8 games (profitable)",
@@ -97,13 +97,13 @@
     ],
     "before": {
       "vegasBlend": 0.6950000000000002,
-      "sigma": 9.199999999999996,
+      "sigma": 9.049999999999995,
       "layers": {
-        "L1": 0.383,
-        "L2": 0.266,
+        "L1": 0.38,
+        "L2": 0.264,
         "L3": 0.18,
-        "L4": 0.096,
-        "L5": 0.076
+        "L4": 0.097,
+        "L5": 0.079
       },
       "ensemble": {
         "main": 0.9,
@@ -112,13 +112,13 @@
     },
     "after": {
       "vegasBlend": 0.6950000000000002,
-      "sigma": 9.049999999999995,
+      "sigma": 8.899999999999995,
       "layers": {
-        "L1": 0.38,
-        "L2": 0.264,
+        "L1": 0.378,
+        "L2": 0.263,
         "L3": 0.18,
-        "L4": 0.097,
-        "L5": 0.079
+        "L4": 0.098,
+        "L5": 0.082
       },
       "ensemble": {
         "main": 0.9,
