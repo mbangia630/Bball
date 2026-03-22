@@ -374,13 +374,26 @@ for(const slot of BRACKET){
 // ═══ SAVE ═══
 const fullOutput={timestamp:new Date().toISOString(),weightsVersion:weights.version||1,engineVersion:"v5-full-v8-live-stats",completed,predictions,bracketProgress:{gamesPlayed:completed.length,gamesRemaining:BRACKET.length-completed.length,currentRound:predictions.length>0?predictions[0].round:'Complete'}};
 fs.writeFileSync('data/predictions.json',JSON.stringify(fullOutput,null,2));
-// Merge new predictions into snapshot (preserve old predictions for grading)
-let existingSnap = [];
-try { existingSnap = JSON.parse(fs.readFileSync('data/predictions-snapshot.json', 'utf8')); } catch {}
-const snapMap = {};
-for (const p of existingSnap) { if (p.teamA && p.teamB) snapMap[`${p.teamA}|${p.teamB}`] = p; }
-for (const p of predictions) { if (p.teamA && p.teamB) snapMap[`${p.teamA}|${p.teamB}`] = p; }
-fs.writeFileSync('data/predictions-snapshot.json', JSON.stringify(Object.values(snapMap), null, 2));
+// ═══ IMMUTABLE PREDICTION SNAPSHOT ═══
+// Once a prediction is saved for a matchup, it NEVER gets overwritten.
+let lockedSnap = [];
+try { lockedSnap = JSON.parse(fs.readFileSync('data/predictions-snapshot.json', 'utf8')); } catch {}
+const locked = {};
+for (const p of lockedSnap) {
+  if (p.teamA && p.teamB) locked[`${p.teamA}|${p.teamB}`] = p;
+}
+let newAdded = 0;
+for (const p of predictions) {
+  const key = `${p.teamA}|${p.teamB}`;
+  const keyRev = `${p.teamB}|${p.teamA}`;
+  if (!locked[key] && !locked[keyRev]) {
+    p.predictedAt = new Date().toISOString();
+    locked[key] = p;
+    newAdded++;
+  }
+}
+fs.writeFileSync('data/predictions-snapshot.json', JSON.stringify(Object.values(locked), null, 2));
+console.log(`📸 Snapshot: ${Object.keys(locked).length} total predictions (${newAdded} new, ${Object.keys(locked).length - newAdded} locked)`);
 fs.writeFileSync('data/teams.json',JSON.stringify(teamDB,null,2));
 fs.writeFileSync(BRACKET_FILE,JSON.stringify(bracketState,null,2));
 

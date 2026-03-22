@@ -608,7 +608,8 @@ const games=R.flatMap(r=>r.g).filter(g=>g.status!=='FINAL'&&(g.moneyline||g.vega
       // Model says fav covers if model spread > vegas spread
       const favCoversEdge=sameFav?(modelSpreadAbs-vegasLineAbs):(modelSpreadAbs+vegasLineAbs);
       // Probability fav covers ≈ normalCDF((modelSpread - vegasLineread) / σ) with σ~11
-      const favCoversProb=Φ((g.modelSpread-(g.vegasLine))/11);
+      const teamACoversProb=Φ((g.modelSpread-(g.vegasLine))/11);
+      const favCoversProb=(vegasFav===g.a?.name)?teamACoversProb:1-teamACoversProb;
       const spreadFavProfit=spreadPayout; // win $91 on $100
       const spreadFavEV=Math.round((favCoversProb*spreadFavProfit-(1-favCoversProb)*100));
 
