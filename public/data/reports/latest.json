@@ -1,7 +1,7 @@
 {
   "date": "2026-03-23",
-  "generatedAtCST": "3/23/2026, 11:37:42 AM CST",
-  "modelVersion": 48,
+  "generatedAtCST": "3/23/2026, 12:49:31 PM CST",
+  "modelVersion": 50,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
@@ -480,7 +480,17 @@
     "archivedAt": "2026-03-23T16:27:17.117Z",
     "note": "v8 baseline for comparison with v9 Monte Carlo engine"
   },
-  "adjustments": [
-    "Layer weights tuned: L1=0.345 L2=0.247 L3=0.18 L4=0.114 L5=0.114"
-  ]
+  "adjustments": {
+    "changes": [
+      "Layer weights tuned: L1=0.341 L2=0.245 L3=0.18 L4=0.116 L5=0.118"
+    ],
+    "before": {
+      "vegasBlend": 0.75,
+      "sigma": 9.799999999999997
+    },
+    "after": {
+      "vegasBlend": 0.75,
+      "sigma": 9.799999999999997
+    }
+  }
 }
