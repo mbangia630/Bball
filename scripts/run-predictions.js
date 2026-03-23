@@ -151,7 +151,7 @@ function sharpAdj(nA,nB){const a=v8get(nA),b=v8get(nB);return(a.lineDir-b.lineDi
 function continuityAdj(nA,nB){const a=v8get(nA),b=v8get(nB);return Math.round(((a.minCont-b.minCont)/100*0.6+(b.expRk-a.expRk)/200*0.4)*100)/100;}
 function tzAdj(nA,nB,ven){const a=v8get(nA),b=v8get(nB);const vtz={"Buffalo":0,"Greenville":0,"Tampa":0,"Philadelphia":0,"Washington DC":0,"OKC":-1,"St. Louis":-1,"Houston":-1,"Chicago":-1,"Dayton":0,"Portland":-3,"San Diego":-3,"San Jose":-3,"Indianapolis":0}[ven]||0;return(Math.abs((b.tz||0)-vtz)-Math.abs((a.tz||0)-vtz))*0.15;}
 function foulAdj(nA,nB){const a=v8get(nA),b=v8get(nB);return Math.round(((b.foulStar/5)*(b.backupDrop/10)*0.3-(a.foulStar/5)*(a.backupDrop/10)*0.3)*100)/100;}
-function ensemble(a,b,tf){const m1=1.1*(a.em-b.em)*tf;const m2=(a.elo-b.elo)/25*1.2;const m3=((a.efg-b.efg)*1.8*.4+(b.tor-a.tor)*1.2*.25+(a.orb-b.orb)*.7*.18+(a.ftr-b.ftr)*.6*.17)*tf;return{avg:Math.round((m1+m2+m3)/3*10)/10,agree:Math.sign(m1)===Math.sign(m2)&&Math.sign(m2)===Math.sign(m3)};}
+function ensemble(a,b,tf){const m1=1.1*(a.em-b.em)*tf;const m2=(a.elo-b.elo)/25*1.2;const m3=((a.efg-b.efg)*1.8*.4+(b.tor-a.tor)*1.2*.25+(a.orb-b.orb)*.7*.18+(a.ftr-b.ftr)*.6*.17)*tf;return{m1:Math.round(m1*10)/10,m2:Math.round(m2*10)/10,m3:Math.round(m3*10)/10,avg:Math.round((m1+m2+m3)/3*10)/10,agree:Math.sign(m1)===Math.sign(m2)&&Math.sign(m2)===Math.sign(m3)};}
 
 // ═══════════════════════════════════════════════════════
 // FULL SIM FUNCTION — v8 engine with matchup details
