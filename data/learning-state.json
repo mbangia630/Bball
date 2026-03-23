@@ -1,46 +1,46 @@
 {
   "layerAccuracy": {
     "L1": {
-      "totalSigned": 309.4,
+      "totalSigned": 309.09999999999997,
       "correctDir": 25,
-      "totalAbsError": 259.3999999999999,
-      "games": 29
+      "totalAbsError": 266.69999999999993,
+      "games": 30
     },
     "L2": {
-      "totalSigned": 40.4,
-      "correctDir": 23,
-      "totalAbsError": 409.0000000000001,
-      "games": 29
+      "totalSigned": 40.8,
+      "correctDir": 24,
+      "totalAbsError": 415.60000000000014,
+      "games": 30
     },
     "L3": {
-      "totalSigned": 37.1,
-      "correctDir": 23,
-      "totalAbsError": 414.29999999999995,
-      "games": 29
+      "totalSigned": 37.7,
+      "correctDir": 24,
+      "totalAbsError": 420.69999999999993,
+      "games": 30
     },
     "L4": {
-      "totalSigned": 3.1999999999999997,
+      "totalSigned": 3.0999999999999996,
       "correctDir": 20,
-      "totalAbsError": 445.79999999999995,
-      "games": 29
+      "totalAbsError": 452.9,
+      "games": 30
     },
     "L5": {
       "totalSigned": 0.1,
-      "correctDir": 29,
-      "totalAbsError": 448.9,
-      "games": 29
+      "correctDir": 30,
+      "totalAbsError": 455.9,
+      "games": 30
     },
     "v8": {
-      "totalSigned": 5.219999999999999,
+      "totalSigned": 4.8599999999999985,
       "correctDir": 23,
-      "totalAbsError": 440.5800000000001,
-      "games": 29
+      "totalAbsError": 447.9400000000001,
+      "games": 30
     },
     "ens": {
-      "totalSigned": 192.6,
-      "correctDir": 25,
-      "totalAbsError": 300.80000000000007,
-      "games": 29
+      "totalSigned": 193.79999999999998,
+      "correctDir": 26,
+      "totalAbsError": 306.6000000000001,
+      "games": 30
     }
   },
   "teamK": {
@@ -179,7 +179,8 @@
     "Virginia": {
       "k": 20,
       "recentErrors": [
-        6.800000000000001
+        6.800000000000001,
+        6.5
       ]
     },
     "Wright St.": {
@@ -381,6 +382,12 @@
       "recentErrors": [
         24.3
       ]
+    },
+    "Tennessee": {
+      "k": 20,
+      "recentErrors": [
+        6.5
+      ]
     }
   },
   "situations": {
@@ -392,10 +399,10 @@
         "totalError": 56.5
       },
       "0-3": {
-        "correct": 1,
-        "total": 4,
+        "correct": 2,
+        "total": 5,
         "avgError": 0,
-        "totalError": 45.6
+        "totalError": 52.1
       },
       "14+": {
         "correct": 11,
@@ -446,6 +453,10 @@
       "4v5": {
         "correct": 1,
         "total": 1
+      },
+      "3v6": {
+        "correct": 1,
+        "total": 1
       }
     },
     "byRound": {
@@ -454,8 +465,8 @@
         "total": 28
       },
       "2": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
       }
     },
     "favVsDog": {
@@ -464,8 +475,8 @@
         "total": 25
       },
       "dog": {
-        "correct": 1,
-        "total": 4
+        "correct": 2,
+        "total": 5
       }
     }
   },
@@ -696,8 +707,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 6.800000000000001
+        "games": 2,
+        "totalError": 13.3
       }
     },
     "Wright St.": {
@@ -1029,6 +1040,16 @@
         "games": 1,
         "totalError": 24.3
       }
+    },
+    "Tennessee": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 6.5
+      }
     }
   },
   "lineMovement": {
@@ -1042,8 +1063,8 @@
         "games": 0
       },
       "2-5": {
-        "profit": -100,
-        "games": 1
+        "profit": -200,
+        "games": 2
       },
       "5+": {
         "profit": 0,
@@ -1053,12 +1074,12 @@
   },
   "ensembleAccuracy": {
     "main": {
-      "totalError": 260.6,
-      "games": 29
+      "totalError": 265.70000000000005,
+      "games": 30
     },
     "ens": {
-      "totalError": 300.80000000000007,
-      "games": 29
+      "totalError": 306.6000000000001,
+      "games": 30
     }
   },
   "calibration": {
@@ -1068,9 +1089,9 @@
       "games": 6
     },
     "55-60": {
-      "predicted": 233.9,
-      "actual": 100,
-      "games": 4
+      "predicted": 290.3,
+      "actual": 200,
+      "games": 5
     },
     "90+": {
       "predicted": 1073,
@@ -1089,17 +1110,17 @@
     }
   },
   "pace": {
-    "totalTempoError": -365,
-    "games": 29,
+    "totalTempoError": -390,
+    "games": 30,
     "overPredictions": 10,
-    "underPredictions": 19
+    "underPredictions": 20
   },
   "statRecency": {},
   "homeCourt": {
     "totalPredictedHCA": 8.5,
     "totalActualMarginBias": -14,
     "gamesWithHCA": 2,
-    "gamesNeutral": 27
+    "gamesNeutral": 28
   },
   "v8Accuracy": {
     "ref": {
@@ -1133,9 +1154,9 @@
       "games": 0
     },
     "total": {
-      "totalAbs": 14.18,
+      "totalAbs": 14.54,
       "correctDir": 23,
-      "games": 29
+      "games": 30
     }
   },
   "matchupAccuracy": {
@@ -1163,7 +1184,7 @@
       },
       "2": {
         "upsets": 0,
-        "total": 1
+        "total": 2
       }
     },
     "bySeedDiff": {
@@ -1177,7 +1198,7 @@
       },
       "3-5": {
         "upsets": 3,
-        "total": 6
+        "total": 7
       },
       "9+": {
         "upsets": 0,
@@ -1187,7 +1208,7 @@
     "bySpreadSize": {
       "0-5": {
         "upsets": 6,
-        "total": 12
+        "total": 13
       },
       "5-10": {
         "upsets": 1,
@@ -1209,8 +1230,8 @@
       "total": 5
     },
     "lowConf": {
-      "correct": 2,
-      "total": 7
+      "correct": 3,
+      "total": 8
     }
   },
   "gradedGameIds": [
@@ -1242,6 +1263,7 @@
     "W1",
     "W6",
     "MW2",
-    "E_R32_2"
+    "E_R32_2",
+    "MW_R32_3"
   ]
 }
