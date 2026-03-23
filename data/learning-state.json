@@ -40,12 +40,14 @@
       "k": 20,
       "recentErrors": [
         15.5,
+        15.5,
         15.5
       ]
     },
     "Troy": {
       "k": 20,
       "recentErrors": [
+        15.5,
         15.5,
         15.5
       ]
@@ -54,12 +56,14 @@
       "k": 20,
       "recentErrors": [
         3,
+        3,
         3
       ]
     },
     "TCU": {
       "k": 20,
       "recentErrors": [
+        3,
         3,
         3
       ]
@@ -68,12 +72,14 @@
       "k": 20,
       "recentErrors": [
         31.5,
+        31.5,
         31.5
       ]
     },
     "Siena": {
       "k": 20,
       "recentErrors": [
+        31.5,
         31.5,
         31.5
       ]
@@ -82,12 +88,14 @@
       "k": 20,
       "recentErrors": [
         10.5,
+        10.5,
         10.5
       ]
     },
     "High Point": {
       "k": 20,
       "recentErrors": [
+        10.5,
         10.5,
         10.5
       ]
@@ -96,12 +104,14 @@
       "k": 20,
       "recentErrors": [
         0.5,
+        0.5,
         0.5
       ]
     },
     "McNeese": {
       "k": 20,
       "recentErrors": [
+        0.5,
         0.5,
         0.5
       ]
@@ -110,12 +120,14 @@
       "k": 20,
       "recentErrors": [
         7.5,
+        7.5,
         7.5
       ]
     },
     "Louisville": {
       "k": 20,
       "recentErrors": [
+        7.5,
         7.5,
         7.5
       ]
@@ -124,12 +136,14 @@
       "k": 20,
       "recentErrors": [
         2.5,
+        2.5,
         2.5
       ]
     },
     "Hawaii": {
       "k": 20,
       "recentErrors": [
+        2.5,
         2.5,
         2.5
       ]
@@ -138,12 +152,14 @@
       "k": 20,
       "recentErrors": [
         5.5,
+        5.5,
         5.5
       ]
     },
     "N. Dakota St.": {
       "k": 20,
       "recentErrors": [
+        5.5,
         5.5,
         5.5
       ]
@@ -152,12 +168,14 @@
       "k": 20,
       "recentErrors": [
         9,
+        9,
         9
       ]
     },
     "Tennessee St.": {
       "k": 20,
       "recentErrors": [
+        9,
         9,
         9
       ]
@@ -166,12 +184,14 @@
       "k": 20,
       "recentErrors": [
         6,
+        6,
         6
       ]
     },
     "Queens": {
       "k": 20,
       "recentErrors": [
+        6,
         6,
         6
       ]
@@ -182,12 +202,15 @@
         9.5,
         5,
         9.5,
+        5,
+        9.5,
         5
       ]
     },
     "Furman": {
       "k": 20,
       "recentErrors": [
+        9.5,
         9.5,
         9.5
       ]
@@ -198,12 +221,15 @@
         7,
         6.5,
         7,
+        6.5,
+        7,
         6.5
       ]
     },
     "Wright St.": {
       "k": 20,
       "recentErrors": [
+        7,
         7,
         7
       ]
@@ -214,12 +240,15 @@
         10.5,
         21.5,
         10.5,
+        21.5,
+        10.5,
         21.5
       ]
     },
     "Hofstra": {
       "k": 20,
       "recentErrors": [
+        10.5,
         10.5,
         10.5
       ]
@@ -230,12 +259,15 @@
         3,
         4.5,
         3,
+        4.5,
+        3,
         4.5
       ]
     },
     "Cal Baptist": {
       "k": 20,
       "recentErrors": [
+        3,
         3,
         3
       ]
@@ -246,12 +278,15 @@
         16,
         21.5,
         16,
+        21.5,
+        16,
         21.5
       ]
     },
     "Akron": {
       "k": 20,
       "recentErrors": [
+        16,
         16,
         16
       ]
@@ -262,12 +297,15 @@
         15,
         4.5,
         15,
+        4.5,
+        15,
         4.5
       ]
     },
     "N. Iowa": {
       "k": 20,
       "recentErrors": [
+        15,
         15,
         15
       ]
@@ -276,12 +314,14 @@
       "k": 20,
       "recentErrors": [
         8.5,
+        8.5,
         8.5
       ]
     },
     "Kentucky": {
       "k": 20,
       "recentErrors": [
+        8.5,
         8.5,
         8.5
       ]
@@ -292,12 +332,15 @@
         0.5,
         5,
         0.5,
+        5,
+        0.5,
         5
       ]
     },
     "UCF": {
       "k": 20,
       "recentErrors": [
+        0.5,
         0.5,
         0.5
       ]
@@ -306,6 +349,7 @@
       "k": 20,
       "recentErrors": [
         10.5,
+        10.5,
         10.5
       ]
     },
@@ -313,12 +357,14 @@
       "k": 20,
       "recentErrors": [
         10.5,
+        10.5,
         10.5
       ]
     },
     "Villanova": {
       "k": 20,
       "recentErrors": [
+        11,
         11,
         11
       ]
@@ -329,12 +375,15 @@
         11,
         1.5,
         11,
+        1.5,
+        11,
         1.5
       ]
     },
     "Clemson": {
       "k": 20,
       "recentErrors": [
+        6.5,
         6.5,
         6.5
       ]
@@ -345,12 +394,15 @@
         6.5,
         14,
         6.5,
+        14,
+        6.5,
         14
       ]
     },
     "VCU": {
       "k": 20,
       "recentErrors": [
+        0,
         0,
         0
       ]
@@ -359,12 +411,14 @@
       "k": 20,
       "recentErrors": [
         0,
+        0,
         0
       ]
     },
     "Illinois": {
       "k": 20,
       "recentErrors": [
+        12,
         12,
         12
       ]
@@ -373,12 +427,14 @@
       "k": 20,
       "recentErrors": [
         12,
+        12,
         12
       ]
     },
     "St. Mary's": {
       "k": 20,
       "recentErrors": [
+        16.5,
         16.5,
         16.5
       ]
@@ -387,6 +443,7 @@
       "k": 20,
       "recentErrors": [
         16.5,
+        16.5,
         16.5
       ]
     },
@@ -394,12 +451,14 @@
       "k": 20,
       "recentErrors": [
         5,
+        5,
         5
       ]
     },
     "Idaho": {
       "k": 20,
       "recentErrors": [
+        5,
         5,
         5
       ]
@@ -410,12 +469,15 @@
         1,
         1.5,
         1,
+        1.5,
+        1,
         1.5
       ]
     },
     "LIU": {
       "k": 20,
       "recentErrors": [
+        1,
         1,
         1
       ]
@@ -424,12 +486,14 @@
       "k": 20,
       "recentErrors": [
         13.5,
+        13.5,
         13.5
       ]
     },
     "Kennesaw St.": {
       "k": 20,
       "recentErrors": [
+        13.5,
         13.5,
         13.5
       ]
@@ -438,12 +502,14 @@
       "k": 20,
       "recentErrors": [
         24.5,
+        24.5,
         24.5
       ]
     },
     "Saint Louis": {
       "k": 20,
       "recentErrors": [
+        24.5,
         24.5,
         24.5
       ]
@@ -452,12 +518,14 @@
       "k": 20,
       "recentErrors": [
         6.5,
+        6.5,
         6.5
       ]
     },
     "Florida": {
       "k": 20,
       "recentErrors": [
+        14,
         14,
         14
       ]
@@ -541,16 +609,16 @@
   },
   "confidenceTracking": {
     "highConf": {
-      "correct": 36,
-      "total": 40
+      "correct": 54,
+      "total": 60
     },
     "medConf": {
-      "correct": 8,
-      "total": 10
+      "correct": 12,
+      "total": 15
     },
     "lowConf": {
-      "correct": 8,
-      "total": 18
+      "correct": 12,
+      "total": 27
     }
   },
   "vegasMomentum": {

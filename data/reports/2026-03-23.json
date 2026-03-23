@@ -1,7 +1,7 @@
 {
   "date": "2026-03-23",
-  "generatedAtCST": "3/23/2026, 11:22:59 AM CST",
-  "modelVersion": 45,
+  "generatedAtCST": "3/23/2026, 11:27:17 AM CST",
+  "modelVersion": 46,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
@@ -449,14 +449,14 @@
     "version": "v8.0",
     "gamesGraded": 34,
     "straightUpPct": 76.5,
-    "atsPct": 50,
+    "atsPct": 44.1,
     "finalWeights": {
       "layers": {
-        "L1": 0.353,
-        "L2": 0.251,
+        "L1": 0.351,
+        "L2": 0.25,
         "L3": 0.18,
-        "L4": 0.11,
-        "L5": 0.106
+        "L4": 0.111,
+        "L5": 0.108
       },
       "recency": {
         "em": 0.592,
@@ -468,20 +468,20 @@
         "tor": 0.4144,
         "tpt": 0.3668
       },
-      "vegasBlend": 0.725,
+      "vegasBlend": 0.745,
       "ensemble": {
         "main": 0.9,
         "subs": 0.09999999999999998
       },
       "sigma": 9.799999999999997,
-      "version": 45,
-      "lastUpdated": "2026-03-23T14:12:11.333Z"
+      "version": 46,
+      "lastUpdated": "2026-03-23T16:22:59.795Z"
     },
-    "archivedAt": "2026-03-23T16:22:39.659Z",
+    "archivedAt": "2026-03-23T16:27:17.117Z",
     "note": "v8 baseline for comparison with v9 Monte Carlo engine"
   },
   "adjustments": [
-    "Layer weights tuned: L1=0.351 L2=0.25 L3=0.18 L4=0.111 L5=0.108",
-    "Vegas blend: 73% → 75%"
+    "Layer weights tuned: L1=0.349 L2=0.249 L3=0.18 L4=0.112 L5=0.11",
+    "Vegas blend: 75% → 75%"
   ]
 }
