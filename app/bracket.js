@@ -194,21 +194,21 @@ export default function V7Final(){
     for(const b of bets){
       // Find best scenario per game: positive EV and 65%+ model probability
       for(const s of b.scenarios){
-        if(s.prob>=65&&s.ev>0){
+        if(s.prob>=55){
           // Convert American odds to decimal for parlay math
           const amerOdds=parseInt(s.odds);
           const decOdds=amerOdds>0?(amerOdds/100+1):(100/Math.abs(amerOdds)+1);
           legs.push({
             game:`${b.teamA} vs ${b.teamB}`,
             side:s.side,type:s.type,
-            prob:s.prob/100, // model probability
-            odds:s.odds,     // vegas odds (American)
-            decOdds,         // vegas odds (decimal) for payout calc
+            prob:s.prob/100,
+            odds:s.odds,
+            decOdds,
             ev:s.ev,
             teamA:b.teamA,teamB:b.teamB,
             seedA:b.seedA,seedB:b.seedB,
           });
-          break; // only best scenario per game
+          break; // scenarios already sorted by EV, so first qualifying = best
         }
       }
     }
