@@ -553,7 +553,7 @@ function toV8Format(result) {
     v8adj: result.v8?.total || 0,
     ensAvg: result.layers?.v8 || 0, ensAgree: true,
     ha: result.hca?.team || null, hb: result.hca?.value || 0,
-    mu: { det: result.matchup?.details || [], adjA: result.matchup?.adjA, adjB: result.matchup?.adjB, tempoAdj: result.matchup?.tempoAdj },
+    mu: { det: (result.matchup?.details || []).map(d => ({ stat: d.stat, team: d.team, i: d.impact, d: d.desc })), adjA: result.matchup?.adjA, adjB: result.matchup?.adjB, tempoAdj: result.matchup?.tempoAdj },
     cDiff: result.coaching?.diff || 0,
     fatA: { pts: result.fatigue?.a || 0 }, fatB: { pts: result.fatigue?.b || 0 },
     adjStats: result.adjStats || {},
