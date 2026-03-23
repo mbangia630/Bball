@@ -1,0 +1,35 @@
+{
+  "version": "v8.0",
+  "gamesGraded": 34,
+  "straightUpPct": 76.5,
+  "atsPct": 50,
+  "finalWeights": {
+    "layers": {
+      "L1": 0.353,
+      "L2": 0.251,
+      "L3": 0.18,
+      "L4": 0.11,
+      "L5": 0.106
+    },
+    "recency": {
+      "em": 0.592,
+      "mg": 0.6128,
+      "efg": 0.5436000000000001,
+      "ast": 0.5152,
+      "ftr": 0.46599999999999997,
+      "orb": 0.46599999999999997,
+      "tor": 0.4144,
+      "tpt": 0.3668
+    },
+    "vegasBlend": 0.725,
+    "ensemble": {
+      "main": 0.9,
+      "subs": 0.09999999999999998
+    },
+    "sigma": 9.799999999999997,
+    "version": 45,
+    "lastUpdated": "2026-03-23T14:12:11.333Z"
+  },
+  "archivedAt": "2026-03-23T16:22:39.659Z",
+  "note": "v8 baseline for comparison with v9 Monte Carlo engine"
+}

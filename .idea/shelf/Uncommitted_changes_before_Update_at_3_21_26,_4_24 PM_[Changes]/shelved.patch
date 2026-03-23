@@ -1,0 +1,131 @@
+Index: data/bracket-state.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"results\": {\n    \"FF2\": {\n      \"winner\": \"Texas\",\n      \"loser\": \"NC State\",\n      \"scoreW\": 68,\n      \"scoreL\": 66,\n      \"date\": \"2026-03-18\"\n    },\n    \"FF1\": {\n      \"winner\": \"Howard\",\n      \"loser\": \"UMBC\",\n      \"scoreW\": 86,\n      \"scoreL\": 83,\n      \"date\": \"2026-03-18\"\n    },\n    \"FF3\": {\n      \"winner\": \"Prairie View\",\n      \"loser\": \"Lehigh\",\n      \"scoreW\": 67,\n      \"scoreL\": 55,\n      \"date\": \"2026-03-19\"\n    },\n    \"FF4\": {\n      \"winner\": \"Miami OH\",\n      \"loser\": \"SMU\",\n      \"scoreW\": 89,\n      \"scoreL\": 79,\n      \"date\": \"2026-03-19\"\n    },\n    \"S4\": {\n      \"winner\": \"Nebraska\",\n      \"loser\": \"Troy\",\n      \"scoreW\": 76,\n      \"scoreL\": 47,\n      \"date\": \"2026-03-19\"\n    },\n    \"E2\": {\n      \"winner\": \"TCU\",\n      \"loser\": \"Ohio State\",\n      \"scoreW\": 66,\n      \"scoreL\": 64,\n      \"date\": \"2026-03-19\"\n    },\n    \"E1\": {\n      \"winner\": \"Duke\",\n      \"loser\": \"Siena\",\n      \"scoreW\": 71,\n      \"scoreL\": 65,\n      \"date\": \"2026-03-19\"\n    },\n    \"W3\": {\n      \"winner\": \"High Point\",\n      \"loser\": \"Wisconsin\",\n      \"scoreW\": 83,\n      \"scoreL\": 82,\n      \"date\": \"2026-03-19\"\n    },\n    \"S3\": {\n      \"winner\": \"Vanderbilt\",\n      \"loser\": \"McNeese\",\n      \"scoreW\": 78,\n      \"scoreL\": 68,\n      \"date\": \"2026-03-19\"\n    },\n    \"E5\": {\n      \"winner\": \"Louisville\",\n      \"loser\": \"S. Florida\",\n      \"scoreW\": 83,\n      \"scoreL\": 79,\n      \"date\": \"2026-03-19\"\n    },\n    \"W4\": {\n      \"winner\": \"Arkansas\",\n      \"loser\": \"Hawaii\",\n      \"scoreW\": 97,\n      \"scoreL\": 78,\n      \"date\": \"2026-03-19\"\n    },\n    \"E6\": {\n      \"winner\": \"Michigan St.\",\n      \"loser\": \"N. Dakota St.\",\n      \"scoreW\": 92,\n      \"scoreL\": 67,\n      \"date\": \"2026-03-19\"\n    }\n  },\n  \"advancedTo\": {\n    \"W5\": {\n      \"b\": \"Texas\"\n    },\n    \"MW1\": {\n      \"a\": \"Howard\"\n    },\n    \"S1\": {\n      \"b\": \"Prairie View\"\n    },\n    \"MW5\": {\n      \"b\": \"Miami OH\"\n    },\n    \"S_R32_2\": {\n      \"b\": \"Nebraska\",\n      \"a\": \"Vanderbilt\"\n    },\n    \"E_R32_1\": {\n      \"b\": \"TCU\",\n      \"a\": \"Duke\"\n    },\n    \"W_R32_2\": {\n      \"a\": \"High Point\",\n      \"b\": \"Arkansas\"\n    },\n    \"E_R32_3\": {\n      \"a\": \"Louisville\",\n      \"b\": \"Michigan St.\"\n    }\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/data/bracket-state.json b/data/bracket-state.json
+--- a/data/bracket-state.json	(revision 15409b3408ead4d9f00d45d3d3014cc79f252045)
++++ b/data/bracket-state.json	(date 1773966644252)
+@@ -1,118 +1,1 @@
+-{
+-  "results": {
+-    "FF2": {
+-      "winner": "Texas",
+-      "loser": "NC State",
+-      "scoreW": 68,
+-      "scoreL": 66,
+-      "date": "2026-03-18"
+-    },
+-    "FF1": {
+-      "winner": "Howard",
+-      "loser": "UMBC",
+-      "scoreW": 86,
+-      "scoreL": 83,
+-      "date": "2026-03-18"
+-    },
+-    "FF3": {
+-      "winner": "Prairie View",
+-      "loser": "Lehigh",
+-      "scoreW": 67,
+-      "scoreL": 55,
+-      "date": "2026-03-19"
+-    },
+-    "FF4": {
+-      "winner": "Miami OH",
+-      "loser": "SMU",
+-      "scoreW": 89,
+-      "scoreL": 79,
+-      "date": "2026-03-19"
+-    },
+-    "S4": {
+-      "winner": "Nebraska",
+-      "loser": "Troy",
+-      "scoreW": 76,
+-      "scoreL": 47,
+-      "date": "2026-03-19"
+-    },
+-    "E2": {
+-      "winner": "TCU",
+-      "loser": "Ohio State",
+-      "scoreW": 66,
+-      "scoreL": 64,
+-      "date": "2026-03-19"
+-    },
+-    "E1": {
+-      "winner": "Duke",
+-      "loser": "Siena",
+-      "scoreW": 71,
+-      "scoreL": 65,
+-      "date": "2026-03-19"
+-    },
+-    "W3": {
+-      "winner": "High Point",
+-      "loser": "Wisconsin",
+-      "scoreW": 83,
+-      "scoreL": 82,
+-      "date": "2026-03-19"
+-    },
+-    "S3": {
+-      "winner": "Vanderbilt",
+-      "loser": "McNeese",
+-      "scoreW": 78,
+-      "scoreL": 68,
+-      "date": "2026-03-19"
+-    },
+-    "E5": {
+-      "winner": "Louisville",
+-      "loser": "S. Florida",
+-      "scoreW": 83,
+-      "scoreL": 79,
+-      "date": "2026-03-19"
+-    },
+-    "W4": {
+-      "winner": "Arkansas",
+-      "loser": "Hawaii",
+-      "scoreW": 97,
+-      "scoreL": 78,
+-      "date": "2026-03-19"
+-    },
+-    "E6": {
+-      "winner": "Michigan St.",
+-      "loser": "N. Dakota St.",
+-      "scoreW": 92,
+-      "scoreL": 67,
+-      "date": "2026-03-19"
+-    }
+-  },
+-  "advancedTo": {
+-    "W5": {
+-      "b": "Texas"
+-    },
+-    "MW1": {
+-      "a": "Howard"
+-    },
+-    "S1": {
+-      "b": "Prairie View"
+-    },
+-    "MW5": {
+-      "b": "Miami OH"
+-    },
+-    "S_R32_2": {
+-      "b": "Nebraska",
+-      "a": "Vanderbilt"
+-    },
+-    "E_R32_1": {
+-      "b": "TCU",
+-      "a": "Duke"
+-    },
+-    "W_R32_2": {
+-      "a": "High Point",
+-      "b": "Arkansas"
+-    },
+-    "E_R32_3": {
+-      "a": "Louisville",
+-      "b": "Michigan St."
+-    }
+-  }
+-}
+\ No newline at end of file
++{"results":{},"advancedTo":{}}

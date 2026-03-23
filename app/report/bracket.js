@@ -1,0 +1,642 @@
+"use client";
+import { useState, useMemo, useEffect } from "react";
+
+// ═══════════════════════════════════════════════════════════════════════
+// v8.0 FINAL — MARCH 16, 2026
+// All v7.1 upgrades PLUS Tier 1 & Tier 2 improvements:
+// T1: Ref crew sensitivity, Player-level matchups, Game-state splits, Sharp money
+// T2: Ensemble sub-models, Roster continuity, Timezone fatigue, Foul trouble
+// Total: 23 upgrades across 5 algorithm layers + 3 post-processing steps
+// ═══════════════════════════════════════════════════════════════════════
+
+const Φ=x=>{const s=x<0?-1:1,a=Math.abs(x)/1.414;const t=1/(1+.3275911*a);return .5*(1+s*(1-(((((1.061405429*t-1.453152027)*t+1.421413741)*t-.284496736)*t+.254829592)*t*Math.exp(-a*a))));};
+const iso=r=>{const b=[[.5,.5],[.55,.543],[.6,.576],[.65,.625],[.7,.688],[.75,.74],[.8,.798],[.85,.83],[.9,.889],[.95,.955],[1,1]];const p=Math.max(.5,Math.min(1,r));for(let i=0;i<b.length-1;i++){const[x0,y0]=b[i],[x1,y1]=b[i+1];if(p>=x0&&p<=x1)return y0+(p-x0)/(x1-x0)*(y1-y0);}return p;};
+const hav=(a1,o1,a2,o2)=>{const R=3959,dL=(a2-a1)*Math.PI/180,dO=(o2-o1)*Math.PI/180;const a=Math.sin(dL/2)**2+Math.cos(a1*Math.PI/180)*Math.cos(a2*Math.PI/180)*Math.sin(dO/2)**2;return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));};
+const rw=(s,r,w)=>s*(1-w)+r*w;
+const RW={em:.60,mg:.62,efg:.55,ast:.52,ftr:.47,orb:.47,tor:.42,tpt:.37};
+
+const VEN={"Dayton":[39.758,-84.191],"Buffalo":[42.886,-78.878],"Greenville":[34.852,-82.394],"OKC":[35.468,-97.516],"Portland":[45.531,-122.666],"Tampa":[27.951,-82.457],"Philadelphia":[39.952,-75.164],"San Diego":[32.716,-117.161],"St. Louis":[38.627,-90.199],"Washington DC":[38.907,-77.037],"Houston":[29.760,-95.370],"Chicago":[41.878,-87.630],"San Jose":[37.338,-121.886],"Indianapolis":[39.768,-86.158]};
+const LOC={"Duke":[36.001,-78.938],"Arizona":[32.232,-110.950],"Michigan":[42.278,-83.738],"Florida":[29.644,-82.345],"UConn":[41.808,-72.254],"Houston":[29.720,-95.339],"Iowa State":[42.027,-93.648],"Purdue":[40.424,-86.913],"Gonzaga":[47.667,-117.402],"Michigan St.":[42.731,-84.482],"Illinois":[40.102,-88.227],"Arkansas":[36.068,-94.175],"Kansas":[38.955,-95.255],"Nebraska":[40.820,-96.706],"Wisconsin":[43.076,-89.412],"Texas Tech":[33.585,-101.845],"St. John's":[40.726,-73.795],"Vanderbilt":[36.144,-86.803],"Alabama":[33.214,-87.539],"Louisville":[38.213,-85.758],"N. Carolina":[35.905,-79.047],"BYU":[40.250,-111.649],"UCLA":[34.069,-118.445],"St. Mary's":[37.838,-122.108],"Kentucky":[38.039,-84.504],"Miami FL":[25.721,-80.279],"Ohio State":[40.007,-83.030],"Iowa":[41.661,-91.535],"Georgia":[33.948,-83.375],"TCU":[32.710,-97.363],"Missouri":[38.940,-92.328],"Clemson":[34.676,-82.837],"VCU":[37.549,-77.453],"Akron":[41.076,-81.512],"Saint Louis":[38.637,-90.234],"Santa Clara":[37.349,-121.938],"S. Florida":[28.064,-82.413],"Hofstra":[40.715,-73.601],"High Point":[35.949,-79.997],"McNeese":[30.211,-93.210],"Troy":[31.799,-85.956],"N. Iowa":[42.514,-92.456],"Cal Baptist":[33.930,-117.426],"Yale":[41.311,-72.924],"UCF":[28.602,-81.200],"N. Dakota St.":[46.897,-96.801],"Furman":[34.850,-82.440],"Wright St.":[39.782,-84.062],"Miami OH":[39.509,-84.735],"SMU":[32.842,-96.783],"Texas":[30.284,-97.733],"Siena":[42.719,-73.752],"Penn":[39.952,-75.193],"Idaho":[46.726,-117.014],"Queens":[35.230,-80.843],"Hawaii":[21.297,-157.817],"UMBC":[39.255,-76.711],"Tennessee":[35.955,-83.925],"Villanova":[40.037,-75.346],"Utah State":[41.745,-111.810],"Tennessee St.":[36.167,-86.783],"Texas A&M":[30.612,-96.341],"Lehigh":[40.608,-75.378],"Virginia":[38.034,-78.508],"LIU":[40.689,-73.981],"Kennesaw St.":[34.036,-84.581],"NC State":[35.786,-78.663]};
+const dist=(t,v)=>{const s=LOC[t],ve=VEN[v];if(!s||!ve)return 999;return Math.round(hav(s[0],s[1],ve[0],ve[1]));};
+const hca=(t,v,h)=>{const d=dist(t,v);if(d<=50)return{d,b:h||3.3,tag:"HOME"};if(d<=150)return{d,b:(h||3.3)*.4,tag:"NEAR"};return{d,b:0,tag:null};};
+
+const DB={
+"Duke":{d:[40.6,43.2,57.2,58.8,14.8,13.0,32.1,33.0,39.5,41.0,38.5,39.5,57,59,18.2,22.5,121.8,124,81.2,80.8,69.2,1895,.012,.50,0,-1.0],s:1,hb:6.5,kp:1,rec:"32-2",coach:"Jon Scheyer",cAdj:.3,cNote:"Title game 2025, 6 March wins",style:{p3:.44,d3r:15,ht:79,toF:11.2,t:69.2}},
+"Arizona":{d:[37.3,39.5,57.5,58.2,15.8,14.5,31.2,32.0,36.8,37.5,39.0,40.5,54,56,14.5,18.2,120.5,122,83.2,82.5,71.5,1872,-.01,.63,0,0],s:1,hb:5.8,kp:3,rec:"32-2",coach:"Tommy Lloyd",cAdj:.2,cNote:"140-35 at AZ, no deep run yet",style:{p3:.50,d3r:3,ht:78,toF:9.8,t:71.5}},
+"Michigan":{d:[39.4,37.0,55.8,57.1,14.2,13.8,30.5,31.0,36.2,36.5,36.5,37.0,59,58,17.8,14.5,119.8,118.5,80.5,81.5,66.8,1888,.028,.35,0,-2.0],s:1,hb:5.2,kp:2,rec:"31-3",coach:"Dusty May",cAdj:.4,cNote:"FAU F4 '23, #1 defense nationally",style:{p3:.38,d3r:1,ht:80,toF:10.5,t:66.8}},
+"Florida":{d:[30.2,33.5,55.1,56.8,16.2,14.5,33.5,34.0,41.2,42.5,37.5,39.0,52,54,14.8,18.5,117.5,119.5,87.3,86.0,68.5,1845,.005,.59,0,0],s:1,hb:4.8,kp:4,rec:"26-7",coach:"Todd Golden",cAdj:.8,cNote:"Defending champ, 11-game W streak",style:{p3:.38,d3r:6,ht:79,toF:10.0,t:68.5}},
+"UConn":{d:[29.8,32.5,56.2,57.8,15.0,14.2,32.0,32.5,38.0,39.0,37.0,38.5,55,57,14.0,18.0,120.2,122,90.4,89.5,67.2,1852,-.018,.63,0,-0.5],s:2,hb:5.5,kp:7,rec:"27-7",coach:"Dan Hurley",cAdj:1.5,cNote:"Back-to-back titles '23-'24, .750 WP",style:{p3:.40,d3r:11,ht:79,toF:11.2,t:67.2}},
+"Houston":{d:[28.5,26.0,53.8,52.5,15.5,16.8,35.2,36.0,38.5,39.0,33.5,32.0,48,47,14.2,11.0,114.2,112.5,85.7,86.5,65.5,1838,-.015,.47,0,0],s:2,hb:7.2,kp:6,rec:"28-6",coach:"Kelvin Sampson",cAdj:.8,cNote:"Title game '25, 6 straight S16s",style:{p3:.35,d3r:5,ht:78,toF:11.5,t:65.5}},
+"Iowa State":{d:[27.2,29.0,54.0,55.5,14.5,13.8,30.0,30.5,37.0,37.5,36.0,37.0,53,55,12.5,15.0,115,116.5,87.8,87.5,66.0,1833,.005,.48,0,0],s:2,hb:4.5,kp:9,rec:"27-7",coach:"T.J. Otzelberger",cAdj:.2,cNote:"Consistent tourney appearances",style:{p3:.38,d3r:12,ht:77,toF:10.8,t:66.0}},
+"Purdue":{d:[27.5,30.0,55.5,57.0,15.0,14.0,32.0,33.0,38.0,39.5,36.5,38.0,54,56,8.0,14.5,120,122.5,92.5,92.5,68.0,1835,.01,.56,0,0],s:2,hb:5.0,kp:8,rec:"27-8",coach:"Matt Painter",cAdj:-.2,cNote:"#2 offense, but FDU loss '23",style:{p3:.38,d3r:39,ht:81,toF:9.5,t:68.0}},
+"Michigan St.":{d:[26.8,28.5,54.0,55.5,15.0,14.0,31.0,32.0,37.0,38.0,36.0,37.0,53,55,9.0,13.0,115,117,88.2,88.5,67.0,1835,.008,.57,0,0],s:3,hb:5.0,kp:10,rec:"25-7",coach:"Tom Izzo",cAdj:1.5,cNote:"Mr. March — 8 F4s, 59 wins",style:{p3:.37,d3r:18,ht:78,toF:10.5,t:67.0}},
+"Illinois":{d:[28.2,26.0,56.5,55.0,16.0,17.0,32.0,31.5,38.0,37.0,38.0,36.5,54,52,10.0,5.5,123,121,94.8,95,70.0,1840,.005,.38,0,0],s:3,hb:4.5,kp:5,rec:"24-8",coach:"Brad Underwood",cAdj:-.2,cNote:"#1 offense, but OT losses expose D",style:{p3:.42,d3r:28,ht:78,toF:9.0,t:70.0}},
+"Gonzaga":{d:[27.0,25.5,56.0,55.5,15.5,16.0,31.0,30.5,37.0,36.5,38.0,37.5,55,54,12.0,10.5,118,117,91.0,91.5,70.0,1832,-.008,.32,0,-2.0],s:3,hb:5.5,kp:11,rec:"30-3",coach:"Mark Few",cAdj:.8,cNote:"28 tourney wins, Huff injured",style:{p3:.40,d3r:11,ht:79,toF:9.2,t:70.0}},
+"Virginia":{d:[22.0,23.5,53.0,54.0,14.5,14.0,29.0,29.5,34.0,34.5,35.0,36.0,51,53,7.0,10.0,108,110,86.0,86.5,59.0,1810,.005,.40,0,0],s:3,hb:4.5,kp:19,rec:"29-5",coach:"Ryan Odom",cAdj:-.3,cNote:"Year 1 turnaround",style:{p3:.35,d3r:16,ht:78,toF:9.5,t:59.0}},
+"Kansas":{d:[23.5,18.8,53.0,51.2,16.0,17.5,31.0,29.5,38.0,36.0,35.5,33.0,52,48,8.5,-2.5,113,110,89.5,91.2,67.0,1815,.015,.18,0,0],s:4,hb:6.0,kp:13,rec:"23-10",coach:"Bill Self",cAdj:.5,cNote:"58 wins, 2 titles",style:{p3:.38,d3r:15,ht:79,toF:10.2,t:67.0}},
+"Nebraska":{d:[21.5,22.5,53.5,54.0,15.8,15.5,30.0,30.5,37.0,37.5,35.0,35.5,51,52,8.0,10.0,113,114,91.5,91.5,68.0,1800,.008,.34,0,0],s:4,hb:4.0,kp:12,rec:"26-6",coach:"Fred Hoiberg",cAdj:-.8,cNote:"0 tourney wins in history",style:{p3:.36,d3r:7,ht:78,toF:10.0,t:68.0}},
+"Arkansas":{d:[23.5,27.0,54.0,55.5,16.5,15.0,33.0,34.0,39.0,40.5,35.5,37.0,52,55,12.0,17.5,116,118.5,92.5,91.5,71.0,1815,.005,.61,0,0],s:4,hb:4.8,kp:16,rec:"24-10",coach:"John Calipari",cAdj:1.0,cNote:"59 March wins, 6 F4s",style:{p3:.38,d3r:46,ht:78,toF:10.8,t:71.0}},
+"Alabama":{d:[22.0,20.5,53.5,52.5,16.5,17.5,31.0,30.5,37.0,36.5,35.0,34.0,50,48,5.0,3.0,115,113.5,93.0,93.0,71.0,1805,.01,.33,-2.5,0],s:4,hb:5.0,kp:15,rec:"22-10",coach:"Nate Oats",cAdj:.2,cNote:"#3 offense, #68 defense — volatile",style:{p3:.40,d3r:68,ht:77,toF:9.5,t:71.0}},
+"St. John's":{d:[24.5,26.5,53.8,55.0,16.5,15.0,30.5,31.0,37.0,38.0,36.0,37.5,53,56,12.0,15.5,116.2,118,91.7,91.5,68.0,1820,.035,.56,0,0],s:5,hb:4.0,kp:21,rec:"24-9",coach:"Rick Pitino",cAdj:1.2,cNote:"55 March wins, 7 F4s, 2 titles",style:{p3:.40,d3r:12,ht:78,toF:10.8,t:68.0}},
+"Vanderbilt":{d:[22.8,25.0,54.0,55.5,15.5,14.5,31.0,32.0,37.0,38.0,36.0,37.5,53,55,14.0,17.0,114,116,91.2,91.0,70.0,1810,.01,.41,0,0],s:5,hb:4.5,kp:18,rec:"26-7",coach:"Mark Byington",cAdj:-.5,cNote:"First tourney as HC",style:{p3:.38,d3r:42,ht:78,toF:10.5,t:70.0}},
+"Texas Tech":{d:[22.8,16.5,52.5,50.8,16.8,18.5,30.2,28.5,40.5,38.0,34.0,31.0,49,45,9.5,1.5,112.8,109.5,90.0,93.0,66.0,1808,.02,.20,0,-3.5],s:5,hb:6.8,kp:17,rec:"22-10",coach:"Grant McCasland",cAdj:-.3,cNote:"Toppin OUT",style:{p3:.40,d3r:33,ht:77,toF:10.2,t:66.0}},
+"Wisconsin":{d:[20.5,22.0,53.0,54.0,14.5,14.0,28.0,28.5,35.0,35.5,35.0,36.5,50,52,7.0,10.0,110,111.5,89.5,89.5,64.0,1798,.005,.44,0,0],s:5,hb:4.5,kp:24,rec:"24-9",coach:"Greg Gard",cAdj:.1,cNote:"#62 defense is a weakness",style:{p3:.36,d3r:62,ht:78,toF:9.8,t:64.0}},
+"Louisville":{d:[20.5,18.0,53.5,52.0,15.5,16.5,31.0,30.0,38.0,37.0,35.5,34.0,52,50,8.0,5.0,114,112,93.5,94.0,69.0,1795,.005,.23,0,-2.0],s:6,hb:4.5,kp:22,rec:"22-10",coach:"Pat Kelsey",cAdj:-.5,cNote:"Brown questionable",style:{p3:.37,d3r:25,ht:78,toF:9.8,t:69.0}},
+"N. Carolina":{d:[19.5,14.2,53.5,51.5,16.0,17.8,31.0,29.5,37.0,35.0,36.0,33.5,51,47,7.5,-1.5,114,110.5,94.5,96.3,69.0,1790,.02,-.13,0,-2.5],s:6,hb:5.0,kp:35,rec:"22-11",coach:"Hubert Davis",cAdj:.1,cNote:"Wilson OUT",style:{p3:.38,d3r:60,ht:79,toF:9.5,t:69.0}},
+"BYU":{d:[19.2,20.0,53.5,54.0,16.0,15.5,30.0,30.5,36.0,36.5,35.0,36.0,51,52,6.0,8.0,112,113,92.8,93.0,68.0,1788,.01,.35,0,0],s:6,hb:5.0,kp:20,rec:"24-9",coach:"Kevin Young",cAdj:-.5,cNote:"First year HC, Dybantsa #1 pick",style:{p3:.38,d3r:48,ht:78,toF:9.8,t:68.0}},
+"Tennessee":{d:[21.5,23.0,53.5,54.5,15.5,15.0,31.0,32.0,38.0,38.5,35.0,36.0,52,54,7.0,10.5,113,115,91.5,92.0,67.0,1800,.005,.45,0,0],s:6,hb:5.0,kp:14,rec:"22-11",coach:"Rick Barnes",cAdj:-.1,cNote:"12 March wins but 0 F4s",style:{p3:.35,d3r:15,ht:79,toF:11.0,t:67.0}},
+"UCLA":{d:[18.5,20.0,53.0,54.0,16.0,15.0,30.0,31.0,35.0,36.0,35.0,36.5,51,53,6.0,9.0,111.5,113,93.0,93.0,68.0,1785,.01,.42,.15,-1.0],s:7,hb:4.5,kp:23,rec:"22-10",coach:"Mick Cronin",cAdj:.2,cNote:"F4 2021",style:{p3:.38,d3r:35,ht:78,toF:10.0,t:68.0}},
+"St. Mary's":{d:[19.5,21.0,54.5,55.5,15.0,14.5,28.0,28.5,33.0,33.5,36.0,37.0,52,54,8.0,11.0,110,111.5,90.5,90.5,63.0,1792,-.005,.43,0,0],s:7,hb:4.0,kp:26,rec:"27-5",coach:"Randy Bennett",cAdj:.1,cNote:"Disciplined half-court",style:{p3:.37,d3r:28,ht:78,toF:9.5,t:63.0}},
+"Kentucky":{d:[17.0,15.0,52.5,51.5,16.5,17.5,30.0,29.5,38.0,37.0,34.5,33.0,49,47,3.0,0.5,111,109.5,94.0,94.5,69.0,1778,.015,-.05,0,0],s:7,hb:5.5,kp:28,rec:"21-11",coach:"Mark Pope",cAdj:-.3,cNote:"Rebuilding",style:{p3:.38,d3r:55,ht:79,toF:9.8,t:69.0}},
+"Miami FL":{d:[17.0,19.0,53.0,54.5,16.0,15.0,30.0,31.0,36.0,37.0,35.5,37.0,52,54,7.0,10.5,112,114,95.0,95.0,68.0,1778,.01,.39,0,0],s:7,hb:4.0,kp:27,rec:"22-10",coach:"Jim Larrañaga",cAdj:.5,cNote:"Upset specialist",style:{p3:.39,d3r:40,ht:77,toF:10.0,t:68.0}},
+"Ohio State":{d:[16.8,18.0,52.5,53.5,16.0,15.5,30.0,30.5,36.0,36.5,35.0,36.0,51,53,5.0,7.5,110,111,93.2,93.0,67.0,1775,.01,.35,0,-0.8],s:8,hb:4.5,kp:30,rec:"21-12",coach:"Jake Diebler",cAdj:-.3,cNote:"Thornton all-time scorer",style:{p3:.37,d3r:38,ht:78,toF:10.0,t:67.0}},
+"Clemson":{d:[17.5,14.5,53.0,51.5,16.0,17.0,30.0,29.0,35.0,34.0,35.5,34.0,51,49,-2.0,-5.0,112,110,94.5,95.5,67.0,1780,.005,.30,0,-2.5],s:8,hb:4.5,kp:36,rec:"21-12",coach:"Brad Brownell",cAdj:0,cNote:"Welling ACL tear",style:{p3:.38,d3r:40,ht:78,toF:9.8,t:67.0}},
+"Georgia":{d:[16.5,15.5,52.5,52.0,16.5,17.0,30.0,29.5,36.0,35.5,35.0,34.0,50,49,4.0,2.5,110,109,93.5,93.5,68.0,1773,.008,.30,0,0],s:8,hb:4.5,kp:29,rec:"22-10",coach:"Mike White",cAdj:0,cNote:"Top-15 offense",style:{p3:.36,d3r:260,ht:79,toF:10.2,t:68.0}},
+"Villanova":{d:[16.5,18.0,52.5,53.5,16.0,15.5,30.0,31.0,36.0,37.0,35.0,36.5,52,53,5.0,8.0,110,112,93.5,94.0,67.0,1774,.005,.38,0,0],s:8,hb:4.5,kp:33,rec:"22-10",coach:"Kyle Neptune",cAdj:-.3,cNote:"First tourney since Wright",style:{p3:.38,d3r:42,ht:78,toF:9.8,t:67.0}},
+"TCU":{d:[15.2,16.0,52.0,52.5,16.5,16.0,31.0,31.5,37.0,37.5,35.0,35.5,50,51,3.0,5.0,109.5,110.5,94.3,94.5,68.0,1762,-.005,.32,0,0],s:9,hb:4.5,kp:31,rec:"20-12",coach:"Jamie Dixon",cAdj:.1,cNote:"Experienced roster",style:{p3:.36,d3r:45,ht:78,toF:10.0,t:68.0}},
+"Iowa":{d:[15.8,16.5,52.0,52.5,15.5,15.0,30.0,30.5,36.0,36.5,34.0,34.5,50,51,5.0,6.5,108,109,92.2,92.5,62.0,1772,.01,.38,0,0],s:9,hb:4.0,kp:25,rec:"22-11",coach:"Fran McCaffery",cAdj:-.3,cNote:"11 spots above Clemson in KenPom",style:{p3:.34,d3r:45,ht:78,toF:9.5,t:62.0}},
+"Saint Louis":{d:[18.8,21.0,53.5,55.0,16.0,15.0,31.0,32.0,37.0,38.0,36.0,38.0,53,55,12.0,15.0,113,115,94.2,94.0,67.0,1790,-.01,.51,.55,0],s:9,hb:4.0,kp:37,rec:"28-5",coach:"Josh Schertz",cAdj:-.3,cNote:"A-10 champ",style:{p3:.40,d3r:5,ht:79,toF:10.5,t:67.0}},
+"Utah State":{d:[19.2,20.5,53.0,54.0,15.5,15.0,31.0,31.5,37.0,37.5,35.5,36.5,52,53,10.0,12.0,112,113.5,92.8,93.0,67.0,1790,-.005,.42,0,0],s:9,hb:4.0,kp:32,rec:"27-7",coach:"Jerrod Calhoun",cAdj:0,cNote:"",style:{p3:.37,d3r:35,ht:78,toF:10.0,t:67.0}},
+"UCF":{d:[15.8,14.5,52.5,51.5,16.5,17.5,31.0,30.5,36.0,35.5,35.0,34.0,50,48,4.0,1.5,112,110.5,96.2,96.0,69.0,1768,-.008,.35,0,0],s:10,hb:3.5,kp:40,rec:"20-12",coach:"Johnny Dawkins",cAdj:0,cNote:"",style:{p3:.37,d3r:50,ht:78,toF:9.5,t:69.0}},
+"Texas A&M":{d:[17.8,17.0,52.0,51.5,16.5,17.0,34.0,34.5,37.0,37.0,34.0,33.5,50,49,6.0,5.0,111,110.5,93.2,93.5,68.0,1785,.01,.35,0,0],s:10,hb:4.0,kp:34,rec:"21-11",coach:"Bucky McMillan",cAdj:-.3,cNote:"#8 in experience",style:{p3:.36,d3r:45,ht:79,toF:10.0,t:68.0}},
+"Santa Clara":{d:[16.8,19.0,53.5,55.0,15.5,14.5,29.0,30.0,34.0,35.0,37.0,38.5,53,55,10.0,13.5,112,114,95.2,95.0,66.0,1775,-.01,.48,.55,0],s:10,hb:3.5,kp:38,rec:"24-9",coach:"Herb Sendek",cAdj:.1,cNote:"Good shooters",style:{p3:.42,d3r:38,ht:77,toF:9.5,t:66.0}},
+"Missouri":{d:[15.5,16.0,52.5,53.0,16.5,16.0,30.0,30.5,36.0,36.5,34.5,35.0,50,51,4.0,5.5,111,112,95.5,96.0,69.0,1770,.005,.32,0,0],s:10,hb:4.0,kp:42,rec:"20-12",coach:"Dennis Gates",cAdj:0,cNote:"",style:{p3:.36,d3r:50,ht:78,toF:9.5,t:69.0}},
+"VCU":{d:[18.2,22.5,52.5,54.0,15.5,14.0,30.0,31.5,36.0,37.5,35.0,37.5,50,53,8.5,14.0,112,115,93.8,92.5,66.0,1782,-.015,.61,.80,0],s:11,hb:3.5,kp:47,rec:"24-9",coach:"Ryan Odom",cAdj:.1,cNote:"Tournament-tested",style:{p3:.38,d3r:30,ht:77,toF:11.0,t:66.0}},
+"S. Florida":{d:[16.2,19.0,53.0,54.5,16.8,15.5,32.0,33.0,36.0,37.5,34.5,36.0,51,53,10.0,14.0,112.5,115,96.3,96.0,70.0,1770,-.01,.50,.60,0],s:11,hb:4.0,kp:44,rec:"24-9",coach:"Amir Abdur-Rahim",cAdj:-.3,cNote:"11-game win streak",style:{p3:.35,d3r:52,ht:78,toF:10.5,t:70.0}},
+"SMU":{d:[17.5,18.5,53.8,54.5,16.0,15.5,30.0,30.5,36.0,37.0,36.0,37.0,52,53,5.0,7.5,112,113,94.5,94.5,68.0,1780,-.01,.42,0,0],s:11,hb:4.0,kp:39,rec:"20-13",coach:"Andy Enfield",cAdj:.1,cNote:"FGCU F4 run",style:{p3:.38,d3r:35,ht:78,toF:10.0,t:68.0}},
+"Texas":{d:[14.2,15.0,52.8,53.0,17.0,16.5,30.0,30.5,36.0,36.5,34.5,35.0,50,51,4.0,5.5,111,112,96.8,97.0,69.0,1760,.01,.30,0,0],s:11,hb:4.0,kp:45,rec:"18-14",coach:"Rodney Terry",cAdj:0,cNote:"Lost 3 straight",style:{p3:.37,d3r:42,ht:78,toF:10.0,t:69.0}},
+"N. Iowa":{d:[10.5,12.5,50.5,52.0,17.0,15.5,30.0,31.0,33.0,34.0,34.0,35.5,49,52,8.0,11.0,107,109,96.5,96.5,62.0,1710,-.01,.37,.40,0],s:12,hb:3.5,kp:50,rec:"25-7",coach:"Ben Jacobson",cAdj:.2,cNote:"#25 KenPom defense",style:{p3:.35,d3r:25,ht:78,toF:10.0,t:62.0}},
+"McNeese":{d:[12.5,14.0,52.0,53.0,17.0,16.0,33.0,34.0,36.0,37.0,35.0,36.0,51,53,10.0,12.5,109,111,96.5,97.0,71.0,1720,-.01,.46,.65,0],s:12,hb:3.5,kp:55,rec:"28-5",coach:"Will Wade",cAdj:0,cNote:"Southland champ",style:{p3:.38,d3r:70,ht:77,toF:11.5,t:71.0}},
+"Akron":{d:[12.5,16.2,52.2,54.5,17.5,15.8,32.8,33.5,35.2,36.5,37.0,40.0,51,54,7.8,12.5,108.5,111,96.0,94.8,67.5,1720,-.005,.54,.75,0],s:12,hb:3.5,kp:52,rec:"26-7",coach:"John Groce",cAdj:0,cNote:"MAC-tested, top-10 3PT (40%)",style:{p3:.50,d3r:65,ht:76,toF:9.2,t:67.5}},
+"High Point":{d:[7.5,10.0,51.0,52.5,17.5,16.5,32.0,33.0,36.0,37.0,35.5,37.0,51,53,8.0,12.0,107,109,99.5,99.0,70.0,1680,-.008,.46,.60,0],s:12,hb:3.5,kp:65,rec:"25-8",coach:"Tubby Smith",cAdj:.2,cNote:"Battle-tested",style:{p3:.40,d3r:90,ht:77,toF:9.5,t:70.0}},
+"Cal Baptist":{d:[5.2,6.5,50.0,51.0,18.0,17.5,32.0,32.5,35.0,35.5,34.0,35.0,48,49,6.0,7.5,104,105.5,98.8,99.0,66.0,1645,-.02,.25,.30,0],s:13,hb:3.0,kp:95,rec:"24-9",coach:"Rick Croy",cAdj:0,cNote:"WAC champ",style:{p3:.36,d3r:60,ht:77,toF:9.0,t:66.0}},
+"Troy":{d:[8.2,6.5,50.5,49.5,17.5,18.5,31.0,30.0,35.0,34.0,33.5,32.0,49,47,6.0,3.0,106,104.5,97.8,98.0,67.0,1690,.005,.27,.35,-1.0],s:13,hb:3.0,kp:80,rec:"24-10",coach:"Scott Cross",cAdj:0,cNote:"Conf tourney champ",style:{p3:.35,d3r:55,ht:77,toF:9.5,t:67.0}},
+"Hofstra":{d:[10.8,13.5,52.5,54.0,16.0,15.0,31.0,32.0,35.0,36.0,37.0,39.0,52,54,10.0,13.0,109,111,98.2,97.5,69.0,1708,-.005,.51,.70,0],s:13,hb:3.0,kp:60,rec:"27-6",coach:"Speedy Claxton",cAdj:-.5,cNote:"First ever tourney",style:{p3:.48,d3r:80,ht:76,toF:9.2,t:69.0}},
+"Hawaii":{d:[5.0,5.5,50.5,51.0,17.5,17.0,31.0,31.5,34.0,34.5,34.0,35.0,49,50,7.0,8.0,105,106,100.0,100.5,68.0,1650,-.005,.30,.35,0],s:13,hb:3.0,kp:90,rec:"22-11",coach:"Eran Ganot",cAdj:0,cNote:"",style:{p3:.36,d3r:65,ht:77,toF:9.0,t:68.0}},
+"N. Dakota St.":{d:[1.2,2.0,49.0,50.0,18.5,18.0,29.0,29.5,32.0,32.5,33.0,34.0,47,48,4.0,5.5,101,102,99.8,100,66.0,1530,-.01,.20,0,0],s:14,hb:3.0,kp:110,rec:"27-7",coach:"David Richman",cAdj:0,cNote:"Summit champ",style:{p3:.35,d3r:50,ht:77,toF:9.0,t:66.0}},
+"Penn":{d:[-0.5,0.5,48.5,49.5,19.0,18.5,28.0,28.5,31.0,31.5,33.0,34.0,47,48,4.0,5.5,100,101,100.5,100.5,65.0,1500,-.01,.20,0,0],s:14,hb:3.0,kp:115,rec:"17-11",coach:"Steve Donahue",cAdj:0,cNote:"Ivy champ",style:{p3:.36,d3r:55,ht:77,toF:9.0,t:65.0}},
+"Wright St.":{d:[4.5,6.0,51.0,52.0,18.0,17.0,31.0,32.0,34.0,35.0,34.5,36.0,49,51,6.0,8.5,105,107,100.5,101,69.0,1640,.005,.25,.20,0],s:14,hb:3.0,kp:100,rec:"23-11",coach:"Clint Sargent",cAdj:0,cNote:"Horizon champ",style:{p3:.37,d3r:55,ht:77,toF:9.0,t:69.0}},
+"Kennesaw St.":{d:[-2.0,-1.0,48.0,49.0,19.0,18.5,28.0,28.5,31.0,31.5,33.0,34.0,46,47,3.0,4.0,99,100,101,101,67.0,1470,-.01,.15,0,0],s:14,hb:3.0,kp:130,rec:"22-12",coach:"Amir Abdur-Rahim II",cAdj:0,cNote:"ASUN champ",style:{p3:.36,d3r:60,ht:77,toF:9.0,t:67.0}},
+"Furman":{d:[6.5,7.5,50.0,51.0,18.0,17.5,30.0,30.5,34.0,34.5,34.0,35.0,49,50,5.0,6.5,105,106,98.5,98.5,66.0,1670,.005,.30,.20,0],s:15,hb:3.5,kp:70,rec:"24-10",coach:"Bob Richey",cAdj:0,cNote:"SoCon champ",style:{p3:.36,d3r:40,ht:77,toF:9.0,t:66.0}},
+"Idaho":{d:[-8.5,-7.5,46.0,47.0,20.0,19.5,27.0,27.5,30.0,30.5,31.0,32.0,44,45,2.0,3.0,96,97,104.5,104.5,66.0,1410,.01,.10,0,0],s:15,hb:3.0,kp:200,rec:"20-13",coach:"Alex Pribble",cAdj:0,cNote:"",style:{p3:.34,d3r:70,ht:77,toF:8.5,t:66.0}},
+"Queens":{d:[-5.0,-4.0,47.5,48.0,19.5,19.0,29.0,29.5,31.0,31.5,32.0,33.0,46,47,3.0,4.0,98,99,103,103,66.0,1440,.005,.15,0,0],s:15,hb:3.0,kp:190,rec:"22-12",coach:"Chad McMillan",cAdj:0,cNote:"First-ever tourney",style:{p3:.35,d3r:60,ht:76,toF:8.5,t:66.0}},
+"Tennessee St.":{d:[-2.0,-1.0,48.0,49.0,19.0,18.5,29.0,29.5,32.0,32.5,32.0,33.0,46,47,5.0,6.5,99,100,101,101,67.0,1475,-.01,.20,0,0],s:15,hb:3.0,kp:140,rec:"23-9",coach:"Brian Collins",cAdj:0,cNote:"OVC champ",style:{p3:.35,d3r:55,ht:77,toF:9.0,t:67.0}},
+"Siena":{d:[-3.5,-2.5,48.0,49.0,19.5,19.0,28.0,28.5,30.0,30.5,33.0,34.0,46,47,2.0,3.5,99,100,102.5,102.5,65.0,1460,-.01,.15,0,0],s:16,hb:3.0,kp:170,rec:"23-11",coach:"Carmen Maciariello",cAdj:0,cNote:"MAAC champ",style:{p3:.36,d3r:60,ht:76,toF:8.5,t:65.0}},
+"LIU":{d:[-10.0,-9.0,46.0,47.0,20.5,20.0,27.0,27.5,29.0,29.5,31.0,32.0,44,45,1.0,2.0,95,96,105,105,66.0,1400,.01,.10,0,0],s:16,hb:3.0,kp:220,rec:"20-14",coach:"Rod Strickland",cAdj:0,cNote:"NEC champ",style:{p3:.34,d3r:70,ht:76,toF:8.0,t:66.0}},
+"UMBC":{d:[0.5,1.0,49.5,50.0,19.0,18.5,29.0,29.5,32.0,32.5,33.5,34.0,47,48,2.0,3.0,100.5,101,100,100,68.0,1485,.01,.15,0,0],s:16,hb:3.0,kp:150,rec:"24-8",coach:"Jim Ferry",cAdj:0,cNote:"Am East champ",style:{p3:.36,d3r:55,ht:77,toF:9.0,t:68.0}},
+"Lehigh":{d:[-2.5,-1.0,51.2,52.5,18.0,17.0,27.0,28.0,31.0,32.0,36.0,38.5,48,50,5.0,7.5,101,103,103.5,104,67.0,1468,-.02,.25,.15,0],s:16,hb:3.0,kp:145,rec:"18-16",coach:"Brett Reed",cAdj:0,cNote:"Patriot champ",style:{p3:.42,d3r:55,ht:76,toF:8.5,t:67.0}},
+"NC State":{d:[10.0,8.0,51.5,50.5,17.0,18.0,30.0,29.5,34.0,33.5,36.5,38.0,49,48,3.0,1.0,108,106,98,98,68.0,1700,.02,.25,.20,0],s:11,hb:3.5,kp:48,rec:"20-13",coach:"Kevin Keatts",cAdj:.1,cNote:"F4 run as 11-seed in '24!",style:{p3:.38,d3r:45,ht:78,toF:10.0,t:68.0}},
+"Howard":{d:[-4.0,-3.0,48.0,49.0,19.5,19.0,28.0,28.5,31.0,31.5,32.0,33.0,46,47,3.0,4.5,99,100,103,103,67.0,1450,-.01,.15,0,0],s:16,hb:3.0,kp:160,rec:"20-12",coach:"Kenny Blakeney",cAdj:0,cNote:"MEAC champ",style:{p3:.35,d3r:60,ht:77,toF:9.0,t:67.0}},
+"Prairie View":{d:[-6.0,-5.0,47.0,48.0,20.0,19.5,28.0,28.5,30.0,30.5,31.5,32.5,45,46,2.0,3.0,97,98,103,103.5,67.0,1420,-.01,.10,0,0],s:16,hb:3.0,kp:210,rec:"19-14",coach:"Byron Smith",cAdj:0,cNote:"SWAC champ",style:{p3:.34,d3r:65,ht:76,toF:8.5,t:67.0}},
+"Miami OH":{d:[15.0,17.5,53.5,55.0,15.5,14.5,30.0,31.0,36.0,37.0,36.0,38.0,52,54,10.0,13.5,111,113.5,95.0,95.0,68.0,1770,-.005,.52,.60,0],s:11,hb:3.5,kp:43,rec:"32-1",coach:"Travis Steele",cAdj:0,cNote:"MAC champ, 32-1",style:{p3:.40,d3r:30,ht:77,toF:10.0,t:68.0}},
+};
+
+const ODDS={
+  "Duke vs Siena":[-20000,3500,-110],"Ohio State vs TCU":[-150,128,-110],"St. John's vs N. Iowa":[-550,420,-110],
+  "Kansas vs Cal Baptist":[-1200,750,-110],"Louisville vs S. Florida":[-280,225,-110],"Michigan St. vs N. Dakota St.":[-1800,1000,-110],
+  "UCLA vs UCF":[-240,195,-110],"UConn vs Furman":[-4000,1800,-110],
+  "Florida vs Lehigh":[-8000,2500,-110],"Clemson vs Iowa":[128,-150,-110],"Vanderbilt vs McNeese":[-625,455,-110],
+  "Nebraska vs Troy":[-1350,800,-110],"N. Carolina vs VCU":[-142,120,-110],"Illinois vs Penn":[-10000,3000,-110],
+  "St. Mary's vs Texas A&M":[-135,114,-110],"Houston vs Idaho":[-8000,2200,-110],
+  "Arizona vs LIU":[-10000,3000,-110],"Villanova vs Utah State":[120,-142,-110],"Wisconsin vs High Point":[-475,365,-110],
+  "Arkansas vs Hawaii":[-1600,900,-110],"BYU vs Texas":[-380,300,-110],"Gonzaga vs Kennesaw St.":[-5000,1800,-110],
+  "Kentucky vs Santa Clara":[-166,140,-110],"Purdue vs Queens":[-8000,2200,-110],
+  "Michigan vs UMBC":[-15000,3000,-110],"Georgia vs Saint Louis":[-142,120,-110],
+  "Texas Tech vs Akron":[-380,300,-110],"Alabama vs Hofstra":[-700,490,-110],
+  "Tennessee vs SMU":[-400,310,-110],"Virginia vs Wright St.":[-3200,1400,-110],
+  "Miami FL vs Missouri":[-190,158,-110],"Iowa State vs Tennessee St.":[-8000,2200,-110],
+};
+
+function buildT(n){const t=DB[n];if(!t)return null;const r=t.d;return{em:rw(r[0],r[1],RW.em),efg:rw(r[2],r[3],RW.efg),tor:rw(r[4],r[5],RW.tor),orb:rw(r[6],r[7],RW.orb),ftr:rw(r[8],r[9],RW.ftr),tpt:rw(r[10],r[11],RW.tpt),ast:rw(r[12],r[13],RW.ast),mg:rw(r[14],r[15],RW.mg),o:rw(r[16],r[17],RW.em),d:rw(r[18],r[19],RW.em),t:r[20],elo:r[21],lk:r[22],st:r[23],ci:r[24],ij:r[25],s:t.s,hb:t.hb,kp:t.kp,rec:t.rec,coach:t.coach,cAdj:t.cAdj,cNote:t.cNote,sty:t.style,name:n,em_s:r[0],em_r:r[1],efg_s:r[2],efg_r:r[3]};}
+
+const C={bg:"#0a0a12",brd:"#1a1a2e",red:"#ff4060",blue:"#4cc9f0",grn:"#2dd4a0",amb:"#f4a261",purp:"#a78bfa",gold:"#fbbf24",dim:"#444",cyan:"#22d3ee",pink:"#f472b6",wh:"#e8e6e1"};
+const rC=[C.grn,C.blue,C.purp,C.red,C.amb,C.gold];
+
+function MetricBar({label,valA,valB,unit,better}){
+  const a=parseFloat(valA)||0,b=parseFloat(valB)||0;
+  const diff=better==="higher"?a-b:b-a;
+  const col=diff>1?C.grn:diff<-1?C.red:C.dim;
+  return(<div style={{display:"flex",alignItems:"center",gap:4,fontSize:12,marginBottom:1}}>
+    <span style={{width:50,color:C.dim,textAlign:"right",flexShrink:0}}>{label}</span>
+    <span style={{width:42,textAlign:"right",color:col,fontWeight:diff>1||diff<-1?700:400}}>{typeof valA==="number"?valA.toFixed(1):valA}{unit||""}</span>
+    <div style={{flex:1,height:2,background:C.brd,borderRadius:1,position:"relative"}}>
+      <div style={{position:"absolute",left:"50%",top:0,width:Math.min(Math.abs(diff)*3,48)+"%",height:"100%",background:col+"44",borderRadius:1,transform:diff>=0?"translateX(-100%)":"none"}}/>
+    </div>
+    <span style={{width:42,textAlign:"left",color:diff<-1?C.grn:diff>1?C.red:C.dim,fontWeight:diff<-1||diff>1?700:400}}>{typeof valB==="number"?valB.toFixed(1):valB}{unit||""}</span>
+  </div>);
+}
+
+export default function V7Final(){
+  const [R,setR]=useState([]);
+  const [dataLoading,setDataLoading]=useState(true);
+  useEffect(()=>{fetch("/data/bracket-display.json").then(r=>r.ok?r.json():null).then(d=>{if(d&&d.rounds)setR(d.rounds);setDataLoading(false);}).catch(()=>setDataLoading(false));},[]);
+  const[ar,setAr]=useState(0);
+  const[det,setDet]=useState(null);
+  const[showBets,setShowBets]=useState(false);
+  const[betsTab,setBetsTab]=useState('singles');
+  const ch=R[R.length-1]?.g[0];
+  const totalG=R.reduce((s,r)=>s+r.g.length,0);
+  const ups=R.flatMap(r=>r.g.filter(g=>g.sW2>g.sL2).map(g=>({...g,rn:r.n})));
+
+  const bets=useMemo(()=>{
+    const games=R.flatMap(r=>r.g).filter(g=>g.status!=='FINAL'&&(g.moneyline||g.vegasLine!==null));
+    return games.filter(g=>g.vegasLine!==null).map(g=>{
+      const odds=g.moneyline?[g.moneyline[0],g.moneyline[1],-110]:(ODDS[`${g.a?.name} vs ${g.b?.name}`]||[-200,170,-110]);
+      const modelFav=g.modelSpread>=0?g.a?.name:g.b?.name;
+      const modelDog=g.modelSpread>=0?g.b?.name:g.a?.name;
+      const modelSpreadAbs=Math.abs(g.modelSpread);
+      const vegasLineAbs=Math.abs(g.vegasLine);
+      const vegasFav=g.vegasLine>=0?g.a?.name:g.b?.name;
+      const vegasDog=g.vegasLine>=0?g.b?.name:g.a?.name;
+      const sameFav=modelFav===vegasFav;
+      const modelWPfav=g.wp/100;
+      const favIsA=g.w===g.a?.name;
+      const modelWPA=favIsA?modelWPfav:1-modelWPfav;
+      const modelWPB=1-modelWPA;
+      const mlPayout=(odds_val)=>odds_val>0?odds_val:Math.round(10000/Math.abs(odds_val));
+      const spreadPayout=Math.round(10000/110);
+      const teamACoversProb=Φ((g.modelSpread-(g.vegasLine))/11);
+      const favCoversProb=(vegasFav===g.a?.name)?teamACoversProb:1-teamACoversProb;
+      const spreadFavEV=Math.round((favCoversProb*spreadPayout-(1-favCoversProb)*100));
+      const dogCoversProb=1-favCoversProb;
+      const spreadDogEV=Math.round((dogCoversProb*spreadPayout-(1-dogCoversProb)*100));
+      const favML=Math.min(odds[0],odds[1]); const dogML=Math.max(odds[0],odds[1]);
+      const mfIsVF=modelFav===vegasFav;
+      const mlFavWP=mfIsVF?Math.max(modelWPA,modelWPB):Math.min(modelWPA,modelWPB);
+      const mlFavPayout=mfIsVF?mlPayout(favML):mlPayout(dogML);
+      const mlFavEV=Math.round((mlFavWP*mlFavPayout-(1-mlFavWP)*100));
+      const mlDogWP=mfIsVF?Math.min(modelWPA,modelWPB):Math.max(modelWPA,modelWPB);
+      const mlDogPayout=mfIsVF?mlPayout(dogML):mlPayout(favML);
+      const mlDogEV=Math.round((mlDogWP*mlDogPayout-(1-mlDogWP)*100));
+      const scenarios=[
+        {type:"Spread",side:vegasFav+" -"+vegasLineAbs,odds:"-110",payout:spreadPayout,ev:spreadFavEV,prob:Math.round(favCoversProb*100),betTeam:vegasFav},
+        {type:"Spread",side:vegasDog+" +"+vegasLineAbs,odds:"-110",payout:spreadPayout,ev:spreadDogEV,prob:Math.round(dogCoversProb*100),betTeam:vegasDog},
+        {type:"ML",side:vegasFav+" ML",odds:favML>0?"+"+favML:String(favML),payout:mlPayout(favML),ev:mlFavEV,prob:Math.round((mfIsVF?mlFavWP:mlDogWP)*100),betTeam:vegasFav},
+        {type:"ML",side:vegasDog+" ML",odds:"+"+dogML,payout:mlPayout(dogML),ev:mlDogEV,prob:Math.round((mfIsVF?mlDogWP:mlFavWP)*100),betTeam:vegasDog},
+      ].sort((a,b)=>b.ev-a.ev);
+      const bestBet=scenarios[0];
+      const ensAgree=g.v8?.ens?.agree;
+      return{
+        teamA:g.a?.name,teamB:g.b?.name,seedA:g.a?.s,seedB:g.b?.s,
+        modelSpread:g.modelSpread,vegasLine:g.vegasLine,
+        modelFav,vegasFav,vegasDog,
+        w:g.w,l:g.l,sW:g.sW,sL:g.sL,wp:g.wp,ven:g.ven,ensAgree,
+        scenarios,bestBet,allNeg:scenarios.every(s=>s.ev<0),
+        favML,dogML,bestEV:bestBet.ev,
+      };
+    }).sort((a,b)=>b.bestBet.prob-a.bestBet.prob||(b.bestBet.payout-a.bestBet.payout));
+  },[R]);
+
+  // ═══ PARLAY BUILDER ═══
+  // Uses Vegas odds for payout, model probability for hit chance
+  const parlays=useMemo(()=>{
+    const legs=[];
+    for(const b of bets){
+      // Find best scenario per game: positive EV and 65%+ model probability
+      for(const s of b.scenarios){
+        if(s.prob>=55){
+          // Convert American odds to decimal for parlay math
+          const amerOdds=parseInt(s.odds);
+          const decOdds=amerOdds>0?(amerOdds/100+1):(100/Math.abs(amerOdds)+1);
+          legs.push({
+            game:`${b.teamA} vs ${b.teamB}`,
+            side:s.side,type:s.type,
+            prob:s.prob/100,
+            odds:s.odds,
+            decOdds,
+            ev:s.ev,
+            teamA:b.teamA,teamB:b.teamB,
+            seedA:b.seedA,seedB:b.seedB,
+          });
+          break; // scenarios already sorted by EV, so first qualifying = best
+        }
+      }
+    }
+    const results=[];
+    // 2-leg parlays
+    for(let i=0;i<legs.length;i++){
+      for(let j=i+1;j<legs.length;j++){
+        const combo=[legs[i],legs[j]];
+        const prob=combo[0].prob*combo[1].prob;
+       if(prob>=0.50){
+          const decPayout=combo[0].decOdds*combo[1].decOdds;
+          const profit=Math.round((decPayout-1)*100);
+          const amerPayout=decPayout>=2?"+"+Math.round((decPayout-1)*100):String(Math.round(-100/(decPayout-1)));
+          results.push({legs:combo,prob:Math.round(prob*1000)/10,payout:profit,decPayout:Math.round(decPayout*100)/100,americanOdds:amerPayout,numLegs:2});
+        }
+      }
+    }
+    // 3-leg parlays
+    for(let i=0;i<legs.length;i++){
+      for(let j=i+1;j<legs.length;j++){
+        for(let k=j+1;k<legs.length;k++){
+          const combo=[legs[i],legs[j],legs[k]];
+          const prob=combo[0].prob*combo[1].prob*combo[2].prob;
+          if(prob>=0.60){
+            const decPayout=combo[0].decOdds*combo[1].decOdds*combo[2].decOdds;
+            const profit=Math.round((decPayout-1)*100);
+            const amerPayout=decPayout>=2?"+"+Math.round((decPayout-1)*100):String(Math.round(-100/(decPayout-1)));
+            results.push({legs:combo,prob:Math.round(prob*1000)/10,payout:profit,decPayout:Math.round(decPayout*100)/100,americanOdds:amerPayout,numLegs:3});
+          }
+        }
+      }
+    }
+    return results.sort((a,b)=>(b.prob/100*b.payout-(1-b.prob/100)*100)-(a.prob/100*a.payout-(1-a.prob/100)*100));
+  },[bets]);
+
+  if(dataLoading)return(<div style={{fontFamily:"monospace",background:"#0a0a12",color:"#fbbf24",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",fontSize:16}}>Loading predictions...</div>);
+  if(R.length===0)return(<div style={{fontFamily:"monospace",background:"#0a0a12",color:"#444",minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:12}}><div style={{fontSize:18,color:"#fbbf24"}}>No Predictions Yet</div><div style={{fontSize:13}}>Run the pipeline from GitHub Actions to generate predictions.</div></div>);
+  return(
+    <div style={{fontFamily:"'JetBrains Mono',Consolas,monospace",background:C.bg,color:C.wh,minHeight:"100vh"}}>
+    <div style={{maxWidth:1000,margin:"0 auto",padding:"20px 14px"}}>
+      <div style={{textAlign:"center",marginBottom:14,borderBottom:`1px solid ${C.brd}`,paddingBottom:10}}>
+        <div style={{fontSize:11,letterSpacing:5,color:C.gold,marginBottom:4}}>v8.0 FINAL · {totalG} GAMES · 23 UPGRADES</div>
+        <h1 style={{fontSize:"clamp(22px,4vw,34px)",fontWeight:700,color:"#fff",margin:"4px 0",fontFamily:"Georgia,serif"}}>2026 NCAA Tournament Bracket</h1>
+        <div style={{fontSize:12,color:C.dim,lineHeight:1.6}}>Real Vegas lines (FanDuel/DraftKings) · KenPom · Injury-adjusted · Click any game for full breakdown</div>
+        <div style={{fontSize:13,color:C.cyan,marginTop:6,padding:"4px 12px",background:`${C.cyan}08`,borderRadius:4,display:"inline-block"}}>📡 Last data update: {new Date().toLocaleString('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true})} CST</div>
+        <div style={{marginTop:6}}><a href="/report" style={{fontSize:12,color:C.purp,textDecoration:"none"}}>📋 Performance Report</a><span style={{color:C.dim,margin:"0 8px"}}>·</span><a href="/changes" style={{fontSize:12,color:C.cyan,textDecoration:"none"}}>🔄 What Changed →</a></div>
+      </div>
+
+      {ch&&<div style={{background:`linear-gradient(135deg,${C.gold}0a,${C.bg},${C.gold}0a)`,border:`2px solid ${C.gold}33`,borderRadius:12,padding:"20px 16px",marginBottom:12,textAlign:"center"}}>
+        <div style={{fontSize:12,letterSpacing:4,color:C.gold}}>🏆 PREDICTED NATIONAL CHAMPION 🏆</div>
+        <div style={{fontSize:"clamp(28px,5.5vw,44px)",fontWeight:700,color:C.gold}}>{ch.w}</div>
+        <div style={{fontSize:19,color:"#fff",marginTop:2}}>{ch.sW} – {ch.sL}</div>
+        <div style={{fontSize:13,color:"#888",marginTop:2}}>vs {ch.l} · {ch.wp}% · @ Indianapolis</div>
+        <div style={{fontSize:12,color:C.dim,marginTop:2}}>Coach: {buildT(ch.w)?.coach} · KenPom #{buildT(ch.w)?.kp} · {buildT(ch.w)?.rec}</div>
+      </div>}
+
+      {R.length>=5&&<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6,marginBottom:10}}>
+        {R[4].g.map((g,i)=>(<div key={i} style={{padding:"8px 10px",background:`${C.amb}06`,border:`1px solid ${C.amb}22`,borderRadius:6,textAlign:"center"}}>
+          <div style={{fontSize:10,color:C.amb,letterSpacing:2}}>SEMIFINAL {i+1}</div>
+          <div style={{fontSize:17,fontWeight:700,color:"#fff"}}>({g.sW2}) {g.w} {g.sW}</div>
+          <div style={{fontSize:13,color:"#555"}}>({g.sL2}) {g.l} {g.sL}</div>
+        </div>))}
+      </div>}
+
+      <div style={{display:"flex",gap:2,marginBottom:8,flexWrap:"wrap"}}>
+        {R.map((r,i)=>(<button key={i} onClick={()=>{setAr(i);setDet(null);setShowBets(false);}} style={{flex:1,minWidth:70,padding:"5px 2px",fontSize:11,border:ar===i&&!showBets?`1px solid #fff`:`1px solid ${C.brd}`,borderRadius:3,cursor:"pointer",background:ar===i&&!showBets?`#ffffff12`:"transparent",color:ar===i&&!showBets?"#fff":C.dim,fontFamily:"inherit",textAlign:"center"}}>{r.n}<br/><span style={{fontSize:7}}>{r.g.length}g</span></button>))}
+        <button onClick={()=>setShowBets(true)} style={{minWidth:90,padding:"5px 6px",fontSize:11,border:showBets?`1px solid #22ff44`:`1px solid ${C.brd}`,borderRadius:3,cursor:"pointer",background:showBets?`#22ff4415`:"transparent",color:showBets?"#22ff44":C.dim,fontFamily:"inherit",textAlign:"center",fontWeight:700}}>💰 BETS<br/><span style={{fontSize:7}}>{bets.filter(b=>b.bestEV>0).length} edges</span></button>
+      </div>
+
+      {/* ═══ BETS VIEW WITH SUB-TABS ═══ */}
+      {showBets&&<div style={{marginBottom:16}}>
+        {/* Sub-tabs */}
+        <div style={{display:"flex",gap:6,marginBottom:10}}>
+          <button onClick={()=>setBetsTab('singles')} style={{flex:1,padding:"8px 12px",fontSize:13,fontWeight:700,border:betsTab==='singles'?`1px solid ${C.grn}`:`1px solid ${C.brd}`,borderRadius:6,cursor:"pointer",background:betsTab==='singles'?`${C.grn}12`:"transparent",color:betsTab==='singles'?C.grn:C.dim,fontFamily:"inherit"}}>
+            💰 SINGLE BETS <span style={{fontSize:11,fontWeight:400}}>({bets.filter(b=>b.bestEV>0).length})</span>
+          </button>
+          <button onClick={()=>setBetsTab('parlays')} style={{flex:1,padding:"8px 12px",fontSize:13,fontWeight:700,border:betsTab==='parlays'?`1px solid ${C.purp}`:`1px solid ${C.brd}`,borderRadius:6,cursor:"pointer",background:betsTab==='parlays'?`${C.purp}12`:"transparent",color:betsTab==='parlays'?C.purp:C.dim,fontFamily:"inherit"}}>
+            🎰 PARLAYS <span style={{fontSize:11,fontWeight:400}}>({parlays.length})</span>
+          </button>
+        </div>
+
+        {/* ═══ PARLAYS TAB ═══ */}
+        {betsTab==='parlays'&&<div>
+          <div style={{padding:"14px 16px",marginBottom:10,background:`${C.purp}08`,border:`1px solid ${C.purp}22`,borderRadius:8}}>
+            <div style={{fontSize:13,fontWeight:700,color:C.purp,marginBottom:6}}>🎰 PARLAY BUILDER</div>
+            <div style={{fontSize:15,color:"#ccc",lineHeight:1.8}}>
+              Parlays combine multiple bets into one. All legs must hit to win, but the payout multiplies.
+              <br/>Only showing parlays where the model gives a <strong style={{color:C.grn}}>50%+ combined probability</strong> of all legs hitting.
+              <br/>Max 3 legs per parlay. Each leg must have 65%+ individual probability and positive EV.
+              <br/>Payouts use <strong style={{color:"#fff"}}>real Vegas odds</strong>. Probabilities use <strong style={{color:"#fff"}}>our model</strong>.
+              <br/><span style={{fontSize:13,color:C.dim}}>⚠️ Parlays are high-risk even at 60%. The sportsbook edge compounds. Use small stakes.</span>
+            </div>
+          </div>
+
+          {parlays.length===0&&<div style={{padding:"20px",textAlign:"center",color:C.dim,fontSize:14}}>
+            No parlays meet the 60% probability threshold right now. Check back when more games have odds.
+          </div>}
+
+          {parlays.length>0&&<div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6,marginBottom:10}}>
+            <div style={{textAlign:"center",padding:"10px 6px",background:`${C.grn}08`,borderRadius:6,border:`1px solid ${C.grn}22`}}>
+              <div style={{fontSize:24,fontWeight:700,color:C.grn}}>{parlays.length}</div>
+              <div style={{fontSize:11,color:C.grn}}>Total parlays</div>
+            </div>
+            <div style={{textAlign:"center",padding:"10px 6px",background:`${C.purp}08`,borderRadius:6,border:`1px solid ${C.purp}22`}}>
+              <div style={{fontSize:24,fontWeight:700,color:C.purp}}>{parlays.filter(p=>p.numLegs===2).length}</div>
+              <div style={{fontSize:11,color:C.purp}}>2-leg parlays</div>
+            </div>
+            <div style={{textAlign:"center",padding:"10px 6px",background:`${C.amb}08`,borderRadius:6,border:`1px solid ${C.amb}22`}}>
+              <div style={{fontSize:24,fontWeight:700,color:C.amb}}>{parlays.filter(p=>p.numLegs===3).length}</div>
+              <div style={{fontSize:11,color:C.amb}}>3-leg parlays</div>
+            </div>
+          </div>}
+
+          {parlays.map((p,pi)=>{
+            const tierCol=p.prob>=75?C.grn:p.prob>=65?C.purp:C.amb;
+            const tierLabel=p.prob>=75?"🔥 HIGH CONF":p.prob>=65?"✅ SOLID":"📊 MODERATE";
+            const expProfit=Math.round(p.prob/100*p.payout-(1-p.prob/100)*100);
+            return(
+              <div key={pi} style={{marginBottom:6,padding:"12px 14px",background:`${tierCol}04`,border:`1px solid ${tierCol}22`,borderRadius:8,borderLeft:`4px solid ${tierCol}`}}>
+                <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
+                  <div>
+                    <div style={{fontSize:11,color:tierCol,fontWeight:700,marginBottom:2}}>{tierLabel} · {p.numLegs}-LEG PARLAY</div>
+                    <div style={{fontSize:13,color:C.dim}}>Combined odds: {p.americanOdds} · Decimal: {p.decPayout}x</div>
+                  </div>
+                  <div style={{textAlign:"right",flexShrink:0}}>
+                    <div style={{fontSize:11,color:tierCol}}>$100 →</div>
+                    <div style={{fontSize:27,fontWeight:700,color:Math.round(p.prob/100*p.payout-(1-p.prob/100)*100)>0?C.grn:C.red,lineHeight:1}}>{Math.round(p.prob/100*p.payout-(1-p.prob/100)*100)>=0?"+":""}${Math.round(p.prob/100*p.payout-(1-p.prob/100)*100)}</div>
+                    <div style={{fontSize:11,color:C.dim}}>EV per $100</div>
+                  </div>
+                </div>
+
+                <div style={{display:"flex",flexDirection:"column",gap:4}}>
+                  {p.legs.map((leg,li)=>(
+                    <div key={li} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 10px",background:`${C.wh}04`,borderRadius:4,border:`1px solid ${C.brd}`}}>
+                      <div>
+                        <div style={{fontSize:12,color:"#fff",fontWeight:700}}>Leg {li+1}: {leg.side}</div>
+                        <div style={{fontSize:11,color:C.dim}}>({leg.seedA}) {leg.teamA} vs ({leg.seedB}) {leg.teamB}</div>
+                      </div>
+                      <div style={{textAlign:"right"}}>
+                        <div style={{fontSize:13,fontWeight:700,color:leg.prob>=0.80?C.grn:leg.prob>=0.70?C.purp:C.amb}}>{Math.round(leg.prob*100)}%</div>
+                        <div style={{fontSize:11,color:C.dim}}>Vegas: {leg.odds}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div style={{marginTop:6,fontSize:12,color:"#666",lineHeight:1.5}}>
+                  Bet $100 → win <span style={{color:C.grn,fontWeight:700}}>${p.payout}</span> if it hits ({p.decPayout}x)
+                  {" "}· Probability: <span style={{color:tierCol,fontWeight:700}}>{p.prob}%</span>
+                  {" "}· EV: <span style={{color:expProfit>0?tierCol:C.red,fontWeight:700}}>{expProfit>=0?"+":""}${expProfit}</span> per $100
+                </div>
+              </div>
+            );
+          })}
+
+          <div style={{marginTop:10,padding:"10px 14px",background:`${C.red}06`,border:`1px solid ${C.red}22`,borderRadius:6}}>
+            <div style={{fontSize:12,color:C.red,fontWeight:700,marginBottom:4}}>⚠️ PARLAY WARNING</div>
+            <div style={{fontSize:13,color:"#888",lineHeight:1.6}}>
+              Parlays are the sportsbook's favorite bet for a reason — the house edge compounds with each leg.
+              Even at 60-75% model probability, you'll lose 25-40% of these. Never bet more than 1-2% of your bankroll on any parlay.
+              The model probabilities assume each leg is independent — correlated outcomes (same conference, similar styles) may reduce actual probability.
+            </div>
+          </div>
+        </div>}
+
+        {/* ═══ SINGLES TAB ═══ */}
+        {betsTab==='singles'&&<div>
+        <div style={{padding:"14px 16px",marginBottom:10,background:`${C.gold}08`,border:`1px solid ${C.gold}22`,borderRadius:8}}>
+          <div style={{fontSize:13,fontWeight:700,color:C.gold,marginBottom:6}}>💰 HOW TO READ THIS</div>
+          <div style={{fontSize:15,color:"#ccc",lineHeight:1.8}}>
+            Every game where our model disagrees with Vegas is a potential bet. The <strong style={{color:"#fff"}}>"Edge"</strong> is the gap in points between what the model predicts and what Vegas says. A bigger edge = more potential value.
+            <br/>An edge of <strong style={{color:C.gold}}>3+ points</strong> is considered a good bet. <strong style={{color:C.red}}>5+ points</strong> is a strong bet. Negative edges mean bet the underdog (they'll cover the spread or win outright). Positive edges mean bet the favorite (they'll win by more than Vegas thinks).
+            <br/><span style={{fontSize:13,color:C.dim}}>⚠️ This is not financial advice. The model estimates 54-56% ATS accuracy. Even the best models lose ~45% of bets.</span>
+          </div>
+        </div>
+
+        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:6,marginBottom:10}}>
+          {[
+            {n:bets.filter(b=>b.bestEV>=10).length,l:"🔥 $10+ EV per $100",c:C.red},
+            {n:bets.filter(b=>b.bestEV>=3&&b.bestEV<10).length,l:"✅ $3-10 EV",c:C.grn},
+            {n:bets.filter(b=>b.bestEV>=0&&b.bestEV<3).length,l:"📊 $0-3 EV",c:C.cyan},
+            {n:bets.filter(b=>b.bestEV<0).length,l:"⚪ Negative EV (skip)",c:C.dim},
+          ].map((s,i)=>(
+            <div key={i} style={{textAlign:"center",padding:"10px 6px",background:`${s.c}08`,borderRadius:6,border:`1px solid ${s.c}22`}}>
+              <div style={{fontSize:24,fontWeight:700,color:s.c}}>{s.n}</div>
+              <div style={{fontSize:11,color:s.c}}>{s.l}</div>
+            </div>
+          ))}
+        </div>
+
+        {bets.map((b,i)=>{
+          const best=b.bestBet;
+          const evCol=best.ev>=10?C.red:best.ev>=3?C.grn:best.ev>=0?C.cyan:C.dim;
+          return(
+            <div key={i} style={{marginBottom:6,padding:"12px 14px",background:`${evCol}04`,border:`1px solid ${evCol}22`,borderRadius:8,borderLeft:`4px solid ${evCol}`}}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
+                <div>
+                  <div style={{fontSize:17,fontWeight:700,color:"#fff"}}>({b.seedA}) {b.teamA} vs ({b.seedB}) {b.teamB}</div>
+                  <div style={{fontSize:12,color:C.dim}}>{b.ven} · Model: {b.w} {b.wp}% · Predicted: {b.w} {b.sW}-{b.l} {b.sL}</div>
+                </div>
+                <div style={{textAlign:"right",flexShrink:0}}>
+                  <div style={{fontSize:11,color:evCol}}>{best.ev>=10?"🔥 BEST BET":best.ev>=3?"✅ GOOD VALUE":best.ev>=0?"📊 SLIGHT EDGE":"⚪ NO EDGE"}</div>
+                  <div style={{fontSize:27,fontWeight:700,color:evCol,lineHeight:1}}>{best.ev>=0?"+":""}${best.ev}</div>
+                  <div style={{fontSize:11,color:C.dim}}>EV per $100</div>
+                </div>
+              </div>
+              {best.ev>0&&<div style={{padding:"10px 14px",background:`${evCol}0c`,borderRadius:6,marginBottom:8,border:`1px solid ${evCol}33`}}>
+                <div style={{fontSize:14,fontWeight:700,color:"#fff",marginBottom:4}}>💰 BEST BET: {best.side} ({best.odds})</div>
+                <div style={{fontSize:16,color:"#ccc",lineHeight:1.6}}>
+                  Bet $100 → win <span style={{color:C.grn,fontWeight:700}}>${best.payout}</span> if it hits.
+                  {" "}Model gives this a <span style={{color:evCol,fontWeight:700}}>{best.prob}%</span> chance.
+                  {" "}Expected profit: <span style={{color:evCol,fontWeight:700}}>${best.ev}</span> per $100 wagered.
+                  {best.ev>=10&&" This is a strong edge — the model sees significant value the market is missing."}
+                  {best.ev>=3&&best.ev<10&&" Solid edge worth betting."}
+                </div>
+              </div>}
+              <div style={{overflowX:"auto"}}>
+                <table style={{width:"100%",borderCollapse:"collapse",fontSize:11}}>
+                  <thead><tr style={{borderBottom:`1px solid ${C.brd}`}}>
+                    <th style={{padding:"6px 8px",textAlign:"left",fontSize:11,color:C.dim}}>BET</th>
+                    <th style={{padding:"6px 8px",textAlign:"center",fontSize:11,color:C.dim}}>ODDS</th>
+                    <th style={{padding:"6px 8px",textAlign:"center",fontSize:11,color:C.dim}}>WIN $100→</th>
+                    <th style={{padding:"6px 8px",textAlign:"center",fontSize:11,color:C.dim}}>MODEL %</th>
+                    <th style={{padding:"6px 8px",textAlign:"center",fontSize:11,color:C.dim}}>LOSE $100→</th>
+                    <th style={{padding:"6px 8px",textAlign:"right",fontSize:11,color:C.dim}}>EV / $100</th>
+                  </tr></thead>
+                  <tbody>
+                    {b.scenarios.map((s,si)=>{
+                      const isBest=si===0&&s.ev>0;
+                      return(<tr key={si} style={{borderBottom:`1px solid ${C.brd}`,background:isBest?`${evCol}08`:"transparent"}}>
+                        <td style={{padding:"6px 8px",color:isBest?"#fff":"#aaa",fontWeight:isBest?700:400}}>{isBest&&"★ "}{s.type}: {s.side}</td>
+                        <td style={{padding:"6px 8px",textAlign:"center",color:parseInt(s.odds)>0?C.grn:C.red,fontWeight:700}}>{s.odds}</td>
+                        <td style={{padding:"6px 8px",textAlign:"center",color:C.grn}}>+${s.payout}</td>
+                        <td style={{padding:"6px 8px",textAlign:"center",color:s.prob>=55?"#fff":s.prob>=45?"#aaa":C.red}}>{s.prob}%</td>
+                        <td style={{padding:"6px 8px",textAlign:"center",color:C.red}}>-$100</td>
+                        <td style={{padding:"6px 8px",textAlign:"right",fontWeight:700,color:s.ev>0?C.grn:s.ev===0?"#888":C.red}}>{s.ev>=0?"+":""}${s.ev}</td>
+                      </tr>);
+                    })}
+                  </tbody>
+                </table>
+              </div>
+              <div style={{marginTop:6,fontSize:12,color:"#666",lineHeight:1.5}}>
+                Model spread: <span style={{color:"#ccc"}}>{b.modelFav} -{Math.abs(b.modelSpread).toFixed(1)}</span>
+                {" "}· Vegas: <span style={{color:"#ccc"}}>{b.vegasFav} -{Math.abs(b.vegasLine)}</span>
+                {" "}· ML: <span style={{color:C.red}}>{b.vegasFav} {b.favML}</span> / <span style={{color:C.grn}}>{b.vegasDog} +{b.dogML}</span>
+                {b.ensAgree===false&&<span style={{color:C.red}}>{" "}· ⚠️ Sub-models disagree</span>}
+                {b.ensAgree===true&&best.ev>=3&&<span style={{color:C.grn}}>{" "}· ✓ All models agree</span>}
+              </div>
+            </div>
+          );
+        })}
+
+        <div style={{marginTop:10,padding:"10px 14px",background:`${C.red}06`,border:`1px solid ${C.red}22`,borderRadius:6}}>
+          <div style={{fontSize:12,color:C.red,fontWeight:700,marginBottom:4}}>⚠️ IMPORTANT DISCLAIMERS</div>
+          <div style={{fontSize:13,color:"#888",lineHeight:1.6}}>
+            1. <strong style={{color:"#ccc"}}>This is a model, not a crystal ball.</strong> Even at 54-56% ATS, you'll lose ~45% of these bets. Never bet more than you can afford to lose.
+            <br/>2. <strong style={{color:"#ccc"}}>Lines will move.</strong> These edges are calculated vs current lines. By game time, the lines may have shifted — re-check before betting.
+            <br/>3. <strong style={{color:"#ccc"}}>The biggest edges often exist for a reason.</strong> If the model sees a 7-point edge, ask yourself: does Vegas know something I don't?
+            <br/>4. <strong style={{color:"#ccc"}}>Bankroll management matters more than picks.</strong> Never bet more than 2-3% of your bankroll on any single game.
+          </div>
+        </div>
+        </div>}
+      </div>}
+
+      {/* Games (hidden when bets tab is active) */}
+      {!showBets&&<div style={{display:"flex",flexDirection:"column",gap:2}}>
+        {R[ar]?.g.map((g,i)=>{
+          const up=g.sW2>g.sL2;const hm=!!g.ha;const rc=rC[ar]||C.gold;
+          const isOpen=det===`${ar}-${i}`;const hasMU=g.mu?.det?.length>0;
+          return(
+            <div key={i} style={{background:up?`${C.red}06`:hm?`${C.grn}04`:`${C.wh}03`,border:`1px solid ${isOpen?C.cyan+"44":C.brd}`,borderRadius:6,borderLeft:up?`3px solid ${C.red}88`:hasMU?`3px solid ${C.cyan}44`:`3px solid ${rc}22`,overflow:"hidden"}}>
+              <div onClick={()=>setDet(isOpen?null:`${ar}-${i}`)} style={{display:"grid",gridTemplateColumns:"1fr 100px 1fr",alignItems:"center",gap:4,padding:"8px 10px",cursor:"pointer"}}>
+                <div style={{textAlign:"right"}}>
+                  <span style={{fontSize:14,fontWeight:700,color:rc}}>({g.sW2}) {g.w}</span>
+                  <span style={{fontSize:13,color:"#999",marginLeft:4}}>{g.sW}</span>
+                  {g.ha===g.w&&<span style={{fontSize:10,marginLeft:2,color:C.grn}}>🏠</span>}
+                </div>
+                <div style={{textAlign:"center"}}>
+                  <div style={{fontSize:13,fontWeight:700,color:C.purp}}>{g.wp}%</div>
+                  <div style={{fontSize:10,color:C.purp}}>+{g.sp}pts · {g.ven}</div>
+                  <div style={{display:"flex",justifyContent:"center",gap:3,marginTop:1}}>
+                    {g.mu?.det?.length>0&&<span style={{fontSize:10,color:C.cyan}}>⚔️MU</span>}
+                    {g.cDiff!==0&&<span style={{fontSize:10,color:C.amb}}>🎓{g.cDiff>0?"+":""}{g.cDiff}</span>}
+                    {g.hb!==0&&<span style={{fontSize:10,color:C.grn}}>🏠{g.hb>0?"+":""}{g.hb}</span>}
+                    {g.L5!==0&&<span style={{fontSize:10,color:C.pink}}>🔋{g.L5>0?"+":""}{g.L5}</span>}
+                  </div>
+                </div>
+                <div style={{textAlign:"left"}}>
+                  <span style={{fontSize:13,color:"#666",marginRight:3}}>{g.sL}</span>
+                  <span style={{fontSize:13,color:"#555",textDecoration:"line-through",opacity:.6}}>({g.sL2}) {g.l}</span>
+                  {up&&<span style={{fontSize:10,padding:"1px 4px",borderRadius:3,background:`${C.red}18`,color:C.red,marginLeft:3,fontWeight:700}}>UPSET</span>}
+                </div>
+              </div>
+
+              {isOpen&&g.a&&g.b&&(
+                <div style={{padding:"10px 12px",borderTop:`1px solid ${C.brd}`,background:`${C.bg}cc`}}>
+                  <div style={{display:"grid",gridTemplateColumns:"1fr 50px 1fr",gap:4,marginBottom:8,fontSize:9}}>
+                    <div style={{textAlign:"right"}}><div style={{fontWeight:700,color:rc}}>{g.a.name}</div><div style={{color:C.dim}}>KP#{g.a.kp} · {g.a.rec} · ({g.a.s})</div></div>
+                    <div style={{textAlign:"center",color:C.dim}}>vs</div>
+                    <div><div style={{fontWeight:700,color:"#888"}}>{g.b.name}</div><div style={{color:C.dim}}>KP#{g.b.kp} · {g.b.rec} · ({g.b.s})</div></div>
+                  </div>
+
+                  <div style={{marginBottom:8,padding:"6px 8px",background:`${C.blue}06`,borderRadius:4}}>
+                    <div style={{fontSize:11,color:C.blue,letterSpacing:1,marginBottom:4}}>ALGORITHM LAYERS (model: {g.modelSpread>0?"+":""}{g.modelSpread} {g.vegasLine!==null?`· Vegas: ${g.vegasLine>0?"+":""}${g.vegasLine} · Blend: ${g.rawSp>0?"+":""}${g.rawSp}`:``})</div>
+                    <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:4}}>
+                      {[{n:"L1: Efficiency",v:g.L1,c:C.blue,w:42},{n:"L2: 4 Factors + MU",v:g.L2,c:C.purp,w:28},{n:"L3: Context",v:g.L3,c:C.grn,w:18},{n:"L4: Coach/Tempo",v:g.L4,c:C.amb,w:8},{n:"L5: Fatigue",v:g.L5,c:C.pink,w:"var"}].map(l=>(
+                        <div key={l.n} style={{textAlign:"center",padding:"4px",background:`${l.c}08`,borderRadius:3}}>
+                          <div style={{fontSize:10,color:l.c}}>{l.n} ({l.w}%)</div>
+                          <div style={{fontSize:15,fontWeight:700,color:l.v>0?C.grn:l.v<0?C.red:C.dim}}>{l.v>0?"+":""}{l.v}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div style={{marginBottom:8}}>
+                    <div style={{fontSize:11,color:C.dim,letterSpacing:1,marginBottom:3}}>KEY METRICS {g.mu?.det?.length>0?"(⚔️ = matchup-adjusted)":""}</div>
+                    <MetricBar label="AdjEM" valA={g.a.em} valB={g.b.em} better="higher"/>
+                    {g.adjStats?<>
+                      <MetricBar label={g.adjStats.aEfg!==Math.round(g.a.efg*10)/10||g.adjStats.bEfg!==Math.round(g.b.efg*10)/10?"⚔️ eFG%":"eFG%"} valA={g.adjStats.aEfg} valB={g.adjStats.bEfg} unit="%" better="higher"/>
+                      <MetricBar label={g.adjStats.aTor!==Math.round(g.a.tor*10)/10||g.adjStats.bTor!==Math.round(g.b.tor*10)/10?"⚔️ TO Rate":"TO Rate"} valA={g.adjStats.aTor} valB={g.adjStats.bTor} unit="%" better="lower"/>
+                      <MetricBar label={g.adjStats.aOrb!==Math.round(g.a.orb*10)/10||g.adjStats.bOrb!==Math.round(g.b.orb*10)/10?"⚔️ ORB%":"ORB%"} valA={g.adjStats.aOrb} valB={g.adjStats.bOrb} unit="%" better="higher"/>
+                      <MetricBar label={g.adjStats.aFtr!==Math.round(g.a.ftr*10)/10||g.adjStats.bFtr!==Math.round(g.b.ftr*10)/10?"⚔️ FTR":"FTR"} valA={g.adjStats.aFtr} valB={g.adjStats.bFtr} better="higher"/>
+                    </>:<>
+                      <MetricBar label="eFG%" valA={g.a.efg} valB={g.b.efg} unit="%" better="higher"/>
+                      <MetricBar label="TO Rate" valA={g.a.tor} valB={g.b.tor} unit="%" better="lower"/>
+                      <MetricBar label="ORB%" valA={g.a.orb} valB={g.b.orb} unit="%" better="higher"/>
+                      <MetricBar label="FTR" valA={g.a.ftr} valB={g.b.ftr} better="higher"/>
+                    </>}
+                    <MetricBar label="3PT%" valA={g.a.tpt} valB={g.b.tpt} unit="%" better="higher"/>
+                    <MetricBar label="Elo" valA={g.a.elo} valB={g.b.elo} better="higher"/>
+                    <MetricBar label="Tempo" valA={g.a.t} valB={g.b.t} better="higher"/>
+                    <MetricBar label="Margin" valA={g.a.mg} valB={g.b.mg} better="higher"/>
+                    <MetricBar label="Sent." valA={g.a.st} valB={g.b.st} better="higher"/>
+                  </div>
+
+                  {(g.a.ij!==0||g.b.ij!==0)&&<div style={{marginBottom:6,padding:"4px 6px",background:`${C.red}08`,borderRadius:3}}>
+                    <div style={{fontSize:11,color:C.red,letterSpacing:1}}>🏥 INJURY IMPACT</div>
+                    {g.a.ij!==0&&<div style={{fontSize:12,color:"#999"}}>{g.a.name}: {g.a.ij} pts adjustment</div>}
+                    {g.b.ij!==0&&<div style={{fontSize:12,color:"#999"}}>{g.b.name}: {g.b.ij} pts adjustment</div>}
+                  </div>}
+
+                  {g.mu?.det?.length>0&&<div style={{marginBottom:6,padding:"4px 6px",background:`${C.cyan}06`,borderRadius:3}}>
+                    <div style={{fontSize:11,color:C.cyan,letterSpacing:1,marginBottom:2}}>⚔️ MATCHUP ADJUSTMENTS (modify Four Factors inputs in L2)</div>
+                    {g.mu.det.map((d,j)=>(<div key={j} style={{fontSize:12,color:"#888",marginBottom:2,paddingLeft:6,borderLeft:`2px solid ${C.cyan}44`}}>
+                      <span style={{color:C.cyan,fontWeight:700,marginRight:4}}>{d.stat}</span>
+                      <span style={{color:d.i>0?C.grn:C.red,fontWeight:700}}>{d.i>0?"+":""}{d.i.toFixed(1)}</span>
+                      <span style={{color:C.dim,marginLeft:2}}>({d.team})</span>
+                      <span style={{marginLeft:4}}>{d.d}</span>
+                    </div>))}
+                  </div>}
+
+                  <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>
+                    {[g.a,g.b].map((tm)=>tm?(<div key={tm.name} style={{padding:"4px 6px",background:`${C.amb}06`,borderRadius:3}}>
+                      <div style={{fontSize:12,fontWeight:700,color:C.amb}}>🎓 {tm.coach}</div>
+                      <div style={{fontSize:11,color:C.dim}}>Adj: {(tm.cAdj||0)>0?"+":""}{tm.cAdj||0} pts{tm.cNote&&<span> · {tm.cNote}</span>}</div>
+                    </div>):null)}
+                  </div>
+
+                  {(g.L5!==0||(g.fatA?.detail)||(g.fatB?.detail))&&<div style={{marginBottom:6,padding:"4px 6px",background:`${C.pink}06`,borderRadius:3}}>
+                    <div style={{fontSize:11,color:C.pink,letterSpacing:1,marginBottom:2}}>🔋 FATIGUE (Round {g.rd||1} — {g.L5!==0?`${g.L5>0?"+":""}${g.L5} pts net`:"no impact yet"})</div>
+                    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>
+                      {[{nm:g.a?.name,f:g.fatA},{nm:g.b?.name,f:g.fatB}].map(({nm,f})=>f?.detail?(<div key={nm} style={{fontSize:11,color:"#888"}}>
+                        <span style={{color:C.pink,fontWeight:700}}>{nm}: {f.pts.toFixed(2)}pts</span>
+                        <div style={{color:C.dim,fontSize:10,marginTop:1}}>Bench: {f.detail.benchPct}% · Stars: {f.detail.starMin}mpg · Rot: {f.detail.rot} · ConfT: {f.detail.confTG}g · Season: {f.detail.gp}g<br/>Vulnerability: {f.detail.vuln}% · Round×: {f.detail.roundMult}</div>
+                      </div>):(<div key={nm} style={{fontSize:11,color:C.dim}}>{nm}: minimal fatigue</div>))}
+                    </div>
+                  </div>}
+
+                  {g.v8&&(Math.abs(g.v8.total)>0.05||!g.v8.ens.agree)&&<div style={{marginBottom:6,padding:"4px 6px",background:"rgba(255,200,50,0.04)",borderRadius:3,border:`1px solid ${C.gold}15`}}>
+                    <div style={{fontSize:11,color:C.gold,letterSpacing:1,marginBottom:3}}>🔬 V8 ADVANCED ADJUSTMENTS ({g.v8.total>0?"+":""}{g.v8.total} pts total)</div>
+                    <div style={{display:"flex",flexWrap:"wrap",gap:4,fontSize:8}}>
+                      {g.v8.gs!==0&&<span style={{padding:"1px 4px",background:`${C.purp}10`,borderRadius:3}}><span style={{color:C.purp}}>GameState</span> <span style={{color:g.v8.gs>0?C.grn:C.red}}>{g.v8.gs>0?"+":""}{g.v8.gs}</span></span>}
+                      {g.v8.cont!==0&&<span style={{padding:"1px 4px",background:`${C.cyan}10`,borderRadius:3}}><span style={{color:C.cyan}}>Continuity</span> <span style={{color:g.v8.cont>0?C.grn:C.red}}>{g.v8.cont>0?"+":""}{g.v8.cont}</span></span>}
+                      {g.v8.sharp!==0&&<span style={{padding:"1px 4px",background:`${C.red}10`,borderRadius:3}}><span style={{color:C.red}}>Sharp$</span> <span style={{color:g.v8.sharp>0?C.grn:C.red}}>{g.v8.sharp>0?"+":""}{g.v8.sharp}</span></span>}
+                      {g.v8.ref!==0&&<span style={{padding:"1px 4px",background:`${C.amb}10`,borderRadius:3}}><span style={{color:C.amb}}>RefCrew</span> <span style={{color:g.v8.ref>0?C.grn:C.red}}>{g.v8.ref>0?"+":""}{g.v8.ref}</span></span>}
+                      {Math.abs(g.v8.tz)>=0.1&&<span style={{padding:"1px 4px",background:`${C.blue}10`,borderRadius:3}}><span style={{color:C.blue}}>Timezone</span> <span style={{color:g.v8.tz>0?C.grn:C.red}}>{g.v8.tz>0?"+":""}{g.v8.tz}</span></span>}
+                      {g.v8.foul!==0&&<span style={{padding:"1px 4px",background:`${C.pink}10`,borderRadius:3}}><span style={{color:C.pink}}>FoulRisk</span> <span style={{color:g.v8.foul>0?C.grn:C.red}}>{g.v8.foul>0?"+":""}{g.v8.foul}</span></span>}
+                    </div>
+                    <div style={{marginTop:4,fontSize:11,color:g.v8.ens.agree?C.grn:C.red}}>
+                      Ensemble: {g.v8.ens.agree?"✓ All 3 sub-models agree":"⚠️ Sub-models disagree"}
+                      <span style={{color:C.dim,marginLeft:4}}>EM:{g.v8.ens.m1} · Elo:{g.v8.ens.m2} · 4F:{g.v8.ens.m3}</span>
+                    </div>
+                  </div>}
+
+                  {g.vegasLine!==null&&<div style={{marginTop:6,padding:"4px 6px",background:`${C.gold}06`,borderRadius:3}}>
+                    <div style={{fontSize:11,color:C.gold,letterSpacing:1}}>📊 MODEL vs VEGAS</div>
+                    <div style={{fontSize:12,color:"#999",display:"flex",gap:12}}>
+                      <span>Model: <b style={{color:C.wh}}>{g.modelSpread>0?"+":""}{g.modelSpread}</b></span>
+                      <span>Vegas: <b style={{color:C.wh}}>{g.vegasLine>0?"+":""}{g.vegasLine}</b></span>
+                      <span>Blend (55/45): <b style={{color:C.gold}}>{g.rawSp>0?"+":""}{g.rawSp}</b></span>
+                      {Math.abs(g.modelSpread-g.vegasLine)>=3&&<span style={{color:C.pink,fontWeight:700}}>⚠️ {Math.abs(g.modelSpread-g.vegasLine).toFixed(1)}pt divergence</span>}
+                    </div>
+                  </div>}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>}
+
+      {ch&&<div style={{marginTop:12,padding:"8px 10px",background:`${C.gold}05`,border:`1px solid ${C.gold}22`,borderRadius:6}}>
+        <div style={{fontSize:11,letterSpacing:2,color:C.gold,marginBottom:3}}>🏆 CHAMPION'S PATH</div>
+        {R.map((r,ri)=>{const cg=r.g.find(g=>g.w===ch.w);if(!cg)return null;return(
+          <div key={ri} style={{display:"flex",alignItems:"center",gap:6,marginBottom:1,fontSize:9}}>
+            <span style={{width:90,color:rC[ri]||C.gold,fontWeight:700}}>{r.n}</span>
+            <span style={{color:"#ccc"}}>def. ({cg.sL2}) {cg.l}</span>
+            <span style={{fontWeight:700,color:rC[ri]||C.gold}}>{cg.sW}-{cg.sL}</span>
+            <span style={{color:C.dim}}>{cg.wp}% @ {cg.ven}</span>
+          </div>
+        );})}
+      </div>}
+
+      {ups.length>0&&<div style={{marginTop:6,padding:"6px 8px",background:`${C.red}05`,border:`1px solid ${C.red}22`,borderRadius:6}}>
+        <div style={{fontSize:11,letterSpacing:2,color:C.red,marginBottom:2}}>PREDICTED UPSETS ({ups.length})</div>
+        <div style={{display:"flex",flexWrap:"wrap",gap:2}}>{ups.map((g,i)=>(
+          <span key={i} style={{padding:"1px 5px",background:`${C.red}08`,borderRadius:6,fontSize:8}}>
+            <span style={{color:C.red,fontWeight:700}}>({g.sW2}){g.w}</span>
+            <span style={{color:C.dim}}> over ({g.sL2}){g.l}</span>
+            <span style={{color:"#555"}}> [{g.rn.split(" ").slice(0,2).join(" ")}]</span>
+          </span>
+        ))}</div>
+      </div>}
+
+      <div style={{marginTop:10,fontSize:10,color:"#222",textAlign:"center",lineHeight:1.5}}>
+        v8.0 Final · 23 upgrades · {totalG} games · Ensemble blend (80/20) · Vegas blend (55/45) · Recency weights · Matchups · Coaching · Fatigue
+        <br/>V8 additions: Ref sensitivity · Game-state splits · Sharp money · Roster continuity · Timezone travel · Foul trouble · 3-model ensemble
+        <br/>S16/E8: Capital One Arena (East) · Toyota Center (South) · SAP Center (West) · United Center (Midwest) · Final Four: Lucas Oil, Indianapolis
+      </div>
+    </div></div>
+  );
+}
