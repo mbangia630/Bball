@@ -2210,5 +2210,179 @@
     "id": "E_S16_1",
     "region": "S16",
     "predictedAt": "2026-03-23T00:14:50.892Z"
+  },
+  {
+    "teamA": "Tennessee",
+    "teamB": "Iowa State",
+    "round": 3,
+    "venue": "Chicago",
+    "winner": "Iowa State",
+    "loser": "Tennessee",
+    "w": "Iowa State",
+    "l": "Tennessee",
+    "scoreW": 73,
+    "scoreL": 69,
+    "sW": 73,
+    "sL": 69,
+    "winProb": 68.3,
+    "wp": 68.3,
+    "sp": 4.5,
+    "modelSpread": -4,
+    "blendedSpread": -4.5,
+    "vegasLine": -4.5,
+    "edge": 0.4,
+    "moneyline": [
+      180,
+      -218
+    ],
+    "hca": 0,
+    "L1": -2.9,
+    "L2": -0.8,
+    "L3": -0.2,
+    "L4": -0.1,
+    "L5": -0.1,
+    "v8adj": -0.55,
+    "ensAvg": -1.9,
+    "ensAgree": true,
+    "injuryFlagA": null,
+    "injuryFlagB": "1 articles",
+    "status": "UPCOMING",
+    "sW2": 2,
+    "sL2": 6,
+    "ven": "Chicago",
+    "modelSp": -4,
+    "vegasSp": -4.5,
+    "rawSp": -4.5,
+    "mu": {
+      "det": [
+        {
+          "t": "Size mismatch",
+          "stat": "ORB% & FTR",
+          "team": "Tennessee",
+          "i": 0.8,
+          "d": "Tennessee has 2\" height edge"
+        },
+        {
+          "t": "Disruptive defense",
+          "stat": "TO Rate",
+          "team": "Iowa State",
+          "i": 0.5,
+          "d": "Tennessee forces 11 TOs/g → Iowa State's TO rate +0.5%"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0.8,
+        "ftr": 0.5
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0.5,
+        "orb": -0.8,
+        "ftr": -0.5
+      },
+      "tempoAdj": 0
+    },
+    "cDiff": -0.2,
+    "fatA": {
+      "pts": -0.18
+    },
+    "fatB": {
+      "pts": -0.08
+    },
+    "rd": 3,
+    "v8": {
+      "ref": -0.03,
+      "gs": -0.12,
+      "sharp": -0.05,
+      "cont": -0.2,
+      "tz": -0.15,
+      "foul": 0,
+      "ens": {
+        "avg": -1.9,
+        "agree": true
+      },
+      "total": -0.55
+    },
+    "adjStats": {
+      "aEfg": 52.5,
+      "bEfg": 55.4,
+      "aTor": 16.3,
+      "bTor": 15.3,
+      "aOrb": 36,
+      "bOrb": 33.9,
+      "aFtr": 38.9,
+      "bFtr": 35.1
+    },
+    "ha": null,
+    "hb": 0,
+    "a": {
+      "em": 22.5656,
+      "efg": 52.46716000000001,
+      "tor": 16.28736,
+      "orb": 35.194,
+      "ftr": 38.3728,
+      "tpt": 34.41312,
+      "ast": 55.967040000000004,
+      "mg": 51.428000000000004,
+      "o": 116.13759999999999,
+      "d": 93.572,
+      "t": 67.2,
+      "elo": 2007,
+      "lk": 0.005,
+      "st": 0.45,
+      "ci": 0,
+      "ij": 0,
+      "s": 6,
+      "hb": 5,
+      "kp": 14,
+      "rec": "22-11",
+      "coach": "Rick Barnes",
+      "cAdj": -0.1,
+      "sty": {
+        "p3": 0.35,
+        "d3r": 15,
+        "ht": 79,
+        "toF": 11,
+        "t": 67
+      },
+      "name": "Tennessee"
+    },
+    "b": {
+      "em": 26.4896,
+      "efg": 55.358999999999995,
+      "tor": 14.79008,
+      "orb": 34.66,
+      "ftr": 35.6486,
+      "tpt": 36.99036,
+      "ast": 55.73056,
+      "mg": 54.96704,
+      "o": 118.55199999999999,
+      "d": 92.0624,
+      "t": 67.6,
+      "elo": 2035,
+      "lk": 0.005,
+      "st": 0.48,
+      "ci": 0,
+      "ij": 0,
+      "s": 2,
+      "hb": 4.5,
+      "kp": 9,
+      "rec": "27-7",
+      "coach": "T.J. Otzelberger",
+      "cAdj": 0.2,
+      "sty": {
+        "p3": 0.38,
+        "d3r": 12,
+        "ht": 77,
+        "toF": 10.8,
+        "t": 66
+      },
+      "name": "Iowa State"
+    },
+    "id": "MW_S16_2",
+    "region": "S16",
+    "predictedAt": "2026-03-23T00:48:44.563Z"
   }
 ]
