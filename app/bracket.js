@@ -83,7 +83,7 @@ export default function Bracket() {
           <h1 style={{ margin: 0, fontSize: 18, color: C.gold }}>NCAA Tournament Predictions</h1>
           <div style={{ fontSize: 11, color: C.dim }}>{data.timestampCST || ""} · {data.engineVersion || "v9"}</div>
         </div>
-        <a href="/report" style={{ fontSize: 12, color: C.purp, textDecoration: "none" }}>Performance Report →</a>
+        <a href="/report" style={{ fontSize: 12, color: C.purp, textDecoration: "none", border: `1px solid ${C.purp}33`, borderRadius: 6, padding: "6px 12px" }}>Performance Report →</a>
       </div>
 
       {/* tabs */}
