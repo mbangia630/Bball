@@ -588,6 +588,63 @@
       "date": "2026-03-23",
       "rd": 2,
       "verdict": "❌ Missed"
+    },
+    {
+      "teamA": "Arizona",
+      "teamB": "Utah State",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelBeatVegas": false,
+      "modelError": 1.5,
+      "modelSpread": 13.5,
+      "vegasLine": 11.5,
+      "vegasError": 0.5,
+      "actualMargin": 12,
+      "actualTotal": 144,
+      "actualWinner": "Arizona",
+      "scoreA": 77,
+      "scoreB": 65,
+      "date": "2026-03-23",
+      "rd": 2,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "teamA": "UCLA",
+      "teamB": "UConn",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelBeatVegas": true,
+      "modelError": 5,
+      "modelSpread": -11,
+      "vegasLine": -4.5,
+      "vegasError": 11.5,
+      "actualMargin": -16,
+      "actualTotal": 130,
+      "actualWinner": "UConn",
+      "scoreA": 74,
+      "scoreB": 67,
+      "date": "2026-03-23",
+      "rd": 2,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "teamA": "Texas Tech",
+      "teamB": "Alabama",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelBeatVegas": true,
+      "modelError": 21.5,
+      "modelSpread": -3.5,
+      "vegasLine": 1.5,
+      "vegasError": 26.5,
+      "actualMargin": -25,
+      "actualTotal": 155,
+      "actualWinner": "Alabama",
+      "scoreA": 71,
+      "scoreB": 69,
+      "date": "2026-03-23",
+      "rd": 2,
+      "verdict": "✅ Nailed it"
     }
   ],
   "daily": [
@@ -604,9 +661,16 @@
       "suPct": 0,
       "atsPct": 0,
       "avgError": 14
+    },
+    {
+      "date": "2026-03-23",
+      "games": 3,
+      "suPct": 100,
+      "atsPct": 100,
+      "avgError": 9.3
     }
   ],
-  "totalGames": 31,
-  "correctSU": 23,
-  "correctATS": 14
+  "totalGames": 34,
+  "correctSU": 26,
+  "correctATS": 17
 }

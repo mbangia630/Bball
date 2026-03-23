@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-03-23T13:50:35.734Z",
-  "timestampCST": "Mar 23, 2026, 8:50 AM CST",
+  "timestamp": "2026-03-23T13:52:32.147Z",
+  "timestampCST": "Mar 23, 2026, 8:52 AM CST",
   "type": "DELTA",
   "baselineTime": "Mar 22, 2026, 8:39 AM CST",
-  "currentTime": "Mar 23, 2026, 8:50 AM CST",
+  "currentTime": "Mar 23, 2026, 8:52 AM CST",
   "summary": {
     "totalGamesCompared": 8,
     "gamesChanged": 8,
@@ -19,9 +19,9 @@
       "region": "S16",
       "type": "NEW",
       "winner": "Duke",
-      "winProb": 76.2,
+      "winProb": 75.9,
       "spread": 7,
-      "message": "New matchup since 7am — Duke predicted to win (76.2%)",
+      "message": "New matchup since 7am — Duke predicted to win (75.9%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -33,9 +33,9 @@
       "region": "S16",
       "type": "NEW",
       "winner": "Michigan St.",
-      "winProb": 51.6,
-      "spread": 0.5,
-      "message": "New matchup since 7am — Michigan St. predicted to win (51.6%)",
+      "winProb": 50.4,
+      "spread": 0,
+      "message": "New matchup since 7am — Michigan St. predicted to win (50.4%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -47,9 +47,9 @@
       "region": "S16",
       "type": "NEW",
       "winner": "Nebraska",
-      "winProb": 56.7,
+      "winProb": 56.4,
       "spread": -2,
-      "message": "New matchup since 7am — Nebraska predicted to win (56.7%)",
+      "message": "New matchup since 7am — Nebraska predicted to win (56.4%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -61,9 +61,9 @@
       "region": "S16",
       "type": "NEW",
       "winner": "Arizona",
-      "winProb": 76.4,
+      "winProb": 76.2,
       "spread": 7,
-      "message": "New matchup since 7am — Arizona predicted to win (76.4%)",
+      "message": "New matchup since 7am — Arizona predicted to win (76.2%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -75,9 +75,9 @@
       "region": "S16",
       "type": "NEW",
       "winner": "Purdue",
-      "winProb": 77.8,
+      "winProb": 77.4,
       "spread": -7.5,
-      "message": "New matchup since 7am — Purdue predicted to win (77.8%)",
+      "message": "New matchup since 7am — Purdue predicted to win (77.4%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -89,9 +89,9 @@
       "region": "S16",
       "type": "NEW",
       "winner": "Michigan",
-      "winProb": 82.3,
-      "spread": 9.5,
-      "message": "New matchup since 7am — Michigan predicted to win (82.3%)",
+      "winProb": 81.7,
+      "spread": 9,
+      "message": "New matchup since 7am — Michigan predicted to win (81.7%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -124,14 +124,14 @@
       "baselineScoreW": 72,
       "baselineScoreL": 69,
       "winner": "Houston",
-      "winProb": 57.4,
+      "winProb": 57.5,
       "spread": -2.5,
       "vegasLine": -2.5,
       "modelSpread": -2,
       "scoreW": 72,
       "scoreL": 69,
       "spreadChange": 1,
-      "probChange": -4.6,
+      "probChange": -4.5,
       "modelSpreadChange": 3.2,
       "vegasChange": 0,
       "factors": [
@@ -139,7 +139,7 @@
         "Injury cleared for Illinois",
         "Injury cleared for Houston"
       ],
-      "absDelta": 1.46
+      "absDelta": 1.45
     }
   ]
 }

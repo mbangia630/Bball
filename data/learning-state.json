@@ -1,46 +1,46 @@
 {
   "layerAccuracy": {
     "L1": {
-      "totalSigned": 320.49999999999994,
-      "correctDir": 25,
-      "totalAbsError": 279.0999999999999,
-      "games": 31
+      "totalSigned": 324.29999999999995,
+      "correctDir": 28,
+      "totalAbsError": 311.8999999999999,
+      "games": 34
     },
     "L2": {
-      "totalSigned": 42.3,
-      "correctDir": 24,
-      "totalAbsError": 418.10000000000014,
-      "games": 31
+      "totalSigned": 41.699999999999996,
+      "correctDir": 27,
+      "totalAbsError": 467.70000000000016,
+      "games": 34
     },
     "L3": {
-      "totalSigned": 39.300000000000004,
-      "correctDir": 24,
-      "totalAbsError": 423.29999999999995,
-      "games": 31
+      "totalSigned": 36.5,
+      "correctDir": 26,
+      "totalAbsError": 473.69999999999993,
+      "games": 34
     },
     "L4": {
-      "totalSigned": 3.3,
-      "correctDir": 20,
-      "totalAbsError": 454.09999999999997,
-      "games": 31
+      "totalSigned": 2.9,
+      "correctDir": 23,
+      "totalAbsError": 506.49999999999994,
+      "games": 34
     },
     "L5": {
-      "totalSigned": 0.1,
-      "correctDir": 31,
-      "totalAbsError": 456.9,
-      "games": 31
+      "totalSigned": 0,
+      "correctDir": 34,
+      "totalAbsError": 509.79999999999995,
+      "games": 34
     },
     "v8": {
-      "totalSigned": 5.289999999999998,
-      "correctDir": 23,
-      "totalAbsError": 449.3700000000001,
-      "games": 31
+      "totalSigned": 4.679999999999998,
+      "correctDir": 25,
+      "totalAbsError": 501.84000000000015,
+      "games": 34
     },
     "ens": {
-      "totalSigned": 198.6,
-      "correctDir": 26,
-      "totalAbsError": 312.4000000000001,
-      "games": 31
+      "totalSigned": 198,
+      "correctDir": 29,
+      "totalAbsError": 355.6000000000001,
+      "games": 34
     }
   },
   "teamK": {
@@ -167,7 +167,8 @@
     "UConn": {
       "k": 20,
       "recentErrors": [
-        9.5
+        9.5,
+        5
       ]
     },
     "Furman": {
@@ -192,7 +193,8 @@
     "Alabama": {
       "k": 20,
       "recentErrors": [
-        10.5
+        10.5,
+        21.5
       ]
     },
     "Hofstra": {
@@ -217,7 +219,8 @@
     "Texas Tech": {
       "k": 20,
       "recentErrors": [
-        16
+        16,
+        21.5
       ]
     },
     "Akron": {
@@ -254,7 +257,8 @@
     "UCLA": {
       "k": 20,
       "recentErrors": [
-        0.5
+        0.5,
+        5
       ]
     },
     "UCF": {
@@ -284,7 +288,8 @@
     "Utah State": {
       "k": 20,
       "recentErrors": [
-        11
+        11,
+        1.5
       ]
     },
     "Clemson": {
@@ -351,7 +356,8 @@
     "Arizona": {
       "k": 20,
       "recentErrors": [
-        1
+        1,
+        1.5
       ]
     },
     "LIU": {
@@ -400,10 +406,10 @@
   "situations": {
     "bySpreadBucket": {
       "7-14": {
-        "correct": 5,
-        "total": 7,
+        "correct": 6,
+        "total": 8,
         "avgError": 0,
-        "totalError": 69
+        "totalError": 70.5
       },
       "0-3": {
         "correct": 2,
@@ -418,10 +424,10 @@
         "totalError": 102.5
       },
       "3-7": {
-        "correct": 5,
-        "total": 8,
+        "correct": 7,
+        "total": 10,
         "avgError": 0,
-        "totalError": 64
+        "totalError": 90.5
       }
     },
     "bySeedMatchup": {
@@ -458,15 +464,19 @@
         "total": 4
       },
       "4v5": {
-        "correct": 1,
-        "total": 1
+        "correct": 2,
+        "total": 2
       },
       "3v6": {
         "correct": 1,
         "total": 1
       },
       "1v9": {
-        "correct": 0,
+        "correct": 1,
+        "total": 2
+      },
+      "2v7": {
+        "correct": 1,
         "total": 1
       }
     },
@@ -476,14 +486,14 @@
         "total": 28
       },
       "2": {
-        "correct": 2,
-        "total": 3
+        "correct": 5,
+        "total": 6
       }
     },
     "favVsDog": {
       "fav": {
-        "correct": 21,
-        "total": 26
+        "correct": 24,
+        "total": 29
       },
       "dog": {
         "correct": 2,
@@ -694,8 +704,8 @@
     },
     "UConn": {
       "withInjury": {
-        "games": 0,
-        "totalError": 0
+        "games": 1,
+        "totalError": 5
       },
       "without": {
         "games": 1,
@@ -738,8 +748,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 10.5
+        "games": 2,
+        "totalError": 32
       }
     },
     "Hofstra": {
@@ -778,8 +788,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 16
+        "games": 2,
+        "totalError": 37.5
       }
     },
     "Akron": {
@@ -834,8 +844,8 @@
     },
     "UCLA": {
       "withInjury": {
-        "games": 0,
-        "totalError": 0
+        "games": 1,
+        "totalError": 5
       },
       "without": {
         "games": 1,
@@ -888,8 +898,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 11
+        "games": 2,
+        "totalError": 12.5
       }
     },
     "Clemson": {
@@ -998,8 +1008,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 1
+        "games": 2,
+        "totalError": 2.5
       }
     },
     "LIU": {
@@ -1074,33 +1084,33 @@
     }
   },
   "lineMovement": {
-    "sharpCorrect": 1,
-    "sharpTotal": 2,
-    "reverseLineCorrect": 0,
-    "reverseLineTotal": 0,
+    "sharpCorrect": 3,
+    "sharpTotal": 4,
+    "reverseLineCorrect": 1,
+    "reverseLineTotal": 1,
     "edgeBuckets": {
       "0-2": {
-        "profit": 0,
-        "games": 0
+        "profit": 91,
+        "games": 1
       },
       "2-5": {
-        "profit": -200,
-        "games": 2
+        "profit": -109,
+        "games": 3
       },
       "5+": {
-        "profit": -100,
-        "games": 1
+        "profit": -9,
+        "games": 2
       }
     }
   },
   "ensembleAccuracy": {
     "main": {
-      "totalError": 275.20000000000005,
-      "games": 31
+      "totalError": 309.9000000000001,
+      "games": 34
     },
     "ens": {
-      "totalError": 312.4000000000001,
-      "games": 31
+      "totalError": 355.6000000000001,
+      "games": 34
     }
   },
   "calibration": {
@@ -1115,9 +1125,9 @@
       "games": 5
     },
     "90+": {
-      "predicted": 1073,
-      "actual": 1100,
-      "games": 11
+      "predicted": 1163.1,
+      "actual": 1200,
+      "games": 12
     },
     "60-65": {
       "predicted": 307.3,
@@ -1125,23 +1135,28 @@
       "games": 5
     },
     "50-55": {
-      "predicted": 156.3,
+      "predicted": 206.4,
+      "actual": 200,
+      "games": 4
+    },
+    "70-80": {
+      "predicted": 75.3,
       "actual": 100,
-      "games": 3
+      "games": 1
     }
   },
   "pace": {
-    "totalTempoError": -402,
-    "games": 31,
-    "overPredictions": 10,
-    "underPredictions": 21
+    "totalTempoError": -408,
+    "games": 34,
+    "overPredictions": 11,
+    "underPredictions": 23
   },
   "statRecency": {},
   "homeCourt": {
     "totalPredictedHCA": 10.4,
     "totalActualMarginBias": -15,
     "gamesWithHCA": 3,
-    "gamesNeutral": 28
+    "gamesNeutral": 31
   },
   "v8Accuracy": {
     "ref": {
@@ -1175,9 +1190,9 @@
       "games": 0
     },
     "total": {
-      "totalAbs": 14.969999999999999,
-      "correctDir": 23,
-      "games": 31
+      "totalAbs": 15.579999999999998,
+      "correctDir": 25,
+      "games": 34
     }
   },
   "matchupAccuracy": {
@@ -1191,10 +1206,11 @@
     }
   },
   "vegasMomentum": {
-    "modelStreak": 0,
-    "vegasStreak": 1,
+    "modelStreak": 1,
+    "vegasStreak": 0,
     "last10": [
-      "vegas"
+      "vegas",
+      "model"
     ]
   },
   "upsetPatterns": {
@@ -1204,22 +1220,22 @@
         "total": 28
       },
       "2": {
-        "upsets": 1,
-        "total": 3
+        "upsets": 2,
+        "total": 6
       }
     },
     "bySeedDiff": {
       "0-2": {
-        "upsets": 3,
-        "total": 5
+        "upsets": 4,
+        "total": 6
       },
       "6-8": {
         "upsets": 2,
-        "total": 5
+        "total": 6
       },
       "3-5": {
         "upsets": 3,
-        "total": 7
+        "total": 8
       },
       "9+": {
         "upsets": 0,
@@ -1228,31 +1244,31 @@
     },
     "bySpreadSize": {
       "0-5": {
-        "upsets": 6,
-        "total": 13
+        "upsets": 7,
+        "total": 14
       },
       "5-10": {
         "upsets": 2,
-        "total": 3
+        "total": 4
       },
       "10+": {
         "upsets": 0,
-        "total": 15
+        "total": 16
       }
     }
   },
   "confidenceTracking": {
     "highConf": {
-      "correct": 16,
-      "total": 18
+      "correct": 18,
+      "total": 20
     },
     "medConf": {
       "correct": 4,
       "total": 5
     },
     "lowConf": {
-      "correct": 3,
-      "total": 8
+      "correct": 4,
+      "total": 9
     }
   },
   "gradedGameIds": [
@@ -1286,6 +1302,9 @@
     "MW2",
     "E_R32_2",
     "MW_R32_3",
-    "S_R32_1"
+    "S_R32_1",
+    "W_R32_1",
+    "E_R32_4",
+    "MW_R32_2"
   ]
 }
