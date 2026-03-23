@@ -209,6 +209,8 @@ function main() {
 
   fs.mkdirSync('data/reports', { recursive: true });
   fs.writeFileSync('data/reports/latest.json', JSON.stringify(report, null, 2));
+  fs.mkdirSync('public/data', { recursive: true });
+  fs.writeFileSync('public/data/report.json', JSON.stringify(report, null, 2));
   fs.writeFileSync(`data/reports/${report.date}.json`, JSON.stringify(report, null, 2));
 
   // Save state

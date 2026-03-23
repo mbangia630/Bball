@@ -425,4 +425,7 @@ async function main() {
   console.log(`\n✅ v9 pipeline complete. Champion: ${display.rounds[display.rounds.length - 1]?.g[0]?.w || display.rounds[display.rounds.length - 1]?.g[0]?.winner || 'TBD'}\n`);
 }
 
+// Copy latest report to public for the report page
+  try { const rpt = fs.readFileSync('data/reports/latest.json','utf8'); fs.writeFileSync('public/data/report.json', rpt); } catch {}
+
 main().catch(e => { console.error('❌ Pipeline failed:', e); process.exit(1); });

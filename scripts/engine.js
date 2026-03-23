@@ -532,6 +532,7 @@ function toV8Format(result) {
     sW2: result.seedW || result.seedA, sL2: result.seedL || result.seedB,
     ven: result.venue,
     modelSp: result.modelSpread,
+    blendedSpread: result.finalSpread,
     vegasSp: result.vegasLine,
     rawSp: result.finalSpread,
     // Layer compat
@@ -551,8 +552,9 @@ function toV8Format(result) {
     fatA: { pts: result.fatigue?.a || 0 }, fatB: { pts: result.fatigue?.b || 0 },
     // Stats compat
     adjStats: result.adjStats || {},
-    // Profile compat (bracket.js reads a.name, a.em, etc.)
-    a: result.profiles?.a || null, b: result.profiles?.b || null,
+    // Profile compat (bracket.js reads a.name, a.em, a.s, a.kp, a.rec, etc.)
+    a: result.profiles?.a ? { ...result.profiles.a, o: result.profiles.a.off, d: result.profiles.a.def, s: result.profiles.a.seed, kp: result.profiles.a.kpRank, st: result.profiles.a.sentiment, lk: result.profiles.a.luck, ci: result.profiles.a.confidenceIdx, ij: result.profiles.a.injuryAdj } : null,
+    b: result.profiles?.b ? { ...result.profiles.b, o: result.profiles.b.off, d: result.profiles.b.def, s: result.profiles.b.seed, kp: result.profiles.b.kpRank, st: result.profiles.b.sentiment, lk: result.profiles.b.luck, ci: result.profiles.b.confidenceIdx, ij: result.profiles.b.injuryAdj } : null,
     // V8 details compat
     v8: result.v8 ? { ...result.v8, ens: { avg: 0, agree: true, m1: 0, m2: 0, m3: 0 } } : { ref: 0, gs: 0, sharp: 0, cont: 0, tz: 0, foul: 0, total: 0, ens: { avg: 0, agree: true, m1: 0, m2: 0, m3: 0 } },
     // NEW v9 Monte Carlo data (bracket.js can progressively use these)
