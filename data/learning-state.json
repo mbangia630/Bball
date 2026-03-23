@@ -1,62 +1,64 @@
 {
   "layerAccuracy": {
     "L1": {
-      "totalSigned": 306.6000000000001,
-      "correctDir": 41,
-      "totalAbsError": 442.1999999999999,
-      "games": 47
+      "totalSigned": 616.0000000000003,
+      "correctDir": 66,
+      "totalAbsError": 701.5999999999997,
+      "games": 76
     },
     "L2": {
-      "totalSigned": 37.7,
-      "correctDir": 37,
-      "totalAbsError": 695.3000000000002,
-      "games": 47
+      "totalSigned": 78.10000000000002,
+      "correctDir": 60,
+      "totalAbsError": 1104.3,
+      "games": 76
     },
     "L3": {
-      "totalSigned": 30.200000000000014,
-      "correctDir": 31,
-      "totalAbsError": 708.8000000000003,
-      "games": 47
+      "totalSigned": 67.30000000000001,
+      "correctDir": 54,
+      "totalAbsError": 1123.1000000000001,
+      "games": 76
     },
     "L4": {
-      "totalSigned": 3.300000000000001,
-      "correctDir": 33,
-      "totalAbsError": 742.7000000000002,
-      "games": 47
+      "totalSigned": 6.500000000000002,
+      "correctDir": 53,
+      "totalAbsError": 1188.5,
+      "games": 76
     },
     "L5": {
-      "totalSigned": 0.2,
-      "correctDir": 46,
-      "totalAbsError": 748,
-      "games": 47
+      "totalSigned": 0.30000000000000004,
+      "correctDir": 75,
+      "totalAbsError": 1196.9,
+      "games": 76
     },
     "v8": {
-      "totalSigned": 6.109999999999999,
-      "correctDir": 32,
-      "totalAbsError": 745.33,
-      "games": 47
+      "totalSigned": 11.33,
+      "correctDir": 55,
+      "totalAbsError": 1185.9100000000003,
+      "games": 76
     },
     "ens": {
-      "totalSigned": 192.39999999999998,
-      "correctDir": 41,
-      "totalAbsError": 514.8000000000001,
-      "games": 47
+      "totalSigned": 385,
+      "correctDir": 66,
+      "totalAbsError": 815.5999999999999,
+      "games": 76
     }
   },
   "teamK": {
     "N. Carolina": {
       "k": 20,
       "recentErrors": [
-        8.1
+        8.1,
+        0
       ]
     },
     "VCU": {
-      "k": 21,
+      "k": 26,
       "recentErrors": [
         8.1,
         10.1,
         10.1,
-        10.1
+        10.1,
+        0
       ]
     },
     "BYU": {
@@ -74,51 +76,59 @@
     "St. Mary's": {
       "k": 20,
       "recentErrors": [
-        11.4
+        11.4,
+        16.3
       ]
     },
     "Texas A&M": {
-      "k": 20,
+      "k": 26,
       "recentErrors": [
         11.4,
-        21.5
+        21.5,
+        16.3
       ]
     },
     "Houston": {
-      "k": 20,
+      "k": 32,
       "recentErrors": [
         1.6999999999999993,
-        21.5
+        21.5,
+        5.100000000000001
       ]
     },
     "Idaho": {
       "k": 20,
       "recentErrors": [
-        1.6999999999999993
+        1.6999999999999993,
+        5.100000000000001
       ]
     },
     "Gonzaga": {
       "k": 20,
       "recentErrors": [
-        15.600000000000001
+        15.600000000000001,
+        13.399999999999999
       ]
     },
     "Kennesaw St.": {
       "k": 20,
       "recentErrors": [
-        15.600000000000001
+        15.600000000000001,
+        13.399999999999999
       ]
     },
     "Georgia": {
       "k": 20,
       "recentErrors": [
-        17.9
+        17.9,
+        24.3
       ]
     },
     "Saint Louis": {
       "k": 20,
       "recentErrors": [
-        17.9
+        17.9,
+        24.3
       ]
     },
     "Florida": {
@@ -134,16 +144,18 @@
       ]
     },
     "Iowa State": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         8.100000000000001,
+        8.899999999999999,
         8.899999999999999
       ]
     },
     "Tennessee St.": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         8.100000000000001,
+        8.899999999999999,
         8.899999999999999
       ]
     },
@@ -151,6 +163,7 @@
       "k": 20,
       "recentErrors": [
         5.5,
+        6.100000000000001,
         6.100000000000001
       ]
     },
@@ -158,12 +171,14 @@
       "k": 20,
       "recentErrors": [
         5.5,
+        6.100000000000001,
         6.100000000000001
       ]
     },
     "UConn": {
       "k": 20,
       "recentErrors": [
+        9.600000000000001,
         9.600000000000001,
         9.600000000000001
       ]
@@ -172,20 +187,23 @@
       "k": 20,
       "recentErrors": [
         9.600000000000001,
+        9.600000000000001,
         9.600000000000001
       ]
     },
     "Virginia": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         4.800000000000001,
+        6.800000000000001,
         6.800000000000001
       ]
     },
     "Wright St.": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         4.800000000000001,
+        6.800000000000001,
         6.800000000000001
       ]
     },
@@ -193,6 +211,7 @@
       "k": 20,
       "recentErrors": [
         11.2,
+        10.5,
         10.5
       ]
     },
@@ -200,6 +219,7 @@
       "k": 20,
       "recentErrors": [
         11.2,
+        10.5,
         10.5
       ]
     },
@@ -208,6 +228,8 @@
       "recentErrors": [
         4.9,
         4.4,
+        1,
+        4.4,
         1
       ]
     },
@@ -215,6 +237,7 @@
       "k": 20,
       "recentErrors": [
         4.9,
+        4.4,
         4.4
       ]
     },
@@ -222,6 +245,7 @@
       "k": 20,
       "recentErrors": [
         16.3,
+        16.1,
         16.1
       ]
     },
@@ -229,6 +253,7 @@
       "k": 20,
       "recentErrors": [
         16.3,
+        16.1,
         16.1
       ]
     },
@@ -237,13 +262,16 @@
       "recentErrors": [
         15.7,
         14.7,
+        1,
+        14.7,
         1
       ]
     },
     "N. Iowa": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         15.7,
+        14.7,
         14.7
       ]
     },
@@ -260,16 +288,18 @@
       ]
     },
     "Kentucky": {
-      "k": 20,
+      "k": 23,
       "recentErrors": [
         4.9,
+        8.5,
         8.5
       ]
     },
     "Santa Clara": {
-      "k": 20,
+      "k": 23,
       "recentErrors": [
         4.9,
+        8.5,
         8.5
       ]
     },
@@ -277,6 +307,7 @@
       "k": 20,
       "recentErrors": [
         0.40000000000000036,
+        0.5,
         0.5
       ]
     },
@@ -284,175 +315,257 @@
       "k": 20,
       "recentErrors": [
         0.40000000000000036,
+        0.5,
         0.5
       ]
     },
     "Miami FL": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         12,
+        10.7,
         10.7
       ]
     },
     "Missouri": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         12,
+        10.7,
         10.7
       ]
     },
     "Villanova": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         9.2,
+        10.9,
         10.9
       ]
     },
     "Utah State": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         9.2,
+        10.9,
         10.9
       ]
     },
     "Clemson": {
-      "k": 20,
+      "k": 22,
       "recentErrors": [
         3.8,
+        6.5,
         6.5
       ]
     },
     "Iowa": {
-      "k": 20,
+      "k": 22,
       "recentErrors": [
         3.8,
+        6.5,
         6.5
       ]
     },
     "Arizona": {
       "k": 20,
       "recentErrors": [
-        7.5
+        7.5,
+        0.8999999999999986
       ]
     },
     "LIU": {
       "k": 20,
       "recentErrors": [
-        7.5
+        7.5,
+        0.8999999999999986
       ]
     },
     "Duke": {
       "k": 20,
       "recentErrors": [
-        10
+        10,
+        27.200000000000003
       ]
     },
     "TCU": {
       "k": 20,
       "recentErrors": [
-        10
+        10,
+        3.9
       ]
     },
     "Illinois": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         10.1,
         10.1,
-        10.1
+        10.1,
+        11.899999999999999
       ]
     },
     "Vanderbilt": {
-      "k": 20,
+      "k": 21,
       "recentErrors": [
         1.9,
         1.9,
-        1.9
+        1.9,
+        0.5999999999999996
       ]
     },
     "Nebraska": {
-      "k": 20,
+      "k": 29,
       "recentErrors": [
         1.9,
         1.9,
-        1.9
+        1.9,
+        15.7
       ]
     },
     "High Point": {
-      "k": 20,
+      "k": 22,
       "recentErrors": [
         7.199999999999999,
         7.199999999999999,
-        7.199999999999999
+        7.199999999999999,
+        10.6
       ]
     },
     "Arkansas": {
-      "k": 20,
+      "k": 23,
       "recentErrors": [
         7.199999999999999,
         7.199999999999999,
-        7.199999999999999
+        7.199999999999999,
+        2.6000000000000014
+      ]
+    },
+    "Troy": {
+      "k": 20,
+      "recentErrors": [
+        15.7
+      ]
+    },
+    "Ohio State": {
+      "k": 20,
+      "recentErrors": [
+        3.9
+      ]
+    },
+    "Siena": {
+      "k": 20,
+      "recentErrors": [
+        27.200000000000003
+      ]
+    },
+    "Wisconsin": {
+      "k": 20,
+      "recentErrors": [
+        10.6
+      ]
+    },
+    "McNeese": {
+      "k": 20,
+      "recentErrors": [
+        0.5999999999999996
+      ]
+    },
+    "S. Florida": {
+      "k": 20,
+      "recentErrors": [
+        7.4
+      ]
+    },
+    "Louisville": {
+      "k": 20,
+      "recentErrors": [
+        7.4
+      ]
+    },
+    "Hawaii": {
+      "k": 20,
+      "recentErrors": [
+        2.6000000000000014
+      ]
+    },
+    "Michigan St.": {
+      "k": 20,
+      "recentErrors": [
+        5.5
+      ]
+    },
+    "N. Dakota St.": {
+      "k": 20,
+      "recentErrors": [
+        5.5
+      ]
+    },
+    "Penn": {
+      "k": 20,
+      "recentErrors": [
+        11.899999999999999
       ]
     }
   },
   "situations": {
     "bySpreadBucket": {
       "3-7": {
-        "correct": 6,
-        "total": 8,
+        "correct": 11,
+        "total": 16,
         "avgError": 0,
-        "totalError": 61.599999999999994
+        "totalError": 122.1
       },
       "0-3": {
-        "correct": 8,
-        "total": 11,
+        "correct": 9,
+        "total": 15,
         "avgError": 0,
-        "totalError": 72.80000000000001
+        "totalError": 118.40000000000002
       },
       "14+": {
-        "correct": 11,
-        "total": 11,
+        "correct": 22,
+        "total": 22,
         "avgError": 0,
-        "totalError": 103.19999999999997
+        "totalError": 201.2
       },
       "7-14": {
-        "correct": 17,
-        "total": 17,
+        "correct": 22,
+        "total": 23,
         "avgError": 0,
-        "totalError": 179.09999999999997
+        "totalError": 235.59999999999994
       }
     },
     "bySeedMatchup": {
       "6v11": {
-        "correct": 1,
-        "total": 3
+        "correct": 2,
+        "total": 5
       },
       "7v10": {
-        "correct": 6,
-        "total": 7
+        "correct": 8,
+        "total": 11
       },
       "2v15": {
+        "correct": 11,
+        "total": 11
+      },
+      "3v14": {
         "correct": 7,
         "total": 7
       },
-      "3v14": {
-        "correct": 3,
-        "total": 3
-      },
       "8v9": {
-        "correct": 3,
-        "total": 5
+        "correct": 4,
+        "total": 9
       },
       "1v16": {
-        "correct": 2,
-        "total": 2
+        "correct": 4,
+        "total": 4
       },
       "4v13": {
-        "correct": 4,
-        "total": 4
+        "correct": 8,
+        "total": 8
       },
       "5v12": {
-        "correct": 4,
-        "total": 4
+        "correct": 7,
+        "total": 8
       },
       "1v9": {
         "correct": 1,
@@ -467,8 +580,8 @@
         "total": 3
       },
       "4v5": {
-        "correct": 4,
-        "total": 4
+        "correct": 5,
+        "total": 5
       },
       "4v12": {
         "correct": 3,
@@ -477,22 +590,22 @@
     },
     "byRound": {
       "1": {
-        "correct": 30,
-        "total": 35
+        "correct": 51,
+        "total": 63
       },
       "2": {
-        "correct": 12,
-        "total": 12
+        "correct": 13,
+        "total": 13
       }
     },
     "favVsDog": {
       "fav": {
-        "correct": 35,
-        "total": 37
+        "correct": 56,
+        "total": 62
       },
       "dog": {
-        "correct": 7,
-        "total": 10
+        "correct": 8,
+        "total": 14
       }
     }
   },
@@ -503,7 +616,7 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
+        "games": 2,
         "totalError": 8.1
       }
     },
@@ -513,7 +626,7 @@
         "totalError": 30.299999999999997
       },
       "without": {
-        "games": 1,
+        "games": 2,
         "totalError": 8.1
       }
     },
@@ -543,8 +656,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 11.4
+        "games": 2,
+        "totalError": 27.700000000000003
       }
     },
     "Texas A&M": {
@@ -553,8 +666,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 32.9
+        "games": 3,
+        "totalError": 49.2
       }
     },
     "Houston": {
@@ -563,8 +676,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 23.2
+        "games": 3,
+        "totalError": 28.3
       }
     },
     "Idaho": {
@@ -573,8 +686,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 1.6999999999999993
+        "games": 2,
+        "totalError": 6.800000000000001
       }
     },
     "Gonzaga": {
@@ -583,8 +696,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 15.600000000000001
+        "games": 2,
+        "totalError": 29
       }
     },
     "Kennesaw St.": {
@@ -593,8 +706,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 15.600000000000001
+        "games": 2,
+        "totalError": 29
       }
     },
     "Georgia": {
@@ -603,8 +716,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 17.9
+        "games": 2,
+        "totalError": 42.2
       }
     },
     "Saint Louis": {
@@ -613,8 +726,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 17.9
+        "games": 2,
+        "totalError": 42.2
       }
     },
     "Florida": {
@@ -643,8 +756,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 17
+        "games": 3,
+        "totalError": 25.9
       }
     },
     "Tennessee St.": {
@@ -653,8 +766,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 17
+        "games": 3,
+        "totalError": 25.9
       }
     },
     "Purdue": {
@@ -663,8 +776,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 11.600000000000001
+        "games": 3,
+        "totalError": 17.700000000000003
       }
     },
     "Queens": {
@@ -673,8 +786,8 @@
         "totalError": 5.5
       },
       "without": {
-        "games": 1,
-        "totalError": 6.100000000000001
+        "games": 2,
+        "totalError": 12.200000000000003
       }
     },
     "UConn": {
@@ -683,8 +796,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 19.200000000000003
+        "games": 3,
+        "totalError": 28.800000000000004
       }
     },
     "Furman": {
@@ -693,8 +806,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 19.200000000000003
+        "games": 3,
+        "totalError": 28.800000000000004
       }
     },
     "Virginia": {
@@ -703,8 +816,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 11.600000000000001
+        "games": 3,
+        "totalError": 18.400000000000002
       }
     },
     "Wright St.": {
@@ -713,8 +826,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 11.600000000000001
+        "games": 3,
+        "totalError": 18.400000000000002
       }
     },
     "Alabama": {
@@ -723,8 +836,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 21.7
+        "games": 3,
+        "totalError": 32.2
       }
     },
     "Hofstra": {
@@ -733,8 +846,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 21.7
+        "games": 3,
+        "totalError": 32.2
       }
     },
     "Kansas": {
@@ -743,8 +856,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 3,
-        "totalError": 10.3
+        "games": 5,
+        "totalError": 15.700000000000001
       }
     },
     "Cal Baptist": {
@@ -753,8 +866,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 9.3
+        "games": 3,
+        "totalError": 13.700000000000001
       }
     },
     "Texas Tech": {
@@ -763,8 +876,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 32.400000000000006
+        "games": 3,
+        "totalError": 48.50000000000001
       }
     },
     "Akron": {
@@ -773,8 +886,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 32.400000000000006
+        "games": 3,
+        "totalError": 48.50000000000001
       }
     },
     "St. John's": {
@@ -783,8 +896,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 3,
-        "totalError": 31.4
+        "games": 5,
+        "totalError": 47.099999999999994
       }
     },
     "N. Iowa": {
@@ -793,8 +906,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 30.4
+        "games": 3,
+        "totalError": 45.099999999999994
       }
     },
     "Tennessee": {
@@ -823,8 +936,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 13.4
+        "games": 3,
+        "totalError": 21.9
       }
     },
     "Santa Clara": {
@@ -833,8 +946,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 13.4
+        "games": 3,
+        "totalError": 21.9
       }
     },
     "UCLA": {
@@ -843,8 +956,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 0.9000000000000004
+        "games": 3,
+        "totalError": 1.4000000000000004
       }
     },
     "UCF": {
@@ -853,8 +966,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 0.9000000000000004
+        "games": 3,
+        "totalError": 1.4000000000000004
       }
     },
     "Miami FL": {
@@ -863,8 +976,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 22.7
+        "games": 3,
+        "totalError": 33.4
       }
     },
     "Missouri": {
@@ -873,8 +986,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 22.7
+        "games": 3,
+        "totalError": 33.4
       }
     },
     "Villanova": {
@@ -883,8 +996,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 20.1
+        "games": 3,
+        "totalError": 31
       }
     },
     "Utah State": {
@@ -893,8 +1006,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 20.1
+        "games": 3,
+        "totalError": 31
       }
     },
     "Clemson": {
@@ -903,8 +1016,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 10.3
+        "games": 3,
+        "totalError": 16.8
       }
     },
     "Iowa": {
@@ -913,8 +1026,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 10.3
+        "games": 3,
+        "totalError": 16.8
       }
     },
     "Arizona": {
@@ -923,8 +1036,8 @@
         "totalError": 7.5
       },
       "without": {
-        "games": 0,
-        "totalError": 0
+        "games": 1,
+        "totalError": 0.8999999999999986
       }
     },
     "LIU": {
@@ -933,8 +1046,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 7.5
+        "games": 2,
+        "totalError": 8.399999999999999
       }
     },
     "Duke": {
@@ -943,8 +1056,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 10
+        "games": 2,
+        "totalError": 37.2
       }
     },
     "TCU": {
@@ -953,8 +1066,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 1,
-        "totalError": 10
+        "games": 2,
+        "totalError": 13.9
       }
     },
     "Illinois": {
@@ -963,8 +1076,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 3,
-        "totalError": 30.299999999999997
+        "games": 4,
+        "totalError": 42.199999999999996
       }
     },
     "Vanderbilt": {
@@ -973,8 +1086,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 3,
-        "totalError": 5.699999999999999
+        "games": 4,
+        "totalError": 6.299999999999999
       }
     },
     "Nebraska": {
@@ -983,8 +1096,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 3,
-        "totalError": 5.699999999999999
+        "games": 4,
+        "totalError": 21.4
       }
     },
     "High Point": {
@@ -993,8 +1106,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 3,
-        "totalError": 21.599999999999998
+        "games": 4,
+        "totalError": 32.199999999999996
       }
     },
     "Arkansas": {
@@ -1003,14 +1116,124 @@
         "totalError": 0
       },
       "without": {
-        "games": 3,
-        "totalError": 21.599999999999998
+        "games": 4,
+        "totalError": 24.2
+      }
+    },
+    "Troy": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 15.7
+      }
+    },
+    "Ohio State": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 3.9
+      }
+    },
+    "Siena": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 27.200000000000003
+      }
+    },
+    "Wisconsin": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 10.6
+      }
+    },
+    "McNeese": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 0.5999999999999996
+      }
+    },
+    "S. Florida": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 7.4
+      }
+    },
+    "Louisville": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 7.4
+      }
+    },
+    "Hawaii": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 2.6000000000000014
+      }
+    },
+    "Michigan St.": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 5.5
+      }
+    },
+    "N. Dakota St.": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 5.5
+      }
+    },
+    "Penn": {
+      "withInjury": {
+        "games": 0,
+        "totalError": 0
+      },
+      "without": {
+        "games": 1,
+        "totalError": 11.899999999999999
       }
     }
   },
   "lineMovement": {
-    "sharpCorrect": 16,
-    "sharpTotal": 18,
+    "sharpCorrect": 17,
+    "sharpTotal": 19,
     "reverseLineCorrect": 7,
     "reverseLineTotal": 9,
     "edgeBuckets": {
@@ -1019,8 +1242,8 @@
         "games": 10
       },
       "2-5": {
-        "profit": 437,
-        "games": 9
+        "profit": 528,
+        "games": 10
       },
       "5+": {
         "profit": 619,
@@ -1030,29 +1253,29 @@
   },
   "ensembleAccuracy": {
     "main": {
-      "totalError": 416.69999999999993,
-      "games": 47
+      "totalError": 677.2999999999998,
+      "games": 76
     },
     "ens": {
-      "totalError": 514.8000000000001,
-      "games": 47
+      "totalError": 815.5999999999999,
+      "games": 76
     }
   },
   "calibration": {
     "60-65": {
-      "predicted": 431.80000000000007,
-      "actual": 500,
-      "games": 7
+      "predicted": 739.1,
+      "actual": 900,
+      "games": 12
     },
     "50-55": {
-      "predicted": 463.7000000000001,
-      "actual": 600,
-      "games": 9
+      "predicted": 620.0000000000001,
+      "actual": 700,
+      "games": 12
     },
     "90+": {
-      "predicted": 1354.2,
-      "actual": 1400,
-      "games": 14
+      "predicted": 2427.2,
+      "actual": 2500,
+      "games": 25
     },
     "70-80": {
       "predicted": 151.5,
@@ -1060,28 +1283,28 @@
       "games": 2
     },
     "80-90": {
-      "predicted": 1013.5999999999999,
-      "actual": 1200,
-      "games": 12
+      "predicted": 1511.7000000000003,
+      "actual": 1700,
+      "games": 18
     },
     "55-60": {
-      "predicted": 171.4,
-      "actual": 300,
-      "games": 3
+      "predicted": 405.3,
+      "actual": 400,
+      "games": 7
     }
   },
   "pace": {
-    "totalTempoError": -593,
-    "games": 47,
-    "overPredictions": 15,
-    "underPredictions": 32
+    "totalTempoError": -958,
+    "games": 76,
+    "overPredictions": 25,
+    "underPredictions": 51
   },
   "statRecency": {},
   "homeCourt": {
-    "totalPredictedHCA": 10.9,
-    "totalActualMarginBias": 39,
-    "gamesWithHCA": 3,
-    "gamesNeutral": 44
+    "totalPredictedHCA": 19.4,
+    "totalActualMarginBias": 25,
+    "gamesWithHCA": 5,
+    "gamesNeutral": 71
   },
   "v8Accuracy": {
     "ref": {
@@ -1115,9 +1338,9 @@
       "games": 0
     },
     "total": {
-      "totalAbs": 24.03,
-      "correctDir": 32,
-      "games": 47
+      "totalAbs": 38.21000000000001,
+      "correctDir": 55,
+      "games": 76
     }
   },
   "matchupAccuracy": {
@@ -1132,9 +1355,10 @@
   },
   "vegasMomentum": {
     "modelStreak": 0,
-    "vegasStreak": 5,
+    "vegasStreak": 6,
     "last10": [
       "model",
+      "vegas",
       "vegas",
       "vegas",
       "vegas",
@@ -1145,59 +1369,90 @@
   "upsetPatterns": {
     "byRound": {
       "1": {
-        "upsets": 5,
-        "total": 35
+        "upsets": 12,
+        "total": 63
       },
       "2": {
         "upsets": 0,
-        "total": 12
+        "total": 13
       }
     },
     "bySeedDiff": {
       "3-5": {
-        "upsets": 3,
-        "total": 10
+        "upsets": 6,
+        "total": 16
       },
       "9+": {
         "upsets": 0,
-        "total": 16
+        "total": 30
       },
       "0-2": {
-        "upsets": 2,
-        "total": 9
+        "upsets": 5,
+        "total": 14
       },
       "6-8": {
-        "upsets": 0,
-        "total": 12
+        "upsets": 1,
+        "total": 16
       }
     },
     "bySpreadSize": {
       "0-5": {
-        "upsets": 5,
-        "total": 19
+        "upsets": 11,
+        "total": 31
       },
       "10+": {
         "upsets": 0,
-        "total": 24
+        "total": 39
       },
       "5-10": {
-        "upsets": 0,
-        "total": 4
+        "upsets": 1,
+        "total": 6
       }
     }
   },
   "confidenceTracking": {
     "highConf": {
-      "correct": 27,
-      "total": 27
+      "correct": 43,
+      "total": 44
     },
     "medConf": {
-      "correct": 6,
-      "total": 8
+      "correct": 10,
+      "total": 13
     },
     "lowConf": {
-      "correct": 9,
-      "total": 12
+      "correct": 11,
+      "total": 19
     }
-  }
+  },
+  "gradedGameIds": [
+    "S4",
+    "E2",
+    "E1",
+    "W3",
+    "S3",
+    "E5",
+    "W4",
+    "E6",
+    "MW8",
+    "W8",
+    "E8",
+    "MW6",
+    "MW4",
+    "E4",
+    "MW3",
+    "E3",
+    "MW7",
+    "E7",
+    "W7",
+    "W2",
+    "S2",
+    "S5",
+    "S6",
+    "S7",
+    "S8",
+    "W1",
+    "W6",
+    "MW2",
+    "E_R32_2"
+  ]
 }

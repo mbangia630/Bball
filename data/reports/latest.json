@@ -1,29 +1,645 @@
 {
   "date": "2026-03-23",
-  "generatedAt": "2026-03-23T00:14:50.837Z",
-  "generatedAtCST": "2026-03-23 7:14 PM CST",
-  "modelVersion": 34,
+  "generatedAt": "2026-03-23T00:21:55.448Z",
+  "generatedAtCST": "2026-03-23 7:21 PM CST",
+  "modelVersion": 35,
   "today": {
-    "gamesGraded": 1,
+    "gamesGraded": 29,
     "straightUp": {
-      "correct": 1,
-      "total": 1,
-      "pct": 100
+      "correct": 22,
+      "total": 29,
+      "pct": 76
     },
     "ats": {
-      "correct": 1,
-      "total": 1,
-      "pct": 100
+      "correct": 16,
+      "total": 29,
+      "pct": 55
     },
     "beatVegas": {
-      "correct": 0,
-      "total": 1,
-      "pct": 0
+      "correct": 14,
+      "total": 29,
+      "pct": 48
     },
-    "avgError": 1,
-    "avgVegasError": 0.5
+    "avgError": 9,
+    "avgVegasError": 8.9
   },
   "games": [
+    {
+      "matchup": "Nebraska vs Troy",
+      "score": "Nebraska 76-62",
+      "actualMargin": 29,
+      "modelSpread": 13.3,
+      "vegasLine": 13.5,
+      "modelError": 15.7,
+      "vegasError": 15.5,
+      "layers": {
+        "L1": 11.1,
+        "L2": 1.6,
+        "L3": 1.6,
+        "L4": -0.3,
+        "L5": 0,
+        "v8": 0.72,
+        "ens": 6.5
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": false,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Ohio State vs TCU",
+      "score": "TCU 70-68",
+      "actualMargin": -2,
+      "modelSpread": 1.9,
+      "vegasLine": 2.5,
+      "modelError": 3.9,
+      "vegasError": 4.5,
+      "layers": {
+        "L1": 1,
+        "L2": 0.2,
+        "L3": -0.2,
+        "L4": -0.1,
+        "L5": 0,
+        "v8": -0.2,
+        "ens": 0.5
+      },
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": true,
+      "verdict": "❌ Missed"
+    },
+    {
+      "matchup": "Duke vs Siena",
+      "score": "Duke 85-52",
+      "actualMargin": 6,
+      "modelSpread": 33.2,
+      "vegasLine": 29.5,
+      "modelError": 27.2,
+      "vegasError": 23.5,
+      "layers": {
+        "L1": 30.2,
+        "L2": 4.1,
+        "L3": 3.5,
+        "L4": 0.2,
+        "L5": 0,
+        "v8": 0.5,
+        "ens": 18.5
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Wisconsin vs High Point",
+      "score": "High Point 73-63",
+      "actualMargin": -1,
+      "modelSpread": 9.6,
+      "vegasLine": 9.5,
+      "modelError": 10.6,
+      "vegasError": 10.5,
+      "layers": {
+        "L1": 8.5,
+        "L2": 1,
+        "L3": 0.8,
+        "L4": -0.1,
+        "L5": 0,
+        "v8": 0.1,
+        "ens": 4.5
+      },
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "❌ Missed"
+    },
+    {
+      "matchup": "Vanderbilt vs McNeese",
+      "score": "Vanderbilt 78-68",
+      "actualMargin": 10,
+      "modelSpread": 10.6,
+      "vegasLine": 12.5,
+      "modelError": 0.6,
+      "vegasError": 2.5,
+      "layers": {
+        "L1": 8.5,
+        "L2": 1.2,
+        "L3": 0.8,
+        "L4": -0.3,
+        "L5": 0,
+        "v8": 0.2,
+        "ens": 5
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": true,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "S. Florida vs Louisville",
+      "score": "Louisville 74-71",
+      "actualMargin": -4,
+      "modelSpread": 3.4,
+      "vegasLine": -6.5,
+      "modelError": 7.4,
+      "vegasError": 2.5,
+      "layers": {
+        "L1": 2.5,
+        "L2": 0.5,
+        "L3": 0.8,
+        "L4": 0.1,
+        "L5": 0,
+        "v8": 0.1,
+        "ens": 1.5
+      },
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": true,
+      "closerThanVegas": false,
+      "verdict": "🟡 Wrong winner, covered ATS"
+    },
+    {
+      "matchup": "Arkansas vs Hawaii",
+      "score": "Arkansas 80-64",
+      "actualMargin": 19,
+      "modelSpread": 16.4,
+      "vegasLine": 15.5,
+      "modelError": 2.6,
+      "vegasError": 3.5,
+      "layers": {
+        "L1": 14,
+        "L2": 2,
+        "L3": 2,
+        "L4": 0.6,
+        "L5": 0,
+        "v8": 0.3,
+        "ens": 8.5
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Michigan St. vs N. Dakota St.",
+      "score": "Michigan St. 77-58",
+      "actualMargin": 25,
+      "modelSpread": 19.5,
+      "vegasLine": 16.5,
+      "modelError": 5.5,
+      "vegasError": 8.5,
+      "layers": {
+        "L1": 17.2,
+        "L2": 2.5,
+        "L3": 1.5,
+        "L4": 0.9,
+        "L5": 0,
+        "v8": 0.4,
+        "ens": 10.2
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Iowa State vs Tennessee St.",
+      "score": "Iowa State 80-55",
+      "actualMargin": 34,
+      "modelSpread": 25.1,
+      "vegasLine": 24.5,
+      "modelError": 8.9,
+      "vegasError": 9.5,
+      "layers": {
+        "L1": 21.7,
+        "L2": 2.8,
+        "L3": 3.3,
+        "L4": 0.1,
+        "L5": 0,
+        "v8": 0.85,
+        "ens": 14.4
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Purdue vs Queens",
+      "score": "Purdue 83-56",
+      "actualMargin": 33,
+      "modelSpread": 26.9,
+      "vegasLine": 24.5,
+      "modelError": 6.1,
+      "vegasError": 8.5,
+      "layers": {
+        "L1": 24.6,
+        "L2": 4.1,
+        "L3": 3.7,
+        "L4": -0.1,
+        "L5": 0,
+        "v8": 0.67,
+        "ens": 16.5
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "UConn vs Furman",
+      "score": "UConn 79-59",
+      "actualMargin": 11,
+      "modelSpread": 20.6,
+      "vegasLine": 20.5,
+      "modelError": 9.6,
+      "vegasError": 9.5,
+      "layers": {
+        "L1": 17.8,
+        "L2": 2.9,
+        "L3": 1.6,
+        "L4": 0.6,
+        "L5": 0,
+        "v8": 0.4,
+        "ens": 10.3
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Virginia vs Wright St.",
+      "score": "Virginia 72-56",
+      "actualMargin": 9,
+      "modelSpread": 15.8,
+      "vegasLine": 17.5,
+      "modelError": 6.8,
+      "vegasError": 8.5,
+      "layers": {
+        "L1": 12.3,
+        "L2": 0.9,
+        "L3": 1.5,
+        "L4": 0.1,
+        "L5": 0,
+        "v8": 0.67,
+        "ens": 7.3
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": true,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Alabama vs Hofstra",
+      "score": "Alabama 77-68",
+      "actualMargin": 20,
+      "modelSpread": 9.5,
+      "vegasLine": 12.5,
+      "modelError": 10.5,
+      "vegasError": 7.5,
+      "layers": {
+        "L1": 6.7,
+        "L2": -0.3,
+        "L3": 0.2,
+        "L4": 0.3,
+        "L5": 0,
+        "v8": -0.49,
+        "ens": 3.6
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": false,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Kansas vs Cal Baptist",
+      "score": "Kansas 74-61",
+      "actualMargin": 8,
+      "modelSpread": 12.4,
+      "vegasLine": 13.5,
+      "modelError": 4.4,
+      "vegasError": 5.5,
+      "layers": {
+        "L1": 10.8,
+        "L2": 0.7,
+        "L3": 1.1,
+        "L4": 0.2,
+        "L5": 0,
+        "v8": -0.66,
+        "ens": 6.6
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": true,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Texas Tech vs Akron",
+      "score": "Texas Tech 70-66",
+      "actualMargin": 20,
+      "modelSpread": 3.9,
+      "vegasLine": 7.5,
+      "modelError": 16.1,
+      "vegasError": 12.5,
+      "layers": {
+        "L1": 3.2,
+        "L2": -0.7,
+        "L3": -2.4,
+        "L4": -0.1,
+        "L5": 0,
+        "v8": -1.09,
+        "ens": 2.1
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": false,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "St. John's vs N. Iowa",
+      "score": "St. John's 73-62",
+      "actualMargin": 26,
+      "modelSpread": 11.3,
+      "vegasLine": 11.5,
+      "modelError": 14.7,
+      "vegasError": 14.5,
+      "layers": {
+        "L1": 10,
+        "L2": 1.2,
+        "L3": 0.9,
+        "L4": 0.2,
+        "L5": 0,
+        "v8": 0.15,
+        "ens": 5.7
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": false,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Santa Clara vs Kentucky",
+      "score": "Kentucky 71-68",
+      "actualMargin": -5,
+      "modelSpread": 3.5,
+      "vegasLine": -3.5,
+      "modelError": 8.5,
+      "vegasError": 1.5,
+      "layers": {
+        "L1": -1.7,
+        "L2": -0.7,
+        "L3": -0.9,
+        "L4": -0.2,
+        "L5": 0,
+        "v8": -0.98,
+        "ens": -1
+      },
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "❌ Missed"
+    },
+    {
+      "matchup": "UCLA vs UCF",
+      "score": "UCLA 73-68",
+      "actualMargin": 4,
+      "modelSpread": 4.5,
+      "vegasLine": 5.5,
+      "modelError": 0.5,
+      "vegasError": 1.5,
+      "layers": {
+        "L1": 3.3,
+        "L2": 0.7,
+        "L3": -0.4,
+        "L4": 0.1,
+        "L5": 0,
+        "v8": 0.03,
+        "ens": 1.7
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": true,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Miami FL vs Missouri",
+      "score": "Miami FL 73-70",
+      "actualMargin": 14,
+      "modelSpread": 3.3,
+      "vegasLine": 4,
+      "modelError": 10.7,
+      "vegasError": 10,
+      "layers": {
+        "L1": 1.8,
+        "L2": 0.5,
+        "L3": 0.2,
+        "L4": 0.2,
+        "L5": 0,
+        "v8": 0.16,
+        "ens": 1
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": false,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Villanova vs Utah State",
+      "score": "Utah State 69-68",
+      "actualMargin": -10,
+      "modelSpread": 0.9,
+      "vegasLine": -1.5,
+      "modelError": 10.9,
+      "vegasError": 8.5,
+      "layers": {
+        "L1": -1.9,
+        "L2": -0.3,
+        "L3": 2.7,
+        "L4": -0.1,
+        "L5": 0,
+        "v8": -0.09,
+        "ens": -1
+      },
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "❌ Missed"
+    },
+    {
+      "matchup": "Clemson vs Iowa",
+      "score": "Iowa 66-65",
+      "actualMargin": -6,
+      "modelSpread": 0.5,
+      "vegasLine": -2.5,
+      "modelError": 6.5,
+      "vegasError": 3.5,
+      "layers": {
+        "L1": -0.4,
+        "L2": -0.3,
+        "L3": -1.6,
+        "L4": -0.1,
+        "L5": 0,
+        "v8": -0.02,
+        "ens": -0.1
+      },
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "❌ Missed"
+    },
+    {
+      "matchup": "VCU vs N. Carolina",
+      "score": "VCU 72-68",
+      "actualMargin": 4,
+      "modelSpread": 4,
+      "vegasLine": -2.5,
+      "modelError": 0,
+      "vegasError": 6.5,
+      "layers": {
+        "L1": 3.3,
+        "L2": 0.5,
+        "L3": 2.6,
+        "L4": 0,
+        "L5": 0,
+        "v8": 0.83,
+        "ens": 1.3
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Illinois vs Penn",
+      "score": "Illinois 82-59",
+      "actualMargin": 35,
+      "modelSpread": 23.1,
+      "vegasLine": 23.5,
+      "modelError": 11.9,
+      "vegasError": 11.5,
+      "layers": {
+        "L1": 19.9,
+        "L2": 2.9,
+        "L3": 3,
+        "L4": -0.3,
+        "L5": 0,
+        "v8": -0.44,
+        "ens": 13.5
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": false,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "St. Mary's vs Texas A&M",
+      "score": "Texas A&M 68-65",
+      "actualMargin": -13,
+      "modelSpread": 3.3,
+      "vegasLine": 3.5,
+      "modelError": 16.3,
+      "vegasError": 16.5,
+      "layers": {
+        "L1": 2.2,
+        "L2": 0.8,
+        "L3": 0.3,
+        "L4": 0.4,
+        "L5": 0,
+        "v8": -0.02,
+        "ens": 1.3
+      },
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": true,
+      "verdict": "❌ Missed"
+    },
+    {
+      "matchup": "Houston vs Idaho",
+      "score": "Houston 79-53",
+      "actualMargin": 31,
+      "modelSpread": 25.9,
+      "vegasLine": 22.5,
+      "modelError": 5.1,
+      "vegasError": 8.5,
+      "layers": {
+        "L1": 25.2,
+        "L2": 3.4,
+        "L3": 3.8,
+        "L4": 0.3,
+        "L5": 0,
+        "v8": 0.63,
+        "ens": 17
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Arizona vs LIU",
+      "score": "Arizona 87-52",
+      "actualMargin": 34,
+      "modelSpread": 34.9,
+      "vegasLine": 29.5,
+      "modelError": 0.9,
+      "vegasError": 4.5,
+      "layers": {
+        "L1": 36.3,
+        "L2": 5.1,
+        "L3": 4.6,
+        "L4": -0.1,
+        "L5": 0,
+        "v8": 0.57,
+        "ens": 22.2
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Gonzaga vs Kennesaw St.",
+      "score": "Gonzaga 81-59",
+      "actualMargin": 9,
+      "modelSpread": 22.4,
+      "vegasLine": 20.5,
+      "modelError": 13.4,
+      "vegasError": 11.5,
+      "layers": {
+        "L1": 20.7,
+        "L2": 3.2,
+        "L3": 2,
+        "L4": 0.3,
+        "L5": 0,
+        "v8": 0.97,
+        "ens": 14.3
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Georgia vs Saint Louis",
+      "score": "Saint Louis 70-69",
+      "actualMargin": -25,
+      "modelSpread": -0.7,
+      "vegasLine": 2.5,
+      "modelError": 24.3,
+      "vegasError": 27.5,
+      "layers": {
+        "L1": -3.1,
+        "L2": -1,
+        "L3": -0.7,
+        "L4": 0.1,
+        "L5": 0,
+        "v8": -0.49,
+        "ens": -1.8
+      },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
     {
       "matchup": "St. John's vs Kansas",
       "score": "St. John's 71-68",
@@ -48,17 +664,10 @@
     }
   ],
   "cumulative": {
-    "totalGames": 47,
-    "straightUpPct": 89.4,
-    "atsPct": 68.1,
+    "totalGames": 76,
+    "straightUpPct": 84.2,
+    "atsPct": 63.2,
     "trend": [
-      {
-        "date": "2026-03-21",
-        "games": 13,
-        "suPct": 77,
-        "atsPct": 46,
-        "avgError": 8.8
-      },
       {
         "date": "2026-03-21",
         "games": 1,
@@ -100,40 +709,33 @@
         "suPct": 100,
         "atsPct": 100,
         "avgError": 1
+      },
+      {
+        "date": "2026-03-23",
+        "games": 29,
+        "suPct": 76,
+        "atsPct": 55,
+        "avgError": 9
       }
     ]
   },
   "adjustments": {
     "changes": [
-      "#1 Layer weights tuned by directional accuracy: L1=0.376(87%dir) L2=0.262(79%dir) L3=0.18(66%dir) L4=0.099(70%dir) L5=0.084(98%dir)",
-      "#6 Ensemble: main model better (8.9 vs 11.0) — main 90% → 90%",
-      "#7 Calibration: underconfident in 4 buckets — sigma 8.9 → 8.7",
-      "#5 Sharp plays: 89% on 18 games",
+      "#1 Layer weights tuned by directional accuracy: L1=0.374(87%dir) L2=0.261(79%dir) L3=0.18(71%dir) L4=0.1(70%dir) L5=0.086(99%dir)",
+      "#6 Ensemble: main model better (8.9 vs 10.7) — main 90% → 90%",
+      "#7 Calibration: underconfident in 3 buckets — sigma 8.7 → 8.6",
+      "#13 Vegas blend: 69.5% → 73.5% (Vegas was 0.1pts better, streak: 6)",
+      "#5 Sharp plays: 89% on 19 games",
       "#5 Edge 0-2pt bets: +$146 on 10 games (profitable)",
-      "#5 Edge 2-5pt bets: +$437 on 9 games (profitable)",
+      "#5 Edge 2-5pt bets: +$528 on 10 games (profitable)",
       "#5 Edge 5+pt bets: +$619 on 11 games (profitable)",
-      "#8 Pace: under-predicting totals by 12.6pts (47 games)",
-      "#15 High-conf picks (75%+): 100% actual (27/27)",
-      "#15 Low-conf picks (<60%): 75% actual (9/12)",
-      "#11 V8 adjustments: 68% directionally correct over 47 games",
-      "#10 HCA: predicted avg 3.6pts, actual margin avg 13.0pts (3 games)"
+      "#8 Pace: under-predicting totals by 12.6pts (76 games)",
+      "#15 High-conf picks (75%+): 98% actual (43/44)",
+      "#15 Low-conf picks (<60%): 58% actual (11/19)",
+      "#11 V8 adjustments: 72% directionally correct over 76 games",
+      "#10 HCA: predicted avg 3.9pts, actual margin avg 5.0pts (5 games)"
     ],
     "before": {
-      "vegasBlend": 0.6950000000000002,
-      "sigma": 8.899999999999995,
-      "layers": {
-        "L1": 0.378,
-        "L2": 0.263,
-        "L3": 0.18,
-        "L4": 0.098,
-        "L5": 0.082
-      },
-      "ensemble": {
-        "main": 0.9,
-        "subs": 0.09999999999999998
-      }
-    },
-    "after": {
       "vegasBlend": 0.6950000000000002,
       "sigma": 8.749999999999995,
       "layers": {
@@ -147,98 +749,113 @@
         "main": 0.9,
         "subs": 0.09999999999999998
       }
+    },
+    "after": {
+      "vegasBlend": 0.7350000000000002,
+      "sigma": 8.599999999999994,
+      "layers": {
+        "L1": 0.374,
+        "L2": 0.261,
+        "L3": 0.18,
+        "L4": 0.1,
+        "L5": 0.086
+      },
+      "ensemble": {
+        "main": 0.9,
+        "subs": 0.09999999999999998
+      }
     }
   },
   "insights": {
     "layerDirectionalAccuracy": {
       "L1": {
         "pct": 87,
-        "games": 47
+        "games": 76
       },
       "L2": {
         "pct": 79,
-        "games": 47
+        "games": 76
       },
       "L3": {
-        "pct": 66,
-        "games": 47
+        "pct": 71,
+        "games": 76
       },
       "L4": {
         "pct": 70,
-        "games": 47
+        "games": 76
       },
       "L5": {
-        "pct": 98,
-        "games": 47
+        "pct": 99,
+        "games": 76
       },
       "v8": {
-        "pct": 68,
-        "games": 47
+        "pct": 72,
+        "games": 76
       },
       "ens": {
         "pct": 87,
-        "games": 47
+        "games": 76
       }
     },
     "situational": {
       "bySpreadBucket": {
         "3-7": {
-          "correct": 6,
-          "total": 8,
+          "correct": 11,
+          "total": 16,
           "avgError": 0,
-          "totalError": 61.599999999999994
+          "totalError": 122.1
         },
         "0-3": {
-          "correct": 8,
-          "total": 11,
+          "correct": 9,
+          "total": 15,
           "avgError": 0,
-          "totalError": 72.80000000000001
+          "totalError": 118.40000000000002
         },
         "14+": {
-          "correct": 11,
-          "total": 11,
+          "correct": 22,
+          "total": 22,
           "avgError": 0,
-          "totalError": 103.19999999999997
+          "totalError": 201.2
         },
         "7-14": {
-          "correct": 17,
-          "total": 17,
+          "correct": 22,
+          "total": 23,
           "avgError": 0,
-          "totalError": 179.09999999999997
+          "totalError": 235.59999999999994
         }
       },
       "bySeedMatchup": {
         "6v11": {
-          "correct": 1,
-          "total": 3
+          "correct": 2,
+          "total": 5
         },
         "7v10": {
-          "correct": 6,
-          "total": 7
+          "correct": 8,
+          "total": 11
         },
         "2v15": {
+          "correct": 11,
+          "total": 11
+        },
+        "3v14": {
           "correct": 7,
           "total": 7
         },
-        "3v14": {
-          "correct": 3,
-          "total": 3
-        },
         "8v9": {
-          "correct": 3,
-          "total": 5
+          "correct": 4,
+          "total": 9
         },
         "1v16": {
-          "correct": 2,
-          "total": 2
+          "correct": 4,
+          "total": 4
         },
         "4v13": {
-          "correct": 4,
-          "total": 4
+          "correct": 8,
+          "total": 8
         },
         "5v12": {
-          "correct": 4,
-          "total": 4
+          "correct": 7,
+          "total": 8
         },
         "1v9": {
           "correct": 1,
@@ -253,8 +870,8 @@
           "total": 3
         },
         "4v5": {
-          "correct": 4,
-          "total": 4
+          "correct": 5,
+          "total": 5
         },
         "4v12": {
           "correct": 3,
@@ -263,40 +880,40 @@
       },
       "byRound": {
         "1": {
-          "correct": 30,
-          "total": 35
+          "correct": 51,
+          "total": 63
         },
         "2": {
-          "correct": 12,
-          "total": 12
+          "correct": 13,
+          "total": 13
         }
       },
       "favVsDog": {
         "fav": {
-          "correct": 35,
-          "total": 37
+          "correct": 56,
+          "total": 62
         },
         "dog": {
-          "correct": 7,
-          "total": 10
+          "correct": 8,
+          "total": 14
         }
       }
     },
     "calibration": {
       "60-65": {
-        "predicted": 431.80000000000007,
-        "actual": 500,
-        "games": 7
+        "predicted": 739.1,
+        "actual": 900,
+        "games": 12
       },
       "50-55": {
-        "predicted": 463.7000000000001,
-        "actual": 600,
-        "games": 9
+        "predicted": 620.0000000000001,
+        "actual": 700,
+        "games": 12
       },
       "90+": {
-        "predicted": 1354.2,
-        "actual": 1400,
-        "games": 14
+        "predicted": 2427.2,
+        "actual": 2500,
+        "games": 25
       },
       "70-80": {
         "predicted": 151.5,
@@ -304,14 +921,14 @@
         "games": 2
       },
       "80-90": {
-        "predicted": 1013.5999999999999,
-        "actual": 1200,
-        "games": 12
+        "predicted": 1511.7000000000003,
+        "actual": 1700,
+        "games": 18
       },
       "55-60": {
-        "predicted": 171.4,
-        "actual": 300,
-        "games": 3
+        "predicted": 405.3,
+        "actual": 400,
+        "games": 7
       }
     },
     "edgeProfitability": {
@@ -320,8 +937,8 @@
         "games": 10
       },
       "2-5": {
-        "profit": 437,
-        "games": 9
+        "profit": 528,
+        "games": 10
       },
       "5+": {
         "profit": 619,
@@ -329,72 +946,89 @@
       }
     },
     "pace": {
-      "totalTempoError": -593,
-      "games": 47,
-      "overPredictions": 15,
-      "underPredictions": 32
+      "totalTempoError": -958,
+      "games": 76,
+      "overPredictions": 25,
+      "underPredictions": 51
     },
     "upsetPatterns": {
       "byRound": {
         "1": {
-          "upsets": 5,
-          "total": 35
+          "upsets": 12,
+          "total": 63
         },
         "2": {
           "upsets": 0,
-          "total": 12
+          "total": 13
         }
       },
       "bySeedDiff": {
         "3-5": {
-          "upsets": 3,
-          "total": 10
+          "upsets": 6,
+          "total": 16
         },
         "9+": {
           "upsets": 0,
-          "total": 16
+          "total": 30
         },
         "0-2": {
-          "upsets": 2,
-          "total": 9
+          "upsets": 5,
+          "total": 14
         },
         "6-8": {
-          "upsets": 0,
-          "total": 12
+          "upsets": 1,
+          "total": 16
         }
       },
       "bySpreadSize": {
         "0-5": {
-          "upsets": 5,
-          "total": 19
+          "upsets": 11,
+          "total": 31
         },
         "10+": {
           "upsets": 0,
-          "total": 24
+          "total": 39
         },
         "5-10": {
-          "upsets": 0,
-          "total": 4
+          "upsets": 1,
+          "total": 6
         }
       }
     },
     "confidenceAccuracy": {
-      "highConf": "100%",
-      "medConf": "75%",
-      "lowConf": "75%"
+      "highConf": "98%",
+      "medConf": "77%",
+      "lowConf": "58%"
     },
     "volatileTeams": [
       {
+        "team": "Houston",
+        "k": 32
+      },
+      {
         "team": "St. John's",
         "k": 30
+      },
+      {
+        "team": "Nebraska",
+        "k": 29
+      },
+      {
+        "team": "VCU",
+        "k": 26
+      },
+      {
+        "team": "Texas A&M",
+        "k": 26
       }
     ],
     "stableTeams": [],
     "vegasMomentum": {
       "modelStreak": 0,
-      "vegasStreak": 5,
+      "vegasStreak": 6,
       "last10": [
         "model",
+        "vegas",
         "vegas",
         "vegas",
         "vegas",
@@ -403,11 +1037,11 @@
       ]
     },
     "hca": {
-      "totalPredictedHCA": 10.9,
-      "totalActualMarginBias": 39,
-      "gamesWithHCA": 3,
-      "gamesNeutral": 44
+      "totalPredictedHCA": 19.4,
+      "totalActualMarginBias": 25,
+      "gamesWithHCA": 5,
+      "gamesNeutral": 71
     }
   },
-  "eloUpdates": 3
+  "eloUpdates": 47
 }
