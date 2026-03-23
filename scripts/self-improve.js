@@ -645,7 +645,7 @@ function main() {
     history.totalGames += graded.length;
     history.correctSU += su;
     history.correctATS += ats;
-    history.games.push(...graded.map(g => ({ teamA: g.teamA, teamB: g.teamB, modelCorrectSU: g.modelCorrectSU, modelCorrectATS: g.modelCorrectATS, modelError: g.modelError, date: g.date })));
+    history.games.push(...graded.map(g => ({ teamA: g.teamA, teamB: g.teamB, modelCorrectSU: g.modelCorrectSU, modelCorrectATS: g.modelCorrectATS, modelBeatVegas: g.modelBeatVegas, modelError: g.modelError, modelSpread: g.modelSpread || g.blendedSpread || 0, vegasLine: g.vegasLine, actualMargin: g.actualMargin, actualTotal: g.actualTotal, actualWinner: g.actualWinner, scoreA: g.scoreW, scoreB: g.scoreL, date: g.date, verdict: g.modelCorrectSU && g.modelCorrectATS ? '✅ Nailed it' : g.modelCorrectSU ? '🟡 Right winner, wrong spread' : g.modelCorrectATS ? '🟡 Wrong winner, covered ATS' : '❌ Missed' })));
     history.daily.push({ date: new Date().toISOString().slice(0, 10), games: graded.length, suPct: Math.round(su / graded.length * 100), atsPct: Math.round(ats / graded.length * 100), avgError: Math.round(graded.reduce((s, g) => s + g.modelError, 0) / graded.length * 10) / 10 });
     console.log(`📈 Cumulative: ${history.correctSU}/${history.totalGames} SU (${Math.round(history.correctSU / history.totalGames * 100)}%), ${history.correctATS}/${history.totalGames} ATS (${Math.round(history.correctATS / history.totalGames * 100)}%)\n`);
   }
