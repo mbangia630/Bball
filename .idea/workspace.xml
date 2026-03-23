@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9205b883-5d7d-4cfa-864c-a7c73e9879ec" name="Changes" comment="fix: profile field mapping + FINAL game profiles + report path">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9205b883-5d7d-4cfa-864c-a7c73e9879ec" name="Changes" comment="updated bracket and bets page">
       <change beforePath="$PROJECT_DIR$/app/bracket.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/bracket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,14 +97,6 @@
       <option name="presentableId" value="Default" />
       <updated>1773770715585</updated>
       <workItem from="1773770717312" duration="3000" />
-    </task>
-    <task id="LOCAL-00027" summary="new report">
-      <option name="closed" value="true" />
-      <created>1773871761982</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1773871761982</updated>
     </task>
     <task id="LOCAL-00028" summary="new report">
       <option name="closed" value="true" />
@@ -492,7 +482,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774286624849</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="updated bracket and bets page">
+      <option name="closed" value="true" />
+      <created>1774291040046</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1774291040046</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -507,7 +505,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="y" />
     <MESSAGE value="fix email" />
     <MESSAGE value="web app" />
     <MESSAGE value="self improve" />
@@ -532,7 +529,8 @@
     <MESSAGE value="fix performance report - v4" />
     <MESSAGE value="v9 - vercel not showing details fix" />
     <MESSAGE value="fix: profile field mapping + FINAL game profiles + report path" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: profile field mapping + FINAL game profiles + report path" />
+    <MESSAGE value="updated bracket and bets page" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated bracket and bets page" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

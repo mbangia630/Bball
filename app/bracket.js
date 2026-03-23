@@ -31,10 +31,43 @@ export default function Bracket() {
   const [expanded, setExpanded] = useState(null);
 
   useEffect(() => {
-    fetch("/data/bracket-display.json")
-      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(setData)
-      .catch(e => setErr(e.message));
+    Promise.all([
+      fetch("/data/bracket-display.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch("/data/predictions-snapshot.json").then(r => r.ok ? r.json() : []).catch(() => []),
+    ]).then(([bracket, snapshot]) => {
+      // Merge v8 snapshot predictions into FINAL games missing sim data
+      if (Array.isArray(snapshot) && snapshot.length > 0) {
+        for (const round of (bracket.rounds || [])) {
+          for (const g of round.g) {
+            if (g.status !== "FINAL") continue;
+            if (g.sim || (g.modelSpread && g.modelSpread !== 0)) continue;
+            // Match by teamA/teamB names (check both orderings)
+            const snap = snapshot.find(s =>
+              (s.teamA === g.teamA && s.teamB === g.teamB) ||
+              (s.teamA === g.teamB && s.teamB === g.teamA)
+            );
+            if (snap) {
+              g._v8snap = snap;
+              g._v8 = true;
+              g.modelSpread = snap.modelSpread ?? snap.blendedSpread ?? 0;
+              g.modelSp = g.modelSpread;
+              g.blendedSpread = snap.blendedSpread ?? snap.modelSpread ?? 0;
+              g.rawSp = g.blendedSpread;
+              if (snap.vegasLine != null) { g.vegasLine = snap.vegasLine; g.vegasSp = snap.vegasLine; }
+              if (snap.winProb != null) g.wp = snap.winProb;
+              g._v8winner = snap.winner;
+              // Spread is always positive (margin of victory for predicted winner)
+              g.sp = Math.abs(g.blendedSpread);
+              // Copy layer data if present
+              if (snap.L1 != null) { g.L1 = snap.L1; g.L2 = snap.L2; g.L3 = snap.L3; g.L4 = snap.L4; g.L5 = snap.L5; }
+            } else {
+              g._v8 = false;
+            }
+          }
+        }
+      }
+      setData(bracket);
+    }).catch(e => setErr(e.message));
   }, []);
 
   if (err) return <Shell><p style={{ color: C.red }}>Failed to load: {err}</p></Shell>;
@@ -88,15 +121,7 @@ function TabBtn({ active, onClick, children }) {
    BRACKET TAB
    ══════════════════════════════════════════ */
 function BracketTab({ rounds, expanded, setExpanded }) {
-  const ordered = useMemo(() => {
-    const copy = [...rounds];
-    const currentIdx = copy.findIndex(r => r.g.some(g => g.status !== "FINAL"));
-    if (currentIdx > 0) {
-      const [cur] = copy.splice(currentIdx, 1);
-      copy.unshift(cur);
-    }
-    return copy;
-  }, [rounds]);
+  const ordered = useMemo(() => [...rounds].reverse(), [rounds]);
 
   return ordered.map(round => (
     <div key={round.n} style={{ marginBottom: 20 }}>
@@ -202,14 +227,30 @@ function FinalCardBody({ g, wSeed, lSeed, isUpset }) {
 function FinalBottomRow({ g, mSp, vSp }) {
   const actualMargin = (g.sW ?? g.scoreW ?? 0) - (g.sL ?? g.scoreL ?? 0);
   const predictedSpread = g.sp ?? Math.abs(mSp);
+  const hasPredict = g._v8 !== false && (predictedSpread > 0 || mSp !== 0);
+
+  if (!hasPredict && !g._v8) {
+    return (
+      <>
+        <span style={{ color: C.dim }}>FINAL {g.sW ?? g.scoreW}—{g.sL ?? g.scoreL}</span>
+        <span style={{ color: C.dim }}>No prediction data</span>
+      </>
+    );
+  }
+
+  const v8Winner = g._v8winner ?? g.w;
+  const actualWinner = g.w;
+  const modelCorrect = v8Winner === actualWinner;
   const error = Math.abs(actualMargin - predictedSpread);
 
   return (
     <>
-      <span style={{ color: C.grn }}>✅ FINAL</span>
-      <span style={{ color: C.dim }}>Spread: {predictedSpread.toFixed(1)}</span>
+      <span style={{ color: modelCorrect ? C.grn : C.red }}>{modelCorrect ? "✅" : "❌"} FINAL</span>
+      <span style={{ color: C.dim }}>Pred: {predictedSpread.toFixed(1)}</span>
       <span style={{ color: C.dim }}>Actual: {actualMargin}</span>
-      <span style={{ color: error <= 3 ? C.grn : error <= 7 ? C.gold : C.red }}>Error: {error.toFixed(1)}</span>
+      <span style={{ color: error <= 3 ? C.grn : error <= 7 ? C.gold : C.red }}>Err: {error.toFixed(1)}</span>
+      {!modelCorrect && <span style={{ color: C.red, fontSize: 9 }}>Picked {v8Winner}</span>}
+      {g._v8 && <span style={{ color: C.dim, fontSize: 9 }}>(v8 prediction)</span>}
     </>
   );
 }
@@ -305,22 +346,28 @@ function SectionB({ g, sim }) {
   const favName = g.w ?? g.winner;
   const udName = g.l ?? g.loser;
 
-  const bins = buildHistogramBins(sim);
+  const { bins, labels } = buildHistogramBins(sim);
 
   return (
     <div style={{ marginBottom: 12 }}>
       <SectionLabel color={C.cyan}>Monte Carlo distribution · {g.simCount?.toLocaleString() ?? "10,000"} sims</SectionLabel>
 
       {/* Histogram */}
-      <div style={{ display: "flex", alignItems: "flex-end", gap: 2, height: 80, margin: "8px 0" }}>
+      <div style={{ display: "flex", alignItems: "flex-end", gap: 2, height: 60, margin: "8px 0" }}>
         {bins.map((b, i) => (
-          <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <div style={{
-              width: "100%", height: `${b.h}%`, minHeight: b.h > 0 ? 2 : 0,
-              background: b.side === "fav" ? C.grn + "88" : C.red + "88",
-              borderRadius: "2px 2px 0 0",
-            }} />
-          </div>
+          <div key={i} style={{
+            flex: 1, height: Math.max(b.px, 2),
+            background: b.side === "fav" ? C.grn + "88" : C.red + "88",
+            borderRadius: "2px 2px 0 0",
+          }} />
+        ))}
+      </div>
+      {/* X-axis percentile labels */}
+      <div style={{ position: "relative", height: 14, marginBottom: 4 }}>
+        {labels.map((l, i) => (
+          <span key={i} style={{ position: "absolute", left: `${Math.min(Math.max(l.pct, 2), 95)}%`, transform: "translateX(-50%)", fontSize: 8, color: C.dim, whiteSpace: "nowrap" }}>
+            {l.label}
+          </span>
         ))}
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: C.dim, margin: "0 0 8px" }}>
@@ -351,20 +398,39 @@ function SectionB({ g, sim }) {
 }
 
 function buildHistogramBins(sim) {
-  if (!sim) return Array(12).fill({ h: 0, side: "fav" });
-  const mean = sim.median || 0;
-  const std = sim.stdDev || 5;
-  const lo = Math.min(-(sim.p90 || 15), -15);
-  const hi = Math.max(sim.p90 || 15, 15);
-  const step = (hi - lo) / 12;
-  const bins = [];
-  for (let i = 0; i < 12; i++) {
+  if (!sim) return { bins: [], labels: [] };
+  const med = sim.median ?? 0;
+  const std = sim.stdDev ?? 5;
+  const lo = (sim.p10 ?? med - 2 * std) - 2;
+  const hi = (sim.p90 ?? med + 2 * std) + 2;
+  const N = 12;
+  const step = (hi - lo) / N;
+  const raw = [];
+  let maxH = 0;
+  for (let i = 0; i < N; i++) {
     const center = lo + step * (i + 0.5);
-    const z = (center - mean) / std;
-    const h = Math.exp(-0.5 * z * z) * 100;
-    bins.push({ h: Math.max(h, 1), side: center >= 0 ? "fav" : "opp" });
+    const z = (center - med) / (std || 1);
+    const h = Math.exp(-0.5 * z * z);
+    if (h > maxH) maxH = h;
+    raw.push({ center, h });
   }
-  return bins;
+  const bins = raw.map(r => ({
+    px: maxH > 0 ? (r.h / maxH) * 50 : 0,
+    side: r.center >= 0 ? "fav" : "opp",
+    center: r.center,
+  }));
+  // X-axis labels at key percentiles
+  const labels = [
+    { val: sim.p10, label: `p10: ${sim.p10?.toFixed(1)}` },
+    { val: sim.p25, label: `p25: ${sim.p25?.toFixed(1)}` },
+    { val: med, label: `med: ${med.toFixed(1)}` },
+    { val: sim.p75, label: `p75: ${sim.p75?.toFixed(1)}` },
+    { val: sim.p90, label: `p90: ${sim.p90?.toFixed(1)}` },
+  ].filter(l => l.val != null).map(l => ({
+    ...l,
+    pct: ((l.val - lo) / (hi - lo)) * 100,
+  }));
+  return { bins, labels };
 }
 
 /* ── Section C: Head to head ── */
@@ -506,10 +572,9 @@ function SectionE({ g, sim }) {
 
   let mlImplied = null, mlVerdict = null, mlEdge = 0;
   if (ml && Array.isArray(ml) && ml.length === 2) {
-    const favIdx = wp >= 50 ? 0 : 1;
-    const dec = americanToDecimal(ml[favIdx]);
-    if (dec) {
-      mlImplied = (1 / dec) * 100;
+    const { wMl } = getWinnerMl(g);
+    if (wMl != null) {
+      mlImplied = mlImpliedProb(wMl) * 100;
       mlEdge = Math.abs(modelProb * 100 - mlImplied);
       if (mlEdge > 15) mlVerdict = `Strong value on ${g.w} ML`;
       else if (mlEdge > 5) mlVerdict = `Slight value on ${g.w} ML`;
@@ -560,6 +625,25 @@ function BetsTab({ rounds, betSub, setBetSub }) {
 }
 
 /* ── Singles ── */
+function getWinnerMl(g) {
+  // g.moneyline = [mlA, mlB]; find model winner's ML
+  const ml = g.moneyline;
+  if (!ml || !Array.isArray(ml) || ml.length < 2) return { wMl: null, lMl: null };
+  const aName = safe(g, "a", "name") ?? g.teamA;
+  const wIdx = (g.w === aName || g.winner === aName) ? 0 : 1;
+  return { wMl: ml[wIdx], lMl: ml[1 - wIdx] };
+}
+
+function mlImpliedProb(ml) {
+  if (ml == null) return 0;
+  return ml < 0 ? Math.abs(ml) / (Math.abs(ml) + 100) : 100 / (ml + 100);
+}
+
+function mlPayout100(ml) {
+  if (ml == null) return 0;
+  return ml < 0 ? (100 / Math.abs(ml)) * 100 : ml;
+}
+
 function SinglesTab({ games }) {
   const bets = useMemo(() => {
     const results = [];
@@ -570,29 +654,43 @@ function SinglesTab({ games }) {
 
       const wp = (g.wp ?? 50) / 100;
       const sim = g.sim;
+      const { wMl, lMl } = getWinnerMl(g);
+      if (wMl == null) continue;
 
-      const favIdx = wp >= 0.5 ? 0 : 1;
-      const dec = americanToDecimal(ml[favIdx]);
-      const mlImplied = dec ? 1 / dec : 0;
-      const payout = dec ? (dec - 1) * 100 : 0;
-      const mlEV = dec ? (wp * payout) - ((1 - wp) * 100) : -Infinity;
+      // Bet on model winner
+      const wImplied = mlImpliedProb(wMl);
+      const wPayout = mlPayout100(wMl);
+      const wEV = (wp * wPayout) - ((1 - wp) * 100);
 
+      // Contrarian bet on model loser
+      const lProb = 1 - wp;
+      const lImplied = mlImpliedProb(lMl);
+      const lPayout = mlPayout100(lMl);
+      const lEV = (lProb * lPayout) - ((1 - lProb) * 100);
+
+      // Spread bet
       const coverProb = safe(sim, "coverProb") ?? 0;
       const spreadEV = (coverProb / 100) * 90.91 - ((1 - coverProb / 100) * 100);
 
-      const isMlBetter = mlEV >= spreadEV;
-      const ev = isMlBetter ? mlEV : spreadEV;
-      if (ev <= 0) continue;
+      // Pick best positive EV bet
+      const options = [
+        { ev: wEV, type: "ML", team: g.w, prob: wp * 100, implied: wImplied * 100, payout: wPayout, odds: wMl },
+        { ev: lEV, type: "ML", team: g.l, prob: lProb * 100, implied: lImplied * 100, payout: lPayout, odds: lMl },
+        { ev: spreadEV, type: "Spread", team: g.w, prob: coverProb, implied: 50, payout: 90.91, odds: -110 },
+      ].filter(o => o.ev > 0).sort((a, b) => b.ev - a.ev);
+
+      if (options.length === 0) continue;
+      const best = options[0];
 
       results.push({
-        g, ev,
-        type: isMlBetter ? "ML" : "Spread",
-        modelProb: wp * 100,
-        implied: isMlBetter ? mlImplied * 100 : null,
-        payout: isMlBetter ? payout : 90.91,
-        odds: isMlBetter ? ml[favIdx] : -110,
-        coverProb: !isMlBetter ? coverProb : null,
-        edge: isMlBetter ? (wp * 100 - mlImplied * 100) : (coverProb - 50),
+        g, ev: best.ev,
+        type: best.type,
+        betTeam: best.team,
+        modelProb: best.prob,
+        implied: best.implied,
+        payout: best.payout,
+        odds: best.odds,
+        edge: best.prob - best.implied,
       });
     }
     return results.sort((a, b) => b.ev - a.ev);
@@ -613,11 +711,13 @@ function SinglesTab({ games }) {
 }
 
 function SingleBetCard({ b }) {
-  const { g, ev, type, modelProb, implied, payout, odds, coverProb, edge } = b;
+  const { g, ev, type, betTeam, modelProb, implied, payout, odds, edge } = b;
   const wSeed = g.sW2 ?? g.seedW;
   const lSeed = g.sL2 ?? g.seedL;
   const simCount = g.simCount ?? 10000;
   const wins = Math.round((modelProb / 100) * simCount);
+  const opponent = betTeam === g.w ? g.l : g.w;
+  const oddsStr = odds > 0 ? `+${odds}` : `${odds}`;
 
   return (
     <div style={{
@@ -627,7 +727,7 @@ function SingleBetCard({ b }) {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
         <div>
           <div style={{ fontSize: 13, fontWeight: 700, color: C.tx }}>
-            ({wSeed}) {g.w} {type} vs ({lSeed}) {g.l}
+            {betTeam} {type} vs {opponent}
           </div>
           <div style={{ fontSize: 10, color: C.dim }}>{g.ven ?? g.venue}</div>
         </div>
@@ -637,11 +737,11 @@ function SingleBetCard({ b }) {
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6, marginBottom: 8 }}>
         <MiniStat label="Model prob" value={`${modelProb.toFixed(1)}%`} color={C.grn} />
-        <MiniStat label={type === "ML" ? `Vegas (${odds > 0 ? "+" : ""}${odds})` : "Spread -110"} value={type === "ML" ? `Implied ${implied?.toFixed(1)}%` : `Cover ${coverProb?.toFixed(1)}%`} color={C.dim} />
+        <MiniStat label={type === "ML" ? `Vegas (${oddsStr})` : "Spread -110"} value={`Implied ${implied?.toFixed(1)}%`} color={C.dim} />
         <MiniStat label="$100 payout" value={`$${payout.toFixed(0)}`} color={C.gold} />
       </div>
       <div style={{ fontSize: 11, color: C.dim }}>
-        Model gives {g.w} a {Math.abs(edge).toFixed(1)}% edge over implied odds. {g.w} wins in {wins.toLocaleString()} of {simCount.toLocaleString()} sims.
+        Model gives {betTeam} a {Math.abs(edge).toFixed(1)}% edge over implied odds. {betTeam} wins in {wins.toLocaleString()} of {simCount.toLocaleString()} sims.
       </div>
     </div>
   );
@@ -659,11 +759,11 @@ function ParlaysTab({ games }) {
       const wp = (g.wp ?? 50) / 100;
       const sim = g.sim;
       const coverProb = safe(sim, "coverProb");
+      const { wMl } = getWinnerMl(g);
 
-      const favIdx = wp >= 0.5 ? 0 : 1;
-      const mlDec = americanToDecimal(ml[favIdx]);
-      if (wp >= 0.55 && mlDec) {
-        legs.push({ g, type: "ML", prob: wp, dec: mlDec, label: `${g.w} ML` });
+      if (wp >= 0.55 && wMl != null) {
+        const mlDec = americanToDecimal(wMl);
+        if (mlDec) legs.push({ g, type: "ML", prob: wp, dec: mlDec, label: `${g.w} ML` });
       }
       if (coverProb != null && coverProb / 100 >= 0.55) {
         legs.push({ g, type: "Spread", prob: coverProb / 100, dec: 1.909, label: `${g.w} spread` });
