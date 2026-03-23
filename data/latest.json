@@ -1,66 +1,66 @@
 {
-  "timestamp": "2026-03-23T00:14:50.771Z",
+  "timestamp": "2026-03-23T00:21:55.374Z",
   "games": [],
   "odds": {
     "Virginia Cavaliers vs Tennessee Volunteers": {
       "spread": 1.5,
-      "spreadOdds": 100,
-      "mlHome": 145,
-      "mlAway": -188,
+      "spreadOdds": -145,
+      "mlHome": 135,
+      "mlAway": -175,
       "homeTeam": "Virginia Cavaliers",
       "awayTeam": "Tennessee Volunteers",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "Auburn Tigers vs Seattle Redhawks": {
-      "spread": -16.5,
-      "spreadOdds": -120,
+      "spread": -14.5,
+      "spreadOdds": -105,
       "mlHome": null,
       "mlAway": null,
       "homeTeam": "Auburn Tigers",
       "awayTeam": "Seattle Redhawks",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "Tulsa Golden Hurricane vs UNLV Rebels": {
-      "spread": -8.5,
-      "spreadOdds": -115,
-      "mlHome": -750,
-      "mlAway": 470,
+      "spread": -6.5,
+      "spreadOdds": -110,
+      "mlHome": -560,
+      "mlAway": 370,
       "homeTeam": "Tulsa Golden Hurricane",
       "awayTeam": "UNLV Rebels",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "Florida Gators vs Iowa Hawkeyes": {
       "spread": -7.5,
-      "spreadOdds": -125,
+      "spreadOdds": -120,
       "mlHome": -445,
       "mlAway": 310,
       "homeTeam": "Florida Gators",
       "awayTeam": "Iowa Hawkeyes",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "New Mexico Lobos vs GW Revolutionaries": {
-      "spread": -8.5,
-      "spreadOdds": -115,
-      "mlHome": -375,
-      "mlAway": 270,
+      "spread": -9.5,
+      "spreadOdds": -120,
+      "mlHome": -475,
+      "mlAway": 325,
       "homeTeam": "New Mexico Lobos",
       "awayTeam": "GW Revolutionaries",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "Arizona Wildcats vs Utah State Aggies": {
-      "spread": -12.5,
+      "spread": -15.5,
       "spreadOdds": -120,
-      "mlHome": -950,
-      "mlAway": 575,
+      "mlHome": -1950,
+      "mlAway": 950,
       "homeTeam": "Arizona Wildcats",
       "awayTeam": "Utah State Aggies",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "Oklahoma St Cowboys vs Wichita St Shockers": {
       "spread": -2.5,
@@ -70,7 +70,7 @@
       "homeTeam": "Oklahoma St Cowboys",
       "awayTeam": "Wichita St Shockers",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "UConn Huskies vs UCLA Bruins": {
       "spread": -4.5,
@@ -80,7 +80,7 @@
       "homeTeam": "UConn Huskies",
       "awayTeam": "UCLA Bruins",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "California Golden Bears vs Saint Joseph's Hawks": {
       "spread": -5.5,
@@ -90,7 +90,7 @@
       "homeTeam": "California Golden Bears",
       "awayTeam": "Saint Joseph's Hawks",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "Alabama Crimson Tide vs Texas Tech Red Raiders": {
       "spread": 1.5,
@@ -100,7 +100,7 @@
       "homeTeam": "Alabama Crimson Tide",
       "awayTeam": "Texas Tech Red Raiders",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "Houston Cougars vs Illinois Fighting Illini": {
       "spread": -2.5,
@@ -110,7 +110,7 @@
       "homeTeam": "Houston Cougars",
       "awayTeam": "Illinois Fighting Illini",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "Purdue Boilermakers vs Texas Longhorns": {
       "spread": -8.5,
@@ -120,7 +120,7 @@
       "homeTeam": "Purdue Boilermakers",
       "awayTeam": "Texas Longhorns",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     },
     "Duke Blue Devils vs St. John's Red Storm": {
       "spread": -6.5,
@@ -130,7 +130,7 @@
       "homeTeam": "Duke Blue Devils",
       "awayTeam": "St. John's Red Storm",
       "book": "draftkings",
-      "updated": "2026-03-23T00:13:36Z"
+      "updated": "2026-03-23T00:21:15Z"
     }
   },
   "injuries": [
