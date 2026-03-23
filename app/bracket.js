@@ -218,7 +218,7 @@ export default function V7Final(){
       for(let j=i+1;j<legs.length;j++){
         const combo=[legs[i],legs[j]];
         const prob=combo[0].prob*combo[1].prob;
-        if(prob>=0.60){
+       if(prob>=0.50){
           const decPayout=combo[0].decOdds*combo[1].decOdds;
           const profit=Math.round((decPayout-1)*100);
           const amerPayout=decPayout>=2?"+"+Math.round((decPayout-1)*100):String(Math.round(-100/(decPayout-1)));
@@ -241,7 +241,7 @@ export default function V7Final(){
         }
       }
     }
-    return results.sort((a,b)=>b.payout-a.payout);
+    return results.sort((a,b)=>(b.prob/100*b.payout-(1-b.prob/100)*100)-(a.prob/100*a.payout-(1-a.prob/100)*100));
   },[bets]);
 
   if(dataLoading)return(<div style={{fontFamily:"monospace",background:"#0a0a12",color:"#fbbf24",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",fontSize:16}}>Loading predictions...</div>);
@@ -296,7 +296,7 @@ export default function V7Final(){
             <div style={{fontSize:13,fontWeight:700,color:C.purp,marginBottom:6}}>🎰 PARLAY BUILDER</div>
             <div style={{fontSize:15,color:"#ccc",lineHeight:1.8}}>
               Parlays combine multiple bets into one. All legs must hit to win, but the payout multiplies.
-              <br/>Only showing parlays where the model gives a <strong style={{color:C.grn}}>60%+ combined probability</strong> of all legs hitting.
+              <br/>Only showing parlays where the model gives a <strong style={{color:C.grn}}>50%+ combined probability</strong> of all legs hitting.
               <br/>Max 3 legs per parlay. Each leg must have 65%+ individual probability and positive EV.
               <br/>Payouts use <strong style={{color:"#fff"}}>real Vegas odds</strong>. Probabilities use <strong style={{color:"#fff"}}>our model</strong>.
               <br/><span style={{fontSize:13,color:C.dim}}>⚠️ Parlays are high-risk even at 60%. The sportsbook edge compounds. Use small stakes.</span>
@@ -335,8 +335,8 @@ export default function V7Final(){
                   </div>
                   <div style={{textAlign:"right",flexShrink:0}}>
                     <div style={{fontSize:11,color:tierCol}}>$100 →</div>
-                    <div style={{fontSize:27,fontWeight:700,color:C.grn,lineHeight:1}}>+${p.payout}</div>
-                    <div style={{fontSize:11,color:C.dim}}>{p.prob}% chance</div>
+                    <div style={{fontSize:27,fontWeight:700,color:Math.round(p.prob/100*p.payout-(1-p.prob/100)*100)>0?C.grn:C.red,lineHeight:1}}>{Math.round(p.prob/100*p.payout-(1-p.prob/100)*100)>=0?"+":""}${Math.round(p.prob/100*p.payout-(1-p.prob/100)*100)}</div>
+                    <div style={{fontSize:11,color:C.dim}}>EV per $100</div>
                   </div>
                 </div>
 
@@ -356,9 +356,9 @@ export default function V7Final(){
                 </div>
 
                 <div style={{marginTop:6,fontSize:12,color:"#666",lineHeight:1.5}}>
-                  Bet $100 → win <span style={{color:C.grn,fontWeight:700}}>${p.payout}</span> ({p.decPayout}x)
-                  {" "}· Model probability: <span style={{color:tierCol,fontWeight:700}}>{p.prob}%</span>
-                  {" "}· Expected profit: <span style={{color:expProfit>0?tierCol:C.red,fontWeight:700}}>${expProfit}</span> per $100
+                  Bet $100 → win <span style={{color:C.grn,fontWeight:700}}>${p.payout}</span> if it hits ({p.decPayout}x)
+                  {" "}· Probability: <span style={{color:tierCol,fontWeight:700}}>{p.prob}%</span>
+                  {" "}· EV: <span style={{color:expProfit>0?tierCol:C.red,fontWeight:700}}>{expProfit>=0?"+":""}${expProfit}</span> per $100
                 </div>
               </div>
             );
