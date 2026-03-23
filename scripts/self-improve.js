@@ -142,10 +142,11 @@ function gradeGames(predictions, results, teamDB) {
     const actualTotal = parseInt(result.scoreA) + parseInt(result.scoreB);
     const predTotal = (pred.scoreW || 0) + (pred.scoreL || 0);
 
-    const blended = pred.blendedSpread || pred.modelSpread || 0;
-    const modelSp = pred.modelSpread || 0;
-    const modelError = Math.abs(blended - actualMargin);
-    const modelRawError = Math.abs(modelSp - actualMargin);
+    const r5=v=>Math.round(v*2)/2;
+    const modelSp = r5(pred.modelSpread || pred.blendedSpread || pred.rawSp || 0);
+    const blended = pred.blendedSpread || pred.rawSp || modelSp;
+    const modelError = Math.abs(modelSp - actualMargin);
+    const modelRawError = Math.abs(blended - actualMargin);
     const vegasError = pred.vegasLine !== null ? Math.abs(pred.vegasLine - actualMargin) : null;
     const modelWinner = blended >= 0 ? pred.teamA : pred.teamB;
     const modelCorrectSU = modelWinner === actualWinner;
@@ -579,8 +580,8 @@ function generateReport(graded, oldW, newW, changes, history, learning, eloUpdat
       avgVegasError: graded.filter(g => g.vegasError !== null).length > 0 ? Math.round(graded.filter(g => g.vegasError !== null).reduce((s, g) => s + g.vegasError, 0) / graded.filter(g => g.vegasError !== null).length * 10) / 10 : null,
     },
     games: [...graded, ...(history.games || []).filter(hg => !graded.some(g => g.teamA === hg.teamA && g.teamB === hg.teamB))].sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 15).map(g => ({
-      matchup: `${g.teamA} vs ${g.teamB}`, score: `${g.actualMargin > 0 ? g.teamA : g.teamB} ${Math.max(parseInt(g.scoreW || 0), parseInt(g.scoreL || 0))}-${Math.min(parseInt(g.scoreW || 0), parseInt(g.scoreL || 0))}`,
-      actualMargin: g.actualMargin, modelSpread: Math.round((g.blendedSpread || 0) * 10) / 10, vegasLine: g.vegasLine,
+      matchup: `${g.teamA} vs ${g.teamB}`, score: `${g.actualWinner} ${Math.max(parseInt(g.actualTotal/2 + Math.abs(g.actualMargin)/2), 0)}-${Math.max(parseInt(g.actualTotal/2 - Math.abs(g.actualMargin)/2), 0)}`,
+      actualMargin: g.actualMargin, modelSpread: Math.round((g.modelSpread || g.blendedSpread || 0) * 2) / 2,
       modelError: Math.round(g.modelError * 10) / 10, vegasError: g.vegasError !== null ? Math.round(g.vegasError * 10) / 10 : null,
       layers: { L1: g.L1, L2: g.L2, L3: g.L3, L4: g.L4, L5: g.L5, v8: g.v8adj, ens: g.ensAvg },
       pickedWinnerCorrectly: g.modelCorrectSU, coveredSpread: g.modelCorrectATS, closerThanVegas: g.modelBeatVegas,
