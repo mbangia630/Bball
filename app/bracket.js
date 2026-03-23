@@ -41,10 +41,15 @@ export default function Bracket() {
           for (const g of round.g) {
             if (g.status !== "FINAL") continue;
             if (g.sim || (g.modelSpread && g.modelSpread !== 0)) continue;
-            // Match by teamA/teamB names (check both orderings)
+            // Match by teamA/teamB names (exact, then fuzzy by shared team + same round)
             const snap = snapshot.find(s =>
               (s.teamA === g.teamA && s.teamB === g.teamB) ||
               (s.teamA === g.teamB && s.teamB === g.teamA)
+            ) ?? snapshot.find(s =>
+              s.round === (g.rd ?? g.round) &&
+              (s.teamA === g.teamA || s.teamA === g.teamB ||
+               s.teamB === g.teamA || s.teamB === g.teamB) &&
+              (s.winner === g.w || s.winner === g.teamA || s.winner === g.teamB)
             );
             if (snap) {
               g._v8snap = snap;

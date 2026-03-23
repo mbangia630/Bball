@@ -44,42 +44,82 @@ export default function ReportPage() {
     }).catch(e => setErr(e.message));
   }, []);
 
-  // Compute graded games from bracket + snapshot
+  // Compute graded games from bracket + snapshot + report.games
   const graded = useMemo(() => {
     if (!bracket) return [];
+    // Build report games lookup by matchup string (e.g. "Duke vs TCU")
+    const reportGames = (report?.games ?? []);
+    const findReportGame = (teamA, teamB) => {
+      return reportGames.find(rg => {
+        const m = rg.matchup ?? "";
+        return m === `${teamA} vs ${teamB}` || m === `${teamB} vs ${teamA}`;
+      });
+    };
+
     const games = [];
     for (const round of (bracket.rounds || [])) {
       for (const g of round.g) {
         if (g.status !== "FINAL") continue;
         const actualMargin = (g.sW ?? g.scoreW ?? 0) - (g.sL ?? g.scoreL ?? 0);
-        // Match snapshot
+
+        // Try snapshot first (exact match, then fuzzy by one shared team + same round)
         const snap = snapshot.find(s =>
           (s.teamA === g.teamA && s.teamB === g.teamB) ||
           (s.teamA === g.teamB && s.teamB === g.teamA)
+        ) ?? snapshot.find(s =>
+          s.round === (g.rd ?? g.round) &&
+          (s.teamA === g.teamA || s.teamA === g.teamB ||
+           s.teamB === g.teamA || s.teamB === g.teamB) &&
+          (s.winner === g.w || s.winner === g.teamA || s.winner === g.teamB)
         );
-        // Only grade games that have a real prediction (snapshot or v9 sim data)
-        const hasRealPrediction = !!snap || (g.sim != null && (g.modelSpread ?? g.modelSp ?? 0) !== 0);
-        const predWinner = snap?.winner ?? (hasRealPrediction ? g.w : null);
-        const predSpread = snap ? Math.abs(snap.blendedSpread ?? snap.modelSpread ?? 0) : (g.sp ?? Math.abs(g.modelSp ?? g.modelSpread ?? 0));
-        const vegasLine = snap?.vegasLine ?? g.vegasLine ?? g.vegasSp;
-        const winProb = snap?.winProb ?? g.wp ?? 50;
+        // Fall back to report.games
+        const rg = !snap ? (findReportGame(g.teamA, g.teamB) ?? findReportGame(g.w, g.l)) : null;
+
+        // Determine prediction source
+        const hasRealPrediction = !!snap || !!rg || (g.sim != null && (g.modelSpread ?? g.modelSp ?? 0) !== 0);
+
+        let predWinner, predSpread, vegasLine, winProb;
+        if (snap) {
+          predWinner = snap.winner;
+          predSpread = Math.abs(snap.blendedSpread ?? snap.modelSpread ?? 0);
+          vegasLine = snap.vegasLine;
+          winProb = snap.winProb ?? 50;
+        } else if (rg) {
+          // Report game: parse winner from score string (e.g. "St. John's 67-65")
+          const scoreMatch = (rg.score ?? "").match(/^(.+?)\s+\d/);
+          predWinner = rg.pickedWinnerCorrectly ? g.w : g.l;
+          predSpread = Math.abs(rg.modelSpread ?? 0);
+          vegasLine = rg.vegasLine;
+          winProb = 50; // report doesn't store winProb
+        } else if (hasRealPrediction) {
+          predWinner = g.w;
+          predSpread = g.sp ?? Math.abs(g.modelSp ?? g.modelSpread ?? 0);
+          vegasLine = g.vegasLine ?? g.vegasSp;
+          winProb = g.wp ?? 50;
+        } else {
+          predWinner = null;
+          predSpread = 0;
+          vegasLine = g.vegasLine ?? g.vegasSp;
+          winProb = 50;
+        }
+
         const modelError = hasRealPrediction ? Math.abs(actualMargin - predSpread) : null;
         const vegasError = vegasLine != null ? Math.abs(actualMargin - Math.abs(vegasLine)) : null;
         const correct = hasRealPrediction ? (predWinner === g.w) : null;
         const wSeed = g.sW2 ?? g.seedW;
         const lSeed = g.sL2 ?? g.seedL;
         const isUpset = lSeed != null && wSeed != null && lSeed < wSeed;
-        const hasSnap = !!snap;
 
         games.push({
           ...g, actualMargin, predWinner, predSpread, vegasLine, winProb,
-          modelError, vegasError, correct, isUpset, hasSnap, rd: g.rd ?? g.round ?? 0,
-          wSeed, lSeed,
+          modelError, vegasError, correct, isUpset,
+          hasSnap: !!snap, hasReport: !!rg,
+          rd: g.rd ?? g.round ?? 0, wSeed, lSeed,
         });
       }
     }
     return games;
-  }, [bracket, snapshot]);
+  }, [bracket, snapshot, report]);
 
   if (err) return <Shell><p style={{ color: C.red }}>Failed to load: {err}</p></Shell>;
   if (!bracket) return <Shell><p style={{ color: C.dim, textAlign: "center", padding: 40 }}>Loading report...</p></Shell>;
