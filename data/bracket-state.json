@@ -342,6 +342,27 @@
       "scoreW": 73,
       "scoreL": 72,
       "date": "2026-03-23"
+    },
+    "W_R32_1": {
+      "winner": "Arizona",
+      "loser": "Utah State",
+      "scoreW": 78,
+      "scoreL": 66,
+      "date": "2026-03-23"
+    },
+    "E_R32_4": {
+      "winner": "UConn",
+      "loser": "UCLA",
+      "scoreW": 73,
+      "scoreL": 57,
+      "date": "2026-03-23"
+    },
+    "MW_R32_2": {
+      "winner": "Alabama",
+      "loser": "Texas Tech",
+      "scoreW": 90,
+      "scoreL": 65,
+      "date": "2026-03-23"
     }
   },
   "advancedTo": {
@@ -406,7 +427,8 @@
       "a": "Arizona"
     },
     "E_S16_2": {
-      "a": "Michigan St."
+      "a": "Michigan St.",
+      "b": "UConn"
     },
     "S_R32_3": {
       "a": "VCU",
@@ -425,7 +447,8 @@
       "b": "Saint Louis"
     },
     "MW_S16_1": {
-      "a": "Michigan"
+      "a": "Michigan",
+      "b": "Alabama"
     },
     "E_S16_1": {
       "a": "Duke",
@@ -444,7 +467,8 @@
       "a": "Iowa"
     },
     "W_S16_1": {
-      "b": "Arkansas"
+      "b": "Arkansas",
+      "a": "Arizona"
     },
     "MW_S16_2": {
       "b": "Iowa State",

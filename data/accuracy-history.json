@@ -569,6 +569,25 @@
       "date": "2026-03-23",
       "rd": 2,
       "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "teamA": "Florida",
+      "teamB": "Iowa",
+      "modelCorrectSU": false,
+      "modelCorrectATS": false,
+      "modelBeatVegas": false,
+      "modelError": 14,
+      "modelSpread": 13,
+      "vegasLine": 6.5,
+      "vegasError": 7.5,
+      "actualMargin": -1,
+      "actualTotal": 145,
+      "actualWinner": "Iowa",
+      "scoreA": 71,
+      "scoreB": 62,
+      "date": "2026-03-23",
+      "rd": 2,
+      "verdict": "❌ Missed"
     }
   ],
   "daily": [
@@ -578,9 +597,16 @@
       "suPct": 77,
       "atsPct": 47,
       "avgError": 9.1
+    },
+    {
+      "date": "2026-03-23",
+      "games": 1,
+      "suPct": 0,
+      "atsPct": 0,
+      "avgError": 14
     }
   ],
-  "totalGames": 30,
+  "totalGames": 31,
   "correctSU": 23,
   "correctATS": 14
 }
