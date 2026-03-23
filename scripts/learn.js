@@ -204,14 +204,14 @@ function main() {
       trend: history.daily.slice(-7),
     },
     v8Baseline: loadJSON('data/v8-archive/summary.json', null),
-    adjustments: changes.length > 0 ? changes : ['No adjustments needed.'],
+    adjustments: { changes: changes.length > 0 ? changes : ['No adjustments needed.'], before: { vegasBlend: oldW.vegasBlend, sigma: oldW.sigma }, after: { vegasBlend: weights.vegasBlend, sigma: weights.sigma } },
   };
 
   fs.mkdirSync('data/reports', { recursive: true });
+  fs.mkdirSync('public/data/reports', { recursive: true });
   fs.writeFileSync('data/reports/latest.json', JSON.stringify(report, null, 2));
-  fs.mkdirSync('public/data', { recursive: true });
-  fs.writeFileSync('public/data/report.json', JSON.stringify(report, null, 2));
   fs.writeFileSync(`data/reports/${report.date}.json`, JSON.stringify(report, null, 2));
+  fs.writeFileSync('public/data/reports/latest.json', JSON.stringify(report, null, 2));
 
   // Save state
   weights.version = (oldW.version || 1) + 1;

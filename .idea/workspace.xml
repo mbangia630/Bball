@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9205b883-5d7d-4cfa-864c-a7c73e9879ec" name="Changes" comment="v9 - vercel not showing details fix" />
+    <list default="true" id="9205b883-5d7d-4cfa-864c-a7c73e9879ec" name="Changes" comment="v9 - vercel not showing details fix">
+      <change beforePath="$PROJECT_DIR$/scripts/engine.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/engine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/learn.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/learn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/migrate-v8-to-v9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/pipeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/pipeline.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,14 +100,6 @@
       <option name="presentableId" value="Default" />
       <updated>1773770715585</updated>
       <workItem from="1773770717312" duration="3000" />
-    </task>
-    <task id="LOCAL-00025" summary="new report">
-      <option name="closed" value="true" />
-      <created>1773864728330</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1773864728330</updated>
     </task>
     <task id="LOCAL-00026" summary="new report">
       <option name="closed" value="true" />
@@ -488,7 +485,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774283801396</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="v9 - vercel not showing details fix">
+      <option name="closed" value="true" />
+      <created>1774286385570</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1774286385570</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

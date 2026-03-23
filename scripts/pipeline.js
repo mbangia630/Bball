@@ -294,6 +294,18 @@ function buildDisplay(teamDB, bracketState, slotMap, predictions, completed, wei
     for (const slot of roundSlots) {
       if (slot.actualResult) {
         const res = slot.actualResult;
+        // Build minimal profiles for FINAL games so details view doesn't crash
+        const mkProf = (name) => {
+          const t = teamDB[name];
+          if (!t) return { name, em: 0, efg: 0, tor: 0, orb: 0, ftr: 0, tpt: 0, ast: 0, mg: 0, o: 0, d: 0, t: 0, elo: 0, s: 0, kp: 0, rec: '', coach: '', cAdj: 0, cNote: '', lk: 0, st: 0, ci: 0, ij: 0, hb: 0, sty: {} };
+          return {
+            name, em: t.em, efg: t.efg, tor: t.tor, orb: t.orb, ftr: t.ftr,
+            tpt: t.tpt, ast: t.ast, mg: t.mg, o: t.o, d: t.d, t: t.t,
+            elo: t.elo, s: t.s, kp: t.kp, rec: t.rec, coach: t.coach,
+            cAdj: t.cAdj || 0, cNote: t.cNote || '', lk: t.lk || 0,
+            st: t.st || 0, ci: t.ci || 0, ij: t.ij || 0, hb: t.hb || 3.3, sty: t.style || {},
+          };
+        };
         games.push({
           id: slot.id, status: 'FINAL', rd: slot.rd,
           w: res.winner, l: res.loser, sW: res.scoreW, sL: res.scoreL,
@@ -306,7 +318,9 @@ function buildDisplay(teamDB, bracketState, slotMap, predictions, completed, wei
           v8: { ref: 0, gs: 0, sharp: 0, cont: 0, tz: 0, foul: 0, total: 0, ens: { avg: 0, agree: true, m1: 0, m2: 0, m3: 0 } },
           adjStats: { aEfg: 0, bEfg: 0, aTor: 0, bTor: 0, aOrb: 0, bOrb: 0, aFtr: 0, bFtr: 0 },
           modelSp: 0, modelSpread: 0, vegasSp: null, vegasLine: null, rawSp: 0, ha: null, hb: 0,
-          a: null, b: null, sim: null,
+          a: mkProf(slot.a || res.winner), b: mkProf(slot.b || res.loser),
+          teamA: slot.a || res.winner, teamB: slot.b || res.loser,
+          sim: null,
         });
         if (slot.feedsInto && projMap[slot.feedsInto]) {
           if (slot.feedsAs === 'a') projMap[slot.feedsInto].a = res.winner;
@@ -419,13 +433,13 @@ async function main() {
   fs.writeFileSync('data/bracket-state.json', JSON.stringify(bracketState, null, 2));
   fs.writeFileSync('data/predictions.json', JSON.stringify({ timestamp: new Date().toISOString(), completed, predictions }, null, 2));
   fs.mkdirSync('public/data', { recursive: true });
+  fs.mkdirSync('public/data/reports', { recursive: true });
   fs.writeFileSync('public/data/bracket-display.json', JSON.stringify(display));
   fs.writeFileSync('data/bracket-display.json', JSON.stringify(display));
+  // Copy latest report to public so report page can fetch it
+  try { fs.copyFileSync('data/reports/latest.json', 'public/data/reports/latest.json'); } catch {}
 
   console.log(`\n✅ v9 pipeline complete. Champion: ${display.rounds[display.rounds.length - 1]?.g[0]?.w || display.rounds[display.rounds.length - 1]?.g[0]?.winner || 'TBD'}\n`);
 }
-
-// Copy latest report to public for the report page
-  try { const rpt = fs.readFileSync('data/reports/latest.json','utf8'); fs.writeFileSync('public/data/report.json', rpt); } catch {}
 
 main().catch(e => { console.error('❌ Pipeline failed:', e); process.exit(1); });

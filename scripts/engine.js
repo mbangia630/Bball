@@ -519,45 +519,47 @@ function simulate(teamAData, teamBData, ctx) {
 module.exports = { simulate, buildProfile, calcMatchupAdjustments, calcHCA, calcFatigue, calcV8Adjustments, r5, haversine, SIMS };
 
 // ═══ V8-COMPATIBLE OUTPUT MAPPER ═══
-// Maps v9 simulate() output to field names bracket.js expects
+// Maps v9 long field names to v8 short names that bracket.js expects
+function mapProfile(p) {
+  if (!p) return null;
+  return {
+    ...p,
+    o: p.off, d: p.def, t: p.tempo,
+    s: p.seed, kp: p.kpRank, rec: p.record,
+    lk: p.luck, st: p.sentiment, ci: p.confidenceIdx,
+    ij: p.injuryAdj, hb: p.hcaBase,
+    cAdj: p.coachAdj, cNote: p.coachNote,
+    sty: p.style,
+  };
+}
+
 function toV8Format(result) {
   if (!result) return result;
   return {
     ...result,
-    // v8 short field names
     w: result.winner, l: result.loser,
     sW: result.scoreW, sL: result.scoreL,
     wp: result.winProb,
     sp: Math.abs(result.finalSpread || result.modelSpread || 0),
     sW2: result.seedW || result.seedA, sL2: result.seedL || result.seedB,
     ven: result.venue,
-    modelSp: result.modelSpread,
+    modelSp: result.modelSpread, modelSpread: result.modelSpread,
     blendedSpread: result.finalSpread,
-    vegasSp: result.vegasLine,
+    vegasSp: result.vegasLine, vegasLine: result.vegasLine,
     rawSp: result.finalSpread,
-    // Layer compat
     L1: result.layers?.L1 || 0, L2: result.layers?.L2 || 0,
     L3: result.layers?.L3 || 0, L4: result.layers?.L4 || 0,
     L5: result.layers?.L5 || 0,
     v8adj: result.v8?.total || 0,
-    ensAvg: result.layers?.v8 || 0,
-    ensAgree: true, // Monte Carlo replaces ensemble
-    // HCA compat
+    ensAvg: result.layers?.v8 || 0, ensAgree: true,
     ha: result.hca?.team || null, hb: result.hca?.value || 0,
-    // Matchup compat
     mu: { det: result.matchup?.details || [], adjA: result.matchup?.adjA, adjB: result.matchup?.adjB, tempoAdj: result.matchup?.tempoAdj },
-    // Coach compat
     cDiff: result.coaching?.diff || 0,
-    // Fatigue compat
     fatA: { pts: result.fatigue?.a || 0 }, fatB: { pts: result.fatigue?.b || 0 },
-    // Stats compat
     adjStats: result.adjStats || {},
-    // Profile compat (bracket.js reads a.name, a.em, a.s, a.kp, a.rec, etc.)
-    a: result.profiles?.a ? { ...result.profiles.a, o: result.profiles.a.off, d: result.profiles.a.def, s: result.profiles.a.seed, kp: result.profiles.a.kpRank, st: result.profiles.a.sentiment, lk: result.profiles.a.luck, ci: result.profiles.a.confidenceIdx, ij: result.profiles.a.injuryAdj } : null,
-    b: result.profiles?.b ? { ...result.profiles.b, o: result.profiles.b.off, d: result.profiles.b.def, s: result.profiles.b.seed, kp: result.profiles.b.kpRank, st: result.profiles.b.sentiment, lk: result.profiles.b.luck, ci: result.profiles.b.confidenceIdx, ij: result.profiles.b.injuryAdj } : null,
-    // V8 details compat
+    a: mapProfile(result.profiles?.a),
+    b: mapProfile(result.profiles?.b),
     v8: result.v8 ? { ...result.v8, ens: { avg: 0, agree: true, m1: 0, m2: 0, m3: 0 } } : { ref: 0, gs: 0, sharp: 0, cont: 0, tz: 0, foul: 0, total: 0, ens: { avg: 0, agree: true, m1: 0, m2: 0, m3: 0 } },
-    // NEW v9 Monte Carlo data (bracket.js can progressively use these)
     sim: result.sim || null,
     rd: result.round,
   };
