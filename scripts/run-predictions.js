@@ -185,7 +185,8 @@ function sim(nA, nB, venue, round) {
   const v8total=refAdj(nA,nB)+gameStateAdj(nA,nB,rawSp0)+sharpAdj(nA,nB)+continuityAdj(nA,nB)+tzAdj(nA,nB,venue)+foulAdj(nA,nB);
   const ens=ensemble(a,b,tf);
 
-  const modelSp=(rawSp0+v8total)*0.80+ens.avg*0.20;
+    const ensWeight=ens.agree?0.20:0.10; // halve ensemble weight when sub-models disagree
+  const modelSp=(rawSp0+v8total)*(1-ensWeight)+ens.avg*ensWeight;
 
   // Vegas blend
   const vKey1=`${nA} vs ${nB}`;
