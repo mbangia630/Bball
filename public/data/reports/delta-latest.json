@@ -1,145 +1,17 @@
 {
-  "timestamp": "2026-03-23T13:52:32.147Z",
-  "timestampCST": "Mar 23, 2026, 8:52 AM CST",
-  "type": "DELTA",
-  "baselineTime": "Mar 22, 2026, 8:39 AM CST",
-  "currentTime": "Mar 23, 2026, 8:52 AM CST",
+  "timestamp": "2026-03-23T14:12:11.483Z",
+  "timestampCST": "Mar 23, 2026, 9:12 AM CST",
+  "type": "BASELINE_SET",
+  "message": "7am daily update complete. This is the new baseline. Any manual refreshes today will show changes relative to this snapshot.",
+  "baselineTime": "Mar 23, 2026, 9:12 AM CST",
+  "totalPredictions": 8,
+  "deltas": [],
   "summary": {
     "totalGamesCompared": 8,
-    "gamesChanged": 8,
+    "gamesChanged": 0,
     "winnersFlipped": 0,
-    "newMatchups": 7,
-    "avgSpreadChange": 1,
-    "biggestMover": "Duke vs St. John's"
-  },
-  "deltas": [
-    {
-      "matchup": "Duke vs St. John's",
-      "round": 3,
-      "region": "S16",
-      "type": "NEW",
-      "winner": "Duke",
-      "winProb": 75.9,
-      "spread": 7,
-      "message": "New matchup since 7am — Duke predicted to win (75.9%)",
-      "factors": [
-        "New round matchup generated from bracket advancement"
-      ],
-      "absDelta": 999
-    },
-    {
-      "matchup": "Michigan St. vs UConn",
-      "round": 3,
-      "region": "S16",
-      "type": "NEW",
-      "winner": "Michigan St.",
-      "winProb": 50.4,
-      "spread": 0,
-      "message": "New matchup since 7am — Michigan St. predicted to win (50.4%)",
-      "factors": [
-        "New round matchup generated from bracket advancement"
-      ],
-      "absDelta": 999
-    },
-    {
-      "matchup": "Iowa vs Nebraska",
-      "round": 3,
-      "region": "S16",
-      "type": "NEW",
-      "winner": "Nebraska",
-      "winProb": 56.4,
-      "spread": -2,
-      "message": "New matchup since 7am — Nebraska predicted to win (56.4%)",
-      "factors": [
-        "New round matchup generated from bracket advancement"
-      ],
-      "absDelta": 999
-    },
-    {
-      "matchup": "Arizona vs Arkansas",
-      "round": 3,
-      "region": "S16",
-      "type": "NEW",
-      "winner": "Arizona",
-      "winProb": 76.2,
-      "spread": 7,
-      "message": "New matchup since 7am — Arizona predicted to win (76.2%)",
-      "factors": [
-        "New round matchup generated from bracket advancement"
-      ],
-      "absDelta": 999
-    },
-    {
-      "matchup": "Texas vs Purdue",
-      "round": 3,
-      "region": "S16",
-      "type": "NEW",
-      "winner": "Purdue",
-      "winProb": 77.4,
-      "spread": -7.5,
-      "message": "New matchup since 7am — Purdue predicted to win (77.4%)",
-      "factors": [
-        "New round matchup generated from bracket advancement"
-      ],
-      "absDelta": 999
-    },
-    {
-      "matchup": "Michigan vs Alabama",
-      "round": 3,
-      "region": "S16",
-      "type": "NEW",
-      "winner": "Michigan",
-      "winProb": 81.7,
-      "spread": 9,
-      "message": "New matchup since 7am — Michigan predicted to win (81.7%)",
-      "factors": [
-        "New round matchup generated from bracket advancement"
-      ],
-      "absDelta": 999
-    },
-    {
-      "matchup": "Tennessee vs Iowa State",
-      "round": 3,
-      "region": "S16",
-      "type": "NEW",
-      "winner": "Iowa State",
-      "winProb": 65.7,
-      "spread": -4.5,
-      "message": "New matchup since 7am — Iowa State predicted to win (65.7%)",
-      "factors": [
-        "New round matchup generated from bracket advancement"
-      ],
-      "absDelta": 999
-    },
-    {
-      "matchup": "Illinois vs Houston",
-      "round": 3,
-      "region": "S16",
-      "type": "SHIFT",
-      "baselineWinner": "Houston",
-      "baselineWinProb": 62,
-      "baselineSpread": -3.5,
-      "baselineVegas": -2.5,
-      "baselineModelSpread": -5.2,
-      "baselineScoreW": 72,
-      "baselineScoreL": 69,
-      "winner": "Houston",
-      "winProb": 57.5,
-      "spread": -2.5,
-      "vegasLine": -2.5,
-      "modelSpread": -2,
-      "scoreW": 72,
-      "scoreL": 69,
-      "spreadChange": 1,
-      "probChange": -4.5,
-      "modelSpreadChange": 3.2,
-      "vegasChange": 0,
-      "factors": [
-        "Model spread shifted +3.2 pts (was -5.2, now -2)",
-        "Injury cleared for Illinois",
-        "Injury cleared for Houston"
-      ],
-      "absDelta": 1.45
-    }
-  ]
+    "newMatchups": 0,
+    "avgSpreadChange": 0,
+    "biggestMover": "None — this is the baseline"
+  }
 }
