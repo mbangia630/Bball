@@ -113,14 +113,17 @@ function loadPredictions() {
 }
 function loadResults() {
   const bracketState = loadJSON('data/bracket-state.json', { results: {} });
-  return Object.entries(bracketState.results).map(([id, r]) => ({
-    id,
-    teamA: r.winner,
-    teamB: r.loser,
-    scoreA: r.scoreW,
-    scoreB: r.scoreL,
-    date: r.date || '',
-  }));
+  return Object.entries(bracketState.results).map(([id, r]) => {
+    const rd = id.startsWith('FF') ? 0 : id.includes('R32') ? 2 : id.includes('S16') ? 3 : id.includes('E8') ? 4 : id.includes('F4') ? 5 : id === 'CHAMP' ? 6 : 1;
+    return {
+      id, rd,
+      teamA: r.winner,
+      teamB: r.loser,
+      scoreA: r.scoreW,
+      scoreB: r.scoreL,
+      date: r.date || '',
+    };
+  });
 }
 // ═══ GRADE GAMES ═══
 function gradeGames(predictions, results, teamDB) {
@@ -159,13 +162,14 @@ function gradeGames(predictions, results, teamDB) {
     const tA = teamDB[pred.teamA], tB = teamDB[pred.teamB];
 
     graded.push({
-      ...pred, // carries L1, L2, L3, L4, L5, v8adj, ensAvg, ensAgree, hca, edge, etc.
+      ...pred,
+      vegasLine, modelSpread: modelSp,
       actualMargin, actualWinner, actualTotal, predTotal,
       modelError, modelRawError, vegasError,
       modelCorrectSU, modelCorrectATS, modelBeatVegas,
       seedA: tA?.s || 0, seedB: tB?.s || 0,
       predWP: pred.winProb || 50,
-      date: new Date().toISOString().slice(0, 10),
+      date: result.date || new Date().toISOString().slice(0, 10),
     });
   }
   return graded;
@@ -573,7 +577,7 @@ function generateReport(graded, oldW, newW, changes, history, learning, eloUpdat
   const report = {
     date, generatedAt: new Date().toISOString(), generatedAtCST: `${date} ${time} CST`, modelVersion: newW.version,
     today: (() => {
-      const allG = [...graded, ...(history.games || []).filter(hg => !graded.some(g => g.teamA === hg.teamA && g.teamB === hg.teamB))].sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 15);
+      const allG = [...graded, ...(history.games || []).filter(hg => !graded.some(g => g.teamA === hg.teamA && g.teamB === hg.teamB))].sort((a, b) => (b.date || '').localeCompare(a.date || '') || (b.round || b.rd || 0) - (a.round || a.rd || 0)).slice(0, 15);
       const su = allG.filter(g => g.modelCorrectSU).length;
       const ats = allG.filter(g => g.modelCorrectATS).length;
       const bv = allG.filter(g => g.modelBeatVegas === true).length;
@@ -587,7 +591,7 @@ function generateReport(graded, oldW, newW, changes, history, learning, eloUpdat
         avgVegasError: allG.filter(g => g.vegasError != null).length > 0 ? Math.round(allG.filter(g => g.vegasError != null).reduce((s, g) => s + g.vegasError, 0) / allG.filter(g => g.vegasError != null).length * 10) / 10 : null,
       };
     })(),
-    games: [...graded, ...(history.games || []).filter(hg => !graded.some(g => g.teamA === hg.teamA && g.teamB === hg.teamB))].sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(g => ({
+    games: [...graded, ...(history.games || []).filter(hg => !graded.some(g => g.teamA === hg.teamA && g.teamB === hg.teamB))].sort((a, b) => (b.date || '').localeCompare(a.date || '') || (b.round || b.rd || 0) - (a.round || a.rd || 0)).map(g => ({
       matchup: `${g.teamA} vs ${g.teamB}`, score: `${g.actualWinner} ${Math.max(parseInt(g.actualTotal/2 + Math.abs(g.actualMargin)/2), 0)}-${Math.max(parseInt(g.actualTotal/2 - Math.abs(g.actualMargin)/2), 0)}`,
       actualMargin: g.actualMargin, modelSpread: Math.round((g.modelSpread || g.blendedSpread || 0) * 2) / 2,
       modelError: Math.round(g.modelError * 10) / 10, vegasError: g.vegasError !== null ? Math.round(g.vegasError * 10) / 10 : null,
@@ -653,7 +657,7 @@ function main() {
     history.totalGames += graded.length;
     history.correctSU += su;
     history.correctATS += ats;
-    history.games.push(...graded.map(g => ({ teamA: g.teamA, teamB: g.teamB, modelCorrectSU: g.modelCorrectSU, modelCorrectATS: g.modelCorrectATS, modelBeatVegas: g.modelBeatVegas, modelError: g.modelError, modelSpread: g.modelSpread || g.blendedSpread || 0, vegasLine: g.vegasLine ?? g.vegasSp ?? null, vegasError: g.vegasError ?? null, actualMargin: g.actualMargin, actualTotal: g.actualTotal, actualWinner: g.actualWinner, scoreA: g.scoreW, scoreB: g.scoreL, date: g.date, verdict: g.modelCorrectSU && g.modelCorrectATS ? '✅ Nailed it' : g.modelCorrectSU ? '🟡 Right winner, wrong spread' : g.modelCorrectATS ? '🟡 Wrong winner, covered ATS' : '❌ Missed' })));
+    history.games.push(...graded.map(g => ({ teamA: g.teamA, teamB: g.teamB, modelCorrectSU: g.modelCorrectSU, modelCorrectATS: g.modelCorrectATS, modelBeatVegas: g.modelBeatVegas, modelError: g.modelError, modelSpread: g.modelSpread || g.blendedSpread || 0, vegasLine: g.vegasLine ?? g.vegasSp ?? null, vegasError: g.vegasError ?? null, actualMargin: g.actualMargin, actualTotal: g.actualTotal, actualWinner: g.actualWinner, scoreA: g.scoreW, scoreB: g.scoreL, date: g.date, rd: g.rd || g.round || 0, verdict: g.modelCorrectSU && g.modelCorrectATS ? '✅ Nailed it' : g.modelCorrectSU ? '🟡 Right winner, wrong spread' : g.modelCorrectATS ? '🟡 Wrong winner, covered ATS' : '❌ Missed' })));
     history.daily.push({ date: new Date().toISOString().slice(0, 10), games: graded.length, suPct: Math.round(su / graded.length * 100), atsPct: Math.round(ats / graded.length * 100), avgError: Math.round(graded.reduce((s, g) => s + g.modelError, 0) / graded.length * 10) / 10 });
     console.log(`📈 Cumulative: ${history.correctSU}/${history.totalGames} SU (${Math.round(history.correctSU / history.totalGames * 100)}%), ${history.correctATS}/${history.totalGames} ATS (${Math.round(history.correctATS / history.totalGames * 100)}%)\n`);
   }
