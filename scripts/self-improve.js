@@ -575,13 +575,13 @@ function generateReport(graded, oldW, newW, changes, history, learning, eloUpdat
       avgError: graded.length > 0 ? Math.round(graded.reduce((s, g) => s + g.modelError, 0) / graded.length * 10) / 10 : null,
       avgVegasError: graded.filter(g => g.vegasError !== null).length > 0 ? Math.round(graded.filter(g => g.vegasError !== null).reduce((s, g) => s + g.vegasError, 0) / graded.filter(g => g.vegasError !== null).length * 10) / 10 : null,
     },
-    games: graded.sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(g => ({
+    games: [...graded, ...(history.games || []).filter(hg => !graded.some(g => g.teamA === hg.teamA && g.teamB === hg.teamB))].sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 15).map(g => ({
       matchup: `${g.teamA} vs ${g.teamB}`, score: `${g.actualMargin > 0 ? g.teamA : g.teamB} ${Math.max(parseInt(g.scoreW || 0), parseInt(g.scoreL || 0))}-${Math.min(parseInt(g.scoreW || 0), parseInt(g.scoreL || 0))}`,
       actualMargin: g.actualMargin, modelSpread: Math.round((g.blendedSpread || 0) * 10) / 10, vegasLine: g.vegasLine,
       modelError: Math.round(g.modelError * 10) / 10, vegasError: g.vegasError !== null ? Math.round(g.vegasError * 10) / 10 : null,
       layers: { L1: g.L1, L2: g.L2, L3: g.L3, L4: g.L4, L5: g.L5, v8: g.v8adj, ens: g.ensAvg },
       pickedWinnerCorrectly: g.modelCorrectSU, coveredSpread: g.modelCorrectATS, closerThanVegas: g.modelBeatVegas,
-      verdict: g.modelCorrectSU && g.modelCorrectATS ? '✅ Nailed it' : g.modelCorrectSU ? '🟡 Right winner, wrong spread' : g.modelCorrectATS ? '🟡 Wrong winner, covered ATS' : '❌ Missed',
+      verdict: g.verdict || (g.modelCorrectSU && g.modelCorrectATS ? '✅ Nailed it' : g.modelCorrectSU ? '🟡 Right winner, wrong spread' : g.modelCorrectATS ? '🟡 Wrong winner, covered ATS' : '❌ Missed'),
     })),
     cumulative: { totalGames: history.totalGames, straightUpPct: history.totalGames > 0 ? Math.round(history.correctSU / history.totalGames * 1000) / 10 : null, atsPct: history.totalGames > 0 ? Math.round(history.correctATS / history.totalGames * 1000) / 10 : null, trend: history.daily.slice(-7) },
     adjustments: { changes: changes.length > 0 ? changes : ['No adjustments needed.'], before: { vegasBlend: oldW.vegasBlend, sigma: oldW.sigma, layers: { ...oldW.layers }, ensemble: { ...oldW.ensemble } }, after: { vegasBlend: newW.vegasBlend, sigma: newW.sigma, layers: { ...newW.layers }, ensemble: { ...newW.ensemble } } },
