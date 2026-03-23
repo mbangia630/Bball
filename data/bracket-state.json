@@ -321,6 +321,13 @@
       "scoreW": 82,
       "scoreL": 63,
       "date": "2026-03-22"
+    },
+    "E_R32_2": {
+      "winner": "St. John's",
+      "loser": "Kansas",
+      "scoreW": 67,
+      "scoreL": 65,
+      "date": "2026-03-23"
     }
   },
   "advancedTo": {
@@ -407,7 +414,8 @@
       "a": "Michigan"
     },
     "E_S16_1": {
-      "a": "Duke"
+      "a": "Duke",
+      "b": "St. John's"
     },
     "S_S16_2": {
       "b": "Houston",

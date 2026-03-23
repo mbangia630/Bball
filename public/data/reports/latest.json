@@ -1,41 +1,57 @@
 {
-  "date": "2026-03-22",
-  "generatedAt": "2026-03-22T23:35:32.120Z",
-  "generatedAtCST": "2026-03-22 6:35 PM CST",
-  "modelVersion": 33,
+  "date": "2026-03-23",
+  "generatedAt": "2026-03-23T00:14:50.837Z",
+  "generatedAtCST": "2026-03-23 7:14 PM CST",
+  "modelVersion": 34,
   "today": {
-    "gamesGraded": 0,
+    "gamesGraded": 1,
     "straightUp": {
-      "correct": 0,
-      "total": 0,
-      "pct": null
+      "correct": 1,
+      "total": 1,
+      "pct": 100
     },
     "ats": {
-      "correct": 0,
-      "total": 0,
-      "pct": null
+      "correct": 1,
+      "total": 1,
+      "pct": 100
     },
     "beatVegas": {
       "correct": 0,
-      "total": 0,
-      "pct": null
+      "total": 1,
+      "pct": 0
     },
-    "avgError": null,
-    "avgVegasError": null
+    "avgError": 1,
+    "avgVegasError": 0.5
   },
-  "games": [],
-  "cumulative": {
-    "totalGames": 46,
-    "straightUpPct": 89.1,
-    "atsPct": 67.4,
-    "trend": [
-      {
-        "date": "2026-03-21",
-        "games": 15,
-        "suPct": 100,
-        "atsPct": 80,
-        "avgError": 9.5
+  "games": [
+    {
+      "matchup": "St. John's vs Kansas",
+      "score": "St. John's 71-68",
+      "actualMargin": 2,
+      "modelSpread": 3,
+      "vegasLine": 1.5,
+      "modelError": 1,
+      "vegasError": 0.5,
+      "layers": {
+        "L1": 3.7,
+        "L2": 0.9,
+        "L3": 0.8,
+        "L4": 0.3,
+        "L5": 0.1,
+        "v8": 1.45,
+        "ens": 2.5
       },
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": false,
+      "verdict": "✅ Nailed it"
+    }
+  ],
+  "cumulative": {
+    "totalGames": 47,
+    "straightUpPct": 89.4,
+    "atsPct": 68.1,
+    "trend": [
       {
         "date": "2026-03-21",
         "games": 13,
@@ -77,40 +93,32 @@
         "suPct": 100,
         "atsPct": 67,
         "avgError": 6.4
+      },
+      {
+        "date": "2026-03-23",
+        "games": 1,
+        "suPct": 100,
+        "atsPct": 100,
+        "avgError": 1
       }
     ]
   },
   "adjustments": {
     "changes": [
-      "#1 Layer weights tuned by directional accuracy: L1=0.378(87%dir) L2=0.263(78%dir) L3=0.18(65%dir) L4=0.098(70%dir) L5=0.082(98%dir)",
-      "#6 Ensemble: main model better (9.0 vs 11.2) — main 90% → 90%",
-      "#7 Calibration: underconfident in 3 buckets — sigma 9.0 → 8.9",
-      "#5 Sharp plays: 88% on 17 games",
+      "#1 Layer weights tuned by directional accuracy: L1=0.376(87%dir) L2=0.262(79%dir) L3=0.18(66%dir) L4=0.099(70%dir) L5=0.084(98%dir)",
+      "#6 Ensemble: main model better (8.9 vs 11.0) — main 90% → 90%",
+      "#7 Calibration: underconfident in 4 buckets — sigma 8.9 → 8.7",
+      "#5 Sharp plays: 89% on 18 games",
       "#5 Edge 0-2pt bets: +$146 on 10 games (profitable)",
-      "#5 Edge 2-5pt bets: +$346 on 8 games (profitable)",
+      "#5 Edge 2-5pt bets: +$437 on 9 games (profitable)",
       "#5 Edge 5+pt bets: +$619 on 11 games (profitable)",
-      "#8 Pace: under-predicting totals by 13.0pts (46 games)",
+      "#8 Pace: under-predicting totals by 12.6pts (47 games)",
       "#15 High-conf picks (75%+): 100% actual (27/27)",
       "#15 Low-conf picks (<60%): 75% actual (9/12)",
-      "#11 V8 adjustments: 67% directionally correct over 46 games",
+      "#11 V8 adjustments: 68% directionally correct over 47 games",
       "#10 HCA: predicted avg 3.6pts, actual margin avg 13.0pts (3 games)"
     ],
     "before": {
-      "vegasBlend": 0.6950000000000002,
-      "sigma": 9.049999999999995,
-      "layers": {
-        "L1": 0.38,
-        "L2": 0.264,
-        "L3": 0.18,
-        "L4": 0.097,
-        "L5": 0.079
-      },
-      "ensemble": {
-        "main": 0.9,
-        "subs": 0.09999999999999998
-      }
-    },
-    "after": {
       "vegasBlend": 0.6950000000000002,
       "sigma": 8.899999999999995,
       "layers": {
@@ -124,46 +132,61 @@
         "main": 0.9,
         "subs": 0.09999999999999998
       }
+    },
+    "after": {
+      "vegasBlend": 0.6950000000000002,
+      "sigma": 8.749999999999995,
+      "layers": {
+        "L1": 0.376,
+        "L2": 0.262,
+        "L3": 0.18,
+        "L4": 0.099,
+        "L5": 0.084
+      },
+      "ensemble": {
+        "main": 0.9,
+        "subs": 0.09999999999999998
+      }
     }
   },
   "insights": {
     "layerDirectionalAccuracy": {
       "L1": {
         "pct": 87,
-        "games": 46
+        "games": 47
       },
       "L2": {
-        "pct": 78,
-        "games": 46
+        "pct": 79,
+        "games": 47
       },
       "L3": {
-        "pct": 65,
-        "games": 46
+        "pct": 66,
+        "games": 47
       },
       "L4": {
         "pct": 70,
-        "games": 46
+        "games": 47
       },
       "L5": {
         "pct": 98,
-        "games": 46
+        "games": 47
       },
       "v8": {
-        "pct": 67,
-        "games": 46
+        "pct": 68,
+        "games": 47
       },
       "ens": {
         "pct": 87,
-        "games": 46
+        "games": 47
       }
     },
     "situational": {
       "bySpreadBucket": {
         "3-7": {
-          "correct": 5,
-          "total": 7,
+          "correct": 6,
+          "total": 8,
           "avgError": 0,
-          "totalError": 60.599999999999994
+          "totalError": 61.599999999999994
         },
         "0-3": {
           "correct": 8,
@@ -230,8 +253,8 @@
           "total": 3
         },
         "4v5": {
-          "correct": 3,
-          "total": 3
+          "correct": 4,
+          "total": 4
         },
         "4v12": {
           "correct": 3,
@@ -244,14 +267,14 @@
           "total": 35
         },
         "2": {
-          "correct": 11,
-          "total": 11
+          "correct": 12,
+          "total": 12
         }
       },
       "favVsDog": {
         "fav": {
-          "correct": 34,
-          "total": 36
+          "correct": 35,
+          "total": 37
         },
         "dog": {
           "correct": 7,
@@ -261,9 +284,9 @@
     },
     "calibration": {
       "60-65": {
-        "predicted": 371.50000000000006,
-        "actual": 400,
-        "games": 6
+        "predicted": 431.80000000000007,
+        "actual": 500,
+        "games": 7
       },
       "50-55": {
         "predicted": 463.7000000000001,
@@ -297,8 +320,8 @@
         "games": 10
       },
       "2-5": {
-        "profit": 346,
-        "games": 8
+        "profit": 437,
+        "games": 9
       },
       "5+": {
         "profit": 619,
@@ -306,9 +329,9 @@
       }
     },
     "pace": {
-      "totalTempoError": -600,
-      "games": 46,
-      "overPredictions": 14,
+      "totalTempoError": -593,
+      "games": 47,
+      "overPredictions": 15,
       "underPredictions": 32
     },
     "upsetPatterns": {
@@ -319,7 +342,7 @@
         },
         "2": {
           "upsets": 0,
-          "total": 11
+          "total": 12
         }
       },
       "bySeedDiff": {
@@ -333,7 +356,7 @@
         },
         "0-2": {
           "upsets": 2,
-          "total": 8
+          "total": 9
         },
         "6-8": {
           "upsets": 0,
@@ -343,7 +366,7 @@
       "bySpreadSize": {
         "0-5": {
           "upsets": 5,
-          "total": 18
+          "total": 19
         },
         "10+": {
           "upsets": 0,
@@ -357,10 +380,15 @@
     },
     "confidenceAccuracy": {
       "highConf": "100%",
-      "medConf": "71%",
+      "medConf": "75%",
       "lowConf": "75%"
     },
-    "volatileTeams": [],
+    "volatileTeams": [
+      {
+        "team": "St. John's",
+        "k": 30
+      }
+    ],
     "stableTeams": [],
     "vegasMomentum": {
       "modelStreak": 0,
@@ -378,8 +406,8 @@
       "totalPredictedHCA": 10.9,
       "totalActualMarginBias": 39,
       "gamesWithHCA": 3,
-      "gamesNeutral": 43
+      "gamesNeutral": 44
     }
   },
-  "eloUpdates": 8
+  "eloUpdates": 3
 }
