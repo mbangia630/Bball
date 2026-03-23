@@ -57,13 +57,15 @@ export default function ReportPage() {
           (s.teamA === g.teamA && s.teamB === g.teamB) ||
           (s.teamA === g.teamB && s.teamB === g.teamA)
         );
-        const predWinner = snap?.winner ?? g.w;
+        // Only grade games that have a real prediction (snapshot or v9 sim data)
+        const hasRealPrediction = !!snap || (g.sim != null && (g.modelSpread ?? g.modelSp ?? 0) !== 0);
+        const predWinner = snap?.winner ?? (hasRealPrediction ? g.w : null);
         const predSpread = snap ? Math.abs(snap.blendedSpread ?? snap.modelSpread ?? 0) : (g.sp ?? Math.abs(g.modelSp ?? g.modelSpread ?? 0));
         const vegasLine = snap?.vegasLine ?? g.vegasLine ?? g.vegasSp;
         const winProb = snap?.winProb ?? g.wp ?? 50;
-        const modelError = Math.abs(actualMargin - predSpread);
+        const modelError = hasRealPrediction ? Math.abs(actualMargin - predSpread) : null;
         const vegasError = vegasLine != null ? Math.abs(actualMargin - Math.abs(vegasLine)) : null;
-        const correct = predWinner === g.w;
+        const correct = hasRealPrediction ? (predWinner === g.w) : null;
         const wSeed = g.sW2 ?? g.seedW;
         const lSeed = g.sL2 ?? g.seedL;
         const isUpset = lSeed != null && wSeed != null && lSeed < wSeed;
@@ -82,7 +84,8 @@ export default function ReportPage() {
   if (err) return <Shell><p style={{ color: C.red }}>Failed to load: {err}</p></Shell>;
   if (!bracket) return <Shell><p style={{ color: C.dim, textAlign: "center", padding: 40 }}>Loading report...</p></Shell>;
 
-  const totalGraded = graded.length;
+  const gradedWithPrediction = graded.filter(g => g.correct != null);
+  const totalGraded = gradedWithPrediction.length;
   const timestamp = bracket.timestampCST || report?.generatedAtCST || "";
 
   return (
@@ -137,20 +140,22 @@ function TabBtn({ active, onClick, children }) {
    OVERVIEW TAB
    ══════════════════════════════════════════ */
 function OverviewTab({ graded, report }) {
-  const total = graded.length;
-  const correctCount = graded.filter(g => g.correct).length;
+  // Only use games with real predictions for stats
+  const predicted = graded.filter(g => g.correct != null);
+  const total = predicted.length;
+  const correctCount = predicted.filter(g => g.correct).length;
   const suPct = total > 0 ? (correctCount / total * 100) : 0;
 
-  const withVegas = graded.filter(g => g.vegasLine != null);
+  const withVegas = predicted.filter(g => g.vegasLine != null && g.modelError != null);
   const beatVegasCount = withVegas.filter(g => g.modelError < (g.vegasError ?? Infinity)).length;
   const atsPct = withVegas.length > 0 ? (beatVegasCount / withVegas.length * 100) : 0;
 
-  const avgError = total > 0 ? graded.reduce((s, g) => s + g.modelError, 0) / total : 0;
+  const avgError = total > 0 ? predicted.reduce((s, g) => s + (g.modelError ?? 0), 0) / total : 0;
   const avgVegasErr = withVegas.length > 0 ? withVegas.reduce((s, g) => s + (g.vegasError ?? 0), 0) / withVegas.length : 0;
 
   // By round
   const byRound = {};
-  for (const g of graded) {
+  for (const g of predicted) {
     const rd = g.rd;
     if (!byRound[rd]) byRound[rd] = { correct: 0, total: 0 };
     byRound[rd].total++;
@@ -163,26 +168,26 @@ function OverviewTab({ graded, report }) {
     { label: "60-75% confidence", min: 60, max: 75, mid: 67 },
     { label: "<60% confidence", min: 0, max: 60, mid: 55 },
   ].map(t => {
-    const games = graded.filter(g => g.winProb >= t.min && g.winProb < (t.max === 100 ? 101 : t.max));
+    const games = predicted.filter(g => g.winProb >= t.min && g.winProb < (t.max === 100 ? 101 : t.max));
     const correct = games.filter(g => g.correct).length;
     const rate = games.length > 0 ? (correct / games.length * 100) : 0;
     return { ...t, games: games.length, correct, rate };
   });
 
   // Best calls & biggest misses
-  const correctGames = graded.filter(g => g.correct).sort((a, b) => a.modelError - b.modelError);
+  const correctGames = predicted.filter(g => g.correct).sort((a, b) => (a.modelError ?? 99) - (b.modelError ?? 99));
   const bestCalls = correctGames.slice(0, 3);
-  const misses = [...graded].sort((a, b) => {
+  const misses = [...predicted].sort((a, b) => {
     if (!a.correct && b.correct) return -1;
     if (a.correct && !b.correct) return 1;
-    return b.modelError - a.modelError;
+    return (b.modelError ?? 0) - (a.modelError ?? 0);
   }).slice(0, 3);
 
   // v8 baseline
   const v8 = report?.v8Baseline ?? { gamesGraded: 34, straightUpPct: 76.5, atsPct: 44.1 };
 
-  // v9 games (rd >= 3)
-  const v9Games = graded.filter(g => g.rd >= 3);
+  // v9 games (rd >= 3, with real predictions)
+  const v9Games = predicted.filter(g => g.rd >= 3);
   const v9Correct = v9Games.filter(g => g.correct).length;
   const v9SuPct = v9Games.length > 0 ? (v9Correct / v9Games.length * 100) : 0;
   const v9AvgErr = v9Games.length > 0 ? v9Games.reduce((s, g) => s + g.modelError, 0) / v9Games.length : 0;
@@ -273,8 +278,9 @@ function OverviewTab({ graded, report }) {
 }
 
 function DailyTrend({ graded }) {
+  const predicted = graded.filter(g => g.correct != null);
   const byDate = {};
-  for (const g of graded) {
+  for (const g of predicted) {
     // Use date from the game or fall back to a single bucket
     const d = g.date ?? "2026-03-23";
     if (!byDate[d]) byDate[d] = { correct: 0, total: 0 };
@@ -326,8 +332,8 @@ function CallCard({ g, color }) {
     <div style={{ fontSize: 11, padding: "4px 0", borderBottom: `1px solid ${C.brd}`, lineHeight: 1.6 }}>
       <div style={{ color: C.tx, fontWeight: 700 }}>{g.w} {g.sW ?? g.scoreW}-{g.sL ?? g.scoreL}</div>
       <div style={{ color: C.dim }}>
-        Pred: {g.predSpread.toFixed(1)} → Actual: {g.actualMargin}
-        <span style={{ color, marginLeft: 6 }}>Err: {g.modelError.toFixed(1)}</span>
+        Pred: {g.predSpread?.toFixed(1) ?? "—"} → Actual: {g.actualMargin}
+        <span style={{ color, marginLeft: 6 }}>Err: {g.modelError?.toFixed(1) ?? "—"}</span>
         {g.isUpset && <span style={{ color: C.red, marginLeft: 6 }}>upset</span>}
         {!g.correct && <span style={{ color: C.red, marginLeft: 4 }}>❌ picked {g.predWinner}</span>}
       </div>
@@ -350,11 +356,11 @@ function GameLogTab({ graded }) {
       {sorted.map((g, i) => (
         <div key={i} style={{
           display: "flex", alignItems: "center", gap: 8, padding: "6px 8px", marginBottom: 2,
-          background: g.correct ? (g.modelError < 5 ? C.grn + "08" : C.card) : C.red + "08",
-          borderRadius: 4, borderLeft: `3px solid ${g.correct ? C.grn : C.red}44`,
+          background: g.correct == null ? C.card : g.correct ? (g.modelError < 5 ? C.grn + "08" : C.card) : C.red + "08",
+          borderRadius: 4, borderLeft: `3px solid ${g.correct == null ? C.dim : g.correct ? C.grn : C.red}44`,
         }}>
           {/* Verdict */}
-          <span style={{ fontSize: 14, flexShrink: 0 }}>{g.correct ? "✅" : "❌"}</span>
+          <span style={{ fontSize: 14, flexShrink: 0 }}>{g.correct == null ? "➖" : g.correct ? "✅" : "❌"}</span>
 
           {/* Game info */}
           <div style={{ flex: 1, minWidth: 0 }}>
@@ -364,13 +370,14 @@ function GameLogTab({ graded }) {
               <span style={{ color: C.dim }}>{g.l}</span>
               <span style={{ fontSize: 9, color: C.blue, border: `1px solid ${C.blue}33`, borderRadius: 3, padding: "0 4px" }}>{ROUND_LABELS[g.rd] ?? `R${g.rd}`}</span>
               {g.isUpset && <span style={{ fontSize: 9, color: C.red, fontWeight: 700 }}>upset</span>}
+              {g.correct == null && <span style={{ fontSize: 9, color: C.dim }}>no prediction</span>}
             </div>
           </div>
 
           {/* Stats */}
           <div style={{ textAlign: "right", flexShrink: 0, fontSize: 10, lineHeight: 1.6 }}>
-            <div><span style={{ color: C.purp }}>Pred: {g.predSpread.toFixed(1)}</span></div>
-            <div><span style={{ color: C.tx }}>Act: {g.actualMargin}</span> <span style={{ color: g.modelError < 5 ? C.grn : g.modelError < 10 ? C.gold : C.red }}>Err: {g.modelError.toFixed(1)}</span></div>
+            <div><span style={{ color: C.purp }}>Pred: {g.predSpread?.toFixed(1) ?? "—"}</span></div>
+            <div><span style={{ color: C.tx }}>Act: {g.actualMargin}</span> {g.modelError != null && <span style={{ color: g.modelError < 5 ? C.grn : g.modelError < 10 ? C.gold : C.red }}>Err: {g.modelError.toFixed(1)}</span>}</div>
           </div>
         </div>
       ))}
