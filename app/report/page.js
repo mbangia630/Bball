@@ -38,7 +38,8 @@ export default function ReportPage() {
       setReport(rep);
       setBracket(brk);
       setSnapshot(Array.isArray(snap) ? snap : []);
-      setWeights(wt);
+      // Fall back to weights from report if standalone fetch failed
+      setWeights(wt ?? safe(rep, "v8Baseline", "finalWeights") ?? safe(rep, "currentWeights"));
       setLearnState(ls);
     }).catch(e => setErr(e.message));
   }, []);

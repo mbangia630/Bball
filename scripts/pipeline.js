@@ -436,8 +436,11 @@ async function main() {
   fs.mkdirSync('public/data/reports', { recursive: true });
   fs.writeFileSync('public/data/bracket-display.json', JSON.stringify(display));
   fs.writeFileSync('data/bracket-display.json', JSON.stringify(display));
-  // Copy latest report to public so report page can fetch it
+  // Copy data files to public so client pages can fetch them
   try { fs.copyFileSync('data/reports/latest.json', 'public/data/reports/latest.json'); } catch {}
+  try { fs.copyFileSync('data/weights.json', 'public/data/weights.json'); } catch {}
+  try { fs.copyFileSync('data/learning-state.json', 'public/data/learning-state.json'); } catch {}
+  try { fs.copyFileSync('data/predictions-snapshot.json', 'public/data/predictions-snapshot.json'); } catch {}
 
   console.log(`\n✅ v9 pipeline complete. Champion: ${display.rounds[display.rounds.length - 1]?.g[0]?.w || display.rounds[display.rounds.length - 1]?.g[0]?.winner || 'TBD'}\n`);
 }
