@@ -328,6 +328,13 @@
       "scoreW": 67,
       "scoreL": 65,
       "date": "2026-03-23"
+    },
+    "MW_R32_3": {
+      "winner": "Tennessee",
+      "loser": "Virginia",
+      "scoreW": 79,
+      "scoreL": 72,
+      "date": "2026-03-23"
     }
   },
   "advancedTo": {
@@ -432,7 +439,8 @@
       "b": "Arkansas"
     },
     "MW_S16_2": {
-      "b": "Iowa State"
+      "b": "Iowa State",
+      "a": "Tennessee"
     }
   }
 }
