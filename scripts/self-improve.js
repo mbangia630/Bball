@@ -585,7 +585,7 @@ function generateReport(graded, oldW, newW, changes, history, learning, eloUpdat
         beatVegas: { correct: bv, total: bvt, pct: bvt > 0 ? Math.round(bv / bvt * 100) : null },
         avgError: allG.length > 0 ? Math.round(allG.reduce((s, g) => s + (g.modelError || 0), 0) / allG.length * 10) / 10 : null,
         avgVegasError: allG.filter(g => g.vegasError != null).length > 0 ? Math.round(allG.filter(g => g.vegasError != null).reduce((s, g) => s + g.vegasError, 0) / allG.filter(g => g.vegasError != null).length * 10) / 10 : null,
-      }};
+      };
     })(),
     games: [...graded, ...(history.games || []).filter(hg => !graded.some(g => g.teamA === hg.teamA && g.teamB === hg.teamB))].sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(g => ({
       matchup: `${g.teamA} vs ${g.teamB}`, score: `${g.actualWinner} ${Math.max(parseInt(g.actualTotal/2 + Math.abs(g.actualMargin)/2), 0)}-${Math.max(parseInt(g.actualTotal/2 - Math.abs(g.actualMargin)/2), 0)}`,
@@ -653,7 +653,7 @@ function main() {
     history.totalGames += graded.length;
     history.correctSU += su;
     history.correctATS += ats;
-    history.games.push(...graded.map(g => ({ teamA: g.teamA, teamB: g.teamB, modelCorrectSU: g.modelCorrectSU, modelCorrectATS: g.modelCorrectATS, modelBeatVegas: g.modelBeatVegas, modelError: g.modelError, modelSpread: g.modelSpread || g.blendedSpread || 0, vegasLine: g.vegasLine ?? g.vegasSp ?? null,
+    history.games.push(...graded.map(g => ({ teamA: g.teamA, teamB: g.teamB, modelCorrectSU: g.modelCorrectSU, modelCorrectATS: g.modelCorrectATS, modelBeatVegas: g.modelBeatVegas, modelError: g.modelError, modelSpread: g.modelSpread || g.blendedSpread || 0, vegasLine: g.vegasLine ?? g.vegasSp ?? null, vegasError: g.vegasError ?? null, actualMargin: g.actualMargin, actualTotal: g.actualTotal, actualWinner: g.actualWinner, scoreA: g.scoreW, scoreB: g.scoreL, date: g.date, verdict: g.modelCorrectSU && g.modelCorrectATS ? '✅ Nailed it' : g.modelCorrectSU ? '🟡 Right winner, wrong spread' : g.modelCorrectATS ? '🟡 Wrong winner, covered ATS' : '❌ Missed' })));
     history.daily.push({ date: new Date().toISOString().slice(0, 10), games: graded.length, suPct: Math.round(su / graded.length * 100), atsPct: Math.round(ats / graded.length * 100), avgError: Math.round(graded.reduce((s, g) => s + g.modelError, 0) / graded.length * 10) / 10 });
     console.log(`📈 Cumulative: ${history.correctSU}/${history.totalGames} SU (${Math.round(history.correctSU / history.totalGames * 100)}%), ${history.correctATS}/${history.totalGames} ATS (${Math.round(history.correctATS / history.totalGames * 100)}%)\n`);
   }
