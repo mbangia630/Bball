@@ -196,7 +196,7 @@ function ProjectedCardBody({ g, wp }) {
 
   return (
     <div>
-      <TeamRow seed={wSeed} name={wName} probOrScore={`${wProb}%`} probColor={C.grn} right={`${g.sW ?? g.scoreW ?? "—"}`} />
+      <TeamRow seed={wSeed} name={wName} probOrScore={`${wProb}%`} probColor={C.grn} right={`${g.sW ?? g.scoreW ?? "—"}`} bold />
       <TeamRow seed={lSeed} name={lName} probOrScore={`${lProb}%`} probColor={C.red} right={`${g.sL ?? g.scoreL ?? "—"}`} />
     </div>
   );
@@ -267,12 +267,12 @@ function ProjectedBottomRow({ g, spread, vSp, closeGame, stdDev }) {
   );
 }
 
-function TeamRow({ seed, name, probOrScore, probColor, right }) {
+function TeamRow({ seed, name, probOrScore, probColor, right, bold = false }) {
   return (
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 2 }}>
       <div>
         <span style={{ color: C.gold, fontSize: 11, marginRight: 6 }}>({seed})</span>
-        <span style={{ color: C.tx, fontWeight: 700, fontSize: 13 }}>{name}</span>
+        <span style={{ color: bold ? C.tx : C.dim, fontWeight: bold ? 700 : 400, fontSize: 13 }}>{name}</span>
         <span style={{ color: probColor, fontSize: 11, marginLeft: 8 }}>{probOrScore}</span>
       </div>
       <span style={{ color: C.dim, fontSize: 13 }}>{right}</span>
