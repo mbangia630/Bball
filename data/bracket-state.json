@@ -335,6 +335,13 @@
       "scoreW": 79,
       "scoreL": 72,
       "date": "2026-03-23"
+    },
+    "S_R32_1": {
+      "winner": "Iowa",
+      "loser": "Florida",
+      "scoreW": 73,
+      "scoreL": 72,
+      "date": "2026-03-23"
     }
   },
   "advancedTo": {
@@ -433,7 +440,8 @@
       "b": "Purdue"
     },
     "S_S16_1": {
-      "b": "Nebraska"
+      "b": "Nebraska",
+      "a": "Iowa"
     },
     "W_S16_1": {
       "b": "Arkansas"

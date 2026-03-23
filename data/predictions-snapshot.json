@@ -2384,5 +2384,172 @@
     "id": "MW_S16_2",
     "region": "S16",
     "predictedAt": "2026-03-23T00:48:44.563Z"
+  },
+  {
+    "teamA": "Iowa",
+    "teamB": "Nebraska",
+    "round": 3,
+    "venue": "Houston",
+    "winner": "Nebraska",
+    "loser": "Iowa",
+    "w": "Nebraska",
+    "l": "Iowa",
+    "scoreW": 69,
+    "scoreL": 67,
+    "sW": 69,
+    "sL": 67,
+    "winProb": 56.8,
+    "wp": 56.8,
+    "sp": 2,
+    "modelSpread": -1,
+    "blendedSpread": -2,
+    "vegasLine": -2.5,
+    "edge": 1.6,
+    "moneyline": [
+      130,
+      -155
+    ],
+    "hca": 0,
+    "L1": 0.1,
+    "L2": 0.2,
+    "L3": -0.9,
+    "L4": 0.4,
+    "L5": -0.1,
+    "v8adj": -0.34,
+    "ensAvg": -1.5,
+    "ensAgree": false,
+    "injuryFlagA": "1 articles",
+    "injuryFlagB": "2 articles",
+    "status": "UPCOMING",
+    "sW2": 4,
+    "sL2": 9,
+    "ven": "Houston",
+    "modelSp": -1,
+    "vegasSp": -2.5,
+    "rawSp": -2,
+    "mu": {
+      "det": [
+        {
+          "t": "Tempo clash",
+          "stat": "Pace",
+          "team": "Iowa",
+          "i": 0.3,
+          "d": "6-possession gap — Iowa's pace controls"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0.3
+    },
+    "cDiff": 0.3,
+    "fatA": {
+      "pts": -0.18
+    },
+    "fatB": {
+      "pts": -0.09
+    },
+    "rd": 3,
+    "v8": {
+      "ref": 0,
+      "gs": -0.13,
+      "sharp": 0,
+      "cont": -0.21,
+      "tz": 0,
+      "foul": 0,
+      "ens": {
+        "avg": -1.5,
+        "agree": false
+      },
+      "total": -0.34
+    },
+    "adjStats": {
+      "aEfg": 54.6,
+      "bEfg": 54.5,
+      "aTor": 15.5,
+      "bTor": 15.3,
+      "aOrb": 34.7,
+      "bOrb": 32.8,
+      "aFtr": 35.3,
+      "bFtr": 32.4
+    },
+    "ha": null,
+    "hb": 0,
+    "a": {
+      "em": 21.0096,
+      "efg": 54.55492,
+      "tor": 15.45856,
+      "orb": 34.66,
+      "ftr": 35.3476,
+      "tpt": 34.62356,
+      "ast": 53.967040000000004,
+      "mg": 48.01856,
+      "o": 114.8672,
+      "d": 93.85759999999999,
+      "t": 62.9,
+      "elo": 1953,
+      "lk": 0.01,
+      "st": 0.38,
+      "ci": 0,
+      "ij": 0,
+      "s": 9,
+      "hb": 4,
+      "kp": 25,
+      "rec": "22-11",
+      "coach": "Fran McCaffery",
+      "cAdj": -0.3,
+      "sty": {
+        "p3": 0.34,
+        "d3r": 45,
+        "ht": 78,
+        "toF": 9.5,
+        "t": 62
+      },
+      "name": "Iowa"
+    },
+    "b": {
+      "em": 20.908,
+      "efg": 54.53284,
+      "tor": 15.30272,
+      "orb": 32.796,
+      "ftr": 32.4332,
+      "tpt": 35.11004,
+      "ast": 58.573440000000005,
+      "mg": 50.46704,
+      "o": 114.47999999999999,
+      "d": 93.572,
+      "t": 66.9,
+      "elo": 2055,
+      "lk": 0.008,
+      "st": 0.34,
+      "ci": 0,
+      "ij": 0,
+      "s": 4,
+      "hb": 4,
+      "kp": 12,
+      "rec": "26-6",
+      "coach": "Fred Hoiberg",
+      "cAdj": -0.8,
+      "sty": {
+        "p3": 0.36,
+        "d3r": 7,
+        "ht": 78,
+        "toF": 10,
+        "t": 68
+      },
+      "name": "Nebraska"
+    },
+    "id": "S_S16_1",
+    "region": "S16",
+    "predictedAt": "2026-03-23T01:41:41.509Z"
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-23T01:32:50.185Z",
+  "timestamp": "2026-03-23T01:41:41.380Z",
   "games": [],
   "odds": {
     "Florida Gators vs Iowa Hawkeyes": {
@@ -10,27 +10,27 @@
       "homeTeam": "Florida Gators",
       "awayTeam": "Iowa Hawkeyes",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:33:03Z"
     },
     "New Mexico Lobos vs GW Revolutionaries": {
-      "spread": -17.5,
-      "spreadOdds": -130,
+      "spread": -15.5,
+      "spreadOdds": 100,
       "mlHome": null,
       "mlAway": null,
       "homeTeam": "New Mexico Lobos",
       "awayTeam": "GW Revolutionaries",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:41:27Z"
     },
     "Arizona Wildcats vs Utah State Aggies": {
-      "spread": -15.5,
-      "spreadOdds": -120,
-      "mlHome": -6500,
-      "mlAway": 1800,
+      "spread": -19.5,
+      "spreadOdds": -125,
+      "mlHome": null,
+      "mlAway": null,
       "homeTeam": "Arizona Wildcats",
       "awayTeam": "Utah State Aggies",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:41:27Z"
     },
     "Oklahoma St Cowboys vs Wichita St Shockers": {
       "spread": 3.5,
@@ -40,27 +40,27 @@
       "homeTeam": "Oklahoma St Cowboys",
       "awayTeam": "Wichita St Shockers",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:41:27Z"
     },
     "California Golden Bears vs Saint Joseph's Hawks": {
-      "spread": -5.5,
+      "spread": -6.5,
       "spreadOdds": -120,
-      "mlHome": -298,
-      "mlAway": 220,
+      "mlHome": -360,
+      "mlAway": 260,
       "homeTeam": "California Golden Bears",
       "awayTeam": "Saint Joseph's Hawks",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:41:27Z"
     },
     "UConn Huskies vs UCLA Bruins": {
       "spread": -3.5,
       "spreadOdds": -110,
-      "mlHome": -200,
-      "mlAway": 154,
+      "mlHome": -210,
+      "mlAway": 160,
       "homeTeam": "UConn Huskies",
       "awayTeam": "UCLA Bruins",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:41:27Z"
     },
     "Alabama Crimson Tide vs Texas Tech Red Raiders": {
       "spread": -1.5,
@@ -70,7 +70,7 @@
       "homeTeam": "Alabama Crimson Tide",
       "awayTeam": "Texas Tech Red Raiders",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:41:27Z"
     },
     "Houston Cougars vs Illinois Fighting Illini": {
       "spread": -2.5,
@@ -80,7 +80,17 @@
       "homeTeam": "Houston Cougars",
       "awayTeam": "Illinois Fighting Illini",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:41:27Z"
+    },
+    "Nebraska Cornhuskers vs Iowa Hawkeyes": {
+      "spread": -2.5,
+      "spreadOdds": -110,
+      "mlHome": -155,
+      "mlAway": 130,
+      "homeTeam": "Nebraska Cornhuskers",
+      "awayTeam": "Iowa Hawkeyes",
+      "book": "draftkings",
+      "updated": "2026-03-23T01:41:27Z"
     },
     "Purdue Boilermakers vs Texas Longhorns": {
       "spread": -8.5,
@@ -90,7 +100,7 @@
       "homeTeam": "Purdue Boilermakers",
       "awayTeam": "Texas Longhorns",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:41:27Z"
     },
     "Duke Blue Devils vs St. John's Red Storm": {
       "spread": -6.5,
@@ -100,7 +110,7 @@
       "homeTeam": "Duke Blue Devils",
       "awayTeam": "St. John's Red Storm",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:41:27Z"
     },
     "Iowa State Cyclones vs Tennessee Volunteers": {
       "spread": -4.5,
@@ -110,7 +120,7 @@
       "homeTeam": "Iowa State Cyclones",
       "awayTeam": "Tennessee Volunteers",
       "book": "draftkings",
-      "updated": "2026-03-23T01:32:19Z"
+      "updated": "2026-03-23T01:41:27Z"
     }
   },
   "injuries": [
@@ -156,6 +166,13 @@
     }
   ],
   "yesterdayResults": [
+    {
+      "teamA": "Florida Gators",
+      "teamB": "Iowa Hawkeyes",
+      "scoreA": 72,
+      "scoreB": 73,
+      "neutral": true
+    },
     {
       "teamA": "Purdue Boilermakers",
       "teamB": "Miami Hurricanes",
