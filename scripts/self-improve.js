@@ -108,14 +108,23 @@ function loadPredictions() {
   const raw = loadJSON('data/predictions.json', []);
   return Array.isArray(raw) ? raw : (raw?.predictions || []);
 }
-function loadResults() { return loadJSON('data/latest.json', {}).yesterdayResults || []; }
-
+function loadResults() {
+  const bracketState = loadJSON('data/bracket-state.json', { results: {} });
+  return Object.entries(bracketState.results).map(([id, r]) => ({
+    id,
+    teamA: r.winner,
+    teamB: r.loser,
+    scoreA: r.scoreW,
+    scoreB: r.scoreL,
+    date: r.date || '',
+  }));
+}
 // ═══ GRADE GAMES ═══
 function gradeGames(predictions, results, teamDB) {
   const graded = [];
   for (const result of results) {
-    const aName = resolve(result.teamA, teamDB) || result.teamA;
-    const bName = resolve(result.teamB, teamDB) || result.teamB;
+    const aName = result.teamA;
+    const bName = result.teamB;
     const pred = predictions.find(p =>
       (p.teamA === aName && p.teamB === bName) || (p.teamA === bName && p.teamB === aName) ||
       (p.teamA === result.teamA && p.teamB === result.teamB) || (p.teamA === result.teamB && p.teamB === result.teamA)
@@ -611,8 +620,11 @@ function main() {
 
   console.log(`📊 ${predictions.length} predictions, ${results.length} results, ${Object.keys(learning.teamK).length} teams tracked\n`);
 
-  const graded = gradeGames(predictions, results, teamDB);
-  console.log(`✅ Graded ${graded.length} games:`);
+// Only grade games not already graded
+  const gradedIds = learning.gradedGameIds || [];
+  const newResults = results.filter(r => !gradedIds.includes(r.id));
+  const graded = gradeGames(predictions, newResults, teamDB);
+  console.log(`✅ Graded ${graded.length} new games (${gradedIds.length} previously graded):`);
 
   if (graded.length > 0) {
     const su = graded.filter(g => g.modelCorrectSU).length;
@@ -689,6 +701,8 @@ function main() {
 
   // Save
   weights.version = (oldW.version || 1) + 1;
+  // Mark newly graded games so we don't re-grade them
+  learning.gradedGameIds = [...gradedIds, ...newResults.filter(r => graded.some(g => (g.teamA === r.teamA && g.teamB === r.teamB) || (g.teamA === r.teamB && g.teamB === r.teamA))).map(r => r.id)];
   weights.lastUpdated = new Date().toISOString();
   generateReport(graded, oldW, weights, changes, history, learning, eloUpdates);
 

@@ -81,12 +81,12 @@ export default function ReportsPage() {
           </div>
         )}
 
-        {/* Yesterday + Cumulative */}
+        {/* RECENT + Cumulative */}
         {!noData && (
           <div style={{ marginBottom: 20 }}>
             <div style={{ padding: "14px 16px", background: `${C.gold}06`, border: `1px solid ${C.gold}22`, borderRadius: "8px 8px 0 0" }}>
               <div style={{ fontSize: 13, letterSpacing: 3, color: C.gold, fontWeight: 700, marginBottom: 10 }}>
-                📊 YESTERDAY ({t.gamesGraded || 0} games)
+                📊 RECENT ({t.gamesGraded || 0} games)
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
                 <StatBox label="Straight-Up" value={su.pct != null ? su.pct + "%" : "—"} sub={su.total > 0 ? `${su.correct}/${su.total}` : "No games"} color={su.pct >= 70 ? C.grn : su.pct >= 50 ? C.gold : C.dim} />
