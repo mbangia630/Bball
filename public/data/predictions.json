@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-03-22T23:35:32.175Z",
-  "weightsVersion": 33,
+  "timestamp": "2026-03-23T00:14:50.890Z",
+  "weightsVersion": 34,
   "engineVersion": "v5-full-v8-live-stats",
   "completed": [
     {
@@ -374,6 +374,16 @@
       "status": "FINAL"
     },
     {
+      "id": "E_R32_2",
+      "round": "R32",
+      "winner": "St. John's",
+      "loser": "Kansas",
+      "scoreW": 67,
+      "scoreL": 65,
+      "date": "2026-03-23",
+      "status": "FINAL"
+    },
+    {
       "id": "E_R32_3",
       "round": "R32",
       "winner": "Michigan St.",
@@ -466,164 +476,6 @@
   ],
   "predictions": [
     {
-      "teamA": "St. John's",
-      "teamB": "Kansas",
-      "round": 2,
-      "venue": "Buffalo",
-      "winner": "St. John's",
-      "loser": "Kansas",
-      "w": "St. John's",
-      "l": "Kansas",
-      "scoreW": 74,
-      "scoreL": 69,
-      "sW": 74,
-      "sL": 69,
-      "winProb": 68.4,
-      "wp": 68.4,
-      "sp": 4.6,
-      "modelSpread": 4.6,
-      "vegasLine": null,
-      "blendedSpread": 4.6,
-      "edge": null,
-      "moneyline": [
-        -375,
-        270
-      ],
-      "hca": 0,
-      "L1": 2.5,
-      "L2": 0.2,
-      "L3": 0.8,
-      "L4": 0.3,
-      "L5": 0.1,
-      "v8adj": 1.45,
-      "ensAvg": 1.8,
-      "ensAgree": true,
-      "injuryFlagA": null,
-      "injuryFlagB": null,
-      "status": "UPCOMING",
-      "sW2": 5,
-      "sL2": 4,
-      "ven": "Buffalo",
-      "modelSp": 4.6,
-      "vegasSp": null,
-      "rawSp": 4.6,
-      "mu": {
-        "det": [],
-        "adjA": {
-          "efg": 0,
-          "tor": 0,
-          "orb": 0,
-          "ftr": 0
-        },
-        "adjB": {
-          "efg": 0,
-          "tor": 0,
-          "orb": 0,
-          "ftr": 0
-        },
-        "tempoAdj": 0
-      },
-      "cDiff": 0.4,
-      "fatA": {
-        "pts": -0.11
-      },
-      "fatB": {
-        "pts": -0.17
-      },
-      "rd": 2,
-      "v8": {
-        "ref": 0.06,
-        "gs": 0.27,
-        "sharp": 0.65,
-        "cont": 0.24,
-        "tz": 0.15,
-        "foul": 0.08,
-        "ens": {
-          "avg": 1.8,
-          "agree": true
-        },
-        "total": 1.45
-      },
-      "adjStats": {
-        "aEfg": 52.2,
-        "bEfg": 52.3,
-        "aTor": 15.8,
-        "bTor": 15.9,
-        "aOrb": 34.9,
-        "bOrb": 33.9,
-        "aFtr": 39.3,
-        "bFtr": 35.4
-      },
-      "ha": null,
-      "hb": 0,
-      "a": {
-        "em": 22.427999999999997,
-        "efg": 52.22355999999999,
-        "tor": 15.83696,
-        "orb": 34.92700000000001,
-        "ftr": 39.2834,
-        "tpt": 34.97296,
-        "ast": 55.78208,
-        "mg": 54.65088,
-        "o": 116.08160000000001,
-        "d": 93.6536,
-        "t": 70.4,
-        "elo": 1957,
-        "lk": 0.035,
-        "st": 0.56,
-        "ci": 0,
-        "ij": 0,
-        "s": 5,
-        "hb": 4,
-        "kp": 21,
-        "rec": "24-9",
-        "coach": "Rick Pitino",
-        "cAdj": 1.2,
-        "sty": {
-          "p3": 0.4,
-          "d3r": 12,
-          "ht": 78,
-          "toF": 10.8,
-          "t": 68
-        },
-        "name": "St. John's"
-      },
-      "b": {
-        "em": 19.1192,
-        "efg": 52.29332,
-        "tor": 15.87568,
-        "orb": 33.8892,
-        "ftr": 35.437,
-        "tpt": 35.3166,
-        "ast": 52.72128,
-        "mg": 49.618880000000004,
-        "o": 111.8752,
-        "d": 92.756,
-        "t": 68,
-        "elo": 1905,
-        "lk": 0.015,
-        "st": 0.18,
-        "ci": 0,
-        "ij": 0,
-        "s": 4,
-        "hb": 6,
-        "kp": 13,
-        "rec": "23-10",
-        "coach": "Bill Self",
-        "cAdj": 0.5,
-        "sty": {
-          "p3": 0.38,
-          "d3r": 15,
-          "ht": 79,
-          "toF": 10.2,
-          "t": 67
-        },
-        "name": "Kansas"
-      },
-      "id": "E_R32_2",
-      "region": "R32"
-    },
-    {
       "teamA": "UCLA",
       "teamB": "UConn",
       "round": 2,
@@ -636,8 +488,8 @@
       "scoreL": 67,
       "sW": 72,
       "sL": 67,
-      "winProb": 68.8,
-      "wp": 68.8,
+      "winProb": 69.1,
+      "wp": 69.1,
       "sp": 4.7,
       "modelSpread": -5.1,
       "vegasLine": -4.5,
@@ -798,20 +650,20 @@
       "loser": "Iowa",
       "w": "Florida",
       "l": "Iowa",
-      "scoreW": 73,
-      "scoreL": 68,
-      "sW": 73,
-      "sL": 68,
-      "winProb": 73.2,
-      "wp": 73.2,
-      "sp": 5.8,
+      "scoreW": 74,
+      "scoreL": 67,
+      "sW": 74,
+      "sL": 67,
+      "winProb": 79.1,
+      "wp": 79.1,
+      "sp": 7.2,
       "modelSpread": 6.5,
-      "vegasLine": 5.5,
-      "blendedSpread": 5.8,
-      "edge": 1,
+      "vegasLine": 7.5,
+      "blendedSpread": 7.2,
+      "edge": -1,
       "moneyline": [
-        -260,
-        195
+        -445,
+        310
       ],
       "hca": 1.9,
       "L1": 5.3,
@@ -829,8 +681,8 @@
       "sL2": 9,
       "ven": "Tampa",
       "modelSp": 6.5,
-      "vegasSp": 5.5,
-      "rawSp": 5.8,
+      "vegasSp": 7.5,
+      "rawSp": 7.2,
       "mu": {
         "det": [
           {
@@ -968,16 +820,16 @@
       "scoreL": 68,
       "sW": 78,
       "sL": 68,
-      "winProb": 84,
-      "wp": 84,
-      "sp": 9.6,
+      "winProb": 86.5,
+      "wp": 86.5,
+      "sp": 10.3,
       "modelSpread": 5.1,
-      "vegasLine": 11.5,
-      "blendedSpread": 9.6,
-      "edge": -6.4,
+      "vegasLine": 12.5,
+      "blendedSpread": 10.3,
+      "edge": -7.4,
       "moneyline": [
-        -800,
-        550
+        -950,
+        575
       ],
       "hca": 0,
       "L1": 5.9,
@@ -995,8 +847,8 @@
       "sL2": 9,
       "ven": "OKC",
       "modelSp": 5.1,
-      "vegasSp": 11.5,
-      "rawSp": 9.6,
+      "vegasSp": 12.5,
+      "rawSp": 10.3,
       "mu": {
         "det": [],
         "adjA": {
@@ -1288,20 +1140,20 @@
       "loser": "Virginia",
       "w": "Tennessee",
       "l": "Virginia",
-      "scoreW": 71,
-      "scoreL": 68,
-      "sW": 71,
-      "sL": 68,
-      "winProb": 60.2,
-      "wp": 60.2,
-      "sp": 2.9,
+      "scoreW": 70,
+      "scoreL": 69,
+      "sW": 70,
+      "sL": 69,
+      "winProb": 53.1,
+      "wp": 53.1,
+      "sp": 0.8,
       "modelSpread": -0.8,
-      "vegasLine": 4.5,
-      "blendedSpread": 2.9,
-      "edge": -5.3,
+      "vegasLine": 1.5,
+      "blendedSpread": 0.8,
+      "edge": -2.3,
       "moneyline": [
-        -298,
-        220
+        -188,
+        145
       ],
       "hca": 0,
       "L1": -1.1,
@@ -1319,8 +1171,8 @@
       "sL2": 3,
       "ven": "St. Louis",
       "modelSp": -0.8,
-      "vegasSp": 4.5,
-      "rawSp": 2.9,
+      "vegasSp": 1.5,
+      "rawSp": 0.8,
       "mu": {
         "det": [
           {
@@ -1453,6 +1305,179 @@
       "region": "R32"
     },
     {
+      "teamA": "Duke",
+      "teamB": "St. John's",
+      "round": 3,
+      "venue": "Washington DC",
+      "winner": "Duke",
+      "loser": "St. John's",
+      "w": "Duke",
+      "l": "St. John's",
+      "scoreW": 76,
+      "scoreL": 68,
+      "sW": 76,
+      "sL": 68,
+      "winProb": 79.4,
+      "wp": 79.4,
+      "sp": 7.3,
+      "modelSpread": 9,
+      "vegasLine": 6.5,
+      "blendedSpread": 7.3,
+      "edge": 2.5,
+      "moneyline": [
+        -258,
+        210
+      ],
+      "hca": 0,
+      "L1": 8.7,
+      "L2": 1.6,
+      "L3": 0.1,
+      "L4": -0.4,
+      "L5": 0.1,
+      "v8adj": -0.12,
+      "ensAvg": 5.1,
+      "ensAgree": true,
+      "injuryFlagA": null,
+      "injuryFlagB": null,
+      "status": "UPCOMING",
+      "sW2": 1,
+      "sL2": 5,
+      "ven": "Washington DC",
+      "modelSp": 9,
+      "vegasSp": 6.5,
+      "rawSp": 7.3,
+      "mu": {
+        "det": [
+          {
+            "t": "3PT vs Elite 3PT-D",
+            "stat": "eFG%",
+            "team": "Duke",
+            "i": -0.4500000000000001,
+            "d": "Duke's 3PT-heavy (44%) faces St. John's's #12 3PT D"
+          },
+          {
+            "t": "Disruptive defense",
+            "stat": "TO Rate",
+            "team": "St. John's",
+            "i": 0.5999999999999996,
+            "d": "Duke forces 11.2 TOs/g → St. John's's TO rate +0.6%"
+          }
+        ],
+        "adjA": {
+          "efg": -0.4500000000000001,
+          "tor": 0,
+          "orb": 0,
+          "ftr": 0
+        },
+        "adjB": {
+          "efg": 0,
+          "tor": 0.5999999999999996,
+          "orb": 0,
+          "ftr": 0
+        },
+        "tempoAdj": 0
+      },
+      "cDiff": -0.5,
+      "fatA": {
+        "pts": -0.2
+      },
+      "fatB": {
+        "pts": -0.26
+      },
+      "rd": 3,
+      "v8": {
+        "ref": -0.06,
+        "gs": 0.23,
+        "sharp": -0.05,
+        "cont": -0.21,
+        "tz": 0,
+        "foul": -0.03,
+        "ens": {
+          "avg": 5.1,
+          "agree": true
+        },
+        "total": -0.12
+      },
+      "adjStats": {
+        "aEfg": 56.5,
+        "bEfg": 52.2,
+        "aTor": 15.3,
+        "bTor": 16.4,
+        "aOrb": 35.8,
+        "bOrb": 34.9,
+        "aFtr": 38.7,
+        "bFtr": 39.3
+      },
+      "ha": null,
+      "hb": 0,
+      "a": {
+        "em": 34.028800000000004,
+        "efg": 56.98256,
+        "tor": 15.255840000000001,
+        "orb": 35.781400000000005,
+        "ftr": 38.7078,
+        "tpt": 37.252880000000005,
+        "ast": 58.08192,
+        "mg": 57.48048,
+        "o": 123.3984,
+        "d": 89.36959999999999,
+        "t": 66.1,
+        "elo": 2061,
+        "lk": 0.012,
+        "st": 0.5,
+        "ci": 0,
+        "ij": -1,
+        "s": 1,
+        "hb": 6.5,
+        "kp": 1,
+        "rec": "32-2",
+        "coach": "Jon Scheyer",
+        "cAdj": 0.3,
+        "sty": {
+          "p3": 0.44,
+          "d3r": 15,
+          "ht": 79,
+          "toF": 11.2,
+          "t": 69.2
+        },
+        "name": "Duke"
+      },
+      "b": {
+        "em": 22.427999999999997,
+        "efg": 52.22355999999999,
+        "tor": 15.83696,
+        "orb": 34.92700000000001,
+        "ftr": 39.2834,
+        "tpt": 34.97296,
+        "ast": 55.78208,
+        "mg": 54.65088,
+        "o": 116.08160000000001,
+        "d": 93.6536,
+        "t": 70.4,
+        "elo": 1974,
+        "lk": 0.035,
+        "st": 0.56,
+        "ci": 0,
+        "ij": 0,
+        "s": 5,
+        "hb": 4,
+        "kp": 21,
+        "rec": "24-9",
+        "coach": "Rick Pitino",
+        "cAdj": 1.2,
+        "sty": {
+          "p3": 0.4,
+          "d3r": 12,
+          "ht": 78,
+          "toF": 10.8,
+          "t": 68
+        },
+        "name": "St. John's"
+      },
+      "id": "E_S16_1",
+      "region": "S16"
+    },
+    {
       "teamA": "Illinois",
       "teamB": "Houston",
       "round": 3,
@@ -1465,8 +1490,8 @@
       "scoreL": 69,
       "sW": 72,
       "sL": 69,
-      "winProb": 57.9,
-      "wp": 57.9,
+      "winProb": 58.1,
+      "wp": 58.1,
       "sp": 2.3,
       "modelSpread": -1.9,
       "vegasLine": -2.5,
@@ -1638,13 +1663,13 @@
       "scoreL": 68,
       "sW": 76,
       "sL": 68,
-      "winProb": 80.3,
-      "wp": 80.3,
-      "sp": 7.7,
-      "modelSpread": -6,
+      "winProb": 80.8,
+      "wp": 80.8,
+      "sp": 7.9,
+      "modelSpread": -6.4,
       "vegasLine": -8.5,
-      "blendedSpread": -7.7,
-      "edge": 2.5,
+      "blendedSpread": -7.9,
+      "edge": 2.1,
       "moneyline": [
         285,
         -360
@@ -1652,11 +1677,11 @@
       "hca": 0,
       "L1": -5.7,
       "L2": -1.1,
-      "L3": -0.1,
+      "L3": -0.4,
       "L4": 0.1,
       "L5": 0.1,
       "v8adj": -0.58,
-      "ensAvg": -1,
+      "ensAvg": -1.7,
       "ensAgree": false,
       "injuryFlagA": "1 articles",
       "injuryFlagB": null,
@@ -1664,9 +1689,9 @@
       "sW2": 2,
       "sL2": 11,
       "ven": "San Jose",
-      "modelSp": -6,
+      "modelSp": -6.4,
       "vegasSp": -8.5,
-      "rawSp": -7.7,
+      "rawSp": -7.9,
       "mu": {
         "det": [
           {
@@ -1707,7 +1732,7 @@
         "tz": 0.15,
         "foul": 0.05,
         "ens": {
-          "avg": -1,
+          "avg": -1.7,
           "agree": false
         },
         "total": -0.58
@@ -1768,7 +1793,7 @@
         "o": 123.43359999999998,
         "d": 93.97999999999999,
         "t": 64.9,
-        "elo": 1887,
+        "elo": 1929,
         "lk": 0.01,
         "st": 0.56,
         "ci": 0,
@@ -1793,8 +1818,8 @@
     }
   ],
   "bracketProgress": {
-    "gamesPlayed": 46,
-    "gamesRemaining": 21,
+    "gamesPlayed": 47,
+    "gamesRemaining": 20,
     "currentRound": 2
   }
 }

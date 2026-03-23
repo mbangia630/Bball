@@ -1,46 +1,46 @@
 {
   "layerAccuracy": {
     "L1": {
-      "totalSigned": 302.9000000000001,
-      "correctDir": 40,
-      "totalAbsError": 440.4999999999999,
-      "games": 46
+      "totalSigned": 306.6000000000001,
+      "correctDir": 41,
+      "totalAbsError": 442.1999999999999,
+      "games": 47
     },
     "L2": {
-      "totalSigned": 36.800000000000004,
-      "correctDir": 36,
-      "totalAbsError": 694.2000000000002,
-      "games": 46
+      "totalSigned": 37.7,
+      "correctDir": 37,
+      "totalAbsError": 695.3000000000002,
+      "games": 47
     },
     "L3": {
-      "totalSigned": 29.400000000000013,
-      "correctDir": 30,
-      "totalAbsError": 707.6000000000003,
-      "games": 46
+      "totalSigned": 30.200000000000014,
+      "correctDir": 31,
+      "totalAbsError": 708.8000000000003,
+      "games": 47
     },
     "L4": {
-      "totalSigned": 3.0000000000000013,
-      "correctDir": 32,
-      "totalAbsError": 741.0000000000001,
-      "games": 46
+      "totalSigned": 3.300000000000001,
+      "correctDir": 33,
+      "totalAbsError": 742.7000000000002,
+      "games": 47
     },
     "L5": {
-      "totalSigned": 0.1,
-      "correctDir": 45,
-      "totalAbsError": 746.1,
-      "games": 46
+      "totalSigned": 0.2,
+      "correctDir": 46,
+      "totalAbsError": 748,
+      "games": 47
     },
     "v8": {
-      "totalSigned": 4.659999999999999,
-      "correctDir": 31,
-      "totalAbsError": 744.7800000000001,
-      "games": 46
+      "totalSigned": 6.109999999999999,
+      "correctDir": 32,
+      "totalAbsError": 745.33,
+      "games": 47
     },
     "ens": {
-      "totalSigned": 189.89999999999998,
-      "correctDir": 40,
-      "totalAbsError": 514.3000000000001,
-      "games": 46
+      "totalSigned": 192.39999999999998,
+      "correctDir": 41,
+      "totalAbsError": 514.8000000000001,
+      "games": 47
     }
   },
   "teamK": {
@@ -204,10 +204,11 @@
       ]
     },
     "Kansas": {
-      "k": 20,
+      "k": 23,
       "recentErrors": [
         4.9,
-        4.4
+        4.4,
+        1
       ]
     },
     "Cal Baptist": {
@@ -232,10 +233,11 @@
       ]
     },
     "St. John's": {
-      "k": 20,
+      "k": 30,
       "recentErrors": [
         15.7,
-        14.7
+        14.7,
+        1
       ]
     },
     "N. Iowa": {
@@ -395,10 +397,10 @@
   "situations": {
     "bySpreadBucket": {
       "3-7": {
-        "correct": 5,
-        "total": 7,
+        "correct": 6,
+        "total": 8,
         "avgError": 0,
-        "totalError": 60.599999999999994
+        "totalError": 61.599999999999994
       },
       "0-3": {
         "correct": 8,
@@ -465,8 +467,8 @@
         "total": 3
       },
       "4v5": {
-        "correct": 3,
-        "total": 3
+        "correct": 4,
+        "total": 4
       },
       "4v12": {
         "correct": 3,
@@ -479,14 +481,14 @@
         "total": 35
       },
       "2": {
-        "correct": 11,
-        "total": 11
+        "correct": 12,
+        "total": 12
       }
     },
     "favVsDog": {
       "fav": {
-        "correct": 34,
-        "total": 36
+        "correct": 35,
+        "total": 37
       },
       "dog": {
         "correct": 7,
@@ -741,8 +743,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 9.3
+        "games": 3,
+        "totalError": 10.3
       }
     },
     "Cal Baptist": {
@@ -781,8 +783,8 @@
         "totalError": 0
       },
       "without": {
-        "games": 2,
-        "totalError": 30.4
+        "games": 3,
+        "totalError": 31.4
       }
     },
     "N. Iowa": {
@@ -1007,8 +1009,8 @@
     }
   },
   "lineMovement": {
-    "sharpCorrect": 15,
-    "sharpTotal": 17,
+    "sharpCorrect": 16,
+    "sharpTotal": 18,
     "reverseLineCorrect": 7,
     "reverseLineTotal": 9,
     "edgeBuckets": {
@@ -1017,8 +1019,8 @@
         "games": 10
       },
       "2-5": {
-        "profit": 346,
-        "games": 8
+        "profit": 437,
+        "games": 9
       },
       "5+": {
         "profit": 619,
@@ -1028,19 +1030,19 @@
   },
   "ensembleAccuracy": {
     "main": {
-      "totalError": 415.69999999999993,
-      "games": 46
+      "totalError": 416.69999999999993,
+      "games": 47
     },
     "ens": {
-      "totalError": 514.3000000000001,
-      "games": 46
+      "totalError": 514.8000000000001,
+      "games": 47
     }
   },
   "calibration": {
     "60-65": {
-      "predicted": 371.50000000000006,
-      "actual": 400,
-      "games": 6
+      "predicted": 431.80000000000007,
+      "actual": 500,
+      "games": 7
     },
     "50-55": {
       "predicted": 463.7000000000001,
@@ -1069,9 +1071,9 @@
     }
   },
   "pace": {
-    "totalTempoError": -600,
-    "games": 46,
-    "overPredictions": 14,
+    "totalTempoError": -593,
+    "games": 47,
+    "overPredictions": 15,
     "underPredictions": 32
   },
   "statRecency": {},
@@ -1079,7 +1081,7 @@
     "totalPredictedHCA": 10.9,
     "totalActualMarginBias": 39,
     "gamesWithHCA": 3,
-    "gamesNeutral": 43
+    "gamesNeutral": 44
   },
   "v8Accuracy": {
     "ref": {
@@ -1113,9 +1115,9 @@
       "games": 0
     },
     "total": {
-      "totalAbs": 22.580000000000002,
-      "correctDir": 31,
-      "games": 46
+      "totalAbs": 24.03,
+      "correctDir": 32,
+      "games": 47
     }
   },
   "matchupAccuracy": {
@@ -1148,7 +1150,7 @@
       },
       "2": {
         "upsets": 0,
-        "total": 11
+        "total": 12
       }
     },
     "bySeedDiff": {
@@ -1162,7 +1164,7 @@
       },
       "0-2": {
         "upsets": 2,
-        "total": 8
+        "total": 9
       },
       "6-8": {
         "upsets": 0,
@@ -1172,7 +1174,7 @@
     "bySpreadSize": {
       "0-5": {
         "upsets": 5,
-        "total": 18
+        "total": 19
       },
       "10+": {
         "upsets": 0,
@@ -1190,8 +1192,8 @@
       "total": 27
     },
     "medConf": {
-      "correct": 5,
-      "total": 7
+      "correct": 6,
+      "total": 8
     },
     "lowConf": {
       "correct": 9,

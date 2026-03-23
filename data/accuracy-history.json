@@ -367,6 +367,14 @@
       "modelCorrectATS": false,
       "modelError": 7.199999999999999,
       "date": "2026-03-22"
+    },
+    {
+      "teamA": "St. John's",
+      "teamB": "Kansas",
+      "modelCorrectSU": true,
+      "modelCorrectATS": true,
+      "modelError": 1,
+      "date": "2026-03-23"
     }
   ],
   "daily": [
@@ -432,9 +440,16 @@
       "suPct": 100,
       "atsPct": 67,
       "avgError": 6.4
+    },
+    {
+      "date": "2026-03-23",
+      "games": 1,
+      "suPct": 100,
+      "atsPct": 100,
+      "avgError": 1
     }
   ],
-  "totalGames": 46,
-  "correctSU": 41,
-  "correctATS": 31
+  "totalGames": 47,
+  "correctSU": 42,
+  "correctATS": 32
 }
