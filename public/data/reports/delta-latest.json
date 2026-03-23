@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-23T00:57:50.175Z",
-  "timestampCST": "Mar 22, 2026, 7:57 PM CST",
+  "timestamp": "2026-03-23T01:03:44.594Z",
+  "timestampCST": "Mar 22, 2026, 8:03 PM CST",
   "type": "DELTA",
   "baselineTime": "Mar 22, 2026, 8:39 AM CST",
-  "currentTime": "Mar 22, 2026, 7:57 PM CST",
+  "currentTime": "Mar 22, 2026, 8:03 PM CST",
   "summary": {
     "totalGamesCompared": 8,
     "gamesChanged": 8,
     "winnersFlipped": 1,
     "newMatchups": 3,
-    "avgSpreadChange": 2.3,
+    "avgSpreadChange": 2.2,
     "biggestMover": "Duke vs St. John's"
   },
   "deltas": [
@@ -19,9 +19,9 @@
       "region": "S16",
       "type": "NEW",
       "winner": "Duke",
-      "winProb": 78.5,
+      "winProb": 78,
       "spread": 7,
-      "message": "New matchup since 7am — Duke predicted to win (78.5%)",
+      "message": "New matchup since 7am — Duke predicted to win (78%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -33,9 +33,9 @@
       "region": "S16",
       "type": "NEW",
       "winner": "Purdue",
-      "winProb": 81.3,
+      "winProb": 81,
       "spread": -8,
-      "message": "New matchup since 7am — Purdue predicted to win (81.3%)",
+      "message": "New matchup since 7am — Purdue predicted to win (81%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -47,9 +47,9 @@
       "region": "S16",
       "type": "NEW",
       "winner": "Iowa State",
-      "winProb": 67.8,
+      "winProb": 67.3,
       "spread": -4.5,
-      "message": "New matchup since 7am — Iowa State predicted to win (67.8%)",
+      "message": "New matchup since 7am — Iowa State predicted to win (67.3%)",
       "factors": [
         "New round matchup generated from bracket advancement"
       ],
@@ -68,22 +68,22 @@
       "baselineScoreW": 72,
       "baselineScoreL": 60,
       "winner": "Florida",
-      "winProb": 63.1,
-      "spread": 3.5,
-      "vegasLine": 2.5,
+      "winProb": 70,
+      "spread": 5,
+      "vegasLine": 4.5,
       "modelSpread": 6.5,
-      "scoreW": 72,
-      "scoreL": 69,
-      "spreadChange": -8,
-      "probChange": -24.3,
+      "scoreW": 73,
+      "scoreL": 68,
+      "spreadChange": -6.5,
+      "probChange": -17.4,
       "modelSpreadChange": -6.7,
-      "vegasChange": -8,
+      "vegasChange": -6,
       "factors": [
-        "Vegas line moved 8 pts toward Iowa (was 10.5, now 2.5)",
+        "Vegas line moved 6 pts toward Iowa (was 10.5, now 4.5)",
         "Model spread shifted -6.7 pts (was 13.2, now 6.5)",
         "Injury cleared for Florida"
       ],
-      "absDelta": 10.43
+      "absDelta": 8.24
     },
     {
       "matchup": "UCLA vs UConn",
@@ -98,14 +98,14 @@
       "baselineScoreW": 74,
       "baselineScoreL": 67,
       "winner": "UConn",
-      "winProb": 72,
+      "winProb": 71.7,
       "spread": -5.5,
       "vegasLine": -5.5,
       "modelSpread": -5,
       "scoreW": 72,
       "scoreL": 67,
       "spreadChange": 1.4,
-      "probChange": -4,
+      "probChange": -4.3,
       "modelSpreadChange": 5.8,
       "vegasChange": -1,
       "factors": [
@@ -114,7 +114,36 @@
         "Injury cleared for UCLA",
         "Injury cleared for UConn"
       ],
-      "absDelta": 1.7999999999999998
+      "absDelta": 1.8299999999999998
+    },
+    {
+      "matchup": "Arizona vs Utah State",
+      "round": 2,
+      "region": "R32",
+      "type": "SHIFT",
+      "baselineWinner": "Arizona",
+      "baselineWinProb": 89,
+      "baselineSpread": 12.2,
+      "baselineVegas": 11.5,
+      "baselineModelSpread": 13.4,
+      "baselineScoreW": 77,
+      "baselineScoreL": 65,
+      "winner": "Arizona",
+      "winProb": 93.8,
+      "spread": 13.5,
+      "vegasLine": 16.5,
+      "modelSpread": 5,
+      "scoreW": 80,
+      "scoreL": 66,
+      "spreadChange": 1.3,
+      "probChange": 4.8,
+      "modelSpreadChange": -8.4,
+      "vegasChange": 5,
+      "factors": [
+        "Vegas line moved 5 pts toward Arizona (was 11.5, now 16.5)",
+        "Model spread shifted -8.4 pts (was 13.4, now 5)"
+      ],
+      "absDelta": 1.78
     },
     {
       "matchup": "Illinois vs Houston",
@@ -129,20 +158,20 @@
       "baselineScoreW": 72,
       "baselineScoreL": 69,
       "winner": "Houston",
-      "winProb": 58.2,
+      "winProb": 58,
       "spread": -2.5,
       "vegasLine": -2.5,
       "modelSpread": -2,
       "scoreW": 72,
       "scoreL": 69,
       "spreadChange": 1,
-      "probChange": -3.8,
+      "probChange": -4,
       "modelSpreadChange": 3.2,
       "vegasChange": 0,
       "factors": [
         "Model spread shifted +3.2 pts (was -5.2, now -2)"
       ],
-      "absDelta": 1.38
+      "absDelta": 1.4
     },
     {
       "matchup": "Texas Tech vs Alabama",
@@ -171,35 +200,6 @@
         "⚠️ WINNER FLIPPED: was Alabama at 7am, now Texas Tech"
       ],
       "absDelta": 0.81
-    },
-    {
-      "matchup": "Arizona vs Utah State",
-      "round": 2,
-      "region": "R32",
-      "type": "SHIFT",
-      "baselineWinner": "Arizona",
-      "baselineWinProb": 89,
-      "baselineSpread": 12.2,
-      "baselineVegas": 11.5,
-      "baselineModelSpread": 13.4,
-      "baselineScoreW": 77,
-      "baselineScoreL": 65,
-      "winner": "Arizona",
-      "winProb": 91.2,
-      "spread": 12,
-      "vegasLine": 14.5,
-      "modelSpread": 5,
-      "scoreW": 79,
-      "scoreL": 67,
-      "spreadChange": -0.2,
-      "probChange": 2.2,
-      "modelSpreadChange": -8.4,
-      "vegasChange": 3,
-      "factors": [
-        "Vegas line moved 3 pts toward Arizona (was 11.5, now 14.5)",
-        "Model spread shifted -8.4 pts (was 13.4, now 5)"
-      ],
-      "absDelta": 0.42000000000000004
     }
   ]
 }
