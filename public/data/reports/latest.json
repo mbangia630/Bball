@@ -1,8 +1,8 @@
 {
   "date": "2026-03-23",
-  "generatedAt": "2026-03-23T01:19:41.894Z",
-  "generatedAtCST": "2026-03-23 8:19 PM CST",
-  "modelVersion": 40,
+  "generatedAt": "2026-03-23T01:32:50.253Z",
+  "generatedAtCST": "2026-03-23 8:32 PM CST",
+  "modelVersion": 41,
   "today": {
     "gamesGraded": 15,
     "straightUp": {
@@ -31,15 +31,7 @@
       "modelSpread": 13.5,
       "modelError": 15.5,
       "vegasError": 15.5,
-      "layers": {
-        "L1": 11.1,
-        "L2": 1.6,
-        "L3": 1.6,
-        "L4": -0.3,
-        "L5": 0,
-        "v8": 0.72,
-        "ens": 6.5
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -52,15 +44,7 @@
       "modelSpread": 1,
       "modelError": 3,
       "vegasError": 4.5,
-      "layers": {
-        "L1": 1,
-        "L2": 0.2,
-        "L3": -0.2,
-        "L4": -0.1,
-        "L5": 0,
-        "v8": -0.2,
-        "ens": 0.5
-      },
+      "layers": {},
       "pickedWinnerCorrectly": false,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -73,15 +57,7 @@
       "modelSpread": 37.5,
       "modelError": 31.5,
       "vegasError": 23.5,
-      "layers": {
-        "L1": 30.2,
-        "L2": 4.1,
-        "L3": 3.5,
-        "L4": 0.2,
-        "L5": 0,
-        "v8": 0.5,
-        "ens": 18.5
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -94,15 +70,7 @@
       "modelSpread": 9.5,
       "modelError": 10.5,
       "vegasError": 10.5,
-      "layers": {
-        "L1": 8.5,
-        "L2": 1,
-        "L3": 0.8,
-        "L4": -0.1,
-        "L5": 0,
-        "v8": 0.1,
-        "ens": 4.5
-      },
+      "layers": {},
       "pickedWinnerCorrectly": false,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -115,15 +83,7 @@
       "modelSpread": 10.5,
       "modelError": 0.5,
       "vegasError": 2.5,
-      "layers": {
-        "L1": 8.5,
-        "L2": 1.2,
-        "L3": 0.8,
-        "L4": -0.3,
-        "L5": 0,
-        "v8": 0.2,
-        "ens": 5
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -136,15 +96,7 @@
       "modelSpread": 3.5,
       "modelError": 7.5,
       "vegasError": 2.5,
-      "layers": {
-        "L1": 2.5,
-        "L2": 0.5,
-        "L3": 0.8,
-        "L4": 0.1,
-        "L5": 0,
-        "v8": 0.1,
-        "ens": 1.5
-      },
+      "layers": {},
       "pickedWinnerCorrectly": false,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -157,15 +109,7 @@
       "modelSpread": 16.5,
       "modelError": 2.5,
       "vegasError": 3.5,
-      "layers": {
-        "L1": 14,
-        "L2": 2,
-        "L3": 2,
-        "L4": 0.6,
-        "L5": 0,
-        "v8": 0.3,
-        "ens": 8.5
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -178,15 +122,7 @@
       "modelSpread": 19.5,
       "modelError": 5.5,
       "vegasError": 8.5,
-      "layers": {
-        "L1": 17.2,
-        "L2": 2.5,
-        "L3": 1.5,
-        "L4": 0.9,
-        "L5": 0,
-        "v8": 0.4,
-        "ens": 10.2
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -199,15 +135,7 @@
       "modelSpread": 25,
       "modelError": 9,
       "vegasError": 9.5,
-      "layers": {
-        "L1": 21.7,
-        "L2": 2.8,
-        "L3": 3.3,
-        "L4": 0.1,
-        "L5": 0,
-        "v8": 0.85,
-        "ens": 14.4
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -220,15 +148,7 @@
       "modelSpread": 27,
       "modelError": 6,
       "vegasError": 8.5,
-      "layers": {
-        "L1": 24.6,
-        "L2": 4.1,
-        "L3": 3.7,
-        "L4": -0.1,
-        "L5": 0,
-        "v8": 0.67,
-        "ens": 16.5
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -241,15 +161,7 @@
       "modelSpread": 20.5,
       "modelError": 9.5,
       "vegasError": 9.5,
-      "layers": {
-        "L1": 17.8,
-        "L2": 2.9,
-        "L3": 1.6,
-        "L4": 0.6,
-        "L5": 0,
-        "v8": 0.4,
-        "ens": 10.3
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -262,15 +174,7 @@
       "modelSpread": 16,
       "modelError": 7,
       "vegasError": 8.5,
-      "layers": {
-        "L1": 12.3,
-        "L2": 0.9,
-        "L3": 1.5,
-        "L4": 0.1,
-        "L5": 0,
-        "v8": 0.67,
-        "ens": 7.3
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -283,15 +187,7 @@
       "modelSpread": 9.5,
       "modelError": 10.5,
       "vegasError": 7.5,
-      "layers": {
-        "L1": 6.7,
-        "L2": -0.3,
-        "L3": 0.2,
-        "L4": 0.3,
-        "L5": 0,
-        "v8": -0.49,
-        "ens": 3.6
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -304,15 +200,7 @@
       "modelSpread": 11,
       "modelError": 3,
       "vegasError": 5.5,
-      "layers": {
-        "L1": 10.8,
-        "L2": 0.7,
-        "L3": 1.1,
-        "L4": 0.2,
-        "L5": 0,
-        "v8": -0.66,
-        "ens": 6.6
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -325,15 +213,7 @@
       "modelSpread": 4,
       "modelError": 16,
       "vegasError": 12.5,
-      "layers": {
-        "L1": 3.2,
-        "L2": -0.7,
-        "L3": -2.4,
-        "L4": -0.1,
-        "L5": 0,
-        "v8": -1.09,
-        "ens": 2.1
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -346,15 +226,7 @@
       "modelSpread": 11,
       "modelError": 15,
       "vegasError": 14.5,
-      "layers": {
-        "L1": 10,
-        "L2": 1.2,
-        "L3": 0.9,
-        "L4": 0.2,
-        "L5": 0,
-        "v8": 0.15,
-        "ens": 5.7
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -367,15 +239,7 @@
       "modelSpread": 3.5,
       "modelError": 8.5,
       "vegasError": 1.5,
-      "layers": {
-        "L1": -1.7,
-        "L2": -0.7,
-        "L3": -0.9,
-        "L4": -0.2,
-        "L5": 0,
-        "v8": -0.98,
-        "ens": -1
-      },
+      "layers": {},
       "pickedWinnerCorrectly": false,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -388,15 +252,7 @@
       "modelSpread": 3.5,
       "modelError": 0.5,
       "vegasError": 1.5,
-      "layers": {
-        "L1": 3.3,
-        "L2": 0.7,
-        "L3": -0.4,
-        "L4": 0.1,
-        "L5": 0,
-        "v8": 0.03,
-        "ens": 1.7
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -409,15 +265,7 @@
       "modelSpread": 3.5,
       "modelError": 10.5,
       "vegasError": 10,
-      "layers": {
-        "L1": 1.8,
-        "L2": 0.5,
-        "L3": 0.2,
-        "L4": 0.2,
-        "L5": 0,
-        "v8": 0.16,
-        "ens": 1
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -430,15 +278,7 @@
       "modelSpread": 1,
       "modelError": 11,
       "vegasError": 8.5,
-      "layers": {
-        "L1": -1.9,
-        "L2": -0.3,
-        "L3": 2.7,
-        "L4": -0.1,
-        "L5": 0,
-        "v8": -0.09,
-        "ens": -1
-      },
+      "layers": {},
       "pickedWinnerCorrectly": false,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -451,15 +291,7 @@
       "modelSpread": 0.5,
       "modelError": 6.5,
       "vegasError": 3.5,
-      "layers": {
-        "L1": -0.4,
-        "L2": -0.3,
-        "L3": -1.6,
-        "L4": -0.1,
-        "L5": 0,
-        "v8": -0.02,
-        "ens": -0.1
-      },
+      "layers": {},
       "pickedWinnerCorrectly": false,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -472,15 +304,7 @@
       "modelSpread": 4,
       "modelError": 0,
       "vegasError": 6.5,
-      "layers": {
-        "L1": 3.3,
-        "L2": 0.5,
-        "L3": 2.6,
-        "L4": 0,
-        "L5": 0,
-        "v8": 0.83,
-        "ens": 1.3
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -493,15 +317,7 @@
       "modelSpread": 23,
       "modelError": 12,
       "vegasError": 11.5,
-      "layers": {
-        "L1": 19.9,
-        "L2": 2.9,
-        "L3": 3,
-        "L4": -0.3,
-        "L5": 0,
-        "v8": -0.44,
-        "ens": 13.5
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -514,15 +330,7 @@
       "modelSpread": 3.5,
       "modelError": 16.5,
       "vegasError": 16.5,
-      "layers": {
-        "L1": 2.2,
-        "L2": 0.8,
-        "L3": 0.3,
-        "L4": 0.4,
-        "L5": 0,
-        "v8": -0.02,
-        "ens": 1.3
-      },
+      "layers": {},
       "pickedWinnerCorrectly": false,
       "coveredSpread": true,
       "closerThanVegas": false,
@@ -535,15 +343,7 @@
       "modelSpread": 26,
       "modelError": 5,
       "vegasError": 8.5,
-      "layers": {
-        "L1": 25.2,
-        "L2": 3.4,
-        "L3": 3.8,
-        "L4": 0.3,
-        "L5": 0,
-        "v8": 0.63,
-        "ens": 17
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -556,15 +356,7 @@
       "modelSpread": 35,
       "modelError": 1,
       "vegasError": 4.5,
-      "layers": {
-        "L1": 36.3,
-        "L2": 5.1,
-        "L3": 4.6,
-        "L4": -0.1,
-        "L5": 0,
-        "v8": 0.57,
-        "ens": 22.2
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -577,15 +369,7 @@
       "modelSpread": 22.5,
       "modelError": 13.5,
       "vegasError": 11.5,
-      "layers": {
-        "L1": 20.7,
-        "L2": 3.2,
-        "L3": 2,
-        "L4": 0.3,
-        "L5": 0,
-        "v8": 0.97,
-        "ens": 14.3
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -598,15 +382,7 @@
       "modelSpread": -0.5,
       "modelError": 24.5,
       "vegasError": 27.5,
-      "layers": {
-        "L1": -3.1,
-        "L2": -1,
-        "L3": -0.7,
-        "L4": 0.1,
-        "L5": 0,
-        "v8": -0.49,
-        "ens": -1.8
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": true,
       "closerThanVegas": true,
@@ -619,15 +395,7 @@
       "modelSpread": 6.5,
       "modelError": 4.5,
       "vegasError": 0.5,
-      "layers": {
-        "L1": 3.7,
-        "L2": 0.9,
-        "L3": 0.8,
-        "L4": 0.3,
-        "L5": 0.1,
-        "v8": 1.45,
-        "ens": 2.5
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -640,15 +408,7 @@
       "modelSpread": 0.5,
       "modelError": 6.5,
       "vegasError": 4.5,
-      "layers": {
-        "L1": -0.3,
-        "L2": 0.4,
-        "L3": 0.6,
-        "L4": -0.1,
-        "L5": 0,
-        "v8": -0.36,
-        "ens": 1.2
-      },
+      "layers": {},
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
@@ -671,31 +431,15 @@
   },
   "adjustments": {
     "changes": [
-      "#1 Layer weights tuned by directional accuracy: L1=0.363(83%dir) L2=0.256(80%dir) L3=0.18(80%dir) L4=0.105(67%dir) L5=0.096(100%dir)",
+      "#1 Layer weights tuned by directional accuracy: L1=0.361(83%dir) L2=0.255(80%dir) L3=0.18(80%dir) L4=0.106(67%dir) L5=0.098(100%dir)",
       "#6 Ensemble: main model better (8.9 vs 10.2) — main 90% → 90%",
-      "#7 Calibration: overconfident in 2 buckets — sigma 8.9 → 9.0",
-      "#13 Vegas blend: 75.0% → 75.0% (Vegas was 0.3pts better, streak: 1)",
+      "#7 Calibration: overconfident in 2 buckets — sigma 9.0 → 9.2",
       "#8 Pace: under-predicting totals by 13.0pts (30 games)",
       "#15 High-conf picks (75%+): 94% actual (16/17)",
       "#15 Low-conf picks (<60%): 38% actual (3/8)",
       "#11 V8 adjustments: 77% directionally correct over 30 games"
     ],
     "before": {
-      "vegasBlend": 0.75,
-      "sigma": 8.899999999999995,
-      "layers": {
-        "L1": 0.365,
-        "L2": 0.257,
-        "L3": 0.18,
-        "L4": 0.104,
-        "L5": 0.094
-      },
-      "ensemble": {
-        "main": 0.9,
-        "subs": 0.09999999999999998
-      }
-    },
-    "after": {
       "vegasBlend": 0.75,
       "sigma": 9.049999999999995,
       "layers": {
@@ -704,6 +448,21 @@
         "L3": 0.18,
         "L4": 0.105,
         "L5": 0.096
+      },
+      "ensemble": {
+        "main": 0.9,
+        "subs": 0.09999999999999998
+      }
+    },
+    "after": {
+      "vegasBlend": 0.75,
+      "sigma": 9.199999999999996,
+      "layers": {
+        "L1": 0.361,
+        "L2": 0.255,
+        "L3": 0.18,
+        "L4": 0.106,
+        "L5": 0.098
       },
       "ensemble": {
         "main": 0.9,
