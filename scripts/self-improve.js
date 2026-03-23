@@ -100,7 +100,10 @@ const DEFAULT_LEARNING = {
 function loadJSON(path, fallback) { try { return JSON.parse(fs.readFileSync(path, 'utf8')); } catch { return typeof fallback === 'function' ? fallback() : JSON.parse(JSON.stringify(fallback)); } }
 function loadWeights() { return loadJSON(WEIGHTS_FILE, DEFAULT_WEIGHTS); }
 function loadHistory() { return loadJSON(HISTORY_FILE, { games: [], daily: [], totalGames: 0, correctSU: 0, correctATS: 0 }); }
-function loadLearning() { return loadJSON(LEARNING_FILE, () => JSON.parse(JSON.stringify(DEFAULT_LEARNING))); }
+function loadLearning() {
+  const raw = loadJSON(LEARNING_FILE, () => JSON.parse(JSON.stringify(DEFAULT_LEARNING)));
+  return { ...JSON.parse(JSON.stringify(DEFAULT_LEARNING)), ...raw };
+}
   // Try snapshot first (preserved from before games were moved to completed)
 function loadPredictions() {
   const snap = loadJSON('data/predictions-snapshot.json', null);
