@@ -585,14 +585,8 @@ function generateReport(graded, oldW, newW, changes, history, learning, eloUpdat
         beatVegas: { correct: bv, total: bvt, pct: bvt > 0 ? Math.round(bv / bvt * 100) : null },
         avgError: allG.length > 0 ? Math.round(allG.reduce((s, g) => s + (g.modelError || 0), 0) / allG.length * 10) / 10 : null,
         avgVegasError: allG.filter(g => g.vegasError != null).length > 0 ? Math.round(allG.filter(g => g.vegasError != null).reduce((s, g) => s + g.vegasError, 0) / allG.filter(g => g.vegasError != null).length * 10) / 10 : null,
-      };
+      }};
     })(),
-      straightUp: { correct: graded.filter(g => g.modelCorrectSU).length, total: graded.length, pct: graded.length > 0 ? Math.round(graded.filter(g => g.modelCorrectSU).length / graded.length * 100) : null },
-      ats: { correct: graded.filter(g => g.modelCorrectATS).length, total: graded.length, pct: graded.length > 0 ? Math.round(graded.filter(g => g.modelCorrectATS).length / graded.length * 100) : null },
-      beatVegas: { correct: graded.filter(g => g.modelBeatVegas === true).length, total: graded.filter(g => g.modelBeatVegas !== null).length, pct: graded.filter(g => g.modelBeatVegas !== null).length > 0 ? Math.round(graded.filter(g => g.modelBeatVegas === true).length / graded.filter(g => g.modelBeatVegas !== null).length * 100) : null },
-      avgError: graded.length > 0 ? Math.round(graded.reduce((s, g) => s + g.modelError, 0) / graded.length * 10) / 10 : null,
-      avgVegasError: graded.filter(g => g.vegasError !== null).length > 0 ? Math.round(graded.filter(g => g.vegasError !== null).reduce((s, g) => s + g.vegasError, 0) / graded.filter(g => g.vegasError !== null).length * 10) / 10 : null,
-    },
     games: [...graded, ...(history.games || []).filter(hg => !graded.some(g => g.teamA === hg.teamA && g.teamB === hg.teamB))].sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(g => ({
       matchup: `${g.teamA} vs ${g.teamB}`, score: `${g.actualWinner} ${Math.max(parseInt(g.actualTotal/2 + Math.abs(g.actualMargin)/2), 0)}-${Math.max(parseInt(g.actualTotal/2 - Math.abs(g.actualMargin)/2), 0)}`,
       actualMargin: g.actualMargin, modelSpread: Math.round((g.modelSpread || g.blendedSpread || 0) * 2) / 2,
