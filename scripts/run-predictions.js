@@ -205,6 +205,8 @@ function sim(nA, nB, venue, round) {
   const sL=Math.round(avgPts-Math.abs(finalSp)/2);
   const edge=vegasLine!==null?Math.round((modelSp-vegasLine)*10)/10:null;
 
+  const r5=v=>Math.round(v*2)/2; // round to nearest 0.5
+
   return{
     teamA:nA,teamB:nB,round:rd,venue,
     winner:w,loser:l,w:w,l:l,
@@ -212,10 +214,10 @@ function sim(nA, nB, venue, round) {
     sW:Math.max(sW,sL+1),sL:Math.min(sL,sW-1),
     winProb:Math.round(wp*1000)/10,
     wp:Math.round(wp*1000)/10,
-    sp:Math.round(Math.abs(finalSp)*10)/10,
-    modelSpread:Math.round(modelSp*10)/10,
+    sp:Math.abs(r5(finalSp)),
+    modelSpread:r5(modelSp),
+    blendedSpread:r5(finalSp),
     vegasLine:vegasLine!==null?Math.round(vegasLine*10)/10:null,
-    blendedSpread:Math.round(finalSp*10)/10,
     edge,
     moneyline:moneyLines[`${nA} vs ${nB}`]||null,
     hca:Math.round(hcav*10)/10,
@@ -227,9 +229,9 @@ function sim(nA, nB, venue, round) {
     status:'UPCOMING',
     sW2:(buildT(w)||{}).s||0,sL2:(buildT(l)||{}).s||0,
     ven:venue,
-    modelSp:Math.round(modelSp*10)/10,
-    vegasSp:vegasLine!==null?Math.round(vegasLine*10)/10:null,
-    rawSp:Math.round(finalSp*10)/10,
+    modelSp:r5(modelSp),
+    vegasSp:vegasLine!==null?r5(vegasLine):null,
+    rawSp:r5(finalSp),
     mu:{det:mu.det||[],adjA:mu.adjA,adjB:mu.adjB,tempoAdj:mu.tempoAdj},
     cDiff:Math.round(cDiff*10)/10,
     fatA:{pts:fatigue(nA,rd)},fatB:{pts:fatigue(nB,rd)},

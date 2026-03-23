@@ -131,8 +131,10 @@ function gradeGames(predictions, results, teamDB) {
     );
     if (!pred) continue;
 
-    const flip = pred.teamA !== aName; // results might be in different order
-    const actualMargin = flip ? (result.scoreB - result.scoreA) : (result.scoreA - result.scoreB);
+    // Actual margin from teamA's perspective in the PREDICTION (not the result)
+    const actualWinMargin = Math.abs(parseInt(result.scoreA) - parseInt(result.scoreB));
+    const winner = parseInt(result.scoreA) > parseInt(result.scoreB) ? aName : bName;
+    const actualMargin = (winner === pred.teamA) ? actualWinMargin : -actualWinMargin;
     const actualWinner = actualMargin > 0 ? pred.teamA : pred.teamB;
     const actualTotal = parseInt(result.scoreA) + parseInt(result.scoreB);
     const predTotal = (pred.scoreW || 0) + (pred.scoreL || 0);
@@ -145,7 +147,7 @@ function gradeGames(predictions, results, teamDB) {
     const modelWinner = blended >= 0 ? pred.teamA : pred.teamB;
     const modelCorrectSU = modelWinner === actualWinner;
     const vegasSpread = pred.vegasLine || 0;
-    const modelCorrectATS = (blended >= 0) === (actualMargin > vegasSpread);
+    const modelCorrectATS = Math.abs(blended - actualMargin) < Math.abs(vegasSpread - actualMargin);
     const modelBeatVegas = vegasError !== null ? modelError < vegasError : null;
 
     // Seed info
@@ -573,7 +575,7 @@ function generateReport(graded, oldW, newW, changes, history, learning, eloUpdat
       avgError: graded.length > 0 ? Math.round(graded.reduce((s, g) => s + g.modelError, 0) / graded.length * 10) / 10 : null,
       avgVegasError: graded.filter(g => g.vegasError !== null).length > 0 ? Math.round(graded.filter(g => g.vegasError !== null).reduce((s, g) => s + g.vegasError, 0) / graded.filter(g => g.vegasError !== null).length * 10) / 10 : null,
     },
-    games: graded.map(g => ({
+    games: graded.sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(g => ({
       matchup: `${g.teamA} vs ${g.teamB}`, score: `${g.actualMargin > 0 ? g.teamA : g.teamB} ${Math.max(parseInt(g.scoreW || 0), parseInt(g.scoreL || 0))}-${Math.min(parseInt(g.scoreW || 0), parseInt(g.scoreL || 0))}`,
       actualMargin: g.actualMargin, modelSpread: Math.round((g.blendedSpread || 0) * 10) / 10, vegasLine: g.vegasLine,
       modelError: Math.round(g.modelError * 10) / 10, vegasError: g.vegasError !== null ? Math.round(g.vegasError * 10) / 10 : null,
