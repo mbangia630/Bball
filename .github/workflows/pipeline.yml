@@ -27,6 +27,7 @@ jobs:
         run: node scripts/pipeline.js
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          IS_SCHEDULED: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
       
       - name: Commit and push
         run: |

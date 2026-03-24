@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9205b883-5d7d-4cfa-864c-a7c73e9879ec" name="Changes" comment="updated bracket and bets page">
-      <change beforePath="$PROJECT_DIR$/app/bracket.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/bracket.js" afterDir="false" />
-    </list>
+    <list default="true" id="9205b883-5d7d-4cfa-864c-a7c73e9879ec" name="Changes" comment="perfomance report update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,54 +95,6 @@
       <option name="presentableId" value="Default" />
       <updated>1773770715585</updated>
       <workItem from="1773770717312" duration="3000" />
-    </task>
-    <task id="LOCAL-00030" summary="new report">
-      <option name="closed" value="true" />
-      <created>1773874095195</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1773874095195</updated>
-    </task>
-    <task id="LOCAL-00031" summary="new report">
-      <option name="closed" value="true" />
-      <created>1773874286574</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1773874286575</updated>
-    </task>
-    <task id="LOCAL-00032" summary="new report">
-      <option name="closed" value="true" />
-      <created>1773874364703</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1773874364703</updated>
-    </task>
-    <task id="LOCAL-00033" summary="new report">
-      <option name="closed" value="true" />
-      <created>1773874480637</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1773874480637</updated>
-    </task>
-    <task id="LOCAL-00034" summary="new report">
-      <option name="closed" value="true" />
-      <created>1773877496598</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1773877496598</updated>
-    </task>
-    <task id="LOCAL-00035" summary="new report">
-      <option name="closed" value="true" />
-      <created>1773877997424</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1773877997424</updated>
     </task>
     <task id="LOCAL-00036" summary="new report">
       <option name="closed" value="true" />
@@ -490,7 +440,55 @@
       <option name="project" value="LOCAL" />
       <updated>1774292032503</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="unbold losers">
+      <option name="closed" value="true" />
+      <created>1774292456323</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1774292456323</updated>
+    </task>
+    <task id="LOCAL-00080" summary="perfomance report update">
+      <option name="closed" value="true" />
+      <created>1774294057013</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1774294057013</updated>
+    </task>
+    <task id="LOCAL-00081" summary="perfomance report update">
+      <option name="closed" value="true" />
+      <created>1774294386138</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1774294386138</updated>
+    </task>
+    <task id="LOCAL-00082" summary="perfomance report update">
+      <option name="closed" value="true" />
+      <created>1774294768656</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1774294768656</updated>
+    </task>
+    <task id="LOCAL-00083" summary="perfomance report update">
+      <option name="closed" value="true" />
+      <created>1774295475721</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1774295475721</updated>
+    </task>
+    <task id="LOCAL-00084" summary="perfomance report update">
+      <option name="closed" value="true" />
+      <created>1774302785260</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1774302785260</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -505,8 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix email" />
-    <MESSAGE value="web app" />
     <MESSAGE value="self improve" />
     <MESSAGE value="self improve and report" />
     <MESSAGE value="name corrections" />
@@ -530,7 +526,9 @@
     <MESSAGE value="v9 - vercel not showing details fix" />
     <MESSAGE value="fix: profile field mapping + FINAL game profiles + report path" />
     <MESSAGE value="updated bracket and bets page" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated bracket and bets page" />
+    <MESSAGE value="unbold losers" />
+    <MESSAGE value="perfomance report update" />
+    <option name="LAST_COMMIT_MESSAGE" value="perfomance report update" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

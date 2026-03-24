@@ -442,6 +442,10 @@ async function main() {
   try { fs.copyFileSync('data/learning-state.json', 'public/data/learning-state.json'); } catch {}
   try { fs.copyFileSync('data/predictions-snapshot.json', 'public/data/predictions-snapshot.json'); } catch {}
 
+  // Run delta report
+  console.log('\n📊 Running delta report...');
+  try { require('./delta-report'); } catch (e) { console.log('   ⚠️ Delta report skipped:', e.message); }
+
   console.log(`\n✅ v9 pipeline complete. Champion: ${display.rounds[display.rounds.length - 1]?.g[0]?.w || display.rounds[display.rounds.length - 1]?.g[0]?.winner || 'TBD'}\n`);
 }
 
