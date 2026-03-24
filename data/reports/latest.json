@@ -1,7 +1,7 @@
 {
   "date": "2026-03-24",
-  "generatedAtCST": "3/24/2026, 8:48:04 AM CST",
-  "modelVersion": 54,
+  "generatedAtCST": "3/24/2026, 9:14:17 AM CST",
+  "modelVersion": 55,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
@@ -336,18 +336,6 @@
       "verdict": "❌ Missed"
     },
     {
-      "matchup": "BYU vs Texas",
-      "score": "Texas 79-71",
-      "modelSpread": 2,
-      "vegasLine": null,
-      "modelError": 10,
-      "vegasError": null,
-      "pickedWinnerCorrectly": false,
-      "coveredSpread": false,
-      "closerThanVegas": null,
-      "verdict": "❌ Missed"
-    },
-    {
       "matchup": "Arizona vs LIU",
       "score": "Arizona 92-58",
       "modelSpread": 35,
@@ -358,6 +346,18 @@
       "coveredSpread": true,
       "closerThanVegas": true,
       "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "BYU vs Texas",
+      "score": "Texas 79-71",
+      "modelSpread": 2,
+      "vegasLine": null,
+      "modelError": 10,
+      "vegasError": null,
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": null,
+      "verdict": "❌ Missed"
     },
     {
       "matchup": "Nebraska vs Troy",
@@ -584,11 +584,10 @@
   },
   "adjustments": {
     "changes": [
-      "Layer weights tuned: L1=0.333 L2=0.241 L3=0.18 L4=0.12 L5=0.126",
-      "Vegas blend: 75% → 73%"
+      "Layer weights tuned: L1=0.331 L2=0.24 L3=0.18 L4=0.121 L5=0.128"
     ],
     "before": {
-      "vegasBlend": 0.75,
+      "vegasBlend": 0.73,
       "sigma": 9.799999999999997
     },
     "after": {
