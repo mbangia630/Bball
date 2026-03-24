@@ -1,7 +1,7 @@
 {
-  "date": "2026-03-23",
-  "generatedAtCST": "3/23/2026, 2:34:01 PM CST",
-  "modelVersion": 53,
+  "date": "2026-03-24",
+  "generatedAtCST": "3/24/2026, 8:48:04 AM CST",
+  "modelVersion": 54,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
@@ -17,10 +17,10 @@
     },
     "beatVegas": {
       "correct": 6,
-      "total": 15
+      "total": 14
     },
-    "avgError": 9.2,
-    "avgVegasError": 8.6
+    "avgError": 7.7,
+    "avgVegasError": 8.4
   },
   "games": [
     {
@@ -96,6 +96,78 @@
       "verdict": "✅ Nailed it"
     },
     {
+      "matchup": "Duke vs TCU",
+      "score": "Duke 81-58",
+      "modelSpread": 20.5,
+      "vegasLine": 11.5,
+      "modelError": 2.5,
+      "vegasError": 11.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "VCU vs Illinois",
+      "score": "Illinois 76-55",
+      "modelSpread": -3,
+      "vegasLine": -11.5,
+      "modelError": 18,
+      "vegasError": 9.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Vanderbilt vs Nebraska",
+      "score": "Nebraska 74-72",
+      "modelSpread": 2,
+      "vegasLine": 1.5,
+      "modelError": 4,
+      "vegasError": 3.5,
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "❌ Missed"
+    },
+    {
+      "matchup": "High Point vs Arkansas",
+      "score": "Arkansas 94-88",
+      "modelSpread": -14,
+      "vegasLine": -12.5,
+      "modelError": 8,
+      "vegasError": 6.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Miami FL vs Purdue",
+      "score": "Purdue 79-69",
+      "modelSpread": -8.5,
+      "vegasLine": -7.5,
+      "modelError": 1.5,
+      "vegasError": 2.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Kentucky vs Iowa State",
+      "score": "Iowa State 82-63",
+      "modelSpread": -11,
+      "vegasLine": -4.5,
+      "modelError": 8,
+      "vegasError": 14.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
       "matchup": "UConn vs Furman",
       "score": "UConn 82-71",
       "modelSpread": 20.5,
@@ -105,6 +177,18 @@
       "pickedWinnerCorrectly": true,
       "coveredSpread": false,
       "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Louisville vs Michigan St.",
+      "score": "Michigan St. 77-69",
+      "modelSpread": -9.5,
+      "vegasLine": null,
+      "modelError": 1.5,
+      "vegasError": null,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": null,
       "verdict": "🟡 Right winner, wrong spread"
     },
     {
@@ -249,6 +333,18 @@
       "pickedWinnerCorrectly": false,
       "coveredSpread": false,
       "closerThanVegas": false,
+      "verdict": "❌ Missed"
+    },
+    {
+      "matchup": "BYU vs Texas",
+      "score": "Texas 79-71",
+      "modelSpread": 2,
+      "vegasLine": null,
+      "modelError": 10,
+      "vegasError": null,
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": null,
       "verdict": "❌ Missed"
     },
     {
@@ -433,15 +529,21 @@
     }
   ],
   "cumulative": {
-    "totalGames": 34,
-    "straightUpPct": 76.5,
-    "atsPct": 44.1,
+    "totalGames": 42,
+    "straightUpPct": 76.2,
+    "atsPct": 42.9,
     "trend": [
       {
         "date": "2026-03-23",
         "games": 34,
         "suPct": 76,
         "avgError": 9.3
+      },
+      {
+        "date": "2026-03-24",
+        "games": 8,
+        "suPct": 75,
+        "avgError": 6.7
       }
     ]
   },
@@ -482,14 +584,15 @@
   },
   "adjustments": {
     "changes": [
-      "Layer weights tuned: L1=0.335 L2=0.242 L3=0.18 L4=0.119 L5=0.124"
+      "Layer weights tuned: L1=0.333 L2=0.241 L3=0.18 L4=0.12 L5=0.126",
+      "Vegas blend: 75% → 73%"
     ],
     "before": {
       "vegasBlend": 0.75,
       "sigma": 9.799999999999997
     },
     "after": {
-      "vegasBlend": 0.75,
+      "vegasBlend": 0.73,
       "sigma": 9.799999999999997
     }
   }

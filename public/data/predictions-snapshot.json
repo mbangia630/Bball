@@ -911,7 +911,7 @@
           "stat": "TO Rate",
           "team": "UCLA",
           "i": 0.5999999999999996,
-          "d": "UConn forces 11.2 TOs/g \u2192 UCLA's TO rate +0.6%"
+          "d": "UConn forces 11.2 TOs/g → UCLA's TO rate +0.6%"
         }
       ],
       "adjA": {
@@ -1078,7 +1078,7 @@
           "stat": "Pace",
           "team": "Iowa",
           "i": -0.3,
-          "d": "7-possession gap \u2014 Iowa's pace controls"
+          "d": "7-possession gap — Iowa's pace controls"
         }
       ],
       "adjA": {
@@ -1404,7 +1404,7 @@
           "stat": "Pace",
           "team": "Texas Tech",
           "i": 0.3,
-          "d": "5-possession gap \u2014 Texas Tech's pace controls"
+          "d": "5-possession gap — Texas Tech's pace controls"
         }
       ],
       "adjA": {
@@ -1571,14 +1571,14 @@
           "stat": "TO Rate",
           "team": "Virginia",
           "i": 0.5,
-          "d": "Tennessee forces 11 TOs/g \u2192 Virginia's TO rate +0.5%"
+          "d": "Tennessee forces 11 TOs/g → Virginia's TO rate +0.5%"
         },
         {
           "t": "Tempo clash",
           "stat": "Pace",
           "team": "Virginia",
           "i": -0.3,
-          "d": "8-possession gap \u2014 Virginia's pace controls"
+          "d": "8-possession gap — Virginia's pace controls"
         }
       ],
       "adjA": {
@@ -1752,7 +1752,7 @@
           "stat": "TO Rate",
           "team": "Illinois",
           "i": 0.75,
-          "d": "Houston forces 11.5 TOs/g \u2192 Illinois's TO rate +0.8%"
+          "d": "Houston forces 11.5 TOs/g → Illinois's TO rate +0.8%"
         }
       ],
       "adjA": {
@@ -2093,7 +2093,7 @@
           "stat": "TO Rate",
           "team": "St. John's",
           "i": 0.5999999999999996,
-          "d": "Duke forces 11.2 TOs/g \u2192 St. John's's TO rate +0.6%"
+          "d": "Duke forces 11.2 TOs/g → St. John's's TO rate +0.6%"
         }
       ],
       "adjA": {
@@ -2267,7 +2267,7 @@
           "stat": "TO Rate",
           "team": "Iowa State",
           "i": 0.5,
-          "d": "Tennessee forces 11 TOs/g \u2192 Iowa State's TO rate +0.5%"
+          "d": "Tennessee forces 11 TOs/g → Iowa State's TO rate +0.5%"
         }
       ],
       "adjA": {
@@ -2434,7 +2434,7 @@
           "stat": "Pace",
           "team": "Iowa",
           "i": 0.3,
-          "d": "6-possession gap \u2014 Iowa's pace controls"
+          "d": "6-possession gap — Iowa's pace controls"
         }
       ],
       "adjA": {
@@ -2598,7 +2598,7 @@
           "stat": "TO Rate",
           "team": "Michigan St.",
           "i": 0.5999999999999996,
-          "d": "UConn forces 11.2 TOs/g \u2192 Michigan St.'s TO rate +0.6%"
+          "d": "UConn forces 11.2 TOs/g → Michigan St.'s TO rate +0.6%"
         }
       ],
       "adjA": {
