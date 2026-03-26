@@ -708,6 +708,9 @@ function SinglesTab({ games }) {
         payout: best.payout,
         odds: best.odds,
         edge: best.prob - best.implied,
+        vegasSpread: vl,
+        modelSpread: g.modelSpread ?? g.modelSp ?? g.sp ?? 0,
+        mlA: ml[0], mlB: ml[1],
       });
     }
     return results.sort((a, b) => b.ev - a.ev);
@@ -728,13 +731,20 @@ function SinglesTab({ games }) {
 }
 
 function SingleBetCard({ b }) {
-  const { g, ev, type, betTeam, modelProb, implied, payout, odds, edge } = b;
-  const wSeed = g.sW2 ?? g.seedW;
-  const lSeed = g.sL2 ?? g.seedL;
+  const { g, ev, type, betTeam, modelProb, implied, payout, odds, edge, vegasSpread, modelSpread, mlA, mlB } = b;
   const simCount = g.simCount ?? 10000;
   const wins = Math.round((modelProb / 100) * simCount);
   const opponent = betTeam === g.w ? g.l : g.w;
   const oddsStr = odds > 0 ? `+${odds}` : `${odds}`;
+  const aName = safe(g, "a", "name") ?? g.teamA ?? g.w;
+  const bName = safe(g, "b", "name") ?? g.teamB ?? g.l;
+  const mlAStr = mlA > 0 ? `+${mlA}` : `${mlA}`;
+  const mlBStr = mlB > 0 ? `+${mlB}` : `${mlB}`;
+  // Vegas spread is from teamA's perspective: positive = teamA favored
+  const vsFav = vegasSpread > 0 ? aName : bName;
+  const vsAbs = Math.abs(vegasSpread);
+  const msFav = modelSpread > 0 ? aName : modelSpread < 0 ? bName : aName;
+  const msAbs = Math.abs(modelSpread);
 
   return (
     <div style={{
@@ -752,10 +762,36 @@ function SingleBetCard({ b }) {
           +${ev.toFixed(0)} EV
         </span>
       </div>
+
+      {/* Moneyline + Spread info */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>
+        <div style={{ background: C.bg, border: `0.5px solid ${C.bdr}`, borderRadius: 6, padding: 8 }}>
+          <div style={{ fontSize: 9, color: C.dim, letterSpacing: 1, textTransform: "uppercase", marginBottom: 4 }}>Moneyline</div>
+          <div style={{ fontSize: 12 }}>
+            <span style={{ color: mlA < 0 ? C.grn : C.red, fontWeight: 700 }}>{aName} {mlAStr}</span>
+          </div>
+          <div style={{ fontSize: 12 }}>
+            <span style={{ color: mlB < 0 ? C.grn : C.red, fontWeight: 700 }}>{bName} {mlBStr}</span>
+          </div>
+        </div>
+        <div style={{ background: C.bg, border: `0.5px solid ${C.bdr}`, borderRadius: 6, padding: 8 }}>
+          <div style={{ fontSize: 9, color: C.dim, letterSpacing: 1, textTransform: "uppercase", marginBottom: 4 }}>Spread</div>
+          <div style={{ fontSize: 12 }}>
+            <span style={{ color: C.blue }}>Vegas: </span>
+            <span style={{ color: C.tx, fontWeight: 700 }}>{vsFav} -{vsAbs.toFixed(1)}</span>
+          </div>
+          <div style={{ fontSize: 12 }}>
+            <span style={{ color: C.purp }}>Model: </span>
+            <span style={{ color: C.tx, fontWeight: 700 }}>{msFav} -{msAbs.toFixed(1)}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* EV stats */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6, marginBottom: 8 }}>
         <MiniStat label="Model prob" value={`${modelProb.toFixed(1)}%`} color={C.grn} />
-        <MiniStat label={type === "ML" ? `Vegas (${oddsStr})` : "Spread -110"} value={`Implied ${implied?.toFixed(1)}%`} color={C.dim} />
-        <MiniStat label="$100 payout" value={`$${payout.toFixed(0)}`} color={C.gold} />
+        <MiniStat label={type === "ML" ? `Bet (${oddsStr})` : "Spread -110"} value={`Implied ${implied?.toFixed(1)}%`} color={C.dim} />
+        <MiniStat label="$100 payout" value={`$${(payout + 100).toFixed(0)}`} color={C.gold} />
       </div>
       <div style={{ fontSize: 11, color: C.dim }}>
         Model gives {betTeam} a {Math.abs(edge).toFixed(1)}% edge over implied odds. {betTeam} wins in {wins.toLocaleString()} of {simCount.toLocaleString()} sims.
@@ -853,12 +889,28 @@ function ParlayCard({ p }) {
         </span>
       </div>
 
-      {legs.map((l, i) => (
-        <div key={i} style={{ display: "flex", justifyContent: "space-between", fontSize: 11, padding: "3px 0", borderBottom: i < legs.length - 1 ? `1px solid ${C.brd}` : "none" }}>
-          <span style={{ color: C.dim }}>{l.g.w} vs {l.g.l} ({l.type})</span>
-          <span style={{ color: C.grn }}>{(l.prob * 100).toFixed(1)}%</span>
-        </div>
-      ))}
+      {legs.map((l, i) => {
+        const ml = l.g.moneyline;
+        const aName = safe(l.g, "a", "name") ?? l.g.teamA ?? l.g.w;
+        const bName = safe(l.g, "b", "name") ?? l.g.teamB ?? l.g.l;
+        const mlAStr = ml?.[0] > 0 ? `+${ml[0]}` : `${ml?.[0]}`;
+        const mlBStr = ml?.[1] > 0 ? `+${ml[1]}` : `${ml?.[1]}`;
+        const vl = l.g.vegasLine ?? l.g.vegasSp;
+        const vlFav = vl > 0 ? aName : bName;
+        const vlAbs = Math.abs(vl ?? 0);
+        return (
+          <div key={i} style={{ fontSize: 11, padding: "4px 0", borderBottom: i < legs.length - 1 ? `1px solid ${C.brd}` : "none" }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <span style={{ color: C.tx, fontWeight: 600 }}>{l.g.w} vs {l.g.l} <span style={{ color: C.dim }}>({l.type})</span></span>
+              <span style={{ color: C.grn }}>{(l.prob * 100).toFixed(1)}%</span>
+            </div>
+            <div style={{ display: "flex", gap: 12, color: C.dim, fontSize: 10, marginTop: 2 }}>
+              {ml && <span>ML: <span style={{ color: ml[0] < 0 ? C.grn : C.red }}>{aName} {mlAStr}</span> / <span style={{ color: ml[1] < 0 ? C.grn : C.red }}>{bName} {mlBStr}</span></span>}
+              {vl != null && <span>Vegas: <span style={{ color: C.blue }}>{vlFav} -{vlAbs.toFixed(1)}</span></span>}
+            </div>
+          </div>
+        );
+      })}
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6, marginTop: 8 }}>
         <MiniStat label="Combined prob" value={`${(combinedProb * 100).toFixed(1)}%`} color={C.grn} />
