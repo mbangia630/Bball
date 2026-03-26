@@ -1,19 +1,51 @@
 {
-  "timestamp": "2026-03-25T19:26:20.774Z",
-  "timestampCST": "Mar 25, 2026, 2:26 PM CST",
+  "timestamp": "2026-03-26T02:49:15.153Z",
+  "timestampCST": "Mar 25, 2026, 9:49 PM CST",
   "type": "DELTA",
   "engineVersion": "v9.0-montecarlo",
   "baselineTime": "Mar 25, 2026, 9:12 AM CST",
-  "currentTime": "Mar 25, 2026, 2:26 PM CST",
+  "currentTime": "Mar 25, 2026, 9:49 PM CST",
   "summary": {
     "totalGamesCompared": 8,
-    "gamesChanged": 2,
+    "gamesChanged": 4,
     "winnersFlipped": 0,
     "newMatchups": 0,
-    "avgSpreadChange": 0.5,
-    "biggestMover": "Arizona vs Arkansas"
+    "avgSpreadChange": 0.6,
+    "biggestMover": "Tennessee vs Iowa State"
   },
   "deltas": [
+    {
+      "matchup": "Tennessee vs Iowa State",
+      "round": 3,
+      "region": "",
+      "type": "SHIFT",
+      "baselineWinner": "Iowa State",
+      "baselineWinProb": 80.2,
+      "baselineSpread": -4.5,
+      "baselineVegas": -4.5,
+      "baselineModelSpread": -4,
+      "baselineScoreW": 75,
+      "baselineScoreL": 70,
+      "winner": "Iowa State",
+      "winProb": 79.5,
+      "spread": -3.5,
+      "vegasLine": -3.5,
+      "modelSpread": -4,
+      "scoreW": 75,
+      "scoreL": 71,
+      "spreadChange": 1,
+      "probChange": -0.7,
+      "modelSpreadChange": 0,
+      "vegasChange": 1,
+      "simMedianBefore": -4,
+      "simMedianAfter": -4,
+      "simStdDevBefore": 4.7,
+      "simStdDevAfter": 4.7,
+      "factors": [
+        "Vegas line moved 1 pts toward Tennessee (was -4.5, now -3.5)"
+      ],
+      "absDelta": 1.07
+    },
     {
       "matchup": "Arizona vs Arkansas",
       "round": 3,
@@ -27,24 +59,24 @@
       "baselineScoreW": 78,
       "baselineScoreL": 75,
       "winner": "Arizona",
-      "winProb": 68.8,
+      "winProb": 68.6,
       "spread": 6,
       "vegasLine": 7.5,
       "modelSpread": 2.5,
       "scoreW": 78,
       "scoreL": 75,
       "spreadChange": -0.5,
-      "probChange": -0.9,
+      "probChange": -1.1,
       "modelSpreadChange": -0.5,
       "vegasChange": 0,
       "simMedianBefore": 3,
       "simMedianAfter": 2.5,
       "simStdDevBefore": 5.4,
-      "simStdDevAfter": 5.4,
+      "simStdDevAfter": 5.3,
       "factors": [
         "Model spread shifted -0.5 pts (was 3, now 2.5)"
       ],
-      "absDelta": 0.59
+      "absDelta": 0.61
     },
     {
       "matchup": "Michigan St. vs UConn",
@@ -59,14 +91,14 @@
       "baselineScoreW": 72,
       "baselineScoreL": 71,
       "winner": "UConn",
-      "winProb": 55.8,
+      "winProb": 56.1,
       "spread": -1,
       "vegasLine": null,
       "modelSpread": -1,
       "scoreW": 72,
       "scoreL": 71,
       "spreadChange": -0.5,
-      "probChange": 0.7,
+      "probChange": 1,
       "modelSpreadChange": -0.5,
       "vegasChange": null,
       "simMedianBefore": -0.5,
@@ -76,7 +108,39 @@
       "factors": [
         "Model spread shifted -0.5 pts (was -0.5, now -1)"
       ],
-      "absDelta": 0.57
+      "absDelta": 0.6
+    },
+    {
+      "matchup": "Illinois vs Houston",
+      "round": 3,
+      "region": "",
+      "type": "SHIFT",
+      "baselineWinner": "Houston",
+      "baselineWinProb": 52.9,
+      "baselineSpread": -2.5,
+      "baselineVegas": -3.5,
+      "baselineModelSpread": -0.5,
+      "baselineScoreW": 73,
+      "baselineScoreL": 72,
+      "winner": "Houston",
+      "winProb": 52,
+      "spread": -2,
+      "vegasLine": -2.5,
+      "modelSpread": -0.5,
+      "scoreW": 73,
+      "scoreL": 72,
+      "spreadChange": 0.5,
+      "probChange": -0.9,
+      "modelSpreadChange": 0,
+      "vegasChange": 1,
+      "simMedianBefore": -0.5,
+      "simMedianAfter": -0.5,
+      "simStdDevBefore": 5,
+      "simStdDevAfter": 5.1,
+      "factors": [
+        "Vegas line moved 1 pts toward Illinois (was -3.5, now -2.5)"
+      ],
+      "absDelta": 0.59
     }
   ]
 }
