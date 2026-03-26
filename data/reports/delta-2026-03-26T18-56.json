@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-03-26T18:56:56.571Z",
+  "timestampCST": "Mar 26, 2026, 1:56 PM CST",
+  "type": "DELTA",
+  "engineVersion": "v9.0-montecarlo",
+  "baselineTime": "Mar 26, 2026, 9:21 AM CST",
+  "currentTime": "Mar 26, 2026, 1:56 PM CST",
+  "summary": {
+    "totalGamesCompared": 8,
+    "gamesChanged": 2,
+    "winnersFlipped": 0,
+    "newMatchups": 0,
+    "avgSpreadChange": 1,
+    "biggestMover": "Arizona vs Arkansas"
+  },
+  "deltas": [
+    {
+      "matchup": "Arizona vs Arkansas",
+      "round": 3,
+      "region": "",
+      "type": "SHIFT",
+      "baselineWinner": "Arizona",
+      "baselineWinProb": 69.1,
+      "baselineSpread": 6,
+      "baselineVegas": 7.5,
+      "baselineModelSpread": 2.5,
+      "baselineScoreW": 78,
+      "baselineScoreL": 75,
+      "winner": "Arizona",
+      "winProb": 69.5,
+      "spread": 7,
+      "vegasLine": 8.5,
+      "modelSpread": 3,
+      "scoreW": 78,
+      "scoreL": 75,
+      "spreadChange": 1,
+      "probChange": 0.4,
+      "modelSpreadChange": 0.5,
+      "vegasChange": 1,
+      "simMedianBefore": 2.5,
+      "simMedianAfter": 3,
+      "simStdDevBefore": 5.3,
+      "simStdDevAfter": 5.3,
+      "factors": [
+        "Vegas line moved 1 pts toward Arizona (was 7.5, now 8.5)",
+        "Model spread shifted +0.5 pts (was 2.5, now 3)"
+      ],
+      "absDelta": 1.04
+    },
+    {
+      "matchup": "Michigan vs Alabama",
+      "round": 3,
+      "region": "",
+      "type": "SHIFT",
+      "baselineWinner": "Michigan",
+      "baselineWinProb": 72.5,
+      "baselineSpread": 8,
+      "baselineVegas": 9.5,
+      "baselineModelSpread": 3.5,
+      "baselineScoreW": 79,
+      "baselineScoreL": 76,
+      "winner": "Michigan",
+      "winProb": 72.9,
+      "spread": 7,
+      "vegasLine": 8.5,
+      "modelSpread": 3.5,
+      "scoreW": 79,
+      "scoreL": 76,
+      "spreadChange": -1,
+      "probChange": 0.4,
+      "modelSpreadChange": 0,
+      "vegasChange": -1,
+      "simMedianBefore": 3.5,
+      "simMedianAfter": 3.5,
+      "simStdDevBefore": 6,
+      "simStdDevAfter": 6,
+      "factors": [
+        "Vegas line moved 1 pts toward Alabama (was 9.5, now 8.5)"
+      ],
+      "absDelta": 1.04
+    }
+  ]
+}
