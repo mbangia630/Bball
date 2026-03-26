@@ -619,7 +619,13 @@ function SectionE({ g, sim }) {
    BETS TAB
    ══════════════════════════════════════════ */
 function BetsTab({ rounds, betSub, setBetSub }) {
-  const allGames = useMemo(() => rounds.flatMap(r => r.g), [rounds]);
+  const allGames = useMemo(() => {
+    const all = rounds.flatMap(r => r.g);
+    // Find the current active round = lowest round number that has non-FINAL games
+    const activeRd = all.filter(g => g.status !== "FINAL").reduce((min, g) => Math.min(min, g.rd ?? 99), 99);
+    // Only include bettable games from the current active round (not future projected rounds)
+    return all.map(g => ({ ...g, _bettable: g.status !== "FINAL" && (g.rd ?? 99) === activeRd }));
+  }, [rounds]);
 
   return (
     <div>
@@ -655,10 +661,9 @@ function mlPayout100(ml) {
 function SinglesTab({ games }) {
   const bets = useMemo(() => {
     const results = [];
-    // Only include games with real Vegas odds (moneyline + vegasLine both present)
-    // This excludes projected future-round games that haven't been scheduled
+    // Only include bettable games (current round) with real Vegas odds
     for (const g of games) {
-      if (g.status === "FINAL") continue;
+      if (!g._bettable) continue;
       const ml = g.moneyline;
       if (!Array.isArray(ml) || ml.length < 2) continue;
       const vl = g.vegasLine ?? g.vegasSp ?? null;
@@ -708,7 +713,7 @@ function SinglesTab({ games }) {
     return results.sort((a, b) => b.ev - a.ev);
   }, [games]);
 
-  const withOdds = games.filter(g => Array.isArray(g.moneyline) && g.moneyline.length >= 2 && (g.vegasLine ?? g.vegasSp) != null && g.status !== "FINAL").length;
+  const withOdds = games.filter(g => g._bettable && Array.isArray(g.moneyline) && g.moneyline.length >= 2 && (g.vegasLine ?? g.vegasSp) != null).length;
 
   return (
     <div>
@@ -764,7 +769,7 @@ function ParlaysTab({ games }) {
   const parlays = useMemo(() => {
     const legs = [];
     for (const g of games) {
-      if (g.status === "FINAL") continue;
+      if (!g._bettable) continue;
       const ml = g.moneyline;
       if (!Array.isArray(ml) || ml.length < 2) continue;
       const vl = g.vegasLine ?? g.vegasSp ?? null;
