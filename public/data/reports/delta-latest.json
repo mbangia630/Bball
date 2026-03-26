@@ -1,17 +1,50 @@
 {
-  "timestamp": "2026-03-26T14:21:18.962Z",
-  "timestampCST": "Mar 26, 2026, 9:21 AM CST",
-  "type": "BASELINE_SET",
-  "message": "Scheduled update complete. This is the new baseline. Next runs will show changes relative to this snapshot.",
+  "timestamp": "2026-03-26T17:09:54.979Z",
+  "timestampCST": "Mar 26, 2026, 12:09 PM CST",
+  "type": "DELTA",
+  "engineVersion": "v9.0-montecarlo",
   "baselineTime": "Mar 26, 2026, 9:21 AM CST",
-  "totalPredictions": 8,
-  "deltas": [],
+  "currentTime": "Mar 26, 2026, 12:09 PM CST",
   "summary": {
     "totalGamesCompared": 8,
-    "gamesChanged": 0,
+    "gamesChanged": 1,
     "winnersFlipped": 0,
     "newMatchups": 0,
-    "avgSpreadChange": 0,
-    "biggestMover": "None — this is the baseline"
-  }
+    "avgSpreadChange": 1,
+    "biggestMover": "Arizona vs Arkansas"
+  },
+  "deltas": [
+    {
+      "matchup": "Arizona vs Arkansas",
+      "round": 3,
+      "region": "",
+      "type": "SHIFT",
+      "baselineWinner": "Arizona",
+      "baselineWinProb": 69.1,
+      "baselineSpread": 6,
+      "baselineVegas": 7.5,
+      "baselineModelSpread": 2.5,
+      "baselineScoreW": 78,
+      "baselineScoreL": 75,
+      "winner": "Arizona",
+      "winProb": 69.9,
+      "spread": 7,
+      "vegasLine": 8.5,
+      "modelSpread": 2.5,
+      "scoreW": 78,
+      "scoreL": 75,
+      "spreadChange": 1,
+      "probChange": 0.8,
+      "modelSpreadChange": 0,
+      "vegasChange": 1,
+      "simMedianBefore": 2.5,
+      "simMedianAfter": 2.5,
+      "simStdDevBefore": 5.3,
+      "simStdDevAfter": 5.3,
+      "factors": [
+        "Vegas line moved 1 pts toward Arizona (was 7.5, now 8.5)"
+      ],
+      "absDelta": 1.08
+    }
+  ]
 }
