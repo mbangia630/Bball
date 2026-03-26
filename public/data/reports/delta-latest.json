@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-03-26T17:09:54.979Z",
-  "timestampCST": "Mar 26, 2026, 12:09 PM CST",
+  "timestamp": "2026-03-26T18:41:14.611Z",
+  "timestampCST": "Mar 26, 2026, 1:41 PM CST",
   "type": "DELTA",
   "engineVersion": "v9.0-montecarlo",
   "baselineTime": "Mar 26, 2026, 9:21 AM CST",
-  "currentTime": "Mar 26, 2026, 12:09 PM CST",
+  "currentTime": "Mar 26, 2026, 1:41 PM CST",
   "summary": {
     "totalGamesCompared": 8,
     "gamesChanged": 1,
@@ -30,19 +30,20 @@
       "winProb": 69.9,
       "spread": 7,
       "vegasLine": 8.5,
-      "modelSpread": 2.5,
+      "modelSpread": 3,
       "scoreW": 78,
       "scoreL": 75,
       "spreadChange": 1,
       "probChange": 0.8,
-      "modelSpreadChange": 0,
+      "modelSpreadChange": 0.5,
       "vegasChange": 1,
       "simMedianBefore": 2.5,
-      "simMedianAfter": 2.5,
+      "simMedianAfter": 3,
       "simStdDevBefore": 5.3,
       "simStdDevAfter": 5.3,
       "factors": [
-        "Vegas line moved 1 pts toward Arizona (was 7.5, now 8.5)"
+        "Vegas line moved 1 pts toward Arizona (was 7.5, now 8.5)",
+        "Model spread shifted +0.5 pts (was 2.5, now 3)"
       ],
       "absDelta": 1.08
     }
