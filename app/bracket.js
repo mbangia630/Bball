@@ -621,10 +621,8 @@ function SectionE({ g, sim }) {
 function BetsTab({ rounds, betSub, setBetSub }) {
   const allGames = useMemo(() => {
     const all = rounds.flatMap(r => r.g);
-    // Find the current active round = lowest round number that has non-FINAL games
-    const activeRd = all.filter(g => g.status !== "FINAL").reduce((min, g) => Math.min(min, g.rd ?? 99), 99);
-    // Only include bettable games from the current active round (not future projected rounds)
-    return all.map(g => ({ ...g, _bettable: g.status !== "FINAL" && (g.rd ?? 99) === activeRd }));
+    // Only UPCOMING games (confirmed matchups) are bettable, not PROJECTED (simulated future rounds)
+    return all.map(g => ({ ...g, _bettable: g.status === "UPCOMING" }));
   }, [rounds]);
 
   return (

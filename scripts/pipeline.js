@@ -337,12 +337,16 @@ function buildDisplay(teamDB, bracketState, slotMap, predictions, completed, wei
       tA._teamK = 20; tB._teamK = 20;
 
       const venue = VENUE_MAP[slot.id] || 'Indianapolis';
-      const vKey1 = `${slot.a} vs ${slot.b}`;
-      const vegasLine = vegasLines[vKey1] ?? null;
-      const ml = moneyLines[vKey1] || null;
+      const vKey1 = `${slot.a} vs ${slot.b}`, vKey2 = `${slot.b} vs ${slot.a}`;
+      const vegasLine = vegasLines[vKey1] ?? (vegasLines[vKey2] != null ? -vegasLines[vKey2] : null);
+      const ml = moneyLines[vKey1] || moneyLines[vKey2] || null;
 
+      // UPCOMING = this slot exists in real predictions (both teams confirmed via results)
+      // PROJECTED = at least one team placed by simulation
+      const predIds = predictions.map(p => p.id);
+      const status = predIds.includes(slot.id) ? 'UPCOMING' : 'PROJECTED';
       const result = simulate(tA, tB, { venue, round: slot.rd, weights, config, vegasLine, moneyline: ml });
-      games.push({ ...toV8Format(result), id: slot.id, status: 'PROJECTED' });
+      games.push({ ...toV8Format(result), id: slot.id, status });
 
       if (slot.feedsInto && projMap[slot.feedsInto]) {
         if (slot.feedsAs === 'a') projMap[slot.feedsInto].a = result.winner;
