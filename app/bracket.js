@@ -685,15 +685,25 @@ function SinglesTab({ games }) {
       const lPayout = mlPayout100(lMl);
       const lEV = (lProb * lPayout) - ((1 - lProb) * 100);
 
-      // Spread bet
-      const coverProb = safe(sim, "coverProb") ?? 0;
-      const spreadEV = (coverProb / 100) * 90.91 - ((1 - coverProb / 100) * 100);
+      // Spread bets — coverProb from engine = % of sims where margin > vegasLine (teamA perspective)
+      // So coverProb = teamA's cover probability, (100 - coverProb) = teamB's cover probability
+      const rawCover = safe(sim, "coverProb") ?? 0;
+      const aName = safe(g, "a", "name") ?? g.teamA ?? "";
+      const bNameS = safe(g, "b", "name") ?? g.teamB ?? "";
+      const aCoverProb = rawCover / 100;
+      const bCoverProb = 1 - aCoverProb;
+      const aSpreadEV = aCoverProb * 90.91 - (1 - aCoverProb) * 100;
+      const bSpreadEV = bCoverProb * 90.91 - (1 - bCoverProb) * 100;
+      const vlAbs = Math.abs(vl);
+      const spreadFav = vl > 0 ? aName : bNameS;
+      const spreadDog = vl > 0 ? bNameS : aName;
 
       // Pick best positive EV bet
       const options = [
         { ev: wEV, type: "ML", team: g.w, prob: wp * 100, implied: wImplied * 100, payout: wPayout, odds: wMl },
         { ev: lEV, type: "ML", team: g.l, prob: lProb * 100, implied: lImplied * 100, payout: lPayout, odds: lMl },
-        { ev: spreadEV, type: "Spread", team: g.w, prob: coverProb, implied: 50, payout: 90.91, odds: -110 },
+        { ev: aSpreadEV, type: "Spread", team: `${aName} ${vl > 0 ? -vlAbs.toFixed(1) : "+" + vlAbs.toFixed(1)}`, prob: rawCover, implied: 50, payout: 90.91, odds: -110 },
+        { ev: bSpreadEV, type: "Spread", team: `${bNameS} ${vl > 0 ? "+" + vlAbs.toFixed(1) : -vlAbs.toFixed(1)}`, prob: (100 - rawCover), implied: 50, payout: 90.91, odds: -110 },
       ].filter(o => o.ev > 0).sort((a, b) => b.ev - a.ev);
 
       if (options.length === 0) continue;
@@ -813,15 +823,25 @@ function ParlaysTab({ games }) {
 
       const wp = (g.wp ?? 50) / 100;
       const sim = g.sim;
-      const coverProb = safe(sim, "coverProb");
+      const rawCover = safe(sim, "coverProb"); // teamA cover %
       const { wMl } = getWinnerMl(g);
+      const aNameP = safe(g, "a", "name") ?? g.teamA ?? "";
+      const bNameP = safe(g, "b", "name") ?? g.teamB ?? "";
+      const vlAbs = Math.abs(vl);
 
       if (wp >= 0.55 && wMl != null) {
         const mlDec = americanToDecimal(wMl);
         if (mlDec) legs.push({ g, type: "ML", prob: wp, dec: mlDec, label: `${g.w} ML` });
       }
-      if (coverProb != null && coverProb / 100 >= 0.55) {
-        legs.push({ g, type: "Spread", prob: coverProb / 100, dec: 1.909, label: `${g.w} spread` });
+      // TeamA spread leg
+      if (rawCover != null && rawCover / 100 >= 0.55) {
+        const spreadLabel = `${aNameP} ${vl > 0 ? "-" + vlAbs.toFixed(1) : "+" + vlAbs.toFixed(1)}`;
+        legs.push({ g, type: "Spread", prob: rawCover / 100, dec: 1.909, label: spreadLabel });
+      }
+      // TeamB spread leg
+      if (rawCover != null && (100 - rawCover) / 100 >= 0.55) {
+        const spreadLabel = `${bNameP} ${vl > 0 ? "+" + vlAbs.toFixed(1) : "-" + vlAbs.toFixed(1)}`;
+        legs.push({ g, type: "Spread", prob: (100 - rawCover) / 100, dec: 1.909, label: spreadLabel });
       }
     }
 
