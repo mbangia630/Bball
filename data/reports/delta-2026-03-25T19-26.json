@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-03-25T19:26:20.774Z",
+  "timestampCST": "Mar 25, 2026, 2:26 PM CST",
+  "type": "DELTA",
+  "engineVersion": "v9.0-montecarlo",
+  "baselineTime": "Mar 25, 2026, 9:12 AM CST",
+  "currentTime": "Mar 25, 2026, 2:26 PM CST",
+  "summary": {
+    "totalGamesCompared": 8,
+    "gamesChanged": 2,
+    "winnersFlipped": 0,
+    "newMatchups": 0,
+    "avgSpreadChange": 0.5,
+    "biggestMover": "Arizona vs Arkansas"
+  },
+  "deltas": [
+    {
+      "matchup": "Arizona vs Arkansas",
+      "round": 3,
+      "region": "",
+      "type": "SHIFT",
+      "baselineWinner": "Arizona",
+      "baselineWinProb": 69.7,
+      "baselineSpread": 6.5,
+      "baselineVegas": 7.5,
+      "baselineModelSpread": 3,
+      "baselineScoreW": 78,
+      "baselineScoreL": 75,
+      "winner": "Arizona",
+      "winProb": 68.8,
+      "spread": 6,
+      "vegasLine": 7.5,
+      "modelSpread": 2.5,
+      "scoreW": 78,
+      "scoreL": 75,
+      "spreadChange": -0.5,
+      "probChange": -0.9,
+      "modelSpreadChange": -0.5,
+      "vegasChange": 0,
+      "simMedianBefore": 3,
+      "simMedianAfter": 2.5,
+      "simStdDevBefore": 5.4,
+      "simStdDevAfter": 5.4,
+      "factors": [
+        "Model spread shifted -0.5 pts (was 3, now 2.5)"
+      ],
+      "absDelta": 0.59
+    },
+    {
+      "matchup": "Michigan St. vs UConn",
+      "round": 3,
+      "region": "",
+      "type": "SHIFT",
+      "baselineWinner": "UConn",
+      "baselineWinProb": 55.1,
+      "baselineSpread": -0.5,
+      "baselineVegas": null,
+      "baselineModelSpread": -0.5,
+      "baselineScoreW": 72,
+      "baselineScoreL": 71,
+      "winner": "UConn",
+      "winProb": 55.8,
+      "spread": -1,
+      "vegasLine": null,
+      "modelSpread": -1,
+      "scoreW": 72,
+      "scoreL": 71,
+      "spreadChange": -0.5,
+      "probChange": 0.7,
+      "modelSpreadChange": -0.5,
+      "vegasChange": null,
+      "simMedianBefore": -0.5,
+      "simMedianAfter": -1,
+      "simStdDevBefore": 5.2,
+      "simStdDevAfter": 5.2,
+      "factors": [
+        "Model spread shifted -0.5 pts (was -0.5, now -1)"
+      ],
+      "absDelta": 0.57
+    }
+  ]
+}
