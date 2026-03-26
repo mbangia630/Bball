@@ -69,7 +69,12 @@ async function fetchOdds() {
     );
     const odds = {};
     for (const game of data) {
-      const bk = game.bookmakers.find(b => b.key === 'draftkings') || game.bookmakers.find(b => b.key === 'fanduel') || game.bookmakers[0];
+      // Try multiple bookmakers in order of preference
+      const bk = game.bookmakers.find(b => b.key === 'draftkings')
+        || game.bookmakers.find(b => b.key === 'fanduel')
+        || game.bookmakers.find(b => b.key === 'betmgm')
+        || game.bookmakers.find(b => b.key === 'bovada')
+        || game.bookmakers[0];
       if (!bk) continue;
       const spread = bk.markets.find(m => m.key === 'spreads');
       const ml = bk.markets.find(m => m.key === 'h2h');
@@ -83,6 +88,10 @@ async function fetchOdds() {
       };
     }
     console.log(`   ${Object.keys(odds).length} games with odds`);
+    // Log all game matchups from API for debugging
+    for (const key of Object.keys(odds)) {
+      console.log(`   💰 ${key}: spread=${odds[key].spread}, ml=${odds[key].mlHome}/${odds[key].mlAway}`);
+    }
     return odds;
   } catch (e) { console.log(`   ⚠️ Odds failed: ${e.message}`); return {}; }
 }
@@ -156,11 +165,18 @@ async function fetchTeamStats(teamDB) {
 // ═══ STEP 2: RESOLVE ODDS INTO DB NAMES ═══
 function resolveOdds(rawOdds, teamDB) {
   const vegasLines = {}, moneyLines = {};
+  let resolved = 0, unresolved = 0;
   for (const [key, val] of Object.entries(rawOdds)) {
     const parts = key.split(' vs ');
     if (parts.length !== 2) continue;
-    const a = resolve(parts[0].trim(), teamDB) || parts[0].trim();
-    const b = resolve(parts[1].trim(), teamDB) || parts[1].trim();
+    const a = resolve(parts[0].trim(), teamDB);
+    const b = resolve(parts[1].trim(), teamDB);
+    if (!a || !b) {
+      unresolved++;
+      console.log(`   ⚠️ Unresolved odds: "${parts[0].trim()}" → ${a || '???'}, "${parts[1].trim()}" → ${b || '???'}`);
+      continue;
+    }
+    resolved++;
     if (val.spread !== null) {
       vegasLines[`${a} vs ${b}`] = -val.spread;
       vegasLines[`${b} vs ${a}`] = val.spread;
@@ -170,6 +186,7 @@ function resolveOdds(rawOdds, teamDB) {
       moneyLines[`${b} vs ${a}`] = [val.mlAway || 0, val.mlHome || 0];
     }
   }
+  console.log(`   ${resolved} resolved, ${unresolved} unresolved`);
   return { vegasLines, moneyLines };
 }
 
@@ -259,6 +276,7 @@ function runPredictions(teamDB, bracketState, slotMap, vegasLines, moneyLines, w
     const vKey1 = `${slot.a} vs ${slot.b}`, vKey2 = `${slot.b} vs ${slot.a}`;
     const vegasLine = vegasLines[vKey1] ?? (vegasLines[vKey2] != null ? -vegasLines[vKey2] : null);
     const ml = moneyLines[vKey1] || moneyLines[vKey2] || null;
+    if (!ml && !vegasLine) console.log(`   📊 No odds for: ${slot.a} vs ${slot.b}`);
 
     const result = simulate(tA, tB, { venue, round: slot.rd, weights, config, vegasLine, moneyline: ml });
     const formatted = toV8Format(result);

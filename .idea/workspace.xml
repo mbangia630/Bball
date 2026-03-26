@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9205b883-5d7d-4cfa-864c-a7c73e9879ec" name="Changes" comment="delta report">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9205b883-5d7d-4cfa-864c-a7c73e9879ec" name="Changes" comment="fix bets">
+      <change beforePath="$PROJECT_DIR$/scripts/pipeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/pipeline.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,62 +97,6 @@
       <option name="presentableId" value="Default" />
       <updated>1773770715585</updated>
       <workItem from="1773770717312" duration="3000" />
-    </task>
-    <task id="LOCAL-00037" summary="new report">
-      <option name="closed" value="true" />
-      <created>1773878716242</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1773878716242</updated>
-    </task>
-    <task id="LOCAL-00038" summary="new report">
-      <option name="closed" value="true" />
-      <created>1773878945878</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1773878945879</updated>
-    </task>
-    <task id="LOCAL-00039" summary="clean version">
-      <option name="closed" value="true" />
-      <created>1773879327222</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1773879327222</updated>
-    </task>
-    <task id="LOCAL-00040" summary="quote fix - final">
-      <option name="closed" value="true" />
-      <created>1773883093972</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1773883093972</updated>
-    </task>
-    <task id="LOCAL-00041" summary="quote fix - final">
-      <option name="closed" value="true" />
-      <created>1773883491033</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1773883491033</updated>
-    </task>
-    <task id="LOCAL-00042" summary="updating bracket page">
-      <option name="closed" value="true" />
-      <created>1773958071648</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1773958071648</updated>
-    </task>
-    <task id="LOCAL-00043" summary="updating bracket page">
-      <option name="closed" value="true" />
-      <created>1773958463622</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1773958463623</updated>
     </task>
     <task id="LOCAL-00044" summary="updating bracket page">
       <option name="closed" value="true" />
@@ -490,7 +434,63 @@
       <option name="project" value="LOCAL" />
       <updated>1774364041847</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="delta report">
+      <option name="closed" value="true" />
+      <created>1774544863810</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1774544863810</updated>
+    </task>
+    <task id="LOCAL-00087" summary="delta report">
+      <option name="closed" value="true" />
+      <created>1774545306126</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1774545306127</updated>
+    </task>
+    <task id="LOCAL-00088" summary="delta report">
+      <option name="closed" value="true" />
+      <created>1774545861877</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1774545861877</updated>
+    </task>
+    <task id="LOCAL-00089" summary="delta report">
+      <option name="closed" value="true" />
+      <created>1774546327352</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1774546327352</updated>
+    </task>
+    <task id="LOCAL-00090" summary="fix bets">
+      <option name="closed" value="true" />
+      <created>1774550517717</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1774550517717</updated>
+    </task>
+    <task id="LOCAL-00091" summary="fix bets">
+      <option name="closed" value="true" />
+      <created>1774550668465</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1774550668465</updated>
+    </task>
+    <task id="LOCAL-00092" summary="fix bets">
+      <option name="closed" value="true" />
+      <created>1774551270781</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1774551270781</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -505,7 +505,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="self improve and report" />
     <MESSAGE value="name corrections" />
     <MESSAGE value="bug" />
     <MESSAGE value="new report" />
@@ -530,7 +529,8 @@
     <MESSAGE value="unbold losers" />
     <MESSAGE value="perfomance report update" />
     <MESSAGE value="delta report" />
-    <option name="LAST_COMMIT_MESSAGE" value="delta report" />
+    <MESSAGE value="fix bets" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bets" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
