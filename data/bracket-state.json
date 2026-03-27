@@ -363,6 +363,34 @@
       "scoreW": 90,
       "scoreL": 65,
       "date": "2026-03-23"
+    },
+    "W_S16_1": {
+      "winner": "Arizona",
+      "loser": "Arkansas",
+      "scoreW": 109,
+      "scoreL": 88,
+      "date": "2026-03-27"
+    },
+    "W_S16_2": {
+      "winner": "Purdue",
+      "loser": "Texas",
+      "scoreW": 79,
+      "scoreL": 77,
+      "date": "2026-03-27"
+    },
+    "S_S16_2": {
+      "winner": "Illinois",
+      "loser": "Houston",
+      "scoreW": 65,
+      "scoreL": 55,
+      "date": "2026-03-27"
+    },
+    "S_S16_1": {
+      "winner": "Iowa",
+      "loser": "Nebraska",
+      "scoreW": 77,
+      "scoreL": 71,
+      "date": "2026-03-27"
     }
   },
   "advancedTo": {
@@ -473,6 +501,14 @@
     "MW_S16_2": {
       "b": "Iowa State",
       "a": "Tennessee"
+    },
+    "W_E8": {
+      "a": "Arizona",
+      "b": "Purdue"
+    },
+    "S_E8": {
+      "b": "Illinois",
+      "a": "Iowa"
     }
   }
 }

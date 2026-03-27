@@ -3534,5 +3534,363 @@
     "v8adj": 0,
     "ensAvg": 0,
     "hca": 0
+  },
+  {
+    "teamA": "Iowa",
+    "teamB": "Illinois",
+    "winner": "Illinois",
+    "loser": "Iowa",
+    "winProb": 96.3,
+    "modelSpread": -10,
+    "finalSpread": -7.5,
+    "vegasLine": -6.5,
+    "edge": -3.5,
+    "scoreW": 77,
+    "scoreL": 67,
+    "seedA": 9,
+    "seedB": 3,
+    "seedW": 3,
+    "seedL": 9,
+    "sim": {
+      "median": -10,
+      "mean": -10,
+      "stdDev": 5.6,
+      "p10": -17,
+      "p25": -13.5,
+      "p75": -6.5,
+      "p90": -3,
+      "blowoutA": 0,
+      "blowoutB": 18.2,
+      "closeGame": 17.9,
+      "coverProb": 26.2
+    },
+    "layers": {
+      "L1": -9.2,
+      "L2": -0.5,
+      "L3": -0.4,
+      "L4": 0.2,
+      "L5": 0,
+      "v8": 0
+    },
+    "matchup": {
+      "details": [
+        {
+          "stat": "Pace",
+          "team": "Iowa",
+          "impact": 0.3,
+          "desc": "8-possession gap — slower team controls pace"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0.3
+    },
+    "hca": {
+      "team": null,
+      "value": 0,
+      "distA": 850,
+      "distB": 821
+    },
+    "fatigue": {
+      "a": 0,
+      "b": 0,
+      "net": 0
+    },
+    "v8": {
+      "ref": 0,
+      "gs": 0,
+      "sharp": 0,
+      "cont": 0,
+      "tz": 0,
+      "foul": 0,
+      "total": 0,
+      "ens": {
+        "avg": 0,
+        "agree": true,
+        "m1": 0,
+        "m2": 0,
+        "m3": 0
+      }
+    },
+    "coaching": {
+      "a": {
+        "name": "Fran McCaffery",
+        "adj": -0.3,
+        "note": "11 spots above Clemson in KenPom"
+      },
+      "b": {
+        "name": "Brad Underwood",
+        "adj": -0.2,
+        "note": "#1 offense, but OT losses expose D"
+      },
+      "diff": -0.1
+    },
+    "profiles": {
+      "a": {
+        "em": 11.36,
+        "efg": 54.55492,
+        "tor": 15.45856,
+        "orb": 34.66,
+        "ftr": 35.3476,
+        "tpt": 34.62356,
+        "ast": 53.967040000000004,
+        "mg": 5.12256,
+        "off": 114.8672,
+        "def": 103.50720000000001,
+        "tempo": 62.9,
+        "elo": 2056,
+        "seed": 9,
+        "name": "Iowa",
+        "luck": 0.01,
+        "sentiment": 0.38,
+        "confidenceIdx": 0,
+        "injuryAdj": 0,
+        "hcaBase": 4,
+        "coachAdj": -0.3,
+        "coach": "Fran McCaffery",
+        "coachNote": "11 spots above Clemson in KenPom",
+        "kpRank": 25,
+        "record": "22-11",
+        "style": {
+          "p3": 0.34,
+          "d3r": 45,
+          "ht": 78,
+          "toF": 9.5,
+          "t": 62
+        },
+        "v8": {},
+        "fatigue": {}
+      },
+      "b": {
+        "em": 24.2928,
+        "efg": 55.738960000000006,
+        "tor": 14.88112,
+        "orb": 35.728,
+        "ftr": 35.623400000000004,
+        "tpt": 36.78956,
+        "ast": 52.55744,
+        "mg": 12.69632,
+        "off": 125.1312,
+        "def": 100.83840000000001,
+        "tempo": 66.7,
+        "elo": 2117,
+        "seed": 3,
+        "name": "Illinois",
+        "luck": 0.005,
+        "sentiment": 0.38,
+        "confidenceIdx": 0,
+        "injuryAdj": 0,
+        "hcaBase": 4.5,
+        "coachAdj": -0.2,
+        "coach": "Brad Underwood",
+        "coachNote": "#1 offense, but OT losses expose D",
+        "kpRank": 5,
+        "record": "24-8",
+        "style": {
+          "p3": 0.42,
+          "d3r": 28,
+          "ht": 78,
+          "toF": 9,
+          "t": 70
+        },
+        "v8": {},
+        "fatigue": {}
+      }
+    },
+    "adjStats": {
+      "aEfg": 54.6,
+      "bEfg": 55.7,
+      "aTor": 15.5,
+      "bTor": 14.9,
+      "aOrb": 34.7,
+      "bOrb": 35.7,
+      "aFtr": 35.3,
+      "bFtr": 35.6
+    },
+    "venue": "Houston",
+    "round": 4,
+    "moneyline": [
+      230,
+      -285
+    ],
+    "engineVersion": "v9.0-montecarlo",
+    "simCount": 10000,
+    "w": "Illinois",
+    "l": "Iowa",
+    "sW": 77,
+    "sL": 67,
+    "wp": 96.3,
+    "sp": 7.5,
+    "sW2": 3,
+    "sL2": 9,
+    "ven": "Houston",
+    "modelSp": -10,
+    "blendedSpread": -7.5,
+    "vegasSp": -6.5,
+    "rawSp": -7.5,
+    "L1": -9.2,
+    "L2": -0.5,
+    "L3": -0.4,
+    "L4": 0.2,
+    "L5": 0,
+    "v8adj": 0,
+    "ensAvg": 0,
+    "ensAgree": true,
+    "ha": null,
+    "hb": 0,
+    "mu": {
+      "det": [
+        {
+          "stat": "Pace",
+          "team": "Iowa",
+          "i": 0.3,
+          "d": "8-possession gap — slower team controls pace"
+        }
+      ],
+      "adjA": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "adjB": {
+        "efg": 0,
+        "tor": 0,
+        "orb": 0,
+        "ftr": 0
+      },
+      "tempoAdj": 0.3
+    },
+    "cDiff": -0.1,
+    "fatA": {
+      "pts": 0
+    },
+    "fatB": {
+      "pts": 0
+    },
+    "a": {
+      "em": 11.36,
+      "efg": 54.55492,
+      "tor": 15.45856,
+      "orb": 34.66,
+      "ftr": 35.3476,
+      "tpt": 34.62356,
+      "ast": 53.967040000000004,
+      "mg": 5.12256,
+      "off": 114.8672,
+      "def": 103.50720000000001,
+      "tempo": 62.9,
+      "elo": 2056,
+      "seed": 9,
+      "name": "Iowa",
+      "luck": 0.01,
+      "sentiment": 0.38,
+      "confidenceIdx": 0,
+      "injuryAdj": 0,
+      "hcaBase": 4,
+      "coachAdj": -0.3,
+      "coach": "Fran McCaffery",
+      "coachNote": "11 spots above Clemson in KenPom",
+      "kpRank": 25,
+      "record": "22-11",
+      "style": {
+        "p3": 0.34,
+        "d3r": 45,
+        "ht": 78,
+        "toF": 9.5,
+        "t": 62
+      },
+      "v8": {},
+      "fatigue": {},
+      "o": 114.8672,
+      "d": 103.50720000000001,
+      "t": 62.9,
+      "s": 9,
+      "kp": 25,
+      "rec": "22-11",
+      "lk": 0.01,
+      "st": 0.38,
+      "ci": 0,
+      "ij": 0,
+      "hb": 4,
+      "cAdj": -0.3,
+      "cNote": "11 spots above Clemson in KenPom",
+      "sty": {
+        "p3": 0.34,
+        "d3r": 45,
+        "ht": 78,
+        "toF": 9.5,
+        "t": 62
+      }
+    },
+    "b": {
+      "em": 24.2928,
+      "efg": 55.738960000000006,
+      "tor": 14.88112,
+      "orb": 35.728,
+      "ftr": 35.623400000000004,
+      "tpt": 36.78956,
+      "ast": 52.55744,
+      "mg": 12.69632,
+      "off": 125.1312,
+      "def": 100.83840000000001,
+      "tempo": 66.7,
+      "elo": 2117,
+      "seed": 3,
+      "name": "Illinois",
+      "luck": 0.005,
+      "sentiment": 0.38,
+      "confidenceIdx": 0,
+      "injuryAdj": 0,
+      "hcaBase": 4.5,
+      "coachAdj": -0.2,
+      "coach": "Brad Underwood",
+      "coachNote": "#1 offense, but OT losses expose D",
+      "kpRank": 5,
+      "record": "24-8",
+      "style": {
+        "p3": 0.42,
+        "d3r": 28,
+        "ht": 78,
+        "toF": 9,
+        "t": 70
+      },
+      "v8": {},
+      "fatigue": {},
+      "o": 125.1312,
+      "d": 100.83840000000001,
+      "t": 66.7,
+      "s": 3,
+      "kp": 5,
+      "rec": "24-8",
+      "lk": 0.005,
+      "st": 0.38,
+      "ci": 0,
+      "ij": 0,
+      "hb": 4.5,
+      "cAdj": -0.2,
+      "cNote": "#1 offense, but OT losses expose D",
+      "sty": {
+        "p3": 0.42,
+        "d3r": 28,
+        "ht": 78,
+        "toF": 9,
+        "t": 70
+      }
+    },
+    "rd": 4,
+    "id": "S_E8",
+    "status": "UPCOMING",
+    "predictedAt": "2026-03-27T04:28:36.883Z"
   }
 ]
