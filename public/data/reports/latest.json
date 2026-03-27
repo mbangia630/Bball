@@ -1,28 +1,76 @@
 {
   "date": "2026-03-27",
-  "generatedAtCST": "3/26/2026, 11:28:27 PM CST",
-  "modelVersion": 66,
+  "generatedAtCST": "3/27/2026, 9:05:19 AM CST",
+  "modelVersion": 67,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
     "straightUp": {
-      "correct": 13,
+      "correct": 11,
       "total": 15,
-      "pct": 87
+      "pct": 73
     },
     "ats": {
-      "correct": 6,
+      "correct": 5,
       "total": 15,
-      "pct": 40
+      "pct": 33
     },
     "beatVegas": {
-      "correct": 6,
-      "total": 14
+      "correct": 5,
+      "total": 15
     },
-    "avgError": 7.7,
-    "avgVegasError": 8.4
+    "avgError": 9.1,
+    "avgVegasError": 8.3
   },
   "games": [
+    {
+      "matchup": "Arizona vs Arkansas",
+      "score": "Arizona 109-88",
+      "modelSpread": 2.5,
+      "vegasLine": 8.5,
+      "modelError": 18.5,
+      "vegasError": 12.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Texas vs Purdue",
+      "score": "Purdue 79-77",
+      "modelSpread": -11,
+      "vegasLine": -8.5,
+      "modelError": 9,
+      "vegasError": 6.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Illinois vs Houston",
+      "score": "Illinois 65-55",
+      "modelSpread": -5,
+      "vegasLine": -2.5,
+      "modelError": 15,
+      "vegasError": 12.5,
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "❌ Missed"
+    },
+    {
+      "matchup": "Iowa vs Nebraska",
+      "score": "Iowa 77-71",
+      "modelSpread": -1,
+      "vegasLine": -2.5,
+      "modelError": 7,
+      "vegasError": 8.5,
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "🟡 Wrong winner, covered ATS"
+    },
     {
       "matchup": "St. John's vs Kansas",
       "score": "St. John's 67-65",
@@ -529,9 +577,9 @@
     }
   ],
   "cumulative": {
-    "totalGames": 42,
-    "straightUpPct": 76.2,
-    "atsPct": 42.9,
+    "totalGames": 46,
+    "straightUpPct": 73.9,
+    "atsPct": 41.3,
     "trend": [
       {
         "date": "2026-03-23",
@@ -544,6 +592,12 @@
         "games": 8,
         "suPct": 75,
         "avgError": 6.7
+      },
+      {
+        "date": "2026-03-27",
+        "games": 4,
+        "suPct": 50,
+        "avgError": 12.4
       }
     ]
   },
@@ -584,14 +638,15 @@
   },
   "adjustments": {
     "changes": [
-      "Layer weights tuned: L1=0.309 L2=0.229 L3=0.18 L4=0.132 L5=0.149"
+      "Layer weights tuned: L1=0.308 L2=0.228 L3=0.18 L4=0.133 L5=0.15",
+      "Vegas blend: 73% → 75%"
     ],
     "before": {
       "vegasBlend": 0.73,
       "sigma": 9.799999999999997
     },
     "after": {
-      "vegasBlend": 0.73,
+      "vegasBlend": 0.75,
       "sigma": 9.799999999999997
     }
   }

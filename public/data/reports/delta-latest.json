@@ -1,78 +1,17 @@
 {
-  "timestamp": "2026-03-27T04:28:37.089Z",
-  "timestampCST": "Mar 26, 2026, 11:28 PM CST",
-  "type": "DELTA",
-  "engineVersion": "v9.0-montecarlo",
-  "baselineTime": "Mar 26, 2026, 9:21 AM CST",
-  "currentTime": "Mar 26, 2026, 11:28 PM CST",
+  "timestamp": "2026-03-27T14:05:28.336Z",
+  "timestampCST": "Mar 27, 2026, 9:05 AM CST",
+  "type": "BASELINE_SET",
+  "message": "Scheduled update complete. This is the new baseline. Next runs will show changes relative to this snapshot.",
+  "baselineTime": "Mar 27, 2026, 9:05 AM CST",
+  "totalPredictions": 6,
+  "deltas": [],
   "summary": {
     "totalGamesCompared": 6,
-    "gamesChanged": 3,
+    "gamesChanged": 0,
     "winnersFlipped": 0,
-    "newMatchups": 2,
-    "avgSpreadChange": 1,
-    "biggestMover": "Iowa vs Illinois"
-  },
-  "deltas": [
-    {
-      "matchup": "Iowa vs Illinois",
-      "round": 4,
-      "region": "",
-      "type": "NEW",
-      "winner": "Illinois",
-      "winProb": 96.3,
-      "spread": -7.5,
-      "message": "New matchup — Illinois predicted to win (96.3%)",
-      "factors": [
-        "New matchup generated from bracket advancement"
-      ],
-      "absDelta": 999
-    },
-    {
-      "matchup": "Arizona vs Purdue",
-      "round": 4,
-      "region": "",
-      "type": "NEW",
-      "winner": "Arizona",
-      "winProb": 81.8,
-      "spread": 5,
-      "message": "New matchup — Arizona predicted to win (81.8%)",
-      "factors": [
-        "New matchup generated from bracket advancement"
-      ],
-      "absDelta": 999
-    },
-    {
-      "matchup": "Michigan vs Alabama",
-      "round": 3,
-      "region": "",
-      "type": "SHIFT",
-      "baselineWinner": "Michigan",
-      "baselineWinProb": 72.5,
-      "baselineSpread": 8,
-      "baselineVegas": 9.5,
-      "baselineModelSpread": 3.5,
-      "baselineScoreW": 79,
-      "baselineScoreL": 76,
-      "winner": "Michigan",
-      "winProb": 73.3,
-      "spread": 7,
-      "vegasLine": 8.5,
-      "modelSpread": 3.5,
-      "scoreW": 79,
-      "scoreL": 75,
-      "spreadChange": -1,
-      "probChange": 0.8,
-      "modelSpreadChange": 0,
-      "vegasChange": -1,
-      "simMedianBefore": 3.5,
-      "simMedianAfter": 3.5,
-      "simStdDevBefore": 6,
-      "simStdDevAfter": 6,
-      "factors": [
-        "Vegas line moved 1 pts toward Alabama (was 9.5, now 8.5)"
-      ],
-      "absDelta": 1.08
-    }
-  ]
+    "newMatchups": 0,
+    "avgSpreadChange": 0,
+    "biggestMover": "None — this is the baseline"
+  }
 }
