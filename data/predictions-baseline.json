@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T14:05:28.330Z",
+  "timestamp": "2026-03-28T13:43:43.659Z",
   "completed": [
     {
       "id": "FF1",
@@ -522,6 +522,26 @@
       "rd": 2
     },
     {
+      "id": "E_S16_1",
+      "winner": "Duke",
+      "loser": "St. John's",
+      "scoreW": 80,
+      "scoreL": 75,
+      "date": "2026-03-28",
+      "status": "FINAL",
+      "rd": 3
+    },
+    {
+      "id": "E_S16_2",
+      "winner": "UConn",
+      "loser": "Michigan St.",
+      "scoreW": 67,
+      "scoreL": 63,
+      "date": "2026-03-28",
+      "status": "FINAL",
+      "rd": 3
+    },
+    {
       "id": "S_S16_1",
       "winner": "Iowa",
       "loser": "Nebraska",
@@ -560,43 +580,63 @@
       "date": "2026-03-27",
       "status": "FINAL",
       "rd": 3
+    },
+    {
+      "id": "MW_S16_1",
+      "winner": "Michigan",
+      "loser": "Alabama",
+      "scoreW": 90,
+      "scoreL": 77,
+      "date": "2026-03-28",
+      "status": "FINAL",
+      "rd": 3
+    },
+    {
+      "id": "MW_S16_2",
+      "winner": "Tennessee",
+      "loser": "Iowa State",
+      "scoreW": 76,
+      "scoreL": 62,
+      "date": "2026-03-28",
+      "status": "FINAL",
+      "rd": 3
     }
   ],
   "predictions": [
     {
       "teamA": "Duke",
-      "teamB": "St. John's",
+      "teamB": "UConn",
       "winner": "Duke",
-      "loser": "St. John's",
-      "winProb": 82.1,
-      "modelSpread": 6.5,
-      "finalSpread": 6.5,
-      "vegasLine": 6.5,
+      "loser": "UConn",
+      "winProb": 82,
+      "modelSpread": 5.5,
+      "finalSpread": 5.5,
+      "vegasLine": 5.5,
       "edge": 0,
-      "scoreW": 77,
-      "scoreL": 70,
+      "scoreW": 75,
+      "scoreL": 69,
       "seedA": 1,
-      "seedB": 5,
+      "seedB": 2,
       "seedW": 1,
-      "seedL": 5,
+      "seedL": 2,
       "sim": {
-        "median": 6.5,
-        "mean": 6.4,
-        "stdDev": 6.9,
-        "p10": -2.5,
+        "median": 5.5,
+        "mean": 5.8,
+        "stdDev": 6.3,
+        "p10": -2,
         "p25": 1.5,
-        "p75": 11,
-        "p90": 15,
-        "blowoutA": 10.4,
+        "p75": 10,
+        "p90": 14,
+        "blowoutA": 7.2,
         "blowoutB": 0.1,
-        "closeGame": 36.7,
-        "coverProb": 49.6
+        "closeGame": 41,
+        "coverProb": 51.7
       },
       "layers": {
-        "L1": 5.8,
-        "L2": 1.6,
+        "L1": 6.3,
+        "L2": 0.6,
         "L3": -0.6,
-        "L4": -0.4,
+        "L4": -0.5,
         "L5": 0,
         "v8": 0
       },
@@ -606,18 +646,24 @@
             "stat": "eFG%",
             "team": "Duke",
             "impact": -0.4500000000000001,
-            "desc": "Duke's 3PT-heavy (44%) faces St. John's's #12 3PT D"
+            "desc": "Duke's 3PT-heavy (44%) faces UConn's #11 3PT D"
           },
           {
             "stat": "TO Rate",
-            "team": "St. John's",
+            "team": "UConn",
             "impact": 0.5999999999999996,
-            "desc": "Duke forces 11.2 TOs/g → St. John's's TO rate +0.6%"
+            "desc": "Duke forces 11.2 TOs/g → UConn's TO rate +0.6%"
+          },
+          {
+            "stat": "TO Rate",
+            "team": "Duke",
+            "impact": 0.5999999999999996,
+            "desc": "UConn forces 11.2 TOs/g → Duke's TO rate +0.6%"
           }
         ],
         "adjA": {
           "efg": -0.4500000000000001,
-          "tor": 0,
+          "tor": 0.5999999999999996,
           "orb": 0,
           "ftr": 0
         },
@@ -633,7 +679,7 @@
         "team": null,
         "value": 0,
         "distA": 226,
-        "distB": 213
+        "distB": 322
       },
       "fatigue": {
         "a": 0,
@@ -663,11 +709,11 @@
           "note": "Title game 2025, 6 March wins"
         },
         "b": {
-          "name": "Rick Pitino",
-          "adj": 1.2,
-          "note": "55 March wins, 7 F4s, 2 titles — HOFer"
+          "name": "Dan Hurley",
+          "adj": 1.5,
+          "note": "Back-to-back titles '23-'24, .750 WP"
         },
-        "diff": -0.5
+        "diff": -0.7
       },
       "profiles": {
         "a": {
@@ -682,7 +728,7 @@
           "off": 123.3984,
           "def": 95.8224,
           "tempo": 66.1,
-          "elo": 2128,
+          "elo": 2150,
           "seed": 1,
           "name": "Duke",
           "luck": 0.012,
@@ -706,36 +752,36 @@
           "fatigue": {}
         },
         "b": {
-          "em": 19.764,
-          "efg": 52.22355999999999,
-          "tor": 15.83696,
-          "orb": 34.92700000000001,
-          "ftr": 39.2834,
-          "tpt": 34.97296,
-          "ast": 55.78208,
-          "mg": 11.75488,
-          "off": 116.08160000000001,
-          "def": 96.3176,
-          "tempo": 70.4,
-          "elo": 2139,
-          "seed": 5,
-          "name": "St. John's",
-          "luck": 0.035,
-          "sentiment": 0.56,
+          "em": 18.9072,
+          "efg": 55.765119999999996,
+          "tor": 15.828800000000001,
+          "orb": 35.728,
+          "ftr": 34.272,
+          "tpt": 36.33976,
+          "ast": 60.152,
+          "mg": 10.0168,
+          "off": 118.6016,
+          "def": 99.7536,
+          "tempo": 65.9,
+          "elo": 2154,
+          "seed": 2,
+          "name": "UConn",
+          "luck": -0.018,
+          "sentiment": 0.63,
           "confidenceIdx": 0,
-          "injuryAdj": 0,
-          "hcaBase": 4,
-          "coachAdj": 1.2,
-          "coach": "Rick Pitino",
-          "coachNote": "55 March wins, 7 F4s, 2 titles — HOFer",
-          "kpRank": 21,
-          "record": "24-9",
+          "injuryAdj": -0.5,
+          "hcaBase": 5.5,
+          "coachAdj": 1.5,
+          "coach": "Dan Hurley",
+          "coachNote": "Back-to-back titles '23-'24, .750 WP",
+          "kpRank": 7,
+          "record": "27-7",
           "style": {
             "p3": 0.4,
-            "d3r": 12,
-            "ht": 78,
-            "toF": 10.8,
-            "t": 68
+            "d3r": 11,
+            "ht": 79,
+            "toF": 11.2,
+            "t": 67.2
           },
           "v8": {},
           "fatigue": {}
@@ -743,39 +789,39 @@
       },
       "adjStats": {
         "aEfg": 56.5,
-        "bEfg": 52.2,
-        "aTor": 15.3,
+        "bEfg": 55.8,
+        "aTor": 15.9,
         "bTor": 16.4,
         "aOrb": 35.8,
-        "bOrb": 34.9,
+        "bOrb": 35.7,
         "aFtr": 38.7,
-        "bFtr": 39.3
+        "bFtr": 34.3
       },
       "venue": "Washington DC",
-      "round": 3,
+      "round": 4,
       "moneyline": [
-        -285,
-        230
+        -218,
+        180
       ],
       "engineVersion": "v9.0-montecarlo",
       "simCount": 10000,
       "w": "Duke",
-      "l": "St. John's",
-      "sW": 77,
-      "sL": 70,
-      "wp": 82.1,
-      "sp": 6.5,
+      "l": "UConn",
+      "sW": 75,
+      "sL": 69,
+      "wp": 82,
+      "sp": 5.5,
       "sW2": 1,
-      "sL2": 5,
+      "sL2": 2,
       "ven": "Washington DC",
-      "modelSp": 6.5,
-      "blendedSpread": 6.5,
-      "vegasSp": 6.5,
-      "rawSp": 6.5,
-      "L1": 5.8,
-      "L2": 1.6,
+      "modelSp": 5.5,
+      "blendedSpread": 5.5,
+      "vegasSp": 5.5,
+      "rawSp": 5.5,
+      "L1": 6.3,
+      "L2": 0.6,
       "L3": -0.6,
-      "L4": -0.4,
+      "L4": -0.5,
       "L5": 0,
       "v8adj": 0,
       "ensAvg": 0,
@@ -788,18 +834,24 @@
             "stat": "eFG%",
             "team": "Duke",
             "i": -0.4500000000000001,
-            "d": "Duke's 3PT-heavy (44%) faces St. John's's #12 3PT D"
+            "d": "Duke's 3PT-heavy (44%) faces UConn's #11 3PT D"
           },
           {
             "stat": "TO Rate",
-            "team": "St. John's",
+            "team": "UConn",
             "i": 0.5999999999999996,
-            "d": "Duke forces 11.2 TOs/g → St. John's's TO rate +0.6%"
+            "d": "Duke forces 11.2 TOs/g → UConn's TO rate +0.6%"
+          },
+          {
+            "stat": "TO Rate",
+            "team": "Duke",
+            "i": 0.5999999999999996,
+            "d": "UConn forces 11.2 TOs/g → Duke's TO rate +0.6%"
           }
         ],
         "adjA": {
           "efg": -0.4500000000000001,
-          "tor": 0,
+          "tor": 0.5999999999999996,
           "orb": 0,
           "ftr": 0
         },
@@ -811,7 +863,7 @@
         },
         "tempoAdj": 0
       },
-      "cDiff": -0.5,
+      "cDiff": -0.7,
       "fatA": {
         "pts": 0
       },
@@ -830,7 +882,7 @@
         "off": 123.3984,
         "def": 95.8224,
         "tempo": 66.1,
-        "elo": 2128,
+        "elo": 2150,
         "seed": 1,
         "name": "Duke",
         "luck": 0.012,
@@ -874,360 +926,6 @@
         }
       },
       "b": {
-        "em": 19.764,
-        "efg": 52.22355999999999,
-        "tor": 15.83696,
-        "orb": 34.92700000000001,
-        "ftr": 39.2834,
-        "tpt": 34.97296,
-        "ast": 55.78208,
-        "mg": 11.75488,
-        "off": 116.08160000000001,
-        "def": 96.3176,
-        "tempo": 70.4,
-        "elo": 2139,
-        "seed": 5,
-        "name": "St. John's",
-        "luck": 0.035,
-        "sentiment": 0.56,
-        "confidenceIdx": 0,
-        "injuryAdj": 0,
-        "hcaBase": 4,
-        "coachAdj": 1.2,
-        "coach": "Rick Pitino",
-        "coachNote": "55 March wins, 7 F4s, 2 titles — HOFer",
-        "kpRank": 21,
-        "record": "24-9",
-        "style": {
-          "p3": 0.4,
-          "d3r": 12,
-          "ht": 78,
-          "toF": 10.8,
-          "t": 68
-        },
-        "v8": {},
-        "fatigue": {},
-        "o": 116.08160000000001,
-        "d": 96.3176,
-        "t": 70.4,
-        "s": 5,
-        "kp": 21,
-        "rec": "24-9",
-        "lk": 0.035,
-        "st": 0.56,
-        "ci": 0,
-        "ij": 0,
-        "hb": 4,
-        "cAdj": 1.2,
-        "cNote": "55 March wins, 7 F4s, 2 titles — HOFer",
-        "sty": {
-          "p3": 0.4,
-          "d3r": 12,
-          "ht": 78,
-          "toF": 10.8,
-          "t": 68
-        }
-      },
-      "rd": 3,
-      "id": "E_S16_1",
-      "status": "UPCOMING"
-    },
-    {
-      "teamA": "Michigan St.",
-      "teamB": "UConn",
-      "winner": "UConn",
-      "loser": "Michigan St.",
-      "winProb": 55.2,
-      "modelSpread": -0.5,
-      "finalSpread": -0.5,
-      "vegasLine": null,
-      "edge": null,
-      "scoreW": 72,
-      "scoreL": 71,
-      "seedA": 3,
-      "seedB": 2,
-      "seedW": 2,
-      "seedL": 3,
-      "sim": {
-        "median": -0.5,
-        "mean": -0.7,
-        "stdDev": 5.2,
-        "p10": -7.5,
-        "p25": -4.5,
-        "p75": 3,
-        "p90": 6,
-        "blowoutA": 0.1,
-        "blowoutB": 0.2,
-        "closeGame": 65.6,
-        "coverProb": null
-      },
-      "layers": {
-        "L1": -0.1,
-        "L2": -0.6,
-        "L3": 0,
-        "L4": 0,
-        "L5": 0,
-        "v8": 0
-      },
-      "matchup": {
-        "details": [
-          {
-            "stat": "TO Rate",
-            "team": "Michigan St.",
-            "impact": 0.5999999999999996,
-            "desc": "UConn forces 11.2 TOs/g → Michigan St.'s TO rate +0.6%"
-          }
-        ],
-        "adjA": {
-          "efg": 0,
-          "tor": 0.5999999999999996,
-          "orb": 0,
-          "ftr": 0
-        },
-        "adjB": {
-          "efg": 0,
-          "tor": 0,
-          "orb": 0,
-          "ftr": 0
-        },
-        "tempoAdj": 0
-      },
-      "hca": {
-        "team": null,
-        "value": 0,
-        "distA": 470,
-        "distB": 322
-      },
-      "fatigue": {
-        "a": 0,
-        "b": 0,
-        "net": 0
-      },
-      "v8": {
-        "ref": 0,
-        "gs": 0,
-        "sharp": 0,
-        "cont": 0,
-        "tz": 0,
-        "foul": 0,
-        "total": 0,
-        "ens": {
-          "avg": 0,
-          "agree": true,
-          "m1": 0,
-          "m2": 0,
-          "m3": 0
-        }
-      },
-      "coaching": {
-        "a": {
-          "name": "Tom Izzo",
-          "adj": 1.5,
-          "note": "Mr. March — 8 F4s, 59 wins, greatest overperformer"
-        },
-        "b": {
-          "name": "Dan Hurley",
-          "adj": 1.5,
-          "note": "Back-to-back titles '23-'24, .750 WP"
-        },
-        "diff": 0
-      },
-      "profiles": {
-        "a": {
-          "em": 18.808,
-          "efg": 53.83692,
-          "tor": 15.91168,
-          "orb": 35.194,
-          "ftr": 36.6272,
-          "tpt": 35.96332,
-          "ast": 60.2128,
-          "mg": 8.93872,
-          "off": 116.8944,
-          "def": 98.0864,
-          "tempo": 66.7,
-          "elo": 2109,
-          "seed": 3,
-          "name": "Michigan St.",
-          "luck": 0.008,
-          "sentiment": 0.57,
-          "confidenceIdx": 0,
-          "injuryAdj": 0,
-          "hcaBase": 5,
-          "coachAdj": 1.5,
-          "coach": "Tom Izzo",
-          "coachNote": "Mr. March — 8 F4s, 59 wins, greatest overperformer",
-          "kpRank": 10,
-          "record": "25-7",
-          "style": {
-            "p3": 0.37,
-            "d3r": 18,
-            "ht": 78,
-            "toF": 10.5,
-            "t": 67
-          },
-          "v8": {},
-          "fatigue": {}
-        },
-        "b": {
-          "em": 18.9072,
-          "efg": 55.765119999999996,
-          "tor": 15.828800000000001,
-          "orb": 35.728,
-          "ftr": 34.272,
-          "tpt": 36.33976,
-          "ast": 60.152,
-          "mg": 10.0168,
-          "off": 118.6016,
-          "def": 99.7536,
-          "tempo": 65.9,
-          "elo": 2141,
-          "seed": 2,
-          "name": "UConn",
-          "luck": -0.018,
-          "sentiment": 0.63,
-          "confidenceIdx": 0,
-          "injuryAdj": -0.5,
-          "hcaBase": 5.5,
-          "coachAdj": 1.5,
-          "coach": "Dan Hurley",
-          "coachNote": "Back-to-back titles '23-'24, .750 WP",
-          "kpRank": 7,
-          "record": "27-7",
-          "style": {
-            "p3": 0.4,
-            "d3r": 11,
-            "ht": 79,
-            "toF": 11.2,
-            "t": 67.2
-          },
-          "v8": {},
-          "fatigue": {}
-        }
-      },
-      "adjStats": {
-        "aEfg": 53.8,
-        "bEfg": 55.8,
-        "aTor": 16.5,
-        "bTor": 15.8,
-        "aOrb": 35.2,
-        "bOrb": 35.7,
-        "aFtr": 36.6,
-        "bFtr": 34.3
-      },
-      "venue": "Washington DC",
-      "round": 3,
-      "moneyline": null,
-      "engineVersion": "v9.0-montecarlo",
-      "simCount": 10000,
-      "w": "UConn",
-      "l": "Michigan St.",
-      "sW": 72,
-      "sL": 71,
-      "wp": 55.2,
-      "sp": 0.5,
-      "sW2": 2,
-      "sL2": 3,
-      "ven": "Washington DC",
-      "modelSp": -0.5,
-      "blendedSpread": -0.5,
-      "vegasSp": null,
-      "rawSp": -0.5,
-      "L1": -0.1,
-      "L2": -0.6,
-      "L3": 0,
-      "L4": 0,
-      "L5": 0,
-      "v8adj": 0,
-      "ensAvg": 0,
-      "ensAgree": true,
-      "ha": null,
-      "hb": 0,
-      "mu": {
-        "det": [
-          {
-            "stat": "TO Rate",
-            "team": "Michigan St.",
-            "i": 0.5999999999999996,
-            "d": "UConn forces 11.2 TOs/g → Michigan St.'s TO rate +0.6%"
-          }
-        ],
-        "adjA": {
-          "efg": 0,
-          "tor": 0.5999999999999996,
-          "orb": 0,
-          "ftr": 0
-        },
-        "adjB": {
-          "efg": 0,
-          "tor": 0,
-          "orb": 0,
-          "ftr": 0
-        },
-        "tempoAdj": 0
-      },
-      "cDiff": 0,
-      "fatA": {
-        "pts": 0
-      },
-      "fatB": {
-        "pts": 0
-      },
-      "a": {
-        "em": 18.808,
-        "efg": 53.83692,
-        "tor": 15.91168,
-        "orb": 35.194,
-        "ftr": 36.6272,
-        "tpt": 35.96332,
-        "ast": 60.2128,
-        "mg": 8.93872,
-        "off": 116.8944,
-        "def": 98.0864,
-        "tempo": 66.7,
-        "elo": 2109,
-        "seed": 3,
-        "name": "Michigan St.",
-        "luck": 0.008,
-        "sentiment": 0.57,
-        "confidenceIdx": 0,
-        "injuryAdj": 0,
-        "hcaBase": 5,
-        "coachAdj": 1.5,
-        "coach": "Tom Izzo",
-        "coachNote": "Mr. March — 8 F4s, 59 wins, greatest overperformer",
-        "kpRank": 10,
-        "record": "25-7",
-        "style": {
-          "p3": 0.37,
-          "d3r": 18,
-          "ht": 78,
-          "toF": 10.5,
-          "t": 67
-        },
-        "v8": {},
-        "fatigue": {},
-        "o": 116.8944,
-        "d": 98.0864,
-        "t": 66.7,
-        "s": 3,
-        "kp": 10,
-        "rec": "25-7",
-        "lk": 0.008,
-        "st": 0.57,
-        "ci": 0,
-        "ij": 0,
-        "hb": 5,
-        "cAdj": 1.5,
-        "cNote": "Mr. March — 8 F4s, 59 wins, greatest overperformer",
-        "sty": {
-          "p3": 0.37,
-          "d3r": 18,
-          "ht": 78,
-          "toF": 10.5,
-          "t": 67
-        }
-      },
-      "b": {
         "em": 18.9072,
         "efg": 55.765119999999996,
         "tor": 15.828800000000001,
@@ -1239,7 +937,7 @@
         "off": 118.6016,
         "def": 99.7536,
         "tempo": 65.9,
-        "elo": 2141,
+        "elo": 2154,
         "seed": 2,
         "name": "UConn",
         "luck": -0.018,
@@ -1282,734 +980,8 @@
           "t": 67.2
         }
       },
-      "rd": 3,
-      "id": "E_S16_2",
-      "status": "UPCOMING"
-    },
-    {
-      "teamA": "Michigan",
-      "teamB": "Alabama",
-      "winner": "Michigan",
-      "loser": "Alabama",
-      "winProb": 72.2,
-      "modelSpread": 3.5,
-      "finalSpread": 7.5,
-      "vegasLine": 8.5,
-      "edge": -5,
-      "scoreW": 79,
-      "scoreL": 76,
-      "seedA": 1,
-      "seedB": 4,
-      "seedW": 1,
-      "seedL": 4,
-      "sim": {
-        "median": 3.5,
-        "mean": 3.6,
-        "stdDev": 6,
-        "p10": -4,
-        "p25": -0.5,
-        "p75": 7.5,
-        "p90": 11.5,
-        "blowoutA": 2.9,
-        "blowoutB": 0.1,
-        "closeGame": 52.3,
-        "coverProb": 20.2
-      },
-      "layers": {
-        "L1": 3,
-        "L2": 1,
-        "L3": -0.5,
-        "L4": 0.1,
-        "L5": 0,
-        "v8": 0
-      },
-      "matchup": {
-        "details": [
-          {
-            "stat": "ORB% & FTR",
-            "team": "Michigan",
-            "impact": 1.2000000000000002,
-            "desc": "Michigan has 3\" height edge"
-          }
-        ],
-        "adjA": {
-          "efg": 0,
-          "tor": 0,
-          "orb": 1.2000000000000002,
-          "ftr": 0.75
-        },
-        "adjB": {
-          "efg": 0,
-          "tor": 0,
-          "orb": -1.2000000000000002,
-          "ftr": -0.75
-        },
-        "tempoAdj": 0
-      },
-      "hca": {
-        "team": null,
-        "value": 0,
-        "distA": 201,
-        "distB": 599
-      },
-      "fatigue": {
-        "a": 0,
-        "b": 0,
-        "net": 0
-      },
-      "v8": {
-        "ref": 0,
-        "gs": 0,
-        "sharp": 0,
-        "cont": 0,
-        "tz": 0,
-        "foul": 0,
-        "total": 0,
-        "ens": {
-          "avg": 0,
-          "agree": true,
-          "m1": 0,
-          "m2": 0,
-          "m3": 0
-        }
-      },
-      "coaching": {
-        "a": {
-          "name": "Dusty May",
-          "adj": 0.4,
-          "note": "FAU F4 '23, #1 defense nationally"
-        },
-        "b": {
-          "name": "Nate Oats",
-          "adj": 0.2,
-          "note": "#3 offense, #68 defense — volatile"
-        },
-        "diff": 0.1
-      },
-      "profiles": {
-        "a": {
-          "em": 30.0464,
-          "efg": 57.05028,
-          "tor": 15.318879999999998,
-          "orb": 34.6008,
-          "ftr": 36.899,
-          "tpt": 36.3166,
-          "ast": 59.978880000000004,
-          "mg": 17.1872,
-          "off": 121.0432,
-          "def": 91.0376,
-          "tempo": 71.2,
-          "elo": 2144,
-          "seed": 1,
-          "name": "Michigan",
-          "luck": 0.028,
-          "sentiment": 0.35,
-          "confidenceIdx": 0,
-          "injuryAdj": -2,
-          "hcaBase": 5.2,
-          "coachAdj": 0.4,
-          "coach": "Dusty May",
-          "coachNote": "FAU F4 '23, #1 defense nationally",
-          "kpRank": 2,
-          "record": "31-3",
-          "style": {
-            "p3": 0.38,
-            "d3r": 1,
-            "ht": 80,
-            "toF": 10.5,
-            "t": 66.8
-          },
-          "v8": {},
-          "fatigue": {}
-        },
-        "b": {
-          "em": 26.2624,
-          "efg": 54.5872,
-          "tor": 15.13248,
-          "orb": 35.194,
-          "ftr": 37.0932,
-          "tpt": 35.29344,
-          "ast": 51.70016,
-          "mg": 15.23376,
-          "off": 120.032,
-          "def": 93.71039999999999,
-          "tempo": 74.3,
-          "elo": 2184,
-          "seed": 4,
-          "name": "Alabama",
-          "luck": 0.01,
-          "sentiment": 0.33,
-          "confidenceIdx": -2.5,
-          "injuryAdj": 0,
-          "hcaBase": 5,
-          "coachAdj": 0.2,
-          "coach": "Nate Oats",
-          "coachNote": "#3 offense, #68 defense — volatile",
-          "kpRank": 15,
-          "record": "22-10",
-          "style": {
-            "p3": 0.4,
-            "d3r": 68,
-            "ht": 77,
-            "toF": 9.5,
-            "t": 71
-          },
-          "v8": {},
-          "fatigue": {}
-        }
-      },
-      "adjStats": {
-        "aEfg": 57.1,
-        "bEfg": 54.6,
-        "aTor": 15.3,
-        "bTor": 15.1,
-        "aOrb": 35.8,
-        "bOrb": 34,
-        "aFtr": 37.6,
-        "bFtr": 36.3
-      },
-      "venue": "Chicago",
-      "round": 3,
-      "moneyline": [
-        -485,
-        370
-      ],
-      "engineVersion": "v9.0-montecarlo",
-      "simCount": 10000,
-      "w": "Michigan",
-      "l": "Alabama",
-      "sW": 79,
-      "sL": 76,
-      "wp": 72.2,
-      "sp": 7.5,
-      "sW2": 1,
-      "sL2": 4,
-      "ven": "Chicago",
-      "modelSp": 3.5,
-      "blendedSpread": 7.5,
-      "vegasSp": 8.5,
-      "rawSp": 7.5,
-      "L1": 3,
-      "L2": 1,
-      "L3": -0.5,
-      "L4": 0.1,
-      "L5": 0,
-      "v8adj": 0,
-      "ensAvg": 0,
-      "ensAgree": true,
-      "ha": null,
-      "hb": 0,
-      "mu": {
-        "det": [
-          {
-            "stat": "ORB% & FTR",
-            "team": "Michigan",
-            "i": 1.2000000000000002,
-            "d": "Michigan has 3\" height edge"
-          }
-        ],
-        "adjA": {
-          "efg": 0,
-          "tor": 0,
-          "orb": 1.2000000000000002,
-          "ftr": 0.75
-        },
-        "adjB": {
-          "efg": 0,
-          "tor": 0,
-          "orb": -1.2000000000000002,
-          "ftr": -0.75
-        },
-        "tempoAdj": 0
-      },
-      "cDiff": 0.1,
-      "fatA": {
-        "pts": 0
-      },
-      "fatB": {
-        "pts": 0
-      },
-      "a": {
-        "em": 30.0464,
-        "efg": 57.05028,
-        "tor": 15.318879999999998,
-        "orb": 34.6008,
-        "ftr": 36.899,
-        "tpt": 36.3166,
-        "ast": 59.978880000000004,
-        "mg": 17.1872,
-        "off": 121.0432,
-        "def": 91.0376,
-        "tempo": 71.2,
-        "elo": 2144,
-        "seed": 1,
-        "name": "Michigan",
-        "luck": 0.028,
-        "sentiment": 0.35,
-        "confidenceIdx": 0,
-        "injuryAdj": -2,
-        "hcaBase": 5.2,
-        "coachAdj": 0.4,
-        "coach": "Dusty May",
-        "coachNote": "FAU F4 '23, #1 defense nationally",
-        "kpRank": 2,
-        "record": "31-3",
-        "style": {
-          "p3": 0.38,
-          "d3r": 1,
-          "ht": 80,
-          "toF": 10.5,
-          "t": 66.8
-        },
-        "v8": {},
-        "fatigue": {},
-        "o": 121.0432,
-        "d": 91.0376,
-        "t": 71.2,
-        "s": 1,
-        "kp": 2,
-        "rec": "31-3",
-        "lk": 0.028,
-        "st": 0.35,
-        "ci": 0,
-        "ij": -2,
-        "hb": 5.2,
-        "cAdj": 0.4,
-        "cNote": "FAU F4 '23, #1 defense nationally",
-        "sty": {
-          "p3": 0.38,
-          "d3r": 1,
-          "ht": 80,
-          "toF": 10.5,
-          "t": 66.8
-        }
-      },
-      "b": {
-        "em": 26.2624,
-        "efg": 54.5872,
-        "tor": 15.13248,
-        "orb": 35.194,
-        "ftr": 37.0932,
-        "tpt": 35.29344,
-        "ast": 51.70016,
-        "mg": 15.23376,
-        "off": 120.032,
-        "def": 93.71039999999999,
-        "tempo": 74.3,
-        "elo": 2184,
-        "seed": 4,
-        "name": "Alabama",
-        "luck": 0.01,
-        "sentiment": 0.33,
-        "confidenceIdx": -2.5,
-        "injuryAdj": 0,
-        "hcaBase": 5,
-        "coachAdj": 0.2,
-        "coach": "Nate Oats",
-        "coachNote": "#3 offense, #68 defense — volatile",
-        "kpRank": 15,
-        "record": "22-10",
-        "style": {
-          "p3": 0.4,
-          "d3r": 68,
-          "ht": 77,
-          "toF": 9.5,
-          "t": 71
-        },
-        "v8": {},
-        "fatigue": {},
-        "o": 120.032,
-        "d": 93.71039999999999,
-        "t": 74.3,
-        "s": 4,
-        "kp": 15,
-        "rec": "22-10",
-        "lk": 0.01,
-        "st": 0.33,
-        "ci": -2.5,
-        "ij": 0,
-        "hb": 5,
-        "cAdj": 0.2,
-        "cNote": "#3 offense, #68 defense — volatile",
-        "sty": {
-          "p3": 0.4,
-          "d3r": 68,
-          "ht": 77,
-          "toF": 9.5,
-          "t": 71
-        }
-      },
-      "rd": 3,
-      "id": "MW_S16_1",
-      "status": "UPCOMING"
-    },
-    {
-      "teamA": "Tennessee",
-      "teamB": "Iowa State",
-      "winner": "Iowa State",
-      "loser": "Tennessee",
-      "winProb": 79.5,
-      "modelSpread": -4,
-      "finalSpread": -3.5,
-      "vegasLine": -3.5,
-      "edge": -0.5,
-      "scoreW": 74,
-      "scoreL": 71,
-      "seedA": 6,
-      "seedB": 2,
-      "seedW": 2,
-      "seedL": 6,
-      "sim": {
-        "median": -4,
-        "mean": -4,
-        "stdDev": 4.7,
-        "p10": -10,
-        "p25": -7,
-        "p75": -0.5,
-        "p90": 2,
-        "blowoutA": 0,
-        "blowoutB": 1.1,
-        "closeGame": 56.2,
-        "coverProb": 46.4
-      },
-      "layers": {
-        "L1": -3.2,
-        "L2": -0.7,
-        "L3": 0.1,
-        "L4": -0.1,
-        "L5": 0,
-        "v8": 0
-      },
-      "matchup": {
-        "details": [
-          {
-            "stat": "ORB% & FTR",
-            "team": "Tennessee",
-            "impact": 0.8,
-            "desc": "Tennessee has 2\" height edge"
-          },
-          {
-            "stat": "TO Rate",
-            "team": "Iowa State",
-            "impact": 0.5,
-            "desc": "Tennessee forces 11 TOs/g → Iowa State's TO rate +0.5%"
-          }
-        ],
-        "adjA": {
-          "efg": 0,
-          "tor": 0,
-          "orb": 0.8,
-          "ftr": 0.5
-        },
-        "adjB": {
-          "efg": 0,
-          "tor": 0.5,
-          "orb": -0.8,
-          "ftr": -0.5
-        },
-        "tempoAdj": 0
-      },
-      "hca": {
-        "team": null,
-        "value": 0,
-        "distA": 455,
-        "distB": 309
-      },
-      "fatigue": {
-        "a": 0,
-        "b": 0,
-        "net": 0
-      },
-      "v8": {
-        "ref": 0,
-        "gs": 0,
-        "sharp": 0,
-        "cont": 0,
-        "tz": 0,
-        "foul": 0,
-        "total": 0,
-        "ens": {
-          "avg": 0,
-          "agree": true,
-          "m1": 0,
-          "m2": 0,
-          "m3": 0
-        }
-      },
-      "coaching": {
-        "a": {
-          "name": "Rick Barnes",
-          "adj": -0.1,
-          "note": "12 March wins but 0 Final Fours"
-        },
-        "b": {
-          "name": "T.J. Otzelberger",
-          "adj": 0.2,
-          "note": "Consistent tourney appearances"
-        },
-        "diff": -0.2
-      },
-      "profiles": {
-        "a": {
-          "em": 17.1192,
-          "efg": 52.46716000000001,
-          "tor": 16.28736,
-          "orb": 35.194,
-          "ftr": 38.3728,
-          "tpt": 34.41312,
-          "ast": 55.967040000000004,
-          "mg": 8.532,
-          "off": 116.13759999999999,
-          "def": 98.9592,
-          "tempo": 67.2,
-          "elo": 2192,
-          "seed": 6,
-          "name": "Tennessee",
-          "luck": 0.005,
-          "sentiment": 0.45,
-          "confidenceIdx": 0,
-          "injuryAdj": 0,
-          "hcaBase": 5,
-          "coachAdj": -0.1,
-          "coach": "Rick Barnes",
-          "coachNote": "12 March wins but 0 Final Fours",
-          "kpRank": 14,
-          "record": "22-11",
-          "style": {
-            "p3": 0.35,
-            "d3r": 15,
-            "ht": 79,
-            "toF": 11,
-            "t": 67
-          },
-          "v8": {},
-          "fatigue": {}
-        },
-        "b": {
-          "em": 21.4576,
-          "efg": 55.358999999999995,
-          "tor": 14.79008,
-          "orb": 34.66,
-          "ftr": 35.6486,
-          "tpt": 36.99036,
-          "ast": 55.73056,
-          "mg": 12.07104,
-          "off": 118.55199999999999,
-          "def": 97.09440000000001,
-          "tempo": 67.6,
-          "elo": 2182,
-          "seed": 2,
-          "name": "Iowa State",
-          "luck": 0.005,
-          "sentiment": 0.48,
-          "confidenceIdx": 0,
-          "injuryAdj": 0,
-          "hcaBase": 4.5,
-          "coachAdj": 0.2,
-          "coach": "T.J. Otzelberger",
-          "coachNote": "Consistent tourney appearances",
-          "kpRank": 9,
-          "record": "27-7",
-          "style": {
-            "p3": 0.38,
-            "d3r": 12,
-            "ht": 77,
-            "toF": 10.8,
-            "t": 66
-          },
-          "v8": {},
-          "fatigue": {}
-        }
-      },
-      "adjStats": {
-        "aEfg": 52.5,
-        "bEfg": 55.4,
-        "aTor": 16.3,
-        "bTor": 15.3,
-        "aOrb": 36,
-        "bOrb": 33.9,
-        "aFtr": 38.9,
-        "bFtr": 35.1
-      },
-      "venue": "Chicago",
-      "round": 3,
-      "moneyline": [
-        154,
-        -185
-      ],
-      "engineVersion": "v9.0-montecarlo",
-      "simCount": 10000,
-      "w": "Iowa State",
-      "l": "Tennessee",
-      "sW": 74,
-      "sL": 71,
-      "wp": 79.5,
-      "sp": 3.5,
-      "sW2": 2,
-      "sL2": 6,
-      "ven": "Chicago",
-      "modelSp": -4,
-      "blendedSpread": -3.5,
-      "vegasSp": -3.5,
-      "rawSp": -3.5,
-      "L1": -3.2,
-      "L2": -0.7,
-      "L3": 0.1,
-      "L4": -0.1,
-      "L5": 0,
-      "v8adj": 0,
-      "ensAvg": 0,
-      "ensAgree": true,
-      "ha": null,
-      "hb": 0,
-      "mu": {
-        "det": [
-          {
-            "stat": "ORB% & FTR",
-            "team": "Tennessee",
-            "i": 0.8,
-            "d": "Tennessee has 2\" height edge"
-          },
-          {
-            "stat": "TO Rate",
-            "team": "Iowa State",
-            "i": 0.5,
-            "d": "Tennessee forces 11 TOs/g → Iowa State's TO rate +0.5%"
-          }
-        ],
-        "adjA": {
-          "efg": 0,
-          "tor": 0,
-          "orb": 0.8,
-          "ftr": 0.5
-        },
-        "adjB": {
-          "efg": 0,
-          "tor": 0.5,
-          "orb": -0.8,
-          "ftr": -0.5
-        },
-        "tempoAdj": 0
-      },
-      "cDiff": -0.2,
-      "fatA": {
-        "pts": 0
-      },
-      "fatB": {
-        "pts": 0
-      },
-      "a": {
-        "em": 17.1192,
-        "efg": 52.46716000000001,
-        "tor": 16.28736,
-        "orb": 35.194,
-        "ftr": 38.3728,
-        "tpt": 34.41312,
-        "ast": 55.967040000000004,
-        "mg": 8.532,
-        "off": 116.13759999999999,
-        "def": 98.9592,
-        "tempo": 67.2,
-        "elo": 2192,
-        "seed": 6,
-        "name": "Tennessee",
-        "luck": 0.005,
-        "sentiment": 0.45,
-        "confidenceIdx": 0,
-        "injuryAdj": 0,
-        "hcaBase": 5,
-        "coachAdj": -0.1,
-        "coach": "Rick Barnes",
-        "coachNote": "12 March wins but 0 Final Fours",
-        "kpRank": 14,
-        "record": "22-11",
-        "style": {
-          "p3": 0.35,
-          "d3r": 15,
-          "ht": 79,
-          "toF": 11,
-          "t": 67
-        },
-        "v8": {},
-        "fatigue": {},
-        "o": 116.13759999999999,
-        "d": 98.9592,
-        "t": 67.2,
-        "s": 6,
-        "kp": 14,
-        "rec": "22-11",
-        "lk": 0.005,
-        "st": 0.45,
-        "ci": 0,
-        "ij": 0,
-        "hb": 5,
-        "cAdj": -0.1,
-        "cNote": "12 March wins but 0 Final Fours",
-        "sty": {
-          "p3": 0.35,
-          "d3r": 15,
-          "ht": 79,
-          "toF": 11,
-          "t": 67
-        }
-      },
-      "b": {
-        "em": 21.4576,
-        "efg": 55.358999999999995,
-        "tor": 14.79008,
-        "orb": 34.66,
-        "ftr": 35.6486,
-        "tpt": 36.99036,
-        "ast": 55.73056,
-        "mg": 12.07104,
-        "off": 118.55199999999999,
-        "def": 97.09440000000001,
-        "tempo": 67.6,
-        "elo": 2182,
-        "seed": 2,
-        "name": "Iowa State",
-        "luck": 0.005,
-        "sentiment": 0.48,
-        "confidenceIdx": 0,
-        "injuryAdj": 0,
-        "hcaBase": 4.5,
-        "coachAdj": 0.2,
-        "coach": "T.J. Otzelberger",
-        "coachNote": "Consistent tourney appearances",
-        "kpRank": 9,
-        "record": "27-7",
-        "style": {
-          "p3": 0.38,
-          "d3r": 12,
-          "ht": 77,
-          "toF": 10.8,
-          "t": 66
-        },
-        "v8": {},
-        "fatigue": {},
-        "o": 118.55199999999999,
-        "d": 97.09440000000001,
-        "t": 67.6,
-        "s": 2,
-        "kp": 9,
-        "rec": "27-7",
-        "lk": 0.005,
-        "st": 0.48,
-        "ci": 0,
-        "ij": 0,
-        "hb": 4.5,
-        "cAdj": 0.2,
-        "cNote": "Consistent tourney appearances",
-        "sty": {
-          "p3": 0.38,
-          "d3r": 12,
-          "ht": 77,
-          "toF": 10.8,
-          "t": 66
-        }
-      },
-      "rd": 3,
-      "id": "MW_S16_2",
+      "rd": 4,
+      "id": "E_E8",
       "status": "UPCOMING"
     },
     {
@@ -2017,7 +989,7 @@
       "teamB": "Illinois",
       "winner": "Illinois",
       "loser": "Iowa",
-      "winProb": 96.6,
+      "winProb": 96.9,
       "modelSpread": -10,
       "finalSpread": -7.5,
       "vegasLine": -6.5,
@@ -2030,21 +1002,21 @@
       "seedL": 9,
       "sim": {
         "median": -10,
-        "mean": -9.9,
+        "mean": -10,
         "stdDev": 5.4,
         "p10": -17,
         "p25": -13.5,
         "p75": -6.5,
         "p90": -3,
         "blowoutA": 0,
-        "blowoutB": 17.3,
-        "closeGame": 17.2,
-        "coverProb": 25.9
+        "blowoutB": 17.5,
+        "closeGame": 16.9,
+        "coverProb": 25.8
       },
       "layers": {
         "L1": -9.2,
         "L2": -0.5,
-        "L3": -0.4,
+        "L3": -0.5,
         "L4": 0.2,
         "L5": 0,
         "v8": 0
@@ -2197,8 +1169,8 @@
       "venue": "Houston",
       "round": 4,
       "moneyline": [
-        235,
-        -290
+        245,
+        -305
       ],
       "engineVersion": "v9.0-montecarlo",
       "simCount": 10000,
@@ -2206,7 +1178,7 @@
       "l": "Iowa",
       "sW": 77,
       "sL": 67,
-      "wp": 96.6,
+      "wp": 96.9,
       "sp": 7.5,
       "sW2": 3,
       "sL2": 9,
@@ -2217,7 +1189,7 @@
       "rawSp": -7.5,
       "L1": -9.2,
       "L2": -0.5,
-      "L3": -0.4,
+      "L3": -0.5,
       "L4": 0.2,
       "L5": 0,
       "v8adj": 0,
@@ -2374,12 +1346,12 @@
       "teamB": "Purdue",
       "winner": "Arizona",
       "loser": "Purdue",
-      "winProb": 77.6,
+      "winProb": 77.8,
       "modelSpread": 4.5,
       "finalSpread": 6,
       "vegasLine": 6.5,
       "edge": -2,
-      "scoreW": 76,
+      "scoreW": 77,
       "scoreL": 72,
       "seedA": 1,
       "seedB": 2,
@@ -2394,9 +1366,9 @@
         "p75": 8.5,
         "p90": 12.5,
         "blowoutA": 4.5,
-        "blowoutB": 0,
-        "closeGame": 46.7,
-        "coverProb": 37.8
+        "blowoutB": 0.1,
+        "closeGame": 47.1,
+        "coverProb": 37.7
       },
       "layers": {
         "L1": 5.1,
@@ -2561,9 +1533,9 @@
       "simCount": 10000,
       "w": "Arizona",
       "l": "Purdue",
-      "sW": 76,
+      "sW": 77,
       "sL": 72,
-      "wp": 77.6,
+      "wp": 77.8,
       "sp": 6,
       "sW2": 1,
       "sL2": 2,
@@ -2725,8 +1697,366 @@
       "rd": 4,
       "id": "W_E8",
       "status": "UPCOMING"
+    },
+    {
+      "teamA": "Michigan",
+      "teamB": "Tennessee",
+      "winner": "Michigan",
+      "loser": "Tennessee",
+      "winProb": 98,
+      "modelSpread": 10,
+      "finalSpread": 8,
+      "vegasLine": 7.5,
+      "edge": 2.5,
+      "scoreW": 79,
+      "scoreL": 69,
+      "seedA": 1,
+      "seedB": 6,
+      "seedW": 1,
+      "seedL": 6,
+      "sim": {
+        "median": 10,
+        "mean": 9.9,
+        "stdDev": 4.8,
+        "p10": 4,
+        "p25": 7,
+        "p75": 13,
+        "p90": 16,
+        "blowoutA": 14.3,
+        "blowoutB": 0,
+        "closeGame": 14.9,
+        "coverProb": 69.8
+      },
+      "layers": {
+        "L1": 9.9,
+        "L2": 1.5,
+        "L3": -1.6,
+        "L4": 0.2,
+        "L5": 0,
+        "v8": 0
+      },
+      "matchup": {
+        "details": [
+          {
+            "stat": "TO Rate",
+            "team": "Michigan",
+            "impact": 0.5,
+            "desc": "Tennessee forces 11 TOs/g → Michigan's TO rate +0.5%"
+          }
+        ],
+        "adjA": {
+          "efg": 0,
+          "tor": 0.5,
+          "orb": 0,
+          "ftr": 0
+        },
+        "adjB": {
+          "efg": 0,
+          "tor": 0,
+          "orb": 0,
+          "ftr": 0
+        },
+        "tempoAdj": 0
+      },
+      "hca": {
+        "team": null,
+        "value": 0,
+        "distA": 201,
+        "distB": 455
+      },
+      "fatigue": {
+        "a": 0,
+        "b": 0,
+        "net": 0
+      },
+      "v8": {
+        "ref": 0,
+        "gs": 0,
+        "sharp": 0,
+        "cont": 0,
+        "tz": 0,
+        "foul": 0,
+        "total": 0,
+        "ens": {
+          "avg": 0,
+          "agree": true,
+          "m1": 0,
+          "m2": 0,
+          "m3": 0
+        }
+      },
+      "coaching": {
+        "a": {
+          "name": "Dusty May",
+          "adj": 0.4,
+          "note": "FAU F4 '23, #1 defense nationally"
+        },
+        "b": {
+          "name": "Rick Barnes",
+          "adj": -0.1,
+          "note": "12 March wins but 0 Final Fours"
+        },
+        "diff": 0.3
+      },
+      "profiles": {
+        "a": {
+          "em": 30.0464,
+          "efg": 57.05028,
+          "tor": 15.318879999999998,
+          "orb": 34.6008,
+          "ftr": 36.899,
+          "tpt": 36.3166,
+          "ast": 59.978880000000004,
+          "mg": 17.1872,
+          "off": 121.0432,
+          "def": 91.0376,
+          "tempo": 71.2,
+          "elo": 2172,
+          "seed": 1,
+          "name": "Michigan",
+          "luck": 0.028,
+          "sentiment": 0.35,
+          "confidenceIdx": 0,
+          "injuryAdj": -2,
+          "hcaBase": 5.2,
+          "coachAdj": 0.4,
+          "coach": "Dusty May",
+          "coachNote": "FAU F4 '23, #1 defense nationally",
+          "kpRank": 2,
+          "record": "31-3",
+          "style": {
+            "p3": 0.38,
+            "d3r": 1,
+            "ht": 80,
+            "toF": 10.5,
+            "t": 66.8
+          },
+          "v8": {},
+          "fatigue": {}
+        },
+        "b": {
+          "em": 17.1192,
+          "efg": 52.46716000000001,
+          "tor": 16.28736,
+          "orb": 35.194,
+          "ftr": 38.3728,
+          "tpt": 34.41312,
+          "ast": 55.967040000000004,
+          "mg": 8.532,
+          "off": 116.13759999999999,
+          "def": 98.9592,
+          "tempo": 67.2,
+          "elo": 2214,
+          "seed": 6,
+          "name": "Tennessee",
+          "luck": 0.005,
+          "sentiment": 0.45,
+          "confidenceIdx": 0,
+          "injuryAdj": 0,
+          "hcaBase": 5,
+          "coachAdj": -0.1,
+          "coach": "Rick Barnes",
+          "coachNote": "12 March wins but 0 Final Fours",
+          "kpRank": 14,
+          "record": "22-11",
+          "style": {
+            "p3": 0.35,
+            "d3r": 15,
+            "ht": 79,
+            "toF": 11,
+            "t": 67
+          },
+          "v8": {},
+          "fatigue": {}
+        }
+      },
+      "adjStats": {
+        "aEfg": 57.1,
+        "bEfg": 52.5,
+        "aTor": 15.8,
+        "bTor": 16.3,
+        "aOrb": 34.6,
+        "bOrb": 35.2,
+        "aFtr": 36.9,
+        "bFtr": 38.4
+      },
+      "venue": "Chicago",
+      "round": 4,
+      "moneyline": [
+        -310,
+        250
+      ],
+      "engineVersion": "v9.0-montecarlo",
+      "simCount": 10000,
+      "w": "Michigan",
+      "l": "Tennessee",
+      "sW": 79,
+      "sL": 69,
+      "wp": 98,
+      "sp": 8,
+      "sW2": 1,
+      "sL2": 6,
+      "ven": "Chicago",
+      "modelSp": 10,
+      "blendedSpread": 8,
+      "vegasSp": 7.5,
+      "rawSp": 8,
+      "L1": 9.9,
+      "L2": 1.5,
+      "L3": -1.6,
+      "L4": 0.2,
+      "L5": 0,
+      "v8adj": 0,
+      "ensAvg": 0,
+      "ensAgree": true,
+      "ha": null,
+      "hb": 0,
+      "mu": {
+        "det": [
+          {
+            "stat": "TO Rate",
+            "team": "Michigan",
+            "i": 0.5,
+            "d": "Tennessee forces 11 TOs/g → Michigan's TO rate +0.5%"
+          }
+        ],
+        "adjA": {
+          "efg": 0,
+          "tor": 0.5,
+          "orb": 0,
+          "ftr": 0
+        },
+        "adjB": {
+          "efg": 0,
+          "tor": 0,
+          "orb": 0,
+          "ftr": 0
+        },
+        "tempoAdj": 0
+      },
+      "cDiff": 0.3,
+      "fatA": {
+        "pts": 0
+      },
+      "fatB": {
+        "pts": 0
+      },
+      "a": {
+        "em": 30.0464,
+        "efg": 57.05028,
+        "tor": 15.318879999999998,
+        "orb": 34.6008,
+        "ftr": 36.899,
+        "tpt": 36.3166,
+        "ast": 59.978880000000004,
+        "mg": 17.1872,
+        "off": 121.0432,
+        "def": 91.0376,
+        "tempo": 71.2,
+        "elo": 2172,
+        "seed": 1,
+        "name": "Michigan",
+        "luck": 0.028,
+        "sentiment": 0.35,
+        "confidenceIdx": 0,
+        "injuryAdj": -2,
+        "hcaBase": 5.2,
+        "coachAdj": 0.4,
+        "coach": "Dusty May",
+        "coachNote": "FAU F4 '23, #1 defense nationally",
+        "kpRank": 2,
+        "record": "31-3",
+        "style": {
+          "p3": 0.38,
+          "d3r": 1,
+          "ht": 80,
+          "toF": 10.5,
+          "t": 66.8
+        },
+        "v8": {},
+        "fatigue": {},
+        "o": 121.0432,
+        "d": 91.0376,
+        "t": 71.2,
+        "s": 1,
+        "kp": 2,
+        "rec": "31-3",
+        "lk": 0.028,
+        "st": 0.35,
+        "ci": 0,
+        "ij": -2,
+        "hb": 5.2,
+        "cAdj": 0.4,
+        "cNote": "FAU F4 '23, #1 defense nationally",
+        "sty": {
+          "p3": 0.38,
+          "d3r": 1,
+          "ht": 80,
+          "toF": 10.5,
+          "t": 66.8
+        }
+      },
+      "b": {
+        "em": 17.1192,
+        "efg": 52.46716000000001,
+        "tor": 16.28736,
+        "orb": 35.194,
+        "ftr": 38.3728,
+        "tpt": 34.41312,
+        "ast": 55.967040000000004,
+        "mg": 8.532,
+        "off": 116.13759999999999,
+        "def": 98.9592,
+        "tempo": 67.2,
+        "elo": 2214,
+        "seed": 6,
+        "name": "Tennessee",
+        "luck": 0.005,
+        "sentiment": 0.45,
+        "confidenceIdx": 0,
+        "injuryAdj": 0,
+        "hcaBase": 5,
+        "coachAdj": -0.1,
+        "coach": "Rick Barnes",
+        "coachNote": "12 March wins but 0 Final Fours",
+        "kpRank": 14,
+        "record": "22-11",
+        "style": {
+          "p3": 0.35,
+          "d3r": 15,
+          "ht": 79,
+          "toF": 11,
+          "t": 67
+        },
+        "v8": {},
+        "fatigue": {},
+        "o": 116.13759999999999,
+        "d": 98.9592,
+        "t": 67.2,
+        "s": 6,
+        "kp": 14,
+        "rec": "22-11",
+        "lk": 0.005,
+        "st": 0.45,
+        "ci": 0,
+        "ij": 0,
+        "hb": 5,
+        "cAdj": -0.1,
+        "cNote": "12 March wins but 0 Final Fours",
+        "sty": {
+          "p3": 0.35,
+          "d3r": 15,
+          "ht": 79,
+          "toF": 11,
+          "t": 67
+        }
+      },
+      "rd": 4,
+      "id": "MW_E8",
+      "status": "UPCOMING",
+      "predictedAt": "2026-03-28T13:43:43.521Z"
     }
   ],
-  "baselineSetAt": "2026-03-27T14:05:28.335Z",
-  "baselineSetAtCST": "Mar 27, 2026, 9:05 AM CST"
+  "baselineSetAt": "2026-03-28T13:43:43.665Z",
+  "baselineSetAtCST": "Mar 28, 2026, 8:43 AM CST"
 }

@@ -1,7 +1,7 @@
 {
-  "date": "2026-03-27",
-  "generatedAtCST": "3/27/2026, 9:05:19 AM CST",
-  "modelVersion": 67,
+  "date": "2026-03-28",
+  "generatedAtCST": "3/28/2026, 8:43:32 AM CST",
+  "modelVersion": 68,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
@@ -638,11 +638,10 @@
   },
   "adjustments": {
     "changes": [
-      "Layer weights tuned: L1=0.308 L2=0.228 L3=0.18 L4=0.133 L5=0.15",
-      "Vegas blend: 73% → 75%"
+      "Layer weights tuned: L1=0.306 L2=0.228 L3=0.18 L4=0.134 L5=0.151"
     ],
     "before": {
-      "vegasBlend": 0.73,
+      "vegasBlend": 0.75,
       "sigma": 9.799999999999997
     },
     "after": {

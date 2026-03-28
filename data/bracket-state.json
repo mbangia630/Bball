@@ -391,6 +391,34 @@
       "scoreW": 77,
       "scoreL": 71,
       "date": "2026-03-27"
+    },
+    "E_S16_1": {
+      "winner": "Duke",
+      "loser": "St. John's",
+      "scoreW": 80,
+      "scoreL": 75,
+      "date": "2026-03-28"
+    },
+    "MW_S16_1": {
+      "winner": "Michigan",
+      "loser": "Alabama",
+      "scoreW": 90,
+      "scoreL": 77,
+      "date": "2026-03-28"
+    },
+    "E_S16_2": {
+      "winner": "UConn",
+      "loser": "Michigan St.",
+      "scoreW": 67,
+      "scoreL": 63,
+      "date": "2026-03-28"
+    },
+    "MW_S16_2": {
+      "winner": "Tennessee",
+      "loser": "Iowa State",
+      "scoreW": 76,
+      "scoreL": 62,
+      "date": "2026-03-28"
     }
   },
   "advancedTo": {
@@ -509,6 +537,14 @@
     "S_E8": {
       "b": "Illinois",
       "a": "Iowa"
+    },
+    "E_E8": {
+      "a": "Duke",
+      "b": "UConn"
+    },
+    "MW_E8": {
+      "a": "Michigan",
+      "b": "Tennessee"
     }
   }
 }
