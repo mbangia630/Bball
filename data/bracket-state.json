@@ -419,6 +419,20 @@
       "scoreW": 76,
       "scoreL": 62,
       "date": "2026-03-28"
+    },
+    "W_E8": {
+      "winner": "Arizona",
+      "loser": "Purdue",
+      "scoreW": 79,
+      "scoreL": 64,
+      "date": "2026-03-29"
+    },
+    "S_E8": {
+      "winner": "Illinois",
+      "loser": "Iowa",
+      "scoreW": 71,
+      "scoreL": 59,
+      "date": "2026-03-29"
     }
   },
   "advancedTo": {
@@ -545,6 +559,12 @@
     "MW_E8": {
       "a": "Michigan",
       "b": "Tennessee"
+    },
+    "F4_2": {
+      "a": "Arizona"
+    },
+    "F4_1": {
+      "b": "Illinois"
     }
   }
 }

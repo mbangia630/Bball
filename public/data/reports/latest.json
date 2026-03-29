@@ -1,14 +1,14 @@
 {
-  "date": "2026-03-28",
-  "generatedAtCST": "3/28/2026, 8:43:32 AM CST",
-  "modelVersion": 68,
+  "date": "2026-03-29",
+  "generatedAtCST": "3/29/2026, 8:45:40 AM CST",
+  "modelVersion": 69,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
     "straightUp": {
-      "correct": 11,
+      "correct": 10,
       "total": 15,
-      "pct": 73
+      "pct": 67
     },
     "ats": {
       "correct": 5,
@@ -17,12 +17,60 @@
     },
     "beatVegas": {
       "correct": 5,
-      "total": 15
+      "total": 14
     },
-    "avgError": 9.1,
-    "avgVegasError": 8.3
+    "avgError": 9.2,
+    "avgVegasError": 8.9
   },
   "games": [
+    {
+      "matchup": "Duke vs St. John's",
+      "score": "Duke 80-75",
+      "modelSpread": 9,
+      "vegasLine": 6.5,
+      "modelError": 4,
+      "vegasError": 1.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Michigan vs Alabama",
+      "score": "Michigan 90-77",
+      "modelSpread": 6,
+      "vegasLine": 10.5,
+      "modelError": 7,
+      "vegasError": 2.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Michigan St. vs UConn",
+      "score": "UConn 67-63",
+      "modelSpread": 0.5,
+      "vegasLine": null,
+      "modelError": 4.5,
+      "vegasError": null,
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": null,
+      "verdict": "❌ Missed"
+    },
+    {
+      "matchup": "Tennessee vs Iowa State",
+      "score": "Tennessee 76-62",
+      "modelSpread": -4,
+      "vegasLine": -4.5,
+      "modelError": 18,
+      "vegasError": 18.5,
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "🟡 Wrong winner, covered ATS"
+    },
     {
       "matchup": "Arizona vs Arkansas",
       "score": "Arizona 109-88",
@@ -577,9 +625,9 @@
     }
   ],
   "cumulative": {
-    "totalGames": 46,
-    "straightUpPct": 73.9,
-    "atsPct": 41.3,
+    "totalGames": 50,
+    "straightUpPct": 72,
+    "atsPct": 40,
     "trend": [
       {
         "date": "2026-03-23",
@@ -598,6 +646,12 @@
         "games": 4,
         "suPct": 50,
         "avgError": 12.4
+      },
+      {
+        "date": "2026-03-29",
+        "games": 4,
+        "suPct": 50,
+        "avgError": 8.4
       }
     ]
   },
@@ -638,7 +692,8 @@
   },
   "adjustments": {
     "changes": [
-      "Layer weights tuned: L1=0.306 L2=0.228 L3=0.18 L4=0.134 L5=0.151"
+      "Layer weights tuned: L1=0.305 L2=0.228 L3=0.18 L4=0.134 L5=0.152",
+      "Vegas blend: 75% → 75%"
     ],
     "before": {
       "vegasBlend": 0.75,
