@@ -49,7 +49,9 @@
     "E_S16_1",
     "MW_S16_1",
     "E_S16_2",
-    "MW_S16_2"
+    "MW_S16_2",
+    "W_E8",
+    "S_E8"
   ],
   "teamK": {
     "Nebraska": {
@@ -211,13 +213,14 @@
       ]
     },
     "Purdue": {
-      "k": 24,
+      "k": 23,
       "recentErrors": [
         6,
         6,
         6,
         1.5,
-        9
+        9,
+        7.5
       ]
     },
     "Queens": {
@@ -426,7 +429,7 @@
       ]
     },
     "Iowa": {
-      "k": 25,
+      "k": 26,
       "recentErrors": [
         6.5,
         14,
@@ -434,7 +437,8 @@
         14,
         6.5,
         14,
-        7
+        7,
+        2
       ]
     },
     "VCU": {
@@ -455,13 +459,14 @@
       ]
     },
     "Illinois": {
-      "k": 24,
+      "k": 27,
       "recentErrors": [
         12,
         12,
         12,
         18,
-        15
+        15,
+        2
       ]
     },
     "Penn": {
@@ -514,7 +519,8 @@
         1.5,
         1,
         1.5,
-        18.5
+        18.5,
+        7.5
       ]
     },
     "LIU": {
@@ -597,39 +603,39 @@
   "layerAccuracy": {
     "L1": {
       "totalSigned": 324.29999999999995,
-      "correctDir": 28,
+      "correctDir": 29,
       "totalAbsError": 311.8999999999999,
-      "games": 34
+      "games": 35
     },
     "L2": {
       "totalSigned": 41.699999999999996,
-      "correctDir": 27,
+      "correctDir": 28,
       "totalAbsError": 467.70000000000016,
-      "games": 34
+      "games": 35
     },
     "L3": {
       "totalSigned": 36.5,
-      "correctDir": 26,
+      "correctDir": 27,
       "totalAbsError": 473.69999999999993,
-      "games": 34
+      "games": 35
     },
     "L4": {
       "totalSigned": 2.9,
       "correctDir": 23,
       "totalAbsError": 506.49999999999994,
-      "games": 34
+      "games": 35
     },
     "L5": {
       "totalSigned": 0,
       "correctDir": 34,
       "totalAbsError": 509.79999999999995,
-      "games": 34
+      "games": 35
     },
     "v8": {
       "totalSigned": 4.679999999999998,
       "correctDir": 25,
       "totalAbsError": 501.84000000000015,
-      "games": 34
+      "games": 35
     },
     "ens": {
       "totalSigned": 198,
@@ -672,12 +678,12 @@
   },
   "confidenceTracking": {
     "highConf": {
-      "correct": 63,
-      "total": 69
+      "correct": 64,
+      "total": 70
     },
     "medConf": {
-      "correct": 13,
-      "total": 18
+      "correct": 14,
+      "total": 19
     },
     "lowConf": {
       "correct": 12,

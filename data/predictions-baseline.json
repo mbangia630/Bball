@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-29T13:45:46.425Z",
+  "timestamp": "2026-03-30T14:22:42.488Z",
   "completed": [
     {
       "id": "FF1",
@@ -602,6 +602,16 @@
       "rd": 3
     },
     {
+      "id": "E_E8",
+      "winner": "UConn",
+      "loser": "Duke",
+      "scoreW": 73,
+      "scoreL": 72,
+      "date": "2026-03-30",
+      "status": "FINAL",
+      "rd": 4
+    },
+    {
       "id": "S_E8",
       "winner": "Illinois",
       "loser": "Iowa",
@@ -620,43 +630,53 @@
       "date": "2026-03-29",
       "status": "FINAL",
       "rd": 4
+    },
+    {
+      "id": "MW_E8",
+      "winner": "Michigan",
+      "loser": "Tennessee",
+      "scoreW": 95,
+      "scoreL": 62,
+      "date": "2026-03-30",
+      "status": "FINAL",
+      "rd": 4
     }
   ],
   "predictions": [
     {
-      "teamA": "Duke",
-      "teamB": "UConn",
-      "winner": "Duke",
+      "teamA": "UConn",
+      "teamB": "Illinois",
+      "winner": "Illinois",
       "loser": "UConn",
-      "winProb": 82.4,
-      "modelSpread": 5.5,
-      "finalSpread": 5.5,
-      "vegasLine": 5.5,
-      "edge": 0,
-      "scoreW": 75,
-      "scoreL": 69,
-      "seedA": 1,
-      "seedB": 2,
-      "seedW": 1,
+      "winProb": 77.3,
+      "modelSpread": -4,
+      "finalSpread": -3,
+      "vegasLine": -2.5,
+      "edge": -1.5,
+      "scoreW": 76,
+      "scoreL": 72,
+      "seedA": 2,
+      "seedB": 3,
+      "seedW": 3,
       "seedL": 2,
       "sim": {
-        "median": 5.5,
-        "mean": 5.7,
-        "stdDev": 6.2,
-        "p10": -2,
-        "p25": 1.5,
-        "p75": 10,
-        "p90": 13.5,
-        "blowoutA": 6.9,
-        "blowoutB": 0,
-        "closeGame": 41.4,
-        "coverProb": 51.3
+        "median": -4,
+        "mean": -4.2,
+        "stdDev": 5.6,
+        "p10": -11.5,
+        "p25": -8,
+        "p75": -0.5,
+        "p90": 3,
+        "blowoutA": 0.1,
+        "blowoutB": 2.8,
+        "closeGame": 50.9,
+        "coverProb": 38.3
       },
       "layers": {
-        "L1": 6.3,
-        "L2": 0.5,
-        "L3": -0.6,
-        "L4": -0.5,
+        "L1": -3.9,
+        "L2": 0,
+        "L3": -0.9,
+        "L4": 0.7,
         "L5": 0,
         "v8": 0
       },
@@ -664,31 +684,25 @@
         "details": [
           {
             "stat": "eFG%",
-            "team": "Duke",
-            "impact": -0.4500000000000001,
-            "desc": "Duke's 3PT-heavy (44%) faces UConn's #11 3PT D"
+            "team": "Illinois",
+            "impact": -0.35000000000000003,
+            "desc": "Illinois's 3PT-heavy (42%) faces UConn's #11 3PT D"
           },
           {
             "stat": "TO Rate",
-            "team": "UConn",
+            "team": "Illinois",
             "impact": 0.5999999999999996,
-            "desc": "Duke forces 11.2 TOs/g → UConn's TO rate +0.6%"
-          },
-          {
-            "stat": "TO Rate",
-            "team": "Duke",
-            "impact": 0.5999999999999996,
-            "desc": "UConn forces 11.2 TOs/g → Duke's TO rate +0.6%"
+            "desc": "UConn forces 11.2 TOs/g → Illinois's TO rate +0.6%"
           }
         ],
         "adjA": {
-          "efg": -0.4500000000000001,
-          "tor": 0.5999999999999996,
+          "efg": 0,
+          "tor": 0,
           "orb": 0,
           "ftr": 0
         },
         "adjB": {
-          "efg": 0,
+          "efg": -0.35000000000000003,
           "tor": 0.5999999999999996,
           "orb": 0,
           "ftr": 0
@@ -696,10 +710,10 @@
         "tempoAdj": 0
       },
       "hca": {
-        "team": null,
-        "value": 0,
-        "distA": 226,
-        "distB": 322
+        "team": "Illinois",
+        "value": -1.8,
+        "distA": 740,
+        "distB": 112
       },
       "fatigue": {
         "a": 0,
@@ -724,54 +738,19 @@
       },
       "coaching": {
         "a": {
-          "name": "Jon Scheyer",
-          "adj": 0.3,
-          "note": "Title game 2025, 6 March wins"
-        },
-        "b": {
           "name": "Dan Hurley",
           "adj": 1.5,
           "note": "Back-to-back titles '23-'24, .750 WP"
         },
-        "diff": -0.7
+        "b": {
+          "name": "Brad Underwood",
+          "adj": -0.2,
+          "note": "#1 offense, but OT losses expose D"
+        },
+        "diff": 1
       },
       "profiles": {
         "a": {
-          "em": 27.576,
-          "efg": 56.98256,
-          "tor": 15.255840000000001,
-          "orb": 35.781400000000005,
-          "ftr": 38.7078,
-          "tpt": 37.252880000000005,
-          "ast": 58.08192,
-          "mg": 14.58448,
-          "off": 123.3984,
-          "def": 95.8224,
-          "tempo": 66.1,
-          "elo": 2150,
-          "seed": 1,
-          "name": "Duke",
-          "luck": 0.012,
-          "sentiment": 0.5,
-          "confidenceIdx": 0,
-          "injuryAdj": -1,
-          "hcaBase": 6.5,
-          "coachAdj": 0.3,
-          "coach": "Jon Scheyer",
-          "coachNote": "Title game 2025, 6 March wins",
-          "kpRank": 1,
-          "record": "32-2",
-          "style": {
-            "p3": 0.44,
-            "d3r": 15,
-            "ht": 79,
-            "toF": 11.2,
-            "t": 69.2
-          },
-          "v8": {},
-          "fatigue": {}
-        },
-        "b": {
           "em": 18.9072,
           "efg": 55.765119999999996,
           "tor": 15.828800000000001,
@@ -783,7 +762,7 @@
           "off": 118.6016,
           "def": 99.7536,
           "tempo": 65.9,
-          "elo": 2154,
+          "elo": 2162,
           "seed": 2,
           "name": "UConn",
           "luck": -0.018,
@@ -805,85 +784,114 @@
           },
           "v8": {},
           "fatigue": {}
+        },
+        "b": {
+          "em": 24.2928,
+          "efg": 55.738960000000006,
+          "tor": 14.88112,
+          "orb": 35.728,
+          "ftr": 35.623400000000004,
+          "tpt": 36.78956,
+          "ast": 52.55744,
+          "mg": 12.69632,
+          "off": 125.1312,
+          "def": 100.83840000000001,
+          "tempo": 66.7,
+          "elo": 2161,
+          "seed": 3,
+          "name": "Illinois",
+          "luck": 0.005,
+          "sentiment": 0.38,
+          "confidenceIdx": 0,
+          "injuryAdj": 0,
+          "hcaBase": 4.5,
+          "coachAdj": -0.2,
+          "coach": "Brad Underwood",
+          "coachNote": "#1 offense, but OT losses expose D",
+          "kpRank": 5,
+          "record": "24-8",
+          "style": {
+            "p3": 0.42,
+            "d3r": 28,
+            "ht": 78,
+            "toF": 9,
+            "t": 70
+          },
+          "v8": {},
+          "fatigue": {}
         }
       },
       "adjStats": {
-        "aEfg": 56.5,
-        "bEfg": 55.8,
-        "aTor": 15.9,
-        "bTor": 16.4,
-        "aOrb": 35.8,
+        "aEfg": 55.8,
+        "bEfg": 55.4,
+        "aTor": 15.8,
+        "bTor": 15.5,
+        "aOrb": 35.7,
         "bOrb": 35.7,
-        "aFtr": 38.7,
-        "bFtr": 34.3
+        "aFtr": 34.3,
+        "bFtr": 35.6
       },
-      "venue": "Washington DC",
-      "round": 4,
+      "venue": "Indianapolis",
+      "round": 5,
       "moneyline": [
-        -218,
-        180
+        110,
+        -130
       ],
       "engineVersion": "v9.0-montecarlo",
       "simCount": 10000,
-      "w": "Duke",
+      "w": "Illinois",
       "l": "UConn",
-      "sW": 75,
-      "sL": 69,
-      "wp": 82.4,
-      "sp": 5.5,
-      "sW2": 1,
+      "sW": 76,
+      "sL": 72,
+      "wp": 77.3,
+      "sp": 3,
+      "sW2": 3,
       "sL2": 2,
-      "ven": "Washington DC",
-      "modelSp": 5.5,
-      "blendedSpread": 5.5,
-      "vegasSp": 5.5,
-      "rawSp": 5.5,
-      "L1": 6.3,
-      "L2": 0.5,
-      "L3": -0.6,
-      "L4": -0.5,
+      "ven": "Indianapolis",
+      "modelSp": -4,
+      "blendedSpread": -3,
+      "vegasSp": -2.5,
+      "rawSp": -3,
+      "L1": -3.9,
+      "L2": 0,
+      "L3": -0.9,
+      "L4": 0.7,
       "L5": 0,
       "v8adj": 0,
       "ensAvg": 0,
       "ensAgree": true,
-      "ha": null,
-      "hb": 0,
+      "ha": "Illinois",
+      "hb": -1.8,
       "mu": {
         "det": [
           {
             "stat": "eFG%",
-            "team": "Duke",
-            "i": -0.4500000000000001,
-            "d": "Duke's 3PT-heavy (44%) faces UConn's #11 3PT D"
+            "team": "Illinois",
+            "i": -0.35000000000000003,
+            "d": "Illinois's 3PT-heavy (42%) faces UConn's #11 3PT D"
           },
           {
             "stat": "TO Rate",
-            "team": "UConn",
+            "team": "Illinois",
             "i": 0.5999999999999996,
-            "d": "Duke forces 11.2 TOs/g → UConn's TO rate +0.6%"
-          },
-          {
-            "stat": "TO Rate",
-            "team": "Duke",
-            "i": 0.5999999999999996,
-            "d": "UConn forces 11.2 TOs/g → Duke's TO rate +0.6%"
+            "d": "UConn forces 11.2 TOs/g → Illinois's TO rate +0.6%"
           }
         ],
         "adjA": {
-          "efg": -0.4500000000000001,
-          "tor": 0.5999999999999996,
+          "efg": 0,
+          "tor": 0,
           "orb": 0,
           "ftr": 0
         },
         "adjB": {
-          "efg": 0,
+          "efg": -0.35000000000000003,
           "tor": 0.5999999999999996,
           "orb": 0,
           "ftr": 0
         },
         "tempoAdj": 0
       },
-      "cDiff": -0.7,
+      "cDiff": 1,
       "fatA": {
         "pts": 0
       },
@@ -891,61 +899,6 @@
         "pts": 0
       },
       "a": {
-        "em": 27.576,
-        "efg": 56.98256,
-        "tor": 15.255840000000001,
-        "orb": 35.781400000000005,
-        "ftr": 38.7078,
-        "tpt": 37.252880000000005,
-        "ast": 58.08192,
-        "mg": 14.58448,
-        "off": 123.3984,
-        "def": 95.8224,
-        "tempo": 66.1,
-        "elo": 2150,
-        "seed": 1,
-        "name": "Duke",
-        "luck": 0.012,
-        "sentiment": 0.5,
-        "confidenceIdx": 0,
-        "injuryAdj": -1,
-        "hcaBase": 6.5,
-        "coachAdj": 0.3,
-        "coach": "Jon Scheyer",
-        "coachNote": "Title game 2025, 6 March wins",
-        "kpRank": 1,
-        "record": "32-2",
-        "style": {
-          "p3": 0.44,
-          "d3r": 15,
-          "ht": 79,
-          "toF": 11.2,
-          "t": 69.2
-        },
-        "v8": {},
-        "fatigue": {},
-        "o": 123.3984,
-        "d": 95.8224,
-        "t": 66.1,
-        "s": 1,
-        "kp": 1,
-        "rec": "32-2",
-        "lk": 0.012,
-        "st": 0.5,
-        "ci": 0,
-        "ij": -1,
-        "hb": 6.5,
-        "cAdj": 0.3,
-        "cNote": "Title game 2025, 6 March wins",
-        "sty": {
-          "p3": 0.44,
-          "d3r": 15,
-          "ht": 79,
-          "toF": 11.2,
-          "t": 69.2
-        }
-      },
-      "b": {
         "em": 18.9072,
         "efg": 55.765119999999996,
         "tor": 15.828800000000001,
@@ -957,7 +910,7 @@
         "off": 118.6016,
         "def": 99.7536,
         "tempo": 65.9,
-        "elo": 2154,
+        "elo": 2162,
         "seed": 2,
         "name": "UConn",
         "luck": -0.018,
@@ -1000,75 +953,137 @@
           "t": 67.2
         }
       },
-      "rd": 4,
-      "id": "E_E8",
-      "status": "UPCOMING"
+      "b": {
+        "em": 24.2928,
+        "efg": 55.738960000000006,
+        "tor": 14.88112,
+        "orb": 35.728,
+        "ftr": 35.623400000000004,
+        "tpt": 36.78956,
+        "ast": 52.55744,
+        "mg": 12.69632,
+        "off": 125.1312,
+        "def": 100.83840000000001,
+        "tempo": 66.7,
+        "elo": 2161,
+        "seed": 3,
+        "name": "Illinois",
+        "luck": 0.005,
+        "sentiment": 0.38,
+        "confidenceIdx": 0,
+        "injuryAdj": 0,
+        "hcaBase": 4.5,
+        "coachAdj": -0.2,
+        "coach": "Brad Underwood",
+        "coachNote": "#1 offense, but OT losses expose D",
+        "kpRank": 5,
+        "record": "24-8",
+        "style": {
+          "p3": 0.42,
+          "d3r": 28,
+          "ht": 78,
+          "toF": 9,
+          "t": 70
+        },
+        "v8": {},
+        "fatigue": {},
+        "o": 125.1312,
+        "d": 100.83840000000001,
+        "t": 66.7,
+        "s": 3,
+        "kp": 5,
+        "rec": "24-8",
+        "lk": 0.005,
+        "st": 0.38,
+        "ci": 0,
+        "ij": 0,
+        "hb": 4.5,
+        "cAdj": -0.2,
+        "cNote": "#1 offense, but OT losses expose D",
+        "sty": {
+          "p3": 0.42,
+          "d3r": 28,
+          "ht": 78,
+          "toF": 9,
+          "t": 70
+        }
+      },
+      "rd": 5,
+      "id": "F4_1",
+      "status": "UPCOMING",
+      "predictedAt": "2026-03-30T14:22:42.431Z"
     },
     {
-      "teamA": "Michigan",
-      "teamB": "Tennessee",
+      "teamA": "Arizona",
+      "teamB": "Michigan",
       "winner": "Michigan",
-      "loser": "Tennessee",
-      "winProb": 96,
-      "modelSpread": 9.5,
-      "finalSpread": 8,
-      "vegasLine": 7.5,
-      "edge": 2,
-      "scoreW": 79,
-      "scoreL": 69,
+      "loser": "Arizona",
+      "winProb": 52.9,
+      "modelSpread": -0.5,
+      "finalSpread": -1,
+      "vegasLine": -1.5,
+      "edge": 1,
+      "scoreW": 76,
+      "scoreL": 75,
       "seedA": 1,
-      "seedB": 6,
+      "seedB": 1,
       "seedW": 1,
-      "seedL": 6,
+      "seedL": 1,
       "sim": {
-        "median": 9.5,
-        "mean": 9.8,
-        "stdDev": 5.6,
-        "p10": 2.5,
-        "p25": 6,
-        "p75": 13.5,
-        "p90": 17,
-        "blowoutA": 17.3,
-        "blowoutB": 0,
-        "closeGame": 19.2,
-        "coverProb": 65.4
+        "median": -0.5,
+        "mean": -0.4,
+        "stdDev": 6,
+        "p10": -8,
+        "p25": -4.5,
+        "p75": 3.5,
+        "p90": 7,
+        "blowoutA": 0.6,
+        "blowoutB": 0.8,
+        "closeGame": 60.1,
+        "coverProb": 57.4
       },
       "layers": {
-        "L1": 9.7,
-        "L2": 1.4,
-        "L3": -1.6,
-        "L4": 0.2,
+        "L1": -1,
+        "L2": -0.5,
+        "L3": 1.3,
+        "L4": -0.1,
         "L5": 0,
         "v8": 0
       },
       "matchup": {
         "details": [
           {
-            "stat": "TO Rate",
+            "stat": "eFG%",
+            "team": "Arizona",
+            "impact": -0.7500000000000001,
+            "desc": "Arizona's 3PT-heavy (50%) faces Michigan's #1 3PT D"
+          },
+          {
+            "stat": "ORB% & FTR",
             "team": "Michigan",
-            "impact": 0.5,
-            "desc": "Tennessee forces 11 TOs/g → Michigan's TO rate +0.5%"
+            "impact": 0.8,
+            "desc": "Michigan has 2\" height edge"
           }
         ],
         "adjA": {
-          "efg": 0,
-          "tor": 0.5,
-          "orb": 0,
-          "ftr": 0
+          "efg": -0.7500000000000001,
+          "tor": 0,
+          "orb": -0.8,
+          "ftr": -0.5
         },
         "adjB": {
           "efg": 0,
           "tor": 0,
-          "orb": 0,
-          "ftr": 0
+          "orb": 0.8,
+          "ftr": 0.5
         },
         "tempoAdj": 0
       },
       "hca": {
         "team": null,
         "value": 0,
-        "distA": 201,
-        "distB": 455
+        "distA": 1475,
+        "distB": 214
       },
       "fatigue": {
         "a": 0,
@@ -1093,19 +1108,54 @@
       },
       "coaching": {
         "a": {
+          "name": "Tommy Lloyd",
+          "adj": 0.2,
+          "note": "140-35 at AZ, no deep run yet"
+        },
+        "b": {
           "name": "Dusty May",
           "adj": 0.4,
           "note": "FAU F4 '23, #1 defense nationally"
         },
-        "b": {
-          "name": "Rick Barnes",
-          "adj": -0.1,
-          "note": "12 March wins but 0 Final Fours"
-        },
-        "diff": 0.3
+        "diff": -0.1
       },
       "profiles": {
         "a": {
+          "em": 28.775199999999998,
+          "efg": 56.19536,
+          "tor": 15.5928,
+          "orb": 35.3008,
+          "ftr": 39.6426,
+          "tpt": 37.8996,
+          "ast": 54.61824,
+          "mg": 15.48048,
+          "off": 121.56559999999999,
+          "def": 92.84960000000001,
+          "tempo": 70.4,
+          "elo": 2186,
+          "seed": 1,
+          "name": "Arizona",
+          "luck": -0.01,
+          "sentiment": 0.63,
+          "confidenceIdx": 0,
+          "injuryAdj": 0,
+          "hcaBase": 5.8,
+          "coachAdj": 0.2,
+          "coach": "Tommy Lloyd",
+          "coachNote": "140-35 at AZ, no deep run yet",
+          "kpRank": 3,
+          "record": "32-2",
+          "style": {
+            "p3": 0.5,
+            "d3r": 3,
+            "ht": 78,
+            "toF": 9.8,
+            "t": 71.5
+          },
+          "v8": {},
+          "fatigue": {}
+        },
+        "b": {
           "em": 30.0464,
           "efg": 57.05028,
           "tor": 15.318879999999998,
@@ -1117,7 +1167,7 @@
           "off": 121.0432,
           "def": 91.0376,
           "tempo": 71.2,
-          "elo": 2172,
+          "elo": 2206,
           "seed": 1,
           "name": "Michigan",
           "luck": 0.028,
@@ -1139,78 +1189,43 @@
           },
           "v8": {},
           "fatigue": {}
-        },
-        "b": {
-          "em": 17.1192,
-          "efg": 52.46716000000001,
-          "tor": 16.28736,
-          "orb": 35.194,
-          "ftr": 38.3728,
-          "tpt": 34.41312,
-          "ast": 55.967040000000004,
-          "mg": 8.532,
-          "off": 116.13759999999999,
-          "def": 98.9592,
-          "tempo": 67.2,
-          "elo": 2214,
-          "seed": 6,
-          "name": "Tennessee",
-          "luck": 0.005,
-          "sentiment": 0.45,
-          "confidenceIdx": 0,
-          "injuryAdj": 0,
-          "hcaBase": 5,
-          "coachAdj": -0.1,
-          "coach": "Rick Barnes",
-          "coachNote": "12 March wins but 0 Final Fours",
-          "kpRank": 14,
-          "record": "22-11",
-          "style": {
-            "p3": 0.35,
-            "d3r": 15,
-            "ht": 79,
-            "toF": 11,
-            "t": 67
-          },
-          "v8": {},
-          "fatigue": {}
         }
       },
       "adjStats": {
-        "aEfg": 57.1,
-        "bEfg": 52.5,
-        "aTor": 15.8,
-        "bTor": 16.3,
-        "aOrb": 34.6,
-        "bOrb": 35.2,
-        "aFtr": 36.9,
-        "bFtr": 38.4
+        "aEfg": 55.4,
+        "bEfg": 57.1,
+        "aTor": 15.6,
+        "bTor": 15.3,
+        "aOrb": 34.5,
+        "bOrb": 35.4,
+        "aFtr": 39.1,
+        "bFtr": 37.4
       },
-      "venue": "Chicago",
-      "round": 4,
+      "venue": "Indianapolis",
+      "round": 5,
       "moneyline": [
-        -355,
-        280
+        102,
+        -122
       ],
       "engineVersion": "v9.0-montecarlo",
       "simCount": 10000,
       "w": "Michigan",
-      "l": "Tennessee",
-      "sW": 79,
-      "sL": 69,
-      "wp": 96,
-      "sp": 8,
+      "l": "Arizona",
+      "sW": 76,
+      "sL": 75,
+      "wp": 52.9,
+      "sp": 1,
       "sW2": 1,
-      "sL2": 6,
-      "ven": "Chicago",
-      "modelSp": 9.5,
-      "blendedSpread": 8,
-      "vegasSp": 7.5,
-      "rawSp": 8,
-      "L1": 9.7,
-      "L2": 1.4,
-      "L3": -1.6,
-      "L4": 0.2,
+      "sL2": 1,
+      "ven": "Indianapolis",
+      "modelSp": -0.5,
+      "blendedSpread": -1,
+      "vegasSp": -1.5,
+      "rawSp": -1,
+      "L1": -1,
+      "L2": -0.5,
+      "L3": 1.3,
+      "L4": -0.1,
       "L5": 0,
       "v8adj": 0,
       "ensAvg": 0,
@@ -1220,27 +1235,33 @@
       "mu": {
         "det": [
           {
-            "stat": "TO Rate",
+            "stat": "eFG%",
+            "team": "Arizona",
+            "i": -0.7500000000000001,
+            "d": "Arizona's 3PT-heavy (50%) faces Michigan's #1 3PT D"
+          },
+          {
+            "stat": "ORB% & FTR",
             "team": "Michigan",
-            "i": 0.5,
-            "d": "Tennessee forces 11 TOs/g → Michigan's TO rate +0.5%"
+            "i": 0.8,
+            "d": "Michigan has 2\" height edge"
           }
         ],
         "adjA": {
-          "efg": 0,
-          "tor": 0.5,
-          "orb": 0,
-          "ftr": 0
+          "efg": -0.7500000000000001,
+          "tor": 0,
+          "orb": -0.8,
+          "ftr": -0.5
         },
         "adjB": {
           "efg": 0,
           "tor": 0,
-          "orb": 0,
-          "ftr": 0
+          "orb": 0.8,
+          "ftr": 0.5
         },
         "tempoAdj": 0
       },
-      "cDiff": 0.3,
+      "cDiff": -0.1,
       "fatA": {
         "pts": 0
       },
@@ -1248,6 +1269,61 @@
         "pts": 0
       },
       "a": {
+        "em": 28.775199999999998,
+        "efg": 56.19536,
+        "tor": 15.5928,
+        "orb": 35.3008,
+        "ftr": 39.6426,
+        "tpt": 37.8996,
+        "ast": 54.61824,
+        "mg": 15.48048,
+        "off": 121.56559999999999,
+        "def": 92.84960000000001,
+        "tempo": 70.4,
+        "elo": 2186,
+        "seed": 1,
+        "name": "Arizona",
+        "luck": -0.01,
+        "sentiment": 0.63,
+        "confidenceIdx": 0,
+        "injuryAdj": 0,
+        "hcaBase": 5.8,
+        "coachAdj": 0.2,
+        "coach": "Tommy Lloyd",
+        "coachNote": "140-35 at AZ, no deep run yet",
+        "kpRank": 3,
+        "record": "32-2",
+        "style": {
+          "p3": 0.5,
+          "d3r": 3,
+          "ht": 78,
+          "toF": 9.8,
+          "t": 71.5
+        },
+        "v8": {},
+        "fatigue": {},
+        "o": 121.56559999999999,
+        "d": 92.84960000000001,
+        "t": 70.4,
+        "s": 1,
+        "kp": 3,
+        "rec": "32-2",
+        "lk": -0.01,
+        "st": 0.63,
+        "ci": 0,
+        "ij": 0,
+        "hb": 5.8,
+        "cAdj": 0.2,
+        "cNote": "140-35 at AZ, no deep run yet",
+        "sty": {
+          "p3": 0.5,
+          "d3r": 3,
+          "ht": 78,
+          "toF": 9.8,
+          "t": 71.5
+        }
+      },
+      "b": {
         "em": 30.0464,
         "efg": 57.05028,
         "tor": 15.318879999999998,
@@ -1259,7 +1335,7 @@
         "off": 121.0432,
         "def": 91.0376,
         "tempo": 71.2,
-        "elo": 2172,
+        "elo": 2206,
         "seed": 1,
         "name": "Michigan",
         "luck": 0.028,
@@ -1302,66 +1378,12 @@
           "t": 66.8
         }
       },
-      "b": {
-        "em": 17.1192,
-        "efg": 52.46716000000001,
-        "tor": 16.28736,
-        "orb": 35.194,
-        "ftr": 38.3728,
-        "tpt": 34.41312,
-        "ast": 55.967040000000004,
-        "mg": 8.532,
-        "off": 116.13759999999999,
-        "def": 98.9592,
-        "tempo": 67.2,
-        "elo": 2214,
-        "seed": 6,
-        "name": "Tennessee",
-        "luck": 0.005,
-        "sentiment": 0.45,
-        "confidenceIdx": 0,
-        "injuryAdj": 0,
-        "hcaBase": 5,
-        "coachAdj": -0.1,
-        "coach": "Rick Barnes",
-        "coachNote": "12 March wins but 0 Final Fours",
-        "kpRank": 14,
-        "record": "22-11",
-        "style": {
-          "p3": 0.35,
-          "d3r": 15,
-          "ht": 79,
-          "toF": 11,
-          "t": 67
-        },
-        "v8": {},
-        "fatigue": {},
-        "o": 116.13759999999999,
-        "d": 98.9592,
-        "t": 67.2,
-        "s": 6,
-        "kp": 14,
-        "rec": "22-11",
-        "lk": 0.005,
-        "st": 0.45,
-        "ci": 0,
-        "ij": 0,
-        "hb": 5,
-        "cAdj": -0.1,
-        "cNote": "12 March wins but 0 Final Fours",
-        "sty": {
-          "p3": 0.35,
-          "d3r": 15,
-          "ht": 79,
-          "toF": 11,
-          "t": 67
-        }
-      },
-      "rd": 4,
-      "id": "MW_E8",
-      "status": "UPCOMING"
+      "rd": 5,
+      "id": "F4_2",
+      "status": "UPCOMING",
+      "predictedAt": "2026-03-30T14:22:42.431Z"
     }
   ],
-  "baselineSetAt": "2026-03-29T13:45:46.429Z",
-  "baselineSetAtCST": "Mar 29, 2026, 8:45 AM CST"
+  "baselineSetAt": "2026-03-30T14:22:42.492Z",
+  "baselineSetAtCST": "Mar 30, 2026, 9:22 AM CST"
 }

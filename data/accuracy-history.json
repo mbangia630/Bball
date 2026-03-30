@@ -1099,6 +1099,57 @@
       "winProb": 68.3,
       "layers": {},
       "verdict": "🟡 Wrong winner, covered ATS"
+    },
+    {
+      "id": "W_E8",
+      "rd": 4,
+      "date": "2026-03-29",
+      "teamA": "Arizona",
+      "teamB": "Purdue",
+      "winner": "Arizona",
+      "loser": "Purdue",
+      "scoreW": 79,
+      "scoreL": 64,
+      "actualMargin": 15,
+      "modelSp": 7.5,
+      "vegasLine": null,
+      "modelError": 7.5,
+      "vegasError": null,
+      "correctSU": true,
+      "correctATS": false,
+      "beatVegas": null,
+      "winProb": 74.7,
+      "layers": {},
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "id": "S_E8",
+      "rd": 4,
+      "date": "2026-03-29",
+      "teamA": "Iowa",
+      "teamB": "Illinois",
+      "winner": "Illinois",
+      "loser": "Iowa",
+      "scoreW": 71,
+      "scoreL": 59,
+      "actualMargin": -12,
+      "modelSp": -10,
+      "vegasLine": -6.5,
+      "modelError": 2,
+      "vegasError": 5.5,
+      "correctSU": true,
+      "correctATS": true,
+      "beatVegas": true,
+      "winProb": 96.3,
+      "layers": {
+        "L1": -9.2,
+        "L2": -0.5,
+        "L3": -0.4,
+        "L4": 0.2,
+        "L5": 0,
+        "v8": 0
+      },
+      "verdict": "✅ Nailed it"
     }
   ],
   "daily": [
@@ -1125,11 +1176,17 @@
       "games": 4,
       "suPct": 50,
       "avgError": 8.4
+    },
+    {
+      "date": "2026-03-30",
+      "games": 2,
+      "suPct": 100,
+      "avgError": 4.8
     }
   ],
-  "totalGames": 50,
-  "correctSU": 36,
-  "correctATS": 20,
+  "totalGames": 52,
+  "correctSU": 38,
+  "correctATS": 21,
   "v8Baseline": {
     "totalGames": 34,
     "straightUpPct": 76.5,

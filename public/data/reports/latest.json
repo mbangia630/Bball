@@ -1,7 +1,7 @@
 {
-  "date": "2026-03-29",
-  "generatedAtCST": "3/29/2026, 8:45:40 AM CST",
-  "modelVersion": 69,
+  "date": "2026-03-30",
+  "generatedAtCST": "3/30/2026, 9:22:33 AM CST",
+  "modelVersion": 70,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
@@ -11,18 +11,42 @@
       "pct": 67
     },
     "ats": {
-      "correct": 5,
+      "correct": 4,
       "total": 15,
-      "pct": 33
+      "pct": 27
     },
     "beatVegas": {
-      "correct": 5,
-      "total": 14
+      "correct": 4,
+      "total": 13
     },
-    "avgError": 9.2,
-    "avgVegasError": 8.9
+    "avgError": 8.3,
+    "avgVegasError": 7.1
   },
   "games": [
+    {
+      "matchup": "Arizona vs Purdue",
+      "score": "Arizona 79-64",
+      "modelSpread": 7.5,
+      "vegasLine": null,
+      "modelError": 7.5,
+      "vegasError": null,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": null,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
+    {
+      "matchup": "Iowa vs Illinois",
+      "score": "Illinois 71-59",
+      "modelSpread": -10,
+      "vegasLine": -6.5,
+      "modelError": 2,
+      "vegasError": 5.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
     {
       "matchup": "Duke vs St. John's",
       "score": "Duke 80-75",
@@ -625,9 +649,9 @@
     }
   ],
   "cumulative": {
-    "totalGames": 50,
-    "straightUpPct": 72,
-    "atsPct": 40,
+    "totalGames": 52,
+    "straightUpPct": 73.1,
+    "atsPct": 40.4,
     "trend": [
       {
         "date": "2026-03-23",
@@ -652,6 +676,12 @@
         "games": 4,
         "suPct": 50,
         "avgError": 8.4
+      },
+      {
+        "date": "2026-03-30",
+        "games": 2,
+        "suPct": 100,
+        "avgError": 4.8
       }
     ]
   },
@@ -692,8 +722,7 @@
   },
   "adjustments": {
     "changes": [
-      "Layer weights tuned: L1=0.305 L2=0.228 L3=0.18 L4=0.134 L5=0.152",
-      "Vegas blend: 75% → 75%"
+      "Layer weights tuned: L1=0.304 L2=0.228 L3=0.18 L4=0.134 L5=0.153"
     ],
     "before": {
       "vegasBlend": 0.75,
