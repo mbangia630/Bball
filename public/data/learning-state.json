@@ -51,7 +51,9 @@
     "E_S16_2",
     "MW_S16_2",
     "W_E8",
-    "S_E8"
+    "S_E8",
+    "MW_E8",
+    "E_E8"
   ],
   "teamK": {
     "Nebraska": {
@@ -96,7 +98,8 @@
         31.5,
         31.5,
         2.5,
-        4
+        4,
+        8
       ]
     },
     "Siena": {
@@ -240,7 +243,8 @@
         5,
         9.5,
         5,
-        4.5
+        4.5,
+        8
       ]
     },
     "Furman": {
@@ -564,12 +568,13 @@
       ]
     },
     "Tennessee": {
-      "k": 27,
+      "k": 31,
       "recentErrors": [
         6.5,
         6.5,
         6.5,
-        18
+        18,
+        23
       ]
     },
     "Florida": {
@@ -596,46 +601,47 @@
     "Michigan": {
       "k": 20,
       "recentErrors": [
-        7
+        7,
+        23
       ]
     }
   },
   "layerAccuracy": {
     "L1": {
       "totalSigned": 324.29999999999995,
-      "correctDir": 29,
+      "correctDir": 30,
       "totalAbsError": 311.8999999999999,
-      "games": 35
+      "games": 36
     },
     "L2": {
       "totalSigned": 41.699999999999996,
-      "correctDir": 28,
+      "correctDir": 29,
       "totalAbsError": 467.70000000000016,
-      "games": 35
+      "games": 36
     },
     "L3": {
       "totalSigned": 36.5,
       "correctDir": 27,
       "totalAbsError": 473.69999999999993,
-      "games": 35
+      "games": 36
     },
     "L4": {
       "totalSigned": 2.9,
-      "correctDir": 23,
+      "correctDir": 24,
       "totalAbsError": 506.49999999999994,
-      "games": 35
+      "games": 36
     },
     "L5": {
       "totalSigned": 0,
       "correctDir": 34,
       "totalAbsError": 509.79999999999995,
-      "games": 35
+      "games": 36
     },
     "v8": {
       "totalSigned": 4.679999999999998,
       "correctDir": 25,
       "totalAbsError": 501.84000000000015,
-      "games": 35
+      "games": 36
     },
     "ens": {
       "totalSigned": 198,
@@ -678,12 +684,12 @@
   },
   "confidenceTracking": {
     "highConf": {
-      "correct": 64,
-      "total": 70
+      "correct": 65,
+      "total": 71
     },
     "medConf": {
       "correct": 14,
-      "total": 19
+      "total": 20
     },
     "lowConf": {
       "correct": 12,

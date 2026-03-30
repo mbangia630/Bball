@@ -1,14 +1,14 @@
 {
   "date": "2026-03-30",
-  "generatedAtCST": "3/30/2026, 9:22:33 AM CST",
-  "modelVersion": 70,
+  "generatedAtCST": "3/30/2026, 12:26:48 PM CST",
+  "modelVersion": 71,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
     "straightUp": {
-      "correct": 10,
+      "correct": 9,
       "total": 15,
-      "pct": 67
+      "pct": 60
     },
     "ats": {
       "correct": 4,
@@ -17,12 +17,36 @@
     },
     "beatVegas": {
       "correct": 4,
-      "total": 13
+      "total": 12
     },
-    "avgError": 8.3,
-    "avgVegasError": 7.1
+    "avgError": 9.9,
+    "avgVegasError": 8.8
   },
   "games": [
+    {
+      "matchup": "Michigan vs Tennessee",
+      "score": "Michigan 95-62",
+      "modelSpread": 10,
+      "vegasLine": 7.5,
+      "modelError": 23,
+      "vegasError": 25.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": true,
+      "closerThanVegas": true,
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "matchup": "Duke vs UConn",
+      "score": "UConn 73-72",
+      "modelSpread": 7,
+      "vegasLine": null,
+      "modelError": 8,
+      "vegasError": null,
+      "pickedWinnerCorrectly": false,
+      "coveredSpread": false,
+      "closerThanVegas": null,
+      "verdict": "❌ Missed"
+    },
     {
       "matchup": "Arizona vs Purdue",
       "score": "Arizona 79-64",
@@ -649,9 +673,9 @@
     }
   ],
   "cumulative": {
-    "totalGames": 52,
-    "straightUpPct": 73.1,
-    "atsPct": 40.4,
+    "totalGames": 54,
+    "straightUpPct": 72.2,
+    "atsPct": 40.7,
     "trend": [
       {
         "date": "2026-03-23",
@@ -682,6 +706,12 @@
         "games": 2,
         "suPct": 100,
         "avgError": 4.8
+      },
+      {
+        "date": "2026-03-30",
+        "games": 2,
+        "suPct": 50,
+        "avgError": 15.5
       }
     ]
   },
@@ -722,7 +752,7 @@
   },
   "adjustments": {
     "changes": [
-      "Layer weights tuned: L1=0.304 L2=0.228 L3=0.18 L4=0.134 L5=0.153"
+      "Layer weights tuned: L1=0.303 L2=0.228 L3=0.18 L4=0.134 L5=0.154"
     ],
     "before": {
       "vegasBlend": 0.75,

@@ -1150,6 +1150,57 @@
         "v8": 0
       },
       "verdict": "✅ Nailed it"
+    },
+    {
+      "id": "MW_E8",
+      "rd": 4,
+      "date": "2026-03-30",
+      "teamA": "Michigan",
+      "teamB": "Tennessee",
+      "winner": "Michigan",
+      "loser": "Tennessee",
+      "scoreW": 95,
+      "scoreL": 62,
+      "actualMargin": 33,
+      "modelSp": 10,
+      "vegasLine": 7.5,
+      "modelError": 23,
+      "vegasError": 25.5,
+      "correctSU": true,
+      "correctATS": true,
+      "beatVegas": true,
+      "winProb": 98,
+      "layers": {
+        "L1": 9.9,
+        "L2": 1.5,
+        "L3": -1.6,
+        "L4": 0.2,
+        "L5": 0,
+        "v8": 0
+      },
+      "verdict": "✅ Nailed it"
+    },
+    {
+      "id": "E_E8",
+      "rd": 4,
+      "date": "2026-03-30",
+      "teamA": "Duke",
+      "teamB": "UConn",
+      "winner": "UConn",
+      "loser": "Duke",
+      "scoreW": 73,
+      "scoreL": 72,
+      "actualMargin": -1,
+      "modelSp": 7,
+      "vegasLine": null,
+      "modelError": 8,
+      "vegasError": null,
+      "correctSU": false,
+      "correctATS": false,
+      "beatVegas": null,
+      "winProb": 73.3,
+      "layers": {},
+      "verdict": "❌ Missed"
     }
   ],
   "daily": [
@@ -1182,11 +1233,17 @@
       "games": 2,
       "suPct": 100,
       "avgError": 4.8
+    },
+    {
+      "date": "2026-03-30",
+      "games": 2,
+      "suPct": 50,
+      "avgError": 15.5
     }
   ],
-  "totalGames": 52,
-  "correctSU": 38,
-  "correctATS": 21,
+  "totalGames": 54,
+  "correctSU": 39,
+  "correctATS": 22,
   "v8Baseline": {
     "totalGames": 34,
     "straightUpPct": 76.5,
