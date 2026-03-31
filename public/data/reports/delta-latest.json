@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-03-30T17:26:54.247Z",
-  "timestampCST": "Mar 30, 2026, 12:26 PM CST",
-  "type": "DELTA",
-  "engineVersion": "v9.0-montecarlo",
-  "baselineTime": "Mar 30, 2026, 9:22 AM CST",
-  "currentTime": "Mar 30, 2026, 12:26 PM CST",
+  "timestamp": "2026-03-31T14:23:33.841Z",
+  "timestampCST": "Mar 31, 2026, 9:23 AM CST",
+  "type": "BASELINE_SET",
+  "message": "Scheduled update complete. This is the new baseline. Next runs will show changes relative to this snapshot.",
+  "baselineTime": "Mar 31, 2026, 9:23 AM CST",
+  "totalPredictions": 2,
+  "deltas": [],
   "summary": {
     "totalGamesCompared": 2,
     "gamesChanged": 0,
     "winnersFlipped": 0,
     "newMatchups": 0,
     "avgSpreadChange": 0,
-    "biggestMover": "None — predictions are stable"
-  },
-  "deltas": []
+    "biggestMover": "None — this is the baseline"
+  }
 }
