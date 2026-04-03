@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-02T14:17:36.404Z",
+  "timestamp": "2026-04-03T13:57:20.969Z",
   "completed": [
     {
       "id": "FF1",
@@ -648,7 +648,7 @@
       "teamB": "Illinois",
       "winner": "Illinois",
       "loser": "UConn",
-      "winProb": 76.8,
+      "winProb": 76.5,
       "modelSpread": -4,
       "finalSpread": -2,
       "vegasLine": -1.5,
@@ -668,12 +668,12 @@
         "p75": -0.5,
         "p90": 3,
         "blowoutA": 0.1,
-        "blowoutB": 2.9,
-        "closeGame": 51.3,
-        "coverProb": 32.4
+        "blowoutB": 2.7,
+        "closeGame": 50.7,
+        "coverProb": 32.1
       },
       "layers": {
-        "L1": -3.9,
+        "L1": -4,
         "L2": 0,
         "L3": -0.9,
         "L4": 0.7,
@@ -843,7 +843,7 @@
       "l": "UConn",
       "sW": 76,
       "sL": 72,
-      "wp": 76.8,
+      "wp": 76.5,
       "sp": 2,
       "sW2": 3,
       "sL2": 2,
@@ -852,7 +852,7 @@
       "blendedSpread": -2,
       "vegasSp": -1.5,
       "rawSp": -2,
-      "L1": -3.9,
+      "L1": -4,
       "L2": 0,
       "L3": -0.9,
       "L4": 0.7,
@@ -1017,7 +1017,7 @@
       "teamB": "Michigan",
       "winner": "Michigan",
       "loser": "Arizona",
-      "winProb": 54,
+      "winProb": 53.7,
       "modelSpread": -0.5,
       "finalSpread": -1,
       "vegasLine": -1.5,
@@ -1032,14 +1032,14 @@
         "median": -0.5,
         "mean": -0.5,
         "stdDev": 6,
-        "p10": -8,
+        "p10": -8.5,
         "p25": -4.5,
         "p75": 3.5,
         "p90": 7,
         "blowoutA": 0.5,
-        "blowoutB": 0.9,
-        "closeGame": 59.8,
-        "coverProb": 56.2
+        "blowoutB": 0.8,
+        "closeGame": 59.6,
+        "coverProb": 56.1
       },
       "layers": {
         "L1": -0.9,
@@ -1212,7 +1212,7 @@
       "l": "Arizona",
       "sW": 76,
       "sL": 75,
-      "wp": 54,
+      "wp": 53.7,
       "sp": 1,
       "sW2": 1,
       "sL2": 1,
@@ -1382,6 +1382,6 @@
       "status": "UPCOMING"
     }
   ],
-  "baselineSetAt": "2026-04-02T14:17:36.408Z",
-  "baselineSetAtCST": "Apr 2, 2026, 9:17 AM CST"
+  "baselineSetAt": "2026-04-03T13:57:20.973Z",
+  "baselineSetAtCST": "Apr 3, 2026, 8:57 AM CST"
 }
