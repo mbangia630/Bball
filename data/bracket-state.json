@@ -447,6 +447,20 @@
       "scoreW": 73,
       "scoreL": 72,
       "date": "2026-03-30"
+    },
+    "F4_2": {
+      "winner": "Michigan",
+      "loser": "Arizona",
+      "scoreW": 91,
+      "scoreL": 73,
+      "date": "2026-04-05"
+    },
+    "F4_1": {
+      "winner": "UConn",
+      "loser": "Illinois",
+      "scoreW": 71,
+      "scoreL": 62,
+      "date": "2026-04-05"
     }
   },
   "advancedTo": {
@@ -580,6 +594,10 @@
     },
     "F4_1": {
       "b": "Illinois",
+      "a": "UConn"
+    },
+    "CHAMP": {
+      "b": "Michigan",
       "a": "UConn"
     }
   }
