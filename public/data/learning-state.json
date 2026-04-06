@@ -53,7 +53,9 @@
     "W_E8",
     "S_E8",
     "MW_E8",
-    "E_E8"
+    "E_E8",
+    "F4_2",
+    "F4_1"
   ],
   "teamK": {
     "Nebraska": {
@@ -235,7 +237,7 @@
       ]
     },
     "UConn": {
-      "k": 23,
+      "k": 24,
       "recentErrors": [
         9.5,
         5,
@@ -244,7 +246,8 @@
         9.5,
         5,
         4.5,
-        8
+        8,
+        13
       ]
     },
     "Furman": {
@@ -470,7 +473,8 @@
         12,
         18,
         15,
-        2
+        2,
+        13
       ]
     },
     "Penn": {
@@ -515,7 +519,7 @@
       ]
     },
     "Arizona": {
-      "k": 29,
+      "k": 30,
       "recentErrors": [
         1,
         1.5,
@@ -524,7 +528,8 @@
         1,
         1.5,
         18.5,
-        7.5
+        7.5,
+        17.5
       ]
     },
     "LIU": {
@@ -599,49 +604,50 @@
       ]
     },
     "Michigan": {
-      "k": 20,
+      "k": 30,
       "recentErrors": [
         7,
-        23
+        23,
+        17.5
       ]
     }
   },
   "layerAccuracy": {
     "L1": {
       "totalSigned": 324.29999999999995,
-      "correctDir": 30,
+      "correctDir": 31,
       "totalAbsError": 311.8999999999999,
-      "games": 36
+      "games": 38
     },
     "L2": {
       "totalSigned": 41.699999999999996,
-      "correctDir": 29,
+      "correctDir": 30,
       "totalAbsError": 467.70000000000016,
-      "games": 36
+      "games": 38
     },
     "L3": {
       "totalSigned": 36.5,
       "correctDir": 27,
       "totalAbsError": 473.69999999999993,
-      "games": 36
+      "games": 38
     },
     "L4": {
       "totalSigned": 2.9,
-      "correctDir": 24,
+      "correctDir": 26,
       "totalAbsError": 506.49999999999994,
-      "games": 36
+      "games": 38
     },
     "L5": {
       "totalSigned": 0,
       "correctDir": 34,
       "totalAbsError": 509.79999999999995,
-      "games": 36
+      "games": 38
     },
     "v8": {
       "totalSigned": 4.679999999999998,
       "correctDir": 25,
       "totalAbsError": 501.84000000000015,
-      "games": 36
+      "games": 38
     },
     "ens": {
       "totalSigned": 198,
@@ -685,15 +691,15 @@
   "confidenceTracking": {
     "highConf": {
       "correct": 65,
-      "total": 71
+      "total": 72
     },
     "medConf": {
       "correct": 14,
       "total": 20
     },
     "lowConf": {
-      "correct": 12,
-      "total": 31
+      "correct": 13,
+      "total": 32
     }
   },
   "vegasMomentum": {
