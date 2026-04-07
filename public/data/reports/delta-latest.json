@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-04-06T14:06:01.836Z",
-  "timestampCST": "Apr 6, 2026, 9:06 AM CST",
+  "timestamp": "2026-04-07T14:27:01.936Z",
+  "timestampCST": "Apr 7, 2026, 9:27 AM CST",
   "type": "BASELINE_SET",
   "message": "Scheduled update complete. This is the new baseline. Next runs will show changes relative to this snapshot.",
-  "baselineTime": "Apr 6, 2026, 9:06 AM CST",
-  "totalPredictions": 1,
+  "baselineTime": "Apr 7, 2026, 9:27 AM CST",
+  "totalPredictions": 0,
   "deltas": [],
   "summary": {
-    "totalGamesCompared": 1,
+    "totalGamesCompared": 0,
     "gamesChanged": 0,
     "winnersFlipped": 0,
     "newMatchups": 0,
