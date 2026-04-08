@@ -55,7 +55,8 @@
     "MW_E8",
     "E_E8",
     "F4_2",
-    "F4_1"
+    "F4_1",
+    "CHAMP"
   ],
   "teamK": {
     "Nebraska": {
@@ -237,7 +238,7 @@
       ]
     },
     "UConn": {
-      "k": 24,
+      "k": 25,
       "recentErrors": [
         9.5,
         5,
@@ -247,7 +248,8 @@
         5,
         4.5,
         8,
-        13
+        13,
+        1.5
       ]
     },
     "Furman": {
@@ -604,50 +606,51 @@
       ]
     },
     "Michigan": {
-      "k": 30,
+      "k": 32,
       "recentErrors": [
         7,
         23,
-        17.5
+        17.5,
+        1.5
       ]
     }
   },
   "layerAccuracy": {
     "L1": {
       "totalSigned": 324.29999999999995,
-      "correctDir": 31,
+      "correctDir": 32,
       "totalAbsError": 311.8999999999999,
-      "games": 38
+      "games": 39
     },
     "L2": {
       "totalSigned": 41.699999999999996,
-      "correctDir": 30,
+      "correctDir": 31,
       "totalAbsError": 467.70000000000016,
-      "games": 38
+      "games": 39
     },
     "L3": {
       "totalSigned": 36.5,
       "correctDir": 27,
       "totalAbsError": 473.69999999999993,
-      "games": 38
+      "games": 39
     },
     "L4": {
       "totalSigned": 2.9,
       "correctDir": 26,
       "totalAbsError": 506.49999999999994,
-      "games": 38
+      "games": 39
     },
     "L5": {
       "totalSigned": 0,
       "correctDir": 34,
       "totalAbsError": 509.79999999999995,
-      "games": 38
+      "games": 39
     },
     "v8": {
       "totalSigned": 4.679999999999998,
       "correctDir": 25,
       "totalAbsError": 501.84000000000015,
-      "games": 38
+      "games": 39
     },
     "ens": {
       "totalSigned": 198,
@@ -690,8 +693,8 @@
   },
   "confidenceTracking": {
     "highConf": {
-      "correct": 65,
-      "total": 72
+      "correct": 66,
+      "total": 73
     },
     "medConf": {
       "correct": 14,

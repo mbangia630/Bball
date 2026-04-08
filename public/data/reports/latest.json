@@ -1,7 +1,7 @@
 {
-  "date": "2026-04-07",
-  "generatedAtCST": "4/7/2026, 9:26:53 AM CST",
-  "modelVersion": 79,
+  "date": "2026-04-08",
+  "generatedAtCST": "4/8/2026, 9:28:44 AM CST",
+  "modelVersion": 80,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
@@ -19,10 +19,22 @@
       "correct": 4,
       "total": 12
     },
-    "avgError": 10.6,
-    "avgVegasError": 10.2
+    "avgError": 10.4,
+    "avgVegasError": 10.3
   },
   "games": [
+    {
+      "matchup": "UConn vs Michigan",
+      "score": "Michigan 69-63",
+      "modelSpread": -7.5,
+      "vegasLine": -7.5,
+      "modelError": 1.5,
+      "vegasError": 1.5,
+      "pickedWinnerCorrectly": true,
+      "coveredSpread": false,
+      "closerThanVegas": false,
+      "verdict": "🟡 Right winner, wrong spread"
+    },
     {
       "matchup": "Arizona vs Michigan",
       "score": "Michigan 91-73",
@@ -697,16 +709,10 @@
     }
   ],
   "cumulative": {
-    "totalGames": 56,
-    "straightUpPct": 71.4,
-    "atsPct": 39.3,
+    "totalGames": 57,
+    "straightUpPct": 71.9,
+    "atsPct": 38.6,
     "trend": [
-      {
-        "date": "2026-03-23",
-        "games": 34,
-        "suPct": 76,
-        "avgError": 9.3
-      },
       {
         "date": "2026-03-24",
         "games": 8,
@@ -742,6 +748,12 @@
         "games": 2,
         "suPct": 50,
         "avgError": 15.3
+      },
+      {
+        "date": "2026-04-08",
+        "games": 1,
+        "suPct": 100,
+        "avgError": 1.5
       }
     ]
   },
@@ -782,7 +794,7 @@
   },
   "adjustments": {
     "changes": [
-      "Layer weights tuned: L1=0.295 L2=0.228 L3=0.18 L4=0.136 L5=0.162"
+      "Layer weights tuned: L1=0.293 L2=0.228 L3=0.18 L4=0.137 L5=0.163"
     ],
     "before": {
       "vegasBlend": 0.75,
