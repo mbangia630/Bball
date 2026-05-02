@@ -1,7 +1,7 @@
 {
-  "date": "2026-05-01",
-  "generatedAtCST": "5/1/2026, 9:13:44 AM CST",
-  "modelVersion": 103,
+  "date": "2026-05-02",
+  "generatedAtCST": "5/2/2026, 9:05:15 AM CST",
+  "modelVersion": 104,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
@@ -794,7 +794,7 @@
   },
   "adjustments": {
     "changes": [
-      "Layer weights tuned: L1=0.266 L2=0.228 L3=0.18 L4=0.141 L5=0.186"
+      "Layer weights tuned: L1=0.265 L2=0.228 L3=0.18 L4=0.141 L5=0.187"
     ],
     "before": {
       "vegasBlend": 0.75,
