@@ -40,7 +40,7 @@
       "toF": 9,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:08.590Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.922Z"
   },
   "Prairie View": {
     "em": -8,
@@ -83,7 +83,7 @@
       "toF": 8.5,
       "t": 69
     },
-    "lastStatsUpdate": "2026-05-17T14:22:08.668Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.945Z"
   },
   "Miami OH": {
     "em": 8,
@@ -126,7 +126,7 @@
       "toF": 10,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:05.174Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.659Z"
   },
   "Duke": {
     "em": 40.6,
@@ -169,7 +169,7 @@
       "toF": 11.2,
       "t": 69.2
     },
-    "lastStatsUpdate": "2026-05-17T14:21:58.666Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.121Z",
     "_name": "Duke",
     "_teamK": 20
   },
@@ -214,7 +214,7 @@
       "toF": 9.8,
       "t": 71.5
     },
-    "lastStatsUpdate": "2026-05-17T14:21:58.862Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.147Z",
     "_name": "Arizona",
     "_teamK": 20
   },
@@ -259,7 +259,7 @@
       "toF": 10.5,
       "t": 66.8
     },
-    "lastStatsUpdate": "2026-05-17T14:21:59.062Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.186Z",
     "_name": "Michigan",
     "_teamK": 20
   },
@@ -304,7 +304,7 @@
       "toF": 10,
       "t": 68.5
     },
-    "lastStatsUpdate": "2026-05-17T14:21:59.143Z"
+    "lastStatsUpdate": "2026-05-18T16:17:30.211Z"
   },
   "UConn": {
     "em": 29.8,
@@ -347,7 +347,7 @@
       "toF": 11.2,
       "t": 67.2
     },
-    "lastStatsUpdate": "2026-05-17T14:21:59.223Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.237Z",
     "_name": "UConn",
     "_teamK": 20
   },
@@ -392,7 +392,7 @@
       "toF": 11.5,
       "t": 65.5
     },
-    "lastStatsUpdate": "2026-05-17T14:21:59.298Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.261Z",
     "_name": "Houston",
     "_teamK": 20
   },
@@ -437,7 +437,7 @@
       "toF": 10.8,
       "t": 66
     },
-    "lastStatsUpdate": "2026-05-17T14:21:59.466Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.299Z",
     "_name": "Iowa State",
     "_teamK": 20
   },
@@ -482,7 +482,7 @@
       "toF": 9.5,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:21:59.664Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.318Z",
     "_name": "Purdue",
     "_teamK": 20
   },
@@ -527,7 +527,7 @@
       "toF": 10.5,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:21:59.838Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.339Z",
     "_name": "Michigan St.",
     "_teamK": 20
   },
@@ -572,7 +572,7 @@
       "toF": 9,
       "t": 70
     },
-    "lastStatsUpdate": "2026-05-17T14:21:59.916Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.360Z",
     "_name": "Illinois",
     "_teamK": 20
   },
@@ -617,7 +617,7 @@
       "toF": 9.2,
       "t": 70
     },
-    "lastStatsUpdate": "2026-05-17T14:22:00.191Z"
+    "lastStatsUpdate": "2026-05-18T16:17:30.584Z"
   },
   "Virginia": {
     "em": 22,
@@ -660,7 +660,7 @@
       "toF": 9.5,
       "t": 59
     },
-    "lastStatsUpdate": "2026-05-17T14:22:00.267Z"
+    "lastStatsUpdate": "2026-05-18T16:17:30.606Z"
   },
   "Kansas": {
     "em": 23.5,
@@ -703,7 +703,7 @@
       "toF": 10.2,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:00.345Z"
+    "lastStatsUpdate": "2026-05-18T16:17:30.709Z"
   },
   "Nebraska": {
     "em": 21.5,
@@ -746,7 +746,7 @@
       "toF": 10,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:00.545Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.731Z",
     "_name": "Nebraska",
     "_teamK": 20
   },
@@ -791,7 +791,7 @@
       "toF": 10.8,
       "t": 71
     },
-    "lastStatsUpdate": "2026-05-17T14:22:00.632Z",
+    "lastStatsUpdate": "2026-05-18T16:17:30.757Z",
     "_name": "Arkansas",
     "_teamK": 20
   },
@@ -836,7 +836,7 @@
       "toF": 9.5,
       "t": 71
     },
-    "lastStatsUpdate": "2026-05-17T14:22:00.820Z",
+    "lastStatsUpdate": "2026-05-18T16:17:31.007Z",
     "_name": "Alabama",
     "_teamK": 20
   },
@@ -881,7 +881,7 @@
       "toF": 10.8,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:00.909Z",
+    "lastStatsUpdate": "2026-05-18T16:17:31.053Z",
     "_name": "St. John's",
     "_teamK": 20
   },
@@ -926,7 +926,7 @@
       "toF": 10.5,
       "t": 70
     },
-    "lastStatsUpdate": "2026-05-17T14:22:00.987Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.076Z"
   },
   "Texas Tech": {
     "em": 22.8,
@@ -969,7 +969,7 @@
       "toF": 10.2,
       "t": 66
     },
-    "lastStatsUpdate": "2026-05-17T14:22:01.088Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.113Z"
   },
   "Wisconsin": {
     "em": 20.5,
@@ -1012,7 +1012,7 @@
       "toF": 9.8,
       "t": 64
     },
-    "lastStatsUpdate": "2026-05-17T14:22:01.361Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.136Z"
   },
   "Louisville": {
     "em": 20.5,
@@ -1055,7 +1055,7 @@
       "toF": 9.8,
       "t": 69
     },
-    "lastStatsUpdate": "2026-05-17T14:22:01.642Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.414Z"
   },
   "N. Carolina": {
     "em": 19.5,
@@ -1098,7 +1098,7 @@
       "toF": 9.5,
       "t": 69
     },
-    "lastStatsUpdate": "2026-05-17T14:22:01.717Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.442Z"
   },
   "BYU": {
     "em": 19.2,
@@ -1141,7 +1141,7 @@
       "toF": 9.8,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:01.798Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.467Z"
   },
   "Tennessee": {
     "em": 21.5,
@@ -1184,7 +1184,7 @@
       "toF": 11,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:01.875Z",
+    "lastStatsUpdate": "2026-05-18T16:17:31.535Z",
     "_name": "Tennessee",
     "_teamK": 20
   },
@@ -1229,7 +1229,7 @@
       "toF": 10,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:02.053Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.557Z"
   },
   "St. Mary's": {
     "em": 19.5,
@@ -1272,7 +1272,7 @@
       "toF": 9.5,
       "t": 63
     },
-    "lastStatsUpdate": "2026-05-17T14:22:02.241Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.591Z"
   },
   "Kentucky": {
     "em": 17,
@@ -1315,7 +1315,7 @@
       "toF": 9.8,
       "t": 69
     },
-    "lastStatsUpdate": "2026-05-17T14:22:02.429Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.635Z"
   },
   "Miami FL": {
     "em": 17,
@@ -1358,7 +1358,7 @@
       "toF": 10,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:02.635Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.657Z"
   },
   "Ohio State": {
     "em": 16.8,
@@ -1401,7 +1401,7 @@
       "toF": 10,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:02.746Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.673Z"
   },
   "Clemson": {
     "em": 17.5,
@@ -1444,7 +1444,7 @@
       "toF": 9.8,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:03.016Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.698Z"
   },
   "Georgia": {
     "em": 16.5,
@@ -1487,7 +1487,7 @@
       "toF": 10.2,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:03.634Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.963Z"
   },
   "Villanova": {
     "em": 16.5,
@@ -1530,7 +1530,7 @@
       "toF": 9.8,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:03.733Z"
+    "lastStatsUpdate": "2026-05-18T16:17:31.990Z"
   },
   "TCU": {
     "em": 15.2,
@@ -1573,7 +1573,7 @@
       "toF": 10,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:03.890Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.125Z"
   },
   "Iowa": {
     "em": 15.8,
@@ -1616,7 +1616,7 @@
       "toF": 9.5,
       "t": 62
     },
-    "lastStatsUpdate": "2026-05-17T14:22:03.289Z",
+    "lastStatsUpdate": "2026-05-18T16:17:31.931Z",
     "_name": "Iowa",
     "_teamK": 20
   },
@@ -1661,7 +1661,7 @@
       "toF": 10.5,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:03.973Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.171Z"
   },
   "Utah State": {
     "em": 19.2,
@@ -1704,7 +1704,7 @@
       "toF": 10,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:03.812Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.010Z"
   },
   "UCF": {
     "em": 15.8,
@@ -1747,7 +1747,7 @@
       "toF": 9.5,
       "t": 69
     },
-    "lastStatsUpdate": "2026-05-17T14:22:04.308Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.240Z"
   },
   "Texas A&M": {
     "em": 17.8,
@@ -1790,7 +1790,7 @@
       "toF": 10,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:04.385Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.290Z"
   },
   "Santa Clara": {
     "em": 16.8,
@@ -1833,7 +1833,7 @@
       "toF": 9.5,
       "t": 66
     },
-    "lastStatsUpdate": "2026-05-17T14:22:04.856Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.524Z"
   },
   "Missouri": {
     "em": 15.5,
@@ -1876,7 +1876,7 @@
       "toF": 9.5,
       "t": 69
     },
-    "lastStatsUpdate": "2026-05-17T14:22:04.928Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.566Z"
   },
   "VCU": {
     "em": 18.2,
@@ -1919,7 +1919,7 @@
       "toF": 11,
       "t": 66
     },
-    "lastStatsUpdate": "2026-05-17T14:22:04.046Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.193Z"
   },
   "S. Florida": {
     "em": 16.2,
@@ -1962,7 +1962,7 @@
       "toF": 10.5,
       "t": 70
     },
-    "lastStatsUpdate": "2026-05-17T14:22:04.233Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.215Z"
   },
   "SMU": {
     "em": 17.5,
@@ -2005,7 +2005,7 @@
       "toF": 10,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:05.001Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.610Z"
   },
   "Texas": {
     "em": 14.2,
@@ -2048,7 +2048,7 @@
       "toF": 10,
       "t": 69
     },
-    "lastStatsUpdate": "2026-05-17T14:22:05.086Z",
+    "lastStatsUpdate": "2026-05-18T16:17:32.642Z",
     "_name": "Texas",
     "_teamK": 20
   },
@@ -2093,7 +2093,7 @@
       "toF": 10,
       "t": 62
     },
-    "lastStatsUpdate": "2026-05-17T14:22:05.320Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.723Z"
   },
   "McNeese": {
     "em": 12.5,
@@ -2136,7 +2136,7 @@
       "toF": 11.5,
       "t": 71
     },
-    "lastStatsUpdate": "2026-05-17T14:22:05.394Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.763Z"
   },
   "Akron": {
     "em": 12.5,
@@ -2179,7 +2179,7 @@
       "toF": 9.2,
       "t": 67.5
     },
-    "lastStatsUpdate": "2026-05-17T14:22:05.588Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.789Z"
   },
   "High Point": {
     "em": 7.5,
@@ -2222,7 +2222,7 @@
       "toF": 9.5,
       "t": 70
     },
-    "lastStatsUpdate": "2026-05-17T14:22:05.939Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.812Z"
   },
   "Cal Baptist": {
     "em": 5.2,
@@ -2265,7 +2265,7 @@
       "toF": 9,
       "t": 66
     },
-    "lastStatsUpdate": "2026-05-17T14:22:06.217Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.059Z"
   },
   "Troy": {
     "em": 8.2,
@@ -2308,7 +2308,7 @@
       "toF": 9.5,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:06.300Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.115Z"
   },
   "Hofstra": {
     "em": 10.8,
@@ -2351,7 +2351,7 @@
       "toF": 9.2,
       "t": 69
     },
-    "lastStatsUpdate": "2026-05-17T14:22:06.442Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.138Z"
   },
   "Hawaii": {
     "em": 5,
@@ -2394,7 +2394,7 @@
       "toF": 9,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:06.521Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.174Z"
   },
   "N. Dakota St.": {
     "em": 1.2,
@@ -2437,7 +2437,7 @@
       "toF": 9,
       "t": 66
     },
-    "lastStatsUpdate": "2026-05-17T14:22:06.597Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.201Z"
   },
   "Penn": {
     "em": -0.5,
@@ -2480,7 +2480,7 @@
       "toF": 9,
       "t": 65
     },
-    "lastStatsUpdate": "2026-05-17T14:22:06.673Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.229Z"
   },
   "Wright St.": {
     "em": 4.5,
@@ -2523,7 +2523,7 @@
       "toF": 9,
       "t": 69
     },
-    "lastStatsUpdate": "2026-05-17T14:22:06.848Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.251Z"
   },
   "Kennesaw St.": {
     "em": -2,
@@ -2566,7 +2566,7 @@
       "toF": 9,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:06.981Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.269Z"
   },
   "Furman": {
     "em": 6.5,
@@ -2609,7 +2609,7 @@
       "toF": 9,
       "t": 66
     },
-    "lastStatsUpdate": "2026-05-17T14:22:07.106Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.292Z"
   },
   "Idaho": {
     "em": -8.5,
@@ -2652,7 +2652,7 @@
       "toF": 8.5,
       "t": 66
     },
-    "lastStatsUpdate": "2026-05-17T14:22:07.232Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.322Z"
   },
   "Queens": {
     "em": -5,
@@ -2737,7 +2737,7 @@
       "toF": 9,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:07.888Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.792Z"
   },
   "Siena": {
     "em": -3.5,
@@ -2780,7 +2780,7 @@
       "toF": 8.5,
       "t": 65
     },
-    "lastStatsUpdate": "2026-05-17T14:22:08.114Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.820Z"
   },
   "LIU": {
     "em": -10,
@@ -2823,7 +2823,7 @@
       "toF": 8,
       "t": 66
     },
-    "lastStatsUpdate": "2026-05-17T14:22:08.267Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.851Z"
   },
   "UMBC": {
     "em": 0.5,
@@ -2866,7 +2866,7 @@
       "toF": 9,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:08.341Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.872Z"
   },
   "Lehigh": {
     "em": -2.5,
@@ -2909,7 +2909,7 @@
       "toF": 8.5,
       "t": 67
     },
-    "lastStatsUpdate": "2026-05-17T14:22:08.424Z"
+    "lastStatsUpdate": "2026-05-18T16:17:33.890Z"
   },
   "NC State": {
     "em": 10,
@@ -2952,6 +2952,6 @@
       "toF": 10,
       "t": 68
     },
-    "lastStatsUpdate": "2026-05-17T14:22:05.249Z"
+    "lastStatsUpdate": "2026-05-18T16:17:32.681Z"
   }
 }
