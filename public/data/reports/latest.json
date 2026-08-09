@@ -1,7 +1,7 @@
 {
-  "date": "2026-08-08",
-  "generatedAtCST": "8/8/2026, 8:37:29 AM CST",
-  "modelVersion": 201,
+  "date": "2026-08-09",
+  "generatedAtCST": "8/9/2026, 8:41:03 AM CST",
+  "modelVersion": 202,
   "engineVersion": "v9.0-montecarlo",
   "today": {
     "gamesGraded": 15,
