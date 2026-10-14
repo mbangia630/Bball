@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-14T17:40:44.954Z",
+  "timestampCST": "Oct 14, 2026, 12:40 PM CST",
+  "type": "BASELINE_SET",
+  "message": "Scheduled update complete. This is the new baseline. Next runs will show changes relative to this snapshot.",
+  "baselineTime": "Oct 14, 2026, 12:40 PM CST",
+  "totalPredictions": 0,
+  "deltas": [],
+  "summary": {
+    "totalGamesCompared": 0,
+    "gamesChanged": 0,
+    "winnersFlipped": 0,
+    "newMatchups": 0,
+    "avgSpreadChange": 0,
+    "biggestMover": "None — this is the baseline"
+  }
+}
